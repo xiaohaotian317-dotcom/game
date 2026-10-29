@@ -1,4 +1,4 @@
-import {hammerPosition} from './scene-mechanics.mjs?v=20261029-roster6';
+import {hammerPosition} from './scene-mechanics.mjs?v=20261029-combat7';
 const TAU=Math.PI*2;
 function glow(c,x,y,r,color,alpha){c.save();c.globalAlpha=alpha;const g=c.createRadialGradient(x,y,1,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'transparent');c.fillStyle=g;c.fillRect(x-r,y-r,r*2,r*2);c.restore();}
 export class ScenePainter{

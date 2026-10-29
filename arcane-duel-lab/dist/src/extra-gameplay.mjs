@@ -1,6 +1,8 @@
-import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-roster6';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-roster6';
-import {segmentBox,clearLine} from './collision.mjs?v=20261029-roster6';
+import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-combat7';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat7';
+import {segmentBox,clearLine} from './collision.mjs?v=20261029-combat7';
+import {targetPose} from './character-rig.mjs?v=20261029-combat7';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat7';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
   w.fields=[];w.constructs=[];w.iceMirrors=[];w.portals=[];w.ghosts=[];w.roleState={nextShield:8,backstabAt:0,starLastCast:0,starCasts:[]};
@@ -16,10 +18,11 @@ export function releaseExtra(w,c,api){
   if(!EXTRA_HEROES[w.hero])return false;
   const p=w.player,h=w.hero,s=api.castMuzzle(w),dx=w.aim.x-s.x,dy=w.aim.y-s.y,length=Math.hypot(dx,dy)||1,d={x:dx/length,y:dy/length};
   if(c.key==='attack'){
-    if(h==='shadow'){
-      api.effect(w,'shadowSlash',{x:p.x+p.face*44,y:p.y-55,face:p.face,duration:.35});
-      for(const t of w.targets)if(t.hp>0&&(t.x-p.x)*p.face>-15&&(t.x-p.x)*p.face<110&&Math.abs(t.y-p.y)<85&&clearLine(w,p.x,p.y-45,t.x,t.y-40))api.damage(w,t,18,{school:h,basic:true,knock:p.face*75});
-      api.damageBridge(w,p.x+p.face*55,p.y-25,60,18);
+    if(h==='shadow'||h==='lightning'){
+      const thunder=h==='lightning',reach=thunder?100:110;
+      api.effect(w,thunder?'thunderPunch':'shadowSlash',{x:p.x+p.face*26,y:p.y-57,face:p.face,originX:p.x,duration:thunder?.38:.35});
+      for(const t of w.targets)if(t.hp>0&&(t.x-p.x)*p.face>-8&&(t.x-p.x)*p.face<reach&&Math.abs(t.y-p.y)<85&&clearLine(w,p.x,p.y-45,t.x,t.y-40))api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)});
+      api.damageBridge(w,p.x+p.face*55,p.y-25,60,thunder?20:18);
     }else{
       const enhanced=h==='star'&&p.stars>=3;
       api.projectile(w,h==='frost'?'iceNeedle':h==='lightning'?'arc':'starBolt',s.x,s.y,d.x,d.y,h==='lightning'?900:h==='frost'?820:700,enhanced?27:h==='lightning'?20:16,{owner:'player',school:h,basic:true,homing:enhanced,life:h==='lightning'?.5:3.5});
@@ -54,24 +57,31 @@ export function releaseExtra(w,c,api){
   if(h==='lightning'){
     if(c.key==='q'){
       const turn=c.variant==='thunderTurn',ax=turn?clamp(c.x-p.x,-420,420):p.face*240,ay=turn?clamp(c.y-p.y+45,-200,200):0,l=Math.hypot(ax,ay)||1;
-      burst(w,c,{kind:'thunderRush',duration:.2,vx:ax/l*1050,vy:ay/l*1050,damage:turn?27:24,phase:true,canRecast:!turn});p.invuln=Math.max(p.invuln,.2);api.effect(w,'thunderRush',{x:p.x,y:p.y-55,face:p.face,duration:.32});
+      burst(w,c,{kind:'thunderRush',duration:.2,vx:ax/l*1050,vy:ay/l*1050,damage:turn?27:24,phase:true,dodgeProjectiles:true,canRecast:!turn});p.invuln=Math.max(p.invuln,.23);api.effect(w,'thunderRush',{x:p.x,y:p.y-55,face:p.face,duration:.4});
     }
     if(c.key==='e'){
       const candidates=w.platforms.filter(b=>b.active&&b.y<p.y-35&&Math.abs(b.x+b.w/2-p.x)<560).sort((a,b)=>Math.abs(a.x+a.w/2-c.x)+Math.abs(a.y-c.y)-Math.abs(b.x+b.w/2-c.x)-Math.abs(b.y-c.y)),b=candidates[0];
       const tx=b?clamp(c.x,b.x+22,b.x+b.w-22):clamp(p.x+p.face*100,30,w.width-30),ty=b?b.y-5:p.y-180;
       api.effect(w,'thunderTether',{x:p.x,y:p.y-55,toX:tx,toY:ty-12,duration:.4});burst(w,c,{kind:'magnetLeap',duration:.28,vx:(tx-p.x)/.28,vy:(ty-p.y)/.28,phase:true,target:b?{x:tx,y:b.y,platformId:b.id,offsetX:tx-b.x}:null});
     }
-    if(c.key==='r'&&target){api.effect(w,'thunderTether',{x:p.x,y:p.y-60,toX:target.x,toY:target.y-190,duration:.35});teleport(w,p,target.x,Math.min(p.y,target.y-170));burst(w,c,{kind:'thunderDive',duration:.22,vx:0,vy:(target.y-p.y)/.22,phase:true,target});}
+    if(c.key==='r'&&target){
+      const enemy=w.targets.filter(t=>t.hp>0&&Math.abs(t.x-p.x)<560&&Math.hypot(t.x-c.x,t.y-40-c.y)<155).sort((a,b)=>Math.hypot(a.x-c.x,a.y-40-c.y)-Math.hypot(b.x-c.x,b.y-40-c.y))[0];
+      const face=Math.sign((enemy?.x??target.x)-p.x)||p.face;
+      const landing=enemy?(groundTarget(w,clamp(enemy.x-face*54,25,w.width-25),enemy.y-.1)||target):target;
+      p.face=face;p.invuln=Math.max(p.invuln,.29);
+      api.effect(w,'thunderTether',{x:p.x,y:p.y-60,toX:landing.x,toY:landing.y-40,duration:.4});
+      burst(w,c,{kind:'thunderDive',duration:.24,vx:(landing.x-p.x)/.24,vy:(landing.y-p.y)/.24,phase:true,dodgeProjectiles:true,target:landing});
+    }
     api.emit(w,'thunderSkill',{key:c.key});
   }
   if(h==='shadow'){
-    if(c.key==='q'){burst(w,c,{kind:'shadowRush',duration:.17,vx:p.face*1120,vy:0,damage:25,phase:true});p.invuln=Math.max(p.invuln,.21);}
-    if(c.key==='e'&&target){const anchor=groundTarget(w,p.x,p.y);w.roleState.shadowMark={x:p.x,y:p.y,face:p.face,anchor,until:w.time+2};api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target.x,target.y);recast(w,'e');api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});}
+    if(c.key==='q'){burst(w,c,{kind:'shadowRush',duration:.21,vx:p.face*1000,vy:0,damage:25,phase:true,dodgeProjectiles:true});p.invuln=Math.max(p.invuln,.24);api.effect(w,'shadowRush',{x:p.x,y:p.y-55,face:p.face,duration:.5});}
+    if(c.key==='e'&&target){const anchor=groundTarget(w,p.x,p.y);w.roleState.shadowMark={x:p.x,y:p.y,face:p.face,anchor,until:w.time+RECAST_WINDOWS.shadow};api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target.x,target.y);recast(w,'e');api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});}
     if(c.key==='r'&&target)field(w,'shadowStorm',target,{r:190,duration:1.4,delay:.1,castId:c.id});
     api.emit(w,'shadowSkill',{key:c.key});
   }
   if(h==='star'){
-    if(c.key==='q'&&target){const f=field(w,'gravityWell',target,{r:185,duration:2.5,castId:c.id});recast(w,'q',{data:{fieldId:f.id}});}
+    if(c.key==='q'&&target){const f=field(w,'gravityWell',target,{r:185,duration:RECAST_WINDOWS.star+.7,castId:c.id});recast(w,'q',{data:{fieldId:f.id}});}
     if(c.key==='e'&&target){w.portals.push({id:++w.serial,a:{x:p.x,y:p.y,anchor:groundTarget(w,p.x,p.y)},b:{...target,anchor:target},until:w.time+4});api.effect(w,'portalFlash',{x:p.x,y:p.y-55,duration:.5});}
     if(c.key==='r'&&target)field(w,'starCollapse',target,{r:205,duration:1.4,delay:.55,castId:c.id});
     api.emit(w,'starSkill',{key:c.key});
@@ -112,12 +122,12 @@ export function extraBefore(w,dt,api){
     for(const n of [pair.a,pair.b]){const anchor=resolveGroundTarget(w,n.anchor);if(anchor){n.x=anchor.x;n.y=anchor.y;}}
     for(const a of [p,...w.targets,...(w.fox?[w.fox]:[])])if(w.time>=(a.portalAt||0)&&a.hp>0){const entry=[pair.a,pair.b].find(n=>Math.abs(a.x-n.x)<27&&Math.abs(a.y-n.y)<65);if(entry){const exit=entry===pair.a?pair.b:pair.a;a.portalAt=w.time+.75;api.effect(w,'portalFlash',{x:a.x,y:a.y-55,duration:.4});teleport(w,a,clamp(exit.x+(a.face||1)*32,30,w.width-30),exit.y-2);api.effect(w,'portalFlash',{x:a.x,y:a.y-55,duration:.4});api.emit(w,'portalTravel');}}
   }
-  for(const g of w.ghosts)g.age+=dt;w.ghosts=w.ghosts.filter(g=>g.age<.32);
+  for(const g of w.ghosts)g.age+=dt;w.ghosts=w.ghosts.filter(g=>g.age<(g.duration||.65));
 }
 export function extraAfter(w,dt,api){
   const p=w.player,b=p.burst;if(!b)return;b.age+=dt;
   if(b.damage){for(const t of w.targets)if(t.hp>0&&!b.hitIds.includes(t.id)&&segmentBox(p.prevX,p.prevY-50,p.x,p.y-50,{x:t.x-t.w,y:t.y-t.h,w:t.w*2,h:t.h},24)!==null){b.hitIds.push(t.id);api.damage(w,t,b.damage,{school:w.hero,knock:Math.sign(b.vx)*150});if(b.canRecast&&!b.opened){b.opened=true;recast(w,'q');}}}
-  if(w.hero==='shadow'&&(!b.lastGhost||w.time-b.lastGhost>.035)){b.lastGhost=w.time;w.ghosts.push({x:p.x,y:p.y,face:p.face,age:0});}
+  if((w.hero==='shadow'||w.hero==='lightning')&&(!b.lastGhost||w.time-b.lastGhost>.027)){b.lastGhost=w.time;w.ghosts.push({x:p.x,y:p.y,face:p.face,age:0,duration:w.hero==='shadow'?.8:.42,cycle:p.cycle,grounded:p.grounded,pose:targetPose(w)});if(w.ghosts.length>10)w.ghosts.shift();}
   if(w.time>=b.until){
     if(b.kind==='magnetLeap'&&b.target){const t=resolveGroundTarget(w,b.target);if(t)teleport(w,p,t.x,t.y-2);}
     if(b.kind==='thunderDive'){const t=resolveGroundTarget(w,b.target)||b.target;teleport(w,p,t.x,t.y-1);api.area(w,t.x,t.y-40,165,58,{school:'lightning',knock:290});api.effect(w,'thunderImpact',{x:t.x,y:t.y,duration:.85});w.shake=14;w.hitstop=.065;api.emit(w,'thunderImpact');}

@@ -39,7 +39,7 @@ test('fire leap opens one recast, stomp consumes it and preserves cooldown',()=>
   advance(w,1);assert.ok(w.effects.some(e=>e.kind==='fireZone'));assert.equal(w.player.stomp,false);
 });
 test('expired recast cannot bypass cooldown',()=>{
-  const w=createWorld();requestCast(w,'e');advance(w,1.7);assert.equal(w.player.recast,null);assert.equal(requestCast(w,'e'),false);
+  const w=createWorld();requestCast(w,'e');advance(w,3);assert.equal(w.player.recast,null);assert.equal(requestCast(w,'e'),false);
 });
 test('eruption damages terrain, bridge rebuild restores collision',()=>{
   const w=createWorld(),bridge=w.platforms.find(p=>p.id==='bridge');

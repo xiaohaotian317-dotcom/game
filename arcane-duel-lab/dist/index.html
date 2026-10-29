@@ -7,7 +7,7 @@
   <title>秘境决斗 · 三境机关试炼</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="scene-view.css?v=20261029-roster6">
+  <link rel="stylesheet" href="scene-view.css?v=20261029-combat7">
 </head>
 <body>
   <svg class="svg-defs" aria-hidden="true"><defs>
@@ -44,7 +44,7 @@
     </nav>
     <div class="play-layout">
       <section class="arena-shell">
-        <canvas id="arena" width="1440" height="800" tabindex="0" aria-label="横版动作试炼场。A D 移动，空格二段跳，鼠标瞄准并按住左键攻击，Q E R 技能，Shift 冲刺。"></canvas>
+        <canvas id="arena" width="1440" height="800" tabindex="0" aria-label="横版动作试炼场。A D 移动，空格二段跳，鼠标瞄准并按住左键攻击，F E R 技能，Shift 冲刺。"></canvas>
         <div class="arena-heading"><span class="eyebrow" id="scene-english">MOONLIT RUINS</span><strong id="scene-name">月光遗迹 · 断桥与月镜</strong><span id="scene-clock" aria-label="试炼计时">00:00</span></div>
         <canvas id="hero-hud-portrait" class="hud-portrait" width="80" height="80" aria-hidden="true"></canvas>
         <div class="life-panel"><span>生命 <b id="hp-text">120 / 120</b></span><div class="life-track"><div id="hp-fill"></div></div></div>
@@ -64,18 +64,18 @@
         <div class="state-row"><span class="status-dot"></span><span>当前动作</span><b id="action-state">待机</b></div>
         <section class="passive-card"><span class="section-label">职业被动</span><h3 id="passive-name">余烬</h3><p id="passive-desc"></p><div id="passive-flash" class="passive-light"></div></section>
         <section class="practice"><div class="section-title"><span class="section-label">试炼目标</span><small id="goals-count">0 / 5</small></div><ul id="goals">
-          <li data-goal="jump"><i></i>完成一次二段跳</li><li data-goal="skill"><i></i>施放 Q 技能</li><li data-goal="recast"><i></i>接上一次二段技能</li><li data-goal="hit"><i></i>命中木桩，触发被动</li><li data-goal="terrain"><i></i>击碎木桥或借力弹跳花</li>
+          <li data-goal="jump"><i></i>完成一次二段跳</li><li data-goal="skill"><i></i>施放 F 技能</li><li data-goal="recast"><i></i>接上一次二段技能</li><li data-goal="hit"><i></i>命中木桩，触发被动</li><li data-goal="terrain"><i></i>击碎木桥或借力弹跳花</li>
         </ul></section>
         <div class="training-controls"><button id="moving-button" class="toggle" aria-pressed="false"><i></i>木桩移动</button><button id="counter-button" class="toggle" aria-pressed="false"><i></i>木桩反击</button><button id="slow-button" class="toggle" aria-pressed="false"><i></i>慢动作检视 <span>0.5×</span></button><button id="freeze-button" class="toggle" aria-pressed="false"><i></i>定格检视 <kbd>V</kbd></button></div>
         <div class="reset-actions"><button id="repair-button">修复木桥</button><button id="reset-button">重置试炼 <kbd>N</kbd></button></div>
       </aside></details>
     </div>
     <section class="bottom-panel">
-      <div class="cast-help"><span class="eyebrow">COMBAT FLOW</span><strong id="combo-title">跃起，落烬。</strong><p id="combo-help">E 焰跃起跳，1.5 秒内再按 E 下砸。</p></div>
-      <div class="movement-help"><div><kbd>A</kbd><kbd>D</kbd><span>移动</span><kbd>SPACE</kbd><span>二段跳</span></div><div><kbd>S</kbd><span>＋</span><kbd>SPACE</kbd><span>下穿平台</span></div><div><kbd>F</kbd><span>近处机关</span><span class="tip-dot">·</span><span>鼠标瞄准</span></div></div>
+      <div class="cast-help"><span class="eyebrow">COMBAT FLOW</span><strong id="combo-title">跃起，落烬。</strong><p id="combo-help">E 焰跃起跳，2.5 秒内再按 E 下砸。</p></div>
+      <div class="movement-help"><div><kbd>A</kbd><kbd>D</kbd><span>移动</span><kbd>SPACE</kbd><span>二段跳</span></div><div><kbd>S</kbd><span>＋</span><kbd>SPACE</kbd><span>下穿平台</span></div><div><kbd>G</kbd><span>近处机关</span><span class="tip-dot">·</span><span>鼠标瞄准</span></div></div>
     </section>
     <footer class="footer"><span><i></i>连续施法与地形反馈 <a class="inspect-link" href="characters.html">放大查看角色 ↗</a></span><span>六职业动作试炼版本</span><span id="notice" aria-live="polite">先试试二段跳，再向木桩施法。</span></footer>
   </main>
-  <script type="module" src="src/app.mjs?v=20261029-roster6"></script>
+  <script type="module" src="src/app.mjs?v=20261029-combat7"></script>
 </body>
 </html>

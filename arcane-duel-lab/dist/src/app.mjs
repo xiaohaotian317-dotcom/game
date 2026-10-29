@@ -1,21 +1,22 @@
-import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-roster6';
-import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-roster6';
-import {SCENES} from './scenes.mjs?v=20261029-roster6';
-import {sceneStatus} from './scene-mechanics.mjs?v=20261029-roster6';
-import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-roster6';
-import {Sound} from './audio.mjs?v=20261029-roster6';
-import {worldPoint,cameraView} from './camera.mjs?v=20261029-roster6';
+import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261029-combat7';
+import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-combat7';
+import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-combat7';
+import {SCENES} from './scenes.mjs?v=20261029-combat7';
+import {sceneStatus} from './scene-mechanics.mjs?v=20261029-combat7';
+import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-combat7';
+import {Sound} from './audio.mjs?v=20261029-combat7';
+import {worldPoint,cameraView} from './camera.mjs?v=20261029-combat7';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
 let selectedScene=SCENES[initialParams.get('scene')]?initialParams.get('scene'):'moon';
 let world=createWorld(HEROES[initialParams.get('hero')]?initialParams.get('hero'):SCENES[selectedScene].defaultHero,selectedScene),renderer,mode='title',paused=false,pointerDown=false,pointerUV=null,aim={x:1120,y:500},last=performance.now(),accumulator=0,uiClock=0;
 const descriptions={
-  fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'向前喷火反冲起跳。1.5 秒内再按 E 施放「落烬」，向下砸落并留下燃烧区。',r:'在鼠标下方第一个台面标记落点，约 1 秒后陨石命中；可穿过上层平台。'},
-  nature:{attack:'向瞄准方向弹出荆棘种子，碰墙停止，命中迸发枝叶。',q:'沿脚下台面催生根须，可穿过障碍束缚敌人，适合接木灵鹿角跃冲撞。',e:'播种召唤木灵鹿。2 秒内再按 E 指定角跃冲撞方向，命中触发共生恢复。',r:'在鼠标下方第一个可站立台面长出古树，形成两处枝台。树根附近周期恢复生命。'}
+  fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'向前喷火反冲起跳。2.5 秒内再按 E 施放「落烬」，向下砸落并留下燃烧区。',r:'在鼠标下方第一个台面标记落点，约 1 秒后陨石命中；可穿过上层平台。'},
+  nature:{attack:'向瞄准方向弹出荆棘种子，碰墙停止，命中迸发枝叶。',q:'沿脚下台面催生根须，可穿过障碍束缚敌人，适合接木灵鹿角跃冲撞。',e:'播种召唤木灵鹿。3.5 秒内再按 E 指定角跃冲撞方向，命中触发共生恢复。',r:'在鼠标下方第一个可站立台面长出古树，形成两处枝台。树根附近周期恢复生命。'}
 };
 for(const [h,data] of Object.entries(EXTRA_HEROES))descriptions[h]=data.descriptions;
-const slotKeys=['attack','q','e','dash','r'],keyLabels={attack:'LMB',q:'Q',e:'E',r:'R',dash:'SHIFT'};
+const slotKeys=['attack','q','e','dash','r'],keyLabels=KEY_LABELS;
 function positionTitleButton(){
   const r=$('#title-screen').getBoundingClientRect();if(!r.width||!r.height)return;
   const width=Math.min(r.width,r.height*1672/941),height=width*941/1672,b=$('#start-button');
@@ -29,7 +30,7 @@ function buildHero(){
   $('#passive-name').textContent=h.passive;$('#passive-desc').textContent=h.passiveText;
   if(renderer)renderer.portrait($('#hero-hud-portrait'),world.hero);
   $('#combo-title').textContent=h.comboTitle||(world.hero==='fire'?'跃起，落烬。':'萌芽，与森灵同行。');
-  $('#combo-help').textContent=h.comboHelp||(world.hero==='fire'?'E 焰跃起跳，1.5 秒内再按 E 下砸。':'E 召唤木灵鹿，2 秒内再按 E 指挥角跃冲撞。');
+  $('#combo-help').textContent=h.comboHelp||(world.hero==='fire'?'E 焰跃起跳，2.5 秒内再按 E 下砸。':'E 召唤木灵鹿，3.5 秒内再按 E 指挥角跃冲撞。');
   $$('.hero-button').forEach(b=>{b.classList.toggle('active',b.dataset.hero===world.hero);b.setAttribute('aria-pressed',String(b.dataset.hero===world.hero));});
   $('#hotbar').innerHTML=slotKeys.map(key=>{
     const s=h.skills[key]||{name:'冲刺',icon:'dash',cd:1.1};
@@ -75,7 +76,7 @@ function updateUI(){
   });
   const rc=p.recast;$('#recast-banner').hidden=!rc;
   const summon=$('#summon-status');summon.hidden=!world.fox;if(world.fox)summon.textContent='木灵鹿  '+Math.ceil(world.fox.hp)+' / '+world.fox.maxHp+' HP · '+Math.max(0,world.fox.until-world.time).toFixed(1)+'s';
-  if(rc){$('#recast-banner kbd').textContent=rc.key.toUpperCase();$('#recast-name').textContent=rc.name+'可施放';$('#recast-clock').textContent=Math.max(0,rc.until-world.time).toFixed(1)+'s';}
+  if(rc){$('#recast-banner kbd').textContent=keyLabels[rc.key];$('#recast-name').textContent=rc.name+'可施放';$('#recast-clock').textContent=Math.max(0,rc.until-world.time).toFixed(1)+'s';}
   const goals=completed[world.hero];$$('#goals li').forEach(li=>li.classList.toggle('done',goals.has(li.dataset.goal)));$('#goals-count').textContent=goals.size+' / 5';
 }
 let selectionId=0;
@@ -106,7 +107,7 @@ canvas.addEventListener('pointermove',point);canvas.addEventListener('pointerdow
 window.addEventListener('pointerup',()=>pointerDown=false);canvas.addEventListener('pointercancel',()=>pointerDown=false);canvas.addEventListener('contextmenu',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
   if(mode==='title'){if(e.code==='Enter'&&!$('#start-button').disabled)start();return;}
-  if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','ShiftLeft','ShiftRight','KeyQ','KeyE','KeyR','KeyJ'].includes(e.code))e.preventDefault();
+  if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','ShiftLeft','ShiftRight','KeyF','KeyE','KeyR','KeyJ','KeyG'].includes(e.code))e.preventDefault();
   if(e.repeat)return;
   if(e.code==='KeyP'||e.code==='Escape'){setPause(!paused);return;}
   if(e.code==='KeyV'){freezeFrame();return;}
@@ -115,8 +116,8 @@ window.addEventListener('keydown',e=>{
   keys.add(e.code);
   if(['Space','KeyW','ArrowUp'].includes(e.code))actions.push('jump');
   if(['ShiftLeft','ShiftRight'].includes(e.code))actions.push('dash');
-  if(e.code==='KeyQ')actions.push('q');if(e.code==='KeyE')actions.push('e');if(e.code==='KeyR')actions.push('r');
-  if(e.code==='KeyF'){if(!interactNearest(world))notice('靠近机关按 F，或瞄准机关射击。');consumeEvents();}
+  const skill=skillForCode(e.code);if(skill)actions.push(skill);
+  if(e.code===INTERACT_CODE){if(!interactNearest(world))notice('靠近机关按 G，或瞄准机关射击。');consumeEvents();}
   if(e.code==='KeyN')choose(world.hero);
 });
 window.addEventListener('keyup',e=>keys.delete(e.code));
@@ -127,7 +128,7 @@ $('#back-button').addEventListener('click',()=>{mode='title';$('#title-screen').
 $('#pause-button').addEventListener('click',()=>setPause(!paused));$('#resume-button').addEventListener('click',()=>setPause(false));
 $('#freeze-button').addEventListener('click',freezeFrame);
 $$('.hero-button').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.hero)));
-$$('.scene-picker button').forEach(b=>b.addEventListener('click',()=>{selectedScene=b.dataset.scene;choose(world.hero);const url=new URL(location.href);url.searchParams.set('scene',selectedScene);url.searchParams.set('play','1');history.replaceState(null,'',url);notice('已进入'+SCENES[selectedScene].name+'。射击机关或靠近后按 F。');}));
+$$('.scene-picker button').forEach(b=>b.addEventListener('click',()=>{selectedScene=b.dataset.scene;choose(world.hero);const url=new URL(location.href);url.searchParams.set('scene',selectedScene);url.searchParams.set('play','1');history.replaceState(null,'',url);notice('已进入'+SCENES[selectedScene].name+'。射击机关或靠近后按 G。');}));
 $('#reset-button').addEventListener('click',()=>choose(world.hero));
 $('#repair-button').addEventListener('click',()=>{if(selectedScene==='moon')repair(world);else choose(world.hero);notice('地图机关已复原。');canvas.focus({preventScroll:true});});
 for(const [id,field] of [['moving','moving'],['counter','counterattack'],['slow','slow']]){
@@ -146,8 +147,8 @@ function consumeEvents(){
     if(e.type==='hit')goals.add('hit');
     if(e.type==='bridge'||e.type==='spring')goals.add('terrain');
     if(e.type==='bridge')notice('木桥已破坏！可以下落绕路或用「修复木桥」重新练习。');
-    if(e.type==='summon')notice('木灵鹿已出现，2 秒内再按 E 指定角跃冲撞方向。');
-    if(e.type==='leap')notice('焰跃已释放，1.5 秒内再次按 E 接落烬。');
+    if(e.type==='summon')notice('木灵鹿已出现，3.5 秒内再按 E 指定角跃冲撞方向。');
+    if(e.type==='leap')notice('焰跃已释放，2.5 秒内再次按 E 接落烬。');
     if(e.type==='hurt')notice('受到反击。试试用 Shift 冲刺穿过来袭投射物。');
     if(e.type==='lift')notice('升降月台已启动，站在台面上可以一起升降。');
     if(e.type==='mirror')notice('月镜已转向，投射物会按镜面方向折射。');

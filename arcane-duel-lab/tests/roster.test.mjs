@@ -37,7 +37,7 @@ test('magnet leap lands on its visible upper anchor and thunder dive ignores int
 });
 test('shadow return preserves life and cooldown, consumes mark and expires after its window',()=>{
   const w=flat('shadow');w.player.hp=71;requestCast(w,'e',600,650);advance(w,.55);assert.ok(Math.abs(w.player.x-600)<1);const cd=w.player.cooldowns.e;assert.ok(requestCast(w,'e'));advance(w,.25);assert.ok(Math.abs(w.player.x-200)<1);assert.equal(w.player.hp,71);assert.ok(w.player.cooldowns.e<cd&&w.player.cooldowns.e>6);assert.equal(w.roleState.shadowMark,null);assert.equal(w.player.recast,null);
-  const expired=flat('shadow');requestCast(expired,'e',600,650);advance(expired,2.5);assert.equal(expired.player.recast,null);assert.equal(requestCast(expired,'e'),false);
+  const expired=flat('shadow');requestCast(expired,'e',600,650);advance(expired,4);assert.equal(expired.player.recast,null);assert.equal(requestCast(expired,'e'),false);
 });
 test('shadow melee needs proximity and sight; backstab uses the target facing and cooldown',()=>{
   const w=flat('shadow');w.targets[0].x=260;w.targets[0].face=1;requestCast(w,'attack',300,650);advance(w,.3);assert.equal(w.targets[0].hp,215);damage(w,w.targets[0],18,{basic:true,school:'shadow'});assert.equal(w.targets[0].hp,197);
@@ -53,7 +53,7 @@ test('star stacks only once per cast even when two fields alternate damage ticks
   const w=flat('star'),t=w.targets[0];for(let i=0;i<4;i++){damage(w,t,1,{school:'star',castId:10,impact:false});damage(w,t,1,{school:'star',castId:20,impact:false});}assert.equal(w.player.stars,2);damage(w,t,1,{school:'star',castId:30,impact:false});assert.equal(w.player.stars,3);requestCast(w,'attack',420,650);advance(w,.18);assert.equal(w.player.stars,0);assert.ok(w.projectiles[0].homing);
 });
 test('all ranged new basics, including homing stars, stop at an actual wall',()=>{
-  for(const h of ['frost','lightning','star']){const w=flat(h);w.player.stars=3;w.obstacles=[{x:320,y:450,w:12,h:254}];requestCast(w,'attack',420,650);advance(w,.8);assert.equal(w.targets[0].hp,240);assert.equal(w.projectiles.length,0);assert.ok(w.events.some(e=>e.type==='wallHit'));}
+  for(const h of ['frost','star']){const w=flat(h);w.player.stars=3;w.obstacles=[{x:320,y:450,w:12,h:254}];requestCast(w,'attack',420,650);advance(w,.8);assert.equal(w.targets[0].hp,240);assert.equal(w.projectiles.length,0);assert.ok(w.events.some(e=>e.type==='wallHit'));}
 });
 test('ground fields disappear when their supporting deck is destroyed',()=>{
   const w=flat('frost');w.platforms.push({id:'support',x:320,y:500,w:220,type:'wood',active:true});requestCast(w,'r',400,450);advance(w,.5);assert.equal(w.fields[0].y,500);w.platforms[1].active=false;advance(w,.02);assert.equal(w.fields.length,0);

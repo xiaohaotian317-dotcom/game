@@ -1,10 +1,11 @@
-import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261029-roster6';
-import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261029-roster6';
-import {castMuzzle} from './character-rig.mjs?v=20261029-roster6';
-import {applyScene} from './scenes.mjs?v=20261029-roster6';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-roster6';
-import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261029-roster6';
-import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261029-roster6';
+import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261029-combat7';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat7';
+import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261029-combat7';
+import {castMuzzle} from './character-rig.mjs?v=20261029-combat7';
+import {applyScene} from './scenes.mjs?v=20261029-combat7';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat7';
+import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261029-combat7';
+import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261029-combat7';
 export const WIDTH=1440, HEIGHT=800, FLOOR=704, STEP=1/120;
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
@@ -84,7 +85,7 @@ function release(w,c) {
     if(c.key==='q'&&floor){effect(w,'eruption',{x:floor.x,y:floor.y,anchor:floor,delay:.55,duration:1.7,triggered:false});emit(w,'charge');}
     if(c.key==='e'){
       p.vx=p.face*390;p.vy=-720;p.grounded=false;p.jumps=Math.max(1,p.jumps);
-      p.recast={key:'e',name:'落烬',icon:'stomp',until:w.time+1.5,start:w.time,window:1.5};
+      p.recast={key:'e',name:'落烬',icon:'stomp',until:w.time+RECAST_WINDOWS.fire,start:w.time,window:RECAST_WINDOWS.fire};
       effect(w,'fireLeap',{x:p.x,y:p.y-20,face:p.face,duration:.6});emit(w,'leap');
     }
     if(c.key==='r'&&floor){
@@ -97,7 +98,7 @@ function release(w,c) {
     if(c.key==='e'){
       w.fox={x:p.x+p.face*65,y:p.y,prevX:p.x+p.face*65,prevY:p.y,vx:0,vy:-180,w:36,h:88,hp:80,maxHp:80,hit:0,invuln:0,attackPose:0,jumps:0,grounded:false,platformId:null,
         until:w.time+10,attackAt:0,healAt:0,commandUntil:0,leap:false,face:p.face,cycle:0};
-      p.recast={key:'e',name:'角跃令',icon:'fox',until:w.time+2,start:w.time,window:2};
+      p.recast={key:'e',name:'角跃令',icon:'fox',until:w.time+RECAST_WINDOWS.nature,start:w.time,window:RECAST_WINDOWS.nature};
       effect(w,'sprout',{x:w.fox.x,y:w.fox.y,duration:.75});emit(w,'summon');
     }
     if(c.key==='r'&&floor){
@@ -180,7 +181,8 @@ function updateProjectiles(w,dt){
     if(s.kind==='seed')s.vy+=dt*55;
     const wall=s.terrainCollision===false?null:firstTerrainHit(w,s.px,s.py,s.x,s.y,s.r);
     let contact=wall?{...wall,type:'wall'}:null;
-    const actors=s.owner==='enemy'?[w.player,...(w.fox?[w.fox]:[])]:w.targets.filter(t=>t.hp>0&&t.deadUntil<=w.time);
+    const evading=w.player.burst?.dodgeProjectiles&&w.time<w.player.burst.until;
+    const actors=s.owner==='enemy'?[...(!evading?[w.player]:[]),...(w.fox?[w.fox]:[])]:w.targets.filter(t=>t.hp>0&&t.deadUntil<=w.time);
     for(const a of actors){const t=segmentBox(s.px,s.py,s.x,s.y,{x:a.x-a.w,y:a.y-a.h,w:a.w*2,h:a.h},s.r);if(t!==null&&(!contact||t<contact.t))contact={t,type:'actor',actor:a};}
     const m=w.mirror,mirrorT=m.enabled!==false&&s.owner==='player'&&s.age>.05&&s.mirrorAt!==m.angle?segmentBox(s.px,s.py,s.x,s.y,{x:m.x-17,y:m.y-29,w:34,h:58},s.r):null;
     if(mirrorT!==null&&(!contact||mirrorT<contact.t))contact={t:mirrorT,type:'mirror'};

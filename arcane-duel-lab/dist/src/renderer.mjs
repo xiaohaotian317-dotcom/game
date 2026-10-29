@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter.mjs?v=20261029-roster6';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-roster6';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-roster6';
-import {ScenePainter} from './scene-painter.mjs?v=20261029-roster6';
-import {CombatPainter} from './combat-painter.mjs?v=20261029-roster6';
-import {cameraView,updateCamera} from './camera.mjs?v=20261029-roster6';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat7';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat7';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat7';
+import {ScenePainter} from './scene-painter.mjs?v=20261029-combat7';
+import {CombatPainter} from './combat-painter.mjs?v=20261029-combat7';
+import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat7';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};
@@ -31,12 +31,14 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
   const sceneBounds=scenes?await (await fetch('assets/scenes/prop-bounds-v1.json')).json():null;
   const combatBounds=await (await fetch('assets/combat/bounds-v2.json')).json();
   const rosterBounds=await (await fetch('assets/heroes/bounds-v1.json')).json();
+  const refinementBounds=await (await fetch('assets/heroes/refinement-bounds-v2.json')).json();
+  for(const [hero,bounds] of Object.entries(refinementBounds)){rosterBounds[hero].fx=bounds.fx;if(bounds.core)rosterBounds[hero].coreV2=bounds.core;}
   return {...images,rosterBounds,bounds:await response.json(),coreBounds:await coreResponse.json(),sceneBounds,combatBounds};
 }
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
   assets.pending||={};
-  return assets.pending[hero]||=(async()=>{try{const [rig,fx]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v1.png')]);assets[hero]=rig;assets[hero+'Core']=rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
+  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
   constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);}
@@ -65,14 +67,14 @@ export class Renderer {
     c.translate(start.x,start.y);c.rotate(a.angle);c.scale(a.scale,a.scale);
     c.drawImage(this.assets[hero],b.x,b.y,b.w,b.h,-a.anchor.x,-a.anchor.y,b.w,b.h);c.restore();
   }
-  hero(w,alpha,dt){
+  hero(w,alpha,dt,{poseOverride=null}={}){
     const c=this.ctx,p=w.player,hero=w.hero;
-    const desired=coherentPose(w),o=blendPose(this.poses[hero],desired,dt,p.cast?.key==='r');
+    const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[hero],desired,dt,p.cast?.key==='r');
     const x=lerp(p.prevX,p.x,alpha),y=lerp(p.prevY,p.y,alpha);
-    ellipse(c,x,y+3,27,6,'rgba(1,4,12,.4)');
+    if(!poseOverride)ellipse(c,x,y+3,27,6,'rgba(1,4,12,.4)');
     if(p.passiveGlow>0)glow(c,x,y-60,80,HEROES[hero].color,p.passiveGlow*.16);
     c.save();c.translate(x,y);c.scale(p.face*(w.characterScale||1),w.characterScale||1);c.scale(o.sx,o.sy);
-    if(p.invuln>0&&Math.sin(w.time*45)>.8)c.globalAlpha=.7;
+    if(p.invuln>0&&Math.sin(w.time*45)>.8)c.globalAlpha*=.7;
     const core=this.assets.coreBounds[hero],r=RIGS[hero],frame=bodyFrame(hero,o,core);
     this.cape(c,hero,o,w.time,p.vx*p.face,frame);
     const leg=(a,knee,back)=>{
@@ -230,7 +232,7 @@ export class Renderer {
     for(const t of w.targets)this.dummy(w,t);
     for(const e of w.effects)if(['roots','fireZone','treeBirth'].includes(e.kind))this.particles(w,e);
     this.fox(w);
-    for(const g of w.ghosts||[]){c.save();c.globalAlpha=(1-g.age/.32)*.2;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face}},1,0);c.restore();}
+    for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
     this.hero(w,alpha,dt);this.roster.passive(w);
     for(const s of w.projectiles){
       if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
