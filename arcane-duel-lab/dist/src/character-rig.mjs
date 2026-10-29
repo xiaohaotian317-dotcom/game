@@ -11,7 +11,7 @@ export const RIGS={
 };
 Object.assign(RIGS,{
   frost:{coreHeight:98,aspect:387/536,restLean:.045,upperArmWidth:14,hip:[.69,.86],nearShoulder:[.39,.46],farShoulder:[.91,.46],portrait:[.57,.07,.36,.30],upperArm:{start:[.64,.05],end:[.59,.94]},forearm:{start:[.52,.05],end:[.70,.92]},thigh:{start:[.51,.07],end:[.70,.93]},shin:{start:[.22,.06],end:[.47,.94]},weapon:{grip:[.5,.73],tip:[.5,.04],height:87,aspect:72/403},cape:{attach:'waist',anchor:[.63,.06],height:70,widthScale:.76,flip:1}},
-  lightning:{coreHeight:98,aspect:331/515,restLean:.10,upperArmWidth:18,hip:[.54,.82],nearShoulder:[.12,.45],farShoulder:[.86,.48],portrait:[.52,.08,.42,.32],upperArm:{start:[.48,.22],end:[.56,.94]},forearm:{start:[.50,.05],end:[.61,.94]},thigh:{start:[.21,.10],end:[.64,.91]},shin:{start:[.48,.06],end:[.49,.92]},weapon:{skip:true,grip:[.5,.9],tip:[.5,.1],height:20,aspect:.5},cape:{attach:'waist',anchor:[.61,.06],height:60,widthScale:.7,flip:1}},
+  lightning:{coreHeight:98,aspect:331/515,restLean:.07,upperArmWidth:18,hip:[.54,.82],nearShoulder:[.12,.45],farShoulder:[.86,.48],portrait:[.42,.065,.49,.30],upperArm:{start:[.48,.22],end:[.56,.94]},forearm:{start:[.50,.05],end:[.61,.94]},thigh:{start:[.21,.10],end:[.64,.91]},shin:{start:[.48,.06],end:[.49,.92]},weapon:{skip:true,grip:[.5,.9],tip:[.5,.1],height:20,aspect:.5},cape:{attach:'waist',anchor:[.61,.06],height:60,widthScale:.7,flip:1}},
   shadow:{coreHeight:98,aspect:373/499,restLean:.13,upperArmWidth:15,hip:[.57,.86],nearShoulder:[.40,.55],farShoulder:[.86,.55],portrait:[.62,.13,.32,.30],upperArm:{start:[.55,.15],end:[.62,.94]},forearm:{start:[.54,.06],end:[.63,.94]},thigh:{start:[.46,.09],end:[.57,.94]},shin:{start:[.39,.06],end:[.41,.94]},weapon:{grip:[.48,.79],tip:[.13,.07],height:55,aspect:142/461},cape:{anchor:[.76,.11],height:86,widthScale:.66,flip:1}},
   star:{coreHeight:98,aspect:301/518,restLean:.04,upperArmWidth:15,hip:[.66,.87],nearShoulder:[.24,.55],farShoulder:[.86,.55],portrait:[.48,.06,.46,.30],upperArm:{start:[.43,.28],end:[.49,.93]},forearm:{start:[.41,.08],end:[.72,.92]},thigh:{start:[.47,.08],end:[.59,.94]},shin:{start:[.39,.07],end:[.38,.93]},weapon:{grip:[.50,.93],tip:[.50,.40],height:54,aspect:292/373},cape:{attach:'waist',anchor:[.65,.06],height:74,widthScale:.65,flip:1}}
 });
@@ -63,7 +63,7 @@ export function targetPose(w){
   if(['frost','lightning','shadow','star'].includes(w.hero)){
     const c=p.cast,s=c?smooth(c.age/c.releaseAt)*(1-smooth((c.age-c.releaseAt)/(c.duration-c.releaseAt))):0;
     if(w.hero==='frost'){o.armA=lerp(o.armA,.38,s);o.elbowA=lerp(o.elbowA,c?.key==='r'?1.8:1.2,s);o.weapon=lerp(o.weapon,.04,s);o.lean=RIGS.frost.restLean+v*.055+s*.035;}
-    if(w.hero==='lightning'){o.armA=lerp(.35,1.45,s);o.elbowA=lerp(1.9,1.55,s);o.armB=.25;o.elbowB=2.0;o.lean=.10+v*.11+s*.08;o.weapon=0;}
+    if(w.hero==='lightning'){o.armA=lerp(.35,1.45,s);o.elbowA=lerp(1.9,1.55,s);o.armB=.25;o.elbowB=2.0;o.lean=.07+v*.08+s*.04;o.weapon=0;}
     if(w.hero==='shadow'){o.bob+=3+v*2;o.lean=.13+v*.12+s*.06;o.armA=lerp(.22,1.3,s);o.elbowA=lerp(.75,1.7,s);o.armB=.05;o.elbowB=.8;o.weapon=lerp(.5,1.05,s);}
     if(w.hero==='star'){o.armA=lerp(.5,.9,s);o.elbowA=lerp(1.25,1.5,s);o.weapon=.08;o.bob-=Math.sin(t*2.5)*.5;o.lean=.04+v*.045;o.armB=.05;o.elbowB=.6;}
     if(!p.grounded){
@@ -105,6 +105,7 @@ export function partTransform(bounds,anchors,start,end){
 export function armChain(shoulder,a,b,bodyAngle=0){const elbow=jointEnd(shoulder,28,a-bodyAngle),hand=jointEnd(elbow,29,b-bodyAngle);return{shoulder,elbow,hand};}
 export function weaponTip(hero,hand,angle){
   const r=RIGS[hero].weapon,ratio=r.aspect||(hero==='fire'?120/422:134/423);
+  if(r.skip)return {...hand};
   const q=rotatePoint({x:(r.tip[0]-r.grip[0])*r.height*ratio,y:(r.tip[1]-r.grip[1])*r.height},angle);
   return{x:hand.x+q.x,y:hand.y+q.y};
 }

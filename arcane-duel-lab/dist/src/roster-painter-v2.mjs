@@ -1,4 +1,4 @@
-import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261029-combat7';
+import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261029-combat8';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),ease=v=>1-Math.pow(1-clamp(v,0,1),3);
 const colors={frost:'#a9e9ff',lightning:'#ffe191',shadow:'#c6a5ff',star:'#d2bbff'};
 function ring(c,x,y,rx,ry,color,width=2,rot=0){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.ellipse(x,y,Math.max(1,rx),Math.max(1,ry),rot,0,TAU);c.stroke();}
@@ -45,7 +45,7 @@ export class RosterPainter{
   effect(w,e){const c=this.c,t=clamp(e.age/e.duration,0,1),fade=1-t,k=e.kind;let hero;
     if(k.startsWith('frost')||k==='iceShatter')hero='frost';else if(k.startsWith('lightning')||k.startsWith('thunder')||k==='electricBurst')hero='lightning';else if(k.startsWith('shadow'))hero='shadow';else if(k.startsWith('star')||k==='portalFlash')hero='star';else return false;
     c.save();c.globalAlpha=Math.min(1,e.age/.025)*Math.pow(fade,.75);const color=colors[hero],clock=w.fxTime||w.time;
-    if(k==='thunderPunch'){c.save();c.translate(e.x,e.y);c.scale(e.face||1,1);this.sprite(hero,0,43,0,156,91,-.05+t*.15,.85);for(let i=0;i<5;i++)this.bolt(-12,12,90+noise(i)*15,(i-2)*13,clock,(e.id||0)+i,1.6);star(c,94,-3,9*fade,'#fff5d4',t);c.restore();}
+    if(k==='thunderPunch'){const socket=e.attach==='fist'&&this.punchSocket?this.punchSocket:e;c.save();c.translate(socket.x,socket.y);c.scale(socket.face||1,1);this.sprite(hero,0,45,0,132,70,-.05+t*.15,.85);for(let i=0;i<5;i++)this.bolt(0,(i-2)*1.5,90+noise(i)*15,(i-2)*10,clock,(e.id||0)+i,1.6);star(c,0,0,6*fade,'#fff9e8',t);star(c,94,-3,9*fade,'#fff5d4',t);c.restore();}
     else if(k==='thunderTether'){this.bolt(e.x,e.y,e.toX,e.toY,clock,e.id,2);this.sprite(hero,3,e.toX,e.toY,46,57,0,.8);}
     else if(k==='thunderImpact'){this.sprite(hero,2,e.x,e.y-145,190,315,0,Math.min(1,fade*2));this.sprite(hero,1,e.x,e.y-35,260*(.7+t),205);for(let i=0;i<8;i++){const a=i*TAU/8,rr=60+t*105;this.bolt(e.x,e.y-28,e.x+Math.cos(a)*rr,e.y-28+Math.sin(a)*rr*.48,clock,e.id+i,1.8);}ring(c,e.x,e.y,35+ease(t)*155,9+ease(t)*23,'#fff2bf',2.6);}
     else if(k==='shadowSlash')this.slash(e,t);

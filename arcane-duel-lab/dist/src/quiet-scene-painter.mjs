@@ -1,5 +1,5 @@
-import {ScenePainter as DetailedPainter} from './scene-painter.mjs?v=20261029-combat7';
-import {hammerPosition} from './scene-mechanics.mjs?v=20261029-combat7';
+import {ScenePainter as DetailedPainter} from './scene-painter.mjs?v=20261029-combat8';
+import {hammerPosition} from './scene-mechanics.mjs?v=20261029-combat8';
 const TAU=Math.PI*2;
 const PALETTE={moon:{body:'#374650',edge:'#72818a',low:'#28353f'},lava:{body:'#423b44',edge:'#82747a',low:'#302d36'},garden:{body:'#3b4d46',edge:'#798c7c',low:'#2a3c37'}};
 function oval(c,x,y,rx,ry,fill){c.fillStyle=fill;c.beginPath();c.ellipse(x,y,rx,ry,0,0,TAU);c.fill();}

@@ -5,6 +5,8 @@ import {createWorld,requestCast,step,STEP} from '../dist/src/simulation.mjs';
 import {KEY_LABELS,skillForCode,INTERACT_CODE,RECAST_WINDOWS} from '../dist/src/controls.mjs';
 import {lightningPath,shadowSlashShape} from '../dist/src/vfx-geometry.mjs';
 import {RosterPainter} from '../dist/src/roster-painter-v2.mjs';
+import {Renderer} from '../dist/src/renderer.mjs';
+import {basePose,castMuzzle} from '../dist/src/character-rig.mjs';
 function flat(hero){const w=createWorld(hero);w.platforms=w.platforms.filter(p=>p.id==='ground');w.obstacles=[];w.mirror.enabled=false;w.spring.enabled=false;Object.assign(w.player,{x:200,prevX:200,y:704,prevY:704});w.targets=w.targets.slice(0,1);Object.assign(w.targets[0],{x:275,y:704,prevX:275,prevY:704,spawnX:275,spawnY:704});return w;}
 function advance(w,s,input={}){for(let i=0;i<Math.ceil(s/STEP);i++)step(w,STEP,input);}
 function enemyShot(w){const p=w.player;w.projectiles.push({id:999,kind:'enemy',x:p.x+30,y:p.y-55,px:p.x+30,py:p.y-55,vx:-2400,vy:0,age:0,life:2,damage:10,r:5,owner:'enemy'});}
@@ -52,4 +54,16 @@ test('slash leading edge and both hand-drawn arcs mirror to the actor forward si
 });
 test('procedural lightning stays attached at both ends, has branches to animate and never returns NaN',()=>{
   for(const point of [[0,0,0,0],[10,30,110,80],[20,50,-80,-300]]){const a=lightningPath(...point,1.0,7),b=lightningPath(...point,1.1,7);assert.deepEqual(a[0],point.slice(0,2));assert.ok(Math.abs(a.at(-1)[0]-point[2])<1e-8);assert.ok(Math.abs(a.at(-1)[1]-point[3])<1e-8);assert.ok(a.flat().every(Number.isFinite));if(point[0]!==point[2])assert.notDeepEqual(a,b);}
+});
+
+test('lightning punch initially emits from its raised hand in both directions and at scene scale',()=>{
+  for(const face of [-1,1])for(const scale of [.82,1]){const w=flat('lightning');w.targets=[];w.characterScale=scale;requestCast(w,'attack',200+face*400,550);advance(w,.14);const e=w.effects.find(e=>e.kind==='thunderPunch'),hand=castMuzzle(w);assert.equal(e.attach,'fist');assert.equal(e.face,face);assert.ok(Math.hypot(e.x-hand.x,e.y-hand.y)<3);assert.ok(e.y<w.player.y-75*scale);}
+});
+
+test('punch glow follows the rendered blended hand and interpolation, and ghosts cannot move its anchor',()=>{
+  globalThis.matchMedia=()=>({matches:false});const json=p=>JSON.parse(readFileSync(new URL('../dist/assets/'+p,import.meta.url))),translations=[];
+  const grad={addColorStop(){}},ctx=new Proxy({globalAlpha:1,translate(x,y){translations.push([x,y]);},createRadialGradient:()=>grad},{get:(o,k)=>k in o?o[k]:(()=>{})});
+  const assets={bounds:json('rig-bounds.json'),coreBounds:json('core-bounds-v2.json'),combatBounds:json('combat/bounds-v2.json'),sceneBounds:json('scenes/prop-bounds-v1.json'),rosterBounds:json('heroes/bounds-v1.json')};assets.bounds.lightning=assets.rosterBounds.lightning;assets.coreBounds.lightning=assets.rosterBounds.lightning.core;assets.lightning={};assets.lightningCore={};assets.lightningFx={};
+  const w=flat('lightning'),r=new Renderer({getContext:()=>ctx},assets);w.characterScale=.82;Object.assign(w.player,{x:240,prevX:200,face:-1});r.poses.lightning={...basePose(),armA:1.2,elbowA:1.6,bob:3};let fist;r.bone=(c,h,key,start,end)=>{if(key==='forearm')fist=end;};r.hero(w,.25,0);const expected={x:210-fist.x*.82,y:w.player.y+fist.y*.82,face:-1};assert.deepEqual(r.roster.punchSocket,expected);
+  r.hero({...w,player:{...w.player,x:30,prevX:30}},1,0,{poseOverride:basePose()});assert.deepEqual(r.roster.punchSocket,expected);translations.length=0;r.roster.effect(w,{id:1,kind:'thunderPunch',attach:'fist',x:999,y:999,face:1,age:.1,duration:.38});assert.deepEqual(translations[0],[expected.x,expected.y]);
 });

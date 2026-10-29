@@ -1,0 +1,7 @@
+{
+  "revision": "combat8",
+  "input": "lightning-core-v2.png",
+  "output": "lightning-core-v3.png",
+  "method": "Built-in imagegen edit; unchanged transparent PNG copied; existing torso coordinate frame retained",
+  "prompt": "Edit ONLY the top-left integrated head-neck-torso sprite in this exact transparent game character atlas. Keep the 1536x1024 transparent canvas and the positions, scale, artwork and alpha of every other sprite exactly unchanged. Keep the torso, belt, collar and both shoulder sockets at exactly their existing coordinates. The current male lightning brawler has an unnaturally long forward-stretched neck. Give him a shorter natural athletic neck: reduce exposed neck length about 30%, bring the entire head back toward the shoulder line (about 20 pixels left) and slightly down (about 20 pixels) without shrinking the head. The ear should sit closer above the base of the neck, chin naturally tucked back, not projected forward. Preserve his handsome same face, sharp hair silhouette, gold hair streak, and level eyes looking directly forward to the RIGHT. Do NOT tilt the face downward or make him gaze upward. Smooth anatomically continuous neck joining collar and chest, relaxed trapezius, no hunch. Keep the body pose and costume unchanged; this is head/neck proportion correction only. No added glow, background, labels, framing or extra parts. Crisp hand-painted dark fantasy game art consistent with input. True transparent background."
+}

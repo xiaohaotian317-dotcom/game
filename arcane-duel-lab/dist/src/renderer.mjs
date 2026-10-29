@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat7';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat7';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat7';
-import {ScenePainter} from './scene-painter.mjs?v=20261029-combat7';
-import {CombatPainter} from './combat-painter.mjs?v=20261029-combat7';
-import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat7';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat8';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat8';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat8';
+import {ScenePainter} from './scene-painter.mjs?v=20261029-combat8';
+import {CombatPainter} from './combat-painter.mjs?v=20261029-combat8';
+import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat8';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};
@@ -38,7 +38,7 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
   assets.pending||={};
-  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
+  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
   constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);}
@@ -90,6 +90,8 @@ export class Renderer {
     };
     leg(o.legB,o.kneeB,true);leg(o.legA,o.kneeA,false);
     const far=armChain(frame.far,o.armB,o.elbowB,o.lean),near=armChain(frame.near,o.armA,o.elbowA,o.lean);
+    // Publish the exact hand that was drawn, including pose blending and render interpolation.
+    if(hero==='lightning'&&!poseOverride){const scale=w.characterScale||1;this.roster.punchSocket={x:x+near.hand.x*p.face*scale*o.sx,y:y+near.hand.y*scale*o.sy,face:p.face};}
     c.save();c.globalAlpha*=.80;this.bone(c,hero,'upperArm',far.shoulder,far.elbow);this.bone(c,hero,'forearm',far.elbow,far.hand);c.restore();
     // Crown, neck, collar and torso are one unbroken image, rotated as one piece.
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.scale(frame.scale,frame.scale);

@@ -1,4 +1,4 @@
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat7';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat8';
 export const EXTRA_HERO_IDS=['frost','lightning','shadow','star'];
 export const EXTRA_HEROES={
   frost:{name:'霜语者',given:'凝霜',color:'#88d9ff',accent:'#e8faff',role:'精准控场 · 冰台造路',speed:315,jump:650,maxHp:110,passive:'霜衣',passiveText:'每 8 秒获得 18 点冰盾，已有护盾时不叠加。霜针命中使敌人短暂减速。',
