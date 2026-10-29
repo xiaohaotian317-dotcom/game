@@ -1,0 +1,19 @@
+# Generated archives duplicate the source and image files below.
+*.tar.gz
+*.zip
+
+# Local Git metadata, runtimes and editor caches.
+**/.git/
+**/node_modules/
+**/.cache/
+**/__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Local credentials and configuration secrets.
+.env
+.env.*
+!.env.example
+*.key
+*.pem

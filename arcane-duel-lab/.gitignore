@@ -1,0 +1,5 @@
+node_modules/
+.cache/
+art-source/
+*.tar.gz
+*.zip

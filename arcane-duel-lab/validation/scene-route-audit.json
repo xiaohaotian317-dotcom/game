@@ -1,0 +1,2711 @@
+{
+  "notes": "Actual fixed-step physics; basic jumps only, no dash, skills, wind, spring or moving-lift assistance. Moon bridge removed; garden vine bridge removed.",
+  "results": [
+    {
+      "hero": "fire",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "west-start",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 1039,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": 0.22,
+          "landingX": 1061,
+          "seconds": 0.9
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 928,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 300,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.7
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": 0.22,
+          "landingX": 1662,
+          "seconds": 0.88
+        },
+        {
+          "from": "ground",
+          "to": "west-start",
+          "startX": 197,
+          "secondJumpAt": null,
+          "landingX": 197,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.4
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": 0.22,
+          "landingX": 947,
+          "seconds": 0.88
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 361,
+          "seconds": 0.4
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1360,
+          "seconds": 0.8
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1504,
+          "seconds": 0.85
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1924,
+          "seconds": 0.74
+        }
+      ]
+    },
+    {
+      "hero": "nature",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-start",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 1061,
+          "seconds": 0.85
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.85
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": 0.22,
+          "landingX": 1083,
+          "seconds": 0.92
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 928,
+          "seconds": 0.78
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 296,
+          "seconds": 0.78
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 273,
+          "seconds": 0.85
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 381,
+          "seconds": 0.72
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": null,
+          "landingX": 1662,
+          "seconds": 0.4
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.62
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.47
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": null,
+          "landingX": 908,
+          "seconds": 0.42
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 329,
+          "seconds": 0.47
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1362,
+          "seconds": 0.82
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1528,
+          "seconds": 0.88
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1949,
+          "seconds": 0.78
+        }
+      ]
+    },
+    {
+      "hero": "frost",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "west-start",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 1035,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": 0.22,
+          "landingX": 1056,
+          "seconds": 0.9
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 928,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 304,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.7
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": 0.22,
+          "landingX": 1662,
+          "seconds": 0.88
+        },
+        {
+          "from": "ground",
+          "to": "west-start",
+          "startX": 197,
+          "secondJumpAt": null,
+          "landingX": 197,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2158,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.4
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": 0.22,
+          "landingX": 947,
+          "seconds": 0.88
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 363,
+          "seconds": 0.4
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1361,
+          "seconds": 0.8
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1500,
+          "seconds": 0.85
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1921,
+          "seconds": 0.74
+        }
+      ]
+    },
+    {
+      "hero": "lightning",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-start",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 920,
+          "seconds": 1.08
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.88
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 968,
+          "seconds": 0.54
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 929,
+          "seconds": 0.81
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 272,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 245,
+          "seconds": 0.88
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 381,
+          "seconds": 0.74
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.69
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": null,
+          "landingX": 1662,
+          "seconds": 0.48
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.69
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.52
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": null,
+          "landingX": 939,
+          "seconds": 0.49
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 303,
+          "seconds": 0.52
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1364,
+          "seconds": 0.86
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1558,
+          "seconds": 0.9
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1979,
+          "seconds": 0.81
+        }
+      ]
+    },
+    {
+      "hero": "shadow",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-start",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 1087,
+          "seconds": 0.87
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.87
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": 0.22,
+          "landingX": 1111,
+          "seconds": 0.93
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 929,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 272,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 247,
+          "seconds": 0.87
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 381,
+          "seconds": 0.73
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": null,
+          "landingX": 1662,
+          "seconds": 0.47
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.63
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.51
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": null,
+          "landingX": 935,
+          "seconds": 0.47
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 306,
+          "seconds": 0.51
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1364,
+          "seconds": 0.85
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1555,
+          "seconds": 0.89
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1976,
+          "seconds": 0.8
+        }
+      ]
+    },
+    {
+      "hero": "star",
+      "scene": "moon",
+      "options": {
+        "brokenBridge": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "middle",
+        "stepping-column",
+        "west-left",
+        "west-cover",
+        "right",
+        "lift",
+        "west-start",
+        "east-right",
+        "east-cover",
+        "upper-left",
+        "bridge-left",
+        "west-upper-left",
+        "bridge-right",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 1043,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 627,
+          "secondJumpAt": 0.22,
+          "landingX": 627,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "middle",
+          "startX": 790,
+          "secondJumpAt": 0.22,
+          "landingX": 1065,
+          "seconds": 0.9
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 790,
+          "secondJumpAt": null,
+          "landingX": 927,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-left",
+          "startX": 544,
+          "secondJumpAt": 0.22,
+          "landingX": 296,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 544,
+          "secondJumpAt": null,
+          "landingX": 383,
+          "seconds": 0.7
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1787,
+          "secondJumpAt": null,
+          "landingX": 1787,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "lift",
+          "startX": 1662,
+          "secondJumpAt": 0.22,
+          "landingX": 1662,
+          "seconds": 0.88
+        },
+        {
+          "from": "ground",
+          "to": "west-start",
+          "startX": 197,
+          "secondJumpAt": null,
+          "landingX": 197,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 1957,
+          "secondJumpAt": null,
+          "landingX": 1957,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 643,
+          "secondJumpAt": null,
+          "landingX": 643,
+          "seconds": 0.4
+        },
+        {
+          "from": "left",
+          "to": "bridge-left",
+          "startX": 782,
+          "secondJumpAt": 0.22,
+          "landingX": 946,
+          "seconds": 0.88
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 360,
+          "seconds": 0.4
+        },
+        {
+          "from": "middle",
+          "to": "bridge-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1362,
+          "seconds": 0.8
+        },
+        {
+          "from": "middle",
+          "to": "upper-right",
+          "startX": 1249,
+          "secondJumpAt": 0.22,
+          "landingX": 1508,
+          "seconds": 0.85
+        },
+        {
+          "from": "lift",
+          "to": "east-upper-right",
+          "startX": 1704,
+          "secondJumpAt": 0.22,
+          "landingX": 1927,
+          "seconds": 0.74
+        }
+      ]
+    },
+    {
+      "hero": "fire",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "middle",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2170,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 383,
+          "seconds": 0.59
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.84
+        },
+        {
+          "from": "left",
+          "to": "middle",
+          "startX": 967,
+          "secondJumpAt": null,
+          "landingX": 1150,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.31,
+          "landingX": 337,
+          "seconds": 0.97
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.84
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1937,
+          "seconds": 0.84
+        }
+      ]
+    },
+    {
+      "hero": "nature",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "middle",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.79
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.79
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.79
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2168,
+          "seconds": 0.79
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 383,
+          "seconds": 0.62
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.62
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.87
+        },
+        {
+          "from": "left",
+          "to": "middle",
+          "startX": 967,
+          "secondJumpAt": null,
+          "landingX": 1154,
+          "seconds": 0.67
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 353,
+          "seconds": 0.87
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.87
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1961,
+          "seconds": 0.87
+        }
+      ]
+    },
+    {
+      "hero": "frost",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "middle",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2168,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 384,
+          "seconds": 0.59
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2158,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.84
+        },
+        {
+          "from": "left",
+          "to": "middle",
+          "startX": 967,
+          "secondJumpAt": null,
+          "landingX": 1148,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.31,
+          "landingX": 342,
+          "seconds": 0.97
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.84
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1933,
+          "seconds": 0.84
+        }
+      ]
+    },
+    {
+      "hero": "lightning",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "middle",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "middle",
+          "startX": 1153,
+          "secondJumpAt": 0.39,
+          "landingX": 1153,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2167,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.64
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.89
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 323,
+          "seconds": 0.89
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.89
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1991,
+          "seconds": 0.89
+        }
+      ]
+    },
+    {
+      "hero": "shadow",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "middle",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.81
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.81
+        },
+        {
+          "from": "ground",
+          "to": "middle",
+          "startX": 1153,
+          "secondJumpAt": 0.39,
+          "landingX": 1153,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.81
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2167,
+          "seconds": 0.81
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.63
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.63
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.88
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 326,
+          "seconds": 0.88
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.88
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1988,
+          "seconds": 0.88
+        }
+      ]
+    },
+    {
+      "hero": "star",
+      "scene": "lava",
+      "options": {},
+      "reachable": [
+        "ground",
+        "left",
+        "right",
+        "west-left",
+        "east-right",
+        "west-cover",
+        "east-cover",
+        "upper-left",
+        "middle",
+        "west-upper-left",
+        "upper-right",
+        "east-upper-right"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "ground",
+          "to": "left",
+          "startX": 798,
+          "secondJumpAt": 0.22,
+          "landingX": 798,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1511,
+          "secondJumpAt": 0.22,
+          "landingX": 1511,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-left",
+          "startX": 129,
+          "secondJumpAt": 0.22,
+          "landingX": 129,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2171,
+          "secondJumpAt": 0.22,
+          "landingX": 2169,
+          "seconds": 0.76
+        },
+        {
+          "from": "ground",
+          "to": "west-cover",
+          "startX": 385,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.59
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.59
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 629,
+          "seconds": 0.84
+        },
+        {
+          "from": "left",
+          "to": "middle",
+          "startX": 967,
+          "secondJumpAt": null,
+          "landingX": 1151,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 629,
+          "secondJumpAt": 0.22,
+          "landingX": 373,
+          "seconds": 0.84
+        },
+        {
+          "from": "right",
+          "to": "upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1685,
+          "seconds": 0.84
+        },
+        {
+          "from": "right",
+          "to": "east-upper-right",
+          "startX": 1685,
+          "secondJumpAt": 0.22,
+          "landingX": 1941,
+          "seconds": 0.84
+        }
+      ]
+    },
+    {
+      "hero": "fire",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "vine-right",
+        "right-step",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "left",
+        "island",
+        "right",
+        "west-left",
+        "east-right",
+        "west-upper-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1055,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1007,
+          "seconds": 0.81
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.63
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.31,
+          "landingX": 1153,
+          "seconds": 1.19
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 244,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.39,
+          "landingX": 113,
+          "seconds": 1.18
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.59
+        },
+        {
+          "from": "vine-left",
+          "to": "upper-left",
+          "startX": 955,
+          "secondJumpAt": 0.22,
+          "landingX": 722,
+          "seconds": 0.78
+        },
+        {
+          "from": "vine-left",
+          "to": "left",
+          "startX": 955,
+          "secondJumpAt": null,
+          "landingX": 905,
+          "seconds": 0.6
+        },
+        {
+          "from": "vine-left",
+          "to": "island",
+          "startX": 1053,
+          "secondJumpAt": null,
+          "landingX": 1185,
+          "seconds": 0.47
+        },
+        {
+          "from": "vine-left",
+          "to": "right",
+          "startX": 1053,
+          "secondJumpAt": 0.46,
+          "landingX": 1438,
+          "seconds": 1.26
+        },
+        {
+          "from": "west-stepping-column",
+          "to": "west-left",
+          "startX": 64,
+          "secondJumpAt": 0.22,
+          "landingX": 64,
+          "seconds": 0.78
+        },
+        {
+          "from": "right-step",
+          "to": "east-right",
+          "startX": 1696,
+          "secondJumpAt": 0.22,
+          "landingX": 1953,
+          "seconds": 0.86
+        },
+        {
+          "from": "upper-left",
+          "to": "west-upper-left",
+          "startX": 524,
+          "secondJumpAt": null,
+          "landingX": 296,
+          "seconds": 0.77
+        }
+      ]
+    },
+    {
+      "hero": "nature",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "vine-right",
+        "right-step",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "left",
+        "island",
+        "right",
+        "west-left",
+        "east-right",
+        "west-upper-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1075,
+          "seconds": 0.82
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1008,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.66
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.31,
+          "landingX": 1155,
+          "seconds": 1.22
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 225,
+          "seconds": 0.78
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.31,
+          "landingX": 111,
+          "seconds": 1.12
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 382,
+          "seconds": 0.67
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.81
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.57
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.57
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2157,
+          "seconds": 0.62
+        },
+        {
+          "from": "vine-left",
+          "to": "upper-left",
+          "startX": 955,
+          "secondJumpAt": 0.22,
+          "landingX": 696,
+          "seconds": 0.82
+        },
+        {
+          "from": "vine-left",
+          "to": "left",
+          "startX": 955,
+          "secondJumpAt": null,
+          "landingX": 904,
+          "seconds": 0.63
+        },
+        {
+          "from": "vine-left",
+          "to": "island",
+          "startX": 1053,
+          "secondJumpAt": null,
+          "landingX": 1207,
+          "seconds": 0.51
+        },
+        {
+          "from": "vine-left",
+          "to": "right",
+          "startX": 1053,
+          "secondJumpAt": 0.39,
+          "landingX": 1448,
+          "seconds": 1.22
+        },
+        {
+          "from": "west-stepping-column",
+          "to": "west-left",
+          "startX": 64,
+          "secondJumpAt": 0.22,
+          "landingX": 64,
+          "seconds": 0.81
+        },
+        {
+          "from": "right-step",
+          "to": "east-right",
+          "startX": 1696,
+          "secondJumpAt": 0.22,
+          "landingX": 1978,
+          "seconds": 0.88
+        },
+        {
+          "from": "upper-left",
+          "to": "west-upper-left",
+          "startX": 524,
+          "secondJumpAt": null,
+          "landingX": 276,
+          "seconds": 0.78
+        }
+      ]
+    },
+    {
+      "hero": "frost",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "vine-right",
+        "right-step",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "left",
+        "island",
+        "right",
+        "west-left",
+        "east-right",
+        "west-upper-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1051,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1007,
+          "seconds": 0.81
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.63
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.31,
+          "landingX": 1152,
+          "seconds": 1.19
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 248,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.39,
+          "landingX": 119,
+          "seconds": 1.18
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 383,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2158,
+          "seconds": 0.59
+        },
+        {
+          "from": "vine-left",
+          "to": "upper-left",
+          "startX": 955,
+          "secondJumpAt": 0.22,
+          "landingX": 725,
+          "seconds": 0.78
+        },
+        {
+          "from": "vine-left",
+          "to": "left",
+          "startX": 955,
+          "secondJumpAt": null,
+          "landingX": 905,
+          "seconds": 0.6
+        },
+        {
+          "from": "vine-left",
+          "to": "island",
+          "startX": 1053,
+          "secondJumpAt": null,
+          "landingX": 1183,
+          "seconds": 0.47
+        },
+        {
+          "from": "vine-left",
+          "to": "right",
+          "startX": 1053,
+          "secondJumpAt": 0.46,
+          "landingX": 1432,
+          "seconds": 1.26
+        },
+        {
+          "from": "west-stepping-column",
+          "to": "west-left",
+          "startX": 64,
+          "secondJumpAt": 0.22,
+          "landingX": 64,
+          "seconds": 0.78
+        },
+        {
+          "from": "right-step",
+          "to": "east-right",
+          "startX": 1696,
+          "secondJumpAt": 0.22,
+          "landingX": 1949,
+          "seconds": 0.86
+        },
+        {
+          "from": "upper-left",
+          "to": "west-upper-left",
+          "startX": 524,
+          "secondJumpAt": null,
+          "landingX": 300,
+          "seconds": 0.77
+        }
+      ]
+    },
+    {
+      "hero": "lightning",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "right",
+        "vine-right",
+        "right-step",
+        "east-right",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "island",
+        "west-upper-left",
+        "west-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1100,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 816,
+          "secondJumpAt": 0.31,
+          "landingX": 913,
+          "seconds": 0.69
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1010,
+          "seconds": 0.87
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.68
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1155,
+          "seconds": 1.12
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 217,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.22,
+          "landingX": 121,
+          "seconds": 1.02
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 378,
+          "seconds": 0.69
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1644,
+          "secondJumpAt": 0.39,
+          "landingX": 1644,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.83
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.59
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2100,
+          "secondJumpAt": 0.39,
+          "landingX": 2100,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.59
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 764,
+          "secondJumpAt": null,
+          "landingX": 628,
+          "seconds": 0.64
+        },
+        {
+          "from": "left",
+          "to": "island",
+          "startX": 1049,
+          "secondJumpAt": null,
+          "landingX": 1258,
+          "seconds": 0.75
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 764,
+          "secondJumpAt": 0.31,
+          "landingX": 376,
+          "seconds": 1.12
+        },
+        {
+          "from": "west-start",
+          "to": "west-left",
+          "startX": 61,
+          "secondJumpAt": 0.31,
+          "landingX": 61,
+          "seconds": 0.69
+        }
+      ]
+    },
+    {
+      "hero": "shadow",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "left",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "right",
+        "vine-right",
+        "right-step",
+        "east-right",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "island",
+        "west-upper-left",
+        "west-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1100,
+          "seconds": 0.83
+        },
+        {
+          "from": "start",
+          "to": "left",
+          "startX": 816,
+          "secondJumpAt": 0.39,
+          "landingX": 913,
+          "seconds": 0.79
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1010,
+          "seconds": 0.86
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.68
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1155,
+          "seconds": 1.11
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 217,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.22,
+          "landingX": 121,
+          "seconds": 1.02
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 378,
+          "seconds": 0.68
+        },
+        {
+          "from": "ground",
+          "to": "right",
+          "startX": 1644,
+          "secondJumpAt": 0.39,
+          "landingX": 1644,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.82
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.58
+        },
+        {
+          "from": "ground",
+          "to": "east-right",
+          "startX": 2100,
+          "secondJumpAt": 0.39,
+          "landingX": 2100,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.58
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.63
+        },
+        {
+          "from": "left",
+          "to": "upper-left",
+          "startX": 764,
+          "secondJumpAt": null,
+          "landingX": 628,
+          "seconds": 0.63
+        },
+        {
+          "from": "left",
+          "to": "island",
+          "startX": 1049,
+          "secondJumpAt": null,
+          "landingX": 1257,
+          "seconds": 0.74
+        },
+        {
+          "from": "left",
+          "to": "west-upper-left",
+          "startX": 764,
+          "secondJumpAt": 0.31,
+          "landingX": 379,
+          "seconds": 1.11
+        },
+        {
+          "from": "west-start",
+          "to": "west-left",
+          "startX": 61,
+          "secondJumpAt": 0.39,
+          "landingX": 61,
+          "seconds": 0.79
+        }
+      ]
+    },
+    {
+      "hero": "star",
+      "scene": "garden",
+      "options": {
+        "noVine": true
+      },
+      "reachable": [
+        "start",
+        "ground",
+        "vine-left",
+        "stepping-column",
+        "flower-pad",
+        "west-start",
+        "west-stepping-column",
+        "west-cover",
+        "vine-right",
+        "right-step",
+        "east-right-step",
+        "east-cover",
+        "upper-left",
+        "left",
+        "island",
+        "right",
+        "west-left",
+        "east-right",
+        "west-upper-left"
+      ],
+      "unreachable": [],
+      "routes": [
+        {
+          "from": "start",
+          "to": "ground",
+          "startX": 816,
+          "secondJumpAt": null,
+          "landingX": 1058,
+          "seconds": 0.8
+        },
+        {
+          "from": "start",
+          "to": "vine-left",
+          "startX": 816,
+          "secondJumpAt": 0.22,
+          "landingX": 1007,
+          "seconds": 0.81
+        },
+        {
+          "from": "start",
+          "to": "stepping-column",
+          "startX": 787,
+          "secondJumpAt": null,
+          "landingX": 787,
+          "seconds": 0.63
+        },
+        {
+          "from": "start",
+          "to": "flower-pad",
+          "startX": 816,
+          "secondJumpAt": 0.31,
+          "landingX": 1153,
+          "seconds": 1.19
+        },
+        {
+          "from": "start",
+          "to": "west-start",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 240,
+          "seconds": 0.77
+        },
+        {
+          "from": "start",
+          "to": "west-stepping-column",
+          "startX": 472,
+          "secondJumpAt": 0.31,
+          "landingX": 132,
+          "seconds": 1.1
+        },
+        {
+          "from": "start",
+          "to": "west-cover",
+          "startX": 472,
+          "secondJumpAt": null,
+          "landingX": 381,
+          "seconds": 0.65
+        },
+        {
+          "from": "ground",
+          "to": "vine-right",
+          "startX": 1433,
+          "secondJumpAt": 0.22,
+          "landingX": 1433,
+          "seconds": 0.78
+        },
+        {
+          "from": "ground",
+          "to": "right-step",
+          "startX": 1680,
+          "secondJumpAt": null,
+          "landingX": 1680,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-right-step",
+          "startX": 2064,
+          "secondJumpAt": null,
+          "landingX": 2064,
+          "seconds": 0.53
+        },
+        {
+          "from": "ground",
+          "to": "east-cover",
+          "startX": 2159,
+          "secondJumpAt": null,
+          "landingX": 2156,
+          "seconds": 0.59
+        },
+        {
+          "from": "vine-left",
+          "to": "upper-left",
+          "startX": 955,
+          "secondJumpAt": 0.22,
+          "landingX": 718,
+          "seconds": 0.78
+        },
+        {
+          "from": "vine-left",
+          "to": "left",
+          "startX": 955,
+          "secondJumpAt": null,
+          "landingX": 904,
+          "seconds": 0.6
+        },
+        {
+          "from": "vine-left",
+          "to": "island",
+          "startX": 1053,
+          "secondJumpAt": null,
+          "landingX": 1187,
+          "seconds": 0.47
+        },
+        {
+          "from": "vine-left",
+          "to": "right",
+          "startX": 1053,
+          "secondJumpAt": 0.46,
+          "landingX": 1444,
+          "seconds": 1.26
+        },
+        {
+          "from": "west-stepping-column",
+          "to": "west-left",
+          "startX": 64,
+          "secondJumpAt": 0.22,
+          "landingX": 64,
+          "seconds": 0.78
+        },
+        {
+          "from": "right-step",
+          "to": "east-right",
+          "startX": 1696,
+          "secondJumpAt": 0.22,
+          "landingX": 1957,
+          "seconds": 0.86
+        },
+        {
+          "from": "upper-left",
+          "to": "west-upper-left",
+          "startX": 524,
+          "secondJumpAt": null,
+          "landingX": 292,
+          "seconds": 0.77
+        }
+      ]
+    }
+  ]
+}

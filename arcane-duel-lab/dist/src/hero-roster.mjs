@@ -1,0 +1,27 @@
+export const EXTRA_HERO_IDS=['frost','lightning','shadow','star'];
+export const EXTRA_HEROES={
+  frost:{name:'霜语者',given:'凝霜',color:'#88d9ff',accent:'#e8faff',role:'精准控场 · 冰台造路',speed:315,jump:650,maxHp:110,passive:'霜衣',passiveText:'每 8 秒获得 18 点冰盾，已有护盾时不叠加。霜针命中使敌人短暂减速。',
+    comboTitle:'凝冰为阶，碎晶封路。',comboHelp:'Q 造冰台，2 秒内再按 Q 碎晶；E 冰镜可反射普通投射物。',groundSkills:['r'],recast:{key:'q',variant:'iceShatter',name:'碎晶',icon:'ice',window:2},
+    skills:{attack:{name:'霜针',icon:'ice',cd:.66,duration:.4,release:.14},q:{name:'凝冰阶',icon:'ice',cd:7,duration:.64,release:.28},e:{name:'霜镜',icon:'shield',cd:7.5,duration:.57,release:.23},r:{name:'寒域封界',icon:'ice',cd:12,duration:.88,release:.36}},
+    descriptions:{attack:'发射冰针，碰墙停止；命中减速。',q:'在瞄准处生成可站立冰台；2 秒内再按 Q 主动碎晶，双方都会失去支撑。',e:'在前方竖起冰镜，将敌方普通投射物反射回去。',r:'在鼠标下方台面展开寒域，首次冻结，随后持续减速与霜伤。'}},
+  lightning:{name:'雷行者',given:'霆隼',color:'#ffd469',accent:'#fff4be',role:'高速突进 · 空中追击',speed:365,jump:680,maxHp:120,passive:'游电',passiveText:'移动积蓄电荷；满 100 后下一次普攻强化，命中消耗电荷并迸发电弧。',
+    comboTitle:'贯雷命中，再折雷。',comboHelp:'Q 突进命中后，2 秒内再按 Q 向新的瞄准方向变向追击。',groundSkills:['r'],recast:{key:'q',variant:'thunderTurn',name:'折雷',icon:'bolt',window:2},
+    skills:{attack:{name:'电弧击',icon:'bolt',cd:.64,duration:.36,release:.12},q:{name:'贯雷刺',icon:'bolt',cd:5.2,duration:.4,release:.1},e:{name:'磁跃',icon:'jump',cd:7,duration:.5,release:.16},r:{name:'天雷贯落',icon:'bolt',cd:11.5,duration:.84,release:.28}},
+    descriptions:{attack:'护臂击出短中距离电弧，碰墙停止；满电荷命中额外放电。',q:'高速横向突进；命中后开放一次限时变向突进。未命中不能接二段。',e:'牵引至附近的上层台面；可见的金色锚点标出目的地。',r:'跃至选中台面上方，俯冲落地，引发雷击与冲击波。'}},
+  shadow:{name:'影刃',given:'朔鸦',color:'#c1a0ff',accent:'#eadcff',role:'近身刺杀 · 留影换位',speed:365,jump:675,maxHp:110,passive:'背袭',passiveText:'从敌人背面命中普攻，额外造成 7 点伤害；每 1 秒最多触发一次。',
+    comboTitle:'留下影标，掌握返程。',comboHelp:'E 影步后，2 秒内再按 E 返影；生命与冷却不会重置。',groundSkills:['e','r'],recast:{key:'e',variant:'shadowReturn',name:'返影',icon:'portal',window:2},
+    skills:{attack:{name:'双刃切',icon:'blade',cd:.7,duration:.41,release:.15},q:{name:'影袭',icon:'blade',cd:5.4,duration:.43,release:.12},e:{name:'影步',icon:'portal',cd:7.5,duration:.48,release:.13},r:{name:'夜幕连斩',icon:'blade',cd:12.8,duration:.88,release:.3}},
+    descriptions:{attack:'双匕近身斩击，需要贴近敌人，不能隔墙普攻。',q:'低位穿影突袭，沿途命中敌人并留下短暂残影。',e:'向选中台面短距传送，在起点留下影标；2 秒内可返回。',r:'在选中台面展开有限范围夜幕，连续刀光攻击，保留地面与本体可见。'}},
+  star:{name:'星术师',given:'宿衡',color:'#b7adff',accent:'#ffe0a1',role:'引力操控 · 空间转移',speed:325,jump:650,maxHp:115,passive:'星轨',passiveText:'每次技能首次命中积累一枚星印；三枚后下一次普攻变为追踪星砂，发射后消耗星印。',
+    comboTitle:'先引力，再斥星。',comboHelp:'Q 引力井持续牵引，2 秒内再按 Q 引爆斥星；E 展开成对折跃门。',groundSkills:['q','e','r'],recast:{key:'q',variant:'starRepulse',name:'斥星',icon:'orbit',window:2},
+    skills:{attack:{name:'星砂',icon:'orbit',cd:.68,duration:.42,release:.16},q:{name:'引力井',icon:'orbit',cd:6.5,duration:.68,release:.26},e:{name:'折跃门',icon:'portal',cd:8,duration:.56,release:.2},r:{name:'星环坍缩',icon:'orbit',cd:12.9,duration:.94,release:.32}},
+    descriptions:{attack:'发射星砂，碰墙停止；三枚星印强化为追踪星砂。',q:'在选中台面上方形成引力井；2 秒内再次按 Q 改为向外推开的斥星。',e:'在原地与选中台面建立成对折跃门，角色和召唤物均可穿行。',r:'星环先收缩牵引，再向外爆发，范围与落点有清晰预警。'}}
+};
+export const VARIANT_LABELS={iceShatter:'碎晶',thunderTurn:'折雷',shadowReturn:'返影',starRepulse:'斥星'};
+export function roleMeter(w){
+  if(w.hero==='frost')return '霜衣  '+Math.round(w.player.shield||0)+' / 18 · '+Math.max(0,(w.roleState?.nextShield||0)-w.time).toFixed(1)+'s';
+  if(w.hero==='lightning')return '游电  '+Math.round(w.player.charge||0)+' / 100'+(w.player.charge>=100?' · 下次命中强化':'');
+  if(w.hero==='star')return '星轨  '+(w.player.stars||0)+' / 3'+(w.player.stars>=3?' · 追踪星砂就绪':'');
+  if(w.hero==='shadow')return w.roleState?.shadowMark&&w.roleState.shadowMark.until>w.time?'返影标记  '+(w.roleState.shadowMark.until-w.time).toFixed(1)+'s':'背袭  '+(w.time>=(w.roleState?.backstabAt||0)?'就绪':((w.roleState.backstabAt-w.time).toFixed(1)+'s'));
+  return '';
+}

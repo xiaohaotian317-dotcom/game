@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101525">
+  <meta name="description" content="秘境决斗六职业动作试炼：六位英雄的独立动作、被动、二段技能与三境地形互动。">
+  <title>秘境决斗 · 三境机关试炼</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scene-view.css?v=20261029-roster6">
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true"><defs>
+    <symbol id="i-flame" viewBox="0 0 48 48"><path d="M27 3c4 14-4 14-1 22 4-1 7-5 8-9 13 17 5 29-9 29S4 33 12 20c0 9 4 10 6 8C14 16 26 14 27 3Z"/><path d="M24 27c-8 8-8 15 1 16 8-2 6-7-1-16Z"/></symbol>
+    <symbol id="i-burst" viewBox="0 0 48 48"><ellipse cx="24" cy="36" rx="20" ry="8"/><path d="m24 5 4 22 12-13-6 19M24 5l-4 22L8 14l6 19M4 30l11 5m29-5-11 5"/><ellipse cx="24" cy="36" rx="9" ry="4"/></symbol>
+    <symbol id="i-jump" viewBox="0 0 48 48"><path d="m8 39 27-27M20 12h15v15M5 25l10-10m8 28 14-14"/><path d="M5 41c6-3 7-7 9-13 0 6 4 7 8 8-7 2-11 5-17 5Z"/></symbol>
+    <symbol id="i-stomp" viewBox="0 0 48 48"><path d="M24 3v26m-10-9 10 11 10-11M7 37l10-4m24 4-10-4M13 43l11-7 11 7"/><ellipse cx="24" cy="39" rx="21" ry="6"/></symbol>
+    <symbol id="i-meteor" viewBox="0 0 48 48"><path d="M42 3 18 25m17-22L9 26M46 12 27 33"/><circle cx="17" cy="33" r="11"/><path d="m12 30 5-3 7 5-4 7-7-1Z"/></symbol>
+    <symbol id="i-seed" viewBox="0 0 48 48"><path d="M25 27C8 26 10 10 30 4c3 11 6 16-5 23Zm-1 16V23m0 13C9 37 5 30 4 24c13-1 20 3 20 12Zm1-1c0-9 8-15 19-13-2 9-10 15-19 13Z"/><path d="M21 22 29 9"/></symbol>
+    <symbol id="i-root" viewBox="0 0 48 48"><path d="M24 3v15c-13 5-4 11-11 17L5 44m19-26c12 6 4 13 12 18l8 8M24 19v21m-9-9-9-5m27 4 11-5M24 35l-7 10m7-10 7 10"/><path d="M24 14C9 15 9 6 11 3c8 0 13 3 13 11Z"/></symbol>
+    <symbol id="i-fox" viewBox="0 0 48 48"><path d="M19 24 14 10 5 5m9 5L6 15m9 0 7 4M29 24l5-14 9-5m-9 5 8 5m-9 0-7 4M17 22l7 3 7-3-3 16-4 6-4-6-3-16Zm3 8h1m6 0h1M22 38h4"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 48 48"><path d="M21 44V22m7 22V22M8 44h32M23 31 9 21m18 6 13-9"/><path d="M9 29C-3 20 5 8 16 9 19-2 37 1 37 12c13 0 14 17 3 20-5 2-9-1-12-5-7 4-15 7-19 2Z"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 48 48"><path d="m8 6 18 18L8 42m15-36 18 18-18 18"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 48 48"><path d="M36 5C13 7 11 33 34 39 6 54-10 12 20 4c-8 17 1 31 16 1Z"/><path d="m36 13 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/></symbol>
+<symbol id="i-ice" viewBox="0 0 48 48"><path d="M24 2 31 16 43 24 31 31 24 46 17 31 5 24 17 16ZM24 2v44M5 24h38M10 10l28 28M38 10 10 38"/></symbol><symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 3 42 10v13c-2 12-10 19-18 23C16 42 8 35 6 23V10ZM24 11v25m-10-13h20"/></symbol><symbol id="i-bolt" viewBox="0 0 48 48"><path d="m29 3-19 25h13l-4 17 19-26H25Z"/></symbol><symbol id="i-blade" viewBox="0 0 48 48"><path d="M38 3 12 25l11 10L44 7ZM6 25l19 19M17 35 7 45l-4-4 10-10"/></symbol><symbol id="i-portal" viewBox="0 0 48 48"><path d="M24 3c23 0 23 42 0 42S1 3 24 3Zm0 7c14 0 14 28 0 28s-14-28 0-28ZM6 24h7m22 0h7"/></symbol><symbol id="i-orbit" viewBox="0 0 48 48"><path d="M24 3v8m0 26v8M3 24h8m26 0h8M24 13l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/></symbol>
+  </defs></svg>
+  <section id="title-screen" class="title-screen" aria-label="游戏启动界面">
+    <div class="edition">可操作版本 <span>三境机关试炼</span></div>
+    <button id="start-button" class="start-hotspot" aria-label="开始游戏" disabled><span class="sr-only">开始游戏</span></button>
+    <div id="loading" class="loading" role="status">正在唤醒秘境…</div>
+    <div class="title-foot">键鼠操作 · 建议全屏体验</div>
+  </section>
+  <main id="game" class="game scene-game" hidden>
+    <header class="topbar">
+      <button id="back-button" class="brand" title="返回标题页"><svg><use href="#i-moon"/></svg><span>秘境决斗<small>三境机关试炼</small></span></button>
+      <div class="top-actions"><button id="camera-button" class="quiet">镜头 跟随</button><button id="sound-button" class="quiet" aria-pressed="true">声音 开</button><button id="fullscreen-button" class="quiet">全屏</button><button id="pause-button" class="quiet">暂停 <kbd>P</kbd></button></div>
+    </header>
+    <nav class="hero-switch" aria-label="切换英雄"><button data-hero="fire" class="hero-button active"><canvas width="72" height="72" aria-hidden="true"></canvas><span>焰术师<small>烬绯</small></span><kbd>1</kbd></button><button data-hero="nature" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>森灵<small>荆歌</small></span><kbd>2</kbd></button><button data-hero="frost" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>霜语者<small>凝霜</small></span><kbd>3</kbd></button><button data-hero="lightning" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>雷行者<small>霆隼</small></span><kbd>4</kbd></button><button data-hero="shadow" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>影刃<small>朔鸦</small></span><kbd>5</kbd></button><button data-hero="star" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>星术师<small>宿衡</small></span><kbd>6</kbd></button></nav>
+    <nav class="scene-picker" aria-label="选择地图">
+      <button data-scene="moon" aria-pressed="true"><span>01</span>月光遗迹 <small>断桥与月镜</small></button>
+      <button data-scene="lava" aria-pressed="false"><span>02</span>熔岩祭坛 <small>导流与摆锤</small></button>
+      <button data-scene="garden" aria-pressed="false"><span>03</span>浮空花园 <small>风道与藤桥</small></button>
+      <a href="characters.html">角色检视 ↗</a>
+    </nav>
+    <div class="play-layout">
+      <section class="arena-shell">
+        <canvas id="arena" width="1440" height="800" tabindex="0" aria-label="横版动作试炼场。A D 移动，空格二段跳，鼠标瞄准并按住左键攻击，Q E R 技能，Shift 冲刺。"></canvas>
+        <div class="arena-heading"><span class="eyebrow" id="scene-english">MOONLIT RUINS</span><strong id="scene-name">月光遗迹 · 断桥与月镜</strong><span id="scene-clock" aria-label="试炼计时">00:00</span></div>
+        <canvas id="hero-hud-portrait" class="hud-portrait" width="80" height="80" aria-hidden="true"></canvas>
+        <div class="life-panel"><span>生命 <b id="hp-text">120 / 120</b></span><div class="life-track"><div id="hp-fill"></div></div></div>
+        <div class="target-life"><div class="target-track"><div id="target-hp-fill"></div></div><span>试炼木桩 <b id="target-hp-text">240 / 240</b></span><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="7"/><path d="M24 3v9m0 24v9M3 24h9m24 0h9"/></svg></div>
+        <div class="arena-metrics"><div><small>累计伤害</small><strong id="damage">0</strong></div><div><small>连续命中</small><strong id="combo">0<span> HIT</span></strong></div></div>
+        <div id="hotbar" class="hotbar" aria-label="技能栏"></div>
+        <div id="recast-banner" class="recast-banner" hidden><span id="recast-name">二段技能</span><b id="recast-clock"></b><small>再次按 <kbd>E</kbd></small></div>
+        <output id="role-meter" class="role-meter" hidden></output>
+        <output id="summon-status" class="summon-status" hidden></output>
+        <span id="frame-badge" class="frame-badge" hidden>画面定格 · V 继续</span>
+        <div id="pause-overlay" class="pause-overlay" hidden><div><span class="eyebrow">TAKE A BREATH</span><h2>秘境已暂停</h2><p>准备好后，继续你的连招。</p><button id="resume-button" class="gold-button">继续试炼</button></div></div>
+      </section>
+      <section id="mechanism-cards" class="mechanism-cards" aria-label="地图机关"></section>
+      <p class="map-interaction-note">普攻碰墙停止 · 指定位置技能落到鼠标下方台面 · 2304 宽幅战场 · 镜头可切换跟随 / 全景</p>
+      <details class="training-panel"><summary>训练设置与角色说明 <span>移动木桩 · 反击 · 慢动作</span></summary><aside class="coach">
+        <div class="hero-heading"><span class="eyebrow">YOUR HERO</span><h1 id="hero-name">焰术师 <em>烬绯</em></h1><p id="hero-role">爆发施法 · 灼烧压制</p></div>
+        <div class="state-row"><span class="status-dot"></span><span>当前动作</span><b id="action-state">待机</b></div>
+        <section class="passive-card"><span class="section-label">职业被动</span><h3 id="passive-name">余烬</h3><p id="passive-desc"></p><div id="passive-flash" class="passive-light"></div></section>
+        <section class="practice"><div class="section-title"><span class="section-label">试炼目标</span><small id="goals-count">0 / 5</small></div><ul id="goals">
+          <li data-goal="jump"><i></i>完成一次二段跳</li><li data-goal="skill"><i></i>施放 Q 技能</li><li data-goal="recast"><i></i>接上一次二段技能</li><li data-goal="hit"><i></i>命中木桩，触发被动</li><li data-goal="terrain"><i></i>击碎木桥或借力弹跳花</li>
+        </ul></section>
+        <div class="training-controls"><button id="moving-button" class="toggle" aria-pressed="false"><i></i>木桩移动</button><button id="counter-button" class="toggle" aria-pressed="false"><i></i>木桩反击</button><button id="slow-button" class="toggle" aria-pressed="false"><i></i>慢动作检视 <span>0.5×</span></button><button id="freeze-button" class="toggle" aria-pressed="false"><i></i>定格检视 <kbd>V</kbd></button></div>
+        <div class="reset-actions"><button id="repair-button">修复木桥</button><button id="reset-button">重置试炼 <kbd>N</kbd></button></div>
+      </aside></details>
+    </div>
+    <section class="bottom-panel">
+      <div class="cast-help"><span class="eyebrow">COMBAT FLOW</span><strong id="combo-title">跃起，落烬。</strong><p id="combo-help">E 焰跃起跳，1.5 秒内再按 E 下砸。</p></div>
+      <div class="movement-help"><div><kbd>A</kbd><kbd>D</kbd><span>移动</span><kbd>SPACE</kbd><span>二段跳</span></div><div><kbd>S</kbd><span>＋</span><kbd>SPACE</kbd><span>下穿平台</span></div><div><kbd>F</kbd><span>近处机关</span><span class="tip-dot">·</span><span>鼠标瞄准</span></div></div>
+    </section>
+    <footer class="footer"><span><i></i>连续施法与地形反馈 <a class="inspect-link" href="characters.html">放大查看角色 ↗</a></span><span>六职业动作试炼版本</span><span id="notice" aria-live="polite">先试试二段跳，再向木桩施法。</span></footer>
+  </main>
+  <script type="module" src="src/app.mjs?v=20261029-roster6"></script>
+</body>
+</html>
