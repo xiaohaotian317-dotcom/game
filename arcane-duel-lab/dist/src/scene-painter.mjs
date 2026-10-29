@@ -1,4 +1,4 @@
-import {hammerPosition} from './scene-mechanics.mjs?v=20261029-combat8';
+import {hammerPosition} from './scene-mechanics.mjs?v=20261029-combat9';
 const TAU=Math.PI*2;
 function glow(c,x,y,r,color,alpha){c.save();c.globalAlpha=alpha;const g=c.createRadialGradient(x,y,1,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'transparent');c.fillStyle=g;c.fillRect(x-r,y-r,r*2,r*2);c.restore();}
 export class ScenePainter{
@@ -20,6 +20,11 @@ export class ScenePainter{
   cover(w,b){
     const c=this.ctx,im=this.assets['stone-covers-v2'],a=this.assets.combatBounds['stone-covers-v2'][w.sceneId];
     c.save();c.shadowColor='#030611';c.shadowBlur=8;c.drawImage(im,a.x,a.y,a.w,a.h,b.x,b.y,b.w,b.h);c.restore();
+  }
+  standingEdges(w){
+    // The authored backdrop also contains the deck paint. Restore narrow landing
+    // edges at full opacity so distant architecture can recede independently.
+    const c=this.ctx;c.save();c.beginPath();for(const b of w.platforms)if(b.active&&b.type!=='ice')c.rect(b.x,b.y-4,b.w,22);c.clip();this.background(w);c.restore();
   }
   chain(x,y,endX,endY,width=5){
     const dx=endX-x,dy=endY-y,length=Math.hypot(dx,dy),c=this.ctx;

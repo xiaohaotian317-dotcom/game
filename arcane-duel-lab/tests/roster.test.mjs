@@ -12,9 +12,10 @@ test('six original professions have complete independent skill definitions and r
   assert.equal(Object.keys(HEROES).length,6);
   for(const h of ids)for(const k of ['attack','q','e','r']){const w=flat(h);assert.ok(requestCast(w,k,420,650));assert.equal(w.player.cast.released,false);advance(w,HEROES[h].skills[k].release-STEP*2);assert.equal(w.player.cast.released,false);advance(w,STEP*3);assert.ok(w.player.cast.released);assert.ok(w.player.cooldowns[k]>0);}
 });
-test('frost ice grows into real support, recasts once and removes its support without resetting cooldown',()=>{
-  const w=flat('frost');requestCast(w,'q',400,530);advance(w,.65);const b=w.platforms.find(b=>b.type==='ice');assert.ok(b?.active);Object.assign(w.player,{x:400,y:529,prevY:529,vy:100,vx:0,grounded:false});advance(w,.05);assert.equal(w.player.platformId,b.id);const cooldown=w.player.cooldowns.q;assert.ok(requestCast(w,'q'));advance(w,.2);assert.equal(w.platforms.some(a=>a.id===b.id),false);assert.equal(w.player.recast,null);assert.ok(w.player.cooldowns.q<cooldown&&w.player.cooldowns.q>5);advance(w,.2);assert.ok(w.player.y>530);
+test('frost F slows with low damage, never creates support and recasts once without resetting cooldown',()=>{
+  const w=flat('frost'),count=w.platforms.length;requestCast(w,'q',420,650);advance(w,.65);assert.equal(w.platforms.length,count);assert.equal(w.constructs.length,0);assert.equal(w.targets[0].hp,230);assert.ok(w.targets[0].frostSnareUntil>w.time);const cooldown=w.player.cooldowns.q;assert.ok(requestCast(w,'q'));advance(w,.2);assert.equal(w.player.recast,null);assert.equal(w.targets[0].hp,224);assert.ok(w.player.cooldowns.q<cooldown&&w.player.cooldowns.q>5);assert.equal(w.platforms.length,count);
 });
+
 test('frost shield absorbs actual damage, recharges every eight seconds and never stacks',()=>{
   const w=flat('frost');hitPlayer(w,25,0);assert.equal(w.player.shield,0);assert.equal(w.player.hp,103);advance(w,8.1);assert.equal(w.player.shield,18);advance(w,8.1);assert.equal(w.player.shield,18);
 });

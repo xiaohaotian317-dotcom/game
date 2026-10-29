@@ -1,5 +1,5 @@
-import {Renderer,loadAssets,ensureHeroAssets} from './renderer.mjs?v=20261029-combat8';
-import {createWorld,HEROES} from './simulation.mjs?v=20261029-combat8';
+import {Renderer,loadAssets,ensureHeroAssets} from './renderer.mjs?v=20261029-combat9';
+import {createWorld,HEROES} from './simulation.mjs?v=20261029-combat9';
 const $=s=>document.querySelector(s),buttons=[...document.querySelectorAll('[data-mode]')];
 let mode='idle',phase=0,paused=false,face=1,last=performance.now(),renderers,worlds;
 const names={idle:'待机',run:'跑步',jump:'起跳',fall:'下落',land:'落地',attack:'普攻',q:'F 技能',e:'E 技能',r:'R 技能',dash:'冲刺',hurt:'受击'};
@@ -19,4 +19,4 @@ function paint(renderer,w,dt){const c=renderer.ctx,canvas=renderer.canvas,d=Math
   c.restore();}
 function loop(now){const dt=Math.max(0,Math.min((now-last)/1000,.05));last=now;if(!paused)phase=(phase+dt/(mode==='run'?.8:1.6))%1;
   if(renderers){for(const h of ['fire','nature','frost','lightning','shadow','star']){prepare(worlds[h],paused?phase*2:now/1000);paint(renderers[h],worlds[h],dt);}$('#pose-phase').value=Math.round(phase*100);$('#phase-label').textContent=Math.round(phase*100)+'%';}requestAnimationFrame(loop);}
-try{const assets=await loadAssets(()=>{},{scenes:false});await Promise.all(['frost','lightning','shadow','star'].map(h=>ensureHeroAssets(h,assets)));renderers={};worlds={};for(const h of ['fire','nature','frost','lightning','shadow','star']){renderers[h]=new Renderer($('#'+h+'-preview'),assets);worlds[h]=createWorld(h);}$('#studio-status').textContent='六职业独立动作 · 修订 08 · 同一套角色绘制用于检视页和实际战斗';const params=new URLSearchParams(location.search);if(params.get('pose')==='f')mode='q';else if(names[params.get('pose')])mode=params.get('pose');if(params.get('still')==='1'){paused=true;phase=.51;}if(params.get('face')==='left')face=-1;sync();requestAnimationFrame(loop);}catch(e){$('#studio-status').textContent='角色加载失败，请刷新重试。';console.error(e);}
+try{const assets=await loadAssets(()=>{},{scenes:false});await Promise.all(['frost','lightning','shadow','star'].map(h=>ensureHeroAssets(h,assets)));renderers={};worlds={};for(const h of ['fire','nature','frost','lightning','shadow','star']){renderers[h]=new Renderer($('#'+h+'-preview'),assets);worlds[h]=createWorld(h);}$('#studio-status').textContent='六职业独立动作 · 修订 09 · 同一套角色绘制用于检视页和实际战斗';const params=new URLSearchParams(location.search);if(params.get('pose')==='f')mode='q';else if(names[params.get('pose')])mode=params.get('pose');if(params.get('still')==='1'){paused=true;phase=.51;}if(params.get('face')==='left')face=-1;sync();requestAnimationFrame(loop);}catch(e){$('#studio-status').textContent='角色加载失败，请刷新重试。';console.error(e);}

@@ -1,8 +1,8 @@
-import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-combat8';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat8';
-import {segmentBox,clearLine} from './collision.mjs?v=20261029-combat8';
-import {targetPose} from './character-rig.mjs?v=20261029-combat8';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat8';
+import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-combat9';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat9';
+import {segmentBox,clearLine} from './collision.mjs?v=20261029-combat9';
+import {targetPose} from './character-rig.mjs?v=20261029-combat9';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat9';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
   w.fields=[];w.constructs=[];w.iceMirrors=[];w.portals=[];w.ghosts=[];w.roleState={nextShield:8,backstabAt:0,starLastCast:0,starCasts:[]};
@@ -14,16 +14,20 @@ function point(w,c){const x=clamp(c.x,w.player.x-520,w.player.x+520);return reso
 function field(w,kind,t,data={}){const f={id:++w.serial,kind,x:t.x,y:t.y,anchor:t,age:0,until:w.time+(data.duration||2.5),nextTick:w.time+(data.delay||0),...data};w.fields.push(f);return f;}
 function burst(w,c,data){w.player.burst={id:++w.serial,age:0,until:w.time+data.duration,hitIds:[],source:c.key,variant:c.variant,...data};}
 function teleport(w,a,x,y){a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if(a===w.player)a.invuln=Math.max(a.invuln,.15);}
+function frostPulse(w,t,amount,radius,duration,api,castId,echo=false){
+  for(const target of w.targets)if(target.hp>0&&Math.hypot(target.x-t.x,target.y-t.y)<radius){api.damage(w,target,amount,{school:'frost',castId});target.frostSnareUntil=Math.max(target.frostSnareUntil||0,w.time+duration);}
+  api.effect(w,'frostSnare',{x:t.x,y:t.y,r:radius,echo,duration:1.05});
+}
 export function releaseExtra(w,c,api){
   if(!EXTRA_HEROES[w.hero])return false;
   const p=w.player,h=w.hero,s=api.castMuzzle(w),dx=w.aim.x-s.x,dy=w.aim.y-s.y,length=Math.hypot(dx,dy)||1,d={x:dx/length,y:dy/length};
   if(c.key==='attack'){
     if(h==='shadow'||h==='lightning'){
-      const thunder=h==='lightning',reach=thunder?100:110;
+      const thunder=h==='lightning',reach=thunder?125:137.5;
       const source=thunder?s:{x:p.x+p.face*26,y:p.y-57};
-      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,duration:thunder?.38:.35});
+      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,rangeScale:1.25,duration:thunder?.38:.35});
       for(const t of w.targets)if(t.hp>0&&(t.x-p.x)*p.face>-8&&(t.x-p.x)*p.face<reach&&Math.abs(t.y-p.y)<85&&clearLine(w,p.x,p.y-45,t.x,t.y-40))api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)});
-      api.damageBridge(w,p.x+p.face*55,p.y-25,60,thunder?20:18);
+      api.damageBridge(w,p.x+p.face*68.75,p.y-25,75,thunder?20:18);
     }else{
       const enhanced=h==='star'&&p.stars>=3;
       api.projectile(w,h==='frost'?'iceNeedle':h==='lightning'?'arc':'starBolt',s.x,s.y,d.x,d.y,h==='lightning'?900:h==='frost'?820:700,enhanced?27:h==='lightning'?20:16,{owner:'player',school:h,basic:true,homing:enhanced,life:h==='lightning'?.5:3.5});
@@ -32,11 +36,7 @@ export function releaseExtra(w,c,api){
     }
     api.emit(w,'attack',{hero:h});return true;
   }
-  if(c.variant==='iceShatter'){
-    const platform=w.platforms.find(b=>b.id===c.data?.platformId);
-    if(platform){platform.active=false;w.platforms=w.platforms.filter(b=>b!==platform);w.constructs=w.constructs.filter(b=>b.platformId!==platform.id);api.area(w,platform.x+platform.w/2,platform.y-25,160,30,{school:h,root:.35});api.effect(w,'iceShatter',{x:platform.x+platform.w/2,y:platform.y,duration:.75});}
-    api.emit(w,'iceShatter');return true;
-  }
+  if(c.variant==='frostEcho'){const t=resolveGroundTarget(w,c.data?.anchor);if(t)frostPulse(w,t,6,165,2,api,c.id,true);api.emit(w,'iceShatter');return true;}
   if(c.variant==='shadowReturn'){
     const mark=w.roleState.shadowMark;
     if(mark){const target=resolveGroundTarget(w,mark.anchor)||groundTarget(w,mark.x,mark.y);api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target?.x??mark.x,target?.y??mark.y);api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});w.roleState.shadowMark=null;}
@@ -47,10 +47,7 @@ export function releaseExtra(w,c,api){
   }
   const target=point(w,c);
   if(h==='frost'){
-    if(c.key==='q'){
-      const x=clamp(c.x,p.x-420,p.x+420),y=clamp(c.y,125,w.floor-65),id='ice-'+(++w.serial);
-      w.platforms.push({id,x:clamp(x-75,8,w.width-158),y,w:150,type:'ice',active:false,hp:Infinity,maxHp:Infinity});w.constructs.push({id,kind:'icePlatform',platformId:id,x,y,age:0,until:w.time+6});recast(w,'q',{data:{platformId:id}});api.effect(w,'frostCast',{x,y,duration:.55});
-    }
+    if(c.key==='q'&&target){frostPulse(w,target,10,150,2.5,api,c.id);recast(w,'q',{data:{anchor:target}});}
     if(c.key==='e'){w.iceMirrors.push({id:++w.serial,x:clamp(p.x+p.face*90,25,w.width-25),y:p.y-62,until:w.time+2.7});api.effect(w,'frostCast',{x:p.x+p.face*90,y:p.y-62,duration:.45});}
     if(c.key==='r'&&target)field(w,'frostDomain',target,{r:185,duration:3.2,delay:.18,castId:c.id});
     api.emit(w,'frostSkill',{key:c.key});

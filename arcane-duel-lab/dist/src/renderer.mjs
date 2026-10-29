@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat8';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat8';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat8';
-import {ScenePainter} from './scene-painter.mjs?v=20261029-combat8';
-import {CombatPainter} from './combat-painter.mjs?v=20261029-combat8';
-import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat8';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat9';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat9';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat9';
+import {ScenePainter} from './scene-painter.mjs?v=20261029-combat9';
+import {CombatPainter} from './combat-painter.mjs?v=20261029-combat9';
+import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat9';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};
@@ -38,7 +38,7 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
   assets.pending||={};
-  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
+  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):hero==='shadow'?artImage('assets/heroes/shadow-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
   constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);}
@@ -222,13 +222,13 @@ export class Renderer {
     c.save();c.translate(-view.x,0);
     const authored=w.sceneId&&w.sceneId!=='training';
     c.fillStyle='#0b1023';c.fillRect(view.x,0,view.width,height);
-    if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
+    if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
       c.drawImage(this.assets.backdrop,0,0,WIDTH,HEIGHT);
       const shade=c.createLinearGradient(0,0,0,HEIGHT);shade.addColorStop(0,'rgba(5,10,27,.09)');shade.addColorStop(.6,'rgba(5,12,30,.3)');shade.addColorStop(1,'rgba(3,8,22,.65)');c.fillStyle=shade;c.fillRect(0,0,WIDTH,HEIGHT);
     }
     c.save();if(!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
     for(const b of w.platforms)if(!authored&&b.type!=='ice')this.platform(b,w.time);
-    if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
+    if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
     for(const t of w.targets)this.dummy(w,t);

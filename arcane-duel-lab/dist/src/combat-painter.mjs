@@ -1,4 +1,4 @@
-import {resolveGroundTarget} from './targeting.mjs?v=20261029-combat8';
+import {resolveGroundTarget} from './targeting.mjs?v=20261029-combat9';
 const TAU=Math.PI*2,clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const ease=t=>1-Math.pow(1-clamp(t),3);
 function ring(c,x,y,rx,ry,color,width=2){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.ellipse(x,y,Math.max(1,rx),Math.max(1,ry),0,0,TAU);c.stroke();}

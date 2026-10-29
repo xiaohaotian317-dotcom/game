@@ -1,11 +1,12 @@
-import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261029-combat8';
-import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-combat8';
-import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-combat8';
-import {SCENES} from './scenes.mjs?v=20261029-combat8';
-import {sceneStatus} from './scene-mechanics.mjs?v=20261029-combat8';
-import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-combat8';
-import {Sound} from './audio.mjs?v=20261029-combat8';
-import {worldPoint,cameraView} from './camera.mjs?v=20261029-combat8';
+import {skillArtStyle} from './skill-icons.mjs?v=20261029-combat9';
+import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261029-combat9';
+import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-combat9';
+import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-combat9';
+import {SCENES} from './scenes.mjs?v=20261029-combat9';
+import {sceneStatus} from './scene-mechanics.mjs?v=20261029-combat9';
+import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-combat9';
+import {Sound} from './audio.mjs?v=20261029-combat9';
+import {worldPoint,cameraView} from './camera.mjs?v=20261029-combat9';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
@@ -35,7 +36,7 @@ function buildHero(){
   $('#hotbar').innerHTML=slotKeys.map(key=>{
     const s=h.skills[key]||{name:'冲刺',icon:'dash',cd:1.1};
     const desc=key==='dash'?'短距离冲刺，期间可躲避伤害；可以在空中调整位置。':descriptions[world.hero][key];
-    return '<button class="skill" data-skill="'+key+'" aria-label="'+keyLabels[key]+' '+s.name+'"><span class="skill-face"><svg><use href="#i-'+s.icon+'"/></svg><span class="skill-key">'+keyLabels[key]+'</span><span class="cooldown" hidden></span></span><span class="skill-name">'+s.name+'</span><span class="skill-tooltip"><b>'+keyLabels[key]+' · '+s.name+'</b>'+desc+'</span></button>';
+    return '<button class="skill" data-skill="'+key+'" aria-label="'+keyLabels[key]+' '+s.name+'"><span class="skill-face"><span class="skill-art" aria-hidden="true" style="'+skillArtStyle(world.hero,key)+'"></span><span class="skill-key">'+keyLabels[key]+'</span><span class="cooldown" hidden></span></span><span class="skill-name">'+s.name+'</span><span class="skill-tooltip"><b>'+keyLabels[key]+' · '+s.name+'</b>'+desc+'</span></button>';
   }).join('');
   $$('.skill').forEach(b=>b.addEventListener('click',()=>{sound.init();actions.push(b.dataset.skill);canvas.focus({preventScroll:true});}));
   updateUI();
@@ -68,7 +69,7 @@ function updateUI(){
     const max=rc?rc.window:s.cd,overlay=b.querySelector('.cooldown');
     b.classList.toggle('recast',!!rc);
     const name=rc?rc.name:s.name,icon=rc?rc.icon:s.icon;
-    if(b.querySelector('use').getAttribute('href')!=='#i-'+icon)b.querySelector('use').setAttribute('href','#i-'+icon);
+    const art=b.querySelector('.skill-art'),style=skillArtStyle(world.hero,key,!!rc);if(art.getAttribute('style')!==style)art.setAttribute('style',style);
     b.querySelector('.skill-name').textContent=name;
     overlay.hidden=remaining<=.02;overlay.style.setProperty('--angle',(clamp(remaining/max,0,1)*360)+'deg');
     overlay.textContent=remaining>=1?remaining.toFixed(1):remaining>.02?remaining.toFixed(1):'';

@@ -1,11 +1,11 @@
-import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261029-combat8';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat8';
-import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261029-combat8';
-import {castMuzzle} from './character-rig.mjs?v=20261029-combat8';
-import {applyScene} from './scenes.mjs?v=20261029-combat8';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat8';
-import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261029-combat8';
-import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261029-combat8';
+import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261029-combat9';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat9';
+import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261029-combat9';
+import {castMuzzle} from './character-rig.mjs?v=20261029-combat9';
+import {applyScene} from './scenes.mjs?v=20261029-combat9';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat9';
+import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261029-combat9';
+import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261029-combat9';
 export const WIDTH=1440, HEIGHT=800, FLOOR=704, STEP=1/120;
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
@@ -215,9 +215,9 @@ function updateTargets(w,dt) {
     if(t.deadUntil){if(w.time>=t.deadUntil){Object.assign(t,dummy(t.id,t.spawnX,t.spawnY));effect(w,'respawn',{x:t.x,y:t.y-35,duration:.65});}else continue;}
     if(t.burnUntil>w.time&&w.time>=t.nextBurn){t.nextBurn+=.75;damage(w,t,4,{label:'4 灼烧',impact:false});}
     if(t.rootUntil>w.time)t.vx=0;
-    else if(w.moving)t.vx=Math.sin(w.time*1.5+(t.id==='a'?0:2))*90*(t.slowUntil>w.time?.45:1);
+    else if(w.moving)t.vx=Math.sin(w.time*1.5+(t.id==='a'?0:2))*90*Math.min(t.slowUntil>w.time?.45:1,(t.frostSnareUntil||0)>w.time?.65:1);
     else t.vx*=Math.exp(-8*dt);
-    if(!w.moving&&t.slowUntil>w.time)t.vx*=Math.exp(-5*dt);
+    if(!w.moving&&(t.slowUntil>w.time||(t.frostSnareUntil||0)>w.time))t.vx*=Math.exp(-5*dt);
     if(t.rootUntil<=w.time)t.vx+=(t.fieldForce||0)*dt;
     if(Math.abs(t.vx)>3)t.face=Math.sign(t.vx);
     physics(w,t,dt);
