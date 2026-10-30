@@ -1,8 +1,9 @@
-import {EXTRA_HEROES} from './hero-roster.mjs?v=20261030-duel11';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel11';
-import {segmentBox,clearLine,forwardMeleeContact} from './collision.mjs?v=20261030-duel11';
-import {targetPose} from './character-rig.mjs?v=20261030-duel11';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel11';
+import {FROST_SNARE_DAMAGE,FROST_ECHO_DAMAGE} from './match-rules.mjs?v=20261030-duel12';
+import {EXTRA_HEROES} from './hero-roster.mjs?v=20261030-duel12';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {segmentBox,clearLine,forwardMeleeContact} from './collision.mjs?v=20261030-duel12';
+import {targetPose} from './character-rig.mjs?v=20261030-duel12';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
   w.fields=[];w.constructs=[];w.iceMirrors=[];w.portals=[];w.ghosts=[];w.roleState={nextShield:8,backstabAt:0,starLastCast:0,starCasts:[]};
@@ -36,7 +37,7 @@ export function releaseExtra(w,c,api){
     }
     api.emit(w,'attack',{hero:h});return true;
   }
-  if(c.variant==='frostEcho'){const t=resolveGroundTarget(w,c.data?.anchor);if(t)frostPulse(w,t,6,165,2,api,c.id,true);api.emit(w,'iceShatter');return true;}
+  if(c.variant==='frostEcho'){const t=resolveGroundTarget(w,c.data?.anchor);if(t)frostPulse(w,t,FROST_ECHO_DAMAGE,165,2,api,c.id,true);api.emit(w,'iceShatter');return true;}
   if(c.variant==='shadowReturn'){
     const mark=w.roleState.shadowMark;
     if(mark){const target=resolveGroundTarget(w,mark.anchor)||groundTarget(w,mark.x,mark.y);api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target?.x??mark.x,target?.y??mark.y);api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});w.roleState.shadowMark=null;}
@@ -47,7 +48,7 @@ export function releaseExtra(w,c,api){
   }
   const target=point(w,c);
   if(h==='frost'){
-    if(c.key==='q'&&target){frostPulse(w,target,10,150,2.5,api,c.id);recast(w,'q',{data:{anchor:target}});}
+    if(c.key==='q'&&target){frostPulse(w,target,FROST_SNARE_DAMAGE,150,2.5,api,c.id);recast(w,'q',{data:{anchor:target}});}
     if(c.key==='e'){w.iceMirrors.push({id:++w.serial,x:clamp(p.x+p.face*90,25,w.width-25),y:p.y-62,until:w.time+2.7});api.effect(w,'frostCast',{x:p.x+p.face*90,y:p.y-62,duration:.45});}
     if(c.key==='r'&&target)field(w,'frostDomain',target,{r:185,duration:3.2,delay:.18,castId:c.id});
     api.emit(w,'frostSkill',{key:c.key});

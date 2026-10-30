@@ -13,14 +13,14 @@ test('six original professions have complete independent skill definitions and r
   for(const h of ids)for(const k of ['attack','q','e','r']){const w=flat(h);assert.ok(requestCast(w,k,420,650));assert.equal(w.player.cast.released,false);advance(w,HEROES[h].skills[k].release-STEP*2);assert.equal(w.player.cast.released,false);advance(w,STEP*3);assert.ok(w.player.cast.released);assert.ok(w.player.cooldowns[k]>0);}
 });
 test('frost F slows with low damage, never creates support and recasts once without resetting cooldown',()=>{
-  const w=flat('frost'),count=w.platforms.length;requestCast(w,'q',420,650);advance(w,.65);assert.equal(w.platforms.length,count);assert.equal(w.constructs.length,0);assert.equal(w.targets[0].hp,230);assert.ok(w.targets[0].frostSnareUntil>w.time);const cooldown=w.player.cooldowns.q;assert.ok(requestCast(w,'q'));advance(w,.2);assert.equal(w.player.recast,null);assert.equal(w.targets[0].hp,224);assert.ok(w.player.cooldowns.q<cooldown&&w.player.cooldowns.q>5);assert.equal(w.platforms.length,count);
+  const w=flat('frost'),count=w.platforms.length;requestCast(w,'q',420,650);advance(w,.65);assert.equal(w.platforms.length,count);assert.equal(w.constructs.length,0);assert.equal(w.targets[0].hp,222);assert.ok(w.targets[0].frostSnareUntil>w.time);const cooldown=w.player.cooldowns.q;assert.ok(requestCast(w,'q'));advance(w,.2);assert.equal(w.player.recast,null);assert.equal(w.targets[0].hp,210);assert.ok(w.player.cooldowns.q<cooldown&&w.player.cooldowns.q>5);assert.equal(w.platforms.length,count);
 });
 
 test('frost shield absorbs actual damage, recharges every eight seconds and never stacks',()=>{
-  const w=flat('frost');hitPlayer(w,25,0);assert.equal(w.player.shield,0);assert.equal(w.player.hp,103);advance(w,8.1);assert.equal(w.player.shield,18);advance(w,8.1);assert.equal(w.player.shield,18);
+  const w=flat('frost');hitPlayer(w,25,0);assert.equal(w.player.shield,0);assert.equal(w.player.hp,w.player.maxHp-7);advance(w,8.1);assert.equal(w.player.shield,18);advance(w,8.1);assert.equal(w.player.shield,18);
 });
 test('ice mirror reflects hostile projectiles back into enemies',()=>{
-  const w=flat('frost');requestCast(w,'e',420,650);advance(w,.6);const m=w.iceMirrors[0];assert.ok(m);w.projectiles.push({id:999,kind:'enemy',x:m.x+50,y:m.y,px:m.x+50,py:m.y,vx:-1000,vy:0,r:5,damage:10,age:0,life:2,owner:'enemy'});advance(w,.06);const s=w.projectiles[0];assert.equal(s.owner,'player');assert.ok(s.vx>0);advance(w,.2);assert.ok(w.targets[0].hp<240);assert.equal(w.player.hp,110);
+  const w=flat('frost');requestCast(w,'e',420,650);advance(w,.6);const m=w.iceMirrors[0];assert.ok(m);w.projectiles.push({id:999,kind:'enemy',x:m.x+50,y:m.y,px:m.x+50,py:m.y,vx:-1000,vy:0,r:5,damage:10,age:0,life:2,owner:'enemy'});advance(w,.06);const s=w.projectiles[0];assert.equal(s.owner,'player');assert.ok(s.vx>0);advance(w,.2);assert.ok(w.targets[0].hp<240);assert.equal(w.player.hp,w.player.maxHp);
 });
 test('frost slow reduces actual moving-target speed by 55 percent after the freeze ends',()=>{
   const normal=flat('frost'),slow=flat('frost');normal.moving=slow.moving=true;normal.time=slow.time=1;slow.targets[0].slowUntil=3;step(normal,STEP);step(slow,STEP);assert.ok(Math.abs(slow.targets[0].vx/normal.targets[0].vx-.45)<.001);

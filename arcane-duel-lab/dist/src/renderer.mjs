@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel11';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel11';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261030-duel11';
-import {ScenePainter} from './scene-painter.mjs?v=20261030-duel11';
-import {CombatPainter} from './combat-painter.mjs?v=20261030-duel11';
-import {cameraView,updateCamera} from './camera.mjs?v=20261030-duel11';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel12';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261030-duel12';
+import {ScenePainter} from './scene-painter.mjs?v=20261030-duel12';
+import {CombatPainter} from './combat-painter.mjs?v=20261030-duel12';
+import {cameraView,updateCamera,fitDuelCamera} from './camera.mjs?v=20261030-duel12';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};
@@ -24,16 +24,14 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
   const entries=[['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
   for(const key of ['fire-vfx-v2','nature-vfx-v2','wood-stag-v2','stone-covers-v2'])entries.push([key,'assets/combat/'+key+'.png']);
   if(scenes)for(const scene of ['moon','lava','garden'])entries.push([scene+'Field','assets/scenes/'+scene+'-field-v1.png'],[scene+'Props','assets/scenes/'+scene+'-props-v1.png']);
-  let count=0;const images={};
-  await Promise.all(entries.map(async([key,url])=>{images[key]=await artImage(url);progress(++count,entries.length);}));
-  const response=await fetch('assets/rig-bounds.json');if(!response.ok)throw new Error('角色部件信息加载失败');
-  const coreResponse=await fetch('assets/core-bounds-v2.json');if(!coreResponse.ok)throw new Error('角色主体信息加载失败');
-  const sceneBounds=scenes?await (await fetch('assets/scenes/prop-bounds-v1.json')).json():null;
-  const combatBounds=await (await fetch('assets/combat/bounds-v2.json')).json();
-  const rosterBounds=await (await fetch('assets/heroes/bounds-v1.json')).json();
-  const refinementBounds=await (await fetch('assets/heroes/refinement-bounds-v2.json')).json();
-  for(const [hero,bounds] of Object.entries(refinementBounds)){rosterBounds[hero].fx=bounds.fx;if(bounds.core)rosterBounds[hero].coreV2=bounds.core;}
-  return {...images,rosterBounds,bounds:await response.json(),coreBounds:await coreResponse.json(),sceneBounds,combatBounds};
+  let count=0;const images={},total=entries.length+5+(scenes?1:0),completed=()=>progress(++count,total);
+  const json=async url=>{const response=await fetch(url);if(!response.ok)throw new Error('素材信息加载失败：'+url);const value=await response.json();completed();return value;};
+  const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds]=await Promise.all([
+    json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),
+    ...entries.map(async([key,url])=>{images[key]=await artImage(url);completed();})
+  ]);
+  for(const [hero,data] of Object.entries(refinementBounds)){rosterBounds[hero].fx=data.fx;if(data.core)rosterBounds[hero].coreV2=data.core;}
+  return {...images,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds};
 }
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
@@ -227,9 +225,11 @@ export class Renderer {
   }
   duelMarker(w,label,color){const c=this.ctx,p=w.player,x=p.x,y=p.y-122;if(p.hp<=0)return;c.save();c.textAlign='center';c.font='600 13px "Microsoft YaHei",sans-serif';c.lineWidth=3;c.strokeStyle='#03101d';c.strokeText(label,x,y-10);c.fillStyle=color;c.fillText(label,x,y-10);c.fillStyle='#07121dcc';c.fillRect(x-33,y,66,5);c.fillStyle=color;c.fillRect(x-33,y,66*Math.max(0,p.hp/p.maxHp),5);c.restore();}
   draw(w,alpha=1,dt=.016,{opponent=null}={}){
-    this.resize();updateCamera(w,dt);const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/height;
-    if(w.duel){const scale=Math.min(sx,sy);c.setTransform(1,0,0,1,0,0);c.fillStyle='#06101b';c.fillRect(0,0,this.canvas.width,this.canvas.height);c.setTransform(scale,0,0,scale,(this.canvas.width-view.width*scale)/2,(this.canvas.height-height*scale)/2);c.save();c.beginPath();c.rect(0,0,view.width,height);c.clip();}else c.setTransform(sx,0,0,sy,0,0);
-    c.save();c.translate(-view.x,0);
+    this.resize();if(w.duel)fitDuelCamera(w,this.canvas.width,this.canvas.height);updateCamera(w,dt);
+    const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/view.height;
+    c.setTransform(sx,0,0,sy,0,0);
+    if(w.duel){c.save();c.beginPath();c.rect(0,0,view.width,view.height);c.clip();}
+    c.save();c.translate(-view.x,-view.y);
     const authored=w.sceneId&&w.sceneId!=='training';
     c.fillStyle='#0b1023';c.fillRect(view.x,0,view.width,height);
     if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
@@ -262,8 +262,8 @@ export class Renderer {
     c.restore();
     const aim=w.aim;c.strokeStyle='rgba(239,224,180,.6)';c.lineWidth=1;ring(c,aim.x,aim.y,8,8,'rgba(239,224,180,.45)',1);line(c,[[aim.x-13,aim.y],[aim.x-9,aim.y]],c.strokeStyle,1);line(c,[[aim.x+9,aim.y],[aim.x+13,aim.y]],c.strokeStyle,1);
     c.restore();
-    if(!this.reduced&&w.flash>0){c.fillStyle='rgba(255,197,118,'+Math.min(.17,w.flash*1.2)+')';c.fillRect(0,0,view.width,height);}
-    if((w.width||WIDTH)>WIDTH){
+    if(!this.reduced&&w.flash>0){c.fillStyle='rgba(255,197,118,'+Math.min(.17,w.flash*1.2)+')';c.fillRect(0,0,view.width,view.height);}
+    if(!w.duel&&(w.width||WIDTH)>WIDTH){
       const x=view.width-210,y=height-47,mw=182,mh=28,scale=mw/w.width;
       c.fillStyle='#06101cce';c.fillRect(x-8,y-16,mw+16,mh+22);c.strokeStyle='#bda16c';c.lineWidth=1;c.strokeRect(x,y,mw,mh);
       c.fillStyle='#e4d096';c.font='10px sans-serif';c.textAlign='left';c.fillText('2304 · 双侧回廊',x,y-5);

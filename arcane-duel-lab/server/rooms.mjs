@@ -1,3 +1,4 @@
+import {WIN_SCORE,MAX_HEALTH} from '../dist/src/match-rules.mjs';
 const HEROES=['fire','nature','frost','lightning','shadow','star'],SCENES=['moon','lava','garden'];
 class RoomError extends Error{constructor(message,status=400){super(message);this.status=status;}}
 const fail=(message,status)=>{throw new RoomError(message,status);};
@@ -15,7 +16,7 @@ export class RoomService{
     const wanted=codeOf(body.code);if(wanted&&!/^[A-Z0-9]{4,8}$/.test(wanted))fail('房间号需要 4～8 位字母或数字');
     await this.db.prepare('DELETE FROM duel_rooms WHERE expires_at < ?').bind(this.clock()).run();
     for(let attempt=0;attempt<8;attempt++){
-      const code=wanted||String(Math.floor(100000+this.random()*900000)),token=id(),time=this.clock(),data={phase:'waiting',slots:[slot(body.name,body.hero),null],score:[0,0],round:1,roundSerial:0,epoch:id(),scene:null,startAt:0,winner:null,lastWinner:null,reason:null};
+      const code=wanted||String(Math.floor(100000+this.random()*900000)),token=id(),time=this.clock(),data={phase:'waiting',winScore:WIN_SCORE,slots:[slot(body.name,body.hero),null],score:[0,0],round:1,roundSerial:0,epoch:id(),scene:null,startAt:0,winner:null,lastWinner:null,reason:null};
       try{await this.db.batch([
         this.db.prepare('INSERT INTO duel_rooms (code, revision, data, expires_at, host_token) VALUES (?, 0, ?, ?, ?)').bind(code,JSON.stringify(data),time+86400000,token),
         this.db.prepare('INSERT INTO duel_relay (code, host_seen, guest_seen) VALUES (?, ?, 0)').bind(code,time)
@@ -34,7 +35,7 @@ export class RoomService{
     return this.mutate(code,token,async(r,seat,row)=>{
       const s=r.slots[seat];if(!s)fail('你已离开房间',403);
       if(body.type==='leave'){
-        if(['countdown','active','selecting'].includes(r.phase)){r.winner=1-seat;r.score[1-seat]=2;r.phase='finished';r.reason='opponentLeft';s.returned=true;s.left=true;}
+        if(['countdown','active','selecting'].includes(r.phase)){r.winner=1-seat;r.score[1-seat]=WIN_SCORE;r.phase='finished';r.reason='opponentLeft';s.returned=true;s.left=true;}
         else if(seat===0){r.phase='closed';r.reason='hostLeft';}else{r.slots[1]=null;return null;}
         return;
       }
@@ -44,7 +45,7 @@ export class RoomService{
         if(r.phase!=='waiting')fail('游戏已经开始',409);
         if(!r.slots[1])fail('等待另一位玩家加入房间',409);
         if(!r.slots[1].ready)fail('玩家还未准备',409);
-        r.phase='selecting';r.epoch=id();r.score=[0,0];r.round=1;r.roundSerial=0;r.scene=SCENES[Math.floor(this.random()*3)];r.winner=null;r.reason=null;r.slots.forEach(s=>{s.locked=false;s.returned=false;});
+        r.phase='selecting';r.winScore=WIN_SCORE;r.epoch=id();r.score=[0,0];r.round=1;r.roundSerial=0;r.scene=SCENES[Math.floor(this.random()*3)];r.winner=null;r.reason=null;r.slots.forEach(s=>{s.locked=false;s.returned=false;});
         await this.db.prepare('UPDATE duel_relay SET snapshot = NULL, input = NULL, offer = NULL, answer = NULL, host_seq = 0, guest_seq = 0 WHERE code = ?').bind(code).run();return;
       }
       if(body.type==='hero'){
@@ -60,11 +61,11 @@ export class RoomService{
         if(seat!==0)fail('只有本局主机可以提交回合结果',403);
         if(body.epoch!==r.epoch||body.roundSerial!==r.roundSerial||!['countdown','active'].includes(r.phase))return;
         if(this.clock()<r.startAt)fail('倒计时还未结束',409);
-        const hp=body.hp;if(!Array.isArray(hp)||hp.length!==2||hp.some(n=>!Number.isFinite(n)||n<0||n>200))fail('无效的回合结果');
+        const hp=body.hp;if(!Array.isArray(hp)||hp.length!==2||hp.some((n,i)=>!Number.isFinite(n)||n<0||n>MAX_HEALTH[r.slots[i].hero]))fail('无效的回合结果');
         const winner=hp[0]<=0&&hp[1]<=0?null:hp[0]<=0?1:hp[1]<=0?0:undefined;
         if(winner===undefined||body.winner!==winner)fail('回合尚未结束',409);
         r.lastWinner=winner;if(winner!==null)r.score[winner]++;
-        if(r.score.some(n=>n>=2)){r.winner=r.score[0]>=2?0:1;r.phase='finished';r.reason='score';}
+        if(r.score.some(n=>n>=WIN_SCORE)){r.winner=r.score[0]>=WIN_SCORE?0:1;r.phase='finished';r.reason='score';}
         else{r.round=1+r.score[0]+r.score[1];r.roundSerial++;r.phase='countdown';r.startAt=this.clock()+3000;}return;
       }
       if(body.type==='return'){
@@ -74,7 +75,7 @@ export class RoomService{
       if(body.type==='forfeit'){
         const relay=await this.db.prepare('SELECT host_seen, guest_seen FROM duel_relay WHERE code = ?').bind(code).first(),otherSeen=seat===0?relay.guest_seen:relay.host_seen;
         if(!['selecting','countdown','active'].includes(r.phase)||this.clock()-otherSeen<30000)fail('对方仍在线，暂不能结束对局',409);
-        r.winner=seat;r.score[seat]=2;r.phase='finished';r.reason='disconnect';r.slots[1-seat].left=true;r.slots[1-seat].returned=true;return;
+        r.winner=seat;r.score[seat]=WIN_SCORE;r.phase='finished';r.reason='disconnect';r.slots[1-seat].left=true;r.slots[1-seat].returned=true;return;
       }
       fail('未知的房间操作');
     });

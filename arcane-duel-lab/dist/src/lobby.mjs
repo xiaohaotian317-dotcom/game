@@ -1,7 +1,8 @@
-import {HEROES} from './simulation.mjs?v=20261030-duel11';
-import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel11';
-import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261030-duel11';
-import {splashStyle} from './lobby-art.mjs?v=20261030-duel11';
+import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
+import {HEROES} from './simulation.mjs?v=20261030-duel12';
+import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
+import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261030-duel12';
+import {splashStyle} from './lobby-art.mjs?v=20261030-duel12';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
 let profile=loadProfile(storage),preview='nature',stage='moon',busy=false,toastTimer;
@@ -68,3 +69,8 @@ $('#duel-practice').addEventListener('click',()=>location.href=practiceURL($('#d
 $$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{stage=b.dataset.stage;$$('[data-stage]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));}));
 $('#stage-enter').addEventListener('click',()=>location.href=practiceURL(stage));
 window.addEventListener('storage',e=>{if(e.key==='arcane-duel-profile-v1'){profile=loadProfile(storage);renderHeader();renderHeroes();renderDetail();}});
+
+async function loadLobbyArt(){
+  const overlay=new LoadingScreen(),token=overlay.start('moon','正在准备大厅'),urls=['assets/lobby/backdrop-v1.png','assets/lobby/hero-splashes-v1.png','assets/lobby/mode-cards-v1.png'];let done=0;
+  try{await Promise.all(urls.map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{overlay.progress(++done,urls.length,token);resolve();};image.onerror=()=>reject(new Error('大厅素材加载失败'));image.src=src;})));overlay.finish(token);}catch(error){overlay.fail(error.message,()=>location.reload(),token);}
+}loadLobbyArt();

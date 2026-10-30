@@ -25,8 +25,8 @@ test('a charged melee fist consumes lightning charge only on a real hit',()=>{
   const hit=flat('lightning');hit.player.charge=100;requestCast(hit,'attack',500,650);advance(hit,.3);assert.equal(hit.targets[0].hp,207);assert.equal(hit.player.charge,0);
 });
 test('lightning rush lets bullets pass through during movement; damage resumes after the dash',()=>{
-  const w=flat('lightning');w.targets=[];requestCast(w,'q',700,650);advance(w,.12);assert.ok(w.player.burst?.dodgeProjectiles);enemyShot(w);advance(w,.025);assert.equal(w.player.hp,120);assert.equal(w.projectiles.length,1);assert.ok(w.projectiles[0].x<w.player.x);
-  w.projectiles=[];advance(w,.45);assert.equal(w.player.burst,null);enemyShot(w);advance(w,.025);assert.equal(w.player.hp,110);assert.equal(w.projectiles.length,0);
+  const w=flat('lightning');w.targets=[];requestCast(w,'q',700,650);advance(w,.12);assert.ok(w.player.burst?.dodgeProjectiles);enemyShot(w);advance(w,.025);assert.equal(w.player.hp,w.player.maxHp);assert.equal(w.projectiles.length,1);assert.ok(w.projectiles[0].x<w.player.x);
+  w.projectiles=[];advance(w,.45);assert.equal(w.player.burst,null);enemyShot(w);advance(w,.025);assert.equal(w.player.hp,w.player.maxHp-10);assert.equal(w.projectiles.length,0);
 });
 test('lightning ultimate physically advances and finishes in front of its aimed enemy',()=>{
   const w=flat('lightning');w.targets[0].x=500;requestCast(w,'r',500,650);advance(w,.3);assert.ok(w.player.x>200&&w.player.x<446);advance(w,.28);assert.ok(w.player.x<w.targets[0].x);assert.ok(w.targets[0].x-w.player.x<125);assert.ok(w.targets[0].hp<240);assert.ok(w.effects.some(e=>e.kind==='thunderImpact'));

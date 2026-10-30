@@ -13,7 +13,7 @@ test('held normal attacks keep a 50 percent longer interval without slowing proj
   }
 });
 test('a very fast projectile stops at the first thin wall before damaging a target behind it',()=>{
-  for(const owner of ['player','enemy']){const w=createWorld();w.mirror.enabled=false;w.obstacles=[{id:'wall',x:650,y:550,w:9,h:150}];w.targets[0].x=720;w.player.x=720;shot(w,600,640,18000,owner);step(w,STEP);assert.equal(w.projectiles.length,0);assert.equal(w.targets[0].hp,240);assert.equal(w.player.hp,120);assert.ok(w.effects.some(e=>e.kind==='chips'&&e.x<650));}
+  for(const owner of ['player','enemy']){const w=createWorld();w.mirror.enabled=false;w.obstacles=[{id:'wall',x:650,y:550,w:9,h:150}];w.targets[0].x=720;w.player.x=720;shot(w,600,640,18000,owner);step(w,STEP);assert.equal(w.projectiles.length,0);assert.equal(w.targets[0].hp,240);assert.equal(w.player.hp,w.player.maxHp);assert.ok(w.effects.some(e=>e.kind==='chips'&&e.x<650));}
 });
 test('stone decks block both fire and nature bolts while a broken bridge no longer blocks',()=>{
   for(const kind of ['fireball','seed']){const w=createWorld();w.mirror.enabled=false;shot(w,700,350,0,'player',kind);w.projectiles[0].vy=6000;step(w,STEP);assert.equal(w.projectiles.length,0);}
@@ -29,7 +29,7 @@ test('the root skill can bind an enemy across a wall while basics remain blocked
   const w=createWorld('nature');w.player.x=620;w.obstacles=[{x:700,y:550,w:20,h:154}];requestCast(w,'q',900,704);advance(w,1);assert.ok(w.targets[0].hp<240);assert.ok(w.targets[0].rootUntil>w.time);assert.equal(w.effects.find(e=>e.kind==='roots').to,900);
 });
 test('the stag has its own health, intercepts enemy attacks and disappears on death',()=>{
-  const w=createWorld('nature');requestCast(w,'e');advance(w,.5);const f=w.fox;assert.equal(f.hp,80);f.x=500;f.y=704;f.vx=0;f.vy=0;w.player.x=560;shot(w,450,645,6000,'enemy','enemy');step(w,STEP);assert.equal(f.hp,62);assert.equal(w.player.hp,120);
+  const w=createWorld('nature');requestCast(w,'e');advance(w,.5);const f=w.fox;assert.equal(f.hp,80);f.x=500;f.y=704;f.vx=0;f.vy=0;w.player.x=560;shot(w,450,645,6000,'enemy','enemy');step(w,STEP);assert.equal(f.hp,62);assert.equal(w.player.hp,w.player.maxHp);
   f.invuln=0;assert.equal(hitSummon(w,100,450),true);assert.equal(w.fox,null);assert.ok(w.effects.some(e=>e.kind==='stagDeath'));
 });
 test('the stag pursues a target behind it and jumps over solid cover',()=>{

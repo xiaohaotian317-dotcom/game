@@ -1,4 +1,4 @@
-import {createWorld,step,hitSummon,interactNearest,STEP,HEROES} from './simulation.mjs?v=20261030-duel11';
+import {createWorld,step,hitSummon,interactNearest,STEP,HEROES} from './simulation.mjs?v=20261030-duel12';
 const SHARED=['platforms','obstacles','mechanisms','mirror','spring'];
 export function createDuel(heroes,scene='moon'){
   const worlds=heroes.map(h=>createWorld(h,scene));

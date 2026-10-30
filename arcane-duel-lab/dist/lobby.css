@@ -28,3 +28,5 @@ button,a,input,select{-webkit-tap-highlight-color:transparent}button,input,selec
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .square-button,.sound-button{padding:0}
+
+.mode-card{cursor:pointer;text-align:inherit;font-family:inherit;color:inherit;padding:0}.mode-card:focus-visible{outline:2px solid #ffe1a0;outline-offset:6px}.mode-card .card-copy{pointer-events:none;bottom:30px}.mode-card .card-copy p{margin-bottom:0}.mode-card .card-copy h2{margin-bottom:12px}@media(max-width:650px){.mode-card .card-copy{bottom:23px}.mode-card .card-copy p{min-height:0}}

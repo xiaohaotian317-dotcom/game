@@ -1,0 +1,21 @@
+{
+  "base": "https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site",
+  "scene": "moon",
+  "score": [
+    3,
+    0
+  ],
+  "winner": 0,
+  "bothReturnToWaiting": true,
+  "clients": 2,
+  "requests": 94,
+  "httpRttMs": {
+    "median": 705.81,
+    "p95": 896.41
+  },
+  "snapshotBytes": {
+    "mean": 5435,
+    "max": 5910
+  },
+  "note": "两个独立协议客户端、真实战斗模拟与 HTTP 兜底；战斗物理快进，三秒倒计时使用真实时间。RTT 为接口验证，不代表两名异地玩家的WebRTC延迟。"
+}

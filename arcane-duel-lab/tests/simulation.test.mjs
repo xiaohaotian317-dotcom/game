@@ -52,9 +52,9 @@ test('summon creates one fox; command reuses the same fox and consumes recast',(
   requestCast(w,'e',1100,400);advance(w,.15);assert.equal(w.fox,fox);assert.equal(w.player.recast,null);assert.ok(fox.vx>400);assert.ok(fox.vy<0);
 });
 test('fox hits restore health and healing cannot exceed maximum',()=>{
-  const w=createWorld('nature');w.player.hp=116;requestCast(w,'e');advance(w,.55);
-  w.fox.x=w.targets[0].x-12;w.fox.y=FLOOR;w.fox.vy=0;advance(w,.05);assert.ok(w.player.hp>116);assert.ok(w.player.hp<=120);
-  advance(w,3);assert.ok(w.player.hp<=120);
+  const w=createWorld('nature');w.player.hp=w.player.maxHp-4;requestCast(w,'e');advance(w,.55);
+  w.fox.x=w.targets[0].x-12;w.fox.y=FLOOR;w.fox.vy=0;advance(w,.05);assert.ok(w.player.hp>w.player.maxHp-4);assert.ok(w.player.hp<=w.player.maxHp);
+  advance(w,3);assert.ok(w.player.hp<=w.player.maxHp);
 });
 test('root spell follows its platform and binds a nearby target',()=>{
   const w=createWorld('nature');w.player.x=620;requestCast(w,'q',900,FLOOR);advance(w,.9);
@@ -68,7 +68,7 @@ test('ancient tree grows two standable platforms, heals and expires cleanly',()=
 test('dash has brief invulnerability; subsequent hits interrupt casting',()=>{
   const w=createWorld();step(w,STEP,{dash:true,move:1});assert.equal(hitPlayer(w,10,0),false);
   advance(w,.25);requestCast(w,'q');assert.ok(w.player.cast);assert.equal(hitPlayer(w,10,0),true);
-  assert.equal(w.player.cast,null);assert.equal(actionState(w),'受击');assert.equal(w.player.hp,110);
+  assert.equal(w.player.cast,null);assert.equal(actionState(w),'受击');assert.equal(w.player.hp,w.player.maxHp-10);
 });
 test('spring launches player and mirror orientation can be changed',()=>{
   const w=createWorld();w.player.x=w.spring.x;advance(w,.2);assert.ok(w.player.vy<-700);

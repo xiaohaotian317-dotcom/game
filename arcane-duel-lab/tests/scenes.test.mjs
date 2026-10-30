@@ -22,9 +22,9 @@ test('a real projectile can hit the rune switch and change the elevator target',
   const w=createWorld('fire','moon'),l=w.mechanisms.lift;shot(w,l.switchX-40,l.switchY);advance(w,.1);assert.equal(l.target,l.high);assert.equal(w.projectiles.length,0);
 });
 test('lava warns before erupting, and valve routing makes the old lane safe',()=>{
-  const w=createWorld('fire','lava'),m=w.mechanisms;Object.assign(w.player,{x:m.vents[0].x,y:w.floor});advance(w,.5);assert.equal(m.vents[0].mode,'warning');assert.equal(w.player.hp,120);
-  advance(w,.9);assert.equal(m.vents[0].mode,'fire');assert.ok(w.player.hp<120);
-  triggerMechanism(w,'valve');Object.assign(w.player,{x:m.vents[0].x,y:w.floor,hp:120,invuln:0,vx:0});advance(w,.3);assert.equal(m.vents[0].mode,'rest');assert.equal(w.player.hp,120);
+  const w=createWorld('fire','lava'),m=w.mechanisms;Object.assign(w.player,{x:m.vents[0].x,y:w.floor});advance(w,.5);assert.equal(m.vents[0].mode,'warning');assert.equal(w.player.hp,w.player.maxHp);
+  advance(w,.9);assert.equal(m.vents[0].mode,'fire');assert.ok(w.player.hp<w.player.maxHp);
+  triggerMechanism(w,'valve');Object.assign(w.player,{x:m.vents[0].x,y:w.floor,hp:w.player.maxHp,invuln:0,vx:0});advance(w,.3);assert.equal(m.vents[0].mode,'rest');assert.equal(w.player.hp,w.player.maxHp);
 });
 test('hitting the hammer changes its momentum and produces a real swing',()=>{
   const w=createWorld('fire','lava'),h=w.mechanisms.hammer,p=hammerPosition(h);shot(w,p.x-40,p.y);advance(w,.05);assert.ok(h.velocity>1);

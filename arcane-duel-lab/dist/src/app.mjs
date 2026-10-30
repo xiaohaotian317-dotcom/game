@@ -1,13 +1,14 @@
-import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel11';
-import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261030-duel11';
-import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261030-duel11';
-import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261030-duel11';
-import {SCENES} from './scenes.mjs?v=20261030-duel11';
-import {sceneStatus} from './scene-mechanics.mjs?v=20261030-duel11';
-import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261030-duel11';
-import {Sound} from './audio.mjs?v=20261030-duel11';
-import {worldPoint,cameraView} from './camera.mjs?v=20261030-duel11';
-import {loadProfile,saveProfile} from './player-profile.mjs?v=20261030-duel11';
+import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
+import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
+import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261030-duel12';
+import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261030-duel12';
+import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261030-duel12';
+import {SCENES} from './scenes.mjs?v=20261030-duel12';
+import {sceneStatus} from './scene-mechanics.mjs?v=20261030-duel12';
+import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261030-duel12';
+import {Sound} from './audio.mjs?v=20261030-duel12';
+import {worldPoint,cameraView} from './camera.mjs?v=20261030-duel12';
+import {loadProfile,saveProfile} from './player-profile.mjs?v=20261030-duel12';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
@@ -187,13 +188,14 @@ function loop(now){
 window.duelLab={snapshot:()=>({hero:world.hero,time:world.time,paused,mode,state:actionState(world),player:{x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,hp:world.player.hp,grounded:world.player.grounded,jumps:world.player.jumps,recast:world.player.recast},targets:world.targets.map(t=>({x:t.x,y:t.y,hp:t.hp,burnUntil:t.burnUntil})),stats:{...world.stats},fox:world.fox?{x:world.fox.x,y:world.fox.y}:null,bridge:world.platforms.find(p=>p.id==='bridge').active})};
 async function init(){
   if(initialParams.get('play')!=='1'){$('#loading').textContent='准备就绪 · 点击进入主大厅';$('#start-button').disabled=false;positionTitleButton();return;}
+  const loadingScreen=new LoadingScreen(),token=loadingScreen.start(selectedScene);
   try{
-    const assets=await loadAssets((done,total)=>$('#loading').textContent='正在加载角色与秘境 '+done+' / '+total);
-    await ensureHeroAssets(world.hero,assets);
+    let doneCount=0,totalCount=0;const assets=await loadAssets((done,total)=>{doneCount=done;totalCount=total;$('#loading').textContent='正在加载角色与秘境 '+done+' / '+total;loadingScreen.progress(done,total+1,token);});
+    await ensureHeroAssets(world.hero,assets);loadingScreen.progress(doneCount+1,totalCount+1,token);loadingScreen.finish(token);
     renderer=new Renderer(canvas,assets);$$('.hero-button').forEach(b=>{if(assets[b.dataset.hero])renderer.portrait(b.querySelector('canvas'),b.dataset.hero);});
     buildScene();buildHero();positionTitleButton();$('#loading').textContent='准备就绪 · 点击开始游戏';$('#start-button').disabled=false;
     const params=new URLSearchParams(location.search);if(params.get('play')==='1')start();
     for(const h of heroOrder)ensureHeroAssets(h,assets).then(()=>renderer.portrait(document.querySelector('[data-hero='+h+'] canvas'),h)).catch(()=>{});
-  }catch(error){$('#loading').textContent=error.message+' · 请刷新重试';console.error(error);}
+  }catch(error){$('#loading').textContent=error.message+' · 请刷新重试';loadingScreen.fail(error.message,()=>location.reload(),token);console.error(error);}
   requestAnimationFrame(loop);
 }init();

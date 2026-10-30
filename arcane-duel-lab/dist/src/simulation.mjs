@@ -1,18 +1,19 @@
-import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261030-duel11';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel11';
-import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261030-duel11';
-import {castMuzzle} from './character-rig.mjs?v=20261030-duel11';
-import {applyScene} from './scenes.mjs?v=20261030-duel11';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel11';
-import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261030-duel11';
-import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261030-duel11';
+import {MAX_HEALTH} from './match-rules.mjs?v=20261030-duel12';
+import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261030-duel12';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
+import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261030-duel12';
+import {castMuzzle} from './character-rig.mjs?v=20261030-duel12';
+import {applyScene} from './scenes.mjs?v=20261030-duel12';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {firstTerrainHit,clearLine,segmentBox,resolveSolidSides} from './collision.mjs?v=20261030-duel12';
+import {updateScene,hitSceneMechanism,triggerScene,nearestSceneInteraction} from './scene-mechanics.mjs?v=20261030-duel12';
 export const WIDTH=1440, HEIGHT=800, FLOOR=704, STEP=1/120;
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
 export const HEROES={...EXTRA_HEROES,
-  fire:{name:'焰术师',given:'烬绯',color:'#ff9b4c',accent:'#ffde8a',passive:'余烬',passiveText:'命中附加 3 秒灼烧；再次命中刷新持续时间。',speed:320,jump:650,
+  fire:{name:'焰术师',given:'烬绯',color:'#ff9b4c',accent:'#ffde8a',passive:'余烬',passiveText:'命中附加 3 秒灼烧；再次命中刷新持续时间。',speed:320,jump:650,maxHp:MAX_HEALTH.fire,
     skills:{attack:{name:'焰矢',icon:'flame',cd:.63,duration:.36,release:.14},q:{name:'爆燃印',icon:'burst',cd:4.2,duration:.65,release:.29},e:{name:'焰跃',icon:'jump',cd:5.5,duration:.46,release:.13},r:{name:'陨火天坠',icon:'meteor',cd:11,duration:.78,release:.18}}},
-  nature:{name:'森灵',given:'荆歌',color:'#a9da78',accent:'#f9db87',passive:'共生',passiveText:'木灵鹿命中敌人回复 3 点生命，每 0.8 秒至多触发一次。',speed:340,jump:665,
+  nature:{name:'森灵',given:'荆歌',color:'#a9da78',accent:'#f9db87',passive:'共生',passiveText:'木灵鹿命中敌人回复 3 点生命，每 0.8 秒至多触发一次。',speed:340,jump:665,maxHp:MAX_HEALTH.nature,
     skills:{attack:{name:'荆棘籽',icon:'seed',cd:.69,duration:.4,release:.16},q:{name:'缚根',icon:'root',cd:4.8,duration:.71,release:.32},e:{name:'灵鹿召唤',icon:'fox',cd:7,duration:.66,release:.31},r:{name:'古树庇护',icon:'tree',cd:13,duration:1.04,release:.55}}}
 };
 const platform=(id,x,y,w,type='stone')=>({id,x,y,w,type,hp:type==='wood'?90:Infinity,maxHp:type==='wood'?90:Infinity,active:true});

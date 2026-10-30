@@ -1,4 +1,4 @@
-import {createDuel,restoreDuel,stepDuel,duelSnapshot,InputInbox,STEP} from './duel-simulation.mjs?v=20261030-duel11';
+import {createDuel,restoreDuel,stepDuel,duelSnapshot,InputInbox,STEP} from './duel-simulation.mjs?v=20261030-duel12';
 let match=null,config=null,inbox=[new InputInbox(),new InputInbox()],last=performance.now(),acc=0,lastSend=0,eventSeq=0,events=[],reported=false,paused=false;
 onmessage=({data})=>{
   if(data.kind==='reset'){config=data;match=data.snapshot?restoreDuel(data.snapshot):createDuel(data.heroes,data.scene);inbox=[new InputInbox(),new InputInbox()];if(data.snapshot)inbox.forEach((i,side)=>{i.seq=data.snapshot.ack?.[side]||0;i.lastAction=data.snapshot.actionAck?.[side]||0;});last=performance.now();acc=0;lastSend=0;eventSeq=0;events=[];reported=false;paused=false;}

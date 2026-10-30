@@ -1,0 +1,21 @@
+{
+  "base": "http://127.0.0.1:4193",
+  "scene": "moon",
+  "score": [
+    3,
+    0
+  ],
+  "winner": 0,
+  "bothReturnToWaiting": true,
+  "clients": 2,
+  "requests": 94,
+  "httpRttMs": {
+    "median": 5.75,
+    "p95": 14.21
+  },
+  "snapshotBytes": {
+    "mean": 5435,
+    "max": 5910
+  },
+  "note": "两个独立协议客户端、真实战斗模拟与 HTTP 兜底；战斗物理快进，三秒倒计时使用真实时间。RTT 为接口验证，不代表两名异地玩家的WebRTC延迟。"
+}
