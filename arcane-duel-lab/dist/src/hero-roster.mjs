@@ -1,4 +1,4 @@
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-ui10';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel11';
 export const EXTRA_HERO_IDS=['frost','lightning','shadow','star'];
 export const EXTRA_HEROES={
   frost:{name:'霜语者',given:'凝霜',color:'#88d9ff',accent:'#e8faff',role:'精准控场 · 寒霜减速',speed:315,jump:650,maxHp:110,passive:'霜衣',passiveText:'每 8 秒获得 18 点冰盾，已有护盾时不叠加。霜针命中使敌人短暂减速。',

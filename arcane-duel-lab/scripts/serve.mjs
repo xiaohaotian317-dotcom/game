@@ -2,11 +2,15 @@ import http from 'node:http';
 import {readFile, stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {handleDuelRequest} from '../server/rooms.mjs';
+import {localDatabase} from '../server/local-db.mjs';
+const db=localDatabase(fileURLToPath(new URL('../.local-data/duel.sqlite',import.meta.url)));
 const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
 const port = Number(process.env.PORT || 4173);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
 http.createServer(async (req,res) => {
   try {
+    if(req.url.startsWith('/api/duel')){let body='';for await(const chunk of req){body+=chunk;if(body.length>220000){res.writeHead(413).end();return;}}const request=new Request('http://'+req.headers.host+req.url,{method:req.method,headers:req.headers,...(req.method==='POST'?{body}:{} )});const response=await handleDuelRequest(request,db);res.writeHead(response.status,Object.fromEntries(response.headers));res.end(await response.text());return;}
     const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
     const target = path.resolve(root,'.' + pathname);
     if (target !== root && !target.startsWith(root + path.sep)) {res.writeHead(403).end();return;}

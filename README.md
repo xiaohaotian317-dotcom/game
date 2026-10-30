@@ -64,3 +64,9 @@ combat9：六职业 36 枚手绘技能图标、影刃收颈、近战 +25%、霜�
 启动页点击开始进入大厅；`lobby.html` 为主大厅，`lobby.html?view=summon` 为召唤，`lobby.html?view=codex` 为图鉴。六位大立绘、三张模式卡、黑金界面、单抽/十连和结果展示已接入；体验金币、解锁、展示英雄和声音保存在本机。正式联机与闯关入口有开放状态说明，可先进入现有三境试炼。110 项检查通过，详见 [界面说明](arcane-duel-lab/主大厅与英雄召唤界面.md)。
 
 [主大厅](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/lobby.html) · [英雄召唤](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/lobby.html?view=summon)
+
+## DUEL11 双人联机
+
+大厅进入duel.html创建或加入房间。加入者先准备，房主开始；六人全开放，双方选完确认后随机三境、倒计时3秒，先赢两局获胜，结算可返回房间。WebRTC直连优先、HTTP转发兜底，显示真实RTT。135项检查与本机双客户端通过，公开部署状态以三份集中记忆最新记录为准。
+
+本地npm start（Node>=22.13）同时提供游戏/API；生产先在network-host安装依赖，再从游戏根npm run build。原生源仍在dist顶层，client/server与network-host/public为生成副本。

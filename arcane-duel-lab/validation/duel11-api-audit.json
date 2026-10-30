@@ -1,0 +1,21 @@
+{
+  "base": "http://127.0.0.1:4192",
+  "scene": "lava",
+  "score": [
+    2,
+    0
+  ],
+  "winner": 0,
+  "bothReturnToWaiting": true,
+  "clients": 2,
+  "requests": 38,
+  "localHttpRttMs": {
+    "median": 14.74,
+    "p95": 20.83
+  },
+  "snapshotBytes": {
+    "mean": 4885,
+    "max": 5272
+  },
+  "note": "两个独立协议客户端、真实战斗模拟与 HTTP 兜底；战斗物理快进，三秒倒计时使用真实时间。RTT 为本机 API 验证，不代表异地或 WebRTC 延迟。"
+}

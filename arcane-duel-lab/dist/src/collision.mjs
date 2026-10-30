@@ -20,6 +20,12 @@ export function firstTerrainHit(w,x0,y0,x1,y1,r=0){
   return best;
 }
 export function clearLine(w,x0,y0,x1,y1){const h=firstTerrainHit(w,x0,y0,x1,y1);return !h||h.t>.995;}
+// Contacting bodies belong to the strike, including an overlap left by a rush.
+// A target entirely behind the actor's body remains outside the forward attack.
+export function forwardMeleeContact(w,p,t,reach){
+  const forward=(t.x-p.x)*p.face,overlap=Math.abs(t.x-p.x)<=(p.w||20)+(t.w||20);
+  return t.hp>0&&(overlap||forward>=0)&&forward<reach&&Math.abs(t.y-p.y)<85&&clearLine(w,p.x,p.y-45,t.x,t.y-40);
+}
 export function resolveSolidSides(w,a,previousX,previousY){
   for(const b of w.obstacles||[]){
     if(b.actor===false||b.active===false)continue;

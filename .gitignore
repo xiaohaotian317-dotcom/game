@@ -5,6 +5,16 @@
 # Local Git metadata, runtimes and editor caches.
 **/.git/
 **/node_modules/
+**/.runtime-tools/
+**/network-host/public/
+**/network-host/dist/
+**/network-host/.vinext/
+**/network-host/.wrangler/
+**/network-host/.sites-runtime/
+arcane-duel-lab/dist/client/
+arcane-duel-lab/dist/server/
+arcane-duel-lab/dist/.openai/
+arcane-duel-lab/.local-data/
 **/.cache/
 **/__pycache__/
 *.pyc

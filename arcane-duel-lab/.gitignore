@@ -1,4 +1,14 @@
 node_modules/
+.runtime-tools/
+.local-data/
+network-host/public/
+network-host/dist/
+network-host/.vinext/
+network-host/.wrangler/
+network-host/.sites-runtime/
+dist/client/
+dist/server/
+dist/.openai/
 .cache/
 art-source/
 *.tar.gz

@@ -1,7 +1,7 @@
-import {HEROES} from './simulation.mjs?v=20261029-ui10';
-import {skillArtStyle} from './skill-icons.mjs?v=20261029-ui10';
-import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261029-ui10';
-import {splashStyle} from './lobby-art.mjs?v=20261030-ui10a';
+import {HEROES} from './simulation.mjs?v=20261030-duel11';
+import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel11';
+import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261030-duel11';
+import {splashStyle} from './lobby-art.mjs?v=20261030-duel11';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
 let profile=loadProfile(storage),preview='nature',stage='moon',busy=false,toastTimer;
@@ -61,7 +61,7 @@ $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.data
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
 $('#settings-open').addEventListener('click',()=>open('#settings-dialog'));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>open('#odds-dialog'));
 $('#sound-toggle').addEventListener('click',()=>setSound(!profile.sound));$('#sound-setting').addEventListener('change',e=>setSound(e.target.checked));
-$('#duel-open').addEventListener('click',()=>open('#duel-dialog'));$('#stages-open').addEventListener('click',()=>open('#stages-dialog'));
+$('#duel-open').addEventListener('click',()=>location.href='duel.html');$('#stages-open').addEventListener('click',()=>open('#stages-dialog'));
 $$('[data-room-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room-tab]').forEach(a=>a.setAttribute('aria-selected',String(a===b)));$('#create-room-panel').hidden=b.dataset.roomTab!=='create';$('#join-room-panel').hidden=b.dataset.roomTab!=='join';}));
 $('#room-code').addEventListener('input',e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,''));
 $('#duel-practice').addEventListener('click',()=>location.href=practiceURL($('#duel-scene').value));

@@ -54,3 +54,9 @@ node scripts/audit-scene-routes.mjs
 ## UI10 主大厅与英雄召唤
 
 启动页 → `lobby.html` 主大厅 → `?view=summon` 英雄召唤 / `?view=codex` 图鉴。单抽100/十连900/重复返还20为本机体验规则，初始2400且拥有火与森灵，六角色试炼仍开放。正式联机和闯关目标/奖励未接入。110 项检查通过；入口、素材、存档和浏览器证据见 [主大厅与英雄召唤界面](主大厅与英雄召唤界面.md)。
+
+## DUEL11 双人联机
+
+大厅进入duel.html创建或加入房间。加入者先准备，房主开始；六人全开放，双方选完确认后随机三境、倒计时3秒，先赢两局获胜，结算可返回房间。WebRTC直连优先、HTTP转发兜底，显示真实RTT。135项检查与本机双客户端通过，公开部署状态以三份集中记忆最新记录为准。
+
+本地npm start（Node>=22.13）同时提供游戏/API；生产先在network-host安装依赖，再从游戏根npm run build。原生源仍在dist顶层，client/server与network-host/public为生成副本。

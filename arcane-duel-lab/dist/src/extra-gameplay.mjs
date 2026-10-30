@@ -1,8 +1,8 @@
-import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-ui10';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-ui10';
-import {segmentBox,clearLine} from './collision.mjs?v=20261029-ui10';
-import {targetPose} from './character-rig.mjs?v=20261029-ui10';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-ui10';
+import {EXTRA_HEROES} from './hero-roster.mjs?v=20261030-duel11';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel11';
+import {segmentBox,clearLine,forwardMeleeContact} from './collision.mjs?v=20261030-duel11';
+import {targetPose} from './character-rig.mjs?v=20261030-duel11';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel11';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
   w.fields=[];w.constructs=[];w.iceMirrors=[];w.portals=[];w.ghosts=[];w.roleState={nextShield:8,backstabAt:0,starLastCast:0,starCasts:[]};
@@ -26,7 +26,7 @@ export function releaseExtra(w,c,api){
       const thunder=h==='lightning',reach=thunder?125:137.5;
       const source=thunder?s:{x:p.x+p.face*26,y:p.y-57};
       api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,rangeScale:1.25,duration:thunder?.38:.35});
-      for(const t of w.targets)if(t.hp>0&&(t.x-p.x)*p.face>-8&&(t.x-p.x)*p.face<reach&&Math.abs(t.y-p.y)<85&&clearLine(w,p.x,p.y-45,t.x,t.y-40))api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)});
+      for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach))api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)});
       api.damageBridge(w,p.x+p.face*68.75,p.y-25,75,thunder?20:18);
     }else{
       const enhanced=h==='star'&&p.stars>=3;

@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-ui10';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-ui10';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-ui10';
-import {ScenePainter} from './scene-painter.mjs?v=20261029-ui10';
-import {CombatPainter} from './combat-painter.mjs?v=20261029-ui10';
-import {cameraView,updateCamera} from './camera.mjs?v=20261029-ui10';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel11';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel11';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261030-duel11';
+import {ScenePainter} from './scene-painter.mjs?v=20261030-duel11';
+import {CombatPainter} from './combat-painter.mjs?v=20261030-duel11';
+import {cameraView,updateCamera} from './camera.mjs?v=20261030-duel11';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};
@@ -69,7 +69,8 @@ export class Renderer {
   }
   hero(w,alpha,dt,{poseOverride=null}={}){
     const c=this.ctx,p=w.player,hero=w.hero;
-    const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[hero],desired,dt,p.cast?.key==='r');
+    const poseKey=w.poseKey||hero;this.poses[poseKey]||=coherentBase();
+    const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[poseKey],desired,dt,p.cast?.key==='r');
     const x=lerp(p.prevX,p.x,alpha),y=lerp(p.prevY,p.y,alpha);
     if(!poseOverride)ellipse(c,x,y+3,27,6,'rgba(1,4,12,.4)');
     if(p.passiveGlow>0)glow(c,x,y-60,80,HEROES[hero].color,p.passiveGlow*.16);
@@ -217,8 +218,17 @@ export class Renderer {
     const g=c.createLinearGradient(0,y,0,y-h);g.addColorStop(0,'#fff3b4');g.addColorStop(.35,'#ffb54d');g.addColorStop(1,'rgba(246,91,51,0)');
     c.fillStyle=g;c.beginPath();c.moveTo(x-w,y);c.bezierCurveTo(x-w*1.2,y-h*.4,x+Math.sin(time*8)*w,y-h*.65,x+w*.15,y-h);c.bezierCurveTo(x+w*1.4,y-h*.45,x+w,y-h*.2,x+w,y);c.closePath();c.fill();c.restore();
   }
-  draw(w,alpha=1,dt=.016){
-    this.resize();updateCamera(w,dt);const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/height;c.setTransform(sx,0,0,sy,0,0);
+  rivalLayer(w,alpha,dt){
+    const c=this.ctx;this.roster.before(w);for(const t of w.trees)this.tree(w,t);this.fox(w);
+    for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.max(0,1-g.age/(g.duration||.8))*.45;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
+    this.hero(w,alpha,dt);this.roster.passive(w);
+    for(const s of w.projectiles){if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;const color='#f2b3b9';glow(c,s.x,s.y,22,color,.4);ellipse(c,s.x,s.y,6,6,color);}
+    for(const e of w.effects)this.particles(w,e);
+  }
+  duelMarker(w,label,color){const c=this.ctx,p=w.player,x=p.x,y=p.y-122;if(p.hp<=0)return;c.save();c.textAlign='center';c.font='600 13px "Microsoft YaHei",sans-serif';c.lineWidth=3;c.strokeStyle='#03101d';c.strokeText(label,x,y-10);c.fillStyle=color;c.fillText(label,x,y-10);c.fillStyle='#07121dcc';c.fillRect(x-33,y,66,5);c.fillStyle=color;c.fillRect(x-33,y,66*Math.max(0,p.hp/p.maxHp),5);c.restore();}
+  draw(w,alpha=1,dt=.016,{opponent=null}={}){
+    this.resize();updateCamera(w,dt);const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/height;
+    if(w.duel){const scale=Math.min(sx,sy);c.setTransform(1,0,0,1,0,0);c.fillStyle='#06101b';c.fillRect(0,0,this.canvas.width,this.canvas.height);c.setTransform(scale,0,0,scale,(this.canvas.width-view.width*scale)/2,(this.canvas.height-height*scale)/2);c.save();c.beginPath();c.rect(0,0,view.width,height);c.clip();}else c.setTransform(sx,0,0,sy,0,0);
     c.save();c.translate(-view.x,0);
     const authored=w.sceneId&&w.sceneId!=='training';
     c.fillStyle='#0b1023';c.fillRect(view.x,0,view.width,height);
@@ -231,7 +241,7 @@ export class Renderer {
     if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
-    for(const t of w.targets)this.dummy(w,t);
+    if(!w.duel)for(const t of w.targets)this.dummy(w,t);
     for(const e of w.effects)if(['roots','fireZone','treeBirth'].includes(e.kind))this.particles(w,e);
     this.fox(w);
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
@@ -245,6 +255,7 @@ export class Renderer {
       else{const g=c.createLinearGradient(-44,0,8,0);g.addColorStop(0,rgba(color,0));g.addColorStop(.8,color);g.addColorStop(1,'#fff2c7');c.fillStyle=g;c.beginPath();c.moveTo(-44,0);c.quadraticCurveTo(-10,-11,7,0);c.quadraticCurveTo(-10,11,-44,0);c.fill();}c.restore();
     }
     for(const e of w.effects)if(!['roots','fireZone','treeBirth'].includes(e.kind)&&!(authored&&e.kind==='breakBridge'))this.particles(w,e);
+    if(opponent){this.rivalLayer(opponent,alpha,dt);this.duelMarker(w,'▼ 你','#ffe2a1');this.duelMarker(opponent,'对手 ▼','#ff9aa7');}
     if(authored)this.scenePainter.front(w);
     if(w.debugGeometry)this.scenePainter.geometry(w);
     c.textAlign='center';for(const t of w.texts){c.globalAlpha=clamp((t.duration-t.age)*2,0,1);c.font='600 '+t.size+'px "Microsoft YaHei", sans-serif';c.strokeStyle='#142036';c.lineWidth=3;c.strokeText(t.text,t.x,t.y);c.fillStyle=t.color;c.fillText(t.text,t.x,t.y);}c.globalAlpha=1;
@@ -262,5 +273,6 @@ export class Renderer {
       const off=w.targets.find(t=>t.hp>0&&(t.x<view.x||t.x>view.x+view.width));
       if(off){const right=off.x>view.x+view.width,xx=right?view.width-28:28;c.fillStyle='#f2c78e';c.font='14px sans-serif';c.textAlign=right?'right':'left';c.fillText(right?'对手 →':'← 对手',xx,height-100);}
     }
+    if(w.duel)c.restore();
   }
 }
