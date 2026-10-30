@@ -17,4 +17,5 @@ while(room.phase!=='finished'){
 }
 const finalScore=[...room.score],winner=room.winner;await api(route+'/action',{type:'return'},host.token);room=(await api(route+'/action',{type:'return'},guest.token)).room;if(room.phase!=='waiting')throw Error('Both clients did not return');await api(route+'/action',{type:'leave'},host.token);
 times.sort((a,b)=>a-b);const report={base,scene:room.scene,score:finalScore,winner,bothReturnToWaiting:room.phase==='waiting',clients:2,requests:times.length,httpRttMs:{median:+times[Math.floor(times.length*.5)].toFixed(2),p95:+times[Math.floor(times.length*.95)].toFixed(2)},snapshotBytes:{mean:Math.round(sizes.reduce((a,b)=>a+b,0)/sizes.length),max:Math.max(...sizes)},note:'两个独立协议客户端、真实战斗模拟与 HTTP 兜底；战斗物理快进，三秒倒计时使用真实时间。RTT 为接口验证，不代表两名异地玩家的WebRTC延迟。'};
-await mkdir(new URL('../validation/',import.meta.url),{recursive:true});await writeFile(new URL('../validation/duel12-'+(local?'api':'public')+'-audit.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+const output=process.argv[3]||new URL('../validation/duel12-'+(local?'api':'public')+'-audit.json',import.meta.url);
+await mkdir(new URL('../validation/',import.meta.url),{recursive:true});await writeFile(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

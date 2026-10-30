@@ -13,3 +13,5 @@ dist/.openai/
 art-source/
 *.tar.gz
 *.zip
+deploy/standalone/.env
+.standalone-qa/

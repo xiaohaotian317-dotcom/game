@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "node": "24.22.1",
+  "testsPassed": 145,
+  "archive": "arcane-duel-standalone-v1.tar.gz",
+  "archiveBytes": 114432032,
+  "archiveSha256": "ef34c37a142137ade0d2dbaf78e69345775b2bd5e6858add2b20046aa00dce4e",
+  "archiveFiles": 121,
+  "archiveManifestHashesVerified": true,
+  "credentialsAndDatabasesExcluded": true,
+  "packagedRuntimeHttpChecks": {
+    "/healthz": 200,
+    "/lobby": 200,
+    "/duel": 200,
+    "/src/duel-net.mjs": 200
+  },
+  "protocolAudit": "standalone-api-audit.json",
+  "dockerBuild": "not run: Docker unavailable",
+  "publicDeployment": "not performed: user has no hosting account",
+  "accessProblemResolved": false
+}

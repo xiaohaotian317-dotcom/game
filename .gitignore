@@ -16,6 +16,7 @@ arcane-duel-lab/dist/server/
 arcane-duel-lab/dist/.openai/
 arcane-duel-lab/.local-data/
 **/.cache/
+**/.standalone-qa/
 **/__pycache__/
 *.pyc
 .DS_Store

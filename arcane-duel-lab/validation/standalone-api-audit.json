@@ -1,0 +1,21 @@
+{
+  "base": "http://127.0.0.1:4196",
+  "scene": "garden",
+  "score": [
+    3,
+    0
+  ],
+  "winner": 0,
+  "bothReturnToWaiting": true,
+  "clients": 2,
+  "requests": 94,
+  "httpRttMs": {
+    "median": 7.58,
+    "p95": 10.74
+  },
+  "snapshotBytes": {
+    "mean": 5761,
+    "max": 6236
+  },
+  "note": "两个独立协议客户端、真实战斗模拟与 HTTP 兜底；战斗物理快进，三秒倒计时使用真实时间。RTT 为接口验证，不代表两名异地玩家的WebRTC延迟。"
+}

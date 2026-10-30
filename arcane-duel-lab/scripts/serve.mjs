@@ -1,22 +1,11 @@
-import http from 'node:http';
-import {readFile, stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import path from 'node:path';
-import {handleDuelRequest} from '../server/rooms.mjs';
+import {createGameServer} from '../server/http-server.mjs';
 import {localDatabase} from '../server/local-db.mjs';
-const db=localDatabase(fileURLToPath(new URL('../.local-data/duel.sqlite',import.meta.url)));
-const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
+const db=localDatabase(process.env.DUEL_DB_PATH||fileURLToPath(new URL('../.local-data/duel.sqlite',import.meta.url)));
+const root=fileURLToPath(new URL('../dist/',import.meta.url));
 const port = Number(process.env.PORT || 4173);
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
-http.createServer(async (req,res) => {
-  try {
-    if(req.url.startsWith('/api/duel')){let body='';for await(const chunk of req){body+=chunk;if(body.length>220000){res.writeHead(413).end();return;}}const request=new Request('http://'+req.headers.host+req.url,{method:req.method,headers:req.headers,...(req.method==='POST'?{body}:{} )});const response=await handleDuelRequest(request,db);res.writeHead(response.status,Object.fromEntries(response.headers));res.end(await response.text());return;}
-    const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-    const target = path.resolve(root,'.' + pathname);
-    if (target !== root && !target.startsWith(root + path.sep)) {res.writeHead(403).end();return;}
-    const info = await stat(target);
-    const file = info.isDirectory() ? path.join(target,'index.html') : target;
-    res.writeHead(200,{'Content-Type':types[path.extname(file)] || 'application/octet-stream','Cache-Control':'no-cache'});
-    res.end(await readFile(file));
-  } catch {res.writeHead(404).end('Not found');}
-}).listen(port,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:' + port + ' · PID ' + process.pid));
+const host=process.env.HOST||'127.0.0.1';
+const server=createGameServer({root,db,publicOrigin:process.env.PUBLIC_ORIGIN});
+server.listen(port,host,()=>console.log('Game: http://'+host+':'+server.address().port+' · PID '+process.pid));
+const shutdown=()=>server.close(()=>{db.close();process.exit(0);});
+process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);

@@ -1,0 +1,16 @@
+**
+!package.json
+!dist/
+!dist/**
+dist/client/
+dist/server/
+dist/.openai/
+!server/
+!server/*.mjs
+!scripts/
+!scripts/serve.mjs
+!drizzle/
+!drizzle/*.sql
+!deploy/
+!deploy/standalone/
+!deploy/standalone/Dockerfile

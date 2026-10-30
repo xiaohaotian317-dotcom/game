@@ -1,0 +1,30 @@
+services:
+  game:
+    build:
+      context: ../..
+      dockerfile: deploy/standalone/Dockerfile
+    restart: unless-stopped
+    environment:
+      PUBLIC_ORIGIN: https://${GAME_DOMAIN:?Set GAME_DOMAIN in .env first}
+    volumes:
+      - game_data:/app/.local-data
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      game:
+        condition: service_healthy
+    environment:
+      GAME_DOMAIN: ${GAME_DOMAIN:?Set GAME_DOMAIN in .env first}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  game_data:
+  caddy_data:
+  caddy_config:
