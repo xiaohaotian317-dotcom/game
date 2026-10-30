@@ -1,15 +1,20 @@
-import {skillArtStyle} from './skill-icons.mjs?v=20261029-combat9';
-import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261029-combat9';
-import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-combat9';
-import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-combat9';
-import {SCENES} from './scenes.mjs?v=20261029-combat9';
-import {sceneStatus} from './scene-mechanics.mjs?v=20261029-combat9';
-import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-combat9';
-import {Sound} from './audio.mjs?v=20261029-combat9';
-import {worldPoint,cameraView} from './camera.mjs?v=20261029-combat9';
+import {skillArtStyle} from './skill-icons.mjs?v=20261029-ui10';
+import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261029-ui10';
+import {EXTRA_HEROES,roleMeter} from './hero-roster.mjs?v=20261029-ui10';
+import {createWorld,step,STEP,HEROES,actionState,repair,triggerMechanism,interactNearest,clamp} from './simulation.mjs?v=20261029-ui10';
+import {SCENES} from './scenes.mjs?v=20261029-ui10';
+import {sceneStatus} from './scene-mechanics.mjs?v=20261029-ui10';
+import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261029-ui10';
+import {Sound} from './audio.mjs?v=20261029-ui10';
+import {worldPoint,cameraView} from './camera.mjs?v=20261029-ui10';
+import {loadProfile,saveProfile} from './player-profile.mjs?v=20261029-ui10';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
+let profileStorage;try{profileStorage=window.localStorage;}catch{}
+sound.enabled=loadProfile(profileStorage).sound;
+$('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));
+const enterLobby=()=>{location.href='lobby.html';};
 let selectedScene=SCENES[initialParams.get('scene')]?initialParams.get('scene'):'moon';
 let world=createWorld(HEROES[initialParams.get('hero')]?initialParams.get('hero'):SCENES[selectedScene].defaultHero,selectedScene),renderer,mode='title',paused=false,pointerDown=false,pointerUV=null,aim={x:1120,y:500},last=performance.now(),accumulator=0,uiClock=0;
 const descriptions={
@@ -107,7 +112,7 @@ function point(event){const r=canvas.getBoundingClientRect();pointerUV={u:(event
 canvas.addEventListener('pointermove',point);canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();point(e);pointerDown=true;canvas.setPointerCapture(e.pointerId);sound.init();canvas.focus({preventScroll:true});});
 window.addEventListener('pointerup',()=>pointerDown=false);canvas.addEventListener('pointercancel',()=>pointerDown=false);canvas.addEventListener('contextmenu',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
-  if(mode==='title'){if(e.code==='Enter'&&!$('#start-button').disabled)start();return;}
+  if(mode==='title'){if(e.code==='Enter'&&!$('#start-button').disabled)enterLobby();return;}
   if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','ShiftLeft','ShiftRight','KeyF','KeyE','KeyR','KeyJ','KeyG'].includes(e.code))e.preventDefault();
   if(e.repeat)return;
   if(e.code==='KeyP'||e.code==='Escape'){setPause(!paused);return;}
@@ -124,8 +129,8 @@ window.addEventListener('keydown',e=>{
 window.addEventListener('keyup',e=>keys.delete(e.code));
 window.addEventListener('blur',()=>{keys.clear();pointerDown=false;if(mode==='game'&&!paused)setPause(true);});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&mode==='game'&&!paused)setPause(true);});
-$('#start-button').addEventListener('click',start);
-$('#back-button').addEventListener('click',()=>{mode='title';$('#title-screen').hidden=false;$('#game').hidden=true;keys.clear();pointerDown=false;positionTitleButton();});
+$('#start-button').addEventListener('click',enterLobby);
+$('#back-button').addEventListener('click',enterLobby);
 $('#pause-button').addEventListener('click',()=>setPause(!paused));$('#resume-button').addEventListener('click',()=>setPause(false));
 $('#freeze-button').addEventListener('click',freezeFrame);
 $$('.hero-button').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.hero)));
@@ -135,7 +140,7 @@ $('#repair-button').addEventListener('click',()=>{if(selectedScene==='moon')repa
 for(const [id,field] of [['moving','moving'],['counter','counterattack'],['slow','slow']]){
   $('#'+id+'-button').addEventListener('click',e=>{world[field]=!world[field];e.currentTarget.setAttribute('aria-pressed',String(world[field]));canvas.focus({preventScroll:true});});
 }
-$('#sound-button').addEventListener('click',()=>{sound.enabled=!sound.enabled;$('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));if(sound.enabled)sound.init();});
+$('#sound-button').addEventListener('click',()=>{sound.enabled=!sound.enabled;const profile=loadProfile(profileStorage);profile.sound=sound.enabled;saveProfile(profileStorage,profile);$('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));if(sound.enabled)sound.init();});
 $('#camera-button').addEventListener('click',()=>{world.camera.overview=!world.camera.overview;world.camera.x=0;$('.arena-shell').style.aspectRatio=cameraView(world).width+' / '+world.height;$('#camera-button').textContent=world.camera.overview?'镜头 全景':'镜头 跟随';canvas.focus({preventScroll:true});});
 $('#fullscreen-button').addEventListener('click',async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen();}catch{notice('当前浏览器暂不支持全屏，可放大窗口体验。');}});
 function consumeEvents(){
@@ -181,6 +186,7 @@ function loop(now){
 }
 window.duelLab={snapshot:()=>({hero:world.hero,time:world.time,paused,mode,state:actionState(world),player:{x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,hp:world.player.hp,grounded:world.player.grounded,jumps:world.player.jumps,recast:world.player.recast},targets:world.targets.map(t=>({x:t.x,y:t.y,hp:t.hp,burnUntil:t.burnUntil})),stats:{...world.stats},fox:world.fox?{x:world.fox.x,y:world.fox.y}:null,bridge:world.platforms.find(p=>p.id==='bridge').active})};
 async function init(){
+  if(initialParams.get('play')!=='1'){$('#loading').textContent='准备就绪 · 点击进入主大厅';$('#start-button').disabled=false;positionTitleButton();return;}
   try{
     const assets=await loadAssets((done,total)=>$('#loading').textContent='正在加载角色与秘境 '+done+' / '+total);
     await ensureHeroAssets(world.hero,assets);

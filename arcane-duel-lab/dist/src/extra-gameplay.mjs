@@ -1,8 +1,8 @@
-import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-combat9';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-combat9';
-import {segmentBox,clearLine} from './collision.mjs?v=20261029-combat9';
-import {targetPose} from './character-rig.mjs?v=20261029-combat9';
-import {RECAST_WINDOWS} from './controls.mjs?v=20261029-combat9';
+import {EXTRA_HEROES} from './hero-roster.mjs?v=20261029-ui10';
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261029-ui10';
+import {segmentBox,clearLine} from './collision.mjs?v=20261029-ui10';
+import {targetPose} from './character-rig.mjs?v=20261029-ui10';
+import {RECAST_WINDOWS} from './controls.mjs?v=20261029-ui10';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
   w.fields=[];w.constructs=[];w.iceMirrors=[];w.portals=[];w.ghosts=[];w.roleState={nextShield:8,backstabAt:0,starLastCast:0,starCasts:[]};

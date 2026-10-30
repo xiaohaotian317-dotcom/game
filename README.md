@@ -1,6 +1,6 @@
 # 秘境决斗
 
-暗色奇幻 2D 横版平台对战游戏，目前为六职业单人动作与机关试炼版本。最终目标是短局双人联机决斗，正式大厅、抽卡池和单机闯关尚待实现。
+暗色奇幻 2D 横版平台对战游戏，目前为六职业单人动作与机关试炼版本。最终目标是短局双人联机决斗，现已加入主大厅与本机体验召唤/图鉴，正式联机、账号经济和单机闯关尚待实现。
 
 ## 项目内容
 
@@ -9,7 +9,7 @@
 - 角色放大检视、训练木桩、反击、慢动作、画面定格、跟随/全景镜头。
 - 运行代码、美术概念、原始参考、提示词、测试及验证记录。
 
-[在线试玩](https://arcane-duel-motion-lab-1028-a5324e.sassysquid.chatgpt.site/?play=1) · [六位角色检视](https://arcane-duel-motion-lab-1028-a5324e.sassysquid.chatgpt.site/characters.html)
+[在线试玩](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/?play=1) · [六位角色检视](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/characters.html)
 
 2026-10-29 combat7：雷行者改为近战雷拳并小幅抬头；影刃修正正向刀光、加入整身残影；霜、雷、影、星四位特效细化。全员原 Q 改 F，机关交互改 G，二段窗口延长至 2.5～3.5 秒。修订说明见 [近战雷拳与特效修订](arcane-duel-lab/近战雷拳与特效修订.md)。
 
@@ -58,3 +58,9 @@ node scripts/audit-scene-routes.mjs
 GitHub 仓库保留完整目录结构。重复的 ZIP/TAR 发布包、依赖缓存和本地 Git 元数据不入库。概念图与旧修订记录不代表正式功能已经实现，当前有效需求和待办以三份集中记忆为准。
 
 combat9：六职业 36 枚手绘技能图标、影刃收颈、近战 +25%、霜环减速和背景层次调整，见 [最新修订](arcane-duel-lab/影刃霜环与技能图标修订.md)。
+
+## UI10 主大厅与英雄召唤
+
+启动页点击开始进入大厅；`lobby.html` 为主大厅，`lobby.html?view=summon` 为召唤，`lobby.html?view=codex` 为图鉴。六位大立绘、三张模式卡、黑金界面、单抽/十连和结果展示已接入；体验金币、解锁、展示英雄和声音保存在本机。正式联机与闯关入口有开放状态说明，可先进入现有三境试炼。110 项检查通过，详见 [界面说明](arcane-duel-lab/主大厅与英雄召唤界面.md)。
+
+[主大厅](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/lobby.html) · [英雄召唤](https://arcane-duel-motion-lab-1028-a5324e.xiaohaotian317.chatgpt.site/lobby.html?view=summon)

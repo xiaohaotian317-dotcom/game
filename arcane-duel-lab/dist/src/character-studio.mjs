@@ -1,5 +1,5 @@
-import {Renderer,loadAssets,ensureHeroAssets} from './renderer.mjs?v=20261029-combat9';
-import {createWorld,HEROES} from './simulation.mjs?v=20261029-combat9';
+import {Renderer,loadAssets,ensureHeroAssets} from './renderer.mjs?v=20261029-ui10';
+import {createWorld,HEROES} from './simulation.mjs?v=20261029-ui10';
 const $=s=>document.querySelector(s),buttons=[...document.querySelectorAll('[data-mode]')];
 let mode='idle',phase=0,paused=false,face=1,last=performance.now(),renderers,worlds;
 const names={idle:'待机',run:'跑步',jump:'起跳',fall:'下落',land:'落地',attack:'普攻',q:'F 技能',e:'E 技能',r:'R 技能',dash:'冲刺',hurt:'受击'};

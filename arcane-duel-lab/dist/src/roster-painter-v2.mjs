@@ -1,4 +1,4 @@
-import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261029-combat9';
+import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261029-ui10';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),ease=v=>1-Math.pow(1-clamp(v,0,1),3);
 const colors={frost:'#a9e9ff',lightning:'#ffe191',shadow:'#c6a5ff',star:'#d2bbff'};
 function ring(c,x,y,rx,ry,color,width=2,rot=0){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.ellipse(x,y,Math.max(1,rx),Math.max(1,ry),rot,0,TAU);c.stroke();}

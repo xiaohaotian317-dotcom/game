@@ -1,5 +1,5 @@
-import {HEROES} from './simulation.mjs?v=20261029-combat9';
-import {skillArtStyle,ICON_ORDER} from './skill-icons.mjs?v=20261029-combat9';
+import {HEROES} from './simulation.mjs?v=20261029-ui10';
+import {skillArtStyle,ICON_ORDER} from './skill-icons.mjs?v=20261029-ui10';
 const extra={fire:['落烬','E 二段 · 俯冲灼烧'],nature:['角跃令','E 二段 · 指挥冲撞'],frost:['寒潮','F 二段 · 轻伤减速'],lightning:['折雷','F 二段 · 命中后变向'],shadow:['返影','E 二段 · 返回影标'],star:['斥星','F 二段 · 推开敌人']};
 const labels=['LMB','F','E','SHIFT','R','二段'];
 document.querySelector('#skills').innerHTML=['fire','nature','frost','lightning','shadow','star'].map(hero=>{const h=HEROES[hero];return '<section style="--accent:'+h.color+'"><div class="hero-heading"><h2>'+h.name+' · '+h.given+'</h2><span>'+h.passive+' · '+h.passiveText+'</span></div><div class="icon-grid">'+ICON_ORDER.map((key,i)=>{const s=h.skills[key],name=i===5?extra[hero][0]:s?.name||'冲刺',copy=i===5?extra[hero][1]:key==='dash'?'短暂无敌 · 位移闪避':key==='r'?'终极技能':key==='attack'?'普通攻击':h.descriptions?.[key]||'职业技能';return '<article><div class="art-frame"><span class="skill-art" role="img" aria-label="'+h.name+' '+name+'图标" style="'+skillArtStyle(hero,key,i===5)+'"></span><b class="key">'+labels[i]+'</b></div><h3>'+name+'</h3><p>'+copy+'</p></article>';}).join('')+'</div></section>';}).join('');

@@ -1,9 +1,9 @@
-import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-combat9';
-import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-combat9';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-combat9';
-import {ScenePainter} from './scene-painter.mjs?v=20261029-combat9';
-import {CombatPainter} from './combat-painter.mjs?v=20261029-combat9';
-import {cameraView,updateCamera} from './camera.mjs?v=20261029-combat9';
+import {RosterPainter} from './roster-painter-v2.mjs?v=20261029-ui10';
+import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261029-ui10';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261029-ui10';
+import {ScenePainter} from './scene-painter.mjs?v=20261029-ui10';
+import {CombatPainter} from './combat-painter.mjs?v=20261029-ui10';
+import {cameraView,updateCamera} from './camera.mjs?v=20261029-ui10';
 const TAU=Math.PI*2;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
 const rgba=(hex,a)=>{let n=parseInt(hex.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';};

@@ -1,4 +1,4 @@
-import {segmentBox,clearLine} from './collision.mjs?v=20261029-combat9';
+import {segmentBox,clearLine} from './collision.mjs?v=20261029-ui10';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function event(w,type,data={}){w.events.push({type,...data});}
 export function hammerPosition(h){return{x:h.anchorX+Math.sin(h.angle)*h.length,y:h.anchorY+Math.cos(h.angle)*h.length};}

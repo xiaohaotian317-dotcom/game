@@ -1,0 +1,27 @@
+[
+  {
+    "key": "backdrop",
+    "transparent": false,
+    "refs": [
+      "C:/Users/XIAOHA~1/AppData/Local/Temp/codex-clipboard-9e6cfeff-ef89-4107-8e0d-6a6118829a44.png"
+    ],
+    "prompt": "Reference image: the supplied dark fantasy game main menu. Create a CLEAN production environment plate in the exact same intricate hand-painted anime fantasy art style, landscape 16:9. REMOVE all UI, cards, text, logos, borders, portraits, icons, numbers, buttons and all people. Keep the beautiful blue moonlit gothic ruined castle, vast luminous moon high at upper-right-center, detailed stone archways and hanging purple-gold banners along edges, candles, delicate ivy and white/violet flowers around foreground stairs, still reflecting water at bottom, distant spires. Add a low broad round ancient stone summoning dais in lower center, with subtle gold inlay but no floating symbols. Leave the middle third and right two-thirds spacious and readable for overlaying real UI. Deep navy and moon-blue, restrained warm candle highlights, painterly and atmospheric, moderate contrast, not overly sharp. Full bleed, no graphic frame, no UI, no text, no character. This will be the background behind both lobby and summon screens."
+  },
+  {
+    "key": "cards",
+    "transparent": false,
+    "refs": [
+      "C:/Users/XIAOHA~1/AppData/Local/Temp/codex-clipboard-9e6cfeff-ef89-4107-8e0d-6a6118829a44.png"
+    ],
+    "prompt": "Use the supplied reference ONLY for art style and the three main menu card scenes. Create a production art atlas, landscape 1536x1024, EXACTLY THREE frameless vertical illustrations side by side, each 512x1024, no gutters, margins, text or UI. Left panel: vine-covered ancient angel statue and stone stairs surrounding a bright golden summoning crystal, mystical gold/emerald light. Middle panel: red-cloaked brown-haired female fire mage facing a silver-haired female frost mage on opposite broken stone platforms, orange fire spell versus blue ice spell, huge moon and gothic castle behind. Right panel: winding stair-like floating islands connecting a lush golden tree garden above, moonlit ruined castle at middle and lava fortress below, a journey map painting. Rich hand-painted dark fantasy anime art, crisp large silhouettes, antique gold accents, strong composition. Keep subjects within each column, no overlap between columns. Fill each column edge to edge; no frames, buttons, logos, typography or numbers. Darken the bottom fifth of each panel into a natural navy atmosphere so UI titles can be overlaid later."
+  },
+  {
+    "key": "heroes",
+    "transparent": true,
+    "refs": [
+      "C:/Users/XIAOHA~1/AppData/Local/Temp/codex-clipboard-9e6cfeff-ef89-4107-8e0d-6a6118829a44.png",
+      "C:/Users/XIAOHA~1/AppData/Local/Temp/codex-clipboard-322b0fef-b42e-4f78-a85d-ca2c4a659f9c.png"
+    ],
+    "prompt": "Reference images: preserve the fire mage and nature woman's character identities and detailed hand-painted anime fantasy style. Create a transparent CHARACTER SELECT SPLASH ATLAS: exactly 6 separate full-body hero illustrations, strict 3 columns x 2 rows on a 1536x1024 canvas, each cell exactly 512x512. True transparent background everywhere between characters. Each figure centered around x=256 of its own cell, top of hair near y=35 and feet near y=490; fit ALL hair, feet, cloak and weapon completely within its cell with 18px padding; no overlap. Same realistic anime adult proportions and beautiful detailed faces. Reading order: (1) brown-haired female FIRE mage from reference, flowing scarlet-black-gold coat, short black dress and boots, black-gold staff with flame crystal, elegant confident standing pose; (2) beautiful brown-braided female NATURE mage from reference, flower crown, layered green-gold leaf dress and boots, curved living wood staff, glowing seed in other hand, no fox or other pet; (3) graceful silver-haired female FROST mage in navy-white-gold crystalline long coat, slim blue crystal staff, snowflake details; (4) athletic black-haired male LIGHTNING brawler with gold hair streak, navy-gold short coat, black-gold armored fists, natural SHORT neck and eyes forward; (5) handsome dark-purple-haired male SHADOW assassin, black silver raven hood and purple scarf, twin curved daggers, head held naturally above shoulders, no long neck or hunch; (6) handsome gray-black-haired male STAR mage in navy-gold long coat, holding a fine floating golden armillary sphere and purple star. Heroic relaxed class-specific poses, distinct silhouettes. No platforms, UI frames, labels, letters, numbers, ground, checkerboard, backdrop, grid lines, cast shadows or decorative background. Premium game splash art."
+  }
+]

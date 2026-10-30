@@ -7,8 +7,8 @@
   <title>秘境决斗 · 三境机关试炼</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="scene-view.css?v=20261029-combat9">
-<link rel="stylesheet" href="skill-icons.css?v=20261029-combat9"></head>
+  <link rel="stylesheet" href="scene-view.css?v=20261029-ui10">
+<link rel="stylesheet" href="skill-icons.css?v=20261029-ui10"></head>
 <body>
   <svg class="svg-defs" aria-hidden="true"><defs>
     <symbol id="i-flame" viewBox="0 0 48 48"><path d="M27 3c4 14-4 14-1 22 4-1 7-5 8-9 13 17 5 29-9 29S4 33 12 20c0 9 4 10 6 8C14 16 26 14 27 3Z"/><path d="M24 27c-8 8-8 15 1 16 8-2 6-7-1-16Z"/></symbol>
@@ -32,7 +32,7 @@
   </section>
   <main id="game" class="game scene-game" hidden>
     <header class="topbar">
-      <button id="back-button" class="brand" title="返回标题页"><svg><use href="#i-moon"/></svg><span>秘境决斗<small>三境机关试炼</small></span></button>
+      <button id="back-button" class="brand" title="返回主大厅" aria-label="返回主大厅"><svg><use href="#i-moon"/></svg><span>秘境决斗<small>返回主大厅</small></span></button>
       <div class="top-actions"><button id="camera-button" class="quiet">镜头 跟随</button><button id="sound-button" class="quiet" aria-pressed="true">声音 开</button><button id="fullscreen-button" class="quiet">全屏</button><button id="pause-button" class="quiet">暂停 <kbd>P</kbd></button></div>
     </header>
     <nav class="hero-switch" aria-label="切换英雄"><button data-hero="fire" class="hero-button active"><canvas width="72" height="72" aria-hidden="true"></canvas><span>焰术师<small>烬绯</small></span><kbd>1</kbd></button><button data-hero="nature" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>森灵<small>荆歌</small></span><kbd>2</kbd></button><button data-hero="frost" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>霜语者<small>凝霜</small></span><kbd>3</kbd></button><button data-hero="lightning" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>雷行者<small>霆隼</small></span><kbd>4</kbd></button><button data-hero="shadow" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>影刃<small>朔鸦</small></span><kbd>5</kbd></button><button data-hero="star" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>星术师<small>宿衡</small></span><kbd>6</kbd></button></nav>
@@ -76,6 +76,6 @@
     </section>
     <footer class="footer"><span><i></i>连续施法与地形反馈 <a class="inspect-link" href="characters.html">放大查看角色 ↗</a></span><span>六职业动作试炼版本</span><span id="notice" aria-live="polite">先试试二段跳，再向木桩施法。</span></footer>
   </main>
-  <script type="module" src="src/app.mjs?v=20261029-combat9"></script>
+  <script type="module" src="src/app.mjs?v=20261029-ui10"></script>
 </body>
 </html>
