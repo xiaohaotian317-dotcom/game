@@ -1,7 +1,7 @@
 import {HEROES} from './simulation.mjs?v=20261029-ui10';
 import {skillArtStyle} from './skill-icons.mjs?v=20261029-ui10';
 import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261029-ui10';
-import {splashStyle} from './lobby-art.mjs?v=20261029-ui10';
+import {splashStyle} from './lobby-art.mjs?v=20261030-ui10a';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
 let profile=loadProfile(storage),preview='nature',stage='moon',busy=false,toastTimer;
