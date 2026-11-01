@@ -18,15 +18,15 @@ function flat(hero='fire'){const w=createWorld(hero);w.targets=[];w.platforms=w.
 test('boss bodies shrink another 10 percent, HP grows 10 percent and normal movement drops 15 percent',()=>{
  const base={B01:[1050,106],B02:[980,128],B03:[920,170],B04:[1100,104],B05:[1450,89],B06:[1250,115],B07:[1350,76],B08:[1050,186],B09:[1280,140],B10:[1200,125],B11:[1300,99]};
  for(const [id,[hp,speed]]of Object.entries(base)){const w=flat(),e=spawnEnemy(w,id,{x:600});assert.equal(e.scale,.72);assert.equal(e.hp,Math.round(hp*1.1));assert.ok(Math.abs(ENEMIES[id].speed-speed*.85)<1e-8);assert.equal(e.attackScale,.8*1.2);assert.equal(e.frequency,1.2);}
- for(let id=1;id<=11;id++){const w=createCampaign('fire',id);assert.equal(w.campaign.stage.bossHp,Math.round((380+(id-1)*110)*1.1));}
+ for(let id=1;id<=11;id++){const w=createCampaign('fire',id);assert.equal(w.campaign.stage.bossHp,STAGES[id-1].bossHp);if(id>3)assert.ok(w.campaign.stage.bossHp>STAGES[id-2].bossHp);}
 });
 test('boss cooldowns and active timing carry the real 20 percent frequency increase',()=>{
  const w=flat(),e=spawnEnemy(w,'B04',{x:600});e.ai.readyAt=0;e.ai.nextPassive=100;run(w,.08);const event=w.enemyEvents.find(x=>x.type==='attackStarted');assert.ok(event);const p=ENEMIES.B04.patterns.find(p=>p.id===event.pattern);assert.ok(Math.abs(e.ai.cooldowns[p.id]-event.time-p.cd/1.2)<1e-8);assert.equal(e.ai.attack.speed,1.2);
  e.ai.attack=null;e.ai.readyAt=0;e.ai.cooldowns={};e.ai.sequence=2;run(w,.02);assert.equal(e.ai.attack.plan.kind,'special');assert.ok(Math.abs(e.ai.attack.plan.steps[0].radius-72*.8*1.2)<1e-9);
 });
 test('sparse random layouts reproduce their seed and have exactly ground plus one upper level',()=>{
- const a=campaignPlatforms(42),b=campaignPlatforms(42),c=campaignPlatforms(43);assert.deepEqual(a,b);assert.notDeepEqual(a,c);assert.ok(a.length>=12&&a.length<=22);assert.equal(new Set(a.map(p=>p.y)).size,1);for(let i=1;i<a.length;i++){const gap=a[i].x-a[i-1].x-a[i-1].w;assert.ok(gap>=279&&gap<=326);}
- const w=createCampaign('fire',1,{seed:42});assert.equal(new Set(w.platforms.map(p=>p.y)).size,2);fitCampaignCamera(w,1280,720);assert.equal(w.camera.viewWidth,1664);assert.ok(w.camera.viewWidth>1280);assert.ok(w.floor>cameraView(w).y&&w.floor<cameraView(w).y+w.camera.viewHeight);
+ const a=campaignPlatforms(42),b=campaignPlatforms(42),c=campaignPlatforms(43);assert.deepEqual(a,b);assert.notDeepEqual(a,c);assert.ok(a.length>=12&&a.length<=22);assert.ok(new Set(a.map(p=>p.y)).size>3);for(let i=1;i<a.length;i++){const gap=a[i].x-a[i-1].x-a[i-1].w;assert.ok(gap>=124&&gap<=321);}
+ const w=createCampaign('fire',1,{seed:42});assert.ok(w.platforms.filter(p=>p.id!=='ground').every(p=>p.y>=w.floor-225&&p.y<=w.floor-155));fitCampaignCamera(w,1280,720);assert.equal(w.camera.viewWidth,1664);assert.ok(w.camera.viewWidth>1280);assert.ok(w.floor>cameraView(w).y&&w.floor<cameraView(w).y+w.camera.viewHeight);
 });
 test('every hero can double jump onto the upper road and between its sparse neighboring platforms',()=>{
  for(const hero of Object.keys(HEROES)){const template=createCampaign(hero,1,{seed:71}),decks=template.platforms.filter(p=>p.type==='campaign-upper');for(const [from,to]of [[template.platforms[0],decks[0]],...decks.slice(0,4).map((p,i)=>[p,decks[i+1]])]){let reached=false;
@@ -35,7 +35,7 @@ test('every hero can double jump onto the upper road and between its sparse neig
 });
 test('spawn rate is 20 percent slower and later waves can drop onto the upper deck',()=>{
  assert.equal(SPAWN_RATE,.8);const early=createCampaign('fire',1,{seed:42});early.player.x=1400;beginEncounter(early);assert.ok(Math.abs(early.campaign.queue[0].at-.65/.8)<1e-8);assert.ok(early.campaign.queue.every(q=>q.platformId==='ground'));
- const late=createCampaign('fire',7,{seed:42});late.player.x=1400;beginEncounter(late);assert.ok(late.campaign.queue.some(q=>q.platformId!=='ground'));for(let i=0;i<360;i++)stepCampaign(late,STEP);assert.ok(late.campaign.spawned.some(s=>s.landingY===late.floor-190));
+ const late=createCampaign('fire',7,{seed:42});late.player.x=1400;beginEncounter(late);assert.ok(late.campaign.queue.some(q=>q.platformId!=='ground'));for(let i=0;i<360;i++)stepCampaign(late,STEP);assert.ok(late.campaign.spawned.some(s=>s.platformId!=='ground'&&late.platforms.some(p=>p.id===s.platformId&&p.y===s.landingY)));
 });
 test('ordinary ground minions never trigger a player-style jump toward a platform',()=>{
  for(const id of ENEMY_IDS.filter(id=>!ENEMIES[id].boss&&!ENEMIES[id].flying)){const w=createCampaign('fire',4,{seed:42});w.campaign.triggers=[1e8,2e8,3e8,4e8];const deck=w.platforms[1];Object.assign(w.player,{x:deck.x+deck.w/2,y:deck.y,prevY:deck.y,prevX:deck.x+deck.w/2,platformId:deck.id,hp:10000,maxHp:10000});const e=spawnEnemy(w,id,{x:deck.x+deck.w/2-100,y:w.floor});for(let i=0;i<600;i++){stepCampaign(w,STEP);assert.ok(e.vy>=-1e-8,id+' jumped');assert.equal(e.jumps||0,0,id);}}
@@ -59,7 +59,7 @@ test('all eleven selected boss atlases, portal and sparse platform art match ins
  const selected=[...Object.values(fxMeta.units),fxMeta.portal,fxMeta.platforms];assert.equal(Object.keys(fxMeta.units).length,11);assert.equal(fxMeta.platforms.file,'platforms-v4.png');
  for(const m of selected){const bytes=readFileSync(new URL(m.file,artRoot));assert.equal(createHash('sha256').update(bytes).digest('hex'),m.sha256);assert.equal(m.alphaExtrema[0],0);assert.ok(m.cornerAlpha.every(x=>x<=1));assert.equal(m.frames.length,m===fxMeta.platforms?12:16);for(const f of m.frames){const r=f.rect,s=f.spriteRect;assert.ok(r[0]>=0&&r[1]>=0&&r[0]+r[2]<=m.size[0]&&r[1]+r[3]<=m.size[1]);assert.ok(s[2]>0&&s[3]>0);assert.ok(f.bottomNormalized>0&&f.bottomNormalized<=1);}}
 });
-function mockCanvas(draws){const gradient={addColorStop(){}};return new Proxy({globalAlpha:1,drawImage(...args){const n=args.slice(1);assert.ok(n.every(Number.isFinite));assert.ok(Math.abs(n[6]/n[2]-n[7]/n[3])<1e-8,'uniform image scale');draws.push(args);},createLinearGradient(){return gradient;}},{get(t,k){return k in t?t[k]:()=>{};},set(t,k,v){t[k]=v;return true;}});}
+function mockCanvas(draws){const gradient={addColorStop(){}};let ty=0;const stack=[];return new Proxy({globalAlpha:1,save(){stack.push(ty);},restore(){ty=stack.pop()??0;},translate(x,y){ty+=y;},drawImage(...args){const n=args.slice(1);assert.ok(n.every(Number.isFinite));assert.ok(Math.abs(n[6]/n[2]-n[7]/n[3])<1e-8,'uniform image scale');args[6]+=ty;draws.push(args);},createLinearGradient(){return gradient;}},{get(t,k){return k in t?t[k]:()=>{};},set(t,k,v){t[k]=v;return true;}});}
 test('boss windup, missiles, impacts, fields and falling meteor select their own atlas without stretching',()=>{
  const draws=[],c=mockCanvas(draws),assets={bossFxMeta:fxMeta,bossFx:Object.fromEntries(Object.keys(fxMeta.units).map(id=>[id,{id}]))},painter=new BossFxPainter(c,assets),w=flat();
  for(const id of Object.keys(fxMeta.units)){const e=spawnEnemy(w,id,{x:650});e.ai.attack={age:.1,plan:{steps:[{windup:.7}]},index:0};assert.equal(painter.windup(w,e),true);assert.equal(painter.projectile(w,{enemyKind:id,x:500,y:600,vx:300,vy:150,age:.2}),true);assert.equal(painter.effect(w,{kind:'enemyVfx',enemyKind:id,x:500,y:600,style:'bone',ground:true,age:.1,duration:.5,radius:90}),true);assert.equal(painter.zone(w,{enemyKind:id,x:500,y:600,created:-1,delay:.5,life:3,radius:90}),true);assert.ok(draws.slice(-4).every(d=>d[0].id===id));}
@@ -70,5 +70,6 @@ test('theme platforms align their real standing surface and the portal keeps a s
  for(const s of STAGES){const w=createCampaign('fire',s.id,{seed:42}),view={x:0,width:w.width};painter.ground(c,w,view);const f=fxMeta.platforms.frames[s.id-1],first=draws.filter(d=>d[0]===platform).at(-w.platforms.filter(p=>p.id!=='ground').length);assert.ok(first);const r=f.rect,src=f.spriteRect,scale=first[7]/src[2];assert.ok(Math.abs(first[6]+(r[1]+f.topNormalized*r[3]-src[1])*scale-w.platforms[1].y)<1e-7);}
  const w=createCampaign();w.campaign.portal={x:700,y:w.floor,born:0};for(const time of [.6,1,1.1,2,5,9]){w.time=time;painter.effects(c,w);}const frames=draws.filter(d=>d[0]===portal).map(d=>d.slice(1,5));assert.equal(frames.length,6);assert.ok(frames.every(r=>JSON.stringify(r)===JSON.stringify(frames[0])));
 });
+
 
 

@@ -1,0 +1,164 @@
+[
+  {
+    "hero": "fire",
+    "kind": "fx",
+    "file": "hero-fire-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      253
+    ],
+    "zeroAlphaRatio": 0.352603,
+    "sha256": "62c21e98d8e8310221c53535fe73b97c1e30af310f425d0de72314d5d54eba94"
+  },
+  {
+    "hero": "fire",
+    "kind": "icons",
+    "file": "hero-fire-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "efe14be61def95f70bdf04a025c8e757005edcaf6bfd6ed46b4a72ce2863fd4c"
+  },
+  {
+    "hero": "nature",
+    "kind": "fx",
+    "file": "hero-nature-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      253
+    ],
+    "zeroAlphaRatio": 0.374259,
+    "sha256": "da0b0d94238f009d4a51db58a255ed880d51169172c2349ab2669a16b2c09e99"
+  },
+  {
+    "hero": "nature",
+    "kind": "icons",
+    "file": "hero-nature-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "30d02b5bfeee8126de3fba2ce78c6c31f0bb4bbcba3826a32655f5127a754739"
+  },
+  {
+    "hero": "frost",
+    "kind": "fx",
+    "file": "hero-frost-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      253
+    ],
+    "zeroAlphaRatio": 0.075385,
+    "sha256": "65838d424f30dd080e75980da338f4ef4ca834bbf95b808b5cb0d24a9ed6ac8a"
+  },
+  {
+    "hero": "frost",
+    "kind": "icons",
+    "file": "hero-frost-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "6d3017e8b517d729995f11b93ab8c753af48d3cb4c1d686050b86e1eee47cbe8"
+  },
+  {
+    "hero": "lightning",
+    "kind": "fx",
+    "file": "hero-lightning-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      253
+    ],
+    "zeroAlphaRatio": 0.308005,
+    "sha256": "b5e2bb9f4f05add4c41311f6c9b2c5f97237987716eedfe213af5ff7f868c355"
+  },
+  {
+    "hero": "lightning",
+    "kind": "icons",
+    "file": "hero-lightning-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "1f8b94ac6acf9a0cdb706a3e31b3815ade66dfa2c1be7786e12c01b266074eeb"
+  },
+  {
+    "hero": "shadow",
+    "kind": "fx",
+    "file": "hero-shadow-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      254
+    ],
+    "zeroAlphaRatio": 0.394613,
+    "sha256": "e6e0072fbfe759da70bfe544285eae7eb2253684634bc502128586cbe50e5ad5"
+  },
+  {
+    "hero": "shadow",
+    "kind": "icons",
+    "file": "hero-shadow-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "d56fb383ae835b32bcc917826b1b4596b2611dc6e5d4d47825c0a0e50518b011"
+  },
+  {
+    "hero": "star",
+    "kind": "fx",
+    "file": "hero-star-fx-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      253
+    ],
+    "zeroAlphaRatio": 0.256156,
+    "sha256": "6ca3ffbb21967ac88cfead34e9085d068f1c1babdad66c2f41a8a0c5f763d6f3"
+  },
+  {
+    "hero": "star",
+    "kind": "icons",
+    "file": "hero-star-icons-v1.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGB",
+    "sha256": "8db607b041d9d3a3114c74fc79d92ecd82d471eac2fe722537af6705abbec8d9"
+  }
+]

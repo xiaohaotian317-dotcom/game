@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "file": "ui-icons-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "20f2870b0fe31e9377ea55c6c56170b9e2598642354d301627b21c7e6596d214",
+      "bytes": 2967065,
+      "frameCount": 6,
+      "alphaZeroFraction": null
+    },
+    {
+      "file": "items-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e6a6b3e65ff8b108662f5760d5f5f339477f25d07522f46ac6b6cacd532c76fc",
+      "bytes": 2543314,
+      "frameCount": 16,
+      "alphaZeroFraction": null
+    },
+    {
+      "file": "equipment-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "e28cf927a70c15a2d3f8748f81590d609986f3dd46af4cd6af3b771f38e4eb07",
+      "bytes": 2607384,
+      "frameCount": 12,
+      "alphaZeroFraction": null
+    },
+    {
+      "file": "armors-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "816b7bccf6efecbd864b1549366be4fc26cac14d83d89e10d613febf70406dd8",
+      "bytes": 3113275,
+      "frameCount": 12,
+      "alphaZeroFraction": null
+    },
+    {
+      "file": "ground-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "3d0332870eeaca3d926ad15d5e5248445f0abfae4cd5b95cff082da29d7dc978",
+      "bytes": 2385231,
+      "frameCount": 12,
+      "alphaZeroFraction": 0.5797761281331381
+    },
+    {
+      "file": "platform-shapes-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "4650c8dbe2cb2d353f54ee5adfa708b3a1feb53f07bb5d7f0c409c7bf384a294",
+      "bytes": 2253971,
+      "frameCount": 12,
+      "alphaZeroFraction": 0.6190401713053385
+    }
+  ],
+  "status": "PNG decode, counts, bounds and alpha verified; art pending user acceptance"
+}

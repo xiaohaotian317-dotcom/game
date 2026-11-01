@@ -1,10 +1,10 @@
 # 秘境决斗
 
-当前源码为 **campaign2 Windows 单机/局域网版**：保留原启动页、大厅与六英雄，新增11关单机征途、10种普通妖兽/11位首领及独立妖兽图鉴。本轮重做11位首领技能特效、稀疏两层平台和传送门，加入焰术师E定向火球/同键原位引爆；195项检查通过，美术和手感待用户验收。
+当前源码为 **campaign3 Windows 单机成长/局域网版**：11关征途、六个暂停系统入口、角色等级/法力、真实背包与掉落、武器盔甲/锻造、券召唤/首通自选英雄、技能学习强化和同行配装。六英雄各新增3招，共72帧新特效与18枚图标；地面、疏密平台与波次镜头也已修订。211项检查通过，美术和实战平衡待用户验收。
 
-原DUEL12网站保留，未随本轮部署。部分外部访客受到原托管平台Cloudflare拦截，不能把“网站公开”当成所有好友都能访问。Windows版无需GPT、浏览器插件或网络即可玩单机；局域网同网双机实际体验仍待验收。金币成长、装备、背包、灵宠和法器尚未实现。
+原DUEL12网站保留，未随本轮部署。部分外部访客受到原托管平台Cloudflare拦截，不能把“网站公开”当成所有好友都能访问。Windows版无需GPT、浏览器插件或网络即可玩单机；局域网同网双机实际体验仍待验收。法器、灵宠目前仅入口与解锁说明，内部玩法未实现。单机成长不改变PvP数值或全英雄可用规则。
 
-Windows构建：进入`arcane-duel-lab/desktop`安装锁定依赖后，执行`node build.mjs --campaign-preview`，再在游戏目录执行`python scripts/package-campaign.py --version campaign2`。发行目录和ZIP不入Git，完整资源随包，旧发行包保留。玩法与验证详见[单机修订记录](arcane-duel-lab/首领特效与闯关修订.md)。
+Windows构建：进入`arcane-duel-lab/desktop`安装锁定依赖后，执行`node build.mjs --campaign-preview`，再在游戏目录执行`python scripts/package-campaign.py --version campaign3`。发行目录和ZIP不入Git，完整资源随包，旧发行包保留。玩法与验证详见[单机修订记录](arcane-duel-lab/首领特效与闯关修订.md)。
 
 ## 项目内容
 

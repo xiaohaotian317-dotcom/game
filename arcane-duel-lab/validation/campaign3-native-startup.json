@@ -1,0 +1,60 @@
+{
+  "build": "campaign3",
+  "isolatedQA": true,
+  "processId": 46572,
+  "processPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\desktop\\.build\\campaign-out\\ArcaneDuelCampaign-win32-x64\\ArcaneDuelCampaign.exe",
+  "testOrigin": "http://127.0.0.1:6396",
+  "nativeWindowVisualQA": false,
+  "resources": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "bytes": 15
+    },
+    {
+      "path": "/campaign.html",
+      "status": 200,
+      "bytes": 4108
+    },
+    {
+      "path": "/campaign-system.css",
+      "status": 200,
+      "bytes": 19749
+    },
+    {
+      "path": "/src/campaign-profile.mjs",
+      "status": 200,
+      "bytes": 8753
+    },
+    {
+      "path": "/src/campaign-growth-runtime.mjs",
+      "status": 200,
+      "bytes": 7372
+    },
+    {
+      "path": "/assets/campaign-growth/growth-ui-bounds-v1.json",
+      "status": 200,
+      "bytes": 38073
+    },
+    {
+      "path": "/assets/campaign-growth/growth-hero-bounds-v1.json",
+      "status": 200,
+      "bytes": 32012
+    },
+    {
+      "path": "/assets/campaign-growth/hero-fire-fx-v1.png",
+      "status": 200,
+      "bytes": 2763482
+    },
+    {
+      "path": "/assets/campaign-growth/items-v1.png",
+      "status": 200,
+      "bytes": 2543314
+    },
+    {
+      "path": "/assets/campaign-growth/ground-v1.png",
+      "status": 200,
+      "bytes": 2385231
+    }
+  ]
+}

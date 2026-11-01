@@ -41,8 +41,23 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
 `;
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
-if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign2\n\n请完整解压后双击 ArcaneDuelCampaign.exe。无需GPT、插件、Node或网络。\n从开始页面点击进入大厅，选择单机闯关后显示世界图；点击建筑查看详情，再进入。第一关开始，通关解锁分支，11个独立主题。\nAD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、P暂停、F11全屏。\n从左向右前进，三处锁镜清怪，第四处首领；左右各6～10只，每关固定近战/远程两类，约七成近战。\n首领击败后走入传送门，才保存通关并解锁。失败可重新挑战。\n地图中的蓝光或红圈是坠物预警；火球落地岩浆持续5秒。\n前两关教学，后续逐关变难；稀疏两层平台、较宽镜头、普通地面小怪不跳跃。六英雄均可选择，首领总尺寸为原版72%，生命增加10%，攻击频率与范围增加20%。\n\n本版只实现关卡流程与本机通关解锁；掉落栏为规划，不发放金币、装备或角色经验。背包/灵宠/法器后续开发。\n11首领全新独立特效；稳定传送门；焰术师E快速火球，离屏前再按E原位引爆。\n原大厅和敌人试炼保留，原Sites与旧Windows包没有覆盖。单机进度存于本机。\n`, 'utf8');
-if(campaignPreview){const file=path.join(output[0],'使用说明.txt');await writeFile(file,(await readFile(file,'utf8'))+'\n大厅英雄图鉴旁新增独立妖兽图鉴：10种普通妖兽、11位变异BOSS，展示动作、主动/被动、基础生命与关卡实际生命。\n选关鼠标移到建筑上会轻微放大并显示名称，键盘Tab也可选择。\n');}
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign2':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign3
+
+先退出旧客户端，完整解压后双击 ArcaneDuelCampaign.exe，无需GPT、插件、Node或网络。
+启动页→开始游戏→大厅→单机闯关→世界选关；战前底部图标显示实际掉落，悬停看用途。
+初始仅焰术师，300金币、0抽奖券、2中金币箱与3中经验瓶；单机独立新存档。
+右上角色/背包/技能/法器/灵宠/锻造炉，打开全部暂停。法器/灵宠内部暂仅解锁说明。
+AD移动，空格二段跳，鼠标普攻，FER技能，Shift冲刺，C拾取，传送门前X结算，P暂停，F11全屏。
+小怪每只5经验/5金币。等级较快增加，每级生命3%/法力2.5%/攻击2%线性加成，后期所需经验变大。
+初始只学F；每人六技能、每行二选一到FER，学习/强化用金币，可强化5次。技能耗蓝，二段共冷却不重复耗蓝。
+首领战利品需附近按C放入背包；宝箱与药水在背包使用。首关自选未拥有英雄宝箱仅一次。
+新关首通必给抽奖券，重刷50%；选择未拥有目标，20抽内必得，未中的为补给，十连命中即停止并保留未花券。
+武器只加输出，盔甲只加生存，分近战与法杖职业。装备可金币升级/灵石升品，3小石合1中，3中合1高。
+BOSS当前体型为原版79.2%，在campaign2基础伤害+50%、技能范围+30%；前次移速/频率/落速保留。
+六英雄各新增3技能/独立华丽特效；随机平台疏密与形状、真实地面和无跳变锁镜。
+原网站、旧发行包与PvP战斗数值保留。真人难度、主观美术与两设备联机仍待验收。
+`,'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign3':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
+
 

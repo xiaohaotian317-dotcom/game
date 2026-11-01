@@ -1,0 +1,9 @@
+import {drawFxFrame} from './boss-fx-painter.mjs';
+import {itemInfo} from './campaign-growth-data.mjs';
+export function drawSurface(c,img,m,index,p,{flip=false}={}){const f=m?.frames?.[index];if(!img||!f)return false;const r=f.rect,b=f.spriteRect||r,s=f.standingX||[0,1],left=s[0]*r[2],right=s[1]*r[2],scale=p.w/Math.max(1,right-left),top=(f.topNormalized??.3)*r[3];c.save();if(flip){c.translate(p.x+p.w,p.y);c.scale(-1,1);}else c.translate(p.x,p.y);c.drawImage(img,...b,(b[0]-r[0]-left)*scale,(b[1]-r[1]-top)*scale,b[2]*scale,b[3]*scale);c.restore();return true;}
+export function drawSoloEffects(c,w,art){const m=art.heroMeta?.units?.[w.hero],img=art.heroFx;
+ for(const e of w.effects){if(e.kind!=='soloSkill'||!m||!img)continue;const p=e.age/e.duration,frame=e.row*4+Math.min(3,Math.floor(p*4));drawFxFrame(c,img,m,frame,e.x,e.y,e.size||240,{ground:!!e.ground,alpha:Math.min(1,(1-p)*5)});}
+ for(const f of w.campaign.soloFields||[]){if(!f.follow||!img||!m)continue;drawFxFrame(c,img,m,f.row*4+Math.floor(w.fxTime*6)%4,f.x,f.y,350,{ground:true,alpha:.6});}
+ for(const s of w.projectiles){if(s.kind!=='soloBolt'||!img||!m)continue;drawFxFrame(c,img,m,s.soloRow*4+Math.floor(s.age*12)%4,s.x,s.y,100,{angle:Math.atan2(s.vy,s.vx)});}
+ const meta=art.growthMeta,items=art.itemImage,equip=art.equipmentImage,armor=art.armorImage;for(const d of w.campaign.drops||[]){const info=itemInfo(d.item),sheet=info.sheet||'items',image=sheet==='equipment'?equip:sheet==='armors'?armor:items,f=meta?.[sheet]?.frames?.[info.icon];if(!image||!f)continue;const bob=Math.sin(w.fxTime*2+d.x)*2,dy=d.y-34+bob;c.save();c.globalAlpha=.28;c.fillStyle=info.color||'#eac77e';c.beginPath();c.ellipse(d.x,d.y-1,17,4,0,0,Math.PI*2);c.fill();c.globalAlpha=1;c.drawImage(image,...f.rect,d.x-16,dy-16,32,32);if(Math.abs(w.player.x-d.x)<110&&Math.abs(w.player.y-d.y)<100){c.fillStyle='#fff1c6';c.font='11px "Microsoft YaHei"';c.textAlign='center';c.fillText('C 拾取',d.x,dy-24);}c.restore();}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>秘境决斗 · 单机成长新技能画册</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111219;color:#e4e0d6;font-family:system-ui,"Microsoft YaHei",sans-serif}header,main{max-width:1360px;margin:auto;padding:30px}header{border-bottom:1px solid #72562d}h1{font-family:serif;font-size:34px;letter-spacing:4px;color:#e5c58b}p{line-height:1.7;color:#a8a8b8}.tools{display:flex;gap:12px;flex-wrap:wrap}button,a{color:#e4c18a}button{border:1px solid #8a6b3d;background:#25212a;padding:10px 18px;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #e8cd92;outline-offset:4px}section{margin-bottom:40px;padding:20px;border:1px solid #423a34;background:#171720}h2{margin-top:0;font-weight:500}article{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.skill{border:1px solid #4b4235;background:#13141c;padding:15px}.skillhead{display:flex;align-items:center;gap:14px}.icon{width:70px;height:70px;background-repeat:no-repeat;background-size:300% 100%;flex-shrink:0}.stage{height:250px;margin-top:16px;background-color:#0b0b12;border:1px solid #2f2c37}.checkers .stage{background:conic-gradient(#d5d5d5 25%,#999 0 50%,#d5d5d5 0 75%,#999 0) 0 0 / 24px 24px}canvas{width:100%;height:100%;object-fit:contain}h3{font-size:18px;margin:0 0 5px}.key{font-size:12px;color:#bba47e}details{margin-top:20px}summary{cursor:pointer;padding:10px;color:#c4ad83}.atlas{display:block;width:100%;margin-top:15px;background:#242630}a{font-size:13px}footer{border-top:1px solid #443b2b;padding-top:20px;font-size:13px;color:#9393a0}@media(max-width:850px){article{grid-template-columns:1fr}.stage{height:280px}header,main{padding:20px}h1{font-size:26px}}
+</style>
+<header><p>秘境决斗 / 单机成长 / V1</p><h1>十八式 · 六境新法</h1><p>六职业新增 F / E / R 技能美术。每个技能四帧，按蓄势、释放、峰值、消散顺序播放。原始PNG、真实透明通道与生成提示词均已保存。当前为已生成并检查，实战效果与主观美感仍待验收。</p><div class="tools"><button id="pause">暂停动画</button><button id="check">切换透明棋盘</button><a href="prompts-heroes-v1.json">完整提示词与默认原图路径</a><a href="hero-validation-v1.json">尺寸、Alpha与SHA256报告</a></div></header><main id="main"></main>
+<script>
+const heroes=[["fire","焰术师 · 烬绯",["火焰龙卷","熔核穿刺","炼狱炎龙"],"#f88b31"],["nature","森灵 · 荆歌",["荆棘扇刃","花语治愈","荆棘王庭"],"#83c56b"],["frost","霜语者 · 凝霜",["寒锋扇刃","冰晶追猎","极夜冰凰"],"#91d7f6"],["lightning","雷行者 · 霆隼",["裂雷重拳","雷链回旋","雷神战躯"],"#efd17a"],["shadow","影刃 · 朔鸦",["月弧飞刃","鸦影伏杀","千鸦寂灭"],"#b392e8"],["star","星术师 · 宿衡",["星陨散射","星辉回溯","星海审判"],"#91a9fa"]];
+const asset="../../../arcane-duel-lab/dist/assets/campaign-growth/";
+const main=document.getElementById('main'); const imgs={}, canvases=[];
+for(const [id,name,skills,color] of heroes){
+ const section=document.createElement('section');section.style.borderTopColor=color;
+ section.innerHTML='<h2 style="color:'+color+'">'+name+'</h2><article>'+skills.map((s,i)=>'<div class="skill"><div class="skillhead"><div class="icon" style="background-image:url('+asset+'hero-'+id+'-icons-v1.png);background-position:'+i*50+'% 0"></div><div><h3>'+s+'</h3><span class="key">'+['F','E','R'][i]+' · 四帧新技能</span></div></div><div class="stage"><canvas width="600" height="420" data-hero="'+id+'" data-row="'+i+'"></canvas></div></div>').join('')+'</article><details><summary>查看原始图集 / 保存资源</summary><a href="'+asset+'hero-'+id+'-fx-v1.png">特效原图</a> · <a href="'+asset+'hero-'+id+'-icons-v1.png">图标原图</a><img class="atlas" loading="lazy" src="'+asset+'hero-'+id+'-fx-v1.png"><img class="atlas" loading="lazy" src="'+asset+'hero-'+id+'-icons-v1.png"></details>';
+ main.appendChild(section);
+ const img=new Image();img.src=asset+'hero-'+id+'-fx-v1.png';imgs[id]=img;
+}
+let paused=false, frame=0,last=0,meta;
+document.getElementById('pause').onclick=e=>{paused=!paused;e.target.textContent=paused?'继续动画':'暂停动画'};
+document.getElementById('check').onclick=()=>document.body.classList.toggle('checkers');
+fetch(asset+'growth-hero-bounds-v1.json').then(r=>r.json()).then(v=>meta=v);
+function draw(t){
+ if(!paused && t-last>170){frame=(frame+1)%4;last=t}
+ for(const canvas of document.querySelectorAll('canvas')){
+  const ctx=canvas.getContext('2d'),id=canvas.dataset.hero,row=+canvas.dataset.row,img=imgs[id];
+  ctx.clearRect(0,0,600,420);if(!meta||!img.complete||!img.naturalWidth)continue;
+  const f=meta.units[id].frames[row*4+frame],r=f.spriteRect;
+  const scale=Math.min(550/r[2],380/r[3]); const w=r[2]*scale,h=r[3]*scale;
+  ctx.drawImage(img,...r,(600-w)/2,(420-h)/2,w,h);
+ }
+ requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+</script><footer>内置 image_gen 生成 12 张原图；72 帧特效 + 18 枚图标。图集按显式 rect 裁切，自然行间距有差异，不能简单等分高度。所有生成PNG保持原像素；边界脚本仅分析Alpha。仅供本轮单机新技能接入，不替换旧PvP技能。</footer></main></html>

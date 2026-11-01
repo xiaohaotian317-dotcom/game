@@ -1,6 +1,7 @@
 import {MAX_HEALTH} from './match-rules.mjs?v=20261030-duel12';
 import {cameraView} from './camera.mjs?v=20261030-duel12';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
+import {soloSpec,soloPay,soloDamage,soloRelease,soloOnHit} from './campaign-growth-runtime.mjs';
 import {updateEnemies,enemyOnDamage,enemyProjectileContact} from './enemy-simulation.mjs';
 import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261030-duel12';
 import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
@@ -40,11 +41,12 @@ export function createWorld(hero='fire',scene='training') {
   applyScene(world,scene);initExtra(world,HEROES[hero]);return world;
 }
 function emit(w,type,data={}){w.events.push({type,...data});if(w.events.length>100)w.events.shift();}
-function effect(w,kind,data={}){const e={id:++w.serial,kind,age:0,duration:.6,...data};w.effects.push(e);return e;}
+function effect(w,kind,data={}){const e={id:++w.serial,kind,age:0,duration:.6,campaignSkillId:w.player.cast?.soloSkill?.id||w.campaignDamageSkill,...data};w.effects.push(e);return e;}
 function text(w,x,y,label,color='#fff0c7',size=22){w.texts.push({x,y,text:String(label),color,size,age:0,duration:1.1});}
 export function surfaceAt(w,x,y=FLOOR){const candidates=w.platforms.filter(p=>p.active&&x>=p.x-15&&x<=p.x+p.w+15);return candidates.sort((a,b)=>Math.abs(a.y-y)-Math.abs(b.y-y))[0]||w.platforms[0];}
 function aim(w){const p=w.player;let x=w.aim.x-(p.x+p.face*20),y=w.aim.y-(p.y-72);const l=Math.hypot(x,y)||1;return{x:x/l,y:y/l};}
 export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,school,basic=false,castId,source}={}) {
+  amount=soloDamage(w,amount,{castId});
   if(t.duelSummon)return w.duelHitSummon?.(amount,w.player.x)||false;
   if(t.duelActor){
     if(t.dead>0||t.hp<=0||(t.invuln>0&&!['overload','backstab'].includes(source)))return false;
@@ -62,7 +64,9 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
   if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*.55,duration:.55,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
   extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
-  if(t.hp<=0){t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
+  soloOnHit(w,t,castId,source,extraHooks);
+  if(w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
+  if(t.hp<=0){t.killedByPlayer=true;t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
   if(t.enemyKind||t.egg)enemyOnDamage(w,t,actual,{impact});
   return true;
 }
@@ -79,7 +83,7 @@ function area(w,x,y,r,amount,opts={}) {
   damageBridge(w,x,y,r,amount);
 }
 function projectile(w,kind,x,y,dx,dy,speed,amount,extra={}){
-  w.projectiles.push({id:++w.serial,kind,x,y,px:x,py:y,vx:dx*speed,vy:dy*speed,age:0,life:3.5,damage:amount,r:kind==='seed'?6:8,trail:[],...extra});
+  w.projectiles.push({id:++w.serial,kind,x,y,px:x,py:y,vx:dx*speed,vy:dy*speed,age:0,life:3.5,damage:amount,r:kind==='seed'?6:8,trail:[],castId:w.player.cast?.id,...extra});
 }
 export function fireOrbVisible(w,s){
  if(!s||s.age>=s.life)return false;let v;
@@ -88,6 +92,7 @@ export function fireOrbVisible(w,s){
 }
 function detonateOrb(w,id){const s=w.projectiles.find(p=>p.id===id&&p.kind==='emberOrb');if(!fireOrbVisible(w,s))return false;s.life=0;area(w,s.x,s.y,125,36,{fire:true,knock:190});effect(w,'orbExplosion',{x:s.x,y:s.y,radius:125,duration:.8});w.shake=Math.max(w.shake,8);w.hitstop=Math.max(w.hitstop,.045);emit(w,'explode',{heavy:true});return true;}
 function release(w,c) {
+  if(soloRelease(w,c,extraHooks))return;
   if(releaseExtra(w,c,extraHooks))return;
   const p=w.player,h=w.hero,socket=castMuzzle(w),sx=socket.x,sy=socket.y;
   const ax=w.aim.x-sx,ay=w.aim.y-sy,al=Math.hypot(ax,ay)||1,d={x:ax/al,y:ay/al};
@@ -116,7 +121,7 @@ function release(w,c) {
   }else{
     if(c.key==='q'){const y=groundTarget(w,p.x,p.y)?.y??w.floor,to=clamp(c.x,p.x-500,p.x+500);effect(w,'roots',{x:p.x,y,to,duration:2.4,triggered:false});emit(w,'roots');}
     if(c.key==='e'){
-      w.fox={x:p.x+p.face*65,y:p.y,prevX:p.x+p.face*65,prevY:p.y,vx:0,vy:-180,w:36,h:88,hp:80,maxHp:80,hit:0,invuln:0,attackPose:0,jumps:0,grounded:false,platformId:null,
+      w.fox={castId:c.id,x:p.x+p.face*65,y:p.y,prevX:p.x+p.face*65,prevY:p.y,vx:0,vy:-180,w:36,h:88,hp:80,maxHp:80,hit:0,invuln:0,attackPose:0,jumps:0,grounded:false,platformId:null,
         until:w.time+10,attackAt:0,healAt:0,commandUntil:0,leap:false,face:p.face,cycle:0};
       p.recast={key:'e',name:'角跃令',icon:'fox',until:w.time+RECAST_WINDOWS.nature,start:w.time,window:RECAST_WINDOWS.nature};
       effect(w,'sprout',{x:w.fox.x,y:w.fox.y,duration:.75});emit(w,'summon');
@@ -131,7 +136,7 @@ function release(w,c) {
   }
 }
 function beginCast(w,key) {
-  const p=w.player,s=HEROES[w.hero].skills[key];
+  const p=w.player,s=soloSpec(w,key,HEROES[w.hero].skills[key]);
   if(!s||p.dead>0||p.hurt>0||p.dash>0||p.enemyControl?.until>w.time)return false;
   const isRecast=p.recast&&p.recast.key===key&&p.recast.until>w.time;
   if(p.cast&&p.cast.age<p.cast.duration*.75&&!(isRecast&&w.hero==='fire'&&p.cast.key==='e'&&p.cast.released))return false;
@@ -139,12 +144,14 @@ function beginCast(w,key) {
   if(isRecast&&w.hero==='fire'&&!fireOrbVisible(w,w.projectiles.find(s=>s.id===p.recast.data?.projectileId))){p.recast=null;return false;}
   const variant=isRecast?(EXTRA_HEROES[w.hero]?.recast.variant||(w.hero==='fire'?'detonate':'command')):null;
   const recastData=isRecast?p.recast.data:null;
-  const needsGround=!variant&&((w.hero==='fire'&&['q','r'].includes(key))||(w.hero==='nature'&&key==='r')||EXTRA_HEROES[w.hero]?.groundSkills.includes(key));
+  const needsGround=!s.soloSkill?.column&&!variant&&((w.hero==='fire'&&['q','r'].includes(key))||(w.hero==='nature'&&key==='r')||EXTRA_HEROES[w.hero]?.groundSkills.includes(key));
   const target=needsGround?groundTarget(w,EXTRA_HEROES[w.hero]?clamp(w.aim.x,p.x-520,p.x+520):w.aim.x,w.aim.y):null;
   if(needsGround&&!target)return false;
-  if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd;
+  if(!soloPay(w,key,isRecast,s))return false;
+  if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(w.campaign?.progression?(key==='attack'?1/(w.campaign.stats?.attackSpeed||1):key==='r'?1.1:1.15):1);
   p.face=w.aim.x>=p.x?1:-1;
-  p.cast={id:++w.serial,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
+  p.cast={id:++w.serial,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
+  if(w.campaign?.progression)w.campaign.castSkills[p.cast.id]=s.soloSkill?.id;
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
 }
 export function requestCast(w,key,x=w.aim.x,y=w.aim.y) {
@@ -175,6 +182,7 @@ function physics(w,a,dt,{drop=false,phase=false}={}) {
   if(a.y>(w.height||HEIGHT)+160){a.x=w.spawn.x;a.y=w.spawn.y;a.vy=0;a.grounded=true;a.platformId='ground';}
 }
 export function hitPlayer(w,amount,fromX,{dot=false,label=''}={}) {
+  if(w.campaign?.progression)amount*=1-(w.campaign.stats?.armor||0);if(w.player.soloGuardUntil>w.time)amount*=.8;
   const p=w.player;if((!dot&&p.invuln>0)||p.dead>0||p.hp<=0)return false;
   const absorbed=Math.min(p.shield||0,amount);p.shield=Math.max(0,(p.shield||0)-absorbed);if(absorbed)effect(w,'frostHit',{x:p.x,y:p.y-60,duration:.5});
   p.hp=Math.max(0,p.hp-(amount-absorbed));
@@ -184,6 +192,7 @@ export function hitPlayer(w,amount,fromX,{dot=false,label=''}={}) {
 }
 function updateEffects(w,dt){
   for(const e of w.effects){
+    w.campaignDamageSkill=e.campaignSkillId;
     e.age+=dt;
     if(e.anchor&&!e.triggered){const target=resolveGroundTarget(w,e.anchor);if(target){e.anchor=target;e.x=target.x;e.y=target.y;}}
     if(e.kind==='eruption'&&!e.triggered&&e.age>=e.delay){e.triggered=true;area(w,e.x,e.y-28,100,33,{fire:true,knock:170});w.shake=8;emit(w,'explode');}
@@ -191,7 +200,7 @@ function updateEffects(w,dt){
     if(e.kind==='fireZone'&&e.age>=e.nextTick){e.nextTick=e.age+.55;for(const t of w.targets)if(Math.abs(t.x-e.x)<85&&Math.abs(t.y-e.y)<35)damage(w,t,4,{fire:true,impact:false});}
     if(e.kind==='roots'&&!e.triggered&&e.age>=.35){e.triggered=true;for(const t of w.targets)if(t.x>=Math.min(e.x,e.to)-25&&t.x<=Math.max(e.x,e.to)+25&&Math.abs(t.y-e.y)<35)damage(w,t,22,{root:2});damageBridge(w,(e.x+e.to)/2,e.y,Math.abs(e.to-e.x)/2,16);}
   }
-  w.effects=w.effects.filter(e=>e.age<e.duration);
+  w.campaignDamageSkill=null;w.effects=w.effects.filter(e=>e.age<e.duration);
   for(const t of w.texts){t.age+=dt;t.y-=dt*27;}w.texts=w.texts.filter(t=>t.age<t.duration);
 }
 function updateProjectiles(w,dt){
@@ -282,7 +291,7 @@ function updateFox(w,dt) {
   if(Math.abs(f.vx)>10)f.face=Math.sign(f.vx);
   physics(w,f,dt);if(f.grounded)f.jumps=0;f.cycle+=Math.abs(f.vx)*dt/28;
   for(const t of alive)if(Math.abs(f.x-t.x)<78&&Math.abs(f.y-t.y)<90&&w.time>f.attackAt&&clearLine(w,f.x,f.y-45,t.x,t.y-40)){
-    f.attackAt=w.time+.8;f.attackPose=.3;damage(w,t,f.leap?26:12,{knock:f.face*(f.leap?150:50)});f.leap=false;emit(w,'stagStrike');
+    f.attackAt=w.time+.8;f.attackPose=.3;damage(w,t,f.leap?26:12,{knock:f.face*(f.leap?150:50),castId:f.castId});f.leap=false;emit(w,'stagStrike');
     effect(w,'foxBite',{x:t.x,y:t.y-30,duration:.4});
     if(w.time>=f.healAt){f.healAt=w.time+.8;const healed=Math.min(3,w.player.maxHp-w.player.hp);w.player.hp+=healed;w.stats.healed+=healed;w.player.passiveGlow=.65;effect(w,'healMote',{x:f.x,y:f.y-20,toX:w.player.x,toY:w.player.y-70,duration:.7});if(healed)text(w,w.player.x,w.player.y-120,'+'+healed,'#b5eb96',17);}
   }

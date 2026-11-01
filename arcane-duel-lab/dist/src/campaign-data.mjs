@@ -17,7 +17,7 @@ const buildingPositions=[[7,51],[20,30],[30,56],[37,24],[48,48],[56,29],[68,66],
 export const STAGES=rows.map((r,i)=>({id:i+1,name:r[0],boss:r[1],melee:r[2],ranged:r[3],theme:r[4],color:r[5],mapX:buildingPositions[i][0],mapY:buildingPositions[i][1],requires:r[8],building:r[9],drops:r[10],tip:r[11],art:`stage${String(i+1).padStart(2,'0')}-v1.png`,minionHp:24+i*9,bossHp:Math.round((380+i*110)*BOSS_TUNING.health),damageFactor:.24+i*.07,attackBudget:Math.min(5,2+Math.floor(i/3)),perSide:Math.min(10,6+Math.floor(i/2)),hazardDamage:6+i*2}));
 export const STAGE_BY_ID=Object.fromEntries(STAGES.map(s=>[s.id,s]));
 // Preserve readable tutorial damage after increasing boss reach and frequency.
-for(const s of STAGES)s.bossDamageFactor=s.damageFactor*(s.id<=2?.85:1);
+for(const [i,s] of STAGES.entries()){s.bossDamageFactor=s.damageFactor*(s.id<=2?.85:1);if(i>=3){s.minionHp=[62,84,105,136,178,222,280,340][i-3];s.bossHp=[990,1350,1700,2180,2800,3550,4500,5600][i-3];s.damageFactor=[.46,.54,.63,.73,.85,.99,1.14,1.3][i-3];s.bossDamageFactor=s.damageFactor;} }
 export const SAVE_KEY='arcane-campaign-progress-v1';
 export function normalizeProgress(data){return {version:1,cleared:[...new Set((Array.isArray(data?.cleared)?data.cleared:[]).filter(id=>Number.isInteger(id)&&STAGE_BY_ID[id]))]};}
 export function stageUnlocked(stage,progress){const p=normalizeProgress(progress);return stage.requires.every(id=>p.cleared.includes(id));}

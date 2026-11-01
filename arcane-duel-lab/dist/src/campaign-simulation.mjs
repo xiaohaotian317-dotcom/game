@@ -1,25 +1,27 @@
-import {createWorld,step,hitPlayer} from './simulation.mjs?v=20261031-enemies1';
+import {createWorld,step,hitPlayer,damage} from './simulation.mjs?v=20261031-enemies1';
+import {soloTick,syncSoloStats,pickupSolo} from './campaign-growth-runtime.mjs';
 import {spawnEnemy} from './enemy-simulation.mjs';
 import {STAGE_BY_ID,waveComposition} from './campaign-data.mjs';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const CAMPAIGN_FLOOR=760,CAMPAIGN_WIDTH=11200,CAMPAIGN_HEIGHT=960,CAMPAIGN_VIEW=1664;
 export const SPAWN_RATE=.8;
-export function campaignPlatforms(seed,width=CAMPAIGN_WIDTH,floor=CAMPAIGN_FLOOR){let state=seed>>>0;const random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;},out=[];let x=650+random()*100;while(x<width-600){const w=250+Math.round(random()*70);out.push({id:'campaign-upper-'+out.length,x:Math.round(x),y:floor-190,w,type:'campaign-upper',active:true,hp:Infinity,maxHp:Infinity});x+=w+280+random()*45;}return out;}
-export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0}={}){
+export function campaignPlatforms(seed,width=CAMPAIGN_WIDTH,floor=CAMPAIGN_FLOOR){let state=seed>>>0;const random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;},out=[];let x=620+random()*160;while(x<width-600){const cluster=out.length%5<3,w=(cluster?190:300)+Math.round(random()*100),height=155+Math.round(random()*70);out.push({id:'campaign-upper-'+out.length,x:Math.round(x),y:floor-height,w,shape:Math.floor(random()*3),type:'campaign-upper',active:true,hp:Infinity,maxHp:Infinity});x+=w+(cluster?125+random()*130:260+random()*60);}return out;}
+export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0,profile=null,random=Math.random}={}){
  const stage=STAGE_BY_ID[id];if(!stage)throw new Error('未知关卡');
+ if(profile&&!profile.owned.includes(hero))throw Error('该英雄尚未拥有');
  const w=createWorld(hero);w.width=CAMPAIGN_WIDTH;w.height=CAMPAIGN_HEIGHT;w.floor=CAMPAIGN_FLOOR;w.sceneId='campaign';w.targets=[];w.obstacles=[];w.mechanisms=null;w.mirror.enabled=false;w.spring.enabled=false;w.enemyMode=true;
  w.platforms=[{id:'ground',x:0,y:w.floor,w:w.width,type:'stone',active:true,hp:Infinity,maxHp:Infinity}];
  w.platforms.push(...campaignPlatforms(seed));
  Object.assign(w.player,{x:170,y:w.floor,prevX:170,prevY:w.floor,grounded:true,platformId:'ground'});w.spawn={x:170,y:w.floor};w.camera={x:0,y:0,viewWidth:CAMPAIGN_VIEW,viewHeight:960};w.aim={x:600,y:w.floor-60};
- w.campaign={stage,seed,state:'travel',encounter:0,triggers:[1400,3900,6500,9500],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[]};return w;
+ w.campaign={stage,seed,state:'travel',encounter:0,triggers:[1400,3900,6500,9500],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(profile)syncSoloStats(w,true);return w;
 }
 function say(w,message){const c=w.campaign;c.notice=message;c.noticeUntil=w.time+3.5;c.events.push({time:w.time,message});}
 export function fitCampaignCamera(w,width,height){const aspect=Math.max(.3,width/Math.max(1,height));w.camera.viewWidth=Math.min(CAMPAIGN_VIEW,CAMPAIGN_HEIGHT*aspect);w.camera.viewHeight=w.camera.viewWidth/aspect;w.camera.y=clamp(w.floor-w.camera.viewHeight*.8,0,Math.max(0,w.height-w.camera.viewHeight));if(w.campaign.lock){const lock=w.campaign.lock;lock.x=clamp(lock.x+(lock.width-w.camera.viewWidth)/2,0,w.width-w.camera.viewWidth);lock.width=w.camera.viewWidth;}}
 export function beginEncounter(w){
  const c=w.campaign;if(c.state!=='travel'||c.encounter>=4)return false;
- c.encounter++;const vw=w.camera.viewWidth||1200,x=clamp(w.player.x-vw*.3,0,w.width-vw);c.lock={x,width:vw};w.camera.x=x;c.state=c.encounter===4?'boss':'wave';c.queue=[];c.hazards=[];
- if(c.encounter===4){const e=spawnEnemy(w,c.stage.boss,{x:x+vw*.74,y:w.floor});if(!e)throw new Error('首领生成失败');e.hp=e.maxHp=c.stage.bossHp;e.damageFactor=c.stage.bossDamageFactor;e.attackTempo=.85+c.stage.id*.025;e.ai.readyAt=w.time+1.6;c.bossId=e.id;say(w,'守关首领 · '+c.stage.name);}
+ c.encounter++;const vw=w.camera.viewWidth||1200,x=clamp(w.camera.x||0,0,w.width-vw);c.lock={x,width:vw};c.state=c.encounter===4?'boss':'wave';c.queue=[];c.hazards=[];
+ if(c.encounter===4){const e=spawnEnemy(w,c.stage.boss,{x:x+vw*.74,y:w.floor,scale:BOSS_TUNING.scale*1.1});if(!e)throw new Error('首领生成失败');e.attackScale*=1.3;e.soloRange=1.3;e.hp=e.maxHp=c.stage.bossHp;e.damageFactor=c.stage.bossDamageFactor*1.5;e.attackTempo=.85+c.stage.id*.025;e.ai.readyAt=w.time+1.6;c.bossId=e.id;say(w,'守关首领 · '+c.stage.name);}
  else{const mix=waveComposition(c.stage,c.encounter);for(let side=0;side<2;side++)for(let i=0;i<mix.perSide;i++){const ranged=i>=mix.melee,baseX=x+vw*(side?.8:.2),upper=w.platforms.filter(p=>p.type==='campaign-upper'&&p.x>=x+80&&p.x+p.w<x+vw-80).sort((a,b)=>Math.abs(a.x+a.w/2-baseX)-Math.abs(b.x+b.w/2-baseX))[0],onUpper=c.stage.id>=3&&upper&&(ranged||i%4===0);c.queue.push({kind:ranged?c.stage.ranged:c.stage.melee,role:ranged?'ranged':'melee',side,x:onUpper?clamp(baseX+(i%3-1)*35,upper.x+35,upper.x+upper.w-35):baseX+(i%3-1)*35,y:onUpper?upper.y:w.floor,platformId:onUpper?upper.id:'ground',at:w.time+(.65+Math.floor(i/3)*.4+(i%3)*.13)/SPAWN_RATE});}say(w,`第 ${c.encounter} / 3 波 · 左右各 ${mix.perSide} 只`);}
  c.nextHazard=w.time+(c.stage.id<=2?5:3);return true;
 }
@@ -38,7 +40,7 @@ function hazards(w){const c=w.campaign,p=w.player;for(const h of c.hazards){cons
 function constrain(w){const c=w.campaign;if(!c.lock)return;const left=c.lock.x+32,right=c.lock.x+c.lock.width-32;for(const e of [w.player,...w.targets.filter(e=>e.hp>0)]){const x=clamp(e.x,left+e.w,right-e.w);if(x!==e.x){e.x=x;e.prevX=x;e.vx=0;}}}
 export function stepCampaign(w,dt,input={}){
  const c=w.campaign;if(c.state==='complete'||c.state==='defeat')return;
- step(w,dt,input);constrain(w);
+ step(w,dt,input);soloTick(w,dt,{damage});if(input.pickup)pickupSolo(w);constrain(w);
  if(w.player.hp<=0){c.state='defeat';c.defeated=true;c.queue=[];say(w,'挑战失败 · 调整节奏，再试一次');return;}
  if(c.state==='travel'&&w.player.x>=c.triggers[c.encounter])beginEncounter(w);
  if(c.state==='wave'||c.state==='boss'){
@@ -53,6 +55,7 @@ export function stepCampaign(w,dt,input={}){
    if(c.encounter===4){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'首领已击败 · 走入传送门完成关卡');}
    else{c.state='travel';c.lock=null;say(w,'第 '+c.encounter+' 波清理完成 · 继续向右前进');}
   }
- }else if(c.state==='portal'&&Math.abs(w.player.x-c.portal.x)<45&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;say(w,'秘境通关 · 新的道路已解锁');}
+ }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;say(w,'秘境通关 · 新的道路已解锁');}
 }
+
 

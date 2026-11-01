@@ -3,15 +3,16 @@ import {HEROES} from './simulation.mjs?v=20261030-duel12';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
 import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261030-duel12';
 import {splashStyle} from './lobby-art.mjs?v=20261030-duel12';
+import {loadSolo,saveSolo} from './campaign-profile.mjs';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
-let profile=loadProfile(storage),preview='nature',stage='moon',busy=false,toastTimer;
+const solo=loadSolo(storage);let profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected},preview='fire',stage='moon',busy=false,toastTimer;
 const roles={fire:'烈焰爆发 · 陨火降临',nature:'植物造物 · 召唤协同'};
 const verses={fire:'让余烬，照亮最后的长夜。',nature:'万物有灵，生生不息。',frost:'听见了吗，风雪正在低语。',lightning:'雷鸣未落，拳锋已至。',shadow:'黑夜之中，每一步都有回声。',star:'循着星轨，抵达未知的彼岸。'};
 const descriptions={fire:{attack:'发射焰矢，碰墙停止，命中附加持续灼烧。',q:'在鼠标下方第一块台面引爆火焰印记。',e:'朝指定方向快速投出火球；离屏前再次按 E，在火球当前位置引爆。',r:'陨石穿过上层平台，在指定台面约 0.86 秒内砸落。'},nature:{attack:'发射荆棘种子，碰墙停止。',q:'缚根锁住敌人，限制其移动。',e:'召唤主动寻敌的木灵鹿；3.5 秒内再按 E 指挥角跃冲撞。',r:'从鼠标下方台面生长古树，提供庇护与枝台。'}};
 function art(el,hero){el.style.cssText=splashStyle(hero);el.setAttribute('aria-label',HEROES[hero].name+' · '+HEROES[hero].given+'立绘');}
 function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,3500);}
-function persist(){if(!saveProfile(storage,profile))toast('当前浏览器无法保存进度，本次会话仍可继续体验。');}
+function persist(){solo.selected=profile.selected;saveSolo(storage,solo);if(!saveProfile(storage,profile))toast('当前浏览器无法保存进度，本次会话仍可继续体验。');}
 function decorate(){for(const el of $$('.frame')){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ornate-frame');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.innerHTML='<use href="#ornate-frame"/>';el.append(svg);}}
 function renderHeader(){
   $$('[data-balance]').forEach(el=>el.textContent=profile.coins.toLocaleString('en-US'));
@@ -33,6 +34,7 @@ function renderDetail(){
   $('#ownership-status').textContent=owned?'✦ 已拥有':'◇ 尚未唤醒';$('#equip-hero').disabled=!owned||profile.selected===preview;$('#equip-hero').textContent=profile.selected===preview?'当前展示英雄':owned?'设为展示英雄':'等待召唤';
 }
 function setView(view,push=true){
+  if(view==='summon'){location.href='campaign.html?panel=summon';return;}
   if(!['hall','summon','codex'].includes(view))view='hall';const hall=view==='hall';$('#shell').dataset.view=view;$('#hall-view').hidden=!hall;$('#summon-view').hidden=hall;$('#page-heading').hidden=hall;$('#page-heading').textContent=view==='codex'?'英雄图鉴':'英雄召唤';$('.summon-controls').hidden=view==='codex';
   $('.brand').innerHTML=hall?'<span class="brand-sigil">✧</span><span>秘境决斗<small>ARCANE DUEL</small></span>':'<span class="brand-sigil">‹</span> 返回大厅';
   document.title=(hall?'主大厅':view==='codex'?'英雄图鉴':'英雄召唤')+' · 秘境决斗';
@@ -60,7 +62,7 @@ $('#profile-button').addEventListener('click',()=>setView('codex'));$('#hall-her
 $('#equip-hero').addEventListener('click',()=>{if(!profile.owned.includes(preview))return;profile.selected=preview;persist();renderHeader();renderDetail();toast('已将'+HEROES[preview].name+'设为展示英雄。');});
 $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.summon))));
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
-$('#settings-open').addEventListener('click',()=>open('#settings-dialog'));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>open('#odds-dialog'));
+$('#settings-open').addEventListener('click',()=>open('#settings-dialog'));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
 $('#sound-toggle').addEventListener('click',()=>setSound(!profile.sound));$('#sound-setting').addEventListener('change',e=>setSound(e.target.checked));
 $('#duel-open').addEventListener('click',()=>location.href=window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');
 $$('[data-room-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room-tab]').forEach(a=>a.setAttribute('aria-selected',String(a===b)));$('#create-room-panel').hidden=b.dataset.roomTab!=='create';$('#join-room-panel').hidden=b.dataset.roomTab!=='join';}));
@@ -74,5 +76,6 @@ async function loadLobbyArt(){
   const overlay=new LoadingScreen(),token=overlay.start('moon','正在准备大厅'),urls=['assets/lobby/backdrop-v1.png','assets/lobby/hero-splashes-v1.png','assets/lobby/mode-cards-v1.png'];let done=0;
   try{await Promise.all(urls.map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{overlay.progress(++done,urls.length,token);resolve();};image.onerror=()=>reject(new Error('大厅素材加载失败'));image.src=src;})));overlay.finish(token);}catch(error){overlay.fail(error.message,()=>location.reload(),token);}
 }loadLobbyArt();
+
 
 

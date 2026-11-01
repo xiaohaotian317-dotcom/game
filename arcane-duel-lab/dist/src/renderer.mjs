@@ -250,6 +250,7 @@ export class Renderer {
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
     this.hero(w,alpha,dt);this.roster.passive(w);if(w.enemyMode)this.enemies.player(w);
     for(const s of w.projectiles){
+      if(campaign&&s.kind==='soloBolt')continue;
       if(this.enemies.projectile(w,s)||this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
       const color=s.kind==='fireball'?'#ffb35d':s.kind==='seed'?'#c4df85':'#c4a8f2';
       glow(c,s.x,s.y,25,color,.5);
@@ -257,7 +258,7 @@ export class Renderer {
       if(s.kind==='seed')leaf(c,-8,0,15,0,color);
       else{const g=c.createLinearGradient(-44,0,8,0);g.addColorStop(0,rgba(color,0));g.addColorStop(.8,color);g.addColorStop(1,'#fff2c7');c.fillStyle=g;c.beginPath();c.moveTo(-44,0);c.quadraticCurveTo(-10,-11,7,0);c.quadraticCurveTo(-10,11,-44,0);c.fill();}c.restore();
     }
-    for(const e of w.effects)if(!['roots','fireZone','treeBirth'].includes(e.kind)&&!(authored&&e.kind==='breakBridge')){if(!this.enemies.effect(w,e))this.particles(w,e);}
+    for(const e of w.effects)if(!['roots','fireZone','treeBirth','soloSkill'].includes(e.kind)&&!(authored&&e.kind==='breakBridge')){if(!this.enemies.effect(w,e))this.particles(w,e);}
     if(opponent){this.rivalLayer(opponent,alpha,dt);this.duelMarker(w,'▼ 你','#ffe2a1');this.duelMarker(opponent,'对手 ▼','#ff9aa7');}
     if(authored)this.scenePainter.front(w);
     if(w.debugGeometry)this.scenePainter.geometry(w);

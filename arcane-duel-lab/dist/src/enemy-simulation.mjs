@@ -162,7 +162,7 @@ function fireStep(w,e,s,hooks){
   const {x:sx,y:sy}=enemyCastOrigin(w,e),dx=a.aim.x-sx,dy=a.aim.y-sy;
   const angle=Math.atan2(dy,dx),count=s.shots||1;
   for(let i=0;i<count;i++){const ang=angle+(i-(count-1)/2)*(s.spread||.18),speed=s.speed||360;
-   const extra={owner:'enemy',enemySource:e.id,enemyKind:e.enemyKind,enemyStyle:s.style,enemyStatus:s.status,enemyPool:s.pool,life:4*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range:1),r:(s.style==='sonic'?14:9)*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range:1)};
+   const extra={owner:'enemy',enemySource:e.id,enemyKind:e.enemyKind,enemyStyle:s.style,enemyStatus:s.status,enemyPool:s.pool,life:4*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1),r:(s.style==='sonic'?14:9)*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1)};
    hooks.projectile(w,'enemyAbility',sx,sy,Math.cos(ang),Math.sin(ang),speed,s.damage,extra);
    if(s.lob){const p=w.projectiles.at(-1),speedup=ENEMIES[e.enemyKind].boss?BOSS_TUNING.fallSpeed:1,travel=clamp(Math.abs(dx)/300,.55,1.2)/speedup;p.vx=dx/travel;p.vy=(dy-.5*700*speedup*speedup*travel*travel)/travel;p.enemyGravity=700*speedup*speedup;}
   }
@@ -171,7 +171,7 @@ function fireStep(w,e,s,hooks){
   const anchor=groundTarget(w,clamp(a.aim.x,45,w.width-45),a.aim.y+12);
   if(anchor){const fall=s.falling?.45/BOSS_TUNING.fallSpeed:0;addZone(w,e,s.style,anchor,{radius:s.radius,life:s.life,damage:s.damage,status:s.status,gravity:s.gravity,delay:.55+fall,warning:s.falling?.55:undefined,fall:fall||undefined});}
  }else if(s.type==='leap'){
-  const range=380*BOSS_TUNING.range,landing=groundTarget(w,clamp(a.aim.x,e.x-range,e.x+range),a.aim.y+10);
+  const range=380*BOSS_TUNING.range*(e.soloRange||1),landing=groundTarget(w,clamp(a.aim.x,e.x-range,e.x+range),a.aim.y+10);
   if(landing){e.vx=(landing.x-e.x)/.69;e.vy=-650;e.grounded=false;a.leaping=true;a.landed=false;fx(w,hooks,'web',{x:e.x,y:e.y,radius:70,duration:.5,enemyKind:e.enemyKind});}
  }else if(s.type==='egg')spawnEgg(w,e,hooks);
  else if(s.type==='summon'){
@@ -190,7 +190,7 @@ function updateAttack(w,e,d,dt,hooks){
  if(!a.fired){a.fired=true;fireStep(w,e,s,hooks);}
  if(s.type==='leap'&&a.leaping&&!a.landed){
   if(!e.grounded)a.age=Math.min(a.age,s.windup+s.active-.00001);
-  else{const reach=130*BOSS_TUNING.range;a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y-15,radius:reach,duration:.85,enemyKind:e.enemyKind});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
+  else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y-15,radius:reach,duration:.85,enemyKind:e.enemyKind});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
  }
  if(a.age<s.windup+s.active){
   e.ai.state=s.type==='projectile'||s.type==='zone'?'cast':s.type==='egg'||s.type==='summon'?'summon':'attack';

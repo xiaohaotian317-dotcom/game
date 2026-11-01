@@ -1,0 +1,114 @@
+{
+  "version": "growth-heroes-v1",
+  "status": "generated, visually inspected; user art approval pending",
+  "entries": [
+    {
+      "hero": "fire",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Asset type: production transparent VFX sprite atlas for dark fantasy 2D side-view game. Create exactly 4 columns by 3 rows = 12 separate animation frames on a 1536x1024 canvas, all cells equal, transparent background with genuine alpha, no ground/backplate/text/grid lines. Each effect stays inside its cell with at least 28 pixels empty padding, no crossing cell borders. Fine hand-painted fantasy game art, crisp readable silhouette, layered incandescent cores, controlled glow, detailed ember sparks and molten textures. No people, no humanoid bodies, no UI. All directional effects face RIGHT. Row 1 frames 0–3: FIRE TORNADO, continuous four stages of a red-orange spiraling flaming vortex: ignition curl, coiled rising funnel, full powerful twisting funnel, dissipating flame ribbons. Row 2 frames 4–7: MOLTEN CORE PIERCER, a horizontal right-facing arrowhead lance of black volcanic rock cracked with golden magma, red hot trailing ring: charge, thrust, elongated piercing lance, impact burst. Row 3 frames 8–11: INFERNAL FLAME DRAGON, spectacular full serpentine dragon made of scarlet flame with golden hot core, discernible horned head facing right and long curling body, flying above a small fiery ground sigil: forming, lunging, full roaring dragon, disintegrating ember shockwave. Every frame complete and centered, black negative spaces must be truly transparent rather than painted black. This is an actual sprite sheet not a reference board.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-1aebe34f-519f-4cea-b220-8a39d7cdc2c9.png",
+      "file": "hero-fire-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "nature",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Production VFX animation sprite sheet for a polished dark fantasy hand-painted 2D side-view action game. EXACT 4 columns x 3 rows = 12 frames, 1536x1024, equal cells. ACTUAL TRANSPARENT BACKGROUND: alpha zero in all empty space, NO colored mist or gradient background or dark rectangle. Leave a broad completely transparent gutter between every frame. Fit every effect into central 80 percent of its own cell, no cropped tips or glow spill. Each row shows four consecutive animation stages left to right (forming, release, full impact, dissipation). Isolated magical effects only, NO characters or humanoid bodies, no scenery, no words, no labels, no grid. All projectiles and directional arcs face right. Crisp functional silhouettes, luminous fine cores, selective rich glow, dark fantasy layered detail without obscuring silhouette. NATURE / emerald living thorn magic with antique-gold pollen, rose pink blossoms, carved bark and translucent leaves. Top row NEW F THORN FAN BLADES: three graceful sharp curved leaf blades opening into a rightward fan, growing thorn tips and sparkling green trails. Middle row NEW E FLOWER HEALING: elegant upward spiral of flowering vines and open pink-white lily, translucent emerald restorative ring at base, luminous motes rising; clear calm healing shape. Bottom row NEW R THORN ROYAL COURT: monumental crown-like semicircle of branching hooked thorns and blooming roses growing out of an elaborate low runic root sigil, ascending emerald beams; spectacular but clearly readable complete crown silhouette. Four coherent animation phases per row. No actual tree trunk or people. Empty areas genuinely alpha-transparent.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-fd6ea557-f024-4dcc-8121-2b53bb8703e7.png",
+      "file": "hero-nature-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "frost",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Production VFX animation sprite sheet for a polished dark fantasy hand-painted 2D side-view action game. EXACT 4 columns x 3 rows = 12 frames, 1536x1024, equal cells. ACTUAL TRANSPARENT BACKGROUND: alpha zero in all empty space, NO colored mist or gradient background or dark rectangle. Leave a broad completely transparent gutter between every frame. Fit every effect into central 80 percent of its own cell, no cropped tips or glow spill. Each row shows four consecutive animation stages left to right (forming, release, full impact, dissipation). Isolated magical effects only, NO characters or humanoid bodies, no scenery, no words, no labels, no grid. All projectiles and directional arcs face right. Crisp functional silhouettes, luminous fine cores, selective rich glow, dark fantasy layered detail without obscuring silhouette. FROST / diamond cyan and icy white, cobalt shadows, glassy bevelled crystals and powder snow. Top row NEW F FROZEN FAN BLADES: three crystal crescent blades spreading in a fan toward right, icy trailing ribbons and a few six-point snowflakes. Middle row NEW E CRYSTAL HUNT: a compact spearhead cluster of icicle shards thrusting right, focused blue tracking core and piercing crystalline burst. Bottom row NEW R POLAR NIGHT PHOENIX: a magnificent magical ice phoenix built of translucent crystal feathers and snow, hooked bird beak facing right, graceful full wings and long flowing tail above an oval frosty runic seal; forming snowy feathers, emerging phoenix, full brilliant phoenix wingbeat, dissolving flakes. Not a dragon. Four coherent animation phases per row, isolated complete objects, genuinely transparent empty space and gutters.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-c2244f68-ffcc-46e5-a70e-43ff288f26a0.png",
+      "file": "hero-frost-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "lightning",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Production VFX animation sprite sheet for a polished dark fantasy hand-painted 2D side-view action game. EXACT 4 columns x 3 rows = 12 frames, 1536x1024, equal cells. ACTUAL TRANSPARENT BACKGROUND: alpha zero in all empty space, NO colored mist or gradient background or dark rectangle. Leave a broad completely transparent gutter between every frame. Fit every effect into central 80 percent of its own cell, no cropped tips or glow spill. Each row shows four consecutive animation stages left to right (forming, release, full impact, dissipation). Isolated magical effects only, NO characters or humanoid bodies, no scenery, no words, no labels, no grid. All projectiles and directional arcs face right. Crisp functional silhouettes, luminous fine cores, selective rich glow, dark fantasy layered detail without obscuring silhouette. LIGHTNING / sharp gold-white lightning cores, indigo blue arcs, thunder sparks and gold rune fragments. Top row NEW F RIFT THUNDER PUNCH: only a spectral clenched fist made from braided lightning, facing right, with rearward electric trails and strong forward impact shock ring; no arm or human body. Middle row NEW E CHAIN THUNDER REVOLUTION: a rotating open circular chain of jagged lightning with three linked bright nodes, rotation expands into a rightward whipping double arc then disperses. Bottom row NEW R THUNDER GOD BATTLE AURA: no humanoid body; a majestic vertical thunderbolt crown and two sweeping electric shoulder-like wings above an oval gold thunder sigil, dense forked lightning halo, storm column rising from seal, overwhelming radiant charge then bolts flare and dissipate. Four consecutive coherent phases each row. True transparent background with clean completely empty gutters.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-16536ce3-22bc-4959-9fe3-71804daace52.png",
+      "file": "hero-lightning-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "shadow",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Production VFX animation sprite sheet for a polished dark fantasy hand-painted 2D side-view action game. EXACT 4 columns x 3 rows = 12 frames, 1536x1024, equal cells. ACTUAL TRANSPARENT BACKGROUND: alpha zero in all empty space, NO colored mist or gradient background or dark rectangle. Leave a broad completely transparent gutter between every frame. Fit every effect into central 80 percent of its own cell, no cropped tips or glow spill. Each row shows four consecutive animation stages left to right (forming, release, full impact, dissipation). Isolated magical effects only, NO characters or humanoid bodies, no scenery, no words, no labels, no grid. All projectiles and directional arcs face right. Crisp functional silhouettes, luminous fine cores, selective rich glow, dark fantasy layered detail without obscuring silhouette. SHADOW / black raven feathers with purple-violet rimlight, pale moon silver blade edges, wisps of inky shadow. Top row NEW F MOON ARC FLYING BLADES: sharp crescent silver daggers fly right, two to three interlocking moon-blade arcs, violet feather trails, then rightward slicing impact. Middle row NEW E RAVEN AMBUSH: a single detailed spectral raven with beak right, wings opening from small violet shadow rift and thrusting forward in a pointed spear-like silhouette, purple ink feathers disperse. Bottom row NEW R THOUSAND RAVENS SILENCE: a grand swirling cyclone made of many individually distinct flying black ravens with purple rimlit wings, surrounding a hollow moon-shaped center above a low violet ritual ring. Great expanding flock burst, then fading feathers. No humanoid body. Keep birds and individual feathers readable, no solid purple fog background. True transparent empty space and wide transparent gutters. Four connected animation frames per skill.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-6b9aa6cc-02b6-4e72-8751-c906f5f6df9a.png",
+      "file": "hero-shadow-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "star",
+      "kind": "fx",
+      "prompt": "Use case: stylized-concept. Production VFX animation sprite sheet for a polished dark fantasy hand-painted 2D side-view action game. EXACT 4 columns x 3 rows = 12 frames, 1536x1024, equal cells. ACTUAL TRANSPARENT BACKGROUND: alpha zero in all empty space, NO colored mist or gradient background or dark rectangle. Leave a broad completely transparent gutter between every frame. Fit every effect into central 80 percent of its own cell, no cropped tips or glow spill. Each row shows four consecutive animation stages left to right (forming, release, full impact, dissipation). Isolated magical effects only, NO characters or humanoid bodies, no scenery, no words, no labels, no grid. All projectiles and directional arcs face right. Crisp functional silhouettes, luminous fine cores, selective rich glow, dark fantasy layered detail without obscuring silhouette. STAR / celestial sapphire blue, violet nebula strands, antique gold orbital lines and ivory starlight, accurate fine geometric rings. Top row NEW F FALLING STAR SCATTER: three to five pointed gold-blue comets spreading toward right in a graceful fan, each has sharply pointed bright star core and long blue tail, culminates in multiple small starbursts. Middle row NEW E STARLIGHT REWIND: elegant rotating concentric astrolabe rings with flowing clockwise gold crescent arrows around bright central eight-point star; a translucent hourglass shape made of stardust, geometric orbit expands then contracts. Bottom row NEW R OCEAN OF STARS JUDGEMENT: majestic galaxy vortex in an oval plane with hundreds of tiny points, several large crystalline eight-point stars hovering above concentric celestial seals, a focused central starlight pillar strikes down into the galaxy, then a layered expanding orbital shockwave; full spectacle but sharp readable outline. No characters or scenery. Genuine transparent empty space, no nebula painted as full-frame background.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-afe1ce51-25da-4586-a4b2-ef34c847670b.png",
+      "file": "hero-star-fx-v1.png",
+      "transparent_background": true,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "fire",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. FIRE hero theme, scarlet flames, molten orange cores, black volcanic stone. LEFT: a twisting spiral fire tornado, unmistakable funnel silhouette. CENTER: a right-facing spear of cracked black obsidian with incandescent magma fissures and fiery piercing trail. RIGHT: a regal horned infernal dragon head with coiled flame neck and hot golden eyes, red ember crown. Three clearly different shapes; opulent unified black-gold frames.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-f973ee4f-bc88-4ffb-aa6c-96d58e5c1ab6.png",
+      "file": "hero-fire-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "nature",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. NATURE hero theme: emerald green, blush pink flower, warm gold pollen, rich living bark. LEFT: three sharp gold-rimmed emerald thorn leaf blades spread toward right in a fan, sweeping trails. CENTER: a single fully open pink-white lily with golden luminous center, elegant emerald vine spiral and soft healing motes. RIGHT: an imposing crown made of curved thorns and jade vines, five sharp crown points and roses framing a brilliant emerald jewel. Three clearly different shapes. Unified ornate black-gold framing.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-2198ce68-d8e2-4e8f-b41e-a926f70ccd1a.png",
+      "file": "hero-nature-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "frost",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. FROST hero theme: diamond cyan-white, cobalt shadows, polished glass-like ice. LEFT: three crescent ice blades fan outward right with star snowflakes and cold trails. CENTER: a sharp intricate ice crystal arrowhead tracking spear, bright circular blue core nested within layered pointed shards, rightward thrust. RIGHT: the noble right-facing head and wing of an ice phoenix, distinct avian beak and swept crystalline feather crown, azure eye, flowing snowflakes. Three clearly different silhouettes. Ornate antique gold frames with tiny icy accents.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-bfebb375-89d2-406e-8acc-f3dda53df53a.png",
+      "file": "hero-frost-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "lightning",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. LIGHTNING hero theme: golden-white thunder, indigo blue arcs. LEFT: a strong clenched spectral fist made from jagged gold-white lightning punching toward right, no human face or body, an explosive lightning ring near knuckles. CENTER: a gold chain formed into a circular rotating loop with three radiant blue-white electric nodes and forked lightning whipping around it. RIGHT: majestic winged crown-shaped thunder aura emblem, central vertical lightning bolt rising above concentric rune seal, symmetric sweeping lightning wings, no humanoid body. All three bold, distinct, dark gold metal frames.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-cf87add0-1652-4583-90e2-9d28ec228f29.png",
+      "file": "hero-lightning-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "shadow",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. SHADOW hero theme: black raven feathers, violet arcane rimlight, moon-silver blades. LEFT: three elegant crescent moon daggers fanning toward right, brilliant silver curved cutting edges with violet shadow trails. CENTER: one black raven lunging right with sharp beak, glowing violet eye, wings swept back and feather trails from a violet shadow slit, unmistakable bird silhouette. RIGHT: a swirling flock of distinct ravens forming a ring around a silver crescent moon and a deep empty center, purple ritual glow. Different strong silhouettes, black gold square frames with subtle violet gem accents.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-709ae928-a692-411d-ad89-eb84870ea9e0.png",
+      "file": "hero-shadow-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    },
+    {
+      "hero": "star",
+      "kind": "icons",
+      "prompt": "Use case: stylized-concept. Asset type: actual finished skill icon atlas for polished dark fantasy action RPG. Make one horizontal strip EXACTLY 3 columns by 1 row, canvas 1536x512; each cell a square icon, no margins between cells. Three independent square blackened metal frames with matching ornate antique gold bevels, finely engraved corner filigree, dark charcoal-purple interiors; a thin complete frame around each icon. Hand-painted rich game icon art, fine material detail but bold memorable silhouette readable at 48px. Each central emblem fills 70 percent of cell with restrained magical glow, dark background inside icon makes focal emblem pop. NO text, letters, numbers, key badges, logos or watermark, NO extra icons, no characters. Left is new F, center new E, right new R. STAR hero theme: sapphire-violet celestial magic and antique golden astrolabe ornament. LEFT: three brilliant eight-point golden-blue falling stars with long sapphire comet tails scattered in a fan to right. CENTER: an exquisite glowing glass hourglass filled with blue stardust encircled by two gold orbital rings and a curved reverse-time gold arrow, clear hourglass silhouette. RIGHT: a majestic spiral galaxy with golden orbital seals and a vertical ivory judgement beam at center, three large eight-point stars above, very readable celestial ultimate. Three distinct silhouettes, same elegant square black gold frames.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-164af6a2-a92e-4fb5-bd00-f1ef820a7b6e.png",
+      "file": "hero-star-icons-v1.png",
+      "transparent_background": false,
+      "tool": "built-in image_gen"
+    }
+  ]
+}

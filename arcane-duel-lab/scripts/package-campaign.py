@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign2',choices=['campaign1','campaign2'])
+parser.add_argument('--version',default='campaign3',choices=['campaign1','campaign2','campaign3'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,6 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'11-stage local campaign, 11 new boss FX atlases, sparse upper platforms, fire E detonation; no growth economy','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Offline campaign growth, 18 new skills, 6 system panels, inventory/loot/equipment/forge/ticket summon; artifacts and pets are entry-only','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
+

@@ -1,0 +1,149 @@
+{
+  "note": "Deterministic seed42 input bot; opened the real initial 2 coin boxes and 3 XP potions and learned base E. No equipment, injected stats or killed-target shortcuts. A balance probe, not human QA.",
+  "results": [
+    {
+      "hero": "fire",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 139,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 84,
+      "rewards": 38
+    },
+    {
+      "hero": "fire",
+      "stage": 2,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 26,
+      "level": 5,
+      "xp": 680,
+      "coins": 580,
+      "seconds": 100,
+      "rewards": 38
+    },
+    {
+      "hero": "nature",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 88,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 116,
+      "rewards": 38
+    },
+    {
+      "hero": "nature",
+      "stage": 2,
+      "state": "defeat",
+      "encounter": 3,
+      "hp": 0,
+      "level": 5,
+      "xp": 650,
+      "coins": 550,
+      "seconds": 96,
+      "rewards": 32
+    },
+    {
+      "hero": "frost",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 143,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 170,
+      "rewards": 38
+    },
+    {
+      "hero": "frost",
+      "stage": 2,
+      "state": "defeat",
+      "encounter": 4,
+      "hp": 0,
+      "level": 5,
+      "xp": 680,
+      "coins": 580,
+      "seconds": 154,
+      "rewards": 38
+    },
+    {
+      "hero": "lightning",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 87,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 112,
+      "rewards": 38
+    },
+    {
+      "hero": "lightning",
+      "stage": 2,
+      "state": "defeat",
+      "encounter": 4,
+      "hp": 0,
+      "level": 5,
+      "xp": 680,
+      "coins": 580,
+      "seconds": 119,
+      "rewards": 38
+    },
+    {
+      "hero": "shadow",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 66,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 99,
+      "rewards": 38
+    },
+    {
+      "hero": "shadow",
+      "stage": 2,
+      "state": "defeat",
+      "encounter": 4,
+      "hp": 0,
+      "level": 5,
+      "xp": 680,
+      "coins": 580,
+      "seconds": 99,
+      "rewards": 38
+    },
+    {
+      "hero": "star",
+      "stage": 1,
+      "state": "complete",
+      "encounter": 4,
+      "hp": 81,
+      "level": 4,
+      "xp": 490,
+      "coins": 390,
+      "seconds": 111,
+      "rewards": 38
+    },
+    {
+      "hero": "star",
+      "stage": 2,
+      "state": "defeat",
+      "encounter": 4,
+      "hp": 0,
+      "level": 5,
+      "xp": 680,
+      "coins": 580,
+      "seconds": 107,
+      "rewards": 38
+    }
+  ]
+}

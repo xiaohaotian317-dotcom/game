@@ -1,0 +1,1713 @@
+{
+  "version": "growth-heroes-v1",
+  "alphaThreshold": 16,
+  "note": "Original generated pixels preserved. Explicit rects account for natural row spacing; consumers must use rect/spriteRect rather than inferring equal row cuts. bbox is local to rect; centerX is local px; bottomNormalized is relative to rect height.",
+  "units": {
+    "fire": {
+      "file": "hero-fire-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            390
+          ],
+          "spriteRect": [
+            29,
+            156,
+            332,
+            216
+          ],
+          "bbox": [
+            29,
+            156,
+            332,
+            216
+          ],
+          "centerX": 195.0,
+          "bottomNormalized": 0.953846
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            390
+          ],
+          "spriteRect": [
+            441,
+            55,
+            310,
+            327
+          ],
+          "bbox": [
+            57,
+            55,
+            310,
+            327
+          ],
+          "centerX": 212.0,
+          "bottomNormalized": 0.979487
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            390
+          ],
+          "spriteRect": [
+            785,
+            13,
+            357,
+            369
+          ],
+          "bbox": [
+            17,
+            13,
+            357,
+            369
+          ],
+          "centerX": 195.5,
+          "bottomNormalized": 0.979487
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            390
+          ],
+          "spriteRect": [
+            1189,
+            25,
+            323,
+            358
+          ],
+          "bbox": [
+            37,
+            25,
+            323,
+            358
+          ],
+          "centerX": 198.5,
+          "bottomNormalized": 0.982051
+        },
+        {
+          "rect": [
+            0,
+            390,
+            384,
+            265
+          ],
+          "spriteRect": [
+            26,
+            435,
+            342,
+            174
+          ],
+          "bbox": [
+            26,
+            45,
+            342,
+            174
+          ],
+          "centerX": 197.0,
+          "bottomNormalized": 0.826415
+        },
+        {
+          "rect": [
+            384,
+            390,
+            384,
+            265
+          ],
+          "spriteRect": [
+            390,
+            456,
+            378,
+            161
+          ],
+          "bbox": [
+            6,
+            66,
+            378,
+            161
+          ],
+          "centerX": 195.0,
+          "bottomNormalized": 0.856604
+        },
+        {
+          "rect": [
+            768,
+            390,
+            384,
+            265
+          ],
+          "spriteRect": [
+            768,
+            440,
+            384,
+            215
+          ],
+          "bbox": [
+            0,
+            50,
+            384,
+            215
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            1152,
+            390,
+            384,
+            265
+          ],
+          "spriteRect": [
+            1152,
+            406,
+            354,
+            249
+          ],
+          "bbox": [
+            0,
+            16,
+            354,
+            249
+          ],
+          "centerX": 177.0,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            0,
+            655,
+            384,
+            369
+          ],
+          "spriteRect": [
+            22,
+            678,
+            362,
+            309
+          ],
+          "bbox": [
+            22,
+            23,
+            362,
+            309
+          ],
+          "centerX": 203.0,
+          "bottomNormalized": 0.899729
+        },
+        {
+          "rect": [
+            384,
+            655,
+            384,
+            369
+          ],
+          "spriteRect": [
+            384,
+            663,
+            384,
+            334
+          ],
+          "bbox": [
+            0,
+            8,
+            384,
+            334
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.926829
+        },
+        {
+          "rect": [
+            768,
+            655,
+            384,
+            369
+          ],
+          "spriteRect": [
+            768,
+            655,
+            382,
+            346
+          ],
+          "bbox": [
+            0,
+            0,
+            382,
+            346
+          ],
+          "centerX": 191.0,
+          "bottomNormalized": 0.937669
+        },
+        {
+          "rect": [
+            1152,
+            655,
+            384,
+            369
+          ],
+          "spriteRect": [
+            1174,
+            655,
+            335,
+            344
+          ],
+          "bbox": [
+            22,
+            0,
+            335,
+            344
+          ],
+          "centerX": 189.5,
+          "bottomNormalized": 0.932249
+        }
+      ]
+    },
+    "nature": {
+      "file": "hero-nature-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            320
+          ],
+          "spriteRect": [
+            62,
+            65,
+            224,
+            223
+          ],
+          "bbox": [
+            62,
+            65,
+            224,
+            223
+          ],
+          "centerX": 174.0,
+          "bottomNormalized": 0.9
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            320
+          ],
+          "spriteRect": [
+            398,
+            6,
+            370,
+            289
+          ],
+          "bbox": [
+            14,
+            6,
+            370,
+            289
+          ],
+          "centerX": 199.0,
+          "bottomNormalized": 0.921875
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            320
+          ],
+          "spriteRect": [
+            768,
+            56,
+            384,
+            227
+          ],
+          "bbox": [
+            0,
+            56,
+            384,
+            227
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.884375
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            320
+          ],
+          "spriteRect": [
+            1152,
+            51,
+            367,
+            229
+          ],
+          "bbox": [
+            0,
+            51,
+            367,
+            229
+          ],
+          "centerX": 183.5,
+          "bottomNormalized": 0.875
+        },
+        {
+          "rect": [
+            0,
+            320,
+            384,
+            360
+          ],
+          "spriteRect": [
+            71,
+            402,
+            230,
+            260
+          ],
+          "bbox": [
+            71,
+            82,
+            230,
+            260
+          ],
+          "centerX": 186.0,
+          "bottomNormalized": 0.95
+        },
+        {
+          "rect": [
+            384,
+            320,
+            384,
+            360
+          ],
+          "spriteRect": [
+            416,
+            332,
+            288,
+            343
+          ],
+          "bbox": [
+            32,
+            12,
+            288,
+            343
+          ],
+          "centerX": 176.0,
+          "bottomNormalized": 0.986111
+        },
+        {
+          "rect": [
+            768,
+            320,
+            384,
+            360
+          ],
+          "spriteRect": [
+            785,
+            323,
+            349,
+            357
+          ],
+          "bbox": [
+            17,
+            3,
+            349,
+            357
+          ],
+          "centerX": 191.5,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            1152,
+            320,
+            384,
+            360
+          ],
+          "spriteRect": [
+            1216,
+            323,
+            282,
+            357
+          ],
+          "bbox": [
+            64,
+            3,
+            282,
+            357
+          ],
+          "centerX": 205.0,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            0,
+            680,
+            384,
+            344
+          ],
+          "spriteRect": [
+            25,
+            688,
+            359,
+            313
+          ],
+          "bbox": [
+            25,
+            8,
+            359,
+            313
+          ],
+          "centerX": 204.5,
+          "bottomNormalized": 0.93314
+        },
+        {
+          "rect": [
+            384,
+            680,
+            384,
+            344
+          ],
+          "spriteRect": [
+            384,
+            683,
+            384,
+            319
+          ],
+          "bbox": [
+            0,
+            3,
+            384,
+            319
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.936047
+        },
+        {
+          "rect": [
+            768,
+            680,
+            384,
+            344
+          ],
+          "spriteRect": [
+            768,
+            680,
+            384,
+            339
+          ],
+          "bbox": [
+            0,
+            0,
+            384,
+            339
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.985465
+        },
+        {
+          "rect": [
+            1152,
+            680,
+            384,
+            344
+          ],
+          "spriteRect": [
+            1152,
+            680,
+            362,
+            317
+          ],
+          "bbox": [
+            0,
+            0,
+            362,
+            317
+          ],
+          "centerX": 181.0,
+          "bottomNormalized": 0.921512
+        }
+      ]
+    },
+    "frost": {
+      "file": "hero-frost-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            345
+          ],
+          "spriteRect": [
+            38,
+            57,
+            346,
+            261
+          ],
+          "bbox": [
+            38,
+            57,
+            346,
+            261
+          ],
+          "centerX": 211.0,
+          "bottomNormalized": 0.921739
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            345
+          ],
+          "spriteRect": [
+            384,
+            57,
+            366,
+            269
+          ],
+          "bbox": [
+            0,
+            57,
+            366,
+            269
+          ],
+          "centerX": 183.0,
+          "bottomNormalized": 0.944928
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            345
+          ],
+          "spriteRect": [
+            810,
+            33,
+            342,
+            305
+          ],
+          "bbox": [
+            42,
+            33,
+            342,
+            305
+          ],
+          "centerX": 213.0,
+          "bottomNormalized": 0.97971
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            345
+          ],
+          "spriteRect": [
+            1152,
+            47,
+            353,
+            277
+          ],
+          "bbox": [
+            0,
+            47,
+            353,
+            277
+          ],
+          "centerX": 176.5,
+          "bottomNormalized": 0.93913
+        },
+        {
+          "rect": [
+            0,
+            345,
+            384,
+            295
+          ],
+          "spriteRect": [
+            50,
+            396,
+            334,
+            210
+          ],
+          "bbox": [
+            50,
+            51,
+            334,
+            210
+          ],
+          "centerX": 217.0,
+          "bottomNormalized": 0.884746
+        },
+        {
+          "rect": [
+            384,
+            345,
+            384,
+            295
+          ],
+          "spriteRect": [
+            384,
+            419,
+            362,
+            171
+          ],
+          "bbox": [
+            0,
+            74,
+            362,
+            171
+          ],
+          "centerX": 181.0,
+          "bottomNormalized": 0.830508
+        },
+        {
+          "rect": [
+            768,
+            345,
+            384,
+            295
+          ],
+          "spriteRect": [
+            785,
+            370,
+            367,
+            270
+          ],
+          "bbox": [
+            17,
+            25,
+            367,
+            270
+          ],
+          "centerX": 200.5,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            1152,
+            345,
+            384,
+            295
+          ],
+          "spriteRect": [
+            1152,
+            417,
+            351,
+            206
+          ],
+          "bbox": [
+            0,
+            72,
+            351,
+            206
+          ],
+          "centerX": 175.5,
+          "bottomNormalized": 0.942373
+        },
+        {
+          "rect": [
+            0,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            28,
+            675,
+            297,
+            325
+          ],
+          "bbox": [
+            28,
+            35,
+            297,
+            325
+          ],
+          "centerX": 176.5,
+          "bottomNormalized": 0.9375
+        },
+        {
+          "rect": [
+            384,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            386,
+            669,
+            382,
+            332
+          ],
+          "bbox": [
+            2,
+            29,
+            382,
+            332
+          ],
+          "centerX": 193.0,
+          "bottomNormalized": 0.940104
+        },
+        {
+          "rect": [
+            768,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            768,
+            640,
+            384,
+            361
+          ],
+          "bbox": [
+            0,
+            0,
+            384,
+            361
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.940104
+        },
+        {
+          "rect": [
+            1152,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            1152,
+            670,
+            340,
+            327
+          ],
+          "bbox": [
+            0,
+            30,
+            340,
+            327
+          ],
+          "centerX": 170.0,
+          "bottomNormalized": 0.929688
+        }
+      ]
+    },
+    "lightning": {
+      "file": "hero-lightning-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            350
+          ],
+          "spriteRect": [
+            15,
+            98,
+            323,
+            188
+          ],
+          "bbox": [
+            15,
+            98,
+            323,
+            188
+          ],
+          "centerX": 176.5,
+          "bottomNormalized": 0.817143
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            350
+          ],
+          "spriteRect": [
+            385,
+            98,
+            368,
+            193
+          ],
+          "bbox": [
+            1,
+            98,
+            368,
+            193
+          ],
+          "centerX": 185.0,
+          "bottomNormalized": 0.831429
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            350
+          ],
+          "spriteRect": [
+            785,
+            21,
+            365,
+            329
+          ],
+          "bbox": [
+            17,
+            21,
+            365,
+            329
+          ],
+          "centerX": 199.5,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            350
+          ],
+          "spriteRect": [
+            1179,
+            68,
+            340,
+            244
+          ],
+          "bbox": [
+            27,
+            68,
+            340,
+            244
+          ],
+          "centerX": 197.0,
+          "bottomNormalized": 0.891429
+        },
+        {
+          "rect": [
+            0,
+            350,
+            384,
+            290
+          ],
+          "spriteRect": [
+            50,
+            384,
+            261,
+            252
+          ],
+          "bbox": [
+            50,
+            34,
+            261,
+            252
+          ],
+          "centerX": 180.5,
+          "bottomNormalized": 0.986207
+        },
+        {
+          "rect": [
+            384,
+            350,
+            384,
+            290
+          ],
+          "spriteRect": [
+            414,
+            397,
+            338,
+            226
+          ],
+          "bbox": [
+            30,
+            47,
+            338,
+            226
+          ],
+          "centerX": 199.0,
+          "bottomNormalized": 0.941379
+        },
+        {
+          "rect": [
+            768,
+            350,
+            384,
+            290
+          ],
+          "spriteRect": [
+            795,
+            350,
+            348,
+            290
+          ],
+          "bbox": [
+            27,
+            0,
+            348,
+            290
+          ],
+          "centerX": 201.0,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            1152,
+            350,
+            384,
+            290
+          ],
+          "spriteRect": [
+            1202,
+            399,
+            315,
+            241
+          ],
+          "bbox": [
+            50,
+            49,
+            315,
+            241
+          ],
+          "centerX": 207.5,
+          "bottomNormalized": 1.0
+        },
+        {
+          "rect": [
+            0,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            26,
+            704,
+            358,
+            300
+          ],
+          "bbox": [
+            26,
+            64,
+            358,
+            300
+          ],
+          "centerX": 205.0,
+          "bottomNormalized": 0.947917
+        },
+        {
+          "rect": [
+            384,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            384,
+            653,
+            384,
+            356
+          ],
+          "bbox": [
+            0,
+            13,
+            384,
+            356
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.960938
+        },
+        {
+          "rect": [
+            768,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            768,
+            640,
+            384,
+            373
+          ],
+          "bbox": [
+            0,
+            0,
+            384,
+            373
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.971354
+        },
+        {
+          "rect": [
+            1152,
+            640,
+            384,
+            384
+          ],
+          "spriteRect": [
+            1152,
+            640,
+            351,
+            356
+          ],
+          "bbox": [
+            0,
+            0,
+            351,
+            356
+          ],
+          "centerX": 175.5,
+          "bottomNormalized": 0.927083
+        }
+      ]
+    },
+    "shadow": {
+      "file": "hero-shadow-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            335
+          ],
+          "spriteRect": [
+            20,
+            49,
+            364,
+            270
+          ],
+          "bbox": [
+            20,
+            49,
+            364,
+            270
+          ],
+          "centerX": 202.0,
+          "bottomNormalized": 0.952239
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            335
+          ],
+          "spriteRect": [
+            384,
+            80,
+            376,
+            218
+          ],
+          "bbox": [
+            0,
+            80,
+            376,
+            218
+          ],
+          "centerX": 188.0,
+          "bottomNormalized": 0.889552
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            335
+          ],
+          "spriteRect": [
+            781,
+            55,
+            371,
+            264
+          ],
+          "bbox": [
+            13,
+            55,
+            371,
+            264
+          ],
+          "centerX": 198.5,
+          "bottomNormalized": 0.952239
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            335
+          ],
+          "spriteRect": [
+            1152,
+            75,
+            367,
+            228
+          ],
+          "bbox": [
+            0,
+            75,
+            367,
+            228
+          ],
+          "centerX": 183.5,
+          "bottomNormalized": 0.904478
+        },
+        {
+          "rect": [
+            0,
+            335,
+            384,
+            315
+          ],
+          "spriteRect": [
+            51,
+            379,
+            333,
+            257
+          ],
+          "bbox": [
+            51,
+            44,
+            333,
+            257
+          ],
+          "centerX": 217.5,
+          "bottomNormalized": 0.955556
+        },
+        {
+          "rect": [
+            384,
+            335,
+            384,
+            315
+          ],
+          "spriteRect": [
+            384,
+            341,
+            384,
+            287
+          ],
+          "bbox": [
+            0,
+            6,
+            384,
+            287
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.930159
+        },
+        {
+          "rect": [
+            768,
+            335,
+            384,
+            315
+          ],
+          "spriteRect": [
+            768,
+            402,
+            384,
+            225
+          ],
+          "bbox": [
+            0,
+            67,
+            384,
+            225
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.926984
+        },
+        {
+          "rect": [
+            1152,
+            335,
+            384,
+            315
+          ],
+          "spriteRect": [
+            1152,
+            400,
+            368,
+            227
+          ],
+          "bbox": [
+            0,
+            65,
+            368,
+            227
+          ],
+          "centerX": 184.0,
+          "bottomNormalized": 0.926984
+        },
+        {
+          "rect": [
+            0,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            24,
+            672,
+            360,
+            309
+          ],
+          "bbox": [
+            24,
+            22,
+            360,
+            309
+          ],
+          "centerX": 204.0,
+          "bottomNormalized": 0.885027
+        },
+        {
+          "rect": [
+            384,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            384,
+            653,
+            384,
+            333
+          ],
+          "bbox": [
+            0,
+            3,
+            384,
+            333
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.898396
+        },
+        {
+          "rect": [
+            768,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            768,
+            658,
+            384,
+            329
+          ],
+          "bbox": [
+            0,
+            8,
+            384,
+            329
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.90107
+        },
+        {
+          "rect": [
+            1152,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            1152,
+            719,
+            360,
+            259
+          ],
+          "bbox": [
+            0,
+            69,
+            360,
+            259
+          ],
+          "centerX": 180.0,
+          "bottomNormalized": 0.877005
+        }
+      ]
+    },
+    "star": {
+      "file": "hero-star-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cols": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            384,
+            310
+          ],
+          "spriteRect": [
+            44,
+            91,
+            296,
+            160
+          ],
+          "bbox": [
+            44,
+            91,
+            296,
+            160
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.809677
+        },
+        {
+          "rect": [
+            384,
+            0,
+            384,
+            310
+          ],
+          "spriteRect": [
+            390,
+            44,
+            378,
+            241
+          ],
+          "bbox": [
+            6,
+            44,
+            378,
+            241
+          ],
+          "centerX": 195.0,
+          "bottomNormalized": 0.919355
+        },
+        {
+          "rect": [
+            768,
+            0,
+            384,
+            310
+          ],
+          "spriteRect": [
+            779,
+            30,
+            328,
+            271
+          ],
+          "bbox": [
+            11,
+            30,
+            328,
+            271
+          ],
+          "centerX": 175.0,
+          "bottomNormalized": 0.970968
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            384,
+            310
+          ],
+          "spriteRect": [
+            1164,
+            50,
+            338,
+            248
+          ],
+          "bbox": [
+            12,
+            50,
+            338,
+            248
+          ],
+          "centerX": 181.0,
+          "bottomNormalized": 0.96129
+        },
+        {
+          "rect": [
+            0,
+            310,
+            384,
+            340
+          ],
+          "spriteRect": [
+            26,
+            336,
+            334,
+            296
+          ],
+          "bbox": [
+            26,
+            26,
+            334,
+            296
+          ],
+          "centerX": 193.0,
+          "bottomNormalized": 0.947059
+        },
+        {
+          "rect": [
+            384,
+            310,
+            384,
+            340
+          ],
+          "spriteRect": [
+            399,
+            314,
+            368,
+            331
+          ],
+          "bbox": [
+            15,
+            4,
+            368,
+            331
+          ],
+          "centerX": 199.0,
+          "bottomNormalized": 0.985294
+        },
+        {
+          "rect": [
+            768,
+            310,
+            384,
+            340
+          ],
+          "spriteRect": [
+            793,
+            318,
+            338,
+            331
+          ],
+          "bbox": [
+            25,
+            8,
+            338,
+            331
+          ],
+          "centerX": 194.0,
+          "bottomNormalized": 0.997059
+        },
+        {
+          "rect": [
+            1152,
+            310,
+            384,
+            340
+          ],
+          "spriteRect": [
+            1171,
+            338,
+            327,
+            304
+          ],
+          "bbox": [
+            19,
+            28,
+            327,
+            304
+          ],
+          "centerX": 182.5,
+          "bottomNormalized": 0.976471
+        },
+        {
+          "rect": [
+            0,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            16,
+            672,
+            367,
+            321
+          ],
+          "bbox": [
+            16,
+            22,
+            367,
+            321
+          ],
+          "centerX": 199.5,
+          "bottomNormalized": 0.917112
+        },
+        {
+          "rect": [
+            384,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            394,
+            659,
+            374,
+            339
+          ],
+          "bbox": [
+            10,
+            9,
+            374,
+            339
+          ],
+          "centerX": 197.0,
+          "bottomNormalized": 0.930481
+        },
+        {
+          "rect": [
+            768,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            768,
+            659,
+            384,
+            347
+          ],
+          "bbox": [
+            0,
+            9,
+            384,
+            347
+          ],
+          "centerX": 192.0,
+          "bottomNormalized": 0.951872
+        },
+        {
+          "rect": [
+            1152,
+            650,
+            384,
+            374
+          ],
+          "spriteRect": [
+            1152,
+            672,
+            364,
+            328
+          ],
+          "bbox": [
+            0,
+            22,
+            364,
+            328
+          ],
+          "centerX": 182.0,
+          "bottomNormalized": 0.935829
+        }
+      ]
+    }
+  },
+  "icons": {
+    "fire": {
+      "file": "hero-fire-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    },
+    "nature": {
+      "file": "hero-nature-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    },
+    "frost": {
+      "file": "hero-frost-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    },
+    "lightning": {
+      "file": "hero-lightning-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    },
+    "shadow": {
+      "file": "hero-shadow-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    },
+    "star": {
+      "file": "hero-star-icons-v1.png",
+      "size": [
+        2172,
+        724
+      ],
+      "cols": 3,
+      "rows": 1
+    }
+  }
+}
