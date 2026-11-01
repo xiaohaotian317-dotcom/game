@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-31",
+  "build": "enemies1",
+  "selectableEnemies": 21,
+  "minions": 10,
+  "bosses": 11,
+  "summonTypes": [
+    "S01",
+    "M06"
+  ],
+  "animationAtlases": 22,
+  "animationFrames": 352,
+  "testsPassed": 167,
+  "enemyMapCombinations": 63,
+  "runtimeFilesMatchedSource": 141,
+  "archiveFiles": 224,
+  "archiveBytes": 320835838,
+  "archiveSHA256": "775dc114f6fe3449f5381268ff51a8a4831d909aa9b1f7255d9813eadcc1c962",
+  "archivePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-敌人试炼-enemies1.zip",
+  "executable": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-敌人试炼-enemies1\\ArcaneDuelEnemies.exe",
+  "windowsStartup": {
+    "verified": true,
+    "loopbackPort": 44175,
+    "routes200": [
+      "/healthz",
+      "/enemies.html",
+      "/assets/enemies/bounds-v1.json",
+      "/src/enemy-lab.mjs"
+    ],
+    "nativeVisualInteractionVerified": false
+  },
+  "browserVisualChecks": [
+    "M07/fire/moon",
+    "B02/lightning/moon with eggs and spiderlings",
+    "B05/frost/moon with lava and burn"
+  ],
+  "sitesPublished": false,
+  "visualAcceptance": "pending user review",
+  "sourcePNGPixelEdits": false
+}

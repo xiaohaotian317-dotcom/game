@@ -1,0 +1,14 @@
+{
+  "version": "campaign2",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign2",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign2\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign2.zip",
+  "files": 276,
+  "runtimeFilesMatched": 194,
+  "bytes": 395336490,
+  "sha256": "f33418149f6673ef1e86c807401a628e1e9d8a5c625a7f6f75b13cf3efae64c0",
+  "originalSitesUnchanged": true,
+  "scope": "11-stage local campaign, 11 new boss FX atlases, sparse upper platforms, fire E detonation; no growth economy",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

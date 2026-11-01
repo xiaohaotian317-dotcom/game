@@ -1,0 +1,14 @@
+{
+  "version": "campaign1",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign1",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign1\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign1.zip",
+  "files": 253,
+  "runtimeFilesMatched": 171,
+  "bytes": 362138588,
+  "sha256": "06eb67c41d4ea6f0b434656c439950158091ae6e78a62e43f83a55ba683b007f",
+  "originalSitesUnchanged": true,
+  "scope": "11-stage local campaign + independent 10-normal/11-boss bestiary; no growth economy",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

@@ -34,11 +34,10 @@ test('lightning ultimate physically advances and finishes in front of its aimed 
 test('shadow rush leaves full independent pose snapshots that linger after the actor finishes moving',()=>{
   const w=flat('shadow');w.targets=[];requestCast(w,'q',700,650);advance(w,.34);assert.ok(w.ghosts.length>=5);const g=w.ghosts[0],arm=g.pose.armA;assert.ok(Object.values(g.pose).every(Number.isFinite));assert.equal(g.duration,.8);w.player.cycle=300;w.player.face=-1;assert.equal(g.face,1);assert.equal(g.pose.armA,arm);advance(w,.2);assert.ok(w.ghosts.length>0);advance(w,.6);assert.equal(w.ghosts.length,0);
 });
-test('all six heroes keep an extended recast window and allow one late recast without resetting cooldown',()=>{
-  for(const hero of ['fire','nature','frost','lightning','shadow','star']){const w=flat(hero),key=['fire','nature','shadow'].includes(hero)?'e':'q';if(hero!=='lightning')w.targets=[];else w.targets[0].x=330;requestCast(w,key,400,600);advance(w,.65);assert.equal(w.player.recast.window,RECAST_WINDOWS[hero]);assert.ok(RECAST_WINDOWS[hero]>=(hero==='fire'?2.5:3.5));
+test('five timed recasts keep their late window; fire now uses visible-flight detonation instead',()=>{
+  for(const hero of ['nature','frost','lightning','shadow','star']){const w=flat(hero),key=['nature','shadow'].includes(hero)?'e':'q';if(hero!=='lightning')w.targets=[];else w.targets[0].x=330;requestCast(w,key,400,600);advance(w,.65);assert.equal(w.player.recast.window,RECAST_WINDOWS[hero]);assert.ok(RECAST_WINDOWS[hero]>=3.5);
     if(hero==='lightning')w.targets=[];
-    const elapsed=hero==='fire'?1.5:2.1;advance(w,elapsed);assert.ok(w.player.recast&&w.player.recast.until>w.time,hero);
-    if(hero==='fire'){w.player.grounded=false;w.player.y=600;w.player.vy=-10;}
+    advance(w,2.1);assert.ok(w.player.recast&&w.player.recast.until>w.time,hero);
     const cooldown=w.player.cooldowns[key];assert.ok(requestCast(w,key,450,650),hero);advance(w,.15);assert.equal(w.player.recast,null);assert.ok(w.player.cooldowns[key]<cooldown&&w.player.cooldowns[key]>0);
   }
 });

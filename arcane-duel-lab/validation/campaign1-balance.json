@@ -1,0 +1,113 @@
+{
+  "note": "Public-input bot, actual hero health/cooldowns, no health restoration or damage injection. Not human playtesting.",
+  "results": [
+    {
+      "stage": 1,
+      "hero": "frost",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 164,
+      "seconds": 76,
+      "casts": 21
+    },
+    {
+      "stage": 1,
+      "hero": "lightning",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 158,
+      "seconds": 57,
+      "casts": 52
+    },
+    {
+      "stage": 1,
+      "hero": "shadow",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 135,
+      "seconds": 58,
+      "casts": 88
+    },
+    {
+      "stage": 1,
+      "hero": "star",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 145,
+      "seconds": 65,
+      "casts": 44
+    },
+    {
+      "stage": 1,
+      "hero": "fire",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 168,
+      "seconds": 63,
+      "casts": 20
+    },
+    {
+      "stage": 1,
+      "hero": "nature",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 180,
+      "seconds": 81,
+      "casts": 185
+    },
+    {
+      "stage": 2,
+      "hero": "frost",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 80,
+      "seconds": 96,
+      "casts": 28
+    },
+    {
+      "stage": 2,
+      "hero": "lightning",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 116,
+      "seconds": 61,
+      "casts": 38
+    },
+    {
+      "stage": 2,
+      "hero": "shadow",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 43,
+      "seconds": 66,
+      "casts": 113
+    },
+    {
+      "stage": 2,
+      "hero": "star",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 85,
+      "seconds": 74,
+      "casts": 56
+    },
+    {
+      "stage": 2,
+      "hero": "fire",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 109,
+      "seconds": 66,
+      "casts": 50
+    },
+    {
+      "stage": 2,
+      "hero": "nature",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 157,
+      "seconds": 88,
+      "casts": 126
+    }
+  ]
+}

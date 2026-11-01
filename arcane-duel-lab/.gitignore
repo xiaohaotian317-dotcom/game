@@ -15,3 +15,5 @@ art-source/
 *.zip
 deploy/standalone/.env
 .standalone-qa/
+desktop/.build/
+desktop/.qa-profiles/

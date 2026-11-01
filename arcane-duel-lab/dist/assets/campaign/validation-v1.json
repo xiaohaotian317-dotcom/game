@@ -1,0 +1,195 @@
+[
+  {
+    "file": "fire-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "sha256": "37884c4e295db315f87ed7d2ba8bed52d72f56cdd2f96d5d9d5175b8a5b74a67",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "fire-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "sha256": "e8522370ad80a216b6761a40d8476a68c2bd8e5a869217cca4e3f3e098bdd1ec",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "fx-reference-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "3349b8951e7992d576581102a2a565a90de943568bafd966f02288e75207e4d2"
+  },
+  {
+    "file": "ice-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "sha256": "9f92b5d444f6314d6ae541f96130ecc041a17ba9577e8d6a0fa2dbeeed8faa26",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "file": "portal-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "sha256": "c71d42c02f39067b1c03f56bf0dbe4a5e097f7a71a2be3c21896ec44d69ad599",
+    "alphaExtrema": [
+      0,
+      253
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "stage01-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "6d6d32963df4c50c1e334ec0b94c51afd2acfe174580ec38811b3273ffe645a7"
+  },
+  {
+    "file": "stage02-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "dbaa2b3b773e7809f7a0217801d88f41a30d645be4694be6b11cb081780856f7"
+  },
+  {
+    "file": "stage03-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "801abbb58e44d64ce93ec55420fafbd1677f10e3ab6aceecf2f75bb91a188d9d"
+  },
+  {
+    "file": "stage04-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "a9a52aef2958eafcb6658db05bd7ce494fdf310574c7dfd0ee9ca2d258b86d18"
+  },
+  {
+    "file": "stage05-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "757411495abf1c192affc45ef46c1eddce4bc21dd1de4371687ec7353c1a9488"
+  },
+  {
+    "file": "stage06-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "21e9bf9f4a84ff0a73f0f46cbb0cdd6030a25cd07e09f9eed73c5886dc37d279"
+  },
+  {
+    "file": "stage07-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "01a5f23da94c80906e4cb50dfe80579aebad639c8b64815b5325dea1986c4969"
+  },
+  {
+    "file": "stage08-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "0f8db43f602949e56408bf1eeeea46f5802e738e67a39a1591bbf0856c83454e"
+  },
+  {
+    "file": "stage09-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "0fe6c85849b9de144df411267704723beaa58b9b4937726b0558f18e7576591c"
+  },
+  {
+    "file": "stage10-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "4afb3dc4e0286e3a4ba4ad16b74e4500e5ca684b86de0d5ec730dac1039d9f14"
+  },
+  {
+    "file": "stage11-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "b60e585b800e610db43228c765f4448bb179daf8f533da200acdf983ee86c541"
+  },
+  {
+    "file": "world-map-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGB",
+    "sha256": "7abfd8f66d80a9ead35061bbef8e5476c0fd8ec1d7a590cf30fcab621e241dc0"
+  }
+]

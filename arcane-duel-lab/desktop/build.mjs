@@ -1,0 +1,48 @@
+import {packager} from '@electron/packager';
+import {readFile,writeFile,mkdir,cp,rm,readdir} from 'node:fs/promises';
+import path from 'node:path';
+
+const enemyPreview=process.argv.includes('--enemy-preview');
+const campaignPreview=process.argv.includes('--campaign-preview');
+if(enemyPreview&&campaignPreview)throw new Error('Choose one preview');
+const desktop=import.meta.dirname,root=path.resolve(desktop,'..'),stage=path.join(desktop,'.build',campaignPreview?'campaign-app':enemyPreview?'enemy-app':'app');
+const executable=campaignPreview?'ArcaneDuelCampaign':enemyPreview?'ArcaneDuelEnemies':'ArcaneDuel';
+const buildRoot=path.join(desktop,'.build');
+if(!stage.startsWith(buildRoot+path.sep))throw new Error('Invalid staging directory');
+await rm(stage,{recursive:true,force:true});await mkdir(path.join(stage,'desktop'),{recursive:true});
+const pkg=JSON.parse(await readFile(path.join(desktop,'package.json'),'utf8'));
+await writeFile(path.join(stage,'package.json'),JSON.stringify({name:campaignPreview?'arcane-duel-campaign-preview':enemyPreview?'arcane-duel-enemy-preview':pkg.name,version:pkg.version,description:pkg.description,type:'module',main:'desktop/main.mjs',private:true},null,2));
+for(const file of ['main.mjs','preload.cjs','lan-runtime.mjs'])await cp(path.join(desktop,file),path.join(stage,'desktop',file));
+for(const folder of ['server','drizzle']){
+ await mkdir(path.join(stage,folder),{recursive:true});
+ for(const name of await readdir(path.join(root,folder)))if(name.endsWith(folder==='server'?'.mjs':'.sql'))await cp(path.join(root,folder,name),path.join(stage,folder,name));
+}
+const dist=path.join(root,'dist');
+await cp(dist,path.join(stage,'dist'),{recursive:true,filter:source=>!['client','server','.openai'].includes(path.relative(dist,source).split(path.sep)[0])});
+const output=await packager({dir:stage,out:path.join(buildRoot,campaignPreview?'campaign-out':enemyPreview?'enemy-out':'out'),name:executable,executableName:executable,platform:'win32',arch:'x64',electronVersion:pkg.devDependencies.electron,overwrite:true,asar:false,prune:false,appVersion:pkg.version,buildVersion:pkg.version,appCopyright:'秘境决斗',win32metadata:{CompanyName:'Arcane Duel',FileDescription:campaignPreview?'秘境决斗 · 秘境征途':enemyPreview?'秘境决斗 · 敌人交互试炼':'秘境决斗 · 单机与局域网',ProductName:'秘境决斗'}});
+const notes=`秘境决斗 · Windows 单机与局域网版 v${pkg.version}
+
+请先解压整个文件夹，再双击 ArcaneDuel.exe。不要只复制一个exe，旁边的resources等文件也必须保留。
+不需要安装Node、GPT或浏览器插件；启动页、大厅、召唤、图鉴、角色检视和三境训练资源均在本地。
+现有“单机闯关”入口仍进入训练/机关试炼，正式关卡目标与奖励尚未完成。
+
+局域网联机：
+1. 两台Windows电脑连接同一个Wi-Fi或有线局域网，使用相同版本。
+2. 房主进入大厅→双人决斗→创建局域网房间。
+3. 把房间内显示的“房主地址”和“房间号”告诉好友。
+4. 好友在大厅→双人决斗→加入好友，填地址与房间号。
+5. 挑战者准备，房主开始；双方选择英雄并准备，倒计时3秒后开始，先到3分获胜。
+
+若Windows弹出网络访问询问，请你确认允许游戏在专用网络通信。游戏不会自动修改系统防火墙。
+访客Wi-Fi/校园网可能隔离设备；只在同一Wi-Fi下仍不保证设备互通，需要实际双机验收。
+这版不提供异地网络打洞、手机端或正式账号；单机UI进度保存于本机。
+F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更换房主。
+
+原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
+`;
+await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign2\n\n请完整解压后双击 ArcaneDuelCampaign.exe。无需GPT、插件、Node或网络。\n从开始页面点击进入大厅，选择单机闯关后显示世界图；点击建筑查看详情，再进入。第一关开始，通关解锁分支，11个独立主题。\nAD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、P暂停、F11全屏。\n从左向右前进，三处锁镜清怪，第四处首领；左右各6～10只，每关固定近战/远程两类，约七成近战。\n首领击败后走入传送门，才保存通关并解锁。失败可重新挑战。\n地图中的蓝光或红圈是坠物预警；火球落地岩浆持续5秒。\n前两关教学，后续逐关变难；稀疏两层平台、较宽镜头、普通地面小怪不跳跃。六英雄均可选择，首领总尺寸为原版72%，生命增加10%，攻击频率与范围增加20%。\n\n本版只实现关卡流程与本机通关解锁；掉落栏为规划，不发放金币、装备或角色经验。背包/灵宠/法器后续开发。\n11首领全新独立特效；稳定传送门；焰术师E快速火球，离屏前再按E原位引爆。\n原大厅和敌人试炼保留，原Sites与旧Windows包没有覆盖。单机进度存于本机。\n`, 'utf8');
+if(campaignPreview){const file=path.join(output[0],'使用说明.txt');await writeFile(file,(await readFile(file,'utf8'))+'\n大厅英雄图鉴旁新增独立妖兽图鉴：10种普通妖兽、11位变异BOSS，展示动作、主动/被动、基础生命与关卡实际生命。\n选关鼠标移到建筑上会轻微放大并显示名称，键盘Tab也可选择。\n');}
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign2':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
+

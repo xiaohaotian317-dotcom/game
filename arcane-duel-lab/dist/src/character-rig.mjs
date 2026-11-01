@@ -51,6 +51,7 @@ export function targetPose(w){
       o.armA=lerp(o.armA,n?.35:.65,s);o.elbowA=lerp(o.elbowA,n?.75:1.5,s);o.weapon=lerp(o.weapon,n?.08:.50,s);
     }else if(c.key==='e'){
       o.armA=lerp(o.armA,n?.35:.10,s);o.elbowA=lerp(o.elbowA,n?1.35:.60,s);o.weapon=lerp(o.weapon,n?.12:.60,s);o.lean+=s*.06;
+      if(!n){const a=Math.atan2(c.y-(p.y-100),Math.max(24,(c.x-p.x)*p.face)),arm=solveLimb(Math.cos(a)*44,Math.sin(a)*24+12,28,29,-1);o.armA=lerp(o.armA,arm[0],s);o.elbowA=lerp(o.elbowA,arm[1],s);o.weapon=lerp(o.weapon,a+Math.PI/2-.07,s);}
     }else{
       // Only the staff arm performs the small lift.
       o.armA=lerp(o.armA,.86,s);o.elbowA=lerp(o.elbowA,1.72,s);o.weapon=lerp(o.weapon,.14,s);

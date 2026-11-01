@@ -22,8 +22,8 @@ test('stone decks block both fire and nature bolts while a broken bridge no long
 test('near targets still receive the hit before a farther wall',()=>{
   const w=createWorld();w.mirror.enabled=false;w.obstacles=[{x:850,y:550,w:12,h:150}];shot(w,740,640,18000);step(w,STEP);assert.equal(w.targets[0].hp,222);
 });
-test('meteor passes upper roofs and lands on the selected lower deck in one second',()=>{
-  const w=createWorld();w.targets=[];requestCast(w,'r',700,600);advance(w,.99);const m=w.effects.find(e=>e.kind==='meteor');assert.ok(m);assert.equal(m.y,704);assert.equal(m.triggered,false);advance(w,.05);assert.ok(m.triggered);assert.ok(w.effects.some(e=>e.kind==='fireZone'));assert.ok(w.shake>0);assert.equal(w.platforms.find(b=>b.id==='bridge').hp,90);
+test('meteor passes upper roofs and lands on the selected lower deck with 20 percent faster flight',()=>{
+  const w=createWorld();w.targets=[];requestCast(w,'r',700,600);advance(w,.84);const m=w.effects.find(e=>e.kind==='meteor');assert.ok(m);assert.equal(m.y,704);assert.equal(m.triggered,false);advance(w,.05);assert.ok(m.triggered);assert.ok(w.effects.some(e=>e.kind==='fireZone'));assert.ok(w.shake>0);assert.equal(w.platforms.find(b=>b.id==='bridge').hp,90);
 });
 test('the root skill can bind an enemy across a wall while basics remain blocked',()=>{
   const w=createWorld('nature');w.player.x=620;w.obstacles=[{x:700,y:550,w:20,h:154}];requestCast(w,'q',900,704);advance(w,1);assert.ok(w.targets[0].hp<240);assert.ok(w.targets[0].rootUntil>w.time);assert.equal(w.effects.find(e=>e.kind==='roots').to,900);
@@ -52,3 +52,4 @@ test('real spell rendering uses finite coordinates throughout windup, impact and
   const canvas={getContext:()=>ctx},assets={bounds:json('rig-bounds.json'),coreBounds:json('core-bounds-v2.json'),combatBounds:json('combat/bounds-v2.json'),sceneBounds:json('scenes/prop-bounds-v1.json')};
   for(const hero of ['fire','nature'])for(const key of ['attack','q','e','r']){const w=createWorld(hero),r=new Renderer(canvas,assets);requestCast(w,key,790,704);for(let i=0;i<420;i++){step(w,STEP);r.hero(w,1,i<3?[0,-.0002,STEP][i]:STEP);for(const e of w.effects)r.combat.effect(w,e);for(const s of w.projectiles)r.combat.projectile(w,s);if(w.fox)r.combat.stag(w);for(const t of w.trees)r.combat.tree(w,t);}}
 });
+

@@ -17,6 +17,8 @@ arcane-duel-lab/dist/.openai/
 arcane-duel-lab/.local-data/
 **/.cache/
 **/.standalone-qa/
+**/desktop/.build/
+**/desktop/.qa-profiles/
 **/__pycache__/
 *.pyc
 .DS_Store
@@ -28,3 +30,4 @@ Thumbs.db
 !.env.example
 *.key
 *.pem
+/发行/

@@ -1,0 +1,16 @@
+{
+  "name": "arcane-duel-desktop",
+  "version": "0.1.0",
+  "description": "秘境决斗 Windows 局域网客户端",
+  "private": true,
+  "type": "module",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "electron .",
+    "package": "node build.mjs"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.2.1"
+  }
+}

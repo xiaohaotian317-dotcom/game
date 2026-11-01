@@ -25,11 +25,12 @@ export class CombatPainter{
     }c.restore();
   }
   projectile(w,s){
-    const c=this.c,a=Math.atan2(s.vy,s.vx),fire=s.kind==='fireball',seed=s.kind==='seed';
+    const c=this.c,a=Math.atan2(s.vy,s.vx),orb=s.kind==='emberOrb',fire=s.kind==='fireball'||orb,seed=s.kind==='seed';
     if(!fire&&!seed)return false;
     const clock=w.fxTime??w.time;c.save();
     for(let i=0;i<(s.trail?.length||0);i+=2){const p=s.trail[i],t=i/s.trail.length;halo(c,p.x,p.y,5+t*8,fire?'#ff7a29':'#b9d96b',t*.20);}
     halo(c,s.x,s.y,fire?46:28,fire?'#ff8b35':'#e0e88a',.34);
+    if(orb){this.sprite('fire-vfx-v2','meteor',s.x,s.y,78,{ax:.6,ay:.57,angle:a});this.sparks(s.x-Math.cos(a)*20,s.y-Math.sin(a)*20,(clock*.8)%1,{count:8,speed:48,gravity:0});c.restore();return true;}
     // The bright tip is the actual collision centre. The long trail remains behind it.
     this.sprite(fire?'fire-vfx-v2':'nature-vfx-v2','bolt',s.x,s.y,fire?112+Math.sin(clock*33)*7:90,{ax:.94,ay:fire?.49:.53,angle:a,height:fire?34+Math.sin(clock*27)*3:30});
     c.restore();return true;
@@ -65,6 +66,7 @@ export class CombatPainter{
   }
   effect(w,e){
     const c=this.c,t=clamp(e.age/e.duration),clock=w.fxTime||w.time;
+    if(e.kind==='orbExplosion'){const grow=ease(Math.min(1,e.age/.18));this.sprite('fire-vfx-v2','burst',e.x,e.y,300*grow,{alpha:Math.min(1,(e.duration-e.age)*3)});ring(c,e.x,e.y,125*grow,90*grow,'#ffcc88',2*(1-t));this.sparks(e.x,e.y,e.age,{count:25,speed:240,gravity:170});return true;}
     if(['fireHit','leafHit','muzzle','seedCast','foxBite'].includes(e.kind)){
       const fire=e.kind==='fireHit'||e.kind==='muzzle',muzzle=e.kind==='muzzle'||e.kind==='seedCast',size=muzzle?65:e.kind==='foxBite'?95:fire?120:96,phase=ease(t);
       if(muzzle){this.sprite(fire?'fire-vfx-v2':'nature-vfx-v2','bolt',e.x,e.y,size,{ax:.84,angle:e.angle||0,alpha:1-t,height:30});}
@@ -115,3 +117,4 @@ export class CombatPainter{
     return false;
   }
 }
+

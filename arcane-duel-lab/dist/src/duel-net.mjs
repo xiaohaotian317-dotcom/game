@@ -21,7 +21,7 @@ export class DuelLink{
       if(data.input)this.receive({kind:'input',packet:data.input},false);if(data.snapshot)this.receive({kind:'state',snapshot:data.snapshot},false);
       if(data.signal)await this.receiveSignal(data.signal);this.onError?.(null);
     }catch(e){this.onError?.(e.message);}
-    if(this.running){const interval=this.transport==='direct'?900:125,delay=this.syncSoon?0:Math.max(0,interval-(performance.now()-started));this.syncSoon=false;this.timer=setTimeout(()=>this.poll(),delay);}
+    if(this.running){const interval=this.transport==='direct'?900:(this.lanMode?33:125),delay=this.syncSoon?0:Math.max(0,interval-(performance.now()-started));this.syncSoon=false;this.timer=setTimeout(()=>this.poll(),delay);}
   }
   setInput(packet){this.input=packet;if(this.transport==='direct')this.send('motion',{kind:'input',packet});}
   sendActions(packet){if(this.transport==='direct')this.send('actions',{kind:'input',packet});}
@@ -43,7 +43,7 @@ export class DuelLink{
     channel.onopen=()=>{if(this.channels.motion?.readyState==='open'&&this.channels.actions?.readyState==='open'){this.transport='direct';this.onStatus?.();}};
     channel.onclose=()=>{this.transport='relay';this.syncSoon=true;this.onStatus?.();};
   }
-  peer(){const pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]});this.pc=pc;pc.ondatachannel=e=>this.attach(e.channel);pc.onconnectionstatechange=()=>{if(pc!==this.pc)return;if(pc.connectionState==='disconnected')setTimeout(()=>{if(this.pc===pc&&pc.connectionState==='disconnected')this.closePeer();},3000);if(['failed','closed','disconnected'].includes(pc.connectionState)){this.transport='relay';this.retryAt=performance.now()+6000;this.syncSoon=true;this.onStatus?.();if(pc.connectionState==='failed'){pc.close();if(this.pc===pc)this.pc=null;}}};return pc;}
+  peer(){const pc=new RTCPeerConnection({iceServers:this.lanMode?[]:[{urls:'stun:stun.l.google.com:19302'}]});this.pc=pc;pc.ondatachannel=e=>this.attach(e.channel);pc.onconnectionstatechange=()=>{if(pc!==this.pc)return;if(pc.connectionState==='disconnected')setTimeout(()=>{if(this.pc===pc&&pc.connectionState==='disconnected')this.closePeer();},3000);if(['failed','closed','disconnected'].includes(pc.connectionState)){this.transport='relay';this.retryAt=performance.now()+6000;this.syncSoon=true;this.onStatus?.();if(pc.connectionState==='failed'){pc.close();if(this.pc===pc)this.pc=null;}}};return pc;}
   async gather(pc){if(pc.iceGatheringState==='complete')return;await new Promise(resolve=>{const done=()=>{clearTimeout(timer);pc.removeEventListener('icegatheringstatechange',check);resolve();},check=()=>{if(pc.iceGatheringState==='complete')done();},timer=setTimeout(done,2500);pc.addEventListener('icegatheringstatechange',check);});}
   async maybeConnect(){
     if(this.session?.seat!==0||!this.room?.slots[1]||this.pc||this.signalBusy||performance.now()<this.retryAt||!globalThis.RTCPeerConnection)return;

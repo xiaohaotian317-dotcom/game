@@ -1,0 +1,125 @@
+{
+  "note": "Public-input bot, actual hero health/cooldowns, no health restoration or damage injection. Not human playtesting.",
+  "results": [
+    {
+      "stage": 1,
+      "hero": "frost",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 152,
+      "bossRemaining": 0,
+      "seconds": 93,
+      "casts": 294
+    },
+    {
+      "stage": 1,
+      "hero": "lightning",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 120,
+      "bossRemaining": 0,
+      "seconds": 90,
+      "casts": 256
+    },
+    {
+      "stage": 1,
+      "hero": "shadow",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 138,
+      "bossRemaining": 0,
+      "seconds": 67,
+      "casts": 129
+    },
+    {
+      "stage": 1,
+      "hero": "star",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 119,
+      "bossRemaining": 0,
+      "seconds": 81,
+      "casts": 106
+    },
+    {
+      "stage": 1,
+      "hero": "fire",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 159,
+      "bossRemaining": 0,
+      "seconds": 60,
+      "casts": 70
+    },
+    {
+      "stage": 1,
+      "hero": "nature",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 180,
+      "bossRemaining": 0,
+      "seconds": 77,
+      "casts": 377
+    },
+    {
+      "stage": 2,
+      "hero": "frost",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 124,
+      "bossRemaining": 0,
+      "seconds": 104,
+      "casts": 84
+    },
+    {
+      "stage": 2,
+      "hero": "lightning",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 57,
+      "bossRemaining": null,
+      "seconds": 95,
+      "casts": 135
+    },
+    {
+      "stage": 2,
+      "hero": "shadow",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 39,
+      "bossRemaining": 0,
+      "seconds": 75,
+      "casts": 101
+    },
+    {
+      "stage": 2,
+      "hero": "star",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 104,
+      "bossRemaining": 0,
+      "seconds": 91,
+      "casts": 70
+    },
+    {
+      "stage": 2,
+      "hero": "fire",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 145,
+      "bossRemaining": 0,
+      "seconds": 60,
+      "casts": 65
+    },
+    {
+      "stage": 2,
+      "hero": "nature",
+      "state": "complete",
+      "encounter": 4,
+      "hp": 177,
+      "bossRemaining": 0,
+      "seconds": 99,
+      "casts": 98
+    }
+  ]
+}

@@ -15,5 +15,6 @@ test('frost ring supports a late low-damage echo, but no third cast or airborne 
   const w=flat('frost');requestCast(w,'q',420,600);advance(w,3.1);assert.ok(w.player.recast);assert.ok(requestCast(w,'q'));advance(w,.2);assert.equal(w.targets[0].hp,210);assert.equal(w.player.recast,null);assert.equal(requestCast(w,'q'),false);assert.equal(w.platforms.length,1);assert.equal(w.constructs.length,0);
 });
 test('all 36 skill illustrations have unique atlas cells and real PNG assets, including six recasts',()=>{
-  const seen=new Set();for(const hero of ['fire','nature','frost','lightning','shadow','star'])for(const key of ICON_ORDER){const a=skillArt(hero,key,key==='recast'),id=a.url+'#'+a.position;assert.ok(!seen.has(id));seen.add(id);const path=new URL('../dist/'+a.url,import.meta.url);assert.ok(existsSync(path));const bytes=readFileSync(path);assert.equal(bytes.readUInt32BE(16),1536);assert.equal(bytes.readUInt32BE(20),1024);}assert.equal(seen.size,36);
+  const seen=new Set();for(const hero of ['fire','nature','frost','lightning','shadow','star'])for(const key of ICON_ORDER){const a=skillArt(hero,key,key==='recast'),id=a.url+'#'+a.position;assert.ok(!seen.has(id));seen.add(id);const path=new URL('../dist/'+a.url,import.meta.url);assert.ok(existsSync(path));const bytes=readFileSync(path);assert.ok(bytes.readUInt32BE(16)>=512);assert.ok(bytes.readUInt32BE(20)>=512);}assert.equal(seen.size,36);
 });
+

@@ -32,11 +32,11 @@ test('refreshing burn extends its duration without multiplying tick rate',()=>{
   const w=createWorld(),t=w.targets[0];damage(w,t,1,{fire:true});const firstTick=t.nextBurn;advance(w,.3);
   damage(w,t,1,{fire:true});assert.equal(t.nextBurn,firstTick);while(w.time<.76)step(w,STEP);assert.equal(t.hp,234);
 });
-test('fire leap opens one recast, stomp consumes it and preserves cooldown',()=>{
-  const w=createWorld();requestCast(w,'e',790,600);advance(w,.4);assert.equal(w.player.grounded,false);assert.ok(w.player.recast);
+test('fire orb opens one visible-flight recast, detonates without jumping and preserves cooldown',()=>{
+  const w=createWorld();requestCast(w,'e',790,600);advance(w,.4);assert.equal(w.player.grounded,true);assert.ok(w.player.recast);assert.ok(w.projectiles.some(s=>s.kind==='emberOrb'));
   const cd=w.player.cooldowns.e;assert.equal(requestCast(w,'e',790,600),true);advance(w,.08);
   assert.equal(w.player.recast,null);assert.ok(w.player.cooldowns.e<cd);assert.ok(w.player.cooldowns.e>4);
-  advance(w,1);assert.ok(w.effects.some(e=>e.kind==='fireZone'));assert.equal(w.player.stomp,false);
+  assert.ok(w.effects.some(e=>e.kind==='orbExplosion'));assert.equal(w.player.stomp,false);assert.equal(w.projectiles.some(s=>s.kind==='emberOrb'),false);
 });
 test('expired recast cannot bypass cooldown',()=>{
   const w=createWorld();requestCast(w,'e');advance(w,3);assert.equal(w.player.recast,null);assert.equal(requestCast(w,'e'),false);

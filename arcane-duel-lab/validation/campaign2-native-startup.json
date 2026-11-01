@@ -1,0 +1,52 @@
+{
+  "build": "campaign2",
+  "processId": 47396,
+  "processPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\desktop\\.build\\campaign-out\\ArcaneDuelCampaign-win32-x64\\ArcaneDuelCampaign.exe",
+  "testOrigin": "http://127.0.0.1:5524",
+  "isolatedQA": true,
+  "startupPage": "/index.html",
+  "startupPageVerifiedInMain": true,
+  "nativeWindowVisualQA": false,
+  "resources": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 11320
+    },
+    {
+      "path": "/healthz",
+      "status": 200,
+      "bytes": 15
+    },
+    {
+      "path": "/assets/boss-fx/bounds-v2.json",
+      "status": 200,
+      "bytes": 111211
+    },
+    {
+      "path": "/assets/boss-fx/B05-fx-v2.png",
+      "status": 200,
+      "bytes": 1690271
+    },
+    {
+      "path": "/assets/boss-fx/platforms-v4.png",
+      "status": 200,
+      "bytes": 1061154
+    },
+    {
+      "path": "/assets/boss-fx/fire-e-icons-v2.png",
+      "status": 200,
+      "bytes": 2503380
+    },
+    {
+      "path": "/src/campaign-painter.mjs",
+      "status": 200,
+      "bytes": 7025
+    },
+    {
+      "path": "/src/enemy-tuning.mjs",
+      "status": 200,
+      "bytes": 293
+    }
+  ]
+}

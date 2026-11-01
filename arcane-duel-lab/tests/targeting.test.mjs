@@ -15,7 +15,7 @@ test('the cursor selects the next standing deck below, never the nearest deck ab
 });
 test('meteor can independently target either gap in a three-level arena',()=>{
   for(const [cursorY,y,id] of [[300,400,'second'],[500,600,'ground']]){
-    const w=stacked();requestCast(w,'r',600,cursorY);advance(w,.99);const m=w.effects.find(e=>e.kind==='meteor');assert.equal(m.x,600);assert.equal(m.y,y);assert.equal(m.anchor.platformId,id);assert.equal(m.triggered,false);advance(w,.05);assert.equal(m.triggered,true);
+    const w=stacked();requestCast(w,'r',600,cursorY);advance(w,.84);const m=w.effects.find(e=>e.kind==='meteor');assert.equal(m.x,600);assert.equal(m.y,y);assert.equal(m.anchor.platformId,id);assert.equal(m.triggered,false);advance(w,.05);assert.equal(m.triggered,true);
   }
 });
 test('eruption and ancient tree use the same below-cursor grounding at every layer',()=>{
@@ -30,3 +30,4 @@ test('an ancient tree remains attached to its support and disperses when that su
   const w=stacked('nature');requestCast(w,'r',600,300);advance(w,.8);const t=w.trees[0],branch=w.platforms.find(p=>p.id===t.id+'-a'),oldY=branch.y;w.platforms[1].y+=25;advance(w,.02);assert.equal(t.y,425);assert.equal(branch.y,oldY+25);
   w.platforms[1].active=false;advance(w,.02);assert.equal(w.trees.length,0);assert.ok(!w.platforms.some(b=>b.id.startsWith(t.id)));
 });
+

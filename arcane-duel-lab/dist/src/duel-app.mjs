@@ -17,8 +17,8 @@ let room=null,renderer=null,assets=null,assetPromise=null,loadedKey='',loadingKe
 let keys=new Set(),pointerDown=false,aim={x:1200,y:520},lastFrame=performance.now(),accumulator=0,lastInput=0,lastUI=0,latestSnapshot=null,currentView='',snapshotAt=performance.now(),smoothEnemy=null;
 function notice(text){clearTimeout(noticeTimer);$('#duel-notice').hidden=!text;$('#duel-notice').textContent=text||'';if(text)noticeTimer=setTimeout(()=>$('#duel-notice').hidden=true,4500);}
 function view(id){if(id==='entrance'||id==='room-view')battleLoading.finish();document.body.classList.toggle('is-battle',id==='battle');for(const s of ['entrance','room-view','selection','battle'])$('#'+s).hidden=s!==id;if(currentView!==id){currentView=id;window.scrollTo({top:0,behavior:'instant'});}}
-const link=new DuelLink({onRoom:applyRoom,onInput:packet=>worker?.postMessage({kind:'input',side:1,packet}),onState:snapshot=>acceptSnapshot(snapshot),onStatus:networkStatus,onError:message=>{if(message){$('#network-state').textContent='正在恢复连接';if(room)$('#net-detail').textContent=message;}else networkStatus();}});
-function networkStatus(){const ping=Math.round(link.rtt),label=link.transport==='direct'?'直连':'服务器转发';$('#network-state').textContent=room?label+' · '+(ping<1?'<1':ping)+' ms':'房间服务就绪';$('#network-state').className=link.transport==='direct'?'direct':'relay';$('#net-detail').textContent=room?label+' · RTT '+(ping<1?'<1':ping)+' ms':'';}
+const link=new DuelLink({lanMode:!!window.arcaneDesktop,onRoom:applyRoom,onInput:packet=>worker?.postMessage({kind:'input',side:1,packet}),onState:snapshot=>acceptSnapshot(snapshot),onStatus:networkStatus,onError:message=>{if(message){$('#network-state').textContent='正在恢复连接';if(room)$('#net-detail').textContent=message;}else networkStatus();}});
+function networkStatus(){const ping=Math.round(link.rtt),label=link.transport==='direct'?(window.arcaneDesktop?'局域网直连':'直连'):(window.arcaneDesktop?'局域网同步':'服务器转发');$('#network-state').textContent=room?label+' · '+(ping<1?'<1':ping)+' ms':'房间服务就绪';$('#network-state').className=link.transport==='direct'?'direct':'relay';$('#net-detail').textContent=room?label+' · RTT '+(ping<1?'<1':ping)+' ms':'';}
 async function loadBattle(r){
   const key=r.slots.map(s=>s?.hero||'fire').join(':');if(loadedKey===key&&assets)return true;
   if(loadingKey===key)return false;loadingKey=key;const token=battleLoading.start(r.scene);battleLoading.progress(baseDone,baseTotal?baseTotal+2:0,token);
@@ -79,7 +79,7 @@ function buildHotbar(){const h=HEROES[room.slots[room.seat].hero];$('#duel-hotba
 function playable(){return room&&['countdown','active'].includes(room.phase)&&Date.now()+link.clockOffset>=room.startAt&&match&&!pausedForConnection&&!reporting;}
 function clearControls(){keys.clear();pointerDown=false;}
 function queue(type){if(!playable())return;sound.init();canvas.focus({preventScroll:true});const action={id:++actionId,type};pending.push(action);pending=pending.slice(-24);predictionActions.push(action);const packet=packetOf();link.sendActions(packet);if(room.seat===0)worker?.postMessage({kind:'input',side:0,packet});}
-function held(){return safeInput({move:(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),attack:pointerDown||keys.has('KeyJ'),down:keys.has('KeyS')||keys.has('ArrowDown'),drop:keys.has('KeyS')||keys.has('ArrowDown'),aim});}
+function held(){return safeInput({move:(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),attack:pointerDown||keys.has('KeyJ'),down:keys.has('KeyS')||keys.has('ArrowDown'),drop:keys.has('KeyS')||keys.has('ArrowDown'),aim,view:match&&room?cameraView(match.worlds[room.seat]):undefined});}
 function packetOf(){return {epoch:room.epoch,roundSerial:room.roundSerial,seq:inputSeq,input:playable()?held():safeInput({aim}),actions:playable()?pending:[]};}
 function updateBattle(){
   if(!match||!room||$('#battle').hidden)return;const side=room.seat,p=prediction?.player||match.worlds[side].player,other=match.worlds[1-side].player;
@@ -127,4 +127,11 @@ canvas.addEventListener('pointerdown',e=>{if(e.button!==0||!playable())return;e.
 $('#duel-fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{notice('当前窗口已铺满，可使用浏览器全屏功能。');}canvas.focus({preventScroll:true});});
 document.addEventListener('fullscreenchange',()=>$('#duel-fullscreen').textContent=document.fullscreenElement?'⛶ 退出全屏':'⛶ 全屏');
 $('#battle-leave').addEventListener('click',async e=>{e.preventDefault();await leave();if(!room)location.href='lobby.html';});
+if(window.arcaneDesktop){
+  const style=document.createElement('link');style.rel='stylesheet';style.href='desktop.css';document.head.append(style);
+  const bar=document.createElement('aside');bar.className='desktop-connection';bar.innerHTML='<b>局域网联机</b><span></span><button type="button">更换连接</button>';
+  document.querySelector('.duel-header').after(bar);bar.querySelector('button').addEventListener('click',()=>window.arcaneDesktop.home());
+  const exit=document.createElement('button');exit.id='desktop-emergency-home';exit.textContent='联机首页';exit.type='button';exit.addEventListener('click',()=>window.arcaneDesktop.home());document.querySelector('.battle-tools').append(exit);
+  window.arcaneDesktop.state().then(state=>{bar.querySelector('b').textContent=state.mode==='host'?'你是局域网房主':'已连接房主';bar.querySelector('span').textContent=state.mode==='host'?(state.addresses.length?'分享地址：'+state.addresses.map(a=>a.address).join(' / ')+'，再分享房间号。':'未找到局域网IPv4地址，请确认已连接Wi-Fi或网线。'):'房主地址：'+String(state.target||'').replace('http://','');});
+}
 requestAnimationFrame(frame);networkStatus();link.resume();

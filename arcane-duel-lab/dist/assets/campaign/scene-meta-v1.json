@@ -1,0 +1,35 @@
+{
+  "stage01": {
+    "groundY": 0.713
+  },
+  "stage02": {
+    "groundY": 0.64
+  },
+  "stage03": {
+    "groundY": 0.657
+  },
+  "stage04": {
+    "groundY": 0.701
+  },
+  "stage05": {
+    "groundY": 0.667
+  },
+  "stage06": {
+    "groundY": 0.66
+  },
+  "stage07": {
+    "groundY": 0.672
+  },
+  "stage08": {
+    "groundY": 0.652
+  },
+  "stage09": {
+    "groundY": 0.664
+  },
+  "stage10": {
+    "groundY": 0.66
+  },
+  "stage11": {
+    "groundY": 0.69
+  }
+}

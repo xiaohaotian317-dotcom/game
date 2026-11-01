@@ -1,0 +1,6325 @@
+[
+  {
+    "file": "B01-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          44,
+          27,
+          216,
+          270
+        ],
+        "spriteRect": [
+          42,
+          25,
+          220,
+          274
+        ],
+        "centerX": 152.0,
+        "bottomNormalized": 0.945859872611465,
+        "bottom": 297,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          22,
+          21,
+          215,
+          277
+        ],
+        "spriteRect": [
+          334,
+          19,
+          219,
+          281
+        ],
+        "centerX": 129.5,
+        "bottomNormalized": 0.9490445859872612,
+        "bottom": 298,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          10,
+          16,
+          233,
+          282
+        ],
+        "spriteRect": [
+          635,
+          14,
+          237,
+          286
+        ],
+        "centerX": 126.5,
+        "bottomNormalized": 0.9490445859872612,
+        "bottom": 298,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          0,
+          12,
+          297,
+          294
+        ],
+        "spriteRect": [
+          940,
+          10,
+          299,
+          298
+        ],
+        "centerX": 148.5,
+        "bottomNormalized": 0.9745222929936306,
+        "bottom": 306,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          17,
+          91,
+          279,
+          115
+        ],
+        "spriteRect": [
+          15,
+          403,
+          283,
+          119
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.65814696485623,
+        "bottom": 206,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          0,
+          89,
+          299,
+          127
+        ],
+        "spriteRect": [
+          314,
+          401,
+          301,
+          131
+        ],
+        "centerX": 149.5,
+        "bottomNormalized": 0.6900958466453674,
+        "bottom": 216,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          5,
+          86,
+          308,
+          160
+        ],
+        "spriteRect": [
+          630,
+          398,
+          310,
+          164
+        ],
+        "centerX": 159.0,
+        "bottomNormalized": 0.7859424920127795,
+        "bottom": 246,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          26,
+          99,
+          279,
+          125
+        ],
+        "spriteRect": [
+          964,
+          411,
+          283,
+          129
+        ],
+        "centerX": 165.5,
+        "bottomNormalized": 0.7156549520766773,
+        "bottom": 224,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          14,
+          13,
+          217,
+          280
+        ],
+        "spriteRect": [
+          12,
+          638,
+          221,
+          284
+        ],
+        "centerX": 122.5,
+        "bottomNormalized": 0.9361022364217252,
+        "bottom": 293,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          2,
+          13,
+          287,
+          300
+        ],
+        "spriteRect": [
+          314,
+          638,
+          291,
+          302
+        ],
+        "centerX": 145.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          5,
+          4,
+          301,
+          309
+        ],
+        "spriteRect": [
+          630,
+          629,
+          305,
+          311
+        ],
+        "centerX": 155.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          53,
+          138,
+          245,
+          156
+        ],
+        "spriteRect": [
+          991,
+          763,
+          249,
+          160
+        ],
+        "centerX": 175.5,
+        "bottomNormalized": 0.939297124600639,
+        "bottom": 294,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          13,
+          121,
+          287,
+          163
+        ],
+        "spriteRect": [
+          11,
+          1059,
+          291,
+          167
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.9044585987261147,
+        "bottom": 284,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          0,
+          69,
+          305,
+          220
+        ],
+        "spriteRect": [
+          314,
+          1007,
+          307,
+          224
+        ],
+        "centerX": 152.5,
+        "bottomNormalized": 0.9203821656050956,
+        "bottom": 289,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          0,
+          39,
+          313,
+          262
+        ],
+        "spriteRect": [
+          627,
+          977,
+          313,
+          266
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.9585987261146497,
+        "bottom": 301,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          13,
+          116,
+          292,
+          175
+        ],
+        "spriteRect": [
+          951,
+          1054,
+          296,
+          179
+        ],
+        "centerX": 159.0,
+        "bottomNormalized": 0.9267515923566879,
+        "bottom": 291,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "338de03b25b859c07de66c37894c07b800b01b5e96e9e6f55b88872b4ac13fe6",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "file": "B02-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          89,
+          108,
+          167,
+          165
+        ],
+        "spriteRect": [
+          87,
+          106,
+          171,
+          169
+        ],
+        "centerX": 172.5,
+        "bottomNormalized": 0.8694267515923567,
+        "bottom": 273,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          29,
+          37,
+          231,
+          268
+        ],
+        "spriteRect": [
+          341,
+          35,
+          235,
+          272
+        ],
+        "centerX": 144.5,
+        "bottomNormalized": 0.9713375796178344,
+        "bottom": 305,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          19,
+          64,
+          267,
+          243
+        ],
+        "spriteRect": [
+          644,
+          62,
+          271,
+          247
+        ],
+        "centerX": 152.5,
+        "bottomNormalized": 0.9777070063694268,
+        "bottom": 307,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          24,
+          58,
+          255,
+          256
+        ],
+        "spriteRect": [
+          962,
+          56,
+          259,
+          258
+        ],
+        "centerX": 151.5,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          35,
+          130,
+          254,
+          92
+        ],
+        "spriteRect": [
+          33,
+          442,
+          258,
+          96
+        ],
+        "centerX": 162.0,
+        "bottomNormalized": 0.7092651757188498,
+        "bottom": 222,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          30,
+          112,
+          270,
+          124
+        ],
+        "spriteRect": [
+          342,
+          424,
+          274,
+          128
+        ],
+        "centerX": 165.0,
+        "bottomNormalized": 0.7539936102236422,
+        "bottom": 236,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          17,
+          104,
+          280,
+          128
+        ],
+        "spriteRect": [
+          642,
+          416,
+          284,
+          132
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.7412140575079872,
+        "bottom": 232,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          16,
+          100,
+          283,
+          141
+        ],
+        "spriteRect": [
+          954,
+          412,
+          287,
+          145
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.7699680511182109,
+        "bottom": 241,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          50,
+          29,
+          221,
+          270
+        ],
+        "spriteRect": [
+          48,
+          654,
+          225,
+          274
+        ],
+        "centerX": 160.5,
+        "bottomNormalized": 0.9552715654952076,
+        "bottom": 299,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          35,
+          3,
+          270,
+          294
+        ],
+        "spriteRect": [
+          347,
+          628,
+          274,
+          298
+        ],
+        "centerX": 170.0,
+        "bottomNormalized": 0.9488817891373802,
+        "bottom": 297,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          10,
+          16,
+          286,
+          286
+        ],
+        "spriteRect": [
+          635,
+          641,
+          290,
+          290
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.9648562300319489,
+        "bottom": 302,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          70,
+          20,
+          191,
+          274
+        ],
+        "spriteRect": [
+          1008,
+          645,
+          195,
+          278
+        ],
+        "centerX": 165.5,
+        "bottomNormalized": 0.939297124600639,
+        "bottom": 294,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          16,
+          69,
+          295,
+          195
+        ],
+        "spriteRect": [
+          14,
+          1007,
+          299,
+          199
+        ],
+        "centerX": 163.5,
+        "bottomNormalized": 0.8407643312101911,
+        "bottom": 264,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          7,
+          36,
+          301,
+          245
+        ],
+        "spriteRect": [
+          319,
+          974,
+          305,
+          249
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.8949044585987261,
+        "bottom": 281,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          5,
+          44,
+          299,
+          236
+        ],
+        "spriteRect": [
+          630,
+          982,
+          303,
+          240
+        ],
+        "centerX": 154.5,
+        "bottomNormalized": 0.89171974522293,
+        "bottom": 280,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          3,
+          35,
+          297,
+          245
+        ],
+        "spriteRect": [
+          941,
+          973,
+          301,
+          249
+        ],
+        "centerX": 151.5,
+        "bottomNormalized": 0.89171974522293,
+        "bottom": 280,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "f024dfde492896d61afc4a6474d7f018f1c98ce854cf2045726687f263fcf8b5",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B03-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          58,
+          79,
+          133,
+          175
+        ],
+        "spriteRect": [
+          56,
+          77,
+          137,
+          179
+        ],
+        "centerX": 124.5,
+        "bottomNormalized": 0.8089171974522293,
+        "bottom": 254,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          43,
+          66,
+          236,
+          194
+        ],
+        "spriteRect": [
+          355,
+          64,
+          240,
+          198
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.8280254777070064,
+        "bottom": 260,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          36,
+          71,
+          243,
+          198
+        ],
+        "spriteRect": [
+          661,
+          69,
+          247,
+          202
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.856687898089172,
+        "bottom": 269,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          18,
+          39,
+          270,
+          253
+        ],
+        "spriteRect": [
+          956,
+          37,
+          274,
+          257
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.9299363057324841,
+        "bottom": 292,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          27,
+          73,
+          275,
+          150
+        ],
+        "spriteRect": [
+          25,
+          385,
+          279,
+          154
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.7124600638977636,
+        "bottom": 223,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          40,
+          75,
+          260,
+          145
+        ],
+        "spriteRect": [
+          352,
+          387,
+          264,
+          149
+        ],
+        "centerX": 170.0,
+        "bottomNormalized": 0.7028753993610224,
+        "bottom": 220,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          24,
+          69,
+          278,
+          152
+        ],
+        "spriteRect": [
+          649,
+          381,
+          282,
+          156
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.7060702875399361,
+        "bottom": 221,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          20,
+          68,
+          276,
+          161
+        ],
+        "spriteRect": [
+          958,
+          380,
+          280,
+          165
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.731629392971246,
+        "bottom": 229,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          87,
+          62,
+          177,
+          167
+        ],
+        "spriteRect": [
+          85,
+          687,
+          181,
+          171
+        ],
+        "centerX": 175.5,
+        "bottomNormalized": 0.731629392971246,
+        "bottom": 229,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          34,
+          1,
+          246,
+          280
+        ],
+        "spriteRect": [
+          346,
+          627,
+          250,
+          283
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.8977635782747604,
+        "bottom": 281,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          37,
+          43,
+          231,
+          231
+        ],
+        "spriteRect": [
+          662,
+          668,
+          235,
+          235
+        ],
+        "centerX": 152.5,
+        "bottomNormalized": 0.8753993610223643,
+        "bottom": 274,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          53,
+          72,
+          210,
+          166
+        ],
+        "spriteRect": [
+          991,
+          697,
+          214,
+          170
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.7603833865814696,
+        "bottom": 238,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          23,
+          126,
+          281,
+          127
+        ],
+        "spriteRect": [
+          21,
+          1064,
+          285,
+          131
+        ],
+        "centerX": 163.5,
+        "bottomNormalized": 0.8057324840764332,
+        "bottom": 253,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          9,
+          39,
+          296,
+          231
+        ],
+        "spriteRect": [
+          321,
+          977,
+          300,
+          235
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.8598726114649682,
+        "bottom": 270,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          9,
+          52,
+          297,
+          218
+        ],
+        "spriteRect": [
+          634,
+          990,
+          301,
+          222
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.8598726114649682,
+        "bottom": 270,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          14,
+          57,
+          280,
+          200
+        ],
+        "spriteRect": [
+          952,
+          995,
+          284,
+          204
+        ],
+        "centerX": 154.0,
+        "bottomNormalized": 0.8184713375796179,
+        "bottom": 257,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "9b66cd44bf54542dc84aae8442a3b93e5a1674a23c0e08ca9e1d4776a6c7834b",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B04-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          73,
+          115,
+          162,
+          133
+        ],
+        "spriteRect": [
+          71,
+          113,
+          166,
+          137
+        ],
+        "centerX": 154.0,
+        "bottomNormalized": 0.7898089171974523,
+        "bottom": 248,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          45,
+          82,
+          218,
+          200
+        ],
+        "spriteRect": [
+          357,
+          80,
+          222,
+          204
+        ],
+        "centerX": 154.0,
+        "bottomNormalized": 0.8980891719745223,
+        "bottom": 282,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          45,
+          28,
+          232,
+          260
+        ],
+        "spriteRect": [
+          670,
+          26,
+          236,
+          264
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.9171974522292994,
+        "bottom": 288,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          13,
+          51,
+          280,
+          227
+        ],
+        "spriteRect": [
+          951,
+          49,
+          284,
+          231
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.8853503184713376,
+        "bottom": 278,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          17,
+          105,
+          287,
+          114
+        ],
+        "spriteRect": [
+          15,
+          417,
+          291,
+          118
+        ],
+        "centerX": 160.5,
+        "bottomNormalized": 0.6996805111821086,
+        "bottom": 219,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          16,
+          111,
+          288,
+          115
+        ],
+        "spriteRect": [
+          328,
+          423,
+          292,
+          119
+        ],
+        "centerX": 160.0,
+        "bottomNormalized": 0.7220447284345048,
+        "bottom": 226,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          18,
+          95,
+          291,
+          140
+        ],
+        "spriteRect": [
+          643,
+          407,
+          295,
+          144
+        ],
+        "centerX": 163.5,
+        "bottomNormalized": 0.7507987220447284,
+        "bottom": 235,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          41,
+          116,
+          262,
+          109
+        ],
+        "spriteRect": [
+          979,
+          428,
+          266,
+          113
+        ],
+        "centerX": 172.0,
+        "bottomNormalized": 0.7188498402555911,
+        "bottom": 225,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          30,
+          58,
+          275,
+          217
+        ],
+        "spriteRect": [
+          28,
+          683,
+          279,
+          221
+        ],
+        "centerX": 167.5,
+        "bottomNormalized": 0.8785942492012779,
+        "bottom": 275,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          20,
+          60,
+          283,
+          225
+        ],
+        "spriteRect": [
+          332,
+          685,
+          287,
+          229
+        ],
+        "centerX": 161.5,
+        "bottomNormalized": 0.9105431309904153,
+        "bottom": 285,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          12,
+          7,
+          301,
+          279
+        ],
+        "spriteRect": [
+          637,
+          632,
+          303,
+          283
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.9137380191693291,
+        "bottom": 286,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          41,
+          7,
+          260,
+          281
+        ],
+        "spriteRect": [
+          979,
+          632,
+          264,
+          285
+        ],
+        "centerX": 171.0,
+        "bottomNormalized": 0.9201277955271565,
+        "bottom": 288,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          15,
+          107,
+          285,
+          166
+        ],
+        "spriteRect": [
+          13,
+          1045,
+          289,
+          170
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.8694267515923567,
+        "bottom": 273,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          7,
+          20,
+          297,
+          256
+        ],
+        "spriteRect": [
+          319,
+          958,
+          301,
+          260
+        ],
+        "centerX": 155.5,
+        "bottomNormalized": 0.8789808917197452,
+        "bottom": 276,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          8,
+          62,
+          301,
+          219
+        ],
+        "spriteRect": [
+          633,
+          1000,
+          305,
+          223
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 0.8949044585987261,
+        "bottom": 281,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          13,
+          75,
+          291,
+          202
+        ],
+        "spriteRect": [
+          951,
+          1013,
+          295,
+          206
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 0.8821656050955414,
+        "bottom": 277,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "4471b2257a7f2ff7897bbe7c6ef9e04982ffa8e0c176e1210fd2a63127877a7a",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "B05-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          116,
+          149,
+          100,
+          110
+        ],
+        "spriteRect": [
+          114,
+          147,
+          104,
+          114
+        ],
+        "centerX": 166.0,
+        "bottomNormalized": 0.8248407643312102,
+        "bottom": 259,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          47,
+          107,
+          192,
+          182
+        ],
+        "spriteRect": [
+          359,
+          105,
+          196,
+          186
+        ],
+        "centerX": 143.0,
+        "bottomNormalized": 0.9203821656050956,
+        "bottom": 289,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          44,
+          89,
+          198,
+          217
+        ],
+        "spriteRect": [
+          669,
+          87,
+          202,
+          221
+        ],
+        "centerX": 143.0,
+        "bottomNormalized": 0.9745222929936306,
+        "bottom": 306,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          8,
+          64,
+          285,
+          245
+        ],
+        "spriteRect": [
+          946,
+          62,
+          289,
+          249
+        ],
+        "centerX": 150.5,
+        "bottomNormalized": 0.9840764331210191,
+        "bottom": 309,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          37,
+          105,
+          257,
+          118
+        ],
+        "spriteRect": [
+          35,
+          417,
+          261,
+          122
+        ],
+        "centerX": 165.5,
+        "bottomNormalized": 0.7124600638977636,
+        "bottom": 223,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          12,
+          103,
+          282,
+          127
+        ],
+        "spriteRect": [
+          324,
+          415,
+          286,
+          131
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.7348242811501597,
+        "bottom": 230,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          21,
+          113,
+          271,
+          119
+        ],
+        "spriteRect": [
+          646,
+          425,
+          275,
+          123
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.7412140575079872,
+        "bottom": 232,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          17,
+          115,
+          274,
+          121
+        ],
+        "spriteRect": [
+          955,
+          427,
+          278,
+          125
+        ],
+        "centerX": 154.0,
+        "bottomNormalized": 0.7539936102236422,
+        "bottom": 236,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          39,
+          151,
+          243,
+          130
+        ],
+        "spriteRect": [
+          37,
+          776,
+          247,
+          134
+        ],
+        "centerX": 160.5,
+        "bottomNormalized": 0.8977635782747604,
+        "bottom": 281,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          8,
+          69,
+          301,
+          215
+        ],
+        "spriteRect": [
+          320,
+          694,
+          305,
+          219
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 0.9073482428115016,
+        "bottom": 284,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          6,
+          39,
+          303,
+          248
+        ],
+        "spriteRect": [
+          631,
+          664,
+          307,
+          252
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9169329073482428,
+        "bottom": 287,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          13,
+          103,
+          286,
+          180
+        ],
+        "spriteRect": [
+          951,
+          728,
+          290,
+          184
+        ],
+        "centerX": 156.0,
+        "bottomNormalized": 0.9041533546325878,
+        "bottom": 283,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          18,
+          138,
+          288,
+          96
+        ],
+        "spriteRect": [
+          16,
+          1076,
+          292,
+          100
+        ],
+        "centerX": 162.0,
+        "bottomNormalized": 0.7452229299363057,
+        "bottom": 234,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          8,
+          131,
+          301,
+          107
+        ],
+        "spriteRect": [
+          320,
+          1069,
+          305,
+          111
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 0.7579617834394905,
+        "bottom": 238,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          6,
+          145,
+          304,
+          98
+        ],
+        "spriteRect": [
+          631,
+          1083,
+          308,
+          102
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.7738853503184714,
+        "bottom": 243,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          10,
+          131,
+          292,
+          108
+        ],
+        "spriteRect": [
+          948,
+          1069,
+          296,
+          112
+        ],
+        "centerX": 156.0,
+        "bottomNormalized": 0.7611464968152867,
+        "bottom": 239,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "f94367426828d59ab8a744cf48567a36dedc24e2f8d5f11cdcf15440020051a1",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "B06-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          98,
+          128,
+          143,
+          148
+        ],
+        "spriteRect": [
+          96,
+          126,
+          147,
+          152
+        ],
+        "centerX": 169.5,
+        "bottomNormalized": 0.8789808917197452,
+        "bottom": 276,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          49,
+          75,
+          174,
+          224
+        ],
+        "spriteRect": [
+          361,
+          73,
+          178,
+          228
+        ],
+        "centerX": 136.0,
+        "bottomNormalized": 0.9522292993630573,
+        "bottom": 299,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          22,
+          80,
+          257,
+          223
+        ],
+        "spriteRect": [
+          647,
+          78,
+          261,
+          227
+        ],
+        "centerX": 150.5,
+        "bottomNormalized": 0.964968152866242,
+        "bottom": 303,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          23,
+          39,
+          256,
+          275
+        ],
+        "spriteRect": [
+          961,
+          37,
+          260,
+          277
+        ],
+        "centerX": 151.0,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          21,
+          136,
+          293,
+          130
+        ],
+        "spriteRect": [
+          19,
+          448,
+          295,
+          134
+        ],
+        "centerX": 167.5,
+        "bottomNormalized": 0.8498402555910544,
+        "bottom": 266,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          26,
+          126,
+          285,
+          111
+        ],
+        "spriteRect": [
+          338,
+          438,
+          289,
+          115
+        ],
+        "centerX": 168.5,
+        "bottomNormalized": 0.7571884984025559,
+        "bottom": 237,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          23,
+          142,
+          288,
+          106
+        ],
+        "spriteRect": [
+          648,
+          454,
+          292,
+          110
+        ],
+        "centerX": 167.0,
+        "bottomNormalized": 0.792332268370607,
+        "bottom": 248,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          18,
+          159,
+          286,
+          91
+        ],
+        "spriteRect": [
+          956,
+          471,
+          290,
+          95
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.7987220447284346,
+        "bottom": 250,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          40,
+          59,
+          226,
+          231
+        ],
+        "spriteRect": [
+          38,
+          684,
+          230,
+          235
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.9265175718849841,
+        "bottom": 290,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          6,
+          0,
+          307,
+          299
+        ],
+        "spriteRect": [
+          318,
+          627,
+          309,
+          301
+        ],
+        "centerX": 159.5,
+        "bottomNormalized": 0.9552715654952076,
+        "bottom": 299,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          23,
+          26,
+          271,
+          269
+        ],
+        "spriteRect": [
+          648,
+          651,
+          275,
+          273
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 0.9424920127795527,
+        "bottom": 295,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          30,
+          88,
+          244,
+          211
+        ],
+        "spriteRect": [
+          968,
+          713,
+          248,
+          215
+        ],
+        "centerX": 152.0,
+        "bottomNormalized": 0.9552715654952076,
+        "bottom": 299,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          17,
+          95,
+          288,
+          181
+        ],
+        "spriteRect": [
+          15,
+          1033,
+          292,
+          185
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.8789808917197452,
+        "bottom": 276,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          8,
+          33,
+          295,
+          242
+        ],
+        "spriteRect": [
+          320,
+          971,
+          299,
+          246
+        ],
+        "centerX": 155.5,
+        "bottomNormalized": 0.8757961783439491,
+        "bottom": 275,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          12,
+          21,
+          292,
+          249
+        ],
+        "spriteRect": [
+          637,
+          959,
+          296,
+          253
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.8598726114649682,
+        "bottom": 270,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          24,
+          50,
+          274,
+          220
+        ],
+        "spriteRect": [
+          962,
+          988,
+          278,
+          224
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.8598726114649682,
+        "bottom": 270,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "9798fe8855ffbf68d3c534283b844a31494c3f43421bc51000fa8a678530a02d",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B07-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          73,
+          112,
+          173,
+          193
+        ],
+        "spriteRect": [
+          71,
+          110,
+          177,
+          197
+        ],
+        "centerX": 159.5,
+        "bottomNormalized": 0.9713375796178344,
+        "bottom": 305,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          33,
+          91,
+          248,
+          215
+        ],
+        "spriteRect": [
+          345,
+          89,
+          252,
+          219
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.9745222929936306,
+        "bottom": 306,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          5,
+          40,
+          303,
+          271
+        ],
+        "spriteRect": [
+          630,
+          38,
+          307,
+          275
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.9904458598726115,
+        "bottom": 311,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          34,
+          59,
+          277,
+          255
+        ],
+        "spriteRect": [
+          972,
+          57,
+          281,
+          257
+        ],
+        "centerX": 172.5,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          51,
+          131,
+          222,
+          94
+        ],
+        "spriteRect": [
+          49,
+          443,
+          226,
+          98
+        ],
+        "centerX": 162.0,
+        "bottomNormalized": 0.7188498402555911,
+        "bottom": 225,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          16,
+          114,
+          293,
+          115
+        ],
+        "spriteRect": [
+          328,
+          426,
+          297,
+          119
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.731629392971246,
+        "bottom": 229,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          22,
+          113,
+          287,
+          134
+        ],
+        "spriteRect": [
+          647,
+          425,
+          291,
+          138
+        ],
+        "centerX": 165.5,
+        "bottomNormalized": 0.7891373801916933,
+        "bottom": 247,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          6,
+          118,
+          299,
+          129
+        ],
+        "spriteRect": [
+          944,
+          430,
+          303,
+          133
+        ],
+        "centerX": 155.5,
+        "bottomNormalized": 0.7891373801916933,
+        "bottom": 247,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          48,
+          45,
+          224,
+          244
+        ],
+        "spriteRect": [
+          46,
+          670,
+          228,
+          248
+        ],
+        "centerX": 160.0,
+        "bottomNormalized": 0.9233226837060703,
+        "bottom": 289,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          19,
+          4,
+          287,
+          292
+        ],
+        "spriteRect": [
+          331,
+          629,
+          291,
+          296
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.9456869009584664,
+        "bottom": 296,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          4,
+          19,
+          302,
+          277
+        ],
+        "spriteRect": [
+          629,
+          644,
+          306,
+          281
+        ],
+        "centerX": 155.0,
+        "bottomNormalized": 0.9456869009584664,
+        "bottom": 296,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          29,
+          97,
+          252,
+          195
+        ],
+        "spriteRect": [
+          967,
+          722,
+          256,
+          199
+        ],
+        "centerX": 155.0,
+        "bottomNormalized": 0.9329073482428115,
+        "bottom": 292,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          6,
+          87,
+          303,
+          200
+        ],
+        "spriteRect": [
+          4,
+          1025,
+          307,
+          204
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9140127388535032,
+        "bottom": 287,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          6,
+          55,
+          303,
+          235
+        ],
+        "spriteRect": [
+          318,
+          993,
+          307,
+          239
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9235668789808917,
+        "bottom": 290,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          12,
+          82,
+          299,
+          210
+        ],
+        "spriteRect": [
+          637,
+          1020,
+          303,
+          214
+        ],
+        "centerX": 161.5,
+        "bottomNormalized": 0.9299363057324841,
+        "bottom": 292,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          7,
+          77,
+          302,
+          215
+        ],
+        "spriteRect": [
+          945,
+          1015,
+          306,
+          219
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.9299363057324841,
+        "bottom": 292,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "ae8312f4efc239f4d448f50748c6c8d376962a321fc605b0746af4f815209128",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  {
+    "file": "B08-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          70,
+          178,
+          139,
+          136
+        ],
+        "spriteRect": [
+          68,
+          176,
+          143,
+          138
+        ],
+        "centerX": 139.5,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          55,
+          115,
+          225,
+          199
+        ],
+        "spriteRect": [
+          367,
+          113,
+          229,
+          201
+        ],
+        "centerX": 167.5,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          22,
+          105,
+          254,
+          209
+        ],
+        "spriteRect": [
+          647,
+          103,
+          258,
+          211
+        ],
+        "centerX": 149.0,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          23,
+          49,
+          263,
+          265
+        ],
+        "spriteRect": [
+          961,
+          47,
+          267,
+          267
+        ],
+        "centerX": 154.5,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          33,
+          165,
+          266,
+          117
+        ],
+        "spriteRect": [
+          31,
+          477,
+          270,
+          121
+        ],
+        "centerX": 166.0,
+        "bottomNormalized": 0.9009584664536742,
+        "bottom": 282,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          42,
+          136,
+          266,
+          151
+        ],
+        "spriteRect": [
+          354,
+          448,
+          270,
+          155
+        ],
+        "centerX": 175.0,
+        "bottomNormalized": 0.9169329073482428,
+        "bottom": 287,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          47,
+          160,
+          263,
+          120
+        ],
+        "spriteRect": [
+          672,
+          472,
+          267,
+          124
+        ],
+        "centerX": 178.5,
+        "bottomNormalized": 0.8945686900958466,
+        "bottom": 280,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          49,
+          132,
+          262,
+          158
+        ],
+        "spriteRect": [
+          987,
+          444,
+          266,
+          162
+        ],
+        "centerX": 180.0,
+        "bottomNormalized": 0.9265175718849841,
+        "bottom": 290,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          41,
+          118,
+          264,
+          194
+        ],
+        "spriteRect": [
+          39,
+          743,
+          268,
+          197
+        ],
+        "centerX": 173.0,
+        "bottomNormalized": 0.9968051118210862,
+        "bottom": 312,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          28,
+          95,
+          253,
+          217
+        ],
+        "spriteRect": [
+          340,
+          720,
+          257,
+          220
+        ],
+        "centerX": 154.5,
+        "bottomNormalized": 0.9968051118210862,
+        "bottom": 312,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          18,
+          65,
+          277,
+          248
+        ],
+        "spriteRect": [
+          643,
+          690,
+          281,
+          250
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          19,
+          154,
+          270,
+          157
+        ],
+        "spriteRect": [
+          957,
+          779,
+          274,
+          161
+        ],
+        "centerX": 154.0,
+        "bottomNormalized": 0.9936102236421726,
+        "bottom": 311,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          19,
+          141,
+          271,
+          118
+        ],
+        "spriteRect": [
+          17,
+          1079,
+          275,
+          122
+        ],
+        "centerX": 154.5,
+        "bottomNormalized": 0.8248407643312102,
+        "bottom": 259,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          27,
+          114,
+          272,
+          146
+        ],
+        "spriteRect": [
+          339,
+          1052,
+          276,
+          150
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.8280254777070064,
+        "bottom": 260,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          18,
+          61,
+          293,
+          200
+        ],
+        "spriteRect": [
+          643,
+          999,
+          297,
+          204
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.8312101910828026,
+        "bottom": 261,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          33,
+          98,
+          265,
+          162
+        ],
+        "spriteRect": [
+          971,
+          1036,
+          269,
+          166
+        ],
+        "centerX": 165.5,
+        "bottomNormalized": 0.8280254777070064,
+        "bottom": 260,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "3eff1a0931281dc91f517f34a8cde51b79b3da49bf345ba01908a37668d0f874",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      1,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B09-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          89,
+          82,
+          148,
+          178
+        ],
+        "spriteRect": [
+          87,
+          80,
+          152,
+          182
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.8280254777070064,
+        "bottom": 260,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          59,
+          53,
+          230,
+          228
+        ],
+        "spriteRect": [
+          371,
+          51,
+          234,
+          232
+        ],
+        "centerX": 174.0,
+        "bottomNormalized": 0.8949044585987261,
+        "bottom": 281,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          43,
+          41,
+          243,
+          264
+        ],
+        "spriteRect": [
+          668,
+          39,
+          247,
+          268
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.9713375796178344,
+        "bottom": 305,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          13,
+          30,
+          274,
+          265
+        ],
+        "spriteRect": [
+          951,
+          28,
+          278,
+          269
+        ],
+        "centerX": 150.0,
+        "bottomNormalized": 0.9394904458598726,
+        "bottom": 295,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          26,
+          85,
+          274,
+          158
+        ],
+        "spriteRect": [
+          24,
+          397,
+          278,
+          162
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.7763578274760383,
+        "bottom": 243,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          16,
+          82,
+          294,
+          164
+        ],
+        "spriteRect": [
+          328,
+          394,
+          298,
+          168
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.7859424920127795,
+        "bottom": 246,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          8,
+          66,
+          304,
+          198
+        ],
+        "spriteRect": [
+          633,
+          378,
+          307,
+          202
+        ],
+        "centerX": 160.0,
+        "bottomNormalized": 0.8434504792332268,
+        "bottom": 264,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          20,
+          97,
+          283,
+          166
+        ],
+        "spriteRect": [
+          958,
+          409,
+          287,
+          170
+        ],
+        "centerX": 161.5,
+        "bottomNormalized": 0.8402555910543131,
+        "bottom": 263,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          85,
+          10,
+          190,
+          276
+        ],
+        "spriteRect": [
+          83,
+          635,
+          194,
+          280
+        ],
+        "centerX": 180.0,
+        "bottomNormalized": 0.9137380191693291,
+        "bottom": 286,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          23,
+          9,
+          280,
+          280
+        ],
+        "spriteRect": [
+          335,
+          634,
+          284,
+          284
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.9233226837060703,
+        "bottom": 289,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          9,
+          14,
+          282,
+          276
+        ],
+        "spriteRect": [
+          634,
+          639,
+          286,
+          280
+        ],
+        "centerX": 150.0,
+        "bottomNormalized": 0.9265175718849841,
+        "bottom": 290,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          47,
+          74,
+          231,
+          230
+        ],
+        "spriteRect": [
+          985,
+          699,
+          235,
+          234
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.9712460063897763,
+        "bottom": 304,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          16,
+          85,
+          291,
+          179
+        ],
+        "spriteRect": [
+          14,
+          1023,
+          295,
+          183
+        ],
+        "centerX": 161.5,
+        "bottomNormalized": 0.8407643312101911,
+        "bottom": 264,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          7,
+          38,
+          297,
+          232
+        ],
+        "spriteRect": [
+          319,
+          976,
+          301,
+          236
+        ],
+        "centerX": 155.5,
+        "bottomNormalized": 0.8598726114649682,
+        "bottom": 270,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          9,
+          24,
+          294,
+          256
+        ],
+        "spriteRect": [
+          634,
+          962,
+          298,
+          260
+        ],
+        "centerX": 156.0,
+        "bottomNormalized": 0.89171974522293,
+        "bottom": 280,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          0,
+          75,
+          302,
+          198
+        ],
+        "spriteRect": [
+          940,
+          1013,
+          304,
+          202
+        ],
+        "centerX": 151.0,
+        "bottomNormalized": 0.8694267515923567,
+        "bottom": 273,
+        "touchesCellEdge": true
+      }
+    ],
+    "sha256": "294bf36c9bd412b250310a065b0bfaafdf69094d28ef21ad3a6969339c3052de",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B10-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          134,
+          134,
+          70,
+          61
+        ],
+        "spriteRect": [
+          132,
+          132,
+          74,
+          65
+        ],
+        "centerX": 169.0,
+        "bottomNormalized": 0.6210191082802548,
+        "bottom": 195,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          116,
+          106,
+          113,
+          111
+        ],
+        "spriteRect": [
+          428,
+          104,
+          117,
+          115
+        ],
+        "centerX": 172.5,
+        "bottomNormalized": 0.6910828025477707,
+        "bottom": 217,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          65,
+          73,
+          207,
+          196
+        ],
+        "spriteRect": [
+          690,
+          71,
+          211,
+          200
+        ],
+        "centerX": 168.5,
+        "bottomNormalized": 0.856687898089172,
+        "bottom": 269,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          31,
+          34,
+          254,
+          263
+        ],
+        "spriteRect": [
+          969,
+          32,
+          258,
+          267
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.945859872611465,
+        "bottom": 297,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          28,
+          82,
+          273,
+          146
+        ],
+        "spriteRect": [
+          26,
+          394,
+          277,
+          150
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.7284345047923323,
+        "bottom": 228,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          18,
+          83,
+          293,
+          154
+        ],
+        "spriteRect": [
+          330,
+          395,
+          297,
+          158
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.7571884984025559,
+        "bottom": 237,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          18,
+          94,
+          289,
+          144
+        ],
+        "spriteRect": [
+          643,
+          406,
+          293,
+          148
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.7603833865814696,
+        "bottom": 238,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          24,
+          99,
+          273,
+          135
+        ],
+        "spriteRect": [
+          962,
+          411,
+          277,
+          139
+        ],
+        "centerX": 160.5,
+        "bottomNormalized": 0.7476038338658147,
+        "bottom": 234,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          65,
+          39,
+          206,
+          203
+        ],
+        "spriteRect": [
+          63,
+          664,
+          210,
+          207
+        ],
+        "centerX": 168.0,
+        "bottomNormalized": 0.7731629392971247,
+        "bottom": 242,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          21,
+          51,
+          274,
+          249
+        ],
+        "spriteRect": [
+          333,
+          676,
+          278,
+          253
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.9584664536741214,
+        "bottom": 300,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          20,
+          33,
+          246,
+          253
+        ],
+        "spriteRect": [
+          645,
+          658,
+          250,
+          257
+        ],
+        "centerX": 143.0,
+        "bottomNormalized": 0.9137380191693291,
+        "bottom": 286,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          56,
+          51,
+          200,
+          232
+        ],
+        "spriteRect": [
+          994,
+          676,
+          204,
+          236
+        ],
+        "centerX": 156.0,
+        "bottomNormalized": 0.9041533546325878,
+        "bottom": 283,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          25,
+          82,
+          266,
+          184
+        ],
+        "spriteRect": [
+          23,
+          1020,
+          270,
+          188
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.8471337579617835,
+        "bottom": 266,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          26,
+          56,
+          254,
+          210
+        ],
+        "spriteRect": [
+          338,
+          994,
+          258,
+          214
+        ],
+        "centerX": 153.0,
+        "bottomNormalized": 0.8471337579617835,
+        "bottom": 266,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          23,
+          38,
+          267,
+          241
+        ],
+        "spriteRect": [
+          648,
+          976,
+          271,
+          245
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.8885350318471338,
+        "bottom": 279,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          22,
+          52,
+          271,
+          232
+        ],
+        "spriteRect": [
+          960,
+          990,
+          275,
+          236
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9044585987261147,
+        "bottom": 284,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "6048c95d17970a8202479704403b4f73e6633a75aebb9993b5d14b849f4f32e8",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "file": "B11-fx-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          97,
+          118,
+          166,
+          181
+        ],
+        "spriteRect": [
+          95,
+          116,
+          170,
+          185
+        ],
+        "centerX": 180.0,
+        "bottomNormalized": 0.9522292993630573,
+        "bottom": 299,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          58,
+          74,
+          206,
+          229
+        ],
+        "spriteRect": [
+          370,
+          72,
+          210,
+          233
+        ],
+        "centerX": 161.0,
+        "bottomNormalized": 0.964968152866242,
+        "bottom": 303,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          45,
+          63,
+          229,
+          241
+        ],
+        "spriteRect": [
+          670,
+          61,
+          233,
+          245
+        ],
+        "centerX": 159.5,
+        "bottomNormalized": 0.9681528662420382,
+        "bottom": 304,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          45,
+          32,
+          236,
+          273
+        ],
+        "spriteRect": [
+          983,
+          30,
+          240,
+          277
+        ],
+        "centerX": 163.0,
+        "bottomNormalized": 0.9713375796178344,
+        "bottom": 305,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          47,
+          127,
+          235,
+          105
+        ],
+        "spriteRect": [
+          45,
+          439,
+          239,
+          109
+        ],
+        "centerX": 164.5,
+        "bottomNormalized": 0.7412140575079872,
+        "bottom": 232,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          33,
+          119,
+          257,
+          110
+        ],
+        "spriteRect": [
+          345,
+          431,
+          261,
+          114
+        ],
+        "centerX": 161.5,
+        "bottomNormalized": 0.731629392971246,
+        "bottom": 229,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          26,
+          120,
+          269,
+          113
+        ],
+        "spriteRect": [
+          651,
+          432,
+          273,
+          117
+        ],
+        "centerX": 160.5,
+        "bottomNormalized": 0.744408945686901,
+        "bottom": 233,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          14,
+          120,
+          276,
+          120
+        ],
+        "spriteRect": [
+          952,
+          432,
+          280,
+          124
+        ],
+        "centerX": 152.0,
+        "bottomNormalized": 0.7667731629392971,
+        "bottom": 240,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          50,
+          43,
+          250,
+          245
+        ],
+        "spriteRect": [
+          48,
+          668,
+          254,
+          249
+        ],
+        "centerX": 175.0,
+        "bottomNormalized": 0.9201277955271565,
+        "bottom": 288,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          57,
+          53,
+          241,
+          240
+        ],
+        "spriteRect": [
+          369,
+          678,
+          245,
+          244
+        ],
+        "centerX": 177.5,
+        "bottomNormalized": 0.9361022364217252,
+        "bottom": 293,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          19,
+          7,
+          276,
+          301
+        ],
+        "spriteRect": [
+          644,
+          632,
+          280,
+          305
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.9840255591054313,
+        "bottom": 308,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          41,
+          39,
+          238,
+          266
+        ],
+        "spriteRect": [
+          979,
+          664,
+          242,
+          270
+        ],
+        "centerX": 160.0,
+        "bottomNormalized": 0.9744408945686901,
+        "bottom": 305,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          29,
+          99,
+          281,
+          176
+        ],
+        "spriteRect": [
+          27,
+          1037,
+          285,
+          180
+        ],
+        "centerX": 169.5,
+        "bottomNormalized": 0.8757961783439491,
+        "bottom": 275,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          33,
+          49,
+          264,
+          227
+        ],
+        "spriteRect": [
+          345,
+          987,
+          268,
+          231
+        ],
+        "centerX": 165.0,
+        "bottomNormalized": 0.8789808917197452,
+        "bottom": 276,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          28,
+          28,
+          269,
+          248
+        ],
+        "spriteRect": [
+          653,
+          966,
+          273,
+          252
+        ],
+        "centerX": 162.5,
+        "bottomNormalized": 0.8789808917197452,
+        "bottom": 276,
+        "touchesCellEdge": false
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          28,
+          108,
+          254,
+          169
+        ],
+        "spriteRect": [
+          966,
+          1046,
+          258,
+          173
+        ],
+        "centerX": 155.0,
+        "bottomNormalized": 0.8821656050955414,
+        "bottom": 277,
+        "touchesCellEdge": false
+      }
+    ],
+    "sha256": "b5a2eea174c171de3ccc01f7db82253da4dedd8ec189dad31925196c61086beb",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  {
+    "file": "fire-e-icons-v2.png",
+    "size": [
+      1774,
+      887
+    ],
+    "cols": 2,
+    "rows": 1,
+    "cellSize": [
+      887.0,
+      887.0
+    ],
+    "frames": [],
+    "sha256": "c9f4a3daa80f047d0b8f39b88cf69548ace5b7dbf33b164a4660936d7ed83197",
+    "alphaExtrema": null
+  },
+  {
+    "file": "platforms-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "cols": 4,
+    "rows": 3,
+    "cellSize": [
+      384.0,
+      341.3333333333333
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          19,
+          188,
+          352,
+          121
+        ],
+        "spriteRect": [
+          17,
+          186,
+          356,
+          125
+        ],
+        "centerX": 195.0,
+        "bottomNormalized": 0.906158357771261,
+        "bottom": 309,
+        "touchesCellEdge": false,
+        "topNormalized": 0.5630498533724341,
+        "standingX": [
+          0.059895833333333336,
+          0.9557291666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 1,
+        "rect": [
+          384,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          20,
+          188,
+          350,
+          126
+        ],
+        "spriteRect": [
+          402,
+          186,
+          354,
+          130
+        ],
+        "centerX": 195.0,
+        "bottomNormalized": 0.9208211143695014,
+        "bottom": 314,
+        "touchesCellEdge": false,
+        "topNormalized": 0.5601173020527859,
+        "standingX": [
+          0.0625,
+          0.953125
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 2,
+        "rect": [
+          768,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          16,
+          187,
+          351,
+          154
+        ],
+        "spriteRect": [
+          782,
+          185,
+          355,
+          156
+        ],
+        "centerX": 191.5,
+        "bottomNormalized": 1.0,
+        "bottom": 341,
+        "touchesCellEdge": true,
+        "topNormalized": 0.5601173020527859,
+        "standingX": [
+          0.052083333333333336,
+          0.9453125
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 3,
+        "rect": [
+          1152,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          16,
+          189,
+          350,
+          130
+        ],
+        "spriteRect": [
+          1166,
+          187,
+          354,
+          134
+        ],
+        "centerX": 191.0,
+        "bottomNormalized": 0.9354838709677419,
+        "bottom": 319,
+        "touchesCellEdge": false,
+        "topNormalized": 0.5601173020527859,
+        "standingX": [
+          0.052083333333333336,
+          0.9427083333333334
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          19,
+          127,
+          352,
+          161
+        ],
+        "spriteRect": [
+          17,
+          466,
+          356,
+          165
+        ],
+        "centerX": 195.0,
+        "bottomNormalized": 0.8421052631578947,
+        "bottom": 288,
+        "touchesCellEdge": false,
+        "topNormalized": 0.391812865497076,
+        "standingX": [
+          0.059895833333333336,
+          0.9557291666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 5,
+        "rect": [
+          384,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          18,
+          128,
+          352,
+          132
+        ],
+        "spriteRect": [
+          400,
+          467,
+          356,
+          136
+        ],
+        "centerX": 194.0,
+        "bottomNormalized": 0.7602339181286549,
+        "bottom": 260,
+        "touchesCellEdge": false,
+        "topNormalized": 0.38011695906432746,
+        "standingX": [
+          0.057291666666666664,
+          0.953125
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 6,
+        "rect": [
+          768,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          17,
+          129,
+          351,
+          139
+        ],
+        "spriteRect": [
+          783,
+          468,
+          355,
+          143
+        ],
+        "centerX": 192.5,
+        "bottomNormalized": 0.783625730994152,
+        "bottom": 268,
+        "touchesCellEdge": false,
+        "topNormalized": 0.3830409356725146,
+        "standingX": [
+          0.0546875,
+          0.9479166666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 7,
+        "rect": [
+          1152,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          15,
+          129,
+          350,
+          159
+        ],
+        "spriteRect": [
+          1165,
+          468,
+          354,
+          163
+        ],
+        "centerX": 190.0,
+        "bottomNormalized": 0.8421052631578947,
+        "bottom": 288,
+        "touchesCellEdge": false,
+        "topNormalized": 0.3830409356725146,
+        "standingX": [
+          0.049479166666666664,
+          0.9401041666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          19,
+          81,
+          352,
+          133
+        ],
+        "spriteRect": [
+          17,
+          762,
+          356,
+          137
+        ],
+        "centerX": 195.0,
+        "bottomNormalized": 0.6275659824046921,
+        "bottom": 214,
+        "touchesCellEdge": false,
+        "topNormalized": 0.24633431085043989,
+        "standingX": [
+          0.059895833333333336,
+          0.9557291666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 9,
+        "rect": [
+          384,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          18,
+          81,
+          350,
+          135
+        ],
+        "spriteRect": [
+          400,
+          762,
+          354,
+          139
+        ],
+        "centerX": 193.0,
+        "bottomNormalized": 0.6334310850439883,
+        "bottom": 216,
+        "touchesCellEdge": false,
+        "topNormalized": 0.24633431085043989,
+        "standingX": [
+          0.057291666666666664,
+          0.9479166666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 10,
+        "rect": [
+          768,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          16,
+          81,
+          352,
+          140
+        ],
+        "spriteRect": [
+          782,
+          762,
+          356,
+          144
+        ],
+        "centerX": 192.0,
+        "bottomNormalized": 0.6480938416422287,
+        "bottom": 221,
+        "touchesCellEdge": false,
+        "topNormalized": 0.2434017595307918,
+        "standingX": [
+          0.052083333333333336,
+          0.9479166666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 11,
+        "rect": [
+          1152,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          14,
+          82,
+          351,
+          135
+        ],
+        "spriteRect": [
+          1164,
+          763,
+          355,
+          139
+        ],
+        "centerX": 189.5,
+        "bottomNormalized": 0.6363636363636364,
+        "bottom": 217,
+        "touchesCellEdge": false,
+        "topNormalized": 0.24633431085043989,
+        "standingX": [
+          0.046875,
+          0.9401041666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      }
+    ],
+    "sha256": "ef0ee0693ccc355e33c405285fddc95180b24a73c591fa2985dd0186c60258ca",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "platforms-v3.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "cols": 4,
+    "rows": 3,
+    "cellSize": [
+      384.0,
+      341.3333333333333
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          17,
+          177,
+          360,
+          127
+        ],
+        "spriteRect": [
+          15,
+          175,
+          364,
+          131
+        ],
+        "centerX": 197.0,
+        "bottomNormalized": 0.8914956011730205,
+        "bottom": 304,
+        "touchesCellEdge": false,
+        "topNormalized": 0.530791788856305,
+        "standingX": [
+          0.0546875,
+          0.9713541666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 1,
+        "rect": [
+          384,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          15,
+          176,
+          360,
+          133
+        ],
+        "spriteRect": [
+          397,
+          174,
+          364,
+          137
+        ],
+        "centerX": 195.0,
+        "bottomNormalized": 0.906158357771261,
+        "bottom": 309,
+        "touchesCellEdge": false,
+        "topNormalized": 0.5249266862170088,
+        "standingX": [
+          0.049479166666666664,
+          0.9661458333333334
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 2,
+        "rect": [
+          768,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          12,
+          175,
+          361,
+          166
+        ],
+        "spriteRect": [
+          778,
+          173,
+          365,
+          168
+        ],
+        "centerX": 192.5,
+        "bottomNormalized": 1.0,
+        "bottom": 341,
+        "touchesCellEdge": true,
+        "topNormalized": 0.5278592375366569,
+        "standingX": [
+          0.041666666666666664,
+          0.9609375
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 3,
+        "rect": [
+          1152,
+          0,
+          384,
+          341
+        ],
+        "bbox": [
+          9,
+          176,
+          362,
+          140
+        ],
+        "spriteRect": [
+          1159,
+          174,
+          366,
+          144
+        ],
+        "centerX": 190.0,
+        "bottomNormalized": 0.9266862170087976,
+        "bottom": 316,
+        "touchesCellEdge": false,
+        "topNormalized": 0.5219941348973607,
+        "standingX": [
+          0.033854166666666664,
+          0.9557291666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          16,
+          111,
+          361,
+          169
+        ],
+        "spriteRect": [
+          14,
+          450,
+          365,
+          173
+        ],
+        "centerX": 196.5,
+        "bottomNormalized": 0.8187134502923976,
+        "bottom": 280,
+        "touchesCellEdge": false,
+        "topNormalized": 0.34502923976608185,
+        "standingX": [
+          0.052083333333333336,
+          0.9713541666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 5,
+        "rect": [
+          384,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          14,
+          112,
+          361,
+          139
+        ],
+        "spriteRect": [
+          396,
+          451,
+          365,
+          143
+        ],
+        "centerX": 194.5,
+        "bottomNormalized": 0.7339181286549707,
+        "bottom": 251,
+        "touchesCellEdge": false,
+        "topNormalized": 0.3333333333333333,
+        "standingX": [
+          0.046875,
+          0.9661458333333334
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 6,
+        "rect": [
+          768,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          12,
+          113,
+          361,
+          146
+        ],
+        "spriteRect": [
+          778,
+          452,
+          365,
+          150
+        ],
+        "centerX": 192.5,
+        "bottomNormalized": 0.7573099415204678,
+        "bottom": 259,
+        "touchesCellEdge": false,
+        "topNormalized": 0.3362573099415205,
+        "standingX": [
+          0.041666666666666664,
+          0.9609375
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 7,
+        "rect": [
+          1152,
+          341,
+          384,
+          342
+        ],
+        "bbox": [
+          10,
+          112,
+          360,
+          167
+        ],
+        "spriteRect": [
+          1160,
+          451,
+          364,
+          171
+        ],
+        "centerX": 190.0,
+        "bottomNormalized": 0.8157894736842105,
+        "bottom": 279,
+        "touchesCellEdge": false,
+        "topNormalized": 0.3362573099415205,
+        "standingX": [
+          0.036458333333333336,
+          0.953125
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          17,
+          56,
+          361,
+          137
+        ],
+        "spriteRect": [
+          15,
+          737,
+          365,
+          141
+        ],
+        "centerX": 197.5,
+        "bottomNormalized": 0.5659824046920822,
+        "bottom": 193,
+        "touchesCellEdge": false,
+        "topNormalized": 0.17008797653958943,
+        "standingX": [
+          0.0546875,
+          0.9739583333333334
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 9,
+        "rect": [
+          384,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          13,
+          55,
+          362,
+          139
+        ],
+        "spriteRect": [
+          395,
+          736,
+          366,
+          143
+        ],
+        "centerX": 194.0,
+        "bottomNormalized": 0.5689149560117303,
+        "bottom": 194,
+        "touchesCellEdge": false,
+        "topNormalized": 0.17008797653958943,
+        "standingX": [
+          0.044270833333333336,
+          0.9661458333333334
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 10,
+        "rect": [
+          768,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          9,
+          55,
+          364,
+          145
+        ],
+        "spriteRect": [
+          775,
+          736,
+          368,
+          149
+        ],
+        "centerX": 191.0,
+        "bottomNormalized": 0.5865102639296188,
+        "bottom": 200,
+        "touchesCellEdge": false,
+        "topNormalized": 0.16715542521994134,
+        "standingX": [
+          0.033854166666666664,
+          0.9609375
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 11,
+        "rect": [
+          1152,
+          683,
+          384,
+          341
+        ],
+        "bbox": [
+          7,
+          55,
+          363,
+          141
+        ],
+        "spriteRect": [
+          1157,
+          736,
+          367,
+          145
+        ],
+        "centerX": 188.5,
+        "bottomNormalized": 0.5747800586510264,
+        "bottom": 196,
+        "touchesCellEdge": false,
+        "topNormalized": 0.17008797653958943,
+        "standingX": [
+          0.028645833333333332,
+          0.953125
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      }
+    ],
+    "sha256": "43ba7d20f67cedbc6a48dd89a9c91fc529ff530273621c417ae70d62672f4fa9",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "platforms-v4.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 3,
+    "cellSize": [
+      313.5,
+      418.0
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          230,
+          326,
+          270
+        ],
+        "bbox": [
+          24,
+          70,
+          293,
+          128
+        ],
+        "spriteRect": [
+          22,
+          298,
+          297,
+          132
+        ],
+        "centerX": 170.5,
+        "bottomNormalized": 0.7333333333333333,
+        "bottom": 198,
+        "touchesCellEdge": false,
+        "topNormalized": 0.26296296296296295,
+        "standingX": [
+          0.08588957055214724,
+          0.9601226993865031
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 1,
+        "rect": [
+          326,
+          230,
+          314,
+          270
+        ],
+        "bbox": [
+          8,
+          73,
+          287,
+          124
+        ],
+        "spriteRect": [
+          332,
+          301,
+          291,
+          128
+        ],
+        "centerX": 151.5,
+        "bottomNormalized": 0.7296296296296296,
+        "bottom": 197,
+        "touchesCellEdge": false,
+        "topNormalized": 0.2777777777777778,
+        "standingX": [
+          0.03821656050955414,
+          0.9267515923566879
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 2,
+        "rect": [
+          640,
+          230,
+          314,
+          270
+        ],
+        "bbox": [
+          0,
+          63,
+          285,
+          177
+        ],
+        "spriteRect": [
+          640,
+          291,
+          287,
+          181
+        ],
+        "centerX": 142.5,
+        "bottomNormalized": 0.8888888888888888,
+        "bottom": 240,
+        "touchesCellEdge": true,
+        "topNormalized": 0.26296296296296295,
+        "standingX": [
+          0.012738853503184714,
+          0.8949044585987261
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 3,
+        "rect": [
+          954,
+          230,
+          300,
+          270
+        ],
+        "bbox": [
+          0,
+          72,
+          276,
+          137
+        ],
+        "spriteRect": [
+          954,
+          300,
+          278,
+          141
+        ],
+        "centerX": 138.0,
+        "bottomNormalized": 0.774074074074074,
+        "bottom": 209,
+        "touchesCellEdge": true,
+        "topNormalized": 0.27037037037037037,
+        "standingX": [
+          0.013333333333333334,
+          0.9066666666666666
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          520,
+          326,
+          300
+        ],
+        "bbox": [
+          18,
+          66,
+          301,
+          193
+        ],
+        "spriteRect": [
+          16,
+          584,
+          305,
+          197
+        ],
+        "centerX": 168.5,
+        "bottomNormalized": 0.8633333333333333,
+        "bottom": 259,
+        "touchesCellEdge": false,
+        "topNormalized": 0.24,
+        "standingX": [
+          0.06748466257668712,
+          0.9662576687116564
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 5,
+        "rect": [
+          326,
+          520,
+          314,
+          300
+        ],
+        "bbox": [
+          5,
+          70,
+          290,
+          141
+        ],
+        "spriteRect": [
+          329,
+          588,
+          294,
+          145
+        ],
+        "centerX": 150.0,
+        "bottomNormalized": 0.7033333333333334,
+        "bottom": 211,
+        "touchesCellEdge": false,
+        "topNormalized": 0.24,
+        "standingX": [
+          0.028662420382165606,
+          0.9267515923566879
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 6,
+        "rect": [
+          640,
+          520,
+          314,
+          300
+        ],
+        "bbox": [
+          0,
+          70,
+          286,
+          134
+        ],
+        "spriteRect": [
+          640,
+          588,
+          288,
+          138
+        ],
+        "centerX": 143.0,
+        "bottomNormalized": 0.68,
+        "bottom": 204,
+        "touchesCellEdge": true,
+        "topNormalized": 0.24,
+        "standingX": [
+          0.012738853503184714,
+          0.8980891719745223
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 7,
+        "rect": [
+          954,
+          520,
+          300,
+          300
+        ],
+        "bbox": [
+          0,
+          66,
+          280,
+          181
+        ],
+        "spriteRect": [
+          954,
+          584,
+          282,
+          185
+        ],
+        "centerX": 140.0,
+        "bottomNormalized": 0.8233333333333334,
+        "bottom": 247,
+        "touchesCellEdge": true,
+        "topNormalized": 0.23333333333333334,
+        "standingX": [
+          0.013333333333333334,
+          0.92
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          840,
+          326,
+          300
+        ],
+        "bbox": [
+          18,
+          60,
+          298,
+          143
+        ],
+        "spriteRect": [
+          16,
+          898,
+          302,
+          147
+        ],
+        "centerX": 167.0,
+        "bottomNormalized": 0.6766666666666666,
+        "bottom": 203,
+        "touchesCellEdge": false,
+        "topNormalized": 0.20333333333333334,
+        "standingX": [
+          0.06748466257668712,
+          0.9570552147239264
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 9,
+        "rect": [
+          326,
+          840,
+          314,
+          300
+        ],
+        "bbox": [
+          2,
+          60,
+          294,
+          144
+        ],
+        "spriteRect": [
+          326,
+          898,
+          298,
+          148
+        ],
+        "centerX": 149.0,
+        "bottomNormalized": 0.68,
+        "bottom": 204,
+        "touchesCellEdge": false,
+        "topNormalized": 0.20333333333333334,
+        "standingX": [
+          0.01910828025477707,
+          0.9299363057324841
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 10,
+        "rect": [
+          640,
+          840,
+          314,
+          300
+        ],
+        "bbox": [
+          0,
+          61,
+          288,
+          140
+        ],
+        "spriteRect": [
+          640,
+          899,
+          290,
+          144
+        ],
+        "centerX": 144.0,
+        "bottomNormalized": 0.67,
+        "bottom": 201,
+        "touchesCellEdge": true,
+        "topNormalized": 0.20666666666666667,
+        "standingX": [
+          0.012738853503184714,
+          0.9044585987261147
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      },
+      {
+        "index": 11,
+        "rect": [
+          954,
+          840,
+          300,
+          300
+        ],
+        "bbox": [
+          0,
+          60,
+          283,
+          136
+        ],
+        "spriteRect": [
+          954,
+          898,
+          285,
+          140
+        ],
+        "centerX": 141.5,
+        "bottomNormalized": 0.6533333333333333,
+        "bottom": 196,
+        "touchesCellEdge": true,
+        "topNormalized": 0.20333333333333334,
+        "standingX": [
+          0.013333333333333334,
+          0.93
+        ],
+        "standingUnits": "normalized to cell width; topNormalized normalized to cell height"
+      }
+    ],
+    "sha256": "8ce2a16a3f004364541b05f9874b123f2cc1d4b9d168fdd7792ca3a8dd5b94a6",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "frameGeometry": "explicit source rect per frame; do not infer equal cells"
+  },
+  {
+    "file": "portal-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "cols": 4,
+    "rows": 4,
+    "cellSize": [
+      313.5,
+      313.5
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          51,
+          12,
+          211,
+          301
+        ],
+        "spriteRect": [
+          49,
+          10,
+          215,
+          304
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 1,
+        "rect": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          51,
+          12,
+          212,
+          301
+        ],
+        "spriteRect": [
+          363,
+          10,
+          216,
+          304
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 2,
+        "rect": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "bbox": [
+          51,
+          13,
+          212,
+          300
+        ],
+        "spriteRect": [
+          676,
+          11,
+          216,
+          303
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 3,
+        "rect": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "bbox": [
+          53,
+          12,
+          210,
+          301
+        ],
+        "spriteRect": [
+          991,
+          10,
+          214,
+          304
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          51,
+          12,
+          211,
+          301
+        ],
+        "spriteRect": [
+          49,
+          324,
+          215,
+          303
+        ],
+        "centerX": 156.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 5,
+        "rect": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          52,
+          12,
+          211,
+          300
+        ],
+        "spriteRect": [
+          364,
+          324,
+          215,
+          303
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9968051118210862,
+        "bottom": 312,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 6,
+        "rect": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "bbox": [
+          51,
+          12,
+          212,
+          301
+        ],
+        "spriteRect": [
+          676,
+          324,
+          216,
+          303
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 7,
+        "rect": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "bbox": [
+          52,
+          13,
+          212,
+          299
+        ],
+        "spriteRect": [
+          990,
+          325,
+          216,
+          302
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.9968051118210862,
+        "bottom": 312,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 8,
+        "rect": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          51,
+          12,
+          212,
+          301
+        ],
+        "spriteRect": [
+          49,
+          637,
+          216,
+          303
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 9,
+        "rect": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          51,
+          13,
+          212,
+          300
+        ],
+        "spriteRect": [
+          363,
+          638,
+          216,
+          302
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 10,
+        "rect": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "bbox": [
+          52,
+          13,
+          211,
+          300
+        ],
+        "spriteRect": [
+          677,
+          638,
+          215,
+          302
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 11,
+        "rect": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "bbox": [
+          53,
+          12,
+          211,
+          301
+        ],
+        "spriteRect": [
+          991,
+          637,
+          215,
+          303
+        ],
+        "centerX": 158.5,
+        "bottomNormalized": 1.0,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 12,
+        "rect": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          51,
+          13,
+          212,
+          301
+        ],
+        "spriteRect": [
+          49,
+          951,
+          216,
+          303
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 13,
+        "rect": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          52,
+          14,
+          211,
+          299
+        ],
+        "spriteRect": [
+          364,
+          952,
+          215,
+          302
+        ],
+        "centerX": 157.5,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 14,
+        "rect": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "bbox": [
+          51,
+          13,
+          212,
+          301
+        ],
+        "spriteRect": [
+          676,
+          951,
+          216,
+          303
+        ],
+        "centerX": 157.0,
+        "bottomNormalized": 1.0,
+        "bottom": 314,
+        "touchesCellEdge": true
+      },
+      {
+        "index": 15,
+        "rect": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "bbox": [
+          52,
+          13,
+          212,
+          300
+        ],
+        "spriteRect": [
+          990,
+          951,
+          216,
+          303
+        ],
+        "centerX": 158.0,
+        "bottomNormalized": 0.9968152866242038,
+        "bottom": 313,
+        "touchesCellEdge": true
+      }
+    ],
+    "sha256": "79e67b1f119a171f75755907b273e70be25ca5186b1df9ffbdec1891874be3b8",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]

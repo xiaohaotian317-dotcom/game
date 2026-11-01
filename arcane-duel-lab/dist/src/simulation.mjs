@@ -1,4 +1,7 @@
 import {MAX_HEALTH} from './match-rules.mjs?v=20261030-duel12';
+import {cameraView} from './camera.mjs?v=20261030-duel12';
+import {BOSS_TUNING} from './enemy-tuning.mjs';
+import {updateEnemies,enemyOnDamage,enemyProjectileContact} from './enemy-simulation.mjs';
 import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261030-duel12';
 import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
 import {initExtra,releaseExtra,extraOnHit,extraBefore,extraAfter,extraMirrorContact,reflectExtra} from './extra-gameplay.mjs?v=20261030-duel12';
@@ -12,7 +15,8 @@ export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const lerp=(a,b,t)=>a+(b-a)*t;
 export const HEROES={...EXTRA_HEROES,
   fire:{name:'焰术师',given:'烬绯',color:'#ff9b4c',accent:'#ffde8a',passive:'余烬',passiveText:'命中附加 3 秒灼烧；再次命中刷新持续时间。',speed:320,jump:650,maxHp:MAX_HEALTH.fire,
-    skills:{attack:{name:'焰矢',icon:'flame',cd:.63,duration:.36,release:.14},q:{name:'爆燃印',icon:'burst',cd:4.2,duration:.65,release:.29},e:{name:'焰跃',icon:'jump',cd:5.5,duration:.46,release:.13},r:{name:'陨火天坠',icon:'meteor',cd:11,duration:.78,release:.18}}},
+    descriptions:{e:'朝指定方向快速投出火球，飞出视口前再次按 E，在火球当前位置引爆。'},comboTitle:'投出，焰爆。',comboHelp:'E 投出火球，离开视野前再按 E 原位引爆。',
+    skills:{attack:{name:'焰矢',icon:'flame',cd:.63,duration:.36,release:.14},q:{name:'爆燃印',icon:'burst',cd:4.2,duration:.65,release:.29},e:{name:'烬星火球',icon:'fireOrb',cd:5.5,duration:.4,release:.1},r:{name:'陨火天坠',icon:'meteor',cd:11,duration:.78,release:.18}}},
   nature:{name:'森灵',given:'荆歌',color:'#a9da78',accent:'#f9db87',passive:'共生',passiveText:'木灵鹿命中敌人回复 3 点生命，每 0.8 秒至多触发一次。',speed:340,jump:665,maxHp:MAX_HEALTH.nature,
     skills:{attack:{name:'荆棘籽',icon:'seed',cd:.69,duration:.4,release:.16},q:{name:'缚根',icon:'root',cd:4.8,duration:.71,release:.32},e:{name:'灵鹿召唤',icon:'fox',cd:7,duration:.66,release:.31},r:{name:'古树庇护',icon:'tree',cd:13,duration:1.04,release:.55}}}
 };
@@ -50,15 +54,16 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   }
   if(t.deadUntil>w.time||t.hp<=0)return false;
   const actual=Math.min(t.hp,amount);t.hp=Math.max(0,t.hp-amount);t.hit=.15;
-  if(knock){t.vx+=knock;t.vy=Math.min(t.vy,-Math.abs(knock)*.3);}
+  if(knock){const resistance=t.enemyKind?.startsWith('B')?.18:1;t.vx+=knock*resistance;t.vy=Math.min(t.vy,-Math.abs(knock)*.3*resistance);}
   if(fire){if(t.burnUntil<=w.time)t.nextBurn=w.time+.75;t.burnUntil=w.time+3;w.player.passiveGlow=.5;}
-  if(root)t.rootUntil=w.time+root;
+  if(root)t.rootUntil=w.time+(t.enemyKind?.startsWith('B')?Math.min(root,.9):root);
   w.stats.damage+=actual;w.stats.hits++;w.stats.combo=w.time-w.stats.lastHit<2?w.stats.combo+1:1;
   w.stats.best=Math.max(w.stats.best,w.stats.combo);w.stats.lastHit=w.time;
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
   if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*.55,duration:.55,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
   extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
   if(t.hp<=0){t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
+  if(t.enemyKind||t.egg)enemyOnDamage(w,t,actual,{impact});
   return true;
 }
 function damageBridge(w,x,y,r,amount){
@@ -76,11 +81,17 @@ function area(w,x,y,r,amount,opts={}) {
 function projectile(w,kind,x,y,dx,dy,speed,amount,extra={}){
   w.projectiles.push({id:++w.serial,kind,x,y,px:x,py:y,vx:dx*speed,vy:dy*speed,age:0,life:3.5,damage:amount,r:kind==='seed'?6:8,trail:[],...extra});
 }
+export function fireOrbVisible(w,s){
+ if(!s||s.age>=s.life)return false;let v;
+ if(w.duel){const width=w.fireView?.width||1280,height=w.fireView?.height||680;v={x:clamp(w.fireView?.x??w.player.x-width/2,0,w.width-width),y:w.fireView?.y||0,width,height};}else v=cameraView(w);
+ return s.x>=v.x-12&&s.x<=v.x+v.width+12&&s.y>=v.y-12&&s.y<=v.y+v.height+12;
+}
+function detonateOrb(w,id){const s=w.projectiles.find(p=>p.id===id&&p.kind==='emberOrb');if(!fireOrbVisible(w,s))return false;s.life=0;area(w,s.x,s.y,125,36,{fire:true,knock:190});effect(w,'orbExplosion',{x:s.x,y:s.y,radius:125,duration:.8});w.shake=Math.max(w.shake,8);w.hitstop=Math.max(w.hitstop,.045);emit(w,'explode',{heavy:true});return true;}
 function release(w,c) {
   if(releaseExtra(w,c,extraHooks))return;
   const p=w.player,h=w.hero,socket=castMuzzle(w),sx=socket.x,sy=socket.y;
   const ax=w.aim.x-sx,ay=w.aim.y-sy,al=Math.hypot(ax,ay)||1,d={x:ax/al,y:ay/al};
-  if(c.variant==='stomp'){p.stomp=true;p.vy=1000;p.vx*=.35;effect(w,'stompTrail',{x:p.x,y:p.y-45,duration:.3});emit(w,'stomp');return;}
+  if(c.variant==='detonate'){detonateOrb(w,c.data?.projectileId);return;}
   if(c.variant==='command'){
     if(w.fox){const f=w.fox;f.vx=Math.sign(c.x-f.x||p.face)*610;f.vy=-590;f.grounded=false;f.commandUntil=w.time+1.2;f.leap=true;f.attackPose=.6;effect(w,'leaves',{x:f.x,y:f.y-35,duration:.6});emit(w,'foxCommand');}return;
   }
@@ -92,14 +103,15 @@ function release(w,c) {
   if(h==='fire'){
     if(c.key==='q'&&floor){effect(w,'eruption',{x:floor.x,y:floor.y,anchor:floor,delay:.55,duration:1.7,triggered:false});emit(w,'charge');}
     if(c.key==='e'){
-      p.vx=p.face*390;p.vy=-720;p.grounded=false;p.jumps=Math.max(1,p.jumps);
-      p.recast={key:'e',name:'落烬',icon:'stomp',until:w.time+RECAST_WINDOWS.fire,start:w.time,window:RECAST_WINDOWS.fire};
-      effect(w,'fireLeap',{x:p.x,y:p.y-20,face:p.face,duration:.6});emit(w,'leap');
+      const dx=c.x-sx,dy=c.y-sy,length=Math.hypot(dx,dy)||1;
+      projectile(w,'emberOrb',sx,sy,dx/length,dy/length,900,16,{owner:'player',fire:true,terrainCollision:false,pierceActors:true,hitIds:[],life:2.5,r:13,castId:c.id});
+      p.recast={key:'e',name:'焰心引爆',icon:'fireOrb',until:w.time+2.5,start:w.time,window:2.5,data:{projectileId:w.projectiles.at(-1).id}};
+      effect(w,'muzzle',{x:sx,y:sy,angle:Math.atan2(dy,dx),duration:.22});emit(w,'attack',{hero:'fire'});
     }
     if(c.key==='r'&&floor){
       const x=floor.x,startX=x-130,startY=-130;
-      // 0.18 s windup + 0.82 s flight = one second from accepted input to impact.
-      effect(w,'meteor',{x,y:floor.y,anchor:floor,startX,startY,delay:.82,duration:2.37,triggered:false});emit(w,'meteor');
+      // Flight is 20% faster; casting windup remains unchanged.
+      effect(w,'meteor',{x,y:floor.y,anchor:floor,startX,startY,delay:.82/BOSS_TUNING.fallSpeed,duration:2.37,triggered:false});emit(w,'meteor');
     }
   }else{
     if(c.key==='q'){const y=groundTarget(w,p.x,p.y)?.y??w.floor,to=clamp(c.x,p.x-500,p.x+500);effect(w,'roots',{x:p.x,y,to,duration:2.4,triggered:false});emit(w,'roots');}
@@ -120,19 +132,19 @@ function release(w,c) {
 }
 function beginCast(w,key) {
   const p=w.player,s=HEROES[w.hero].skills[key];
-  if(!s||p.dead>0||p.hurt>0||p.dash>0)return false;
+  if(!s||p.dead>0||p.hurt>0||p.dash>0||p.enemyControl?.until>w.time)return false;
   const isRecast=p.recast&&p.recast.key===key&&p.recast.until>w.time;
-  if(p.cast&&p.cast.age<p.cast.duration*.75)return false;
+  if(p.cast&&p.cast.age<p.cast.duration*.75&&!(isRecast&&w.hero==='fire'&&p.cast.key==='e'&&p.cast.released))return false;
   if(!isRecast&&p.cooldowns[key]>0)return false;
-  if(isRecast&&w.hero==='fire'&&p.grounded)return false;
-  const variant=isRecast?(EXTRA_HEROES[w.hero]?.recast.variant||(w.hero==='fire'?'stomp':'command')):null;
+  if(isRecast&&w.hero==='fire'&&!fireOrbVisible(w,w.projectiles.find(s=>s.id===p.recast.data?.projectileId))){p.recast=null;return false;}
+  const variant=isRecast?(EXTRA_HEROES[w.hero]?.recast.variant||(w.hero==='fire'?'detonate':'command')):null;
   const recastData=isRecast?p.recast.data:null;
   const needsGround=!variant&&((w.hero==='fire'&&['q','r'].includes(key))||(w.hero==='nature'&&key==='r')||EXTRA_HEROES[w.hero]?.groundSkills.includes(key));
   const target=needsGround?groundTarget(w,EXTRA_HEROES[w.hero]?clamp(w.aim.x,p.x-520,p.x+520):w.aim.x,w.aim.y):null;
   if(needsGround&&!target)return false;
   if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd;
   p.face=w.aim.x>=p.x?1:-1;
-  p.cast={id:++w.serial,data:recastData,key,variant,age:0,duration:variant==='stomp'?.34:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='stomp'?.05:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
+  p.cast={id:++w.serial,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
 }
 export function requestCast(w,key,x=w.aim.x,y=w.aim.y) {
@@ -162,12 +174,13 @@ function physics(w,a,dt,{drop=false,phase=false}={}) {
   if(!phase)resolveSolidSides(w,a,previousX,previousY);
   if(a.y>(w.height||HEIGHT)+160){a.x=w.spawn.x;a.y=w.spawn.y;a.vy=0;a.grounded=true;a.platformId='ground';}
 }
-export function hitPlayer(w,amount,fromX) {
-  const p=w.player;if(p.invuln>0||p.dead>0)return false;
+export function hitPlayer(w,amount,fromX,{dot=false,label=''}={}) {
+  const p=w.player;if((!dot&&p.invuln>0)||p.dead>0||p.hp<=0)return false;
   const absorbed=Math.min(p.shield||0,amount);p.shield=Math.max(0,(p.shield||0)-absorbed);if(absorbed)effect(w,'frostHit',{x:p.x,y:p.y-60,duration:.5});
-  p.hp=Math.max(0,p.hp-(amount-absorbed));p.hurt=.24;p.invuln=.7;p.vx=Math.sign(p.x-fromX||1)*200;p.cast=null;p.burst=null;p.stomp=false;
-  w.shake=5;effect(w,'enemyHit',{x:p.x,y:p.y-65,duration:.4});text(w,p.x,p.y-125,'−'+amount,'#f1a7bb');emit(w,'hurt');
-  if(!p.hp){p.dead=w.duel?1e9:1.6;p.recast=null;}return true;
+  p.hp=Math.max(0,p.hp-(amount-absorbed));
+  if(!dot){p.hurt=.24;p.invuln=.7;p.vx=Math.sign(p.x-fromX||1)*200;p.cast=null;p.burst=null;p.stomp=false;w.shake=5;effect(w,'enemyHit',{x:p.x,y:p.y-65,duration:.4});emit(w,'hurt');}
+  text(w,p.x,p.y-125,'−'+(amount-absorbed)+(label?' '+label:''),dot?'#d0ce8b':'#f1a7bb',dot?16:22);
+  if(!p.hp){p.dead=w.duel||w.campaign?1e9:1.6;p.recast=null;}return true;
 }
 function updateEffects(w,dt){
   for(const e of w.effects){
@@ -183,19 +196,21 @@ function updateEffects(w,dt){
 }
 function updateProjectiles(w,dt){
   for(const s of w.projectiles){
+    if(s.age>=s.life)continue;
     if(s.homing){const t=w.targets.filter(t=>t.hp>0).sort((a,b)=>Math.hypot(a.x-s.x,a.y-45-s.y)-Math.hypot(b.x-s.x,b.y-45-s.y))[0];if(t){const dx=t.x-s.x,dy=t.y-45-s.y,l=Math.hypot(dx,dy)||1,speed=Math.hypot(s.vx,s.vy);s.vx=lerp(s.vx,dx/l*speed,1-Math.exp(-6*dt));s.vy=lerp(s.vy,dy/l*speed,1-Math.exp(-6*dt));}}
     s.px=s.x;s.py=s.y;s.x+=s.vx*dt;s.y+=s.vy*dt;s.age+=dt;
     s.trail||=[];s.trail.push({x:s.px,y:s.py});if(s.trail.length>12)s.trail.shift();
     if(s.kind==='seed')s.vy+=dt*55;
+    if(s.enemyGravity)s.vy+=dt*s.enemyGravity;
     const wall=s.terrainCollision===false?null:firstTerrainHit(w,s.px,s.py,s.x,s.y,s.r);
     let contact=wall?{...wall,type:'wall'}:null;
     const evading=w.player.burst?.dodgeProjectiles&&w.time<w.player.burst.until;
     const actors=s.owner==='enemy'?[...(!evading?[w.player]:[]),...(w.fox?[w.fox]:[])]:w.targets.filter(t=>t.hp>0&&t.deadUntil<=w.time&&!(w.duel&&t.burst?.dodgeProjectiles));
-    for(const a of actors){const t=segmentBox(s.px,s.py,s.x,s.y,{x:a.x-a.w,y:a.y-a.h,w:a.w*2,h:a.h},s.r);if(t!==null&&(!contact||t<contact.t))contact={t,type:'actor',actor:a};}
-    const m=w.mirror,mirrorT=m.enabled!==false&&s.owner==='player'&&s.age>.05&&s.mirrorAt!==m.angle?segmentBox(s.px,s.py,s.x,s.y,{x:m.x-17,y:m.y-29,w:34,h:58},s.r):null;
+    for(const a of actors){const t=segmentBox(s.px,s.py,s.x,s.y,{x:a.x-a.w,y:a.y-a.h,w:a.w*2,h:a.h},s.r);if(t!==null&&(!contact||t<contact.t)){if(s.pierceActors){if(!s.hitIds.includes(a.id)){s.hitIds.push(a.id);damage(w,a,s.damage,{fire:s.fire,knock:0,school:s.school,castId:s.castId});}}else contact={t,type:'actor',actor:a};}}
+    const m=w.mirror,mirrorT=s.kind!=='emberOrb'&&m.enabled!==false&&s.owner==='player'&&s.age>.05&&s.mirrorAt!==m.angle?segmentBox(s.px,s.py,s.x,s.y,{x:m.x-17,y:m.y-29,w:34,h:58},s.r):null;
     if(mirrorT!==null&&(!contact||mirrorT<contact.t))contact={t:mirrorT,type:'mirror'};
-    let ice=extraMirrorContact(w,s);
-    if(w.duel){ice=null;const mirrors=s.owner==='enemy'?w.iceMirrors:w.duelRivalMirrors||[],side=s.owner==='enemy'?w.duelSide:1-w.duelSide;for(const mirror of mirrors){const key=side+':'+mirror.id;if(s.duelMirrorKey===key)continue;const t=segmentBox(s.px,s.py,s.x,s.y,{x:mirror.x-8,y:mirror.y-58,w:16,h:116},s.r);if(t!==null&&(!ice||t<ice.t))ice={t,type:'iceMirror',mirror,key};}}
+    let ice=s.kind==='emberOrb'?null:extraMirrorContact(w,s);
+    if(w.duel&&s.kind!=='emberOrb'){ice=null;const mirrors=s.owner==='enemy'?w.iceMirrors:w.duelRivalMirrors||[],side=s.owner==='enemy'?w.duelSide:1-w.duelSide;for(const mirror of mirrors){const key=side+':'+mirror.id;if(s.duelMirrorKey===key)continue;const t=segmentBox(s.px,s.py,s.x,s.y,{x:mirror.x-8,y:mirror.y-58,w:16,h:116},s.r);if(t!==null&&(!ice||t<ice.t))ice={t,type:'iceMirror',mirror,key};}}
     if(ice&&(!contact||ice.t<contact.t))contact=ice;
     if(contact){s.x=lerp(s.px,s.x,contact.t);s.y=lerp(s.py,s.y,contact.t);}
     if(hitSceneMechanism(w,s,sceneHooks))continue;
@@ -206,21 +221,24 @@ function updateProjectiles(w,dt){
       m.cooldown=.2;effect(w,'mirrorFlash',{x:m.x,y:m.y,duration:.4});emit(w,'mirror');
     }
     if(contact?.type==='actor'){
-      if(s.owner==='enemy'){if(contact.actor===w.player)hitPlayer(w,s.damage,s.px);else hitSummon(w,s.damage,s.px);}
+      if(s.owner==='enemy'){const accepted=contact.actor===w.player?hitPlayer(w,s.damage,s.px):hitSummon(w,s.damage,s.px);if(s.enemySource)enemyProjectileContact(w,s,contact.actor,enemyHooks,accepted);}
       else damage(w,contact.actor,s.damage,{fire:s.fire,knock:Math.sign(s.vx)*70,school:s.school,basic:s.basic,castId:s.castId});
       s.life=0;
     }
     if(contact?.type==='wall'){
+      if(s.owner==='enemy'&&s.enemySource)enemyProjectileContact(w,s,null,enemyHooks,false);
       if(contact.box.source?.type==='wood'&&s.owner==='player')damageBridge(w,s.x,s.y,24,s.damage);
       effect(w,s.fire?'fireHit':s.school?s.school+'Hit':s.kind==='seed'?'leafHit':'enemyHit',{x:s.x,y:s.y,duration:.5});
       effect(w,'chips',{x:s.x,y:s.y,duration:.6});emit(w,'wallHit',{fire:s.fire});s.life=0;
     }
     if(s.x<-100||s.x>(w.width||WIDTH)+100||s.y<-200||s.y>(w.height||HEIGHT)+100)s.life=0;
+    if(s.kind==='emberOrb'&&!fireOrbVisible(w,s)){s.life=0;if(w.player.recast?.data?.projectileId===s.id)w.player.recast=null;}
   }
   w.projectiles=w.projectiles.filter(s=>s.age<s.life);
 }
 function updateTargets(w,dt) {
   for(const t of w.targets){
+    if(t.enemyKind||t.egg)continue;
     if(w.duel){if(t.duelActor&&t.hp>0&&t.burnUntil>w.time&&w.time>=t.nextBurn){t.nextBurn+=.75;damage(w,t,4,{label:'4 灼烧',impact:false});}continue;}
     t.hit=Math.max(0,t.hit-dt);
     if(t.deadUntil){if(w.time>=t.deadUntil){Object.assign(t,dummy(t.id,t.spawnX,t.spawnY));effect(w,'respawn',{x:t.x,y:t.y-35,duration:.65});}else continue;}
@@ -296,6 +314,9 @@ export function step(w,dt,input={}) {
   }
   w.time+=dt;
   const p=w.player;
+  if(input.view&&w.duel){const width=clamp(input.view.width,400,1280),height=clamp(input.view.height,300,800);w.fireView={width,height,x:clamp(input.view.x,Math.max(0,p.x-width*.85),Math.min(w.width-width,p.x-width*.15)),y:clamp(input.view.y,0,Math.max(0,w.height-height))};}
+  const controlled=w.enemyMode&&p.enemyControl?.until>w.time;
+  if(controlled){input={aim:input.aim};p.queuedDash=false;p.jumpBuffer=0;p.buffer=null;p.cast=null;p.burst=null;p.dash=0;p.stomp=false;}
   if(!w.duelSecondary)updateScene(w,dt,sceneHooks);
   else{w.windForce=0;const wind=w.mechanisms?.wind;if(wind){const b=wind.bounds;if(!p.grounded&&p.x>b.x&&p.x<b.x+b.w&&p.y>b.y&&p.y-p.h<b.y+b.h){w.windForce=wind.direction*190;p.vy=Math.max(-640,p.vy-470*dt);}}}
   if(input.aim)w.aim={...input.aim};
@@ -324,8 +345,8 @@ export function step(w,dt,input={}) {
   if(p.dead<=0){
     if(!b&&p.dash<=0&&p.hurt<=0&&!p.stomp){
       const move=input.move||0,slow=p.cast?(w.hero==='nature'?.55:.68):1;
-      const statusSlow=w.duel?Math.min(p.slowUntil>w.time?.45:1,p.frostSnareUntil>w.time?.65:1):1;
-      const target=w.duel&&p.rootUntil>w.time?0:move*HEROES[w.hero].speed*slow*statusSlow+(w.windForce||0);
+      const statusSlow=w.duel||w.enemyMode?Math.min(p.slowUntil>w.time?.45:1,p.frostSnareUntil>w.time?.65:1,p.enemySnareUntil>w.time?.55:1):1;
+      const target=controlled||(w.duel&&p.rootUntil>w.time)?0:move*HEROES[w.hero].speed*slow*statusSlow+(w.windForce||0);
       p.vx=lerp(p.vx,target,1-Math.exp(-(move?15:21)*dt));
       if(move&&!p.cast)p.face=Math.sign(move);
     }
@@ -345,7 +366,7 @@ export function step(w,dt,input={}) {
   const spring=w.spring;
   if(spring.enabled!==false&&p.grounded&&Math.min(Math.abs(p.y-spring.y),Math.abs(p.y-(spring.surfaceY??spring.y)))<8&&Math.abs(p.x-spring.x)<35&&spring.cooldown<=0){spring.charge+=dt;if(spring.charge>.16){jump(w,true);spring.charge=0;spring.cooldown=1.2;effect(w,'spring',{x:spring.x,y:spring.y,duration:.8});emit(w,'spring');}}
   else spring.charge=Math.max(0,spring.charge-dt*2);
-  updateTargets(w,dt);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);updateTrees(w,dt);
+  updateTargets(w,dt);updateEnemies(w,dt,enemyHooks);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);updateTrees(w,dt);
   if(w.time-w.stats.lastHit>2)w.stats.combo=0;
 }
 export function actionState(w){
@@ -355,7 +376,7 @@ export function actionState(w){
   if(p.stomp)return '落烬 · 下砸';
   if(p.dash>0)return '冲刺';
   if(p.cast&&VARIANT_LABELS[p.cast.variant])return VARIANT_LABELS[p.cast.variant];
-  if(p.cast)return p.cast.variant==='command'?'角跃令':p.cast.variant==='stomp'?'落烬':HEROES[w.hero].skills[p.cast.key].name;
+  if(p.cast)return p.cast.variant==='command'?'角跃令':p.cast.variant==='detonate'?'焰心引爆':HEROES[w.hero].skills[p.cast.key].name;
   if(!p.grounded)return p.vy<0?'起跳':'下落';
   if(p.land>0)return '落地';
   return Math.abs(p.vx)>25?'奔跑':'待机';
@@ -367,3 +388,4 @@ export function triggerMechanism(w,id){return triggerScene(w,id,sceneHooks);}
 export function interactNearest(w){return nearestSceneInteraction(w,sceneHooks);}
 
 const extraHooks={castMuzzle,effect,projectile,damage,damageBridge,area,emit};
+const enemyHooks={physics,effect,projectile,damage,hitPlayer,hitSummon,emit};

@@ -8,6 +8,15 @@ export class Sound {
     const c=this.ctx;if(!c||!this.noise||!this.enabled)return;const t=c.currentTime+delay,s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=this.noise;f.type=type;f.frequency.setValueAtTime(freq,t);f.frequency.exponentialRampToValueAtTime(Math.max(70,freq*.22),t+duration);f.Q.value=.7;g.gain.setValueAtTime(.001,t);g.gain.exponentialRampToValueAtTime(vol,t+.012);g.gain.exponentialRampToValueAtTime(.001,t+duration);s.connect(f);f.connect(g);g.connect(this.bus);s.start(t);s.stop(t+duration);
   }
   event(e){
+    if(e.type==='enemyAttack'&&e.enemyStyle){
+      const style=e.enemyStyle;
+      if(['lava','rock','stone','bone'].includes(style)){this.tone(e.heavy?65:130,28,.45,e.heavy?.075:.045,'triangle');this.rustle(style==='lava'?700:1900,.4,.055,0,style==='lava'?'lowpass':'bandpass');if(style==='stone')this.tone(470,290,.6,.025,'sine',.04);}
+      else if(['ice','star','lightning'].includes(style)){this.tone(style==='ice'?1650:720,style==='lightning'?70:400,.35,.035,'sine');this.rustle(style==='lightning'?4200:3200,.25,.045);}
+      else if(style==='venom'){this.tone(190,85,.25,.035,'sine');this.rustle(1000,.32,.05,0,'lowpass');}
+      else if(style==='sonic'){this.tone(540,170,.45,.04,'sawtooth');this.rustle(1600,.25,.04);}
+      else{this.rustle(style==='web'?2800:1700,.25,.045);this.tone(180,60,.22,.03,'triangle');}
+      return;
+    }
     const school=e.school||e.hero;
     if(['frost','lightning','shadow','star'].includes(school)&&['attack','hit'].includes(e.type)){
       if(school==='frost'){this.tone(1600,800,.19,.025,'sine');this.rustle(4800,.13,.035);}

@@ -19,7 +19,7 @@ const enterLobby=()=>{location.href='lobby.html';};
 let selectedScene=SCENES[initialParams.get('scene')]?initialParams.get('scene'):'moon';
 let world=createWorld(HEROES[initialParams.get('hero')]?initialParams.get('hero'):SCENES[selectedScene].defaultHero,selectedScene),renderer,mode='title',paused=false,pointerDown=false,pointerUV=null,aim={x:1120,y:500},last=performance.now(),accumulator=0,uiClock=0;
 const descriptions={
-  fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'向前喷火反冲起跳。2.5 秒内再按 E 施放「落烬」，向下砸落并留下燃烧区。',r:'在鼠标下方第一个台面标记落点，约 1 秒后陨石命中；可穿过上层平台。'},
+  fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'朝指定方向快速投出火球；飞出视口前，再按 E 在火球当前位置引爆。',r:'在鼠标下方第一个台面标记落点，约 0.86 秒后陨石命中；可穿过上层平台。'},
   nature:{attack:'向瞄准方向弹出荆棘种子，碰墙停止，命中迸发枝叶。',q:'沿脚下台面催生根须，可穿过障碍束缚敌人，适合接木灵鹿角跃冲撞。',e:'播种召唤木灵鹿。3.5 秒内再按 E 指定角跃冲撞方向，命中触发共生恢复。',r:'在鼠标下方第一个可站立台面长出古树，形成两处枝台。树根附近周期恢复生命。'}
 };
 for(const [h,data] of Object.entries(EXTRA_HEROES))descriptions[h]=data.descriptions;
@@ -36,8 +36,8 @@ function buildHero(){
   $('#hero-name').innerHTML=h.name+' <em>'+h.given+'</em>';$('#hero-role').textContent=h.role||(world.hero==='fire'?'爆发施法 · 灼烧压制':'植物造物 · 召唤协同');
   $('#passive-name').textContent=h.passive;$('#passive-desc').textContent=h.passiveText;
   if(renderer)renderer.portrait($('#hero-hud-portrait'),world.hero);
-  $('#combo-title').textContent=h.comboTitle||(world.hero==='fire'?'跃起，落烬。':'萌芽，与森灵同行。');
-  $('#combo-help').textContent=h.comboHelp||(world.hero==='fire'?'E 焰跃起跳，2.5 秒内再按 E 下砸。':'E 召唤木灵鹿，3.5 秒内再按 E 指挥角跃冲撞。');
+  $('#combo-title').textContent=h.comboTitle||(world.hero==='fire'?'投出，焰爆。':'萌芽，与森灵同行。');
+  $('#combo-help').textContent=h.comboHelp||(world.hero==='fire'?'E 投出火球，离开视口前再按 E 原位引爆。':'E 召唤木灵鹿，3.5 秒内再按 E 指挥角跃冲撞。');
   $$('.hero-button').forEach(b=>{b.classList.toggle('active',b.dataset.hero===world.hero);b.setAttribute('aria-pressed',String(b.dataset.hero===world.hero));});
   $('#hotbar').innerHTML=slotKeys.map(key=>{
     const s=h.skills[key]||{name:'冲刺',icon:'dash',cd:1.1};
@@ -155,7 +155,7 @@ function consumeEvents(){
     if(e.type==='bridge'||e.type==='spring')goals.add('terrain');
     if(e.type==='bridge')notice('木桥已破坏！可以下落绕路或用「修复木桥」重新练习。');
     if(e.type==='summon')notice('木灵鹿已出现，3.5 秒内再按 E 指定角跃冲撞方向。');
-    if(e.type==='leap')notice('焰跃已释放，2.5 秒内再次按 E 接落烬。');
+    if(e.type==='leap')notice('留意技能的二段时机。');
     if(e.type==='hurt')notice('受到反击。试试用 Shift 冲刺穿过来袭投射物。');
     if(e.type==='lift')notice('升降月台已启动，站在台面上可以一起升降。');
     if(e.type==='mirror')notice('月镜已转向，投射物会按镜面方向折射。');
@@ -199,3 +199,6 @@ async function init(){
   }catch(error){$('#loading').textContent=error.message+' · 请刷新重试';loadingScreen.fail(error.message,()=>location.reload(),token);console.error(error);}
   requestAnimationFrame(loop);
 }init();
+
+
+

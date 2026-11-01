@@ -8,6 +8,7 @@ export function fitDuelCamera(w,width,height){
 }
 export function updateCamera(w,dt){
   w.camera||={x:0,overview:false};
+  if(w.campaign){const view=cameraView(w);w.camera.y=clamp(w.floor-view.height*.8,0,Math.max(0,w.height-view.height));if(w.campaign.lock)w.camera.x=w.campaign.lock.x;else{const target=clamp(w.player.x+95-view.width/2,0,Math.max(0,w.width-view.width));w.camera.x+=(target-w.camera.x)*(1-Math.exp(-6*dt));}return;}
   if(w.camera.overview){w.camera.x=0;w.camera.y=0;return;}
   const view=cameraView(w),look=w.player.face*(w.duel?view.width*.08:95),target=clamp(w.player.x+look-view.width/2,0,Math.max(0,(w.width||1440)-view.width));
   const targetY=clamp(w.player.y-view.height*.76,0,Math.max(0,(w.height||800)-view.height));

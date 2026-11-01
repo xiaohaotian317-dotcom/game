@@ -1,4 +1,5 @@
 import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
+import {EnemyPainter} from './enemy-painter.mjs';
 import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel12';
 import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261030-duel12';
 import {ScenePainter} from './scene-painter.mjs?v=20261030-duel12';
@@ -39,8 +40,8 @@ export async function ensureHeroAssets(hero,assets){
   return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):hero==='shadow'?artImage('assets/heroes/shadow-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
-  constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);}
-  resize(){const rect=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(this.canvas.width!==Math.round(rect.width*d)||this.canvas.height!==Math.round(rect.height*d)){this.canvas.width=Math.round(rect.width*d);this.canvas.height=Math.round(rect.height*d);}}
+  constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);this.enemies=new EnemyPainter(this.ctx,assets);}
+  resize(){const rect=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,this.assets.campaignPainter?1.5:2);if(this.canvas.width!==Math.round(rect.width*d)||this.canvas.height!==Math.round(rect.height*d)){this.canvas.width=Math.round(rect.width*d);this.canvas.height=Math.round(rect.height*d);}}
   cape(c,hero,o,time,speed,frame){
     const b=this.assets.bounds[hero].cape,r=RIGS[hero].cape,s=r.height/b.h,anchor=r.attach==='waist'?{x:-3,y:0}:frame.local(RIGS[hero].nearShoulder);
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.translate(anchor.x+3,anchor.y+6);c.rotate(o.cape*.45);
@@ -230,31 +231,33 @@ export class Renderer {
     c.setTransform(sx,0,0,sy,0,0);
     if(w.duel){c.save();c.beginPath();c.rect(0,0,view.width,view.height);c.clip();}
     c.save();c.translate(-view.x,-view.y);
-    const authored=w.sceneId&&w.sceneId!=='training';
+    const campaign=w.campaign&&this.assets.campaignPainter,authored=!campaign&&w.sceneId&&w.sceneId!=='training';
     c.fillStyle='#0b1023';c.fillRect(view.x,0,view.width,height);
-    if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
+    if(campaign)campaign.background(c,w,view);else if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
       c.drawImage(this.assets.backdrop,0,0,WIDTH,HEIGHT);
       const shade=c.createLinearGradient(0,0,0,HEIGHT);shade.addColorStop(0,'rgba(5,10,27,.09)');shade.addColorStop(.6,'rgba(5,12,30,.3)');shade.addColorStop(1,'rgba(3,8,22,.65)');c.fillStyle=shade;c.fillRect(0,0,WIDTH,HEIGHT);
     }
     c.save();if(!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
-    for(const b of w.platforms)if(!authored&&b.type!=='ice')this.platform(b,w.time);
-    if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
+    for(const b of w.platforms)if(!authored&&!campaign&&b.type!=='ice')this.platform(b,w.time);
+    if(campaign)campaign.ground(c,w,view);else if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
+    if(campaign)campaign.effects(c,w);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
-    if(!w.duel)for(const t of w.targets)this.dummy(w,t);
+    if(w.enemyMode)this.enemies.zones(w);
+    if(!w.duel)for(const t of w.targets){if(t.enemyKind||t.egg)this.enemies.unit(w,t,alpha);else this.dummy(w,t);}
     for(const e of w.effects)if(['roots','fireZone','treeBirth'].includes(e.kind))this.particles(w,e);
     this.fox(w);
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
-    this.hero(w,alpha,dt);this.roster.passive(w);
+    this.hero(w,alpha,dt);this.roster.passive(w);if(w.enemyMode)this.enemies.player(w);
     for(const s of w.projectiles){
-      if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
+      if(this.enemies.projectile(w,s)||this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
       const color=s.kind==='fireball'?'#ffb35d':s.kind==='seed'?'#c4df85':'#c4a8f2';
       glow(c,s.x,s.y,25,color,.5);
       const a=Math.atan2(s.vy,s.vx);c.save();c.translate(s.x,s.y);c.rotate(a);
       if(s.kind==='seed')leaf(c,-8,0,15,0,color);
       else{const g=c.createLinearGradient(-44,0,8,0);g.addColorStop(0,rgba(color,0));g.addColorStop(.8,color);g.addColorStop(1,'#fff2c7');c.fillStyle=g;c.beginPath();c.moveTo(-44,0);c.quadraticCurveTo(-10,-11,7,0);c.quadraticCurveTo(-10,11,-44,0);c.fill();}c.restore();
     }
-    for(const e of w.effects)if(!['roots','fireZone','treeBirth'].includes(e.kind)&&!(authored&&e.kind==='breakBridge'))this.particles(w,e);
+    for(const e of w.effects)if(!['roots','fireZone','treeBirth'].includes(e.kind)&&!(authored&&e.kind==='breakBridge')){if(!this.enemies.effect(w,e))this.particles(w,e);}
     if(opponent){this.rivalLayer(opponent,alpha,dt);this.duelMarker(w,'▼ 你','#ffe2a1');this.duelMarker(opponent,'对手 ▼','#ff9aa7');}
     if(authored)this.scenePainter.front(w);
     if(w.debugGeometry)this.scenePainter.geometry(w);
@@ -263,7 +266,7 @@ export class Renderer {
     const aim=w.aim;c.strokeStyle='rgba(239,224,180,.6)';c.lineWidth=1;ring(c,aim.x,aim.y,8,8,'rgba(239,224,180,.45)',1);line(c,[[aim.x-13,aim.y],[aim.x-9,aim.y]],c.strokeStyle,1);line(c,[[aim.x+9,aim.y],[aim.x+13,aim.y]],c.strokeStyle,1);
     c.restore();
     if(!this.reduced&&w.flash>0){c.fillStyle='rgba(255,197,118,'+Math.min(.17,w.flash*1.2)+')';c.fillRect(0,0,view.width,view.height);}
-    if(!w.duel&&(w.width||WIDTH)>WIDTH){
+    if(!w.duel&&!campaign&&(w.width||WIDTH)>WIDTH){
       const x=view.width-210,y=height-47,mw=182,mh=28,scale=mw/w.width;
       c.fillStyle='#06101cce';c.fillRect(x-8,y-16,mw+16,mh+22);c.strokeStyle='#bda16c';c.lineWidth=1;c.strokeRect(x,y,mw,mh);
       c.fillStyle='#e4d096';c.font='10px sans-serif';c.textAlign='left';c.fillText('2304 · 双侧回廊',x,y-5);

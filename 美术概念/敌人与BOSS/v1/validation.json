@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-31",
+  "status": "passed",
+  "pngCount": 20,
+  "uniqueImages": 20,
+  "melee": 6,
+  "ranged": 3,
+  "hybrid": 1,
+  "bosses": 10,
+  "checks": [
+    "all PNGs decode",
+    "all images 1536x1024",
+    "all SHA256 unique",
+    "gallery asset links exist"
+  ],
+  "files": [
+    {
+      "id": "M01",
+      "file": "小怪/M01-毒蝎人.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2317057,
+      "sha256": "da88bff6f0e3a2f8ab4ab6dcbf926858ea6e6a7e9770e43a6e76ff19bcdefadc"
+    },
+    {
+      "id": "M02",
+      "file": "小怪/M02-蜘蛛人.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2301600,
+      "sha256": "82734a42112cf154ce559a1c10935a619b202d9909fe52f0eb6a4f0645c25963"
+    },
+    {
+      "id": "M03",
+      "file": "小怪/M03-夜翼蝙蝠.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2214545,
+      "sha256": "16ec55f311da135e801818749dbf39fd192619c5753a28865848e701ec40a939"
+    },
+    {
+      "id": "M04",
+      "file": "小怪/M04-铁角蛮牛.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2595550,
+      "sha256": "aaf05737890344dedb6b5fb53c250ee10e3953c1f766c19aad815d466af68011"
+    },
+    {
+      "id": "M05",
+      "file": "小怪/M05-螳刃妖.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2363397,
+      "sha256": "2cb0fa4f1da83db9eddf02b1fc0c70d3c9e21fbfcf3a370b3d55415c3fe077db"
+    },
+    {
+      "id": "M06",
+      "file": "小怪/M06-墓甲骷卫.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2378210,
+      "sha256": "f97a265f51980fd32e35230dace59145f1cbb87c61eac6882b1c144e6a283c3e"
+    },
+    {
+      "id": "M07",
+      "file": "小怪/M07-毒液蛇女.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2324101,
+      "sha256": "adee8ddc5767632d9baddf43183eb43cc35769bb1d0da48eec7ab235c4e85839"
+    },
+    {
+      "id": "M08",
+      "file": "小怪/M08-蛛囊投手.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2361467,
+      "sha256": "90531cd668eb24d0569de2cd5a8dcc36194b1dbe9b92f21a0aa2b87e0848d0dd"
+    },
+    {
+      "id": "M09",
+      "file": "小怪/M09-枯枝鸦巫.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2328905,
+      "sha256": "046de0dbbe7da4c63c241003d9460de38327919de1327cad71dc49f99cdef129"
+    },
+    {
+      "id": "M10",
+      "file": "小怪/M10-锁链蜥卫.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2320624,
+      "sha256": "580e9a86a6ba2e6027f6f4ae417ceffe46dfdfb63324f431a90332d1600c3e17"
+    },
+    {
+      "id": "B01",
+      "file": "BOSS/B01-赤尾蝎王.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2454286,
+      "sha256": "0c3131d5c30d2da5cee5aa29a36d6aa86655a8d9107accc85a9d14e689bd6ae1"
+    },
+    {
+      "id": "B02",
+      "file": "BOSS/B02-织梦蛛后.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2709660,
+      "sha256": "bc9ac5097f4482b712e8e5fec53234a74b28296a03a9c1f4bfaf7e86a93fe16c"
+    },
+    {
+      "id": "B03",
+      "file": "BOSS/B03-血月蝠爵.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2706753,
+      "sha256": "ccff4d6b1ca0a048139828c016f9d79cea5cc24edc3c718d17732212a791ffae"
+    },
+    {
+      "id": "B04",
+      "file": "BOSS/B04-千鳞毒后.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2713118,
+      "sha256": "a7e31069ec4a02b1f2956c0fc0acba369931a1797ec2a62df574a2dcaa2a5cbc"
+    },
+    {
+      "id": "B05",
+      "file": "BOSS/B05-熔炉牛魔.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2608315,
+      "sha256": "d4445bb617aa9afe67bb07556a25d4e6746c2027a2163e74ea495639a714025f"
+    },
+    {
+      "id": "B06",
+      "file": "BOSS/B06-断钟石像鬼.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2796044,
+      "sha256": "69b6a2e552658738d8f32dcd7591527d68a91079e57a62676de6cb541350aeb5"
+    },
+    {
+      "id": "B07",
+      "file": "BOSS/B07-荆冠古树.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2960955,
+      "sha256": "25cdb4e310bbce3b1fbd1209d29602a12e5e15eabb043ce8b1ce14da431b506f"
+    },
+    {
+      "id": "B08",
+      "file": "BOSS/B08-霜牙狼王.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2993973,
+      "sha256": "e245711a9b88dea895de8cd362aab5bec2995baa3e2a0a284e44c47ea92e3ce3"
+    },
+    {
+      "id": "B09",
+      "file": "BOSS/B09-雷骨翼龙.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2770719,
+      "sha256": "acd21a66185164e127653b8effcc54981261842dc47be4eb46634ef773bf74e9"
+    },
+    {
+      "id": "B10",
+      "file": "BOSS/B10-无面星使.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2721193,
+      "sha256": "35f013896cae5d8fab71df484ac1f918afcb830f6101de42c7e53b1f4546b2da"
+    }
+  ]
+}

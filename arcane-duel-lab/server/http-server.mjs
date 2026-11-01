@@ -11,11 +11,12 @@ export function gameOrigin(value){
   if(!['http:','https:'].includes(u.protocol)||u.username||u.password||u.pathname!=='/'||u.search||u.hash)throw new Error('PUBLIC_ORIGIN 必须是完整站点来源，例如 https://game.example.com');
   return u.origin;
 }
-export function createGameServer({root,db,publicOrigin=null}){
+export function createGameServer({root,db,publicOrigin=null,handleRequest=null}){
   root=path.resolve(root);publicOrigin=gameOrigin(publicOrigin);
   return http.createServer(async(req,res)=>{
     try{
       const url=new URL(req.url,publicOrigin||'http://'+req.headers.host);
+      if(handleRequest&&await handleRequest(req,res,url))return;
       if(url.pathname==='/healthz'&&req.method==='GET'){
         res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}).end(JSON.stringify({status:'ok'}));return;
       }
