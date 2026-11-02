@@ -1,0 +1,32 @@
+import {forgeRecipe,synthesisRecipe,forgeItem,synthesizeStones,levelEquipment} from './campaign-profile.mjs';
+import {ITEMS,itemInfo,QUALITY} from './campaign-growth-data.mjs';
+// Presentation state holds references only. Inventory changes happen on explicit confirmation.
+export function forgeState(ui){return ui.forgeState??={equipment:null,stone:null,slots:[null,null,null],picker:null,filter:'all'};}
+export function renderForge(ui,p,{token,sheet}){
+ const s=forgeState(ui),equipment=p.bag.find(i=>i.id===s.equipment&&i.type==='equipment'),stone=p.bag.find(i=>i.id===s.stone),recipe=forgeRecipe(p,s.equipment),synth=synthesisRecipe(p,s.slots);
+ const slot=(item,action,label,sub='点击选择',className='')=>`<div class="furnace-slot ${className}">${item?token({...item,count:1},{action:`data-furnace-open="${action}"`,extra:`<span class="furnace-slot-label">${label}</span>`}):`<button class="furnace-empty" data-furnace-open="${action}" aria-label="${label}，点击选择"><span>＋</span><strong>${label}</strong><small>${sub}</small></button>`}</div>`;
+ const ready=recipe&&stone?.type===recipe.type&&stone.count>=recipe.need;
+ const preview=recipe?{...equipment,rank:recipe.rank}:null;
+ const header=(n,title,copy)=>`<header class="furnace-heading"><span>${n}</span><div><h3>${title}</h3><small>${copy}</small></div></header>`;
+ const main=`<div class="furnaces"><section class="furnace-card smithing">${header('Ⅰ','装备锻造','先选装备，再放灵石')}<div class="smithing-stage"><i class="furnace-art" style="${sheet('ui',5)}"></i><div class="smithing-inputs">${slot(equipment,'equipment','待锻造装备','武器 / 盔甲')}${slot(stone,'stone','升品灵石',recipe?ITEMS[recipe.type].name:'点击从背包选择')}</div><span class="furnace-arrow">↓</span><div class="forge-result">${preview?token(preview):'<span class="result-ghost">锻造成品</span>'}<div><strong>${equipment?itemInfo(equipment).name:'等待放入装备'}</strong><p>${recipe?`${equipment.rank||0}品 → <b>${recipe.rank}品</b> · ${QUALITY[equipment.quality||0].name}`:equipment?'已达三品上限':'装备会保留在背包中'}</p></div></div></div><p class="furnace-requirement">${recipe?`${stone&&stone.type!==recipe.type?'材料不符 · ':''}所需 ${ITEMS[recipe.type].name} ×${recipe.need} · 已选持有 ${stone?.type===recipe.type?stone.count:0}枚`:'升品：10小灵石 / 10中等灵石 / 30高阶灵石'}</p><button class="furnace-confirm" data-furnace-forge ${ready?'':'disabled'}>锻造升品</button>${equipment?`<button class="subtle-button forge-level" data-furnace-level ${equipment.level>=10?'disabled':''}>金币强化 ${equipment.level||0}/10 · ${60+(equipment.level||0)*45+(equipment.quality||0)*30} 金币</button>`:''}<p class="furnace-footnote">灵石提升一至三品，颜色稀有度保留；点击槽位可更换。</p></section><section class="furnace-card synthesis">${header('Ⅱ','灵石合成炉','三个材料槽，凝炼一枚新灵石')}<div class="synthesis-stage"><div class="alchemy-orbit" aria-hidden="true"></div>${s.slots.map((id,i)=>slot(p.bag.find(v=>v.id===id),`material-${i}`,`材料 ${i+1}`,'放入一枚灵石',`material-${i}`)).join('')}<span class="synthesis-arrow">↓</span><div class="synthesis-output">${synth?token({type:synth.type,count:1}):'<span class="result-ghost">生成物</span>'}<small>${synth?ITEMS[synth.type].name+' ×1':'放入三个同阶材料'}</small></div></div><p class="furnace-requirement">3枚小灵石 → 中等灵石 · 3枚中等 → 高阶</p><button class="furnace-confirm" data-furnace-synthesize ${synth?'':'disabled'}>合成灵石</button><button class="subtle-button" data-furnace-clear>清空材料</button><p class="furnace-footnote">成功率100% · 确认前不消耗，产物直接收入背包。</p></section></div>`;
+ if(!s.picker)return main;
+ const equipmentMode=s.picker==='equipment',stoneMode=s.picker==='stone',slotIndex=Number(s.picker.split('-')[1]);
+ let candidates=p.bag.filter(i=>equipmentMode?i.type==='equipment':stoneMode?['stoneSmall','stoneMedium','stoneHigh'].includes(i.type):['stoneSmall','stoneMedium'].includes(i.type));
+ if(equipmentMode&&s.filter!=='all')candidates=candidates.filter(i=>i.slot===s.filter);
+ const available=i=>i.count-s.slots.filter((id,index)=>index!==slotIndex&&id===i.id).length;
+ return `<div class="furnace-picker"><header><div><small>从背包选择 · 不消耗物品</small><h3>${equipmentMode?'选择武器或盔甲':stoneMode?'选择升品灵石':`合成材料 ${slotIndex+1}`}</h3></div><button data-furnace-back>‹ 返回炉台</button></header>${equipmentMode?`<nav>${[['all','全部装备'],['weapon','武器'],['armor','盔甲']].map(([id,label])=>`<button data-furnace-filter="${id}" aria-pressed="${s.filter===id}">${label}</button>`).join('')}</nav>`:'<p class="system-note">'+(stoneMode?'选择与装备下一品阶对应的灵石，材料不足不会执行锻造。':'每个材料槽放一枚，同一堆灵石可以放入多个槽；已放入数量会保留。')+'</p>'}<div class="furnace-inventory">${candidates.map(i=>{const info=itemInfo(i),left=equipmentMode||stoneMode?i.count:available(i);return `<article>${token(i,{action:`data-furnace-pick="${i.id}" ${left<=0?'disabled':''}`})}<div><strong>${info.name}</strong><small>${equipmentMode?`${i.role==='melee'?'近战':'法杖'}职业 · ${i.rank||0}品 · 强化${i.level||0}`:`可用 ${Math.max(0,left)} / 持有 ${i.count}枚`}</small>${equipmentMode?`<span>${Object.values(p.heroes).some(h=>Object.values(h.equipment).includes(i.id))?'已装备 · 可直接锻造':'背包装备'}</span>`:''}</div></article>`;}).join('')||`<div class="empty-forge"><h3>暂时没有${equipmentMode?'装备':'可用灵石'}</h3><p>${equipmentMode?'第2关起击败首领，可拾取武器与盔甲。':'击败首领后靠近战利品，按 C 拾取灵石。'}</p></div>`}</div><button class="subtle-button" data-furnace-remove>移除此槽物品</button></div>`;
+}
+export function handleForge(ui,b){
+ const s=forgeState(ui),p=ui.getProfile(),a=b.dataset;
+ if(a.furnaceOpen){s.picker=a.furnaceOpen;s.filter='all';ui.render();return true;}
+ if(b.hasAttribute('data-furnace-back')){s.picker=null;ui.render();return true;}
+ if(a.furnaceFilter){s.filter=a.furnaceFilter;ui.render();return true;}
+ const assign=id=>{if(s.picker==='equipment'){s.equipment=id;s.stone=null;}else if(s.picker==='stone')s.stone=id;else if(s.picker?.startsWith('material-'))s.slots[Number(s.picker.split('-')[1])]=id;s.picker=null;ui.render();};
+ if(a.furnacePick){assign(a.furnacePick);return true;}
+ if(b.hasAttribute('data-furnace-remove')){assign(null);return true;}
+ if(b.hasAttribute('data-furnace-clear')){s.slots=[null,null,null];ui.render();return true;}
+ if(b.hasAttribute('data-furnace-forge')){ui.mutate(()=>{if(!s.stone)throw Error('请先选择灵石');const result=forgeItem(p,s.equipment,s.stone);s.stone=null;return result;});return true;}
+ if(b.hasAttribute('data-furnace-synthesize')){ui.mutate(()=>{const result=synthesizeStones(p,s.slots);s.slots=[null,null,null];return result;});return true;}
+ if(b.hasAttribute('data-furnace-level')){ui.mutate(()=>{levelEquipment(p,s.equipment);return '金币强化完成';});return true;}
+ return false;
+}

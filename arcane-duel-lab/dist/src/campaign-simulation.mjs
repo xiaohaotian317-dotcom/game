@@ -1,3 +1,5 @@
+import {PET_STAGE,PET_DUNGEON,petDungeonUnlocked} from './campaign-pet-data.mjs';
+import {spawnWildPet,stepPets} from './campaign-pets.mjs';
 import {createWorld,step,hitPlayer,damage} from './simulation.mjs?v=20261031-enemies1';
 import {soloTick,syncSoloStats,pickupSolo} from './campaign-growth-runtime.mjs';
 import {spawnEnemy} from './enemy-simulation.mjs';
@@ -7,14 +9,16 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const CAMPAIGN_FLOOR=760,CAMPAIGN_WIDTH=11200,CAMPAIGN_HEIGHT=960,CAMPAIGN_VIEW=1664;
 export const SPAWN_RATE=.8;
 export function campaignPlatforms(seed,width=CAMPAIGN_WIDTH,floor=CAMPAIGN_FLOOR){let state=seed>>>0;const random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;},out=[];let x=620+random()*160;while(x<width-600){const cluster=out.length%5<3,w=(cluster?190:300)+Math.round(random()*100),height=155+Math.round(random()*70);out.push({id:'campaign-upper-'+out.length,x:Math.round(x),y:floor-height,w,shape:Math.floor(random()*3),type:'campaign-upper',active:true,hp:Infinity,maxHp:Infinity});x+=w+(cluster?125+random()*130:260+random()*60);}return out;}
-export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0,profile=null,random=Math.random}={}){
+export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0,profile=null,random=Math.random,petDungeon=false}={}){
  const stage=STAGE_BY_ID[id];if(!stage)throw new Error('未知关卡');
+ if(petDungeon&&(!PET_STAGE[id]||!profile||!petDungeonUnlocked(profile,id)))throw Error('需通关本关与第4关，才可进入宠物副本');
  if(profile&&!profile.owned.includes(hero))throw Error('该英雄尚未拥有');
+ const activeStage=petDungeon?{...stage,minionHp:Math.round(stage.minionHp*PET_DUNGEON.health),bossHp:Math.round(stage.bossHp*PET_DUNGEON.bossHealth),damageFactor:stage.damageFactor*PET_DUNGEON.damage,bossDamageFactor:stage.bossDamageFactor*PET_DUNGEON.damage,hazardDamage:Math.round(stage.hazardDamage*PET_DUNGEON.damage)}:stage;
  const w=createWorld(hero);w.width=CAMPAIGN_WIDTH;w.height=CAMPAIGN_HEIGHT;w.floor=CAMPAIGN_FLOOR;w.sceneId='campaign';w.targets=[];w.obstacles=[];w.mechanisms=null;w.mirror.enabled=false;w.spring.enabled=false;w.enemyMode=true;
  w.platforms=[{id:'ground',x:0,y:w.floor,w:w.width,type:'stone',active:true,hp:Infinity,maxHp:Infinity}];
  w.platforms.push(...campaignPlatforms(seed));
  Object.assign(w.player,{x:170,y:w.floor,prevX:170,prevY:w.floor,grounded:true,platformId:'ground'});w.spawn={x:170,y:w.floor};w.camera={x:0,y:0,viewWidth:CAMPAIGN_VIEW,viewHeight:960};w.aim={x:600,y:w.floor-60};
- w.campaign={stage,seed,state:'travel',encounter:0,triggers:[1400,3900,6500,9500],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(profile)syncSoloStats(w,true);return w;
+ w.campaign={stage:activeStage,petDungeon,seed,state:'travel',encounter:0,triggers:[1400,3900,6500,9500],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(profile)syncSoloStats(w,true);return w;
 }
 function say(w,message){const c=w.campaign;c.notice=message;c.noticeUntil=w.time+3.5;c.events.push({time:w.time,message});}
 export function fitCampaignCamera(w,width,height){const aspect=Math.max(.3,width/Math.max(1,height));w.camera.viewWidth=Math.min(CAMPAIGN_VIEW,CAMPAIGN_HEIGHT*aspect);w.camera.viewHeight=w.camera.viewWidth/aspect;w.camera.y=clamp(w.floor-w.camera.viewHeight*.8,0,Math.max(0,w.height-w.camera.viewHeight));if(w.campaign.lock){const lock=w.campaign.lock;lock.x=clamp(lock.x+(lock.width-w.camera.viewWidth)/2,0,w.width-w.camera.viewWidth);lock.width=w.camera.viewWidth;}}
@@ -42,6 +46,7 @@ export function stepCampaign(w,dt,input={}){
  const c=w.campaign;if(c.state==='complete'||c.state==='defeat')return;
  step(w,dt,input);soloTick(w,dt,{damage});if(input.pickup)pickupSolo(w);constrain(w);
  if(w.player.hp<=0){c.state='defeat';c.defeated=true;c.queue=[];say(w,'挑战失败 · 调整节奏，再试一次');return;}
+ if(c.state==='pet'){stepPets(w,dt,{damage,hitPlayer},input);if(c.petOutcome){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};w.projectiles=w.projectiles.filter(p=>p.owner!=='enemy');}return;}
  if(c.state==='travel'&&w.player.x>=c.triggers[c.encounter])beginEncounter(w);
  if(c.state==='wave'||c.state==='boss'){
   spawnWave(w);
@@ -52,7 +57,8 @@ export function stepCampaign(w,dt,input={}){
   const remaining=w.targets.filter(e=>(e.enemyKind||e.egg)&&e.hp>0);
   if(c.queue.every(s=>s.done)&&!remaining.length){
    c.hazards=[];w.enemyZones=[];w.projectiles=w.projectiles.filter(p=>p.owner!=='enemy');
-   if(c.encounter===4){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'首领已击败 · 走入传送门完成关卡');}
+   if(c.encounter===4&&c.petDungeon){spawnWildPet(w);}
+   else if(c.encounter===4){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'首领已击败 · 走入传送门完成关卡');}
    else{c.state='travel';c.lock=null;say(w,'第 '+c.encounter+' 波清理完成 · 继续向右前进');}
   }
  }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;say(w,'秘境通关 · 新的道路已解锁');}

@@ -244,7 +244,7 @@ export class Renderer {
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
     if(w.enemyMode)this.enemies.zones(w);
-    if(!w.duel)for(const t of w.targets){if(t.enemyKind||t.egg)this.enemies.unit(w,t,alpha);else this.dummy(w,t);}
+    if(!w.duel)for(const t of w.targets){if(t.enemyKind||t.egg)this.enemies.unit(w,t,alpha);else if(!t.petKind)this.dummy(w,t);}
     for(const e of w.effects)if(['roots','fireZone','treeBirth'].includes(e.kind))this.particles(w,e);
     this.fox(w);
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}

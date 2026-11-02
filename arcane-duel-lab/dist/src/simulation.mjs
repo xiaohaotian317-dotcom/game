@@ -247,7 +247,7 @@ function updateProjectiles(w,dt){
 }
 function updateTargets(w,dt) {
   for(const t of w.targets){
-    if(t.enemyKind||t.egg)continue;
+    if(t.enemyKind||t.egg||t.petKind)continue;
     if(w.duel){if(t.duelActor&&t.hp>0&&t.burnUntil>w.time&&w.time>=t.nextBurn){t.nextBurn+=.75;damage(w,t,4,{label:'4 灼烧',impact:false});}continue;}
     t.hit=Math.max(0,t.hit-dt);
     if(t.deadUntil){if(w.time>=t.deadUntil){Object.assign(t,dummy(t.id,t.spawnX,t.spawnY));effect(w,'respawn',{x:t.x,y:t.y-35,duration:.65});}else continue;}

@@ -1,0 +1,65 @@
+{
+  "build": "campaign4",
+  "isolatedQA": true,
+  "processId": 48944,
+  "processPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign4\\ArcaneDuelCampaign.exe",
+  "testOrigin": "http://127.0.0.1:14707",
+  "nativeWindowVisualQA": false,
+  "resources": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "bytes": 15
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 11320
+    },
+    {
+      "path": "/campaign.html",
+      "status": 200,
+      "bytes": 4956
+    },
+    {
+      "path": "/campaign-forge.css",
+      "status": 200,
+      "bytes": 6625
+    },
+    {
+      "path": "/campaign-pets.css",
+      "status": 200,
+      "bytes": 5575
+    },
+    {
+      "path": "/src/campaign-forge-ui.mjs",
+      "status": 200,
+      "bytes": 7277
+    },
+    {
+      "path": "/src/campaign-pets.mjs",
+      "status": 200,
+      "bytes": 4437
+    },
+    {
+      "path": "/src/campaign-pet-ui.mjs",
+      "status": 200,
+      "bytes": 3654
+    },
+    {
+      "path": "/assets/pets/pets-meta-v1.json",
+      "status": 200,
+      "bytes": 10970
+    },
+    {
+      "path": "/assets/pets/pets-v2.png",
+      "status": 200,
+      "bytes": 2466186
+    },
+    {
+      "path": "/assets/pets/mirror-v1.png",
+      "status": 200,
+      "bytes": 2490218
+    }
+  ]
+}

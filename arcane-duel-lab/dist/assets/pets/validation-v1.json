@@ -1,0 +1,576 @@
+{
+  "method": "Read-only image decoding and alpha/rectangle analysis. Original PNG pixels unchanged.",
+  "files": [
+    {
+      "path": "美术概念/灵宠/v1/P01-月霜灵狐-三形态-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "d5642e34be5a4c285453992975969ebcb88491ddf6d21d0c917723178a856768",
+      "bytes": 2867295
+    },
+    {
+      "path": "美术概念/灵宠/v1/P02-烬羽狮鹫-三形态-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "5c008b68e557fed7af682834b2480e2cc36975fbe9b103409b310042411d885c",
+      "bytes": 2715835
+    },
+    {
+      "path": "美术概念/灵宠/v1/P03-苔角灵鹿-三形态-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "9778ebceefe805d51a88c7e5b95ce752468d5710bc82511cdb8d5269799869e7",
+      "bytes": 3038588
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/mirror-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "1552ac2ed53f5f3a82707942bda772f55945bc6428a8c581d0532b8a94f84c9c",
+      "bytes": 2490218,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 825289,
+      "alphaOver100": 500251,
+      "alphaOver200": 449031
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pets-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "11715a9149c38421aca34a674fde18f6c5516ad774761788ed5de8e3a04c851d",
+      "bytes": 2580353,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 714289,
+      "alphaOver100": 466650,
+      "alphaOver200": 435300
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pets-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "5ee159a1aa2d8bd1a318e7a029fa9b034f5eed8b47d75cc48becf4a1e4bb88e7",
+      "bytes": 2466186,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 874960,
+      "alphaOver100": 442859,
+      "alphaOver200": 415032
+    }
+  ],
+  "selectedFrames": [
+    {
+      "pet": "frostfox",
+      "state": "idle-a",
+      "rect": [
+        24,
+        102,
+        224,
+        223
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        220,
+        219
+      ],
+      "anchor": [
+        128,
+        219
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "frostfox",
+      "state": "idle-b",
+      "rect": [
+        280,
+        94,
+        205,
+        231
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        201,
+        227
+      ],
+      "anchor": [
+        129,
+        227
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "frostfox",
+      "state": "walk-a",
+      "rect": [
+        517,
+        115,
+        245,
+        209
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        241,
+        205
+      ],
+      "anchor": [
+        141,
+        205
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "frostfox",
+      "state": "walk-b",
+      "rect": [
+        787,
+        95,
+        222,
+        230
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        218,
+        226
+      ],
+      "anchor": [
+        123,
+        226
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "frostfox",
+      "state": "attack",
+      "rect": [
+        1032,
+        141,
+        273,
+        183
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        269,
+        179
+      ],
+      "anchor": [
+        138,
+        179
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "frostfox",
+      "state": "hurt",
+      "rect": [
+        1320,
+        135,
+        203,
+        188
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        199,
+        184
+      ],
+      "anchor": [
+        116,
+        184
+      ],
+      "naturalHeight": 223,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "idle-a",
+      "rect": [
+        16,
+        413,
+        232,
+        225
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        228,
+        221
+      ],
+      "anchor": [
+        126,
+        221
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "idle-b",
+      "rect": [
+        263,
+        399,
+        223,
+        240
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        219,
+        236
+      ],
+      "anchor": [
+        134,
+        236
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "walk-a",
+      "rect": [
+        498,
+        424,
+        272,
+        213
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        268,
+        209
+      ],
+      "anchor": [
+        148,
+        209
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "walk-b",
+      "rect": [
+        780,
+        413,
+        246,
+        224
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        242,
+        220
+      ],
+      "anchor": [
+        124,
+        220
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "attack",
+      "rect": [
+        1026,
+        445,
+        287,
+        189
+      ],
+      "coreBoundsInRect": [
+        4,
+        3,
+        283,
+        185
+      ],
+      "anchor": [
+        140,
+        185
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "emberwing",
+      "state": "hurt",
+      "rect": [
+        1318,
+        445,
+        207,
+        192
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        203,
+        188
+      ],
+      "anchor": [
+        110,
+        188
+      ],
+      "naturalHeight": 232,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "idle-a",
+      "rect": [
+        33,
+        702,
+        209,
+        260
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        205,
+        256
+      ],
+      "anchor": [
+        107,
+        256
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "idle-b",
+      "rect": [
+        280,
+        691,
+        208,
+        273
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        204,
+        269
+      ],
+      "anchor": [
+        118,
+        269
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "walk-a",
+      "rect": [
+        534,
+        712,
+        237,
+        253
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        233,
+        249
+      ],
+      "anchor": [
+        121,
+        249
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "walk-b",
+      "rect": [
+        792,
+        694,
+        235,
+        271
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        231,
+        267
+      ],
+      "anchor": [
+        114,
+        267
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "attack",
+      "rect": [
+        1036,
+        753,
+        285,
+        210
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        281,
+        206
+      ],
+      "anchor": [
+        128,
+        206
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "pet": "mossdeer",
+      "state": "hurt",
+      "rect": [
+        1347,
+        697,
+        172,
+        263
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        168,
+        259
+      ],
+      "anchor": [
+        81,
+        259
+      ],
+      "naturalHeight": 266,
+      "corePadding": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ],
+  "conceptReview": "All three concept sheets visually inspected; same baseline human comparison, terminal creature silhouette below human. Subjective beauty awaiting user acceptance.",
+  "passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "version": "campaign4",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign4",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign4\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign4.zip",
+  "files": 320,
+  "runtimeFilesMatched": 238,
+  "bytes": 453189684,
+  "sha256": "a1081cea529df2c00d1bd5b57e6762d9696fe5a40693d881adbb092cd4780a54",
+  "originalSitesUnchanged": true,
+  "scope": "Explicit forge/synthesis slots, 3 pet dungeons, mirror capture and pet inventory, compatible solo growth saves; evolution and pet combat deployment not implemented",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

@@ -1,0 +1,48 @@
+{
+  "build": "campaign4",
+  "date": "2026-11-02",
+  "browser": "Codex in-app Chromium",
+  "desktopViewport": [
+    1280,
+    720
+  ],
+  "forge": {
+    "allWeaponArmorPicker": true,
+    "wrongStoneDisabled": true,
+    "forgeSmallStoneBefore": 23,
+    "forgeSmallStoneAfter": 13,
+    "rankBefore": 0,
+    "rankAfter": 1,
+    "synthesisSmallStoneAfter": 10,
+    "synthesisMediumBefore": 10,
+    "synthesisMediumAfter": 11,
+    "reloadPreserved": true,
+    "confirmationOnlyConsumes": true
+  },
+  "campaignPage": {
+    "petEntryInStage5Detail": true,
+    "normalEntryPreserved": true,
+    "petDungeonLoaded": true,
+    "artifactPanelPauses": true
+  },
+  "wildPetFixture": {
+    "explicitDeveloperFixture": true,
+    "normalProgressUnaffected": true,
+    "fixedSuccessRandomSource": true,
+    "naturalFullClearClaimed": false,
+    "griffinPlayerHpBefore": 180,
+    "griffinPlayerHpAfter": 127,
+    "lowHpMirrorCapturedCount": 1,
+    "petBagVisible": true
+  },
+  "pageErrors": [],
+  "nativeWindowVisualQA": false,
+  "tests": 225,
+  "screenshots": [
+    "campaign4-forges.png",
+    "campaign4-mirror.png",
+    "campaign4-pet-entry.png",
+    "campaign4-pet-bag.png",
+    "campaign4-wild-pet.png"
+  ]
+}
