@@ -1,0 +1,134 @@
+{
+  "file": "sword-v1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "bytes": 2075234,
+  "sha256": "214e5f28c2c1f125a3517e061730fbecaa9c8a748687495ac9ee02b62411bbc1",
+  "alphaExtrema": [
+    0,
+    254
+  ],
+  "fullyTransparentPixels": 841571,
+  "targetCenterAlpha": 1,
+  "frames": [
+    {
+      "id": "icon",
+      "rect": [
+        79,
+        39,
+        440,
+        431
+      ],
+      "anchor": [
+        220,
+        216
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        433,
+        427
+      ]
+    },
+    {
+      "id": "falling-sword",
+      "rect": [
+        684,
+        0,
+        174,
+        487
+      ],
+      "anchor": [
+        86,
+        480
+      ],
+      "coreBoundsInRect": [
+        5,
+        4,
+        166,
+        482
+      ]
+    },
+    {
+      "id": "target-rune",
+      "rect": [
+        1032,
+        258,
+        494,
+        212
+      ],
+      "anchor": [
+        247,
+        106
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        486,
+        208
+      ]
+    },
+    {
+      "id": "impact-onset",
+      "rect": [
+        109,
+        540,
+        312,
+        442
+      ],
+      "anchor": [
+        155,
+        383
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        308,
+        438
+      ]
+    },
+    {
+      "id": "impact-peak",
+      "rect": [
+        555,
+        526,
+        440,
+        460
+      ],
+      "anchor": [
+        214,
+        400
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        433,
+        456
+      ]
+    },
+    {
+      "id": "impact-dissipate",
+      "rect": [
+        1062,
+        572,
+        434,
+        413
+      ],
+      "anchor": [
+        216,
+        351
+      ],
+      "coreBoundsInRect": [
+        4,
+        4,
+        426,
+        409
+      ]
+    }
+  ],
+  "method": "Read-only image decoding and alpha/rect analysis. No source PNG pixel modification.",
+  "passed": true
+}

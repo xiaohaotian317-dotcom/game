@@ -1,0 +1,111 @@
+{
+  "build": "campaign6",
+  "isolatedQA": true,
+  "processId": 50048,
+  "processPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign6\\ArcaneDuelCampaign.exe",
+  "testOrigin": "http://127.0.0.1:10267",
+  "nativeWindowVisualQA": false,
+  "resources": [
+    {
+      "path": "/healthz",
+      "status": 200,
+      "bytes": 15
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 11320
+    },
+    {
+      "path": "/lobby.html",
+      "status": 200,
+      "bytes": 10032
+    },
+    {
+      "path": "/campaign.html",
+      "status": 200,
+      "bytes": 5328
+    },
+    {
+      "path": "/src/campaign-artifacts.mjs",
+      "status": 200,
+      "bytes": 2135
+    },
+    {
+      "path": "/src/campaign-artifact-runtime.mjs",
+      "status": 200,
+      "bytes": 3513
+    },
+    {
+      "path": "/src/campaign-artifact-art.mjs",
+      "status": 200,
+      "bytes": 514
+    },
+    {
+      "path": "/src/campaign-companion.mjs",
+      "status": 200,
+      "bytes": 10348
+    },
+    {
+      "path": "/assets/pets/pets-meta-v2.json",
+      "status": 200,
+      "bytes": 11334
+    },
+    {
+      "path": "/assets/pets/growth-meta-v1.json",
+      "status": 200,
+      "bytes": 598262
+    },
+    {
+      "path": "/assets/pets/pets-v3.png",
+      "status": 200,
+      "bytes": 2238766
+    },
+    {
+      "path": "/assets/pets/evolved-form2-v1.png",
+      "status": 200,
+      "bytes": 2486875
+    },
+    {
+      "path": "/assets/pets/evolved-form3-v1.png",
+      "status": 200,
+      "bytes": 2518312
+    },
+    {
+      "path": "/assets/pets/walk-form1-v1.png",
+      "status": 200,
+      "bytes": 2206741
+    },
+    {
+      "path": "/assets/pets/walk-form2-v3.png",
+      "status": 200,
+      "bytes": 2379819
+    },
+    {
+      "path": "/assets/pets/walk-form3-v3.png",
+      "status": 200,
+      "bytes": 2473377
+    },
+    {
+      "path": "/assets/pets/pet-skills-v1.png",
+      "status": 200,
+      "bytes": 2704938
+    },
+    {
+      "path": "/assets/pets/pet-skills-fx-v1.png",
+      "status": 200,
+      "bytes": 2453825
+    },
+    {
+      "path": "/assets/artifacts/sword-meta-v1.json",
+      "status": 200,
+      "bytes": 1645
+    },
+    {
+      "path": "/assets/artifacts/sword-v1.png",
+      "status": 200,
+      "bytes": 2075234
+    }
+  ],
+  "closedAfterProbe": true
+}

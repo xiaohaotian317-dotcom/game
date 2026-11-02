@@ -15,6 +15,8 @@ export const SOLO_SKILLS=Object.fromEntries(SOLO_HEROES.map(hero=>[hero,[0,1,2].
 export const skillById=id=>SOLO_SKILLS[String(id).split('-')[0]]?.find(s=>s.id===id);
 export const upgradeCosts=[[150,250,400,600,900],[200,350,550,800,1100],[300,500,800,1200,1800]];
 export const ITEMS={
+ skySword:{name:'御天剑',description:'第6关首领掉落。C拾取后在法器面板装备，基础攻击+3；按住Q在鼠标位置持续落剑。金币升级提高装备攻击和剑雨伤害。',kind:'artifact',sell:0,icon:0,sheet:'swordArtifact',color:'#c8dcf3'},
+ mirror:{name:'收妖镜',description:'第4关首领掉落的法宝。按C拾取后，在法器面板装备；按V捕捉野生灵宠。可用金币升级，增加基础生命，提升捕捉几率、范围并缩短冷却。',kind:'artifact',sell:0,icon:0,sheet:'artifact',color:'#dfc688'},
  chestSmall:{name:'小金币宝箱',description:'开启后获得100金币。可用于学习、强化技能。',kind:'coins',value:100,sell:15,icon:0},
  chestMedium:{name:'中金币宝箱',description:'开启后获得200金币。旅途中攒下的实用补给。',kind:'coins',value:200,sell:30,icon:1},
  chestLarge:{name:'大金币宝箱',description:'开启后获得600金币。来自高难秘境的战利品。',kind:'coins',value:600,sell:80,icon:2},
@@ -29,7 +31,7 @@ export const ITEMS={
  mana:{name:'湛蓝灵露',description:'使用回复最大法力的22%，不超过当前上限。',kind:'mana',value:.22,sell:3,icon:11},
  heroChoice:{name:'启程·英雄自选宝箱',description:'首通第一关仅此一次，选择一位尚未拥有的英雄。',kind:'heroChoice',sell:0,icon:12},
 };
-export function stageLoot(id,random=Math.random){const tier=id<=3?'Small':id<=7?'Medium':'Large',stone=id<=3?'Small':id<=7?'Medium':'High';const items=[{type:'xp'+tier,count:1},{type:'chest'+tier,count:1},{type:'stone'+stone,count:id>=10?5:id>=8?3:2}];if(id>1){const role=random()<.5?'melee':'staff',quality=id>=10?5:id>=8?4:id>=5?3:id===4?(random()<.2?2:1):0;items.push({type:'equipment',slot:'weapon',role,quality,stage:id,count:1},{type:'equipment',slot:'armor',role,quality,stage:id,count:1});}return items;}
+export function stageLoot(id,random=Math.random){const tier=id<=3?'Small':id<=7?'Medium':'Large',stone=id<=3?'Small':id<=7?'Medium':'High';const items=[{type:'xp'+tier,count:1},{type:'chest'+tier,count:1},{type:'stone'+stone,count:id>=10?5:id>=8?3:2}];if(id===4)items.push({type:'mirror',count:1});if(id===6)items.push({type:'skySword',count:1});if(id>1){const role=random()<.5?'melee':'staff',quality=id>=10?5:id>=8?4:id>=5?3:id===4?(random()<.2?2:1):0;items.push({type:'equipment',slot:'weapon',role,quality,stage:id,count:1},{type:'equipment',slot:'armor',role,quality,stage:id,count:1});}return items;}
 export function lootPreview(id){return {guaranteed:stageLoot(id,()=>.6).filter(i=>i.type!=='equipment'),equipment:id===1?'首通英雄自选宝箱一次；本关不掉装备':`${QUALITY[id>=10?5:id>=8?4:id>=5?3:id===4?1:0].name}装备：50%拳套与近战甲 / 50%法杖与法袍${id===4?'，有20%概率升为蓝色高级':''}`};}
 export function itemInfo(item){if(item.type!=='equipment')return ITEMS[item.type];const q=QUALITY[item.quality]||QUALITY[0],names=['','霜牙','熔炉','千鳞','织梦','荆冠','断钟','赤尾','血月','白骨','雷骨','星渊'],name=(names[item.stage]||'秘境')+(item.slot==='weapon'?(item.role==='melee'?'拳套':'法杖'):(item.role==='melee'?'战甲':'法袍'));return {name,kind:'equipment',description:`${q.name}品质 · ${item.role==='melee'?'近战职业':'法杖职业'}专用 · ${item.rank||0}品 / 强化${item.level||0}级。可装备、金币升级或灵石升品，颜色品质不会因升品改变。`,sell:Math.round(12*(1+(item.quality||0)*1.5)),quality:item.quality,color:q.color,icon:(item.role==='melee'?0:6)+(item.quality||0),sheet:item.slot==='weapon'?'equipment':'armors'};}
 

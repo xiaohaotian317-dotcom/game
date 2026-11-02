@@ -1,0 +1,549 @@
+{
+  "version": 2,
+  "method": "Read-only original PNG decoding, alpha threshold and source rectangle analysis. No pixel editing.",
+  "files": [
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pets-v3.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "cac2a1a36cdac4e5b8ec49d1db9ccef0896491c3e740dbbd4216635efeb418b2",
+      "bytes": 2238766,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 928415,
+      "alphaOver100": 480156,
+      "alphaOver200": 461883
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/mirror-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "1552ac2ed53f5f3a82707942bda772f55945bc6428a8c581d0532b8a94f84c9c",
+      "bytes": 2490218,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 825289,
+      "alphaOver100": 500251,
+      "alphaOver200": 449031
+    }
+  ],
+  "selectedFrames": [
+    {
+      "pet": "frostfox",
+      "state": "idle-a",
+      "rect": [
+        14,
+        89,
+        237,
+        239
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        235,
+        237
+      ],
+      "anchor": [
+        129,
+        237
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 56.811
+    },
+    {
+      "pet": "frostfox",
+      "state": "idle-b",
+      "rect": [
+        277,
+        80,
+        222,
+        248
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        220,
+        246
+      ],
+      "anchor": [
+        123,
+        246
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 58.951
+    },
+    {
+      "pet": "frostfox",
+      "state": "walk-a",
+      "rect": [
+        518,
+        100,
+        247,
+        226
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        245,
+        224
+      ],
+      "anchor": [
+        137,
+        224
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 53.721
+    },
+    {
+      "pet": "frostfox",
+      "state": "walk-b",
+      "rect": [
+        788,
+        82,
+        230,
+        246
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        228,
+        244
+      ],
+      "anchor": [
+        119,
+        244
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 58.475
+    },
+    {
+      "pet": "frostfox",
+      "state": "attack",
+      "rect": [
+        1036,
+        123,
+        280,
+        205
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        278,
+        203
+      ],
+      "anchor": [
+        144,
+        203
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 48.73
+    },
+    {
+      "pet": "frostfox",
+      "state": "hurt",
+      "rect": [
+        1316,
+        138,
+        207,
+        190
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        205,
+        188
+      ],
+      "anchor": [
+        114,
+        188
+      ],
+      "naturalHeight": 244,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 45.164
+    },
+    {
+      "pet": "emberwing",
+      "state": "idle-a",
+      "rect": [
+        17,
+        407,
+        241,
+        230
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        239,
+        228
+      ],
+      "anchor": [
+        121,
+        228
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 55.124
+    },
+    {
+      "pet": "emberwing",
+      "state": "idle-b",
+      "rect": [
+        269,
+        391,
+        227,
+        246
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        225,
+        244
+      ],
+      "anchor": [
+        126,
+        244
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 58.959
+    },
+    {
+      "pet": "emberwing",
+      "state": "walk-a",
+      "rect": [
+        513,
+        418,
+        264,
+        217
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        262,
+        215
+      ],
+      "anchor": [
+        135,
+        215
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 52.008
+    },
+    {
+      "pet": "emberwing",
+      "state": "walk-b",
+      "rect": [
+        788,
+        409,
+        243,
+        226
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        241,
+        224
+      ],
+      "anchor": [
+        117,
+        224
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 54.165
+    },
+    {
+      "pet": "emberwing",
+      "state": "attack",
+      "rect": [
+        1036,
+        442,
+        276,
+        192
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        274,
+        190
+      ],
+      "anchor": [
+        142,
+        190
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 46.017
+    },
+    {
+      "pet": "emberwing",
+      "state": "hurt",
+      "rect": [
+        1323,
+        446,
+        199,
+        190
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        197,
+        188
+      ],
+      "anchor": [
+        102,
+        188
+      ],
+      "naturalHeight": 242,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 45.537
+    },
+    {
+      "pet": "mossdeer",
+      "state": "idle-a",
+      "rect": [
+        34,
+        697,
+        209,
+        265
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        207,
+        263
+      ],
+      "anchor": [
+        101,
+        263
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 57.138
+    },
+    {
+      "pet": "mossdeer",
+      "state": "idle-b",
+      "rect": [
+        280,
+        691,
+        215,
+        272
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        213,
+        270
+      ],
+      "anchor": [
+        112,
+        270
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 58.647
+    },
+    {
+      "pet": "mossdeer",
+      "state": "walk-a",
+      "rect": [
+        533,
+        703,
+        239,
+        260
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        237,
+        258
+      ],
+      "anchor": [
+        115,
+        258
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 56.059
+    },
+    {
+      "pet": "mossdeer",
+      "state": "walk-b",
+      "rect": [
+        791,
+        700,
+        231,
+        264
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        229,
+        262
+      ],
+      "anchor": [
+        107,
+        262
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 56.922
+    },
+    {
+      "pet": "mossdeer",
+      "state": "attack",
+      "rect": [
+        1034,
+        767,
+        284,
+        194
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        282,
+        192
+      ],
+      "anchor": [
+        131,
+        192
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 41.829
+    },
+    {
+      "pet": "mossdeer",
+      "state": "hurt",
+      "rect": [
+        1346,
+        702,
+        178,
+        254
+      ],
+      "coreBoundsInRect": [
+        2,
+        2,
+        176,
+        252
+      ],
+      "anchor": [
+        81,
+        252
+      ],
+      "naturalHeight": 269,
+      "corePadding": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "actualWorldHeightAtScale58": 54.766
+    }
+  ],
+  "mirrorUnchanged": true,
+  "visualReview": "Simplified all juvenile forms. Jewelry, gem pendants, armor, dense flowers/vines and floating particles removed. Broad natural animal colors and connected anatomy preserved. Subjective beauty awaiting user acceptance.",
+  "passed": true
+}

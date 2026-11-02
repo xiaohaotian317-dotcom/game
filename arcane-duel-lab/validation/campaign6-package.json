@@ -1,0 +1,14 @@
+{
+  "version": "campaign6",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign6",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign6\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign6.zip",
+  "files": 343,
+  "runtimeFilesMatched": 261,
+  "bytes": 474807226,
+  "sha256": "917a9e7d7dabd6d5d6ad5259c2de2e29f2081d86948be68640cc81ba1a776da9",
+  "originalSitesUnchanged": true,
+  "scope": "Simplified pets, three forms and eight-frame walks, nine skills, independent captured traits and persistent vitals; stage4 mirror pickup/health and coin upgrades; stage6 sword-rain artifact with Q; rank3 forge ten stones",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

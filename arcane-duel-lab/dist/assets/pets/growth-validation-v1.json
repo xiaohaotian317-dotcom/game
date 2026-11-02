@@ -1,0 +1,3177 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "evolved-form2-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2486875,
+      "sha256": "89071518a5233dd13fd8d87f33616c810fc0d03d3fcd34c5980b6caba37c89ca",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 847071,
+      "alphaOver100": 474782
+    },
+    {
+      "file": "evolved-form3-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2518312,
+      "sha256": "c47e217e6c97417b934b1c5af2e249df051011713db5bc837ebdb0daa1481154",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 669510,
+      "alphaOver100": 455250
+    },
+    {
+      "file": "walk-form1-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2206741,
+      "sha256": "6a823fbbc1f7a9aec05e00e3005c21bd058e0880161a5f6a953f4b1e20d8cef6",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 929117,
+      "alphaOver100": 436600
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2379819,
+      "sha256": "339374cf8defda3da21a589bf13002e5723e171527c1b9b192455a9b84ae973f",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 857933,
+      "alphaOver100": 490895
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2473377,
+      "sha256": "1efd198c89ec325be2c1e56fbcb78ec7c11971925ea180ece02d5a7873cdbdba",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 797018,
+      "alphaOver100": 527378
+    },
+    {
+      "file": "pet-skills-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "bytes": 2704938,
+      "sha256": "b70a64398beb9931e2205ebd6346bfcdca68b926ce7d0b921f6343c5493a5e80"
+    },
+    {
+      "file": "pet-skills-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2453825,
+      "sha256": "ff9e168dffe8906cb625649c4161cca67b32f02f990cce86d8d73e876d7c2179",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "fullyTransparentPixels": 723694,
+      "alphaOver100": 429360
+    }
+  ],
+  "sheets": {
+    "evolved-form2-v1.png": {
+      "frameCount": 18,
+      "frames": [
+        {
+          "pet": "frostfox",
+          "state": "idle-a",
+          "rect": [
+            26,
+            96,
+            227,
+            239
+          ],
+          "anchor": [
+            142,
+            237
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 574,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "idle-b",
+          "rect": [
+            272,
+            99,
+            235,
+            237
+          ],
+          "anchor": [
+            148,
+            235
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 562,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-a",
+          "rect": [
+            543,
+            107,
+            236,
+            229
+          ],
+          "anchor": [
+            148,
+            227
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 520,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-b",
+          "rect": [
+            797,
+            112,
+            236,
+            225
+          ],
+          "anchor": [
+            148,
+            223
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 539,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "attack",
+          "rect": [
+            1057,
+            136,
+            283,
+            201
+          ],
+          "anchor": [
+            178,
+            199
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 440,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "hurt",
+          "rect": [
+            1330,
+            118,
+            187,
+            215
+          ],
+          "anchor": [
+            117,
+            213
+          ],
+          "naturalHeight": 235,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 370,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "idle-a",
+          "rect": [
+            11,
+            397,
+            257,
+            248
+          ],
+          "anchor": [
+            136,
+            246
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 468,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "idle-b",
+          "rect": [
+            259,
+            397,
+            247,
+            247
+          ],
+          "anchor": [
+            131,
+            245
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 453,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-a",
+          "rect": [
+            498,
+            399,
+            264,
+            240
+          ],
+          "anchor": [
+            140,
+            238
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 500,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-b",
+          "rect": [
+            756,
+            399,
+            261,
+            244
+          ],
+          "anchor": [
+            138,
+            242
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 460,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "attack",
+          "rect": [
+            1019,
+            435,
+            323,
+            207
+          ],
+          "anchor": [
+            171,
+            205
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 495,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "hurt",
+          "rect": [
+            1329,
+            405,
+            182,
+            238
+          ],
+          "anchor": [
+            96,
+            236
+          ],
+          "naturalHeight": 244,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 364,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "idle-a",
+          "rect": [
+            37,
+            673,
+            217,
+            294
+          ],
+          "anchor": [
+            109,
+            292
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 580,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "idle-b",
+          "rect": [
+            286,
+            690,
+            204,
+            277
+          ],
+          "anchor": [
+            102,
+            275
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 513,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-a",
+          "rect": [
+            524,
+            691,
+            230,
+            276
+          ],
+          "anchor": [
+            115,
+            274
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 569,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-b",
+          "rect": [
+            768,
+            690,
+            229,
+            277
+          ],
+          "anchor": [
+            114,
+            275
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 607,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "attack",
+          "rect": [
+            1012,
+            758,
+            313,
+            209
+          ],
+          "anchor": [
+            156,
+            207
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 551,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "hurt",
+          "rect": [
+            1344,
+            684,
+            172,
+            278
+          ],
+          "anchor": [
+            86,
+            276
+          ],
+          "naturalHeight": 290,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 471,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        }
+      ]
+    },
+    "evolved-form3-v1.png": {
+      "frameCount": 18,
+      "frames": [
+        {
+          "pet": "frostfox",
+          "state": "idle-a",
+          "rect": [
+            10,
+            116,
+            242,
+            212
+          ],
+          "anchor": [
+            152,
+            210
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 546,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "idle-b",
+          "rect": [
+            264,
+            119,
+            239,
+            209
+          ],
+          "anchor": [
+            150,
+            207
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 522,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-a",
+          "rect": [
+            517,
+            114,
+            254,
+            213
+          ],
+          "anchor": [
+            159,
+            211
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 538,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-b",
+          "rect": [
+            779,
+            121,
+            240,
+            206
+          ],
+          "anchor": [
+            151,
+            204
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 523,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "attack",
+          "rect": [
+            1035,
+            149,
+            273,
+            177
+          ],
+          "anchor": [
+            171,
+            175
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 424,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "hurt",
+          "rect": [
+            1325,
+            113,
+            204,
+            214
+          ],
+          "anchor": [
+            128,
+            212
+          ],
+          "naturalHeight": 209,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 400,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "idle-a",
+          "rect": [
+            8,
+            434,
+            246,
+            216
+          ],
+          "anchor": [
+            130,
+            214
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            1,
+            2,
+            2
+          ],
+          "clipRunCount": 451,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "idle-b",
+          "rect": [
+            260,
+            439,
+            240,
+            211
+          ],
+          "anchor": [
+            127,
+            209
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 405,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-a",
+          "rect": [
+            498,
+            431,
+            272,
+            220
+          ],
+          "anchor": [
+            144,
+            218
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 483,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-b",
+          "rect": [
+            769,
+            432,
+            255,
+            217
+          ],
+          "anchor": [
+            135,
+            215
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 442,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "attack",
+          "rect": [
+            1015,
+            431,
+            335,
+            219
+          ],
+          "anchor": [
+            177,
+            217
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 485,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "hurt",
+          "rect": [
+            1328,
+            414,
+            194,
+            233
+          ],
+          "anchor": [
+            103,
+            231
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 452,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "idle-a",
+          "rect": [
+            31,
+            692,
+            208,
+            275
+          ],
+          "anchor": [
+            104,
+            273
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 544,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "idle-b",
+          "rect": [
+            288,
+            698,
+            219,
+            270
+          ],
+          "anchor": [
+            110,
+            268
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 578,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-a",
+          "rect": [
+            537,
+            692,
+            227,
+            276
+          ],
+          "anchor": [
+            113,
+            274
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 619,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-b",
+          "rect": [
+            781,
+            709,
+            225,
+            258
+          ],
+          "anchor": [
+            113,
+            256
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 551,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "attack",
+          "rect": [
+            1025,
+            740,
+            288,
+            222
+          ],
+          "anchor": [
+            144,
+            220
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 538,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "hurt",
+          "rect": [
+            1352,
+            688,
+            169,
+            278
+          ],
+          "anchor": [
+            84,
+            276
+          ],
+          "naturalHeight": 272,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 540,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        }
+      ]
+    },
+    "walk-form1-v1.png": {
+      "frameCount": 24,
+      "frames": [
+        {
+          "pet": "frostfox",
+          "state": "walk-0",
+          "rect": [
+            18,
+            150,
+            190,
+            189
+          ],
+          "anchor": [
+            119,
+            187
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 344,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-1",
+          "rect": [
+            214,
+            156,
+            187,
+            183
+          ],
+          "anchor": [
+            117,
+            181
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 332,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-2",
+          "rect": [
+            407,
+            155,
+            182,
+            185
+          ],
+          "anchor": [
+            114,
+            183
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 329,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-3",
+          "rect": [
+            592,
+            149,
+            179,
+            188
+          ],
+          "anchor": [
+            112,
+            186
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 332,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-4",
+          "rect": [
+            773,
+            151,
+            184,
+            187
+          ],
+          "anchor": [
+            115,
+            185
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 336,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-5",
+          "rect": [
+            962,
+            157,
+            190,
+            181
+          ],
+          "anchor": [
+            119,
+            179
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 326,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-6",
+          "rect": [
+            1157,
+            149,
+            180,
+            190
+          ],
+          "anchor": [
+            113,
+            188
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 302,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-7",
+          "rect": [
+            1341,
+            155,
+            181,
+            180
+          ],
+          "anchor": [
+            114,
+            178
+          ],
+          "naturalHeight": 182,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 323,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-0",
+          "rect": [
+            16,
+            425,
+            196,
+            191
+          ],
+          "anchor": [
+            104,
+            189
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 330,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-1",
+          "rect": [
+            213,
+            425,
+            190,
+            193
+          ],
+          "anchor": [
+            101,
+            191
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 317,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-2",
+          "rect": [
+            405,
+            430,
+            180,
+            189
+          ],
+          "anchor": [
+            95,
+            187
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 299,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-3",
+          "rect": [
+            589,
+            429,
+            181,
+            184
+          ],
+          "anchor": [
+            96,
+            182
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 325,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-4",
+          "rect": [
+            773,
+            428,
+            193,
+            190
+          ],
+          "anchor": [
+            102,
+            188
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 327,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-5",
+          "rect": [
+            966,
+            432,
+            187,
+            187
+          ],
+          "anchor": [
+            99,
+            185
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 321,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-6",
+          "rect": [
+            1152,
+            434,
+            183,
+            185
+          ],
+          "anchor": [
+            97,
+            183
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 292,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-7",
+          "rect": [
+            1340,
+            430,
+            181,
+            183
+          ],
+          "anchor": [
+            96,
+            181
+          ],
+          "naturalHeight": 184,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 315,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-0",
+          "rect": [
+            29,
+            689,
+            186,
+            239
+          ],
+          "anchor": [
+            93,
+            237
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 456,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-1",
+          "rect": [
+            221,
+            689,
+            190,
+            238
+          ],
+          "anchor": [
+            95,
+            236
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 463,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-2",
+          "rect": [
+            417,
+            689,
+            174,
+            240
+          ],
+          "anchor": [
+            87,
+            238
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 408,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-3",
+          "rect": [
+            592,
+            690,
+            180,
+            236
+          ],
+          "anchor": [
+            90,
+            234
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 436,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-4",
+          "rect": [
+            776,
+            690,
+            187,
+            238
+          ],
+          "anchor": [
+            94,
+            236
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 408,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-5",
+          "rect": [
+            961,
+            691,
+            194,
+            237
+          ],
+          "anchor": [
+            97,
+            235
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 400,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-6",
+          "rect": [
+            1149,
+            693,
+            188,
+            236
+          ],
+          "anchor": [
+            94,
+            234
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 395,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-7",
+          "rect": [
+            1358,
+            690,
+            165,
+            238
+          ],
+          "anchor": [
+            82,
+            236
+          ],
+          "naturalHeight": 234,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 382,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        }
+      ]
+    },
+    "walk-form2-v3.png": {
+      "frameCount": 24,
+      "frames": [
+        {
+          "pet": "frostfox",
+          "state": "walk-0",
+          "rect": [
+            12,
+            145,
+            196,
+            180
+          ],
+          "anchor": [
+            123,
+            178
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 368,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-1",
+          "rect": [
+            217,
+            147,
+            186,
+            178
+          ],
+          "anchor": [
+            117,
+            176
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 363,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-2",
+          "rect": [
+            413,
+            146,
+            190,
+            179
+          ],
+          "anchor": [
+            119,
+            177
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 356,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-3",
+          "rect": [
+            610,
+            147,
+            173,
+            178
+          ],
+          "anchor": [
+            108,
+            176
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 325,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-4",
+          "rect": [
+            791,
+            146,
+            181,
+            179
+          ],
+          "anchor": [
+            114,
+            177
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 338,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-5",
+          "rect": [
+            973,
+            144,
+            185,
+            181
+          ],
+          "anchor": [
+            116,
+            179
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 347,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-6",
+          "rect": [
+            1160,
+            143,
+            185,
+            182
+          ],
+          "anchor": [
+            116,
+            180
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 330,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-7",
+          "rect": [
+            1348,
+            147,
+            185,
+            178
+          ],
+          "anchor": [
+            116,
+            176
+          ],
+          "naturalHeight": 175,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 339,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-0",
+          "rect": [
+            10,
+            396,
+            214,
+            219
+          ],
+          "anchor": [
+            113,
+            217
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 414,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-1",
+          "rect": [
+            199,
+            395,
+            213,
+            221
+          ],
+          "anchor": [
+            113,
+            219
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 410,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-2",
+          "rect": [
+            387,
+            396,
+            213,
+            219
+          ],
+          "anchor": [
+            113,
+            217
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 402,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-3",
+          "rect": [
+            584,
+            397,
+            207,
+            218
+          ],
+          "anchor": [
+            110,
+            216
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 391,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-4",
+          "rect": [
+            764,
+            397,
+            212,
+            219
+          ],
+          "anchor": [
+            112,
+            217
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 402,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-5",
+          "rect": [
+            955,
+            398,
+            207,
+            218
+          ],
+          "anchor": [
+            110,
+            216
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 415,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-6",
+          "rect": [
+            1147,
+            399,
+            203,
+            217
+          ],
+          "anchor": [
+            107,
+            215
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 400,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-7",
+          "rect": [
+            1337,
+            397,
+            197,
+            218
+          ],
+          "anchor": [
+            104,
+            216
+          ],
+          "naturalHeight": 214,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 397,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-0",
+          "rect": [
+            14,
+            674,
+            211,
+            260
+          ],
+          "anchor": [
+            106,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 502,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-1",
+          "rect": [
+            212,
+            673,
+            198,
+            261
+          ],
+          "anchor": [
+            99,
+            259
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 489,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-2",
+          "rect": [
+            403,
+            673,
+            196,
+            262
+          ],
+          "anchor": [
+            98,
+            260
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 489,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-3",
+          "rect": [
+            591,
+            675,
+            194,
+            260
+          ],
+          "anchor": [
+            97,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 474,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-4",
+          "rect": [
+            780,
+            676,
+            196,
+            260
+          ],
+          "anchor": [
+            98,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 492,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-5",
+          "rect": [
+            970,
+            676,
+            194,
+            260
+          ],
+          "anchor": [
+            97,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 480,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-6",
+          "rect": [
+            1161,
+            676,
+            196,
+            260
+          ],
+          "anchor": [
+            98,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 456,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-7",
+          "rect": [
+            1346,
+            676,
+            189,
+            260
+          ],
+          "anchor": [
+            94,
+            258
+          ],
+          "naturalHeight": 256,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 473,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        }
+      ]
+    },
+    "walk-form3-v3.png": {
+      "frameCount": 24,
+      "frames": [
+        {
+          "pet": "frostfox",
+          "state": "walk-0",
+          "rect": [
+            13,
+            107,
+            191,
+            207
+          ],
+          "anchor": [
+            120,
+            205
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 403,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-1",
+          "rect": [
+            215,
+            115,
+            187,
+            201
+          ],
+          "anchor": [
+            117,
+            199
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 410,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-2",
+          "rect": [
+            412,
+            116,
+            180,
+            199
+          ],
+          "anchor": [
+            113,
+            197
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 389,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-3",
+          "rect": [
+            597,
+            104,
+            177,
+            212
+          ],
+          "anchor": [
+            111,
+            210
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 368,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-4",
+          "rect": [
+            778,
+            101,
+            185,
+            214
+          ],
+          "anchor": [
+            116,
+            212
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 399,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-5",
+          "rect": [
+            973,
+            121,
+            179,
+            193
+          ],
+          "anchor": [
+            112,
+            191
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 385,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-6",
+          "rect": [
+            1159,
+            118,
+            176,
+            197
+          ],
+          "anchor": [
+            110,
+            195
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 368,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "frostfox",
+          "state": "walk-7",
+          "rect": [
+            1345,
+            100,
+            184,
+            215
+          ],
+          "anchor": [
+            115,
+            213
+          ],
+          "naturalHeight": 200,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 406,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-0",
+          "rect": [
+            8,
+            401,
+            200,
+            224
+          ],
+          "anchor": [
+            106,
+            222
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 454,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-1",
+          "rect": [
+            194,
+            406,
+            206,
+            219
+          ],
+          "anchor": [
+            109,
+            217
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 437,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-2",
+          "rect": [
+            382,
+            405,
+            206,
+            221
+          ],
+          "anchor": [
+            109,
+            219
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 429,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-3",
+          "rect": [
+            578,
+            402,
+            197,
+            225
+          ],
+          "anchor": [
+            104,
+            223
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 411,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-4",
+          "rect": [
+            775,
+            407,
+            194,
+            219
+          ],
+          "anchor": [
+            103,
+            217
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "clipRunCount": 414,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-5",
+          "rect": [
+            956,
+            407,
+            202,
+            219
+          ],
+          "anchor": [
+            107,
+            217
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "clipRunCount": 427,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-6",
+          "rect": [
+            1144,
+            407,
+            198,
+            219
+          ],
+          "anchor": [
+            105,
+            217
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "clipRunCount": 386,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "emberwing",
+          "state": "walk-7",
+          "rect": [
+            1328,
+            405,
+            197,
+            220
+          ],
+          "anchor": [
+            104,
+            218
+          ],
+          "naturalHeight": 216,
+          "alphaCorePadding": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 398,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-0",
+          "rect": [
+            16,
+            690,
+            187,
+            263
+          ],
+          "anchor": [
+            94,
+            261
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 525,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-1",
+          "rect": [
+            205,
+            696,
+            192,
+            257
+          ],
+          "anchor": [
+            96,
+            255
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 532,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-2",
+          "rect": [
+            409,
+            696,
+            176,
+            257
+          ],
+          "anchor": [
+            88,
+            255
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 485,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-3",
+          "rect": [
+            594,
+            692,
+            174,
+            262
+          ],
+          "anchor": [
+            87,
+            260
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 493,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-4",
+          "rect": [
+            776,
+            693,
+            188,
+            261
+          ],
+          "anchor": [
+            94,
+            259
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 521,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-5",
+          "rect": [
+            966,
+            701,
+            187,
+            256
+          ],
+          "anchor": [
+            94,
+            254
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 514,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-6",
+          "rect": [
+            1162,
+            695,
+            179,
+            261
+          ],
+          "anchor": [
+            90,
+            259
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 446,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        },
+        {
+          "pet": "mossdeer",
+          "state": "walk-7",
+          "rect": [
+            1349,
+            695,
+            175,
+            262
+          ],
+          "anchor": [
+            87,
+            260
+          ],
+          "naturalHeight": 257,
+          "alphaCorePadding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "clipRunCount": 493,
+          "ownCoreRetained": true,
+          "foreignMainCorePixelsIncluded": 0
+        }
+      ]
+    }
+  },
+  "warnings": [
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "frostfox",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "frostfox",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 0,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 1,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 2,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 3,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form2-v1.png",
+      "pet": "emberwing",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form3-v1.png",
+      "pet": "emberwing",
+      "pose": 3,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form3-v1.png",
+      "pet": "emberwing",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "evolved-form3-v1.png",
+      "pet": "emberwing",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "walk-form1-v1.png",
+      "pet": "mossdeer",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form1-v1.png",
+      "pet": "mossdeer",
+      "pose": 6,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 0,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 1,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 2,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 3,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 6,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "emberwing",
+      "pose": 7,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 0,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 1,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 2,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 3,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 6,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form2-v3.png",
+      "pet": "mossdeer",
+      "pose": 7,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 0,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 1,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 2,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 3,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 4,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        2,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 5,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 6,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "file": "walk-form3-v3.png",
+      "pet": "emberwing",
+      "pose": 7,
+      "message": "Source sprite or adjacent isolated tip approaches calibrated rectangle edge; inspect at actual game size.",
+      "padding": [
+        0,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "method": "Original PNG preserved. Read-only alpha>100 connected components and manually calibrated icon/FX source areas. Consumers use explicit rect/anchor; no source pixel edits."
+}

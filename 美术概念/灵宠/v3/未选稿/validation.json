@@ -1,0 +1,39 @@
+{
+  "tool": "built-in image_gen",
+  "selected": false,
+  "originalPixelsPreserved": true,
+  "files": [
+    {
+      "file": "walk-form2-rejected-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "0cab08f44668a1a381740c76c3ef84167c6b746b9ad83a3b698a3f0b1ee2545a"
+    },
+    {
+      "file": "walk-form2-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "89865857643ed183d6cab9c88562a8a0efddb727fa35bd4d1866108c6b754fab"
+    },
+    {
+      "file": "walk-form3-rejected-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "5e695e3a7d469e009bae05956a6df337eef65fab857784428d65b30e9040d3a2"
+    },
+    {
+      "file": "walk-form3-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "c64e10e633925eac5fca3420acde0d40b1ac55b0cbe931eef72607b4d901d9ee"
+    }
+  ]
+}

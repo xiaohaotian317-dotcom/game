@@ -1,0 +1,26 @@
+{
+  "version": "campaign6",
+  "automatedChecks": 260,
+  "automatedPassed": 260,
+  "isolatedOrigin": "http://127.0.0.1:4208",
+  "seededFixture": true,
+  "fixtureDescription": "Three owned pets, XP, both artifacts and coins seeded only on this local QA origin; not natural acquisition or user desktop save.",
+  "browserEvidence": [
+    "Sword upgrade: coins2000→1850, Lv1→2, equipped attack+3→+4, single sword16→19",
+    "Mirror upgrade: coins1850→1700, health20→25, full capture12→13%, low90→91%, range420→430, CD6→5.85",
+    "Equipped mirror gives Lv8 fire hero243HP (base218+25); sword switches to218HP",
+    "Deer manually evolves twice at seededLv10: form0→1→2, stats and three skill unlocks update, XP not consumed",
+    "Stage6 real detail lists sword loot and loads all campaign art successfully",
+    "Real stage6 first wave, companion autonomously fights, spends ownMP; coins1700→1760, heroXP1800→1860",
+    "Death/retry leaves pet148/236HP; same-stage recall/deploy still148/236HP",
+    "Q held in actual battle shows target rune, falling sword, mana113/123 and release CD7.8seconds"
+  ],
+  "screenshots": [
+    "campaign6-sword-ui.png",
+    "campaign6-stage6-loot.png",
+    "campaign6-sword-battle.png"
+  ],
+  "pageErrors": [],
+  "nativeWindowVisualQA": false,
+  "subjectiveArtAndBalance": "awaiting user review"
+}

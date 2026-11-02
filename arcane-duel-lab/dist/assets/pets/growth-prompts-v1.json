@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "date": "2026-11-02",
+  "tool": "built-in image_gen",
+  "scope": "Three-form pet evolution, nine skill icons/FX, and true eight-phase walk atlases. Original PNG pixels unchanged; only alpha-based metadata analysis.",
+  "selectedCount": 7,
+  "jobs": [
+    {
+      "id": "form2",
+      "file": "evolved-form2-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: production transparent PNG animation atlas for a side-scrolling dark fantasy game. EXACTLY18 separate full-body animal sprites in THREE ROWS and SIX COLUMNS, overall1536x1024. Row1 frostfox, Row2 embergriffin, Row3 mossdeer. Every sprite side view facing RIGHT, anatomy connected, four clear legs. Each row six consistent poses: idle-a, idle-b slight breathing, walk-a stride, walk-b opposite stride, attack forward, hurt/recoil. Keep complete creatures centered SMALL within six ideal256px-wide cells, at least20px TRANSPARENT gap between neighbors, NO cropped paws/tails/wings. Each row paws near y290/630/965, keep each creature height200–230px including ears/antlers. Source rendering scale will keep all creatures INCLUDING ears/antlers/wings lower than adult human; compact pet-sized quadrupeds, not giant bosses. Beautiful HAND-PAINTED dark fantasy RPG aesthetic, controlled outer ink contour, broad readable painted color patches, subtle soft volume, restrained interior detail, not vector/kids flat cartoon. No background, gradients, glow clouds, floor, shadow, labels, borders or people. True transparent alpha. Match creature identities and proportions to supplied reference concept sheets, but use sensible low detail readable in game. References are evolution concept sheets; use ONLY MIDDLE evolution forms as identity direction, then simplify dense microdetails. FORM2 ADOLESCENT appearances: FOX silver-white with blue ear tips and TWO compact graceful frosted tails, sapphire eyes, one subtle crescent forehead marking, NO jewelry/gems/necklace, a slightly fuller fur collar with only few broad fur tufts. GRIFFIN warm-brown feline body, bronze eagle beak, amber eyes, small crest, compact dark folded wings with3–4 broad feather layers, warm orange feather tips and short tufted tail; no armor, no huge flame. DEER warm tan/cream, longer slender legs, TWO LOW backward-curved budding wood antlers with only3–4 small leaves TOTAL, short fern shoulder collar; NO flowers/necklace/gem/vine ornaments. Progression beyond juvenile is gentle, more elegant stronger body, NOT excessive mature ornament. Attacks: fox low forward bite; griffin leading claw; deer low antler thrust. No projectile or big magic effect in sprites.",
+      "refs": true,
+      "transparent": true,
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-d0575d5f-a13d-4d40-801b-2c2a07e76511.png",
+      "references": [
+        "P01-月霜灵狐-三形态-v1.png",
+        "P02-烬羽狮鹫-三形态-v1.png",
+        "P03-苔角灵鹿-三形态-v1.png"
+      ]
+    },
+    {
+      "id": "form3",
+      "file": "evolved-form3-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: production transparent PNG animation atlas for a side-scrolling dark fantasy game. EXACTLY18 separate full-body animal sprites in THREE ROWS and SIX COLUMNS, overall1536x1024. Row1 frostfox, Row2 embergriffin, Row3 mossdeer. Every sprite side view facing RIGHT, anatomy connected, four clear legs. Each row six consistent poses: idle-a, idle-b slight breathing, walk-a stride, walk-b opposite stride, attack forward, hurt/recoil. Keep complete creatures centered SMALL within six ideal256px-wide cells, at least20px TRANSPARENT gap between neighbors, NO cropped paws/tails/wings. Each row paws near y290/630/965, keep each creature height200–230px including ears/antlers. Source rendering scale will keep all creatures INCLUDING ears/antlers/wings lower than adult human; compact pet-sized quadrupeds, not giant bosses. Beautiful HAND-PAINTED dark fantasy RPG aesthetic, controlled outer ink contour, broad readable painted color patches, subtle soft volume, restrained interior detail, not vector/kids flat cartoon. No background, gradients, glow clouds, floor, shadow, labels, borders or people. True transparent alpha. Match creature identities and proportions to supplied reference concept sheets, but use sensible low detail readable in game. References are evolution concept sheets; use ONLY RIGHTMOST final evolution forms as identity direction, but greatly simplify dense microdetails, keep every figure compact inside cell. FORM3 FINAL pet appearances: FOX elegant silver-white, blue ears/paws, THREE compact swept crescent-shaped tails, one subtle crescent forehead marking, sapphire eyes, low flowing icy mane as3–4 broad fur tufts, restrained blue/gold fur tips only, NO dangling jewelry/crystal chains or big aura. GRIFFIN compact powerful brown feline body, eagle head/bronze beak, amber eyes, modest swept gold-orange crest, darker folded wings with4–5 broad obsidian/ember feather panels, orange tail tuft, no armor or gigantic wings; all wing/crest tips stay low. DEER graceful golden-tan/cream, two elegant LOW swept-back antlers with sparse emerald leaves and one small cream flower total, short layered leaf shoulder mantle and subtle wood-gold leg accent; no tall tree crown, no hanging vine lattice, no gemstones. Third form clearly evolved but companion-sized, calm clear silhouettes. Attacks fox forward bite, griffin leading claw, deer low antler thrust. No separate projectile/large effect.",
+      "refs": true,
+      "transparent": true,
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-331cf04e-bf83-4ca6-9aec-bce0302d7122.png",
+      "references": [
+        "P01-月霜灵狐-三形态-v1.png",
+        "P02-烬羽狮鹫-三形态-v1.png",
+        "P03-苔角灵鹿-三形态-v1.png"
+      ]
+    },
+    {
+      "id": "icons",
+      "file": "pet-skills-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: exquisite fantasy RPG skill icon atlas, SQUARE1024x1024, exactly THREE ROWS by THREE COLUMNS. Nine separate square icons, each has thin antique-gold ornamental border, dark navy/black inner background, no text/no letters/no numbers. Wide12px clean dark gutter separating icons, no overlapping light. Designed readable at48px. Consistent hand-painted dark fantasy style with crisp central silhouette, rich depth, glowing but controlled highlights, not generic abstract starbursts. Row1 frostfox cold azure/white: column1 ONE bright faceted ice shard missile pointed right with short frost trail; column2 elegant circular ice ring with six small outward crystal points and cold mist indicating slow; column3 crescent moon above a dramatic cluster of jagged ice crystals bursting upward, identifiable moon frost ultimate. Row2 embergriffin warm orange/gold: column1 clear three raking curved glowing claw slashes with a small griffin talon; column2 FAN of THREE flaming feather missiles directed right, each recognizably feather; column3 a folded pair of charcoal ember wings plunging downward into an orange flame impact crown. Row3 mossdeer green/cream/gold: column1 one pointed golden-green seed wrapped in a tiny thorn leaf flying right; column2 open ivory woodland flower with green healing breath flowing upward, gentle leaf curls; column3 woody root tendrils forming a binding circle around a small center, luminous leaves, clearly grasping root control. Each icon ONE clear focused motif, no animals/humans/faces, no excessive particles that obscure motif, all nine look beautiful at small size.",
+      "transparent": false,
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-94149a30-b8e2-43ad-b112-fbb707d85fee.png",
+      "references": []
+    },
+    {
+      "id": "fx",
+      "file": "pet-skills-fx-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent fantasy-game skill FX atlas, landscape1536x1024, exactly THREE ROWS by THREE COLUMNS. Nine independent effects, each in512x341 cell with at least35px empty padding, NO overlap, no border/labels/text/background/floor; genuinely transparent alpha. Single peak-effect frame per skill, renderer will animate scale/fade. Hand-painted dark fantasy RPG effects, brilliant cores with colored layered edges but restrained bloom and no large fog cloud; clean shapes readable at small game sizes. Row1 icy azure/white: col1 ONE faceted arrowlike ice crystal missile pointing RIGHT, compact short frost tail; col2 circular horizontal frost shock-ring perspective ellipse with six small upward jagged crystal tips, transparent open center; col3 crescent moon above cluster of seven jagged ice crystals bursting upward, no background. Row2 orange/gold: col1 THREE short arcing claw slash marks sweeping RIGHT, white-hot edge with orange outer trail; col2 FAN of THREE flaming feather missiles flying RIGHT, each clear feather shape, compact trails; col3 downward fire impact crown with two short swept feather/wings shapes and blazing central core, embers minimal. Row3 green/cream/gold: col1 sharp thorned green-gold spirit seed flying RIGHT with one curling leaf; col2 open ivory healing flower and two short upward green breath ribbons, no plant pot; col3 circle of woody roots curling inward to bind an open transparent center, sparse emerald leaves, no giant tree. Avoid disconnected scattered spark particles, avoid heavy exterior haze, all core effects fit inside cells and remain isolated.",
+      "transparent": true,
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-3c8f12d0-8b9e-401d-ad47-ab6e2d462ab9.png",
+      "references": []
+    },
+    {
+      "id": "walk0",
+      "file": "walk-form1-v1.png",
+      "ref": "pets-v3.png",
+      "prompt": "Use case: stylized-concept. Asset type: PRODUCTION WALK CYCLE transparent sprite atlas for a 2D side-scrolling game. Use supplied atlas ONLY as character identity/style reference. Create a NEW strict THREE ROWS by EIGHT COLUMNS sheet, exactly24 small complete animal sprites, overall1536x1024, TRANSPARENT alpha background. NOT six columns. Row1 frostfox, row2 embergriffin, row3 mossdeer. Every animal SIDE VIEW FACING RIGHT, FOUR legs, connected head/neck/body. Each row is ONE smooth looping quadruped WALK CYCLE of EIGHT chronological in-place frames: (1)right contact front right foot forward and left rear back, (2)weight/down, (3)right passing legs under body, (4)right lift/up, (5)opposite left contact, (6)opposite down, (7)left passing, (8)left up then seamlessly back to1. Front and rear leg pairs alternate naturally, no hopping/running. Head, shoulders, hips and animal size stay ALMOST IDENTICAL location throughout every frame; only low-amplitude breathing/bob2–3px and leg stepping, tail gentle sway. No idle/attack/hurt poses. No change in muzzle length, limb length, species, accessories or body proportions within a row.\nCRITICAL SPACING: each cell192px wide,341px high; draw SMALL figure approx150px wide,160px tall, centered in its cell with20px empty transparent gutter on sides. Center x96/288/480/672/864/1056/1248/1440. Paws on one stable baseline per row (approx y280/620/960). All tails and ears/antlers/wings stay within own cell, do NOT overlap neighbors or crop any body part. No floor/shadows/background gradient/glow/fog/particles/text/grid. Beautiful hand-painted dark fantasy RPG, soft volume, simple broad color patches and clear ink-like outer contour, not high-frequency realistic engravings, not flat preschool vector. FORM1 JUVENILES, identical to provided simple juvenile reference: FOX plain frost-white cub, blue ears/paws, ONE rounded fluffy blue-tipped tail, blue eyes, NO jewelry/gems/crescent crystal. GRIFFIN rounded warm-brown lion cub, eagle head bronze beak/amber eyes, tiny folded charcoal wings, small warm-orange crest/tail tuft, only broad feather shapes, no armor or flame glow. DEER plain tan/cream young fawn, short antler buds with one/two small leaves TOTAL, few simple back spots, no flowers/vines/jewelry. Keep compact baby proportions. Remove decorative complexity.",
+      "selected": true,
+      "reason": "Selected juvenile eight-phase walk.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-e52afa85-b756-4b41-aa0a-a52be524f567.png",
+      "references": [
+        "pets-v3.png"
+      ]
+    },
+    {
+      "id": "walk1",
+      "file": "美术概念/灵宠/v3/未选稿/walk-form2-rejected-v1.png",
+      "ref": "evolved-form2-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: PRODUCTION WALK CYCLE transparent sprite atlas for a 2D side-scrolling game. Use supplied atlas ONLY as character identity/style reference. Create a NEW strict THREE ROWS by EIGHT COLUMNS sheet, exactly24 small complete animal sprites, overall1536x1024, TRANSPARENT alpha background. NOT six columns. Row1 frostfox, row2 embergriffin, row3 mossdeer. Every animal SIDE VIEW FACING RIGHT, FOUR legs, connected head/neck/body. Each row is ONE smooth looping quadruped WALK CYCLE of EIGHT chronological in-place frames: (1)right contact front right foot forward and left rear back, (2)weight/down, (3)right passing legs under body, (4)right lift/up, (5)opposite left contact, (6)opposite down, (7)left passing, (8)left up then seamlessly back to1. Front and rear leg pairs alternate naturally, no hopping/running. Head, shoulders, hips and animal size stay ALMOST IDENTICAL location throughout every frame; only low-amplitude breathing/bob2–3px and leg stepping, tail gentle sway. No idle/attack/hurt poses. No change in muzzle length, limb length, species, accessories or body proportions within a row.\nCRITICAL SPACING: each cell192px wide,341px high; draw SMALL figure approx150px wide,160px tall, centered in its cell with20px empty transparent gutter on sides. Center x96/288/480/672/864/1056/1248/1440. Paws on one stable baseline per row (approx y280/620/960). All tails and ears/antlers/wings stay within own cell, do NOT overlap neighbors or crop any body part. No floor/shadows/background gradient/glow/fog/particles/text/grid. Beautiful hand-painted dark fantasy RPG, soft volume, simple broad color patches and clear ink-like outer contour, not high-frequency realistic engravings, not flat preschool vector. FORM2 ADOLESCENT pets matching reference: FOX white with blue ears/paws and TWO compact frosted tails, one subtle crescent forehead marking, blue eyes, NO jewelry/gems/necklace; a few broad mane tufts. GRIFFIN warm-brown feline body, bronze eagle beak/amber eyes, modest orange crest, medium folded charcoal wings with sparse orange feather tips, tail tuft, no armor. DEER tan/cream adolescent, two LOW swept-back short wood antlers with3–4 leaves total, short sparse fern shoulder collar, no flowers/vines/gem. Keep ornament modest and shape readable.",
+      "selected": false,
+      "reason": "Rejected: generated six columns instead of requested eight.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-5518c21b-9f4e-4586-ac77-9d5d37be8a11.png",
+      "references": [
+        "evolved-form2-v1.png"
+      ]
+    },
+    {
+      "id": "walk2",
+      "file": "美术概念/灵宠/v3/未选稿/walk-form3-rejected-v1.png",
+      "ref": "evolved-form3-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: PRODUCTION WALK CYCLE transparent sprite atlas for a 2D side-scrolling game. Use supplied atlas ONLY as character identity/style reference. Create a NEW strict THREE ROWS by EIGHT COLUMNS sheet, exactly24 small complete animal sprites, overall1536x1024, TRANSPARENT alpha background. NOT six columns. Row1 frostfox, row2 embergriffin, row3 mossdeer. Every animal SIDE VIEW FACING RIGHT, FOUR legs, connected head/neck/body. Each row is ONE smooth looping quadruped WALK CYCLE of EIGHT chronological in-place frames: (1)right contact front right foot forward and left rear back, (2)weight/down, (3)right passing legs under body, (4)right lift/up, (5)opposite left contact, (6)opposite down, (7)left passing, (8)left up then seamlessly back to1. Front and rear leg pairs alternate naturally, no hopping/running. Head, shoulders, hips and animal size stay ALMOST IDENTICAL location throughout every frame; only low-amplitude breathing/bob2–3px and leg stepping, tail gentle sway. No idle/attack/hurt poses. No change in muzzle length, limb length, species, accessories or body proportions within a row.\nCRITICAL SPACING: each cell192px wide,341px high; draw SMALL figure approx150px wide,160px tall, centered in its cell with20px empty transparent gutter on sides. Center x96/288/480/672/864/1056/1248/1440. Paws on one stable baseline per row (approx y280/620/960). All tails and ears/antlers/wings stay within own cell, do NOT overlap neighbors or crop any body part. No floor/shadows/background gradient/glow/fog/particles/text/grid. Beautiful hand-painted dark fantasy RPG, soft volume, simple broad color patches and clear ink-like outer contour, not high-frequency realistic engravings, not flat preschool vector. FORM3 FINAL compact companions matching reference, never large boss: FOX graceful white with blue ears/paws, THREE compact swept tails, subtle crescent forehead marking, restrained icy mane tufts, no jewelry. GRIFFIN warm-brown powerful compact feline, bronze eagle beak/amber eyes, low swept orange-gold crest, folded obsidian wings with4–5 broad ember tipped feather panels, warm tail tuft, no armor. DEER graceful tan/cream, TWO LOW backward-swept antlers with sparse leaves and one tiny cream flower total, small layered leaf shoulder mantle, subtle wood-gold leg accent, no huge crown or complex vines. All outlines lower than human when game-scaled, tails/wings compact inside each cell.",
+      "selected": false,
+      "reason": "Rejected: generated six columns instead of requested eight.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-917d778f-f61d-420d-9fba-b791cb4af4f7.png",
+      "references": [
+        "evolved-form3-v1.png"
+      ]
+    },
+    {
+      "id": "walk1retry",
+      "file": "美术概念/灵宠/v3/未选稿/walk-form2-v2.png",
+      "ref": "evolved-form2-v1.png",
+      "prompt": "Use case: stylized-concept. Production game WALK sprite atlas, exactly 3 ROWS × 8 COLUMNS = 24 complete isolated animals, PNG1536×1024 transparent. This is EIGHT columns, NOT6. Count all EIGHT figures in EACH row. 8 single-frame small figures in row1, 8 in row2, 8 in row3. Physical center positions x96,288,480,672,864,1056,1248,1440. Every creature width150px max and height190px max. Paws one horizontal baseline per row near y285,625,965. At least20px transparent gap between every adjacent sprite. Complete tails/ears/antlers stay INSIDE192px cell, no overlap. Animal body stays in-place at same torso/head location for every frame, only paws alternate and tail gently sways. SIDE VIEW facing RIGHT, four legs, coherent anatomy.\nEight-frame chronological WALK: right-contact / down-right / passing-right / up-right / left-contact / down-left / passing-left / up-left. Front and rear paws opposite, smooth regular low-amplitude eight-phase quadruped cycle; frame8 loops into1. Never attack, never jump, no rearing. Torso/head sizes remain identical across eight frames. No labels/numbers/borders/grid, no floor/shadow/mist/glowing background. Real alpha transparency. Elegant hand-painted dark fantasy RPG with broad clear color patches, soft shading, readable ink-like outlines, only modest fine detail. Companion-sized animals not enormous bosses.\nEVOLUTION FORM2. Row1 FOX: small silver-white arctic fox, pointed ears pale blue tips, blue paws, TWO compact feathery tails swept backward, sapphire eyes, small soft-blue crescent marking forehead, moderate chest mane, no collar/jewelry/gem. Row2 GRIFFIN: compact warm-brown lion body and hind legs, bronze eagle beak/head, amber eyes, low orange feather crest, medium folded charcoal wings with3–4 broad feather rows tipped orange, small orange tail tuft. Row3 DEER: elegant tan/cream deer, two low backward-swept short twig antlers with3–4 small green leaves total, short sparse leafy shoulder collar, deer hooves, not fox, no flowers/vine chains/gem. All in low-detail middle form, same identity through8 phases.",
+      "selected": false,
+      "reason": "Eight columns obtained, but identity coloring deviated; subsequent edits selected.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-0c78605b-6080-4367-874a-3ed80901f1fe.png",
+      "references": []
+    },
+    {
+      "id": "walk2retry",
+      "file": "美术概念/灵宠/v3/未选稿/walk-form3-v2.png",
+      "ref": "evolved-form3-v1.png",
+      "prompt": "Use case: stylized-concept. Production game WALK sprite atlas, exactly 3 ROWS × 8 COLUMNS = 24 complete isolated animals, PNG1536×1024 transparent. This is EIGHT columns, NOT6. Count all EIGHT figures in EACH row. 8 single-frame small figures in row1, 8 in row2, 8 in row3. Physical center positions x96,288,480,672,864,1056,1248,1440. Every creature width150px max and height190px max. Paws one horizontal baseline per row near y285,625,965. At least20px transparent gap between every adjacent sprite. Complete tails/ears/antlers stay INSIDE192px cell, no overlap. Animal body stays in-place at same torso/head location for every frame, only paws alternate and tail gently sways. SIDE VIEW facing RIGHT, four legs, coherent anatomy.\nEight-frame chronological WALK: right-contact / down-right / passing-right / up-right / left-contact / down-left / passing-left / up-left. Front and rear paws opposite, smooth regular low-amplitude eight-phase quadruped cycle; frame8 loops into1. Never attack, never jump, no rearing. Torso/head sizes remain identical across eight frames. No labels/numbers/borders/grid, no floor/shadow/mist/glowing background. Real alpha transparency. Elegant hand-painted dark fantasy RPG with broad clear color patches, soft shading, readable ink-like outlines, only modest fine detail. Companion-sized animals not enormous bosses.\nEVOLUTION FORM3 FINAL. Row1 FOX: silver-white quadruped fox, sapphire eyes, pale-blue ear tips/paws, THREE compact full tails swept backward within cell, low flowing ice-white mane, tiny pale-blue crescent forehead marking, no jewelry/gems. Row2 GRIFFIN: compact powerful warm-brown lion body/hindlegs, bronze eagle beak/head, amber eyes, low swept gold-orange crest, slightly broader folded obsidian wings with4–5 large panels and ember tips, orange tail tuft, no armor or gigantic wings. Row3 DEER: graceful tan/cream deer, two LOW backward-swept branching antlers with sparse green leaves and ONE tiny cream flower total, short layered leaf shoulder mantle, subtle wood-gold leg accent, deer split hooves. All full forms PET-SIZED and low-profile, not giant bosses or tall tree crowns. Each form identical through8 phase frames.",
+      "selected": false,
+      "reason": "Eight columns obtained, but identity coloring deviated; subsequent edits selected.",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-5ea7e227-46a0-49b8-9e4d-cfae463f4b9e.png",
+      "references": []
+    },
+    {
+      "id": "walkfix1",
+      "file": "walk-form2-v3.png",
+      "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET eight-phase walk sprite sheet; Image2 is ONLY an identity/style reference with6 columns. Preserve Image1's EXACT EIGHT columns and THREE rows, all24 walking poses and same cell layout. DO NOT copy Image2's six-column layout, idle/attack/hurt poses. Change ONLY creature identities/colors in Image1 to match Image2, and give every figure more transparent whitespace: scale each WHOLE figure down within its own cell to at most150px wide, complete tails/wings/paws, same baseline and body scale across all eight walk frames. Keep each body centered with fixed torso location, no movement/translation along the row. Every row must contain EIGHT visible separate WALKING animals.\nRow1 fox in Image2: silver-white, pale-blue ears/paws, blue eyes, TWO compact frosted tails, crescent forehead marking, NO necklace/gems. Keep tail count and blue patches CONSISTENT in all8 frames.\nRow2 griffin in Image2: head is WARM BROWN/TAN with small orange/gold crest and bronze eagle beak, NOT a white bald-eagle head; warm-brown lion body, folded charcoal wings with broad dark feathers tipped orange, warm orange tail tuft. Match neck/wing size exactly, no armor.\nRow3 deer in Image2: tan/cream deer, LOW swept-back antlers with sparse green leaves, small sparse leaf shoulder collar, no flowers, not giant crown. Exact same anatomy and palette across8 steps.\nBeautiful restrained HAND-PAINTED fantasy RPG rendering with simple clear large shapes and soft volume; do not increase fur/feather engraving. All face RIGHT, connected quadruped anatomy; eight chronological alternating leg strides with stable head/torso and feet on same baseline. Transparent alpha, no floor/shadow/gradient/background text or grid. Main target: all24 figures, EIGHT per row, matching identity and generous separation, no cropped parts.",
+      "refs": [
+        "walk-form2-v2.png",
+        "evolved-form2-v1.png"
+      ],
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-07d35976-0162-4e65-b82c-e37e60ee5ced.png",
+      "references": [
+        "walk-form2-v2.png",
+        "evolved-form2-v1.png"
+      ],
+      "reason": "Selected: preserves true eight-pose layout; identity/style refinement."
+    },
+    {
+      "id": "walkfix2",
+      "file": "walk-form3-v3.png",
+      "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET eight-phase walk sprite sheet; Image2 is ONLY an identity/style reference with6 columns. Preserve Image1's EXACT EIGHT columns and THREE rows, all24 walking poses and same cell layout. DO NOT copy Image2's six-column layout, idle/attack/hurt poses. Change ONLY creature identities/colors in Image1 to match Image2, and give every figure more transparent whitespace: scale each WHOLE figure down within its own cell to at most150px wide, complete tails/wings/paws, same baseline and body scale across all eight walk frames. Keep each body centered with fixed torso location, no movement/translation along the row. Every row must contain EIGHT visible separate WALKING animals.\nRow1 fox in Image2: silver-white, pale-blue ears/paws, blue eyes, THREE compact frosted tails, crescent forehead marking, NO necklace/gems. Keep tail count and blue patches CONSISTENT in all8 frames.\nRow2 griffin in Image2: head is WARM BROWN/TAN with small orange/gold crest and bronze eagle beak, NOT a white bald-eagle head; warm-brown lion body, folded charcoal wings with broad dark feathers tipped orange, warm orange tail tuft. Match neck/wing size exactly, no armor.\nRow3 deer in Image2: tan/cream deer, LOW swept-back antlers with sparse green leaves, short layered leaf mantle and ONE small white flower, not giant crown. Exact same anatomy and palette across8 steps.\nBeautiful restrained HAND-PAINTED fantasy RPG rendering with simple clear large shapes and soft volume; do not increase fur/feather engraving. All face RIGHT, connected quadruped anatomy; eight chronological alternating leg strides with stable head/torso and feet on same baseline. Transparent alpha, no floor/shadow/gradient/background text or grid. Main target: all24 figures, EIGHT per row, matching identity and generous separation, no cropped parts.",
+      "refs": [
+        "walk-form3-v2.png",
+        "evolved-form3-v1.png"
+      ],
+      "selected": true,
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-a04402e7-2f07-4909-aca7-39c8eac4f290.png",
+      "references": [
+        "walk-form3-v2.png",
+        "evolved-form3-v1.png"
+      ],
+      "reason": "Selected: preserves true eight-pose layout; identity/style refinement."
+    }
+  ]
+}

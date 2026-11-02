@@ -1,5 +1,6 @@
+import {stepArtifact} from './campaign-artifact-runtime.mjs';
 import {spawnCompanion,hitCompanion} from './campaign-companion.mjs';
-import {PET_STAGE,PET_DUNGEON,petDungeonUnlocked} from './campaign-pet-data.mjs';
+import {PET_STAGE,PET_DUNGEON,petDungeonUnlocked,markPetRest} from './campaign-pet-data.mjs';
 import {spawnWildPet,stepPets} from './campaign-pets.mjs';
 import {createWorld,step,hitPlayer,damage} from './simulation.mjs?v=20261031-enemies1';
 import {soloTick,syncSoloStats,pickupSolo} from './campaign-growth-runtime.mjs';
@@ -45,7 +46,7 @@ function hazards(w){const c=w.campaign,p=w.player;for(const h of c.hazards){cons
 function constrain(w){const c=w.campaign;if(!c.lock)return;const left=c.lock.x+32,right=c.lock.x+c.lock.width-32;for(const e of [w.player,...(w.companion?.hp>0?[w.companion]:[]),...w.targets.filter(e=>e.hp>0)]){const x=clamp(e.x,left+e.w,right-e.w);if(x!==e.x){e.x=x;e.prevX=x;e.vx=0;}}}
 export function stepCampaign(w,dt,input={}){
  const c=w.campaign;if(c.state==='complete'||c.state==='defeat')return;
- step(w,dt,input);soloTick(w,dt,{damage});if(input.pickup)pickupSolo(w);constrain(w);
+ step(w,dt,input);soloTick(w,dt,{damage});stepArtifact(w,dt,input,{damage});if(input.pickup)pickupSolo(w);constrain(w);
  if(w.player.hp<=0){c.state='defeat';c.defeated=true;c.queue=[];say(w,'挑战失败 · 调整节奏，再试一次');return;}
  if(c.state==='pet'){stepPets(w,dt,{damage,hitPlayer},input);if(c.petOutcome){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};w.projectiles=w.projectiles.filter(p=>p.owner!=='enemy');}return;}
  if(c.state==='travel'&&w.player.x>=c.triggers[c.encounter])beginEncounter(w);
@@ -62,7 +63,7 @@ export function stepCampaign(w,dt,input={}){
    else if(c.encounter===4){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'首领已击败 · 走入传送门完成关卡');}
    else{c.state='travel';c.lock=null;say(w,'第 '+c.encounter+' 波清理完成 · 继续向右前进');}
   }
- }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;say(w,'秘境通关 · 新的道路已解锁');}
+ }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;if(c.progression&&!c.petDungeon)markPetRest(c.progression,c.stage.id);say(w,'秘境通关 · 新的道路已解锁');}
 }
 
 

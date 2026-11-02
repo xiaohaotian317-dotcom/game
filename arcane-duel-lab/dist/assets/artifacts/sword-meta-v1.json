@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "file": "sword-v1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "frames": [
+    {
+      "id": "icon",
+      "rect": [
+        79,
+        39,
+        440,
+        431
+      ],
+      "anchor": [
+        220,
+        216
+      ],
+      "naturalHeight": 431
+    },
+    {
+      "id": "falling-sword",
+      "rect": [
+        684,
+        0,
+        174,
+        487
+      ],
+      "anchor": [
+        86,
+        480
+      ],
+      "naturalHeight": 487
+    },
+    {
+      "id": "target-rune",
+      "rect": [
+        1032,
+        258,
+        494,
+        212
+      ],
+      "anchor": [
+        247,
+        106
+      ],
+      "naturalHeight": 212
+    },
+    {
+      "id": "impact-onset",
+      "rect": [
+        109,
+        540,
+        312,
+        442
+      ],
+      "anchor": [
+        155,
+        383
+      ],
+      "naturalHeight": 442
+    },
+    {
+      "id": "impact-peak",
+      "rect": [
+        555,
+        526,
+        440,
+        460
+      ],
+      "anchor": [
+        214,
+        400
+      ],
+      "naturalHeight": 460
+    },
+    {
+      "id": "impact-dissipate",
+      "rect": [
+        1062,
+        572,
+        434,
+        413
+      ],
+      "anchor": [
+        216,
+        351
+      ],
+      "naturalHeight": 413
+    }
+  ],
+  "analysis": {
+    "method": "Original PNG pixels preserved. Read-only alpha and manually calibrated source rectangles.",
+    "notes": "Frame1 anchor is downward blade tip. Frame2 anchor is rune center. Frame3/4/5 anchors share the visual ground center (near source y923/926); draw all three in the same world coordinate. Frame0 is only UI. Preserve source aspect ratio."
+  }
+}

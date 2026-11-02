@@ -48,7 +48,7 @@ export function surfaceAt(w,x,y=FLOOR){const candidates=w.platforms.filter(p=>p.
 function aim(w){const p=w.player;let x=w.aim.x-(p.x+p.face*20),y=w.aim.y-(p.y-72);const l=Math.hypot(x,y)||1;return{x:x/l,y:y/l};}
 export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,school,basic=false,castId,source}={}) {
   const companionHit=source==='companion';
-  if(!companionHit)amount=soloDamage(w,amount,{castId});
+  if(!companionHit&&source!=='artifact')amount=soloDamage(w,amount,{castId});
   if(t.duelSummon)return w.duelHitSummon?.(amount,w.player.x)||false;
   if(t.duelActor){
     if(t.dead>0||t.hp<=0||(t.invuln>0&&!['overload','backstab'].includes(source)))return false;
@@ -65,9 +65,9 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   w.stats.best=Math.max(w.stats.best,w.stats.combo);w.stats.lastHit=w.time;}
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
   if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*.55,duration:.55,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
-  if(!companionHit){extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
+  if(!companionHit&&source!=='artifact'){extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
   soloOnHit(w,t,castId,source,extraHooks);}
-  if(!companionHit&&w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
+  if(!companionHit&&source!=='artifact'&&w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
   if(t.hp<=0){t.killedByPlayer=true;t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
   if(t.enemyKind||t.egg)enemyOnDamage(w,t,actual,{impact});
   return true;
