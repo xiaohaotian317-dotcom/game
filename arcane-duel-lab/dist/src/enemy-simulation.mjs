@@ -127,6 +127,7 @@ function updateZones(w,dt,hooks){
    if(accepted){z.hits++;const source=w.targets.find(e=>e.id===z.owner);if(source?.hp>0)traitOnHit(w,source,{status:z.status},hooks);else if(z.status)applyEnemyStatus(w,z.status,z.owner,hooks);}
   }
   const f=w.fox;if(f&&Math.abs(f.x-z.x)<z.radius+f.w&&Math.abs(f.y-z.y)<90&&w.time>=(z.summonAt||0)){z.summonAt=w.time+.8;hooks.hitSummon(w,z.damage,z.x);}
+  const companion=w.companion;if(companion?.hp>0&&Math.abs(companion.x-z.x)<z.radius+companion.w&&Math.abs(companion.y-z.y)<90&&w.time>=(z.companionAt||0)){z.companionAt=w.time+.8;hooks.hitCompanion?.(w,z.damage,z.x);}
  }
  w.enemyZones=(w.enemyZones||[]).filter(z=>w.time-z.created<z.delay+z.life);
 }
@@ -190,7 +191,7 @@ function updateAttack(w,e,d,dt,hooks){
  if(!a.fired){a.fired=true;fireStep(w,e,s,hooks);}
  if(s.type==='leap'&&a.leaping&&!a.landed){
   if(!e.grounded)a.age=Math.min(a.age,s.windup+s.active-.00001);
-  else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y-15,radius:reach,duration:.85,enemyKind:e.enemyKind});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
+  else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y-15,radius:reach,duration:.85,enemyKind:e.enemyKind});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);if(w.companion?.hp>0&&Math.abs(w.companion.x-e.x)<reach+23&&Math.abs(w.companion.y-e.y)<100)hooks.hitCompanion?.(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
  }
  if(a.age<s.windup+s.active){
   e.ai.state=s.type==='projectile'||s.type==='zone'?'cast':s.type==='egg'||s.type==='summon'?'summon':'attack';
@@ -198,9 +199,9 @@ function updateAttack(w,e,d,dt,hooks){
    e.vx=e.face*(s.speed||350)*(d.boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1);if(d.flying)e.vy=clamp((w.player.y-20-e.y)*4,-300,300);
    if(s.lava&&Math.abs(e.x-(a.lastLava??e.x))>75){a.lastLava=e.x;const p=groundTarget(w,e.x,e.y);if(p)addZone(w,e,'lava',p,{radius:50*(e.attackScale??e.scale),life:5,damage:Math.max(1,Math.round(6*(e.damageFactor??1))),status:'burn',delay:.35});}
   }
-  if(s.type==='melee'||s.type==='dash')for(const t of [w.player,...(w.fox?[w.fox]:[])]){
-   const key=t===w.player?'player':'stag';if(a.victims.includes(key)||!enemyStrikeContact(w,e,t,s))continue;
-   a.victims.push(key);const accepted=t===w.player?hooks.hitPlayer(w,s.damage,e.x):hooks.hitSummon(w,s.damage,e.x);
+  if(s.type==='melee'||s.type==='dash')for(const t of [w.player,...(w.fox?[w.fox]:[]),...(w.companion?.hp>0?[w.companion]:[])]){
+   const key=t===w.player?'player':t===w.companion?'companion':'stag';if(a.victims.includes(key)||!enemyStrikeContact(w,e,t,s))continue;
+   a.victims.push(key);const accepted=t===w.player?hooks.hitPlayer(w,s.damage,e.x):t===w.companion?hooks.hitCompanion?.(w,s.damage,e.x):hooks.hitSummon(w,s.damage,e.x);
    if(accepted&&t===w.player)traitOnHit(w,e,s,hooks);
   }
  }else{e.ai.state='recover';e.vx*=Math.exp(-10*dt);}

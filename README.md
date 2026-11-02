@@ -1,10 +1,10 @@
 # 秘境决斗
 
-当前源码为 **campaign4 Windows 单机版**。在campaign3成长系统之上，锻造炉已改为“选装备槽→选灵石→确认升品”，旁边独立三材料槽合成炉；新增第5/7/9关宠物副本、收妖镜真实捕捉与灵宠背包。三只原创灵宠各有三形态概念，运行初形共18姿态；进化与出战养成尚未开放。225项检查通过，主观美术和真人平衡待验收。
+当前源码为 **campaign5 Windows 单机版**。在campaign3成长系统之上，锻造炉已改为“选装备槽→选灵石→确认升品”，旁边独立三材料槽合成炉；新增第5/7/9关宠物副本、收妖镜真实捕捉与灵宠背包。三只原创灵宠各有三形态概念，运行初形共18姿态；已捕获灵宠可选一只出战，跟随、跳台、攻击并承伤；进化与养成尚未开放。238项检查通过，主观美术和真人平衡待验收。
 
 通关第4关获得收妖镜；通关第5/7/9关后，可在对应关卡详情进入更难的宠物副本。清三波和首领后出现野生灵宠，降低生命，在420距离内按V摄取，成功收入独立灵宠背包。旧存档兼容，原Sites与旧发行包保留；双设备局域网体验仍待验收。
 
-Windows构建：进入`arcane-duel-lab/desktop`执行`node build.mjs --campaign-preview`，再在游戏目录执行`python scripts/package-campaign.py --version campaign4`。发行目录和ZIP不入Git；完整解压后运行ArcaneDuelCampaign.exe。源码、美术提示词、三份项目记忆和validation检查证据随仓库维护。
+Windows构建：进入`arcane-duel-lab/desktop`执行`node build.mjs --campaign-preview`，再在游戏目录执行`python scripts/package-campaign.py --version campaign5`。发行目录和ZIP不入Git；完整解压后运行ArcaneDuelCampaign.exe。源码、美术提示词、三份项目记忆和validation检查证据随仓库维护。
 
 ## 项目内容
 

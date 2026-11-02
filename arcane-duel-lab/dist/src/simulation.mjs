@@ -1,3 +1,4 @@
+import {stepCompanion,hitCompanion} from './campaign-companion.mjs';
 import {MAX_HEALTH} from './match-rules.mjs?v=20261030-duel12';
 import {cameraView} from './camera.mjs?v=20261030-duel12';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
@@ -46,7 +47,8 @@ function text(w,x,y,label,color='#fff0c7',size=22){w.texts.push({x,y,text:String
 export function surfaceAt(w,x,y=FLOOR){const candidates=w.platforms.filter(p=>p.active&&x>=p.x-15&&x<=p.x+p.w+15);return candidates.sort((a,b)=>Math.abs(a.y-y)-Math.abs(b.y-y))[0]||w.platforms[0];}
 function aim(w){const p=w.player;let x=w.aim.x-(p.x+p.face*20),y=w.aim.y-(p.y-72);const l=Math.hypot(x,y)||1;return{x:x/l,y:y/l};}
 export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,school,basic=false,castId,source}={}) {
-  amount=soloDamage(w,amount,{castId});
+  const companionHit=source==='companion';
+  if(!companionHit)amount=soloDamage(w,amount,{castId});
   if(t.duelSummon)return w.duelHitSummon?.(amount,w.player.x)||false;
   if(t.duelActor){
     if(t.dead>0||t.hp<=0||(t.invuln>0&&!['overload','backstab'].includes(source)))return false;
@@ -59,13 +61,13 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   if(knock){const resistance=t.enemyKind?.startsWith('B')?.18:1;t.vx+=knock*resistance;t.vy=Math.min(t.vy,-Math.abs(knock)*.3*resistance);}
   if(fire){if(t.burnUntil<=w.time)t.nextBurn=w.time+.75;t.burnUntil=w.time+3;w.player.passiveGlow=.5;}
   if(root)t.rootUntil=w.time+(t.enemyKind?.startsWith('B')?Math.min(root,.9):root);
-  w.stats.damage+=actual;w.stats.hits++;w.stats.combo=w.time-w.stats.lastHit<2?w.stats.combo+1:1;
-  w.stats.best=Math.max(w.stats.best,w.stats.combo);w.stats.lastHit=w.time;
+  w.stats.damage+=actual;if(companionHit)w.stats.petDamage=(w.stats.petDamage||0)+actual;else{w.stats.hits++;w.stats.combo=w.time-w.stats.lastHit<2?w.stats.combo+1:1;
+  w.stats.best=Math.max(w.stats.best,w.stats.combo);w.stats.lastHit=w.time;}
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
   if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*.55,duration:.55,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
-  extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
-  soloOnHit(w,t,castId,source,extraHooks);
-  if(w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
+  if(!companionHit){extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
+  soloOnHit(w,t,castId,source,extraHooks);}
+  if(!companionHit&&w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
   if(t.hp<=0){t.killedByPlayer=true;t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
   if(t.enemyKind||t.egg)enemyOnDamage(w,t,actual,{impact});
   return true;
@@ -214,7 +216,7 @@ function updateProjectiles(w,dt){
     const wall=s.terrainCollision===false?null:firstTerrainHit(w,s.px,s.py,s.x,s.y,s.r);
     let contact=wall?{...wall,type:'wall'}:null;
     const evading=w.player.burst?.dodgeProjectiles&&w.time<w.player.burst.until;
-    const actors=s.owner==='enemy'?[...(!evading?[w.player]:[]),...(w.fox?[w.fox]:[])]:w.targets.filter(t=>t.hp>0&&t.deadUntil<=w.time&&!(w.duel&&t.burst?.dodgeProjectiles));
+    const actors=s.owner==='enemy'?[...(!evading?[w.player]:[]),...(w.fox?[w.fox]:[]),...(w.companion?.hp>0?[w.companion]:[])]:w.targets.filter(t=>t.hp>0&&t.deadUntil<=w.time&&!(w.duel&&t.burst?.dodgeProjectiles));
     for(const a of actors){const t=segmentBox(s.px,s.py,s.x,s.y,{x:a.x-a.w,y:a.y-a.h,w:a.w*2,h:a.h},s.r);if(t!==null&&(!contact||t<contact.t)){if(s.pierceActors){if(!s.hitIds.includes(a.id)){s.hitIds.push(a.id);damage(w,a,s.damage,{fire:s.fire,knock:0,school:s.school,castId:s.castId});}}else contact={t,type:'actor',actor:a};}}
     const m=w.mirror,mirrorT=s.kind!=='emberOrb'&&m.enabled!==false&&s.owner==='player'&&s.age>.05&&s.mirrorAt!==m.angle?segmentBox(s.px,s.py,s.x,s.y,{x:m.x-17,y:m.y-29,w:34,h:58},s.r):null;
     if(mirrorT!==null&&(!contact||mirrorT<contact.t))contact={t:mirrorT,type:'mirror'};
@@ -230,7 +232,7 @@ function updateProjectiles(w,dt){
       m.cooldown=.2;effect(w,'mirrorFlash',{x:m.x,y:m.y,duration:.4});emit(w,'mirror');
     }
     if(contact?.type==='actor'){
-      if(s.owner==='enemy'){const accepted=contact.actor===w.player?hitPlayer(w,s.damage,s.px):hitSummon(w,s.damage,s.px);if(s.enemySource)enemyProjectileContact(w,s,contact.actor,enemyHooks,accepted);}
+      if(s.owner==='enemy'){const accepted=contact.actor===w.player?hitPlayer(w,s.damage,s.px):contact.actor===w.companion?hitCompanion(w,s.damage,s.px):hitSummon(w,s.damage,s.px);if(s.enemySource)enemyProjectileContact(w,s,contact.actor,enemyHooks,accepted);}
       else damage(w,contact.actor,s.damage,{fire:s.fire,knock:Math.sign(s.vx)*70,school:s.school,basic:s.basic,castId:s.castId});
       s.life=0;
     }
@@ -375,7 +377,7 @@ export function step(w,dt,input={}) {
   const spring=w.spring;
   if(spring.enabled!==false&&p.grounded&&Math.min(Math.abs(p.y-spring.y),Math.abs(p.y-(spring.surfaceY??spring.y)))<8&&Math.abs(p.x-spring.x)<35&&spring.cooldown<=0){spring.charge+=dt;if(spring.charge>.16){jump(w,true);spring.charge=0;spring.cooldown=1.2;effect(w,'spring',{x:spring.x,y:spring.y,duration:.8});emit(w,'spring');}}
   else spring.charge=Math.max(0,spring.charge-dt*2);
-  updateTargets(w,dt);updateEnemies(w,dt,enemyHooks);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);updateTrees(w,dt);
+  updateTargets(w,dt);updateEnemies(w,dt,enemyHooks);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);stepCompanion(w,dt,{physics,damage});updateTrees(w,dt);
   if(w.time-w.stats.lastHit>2)w.stats.combo=0;
 }
 export function actionState(w){
@@ -397,4 +399,4 @@ export function triggerMechanism(w,id){return triggerScene(w,id,sceneHooks);}
 export function interactNearest(w){return nearestSceneInteraction(w,sceneHooks);}
 
 const extraHooks={castMuzzle,effect,projectile,damage,damageBridge,area,emit};
-const enemyHooks={physics,effect,projectile,damage,hitPlayer,hitSummon,emit};
+const enemyHooks={physics,effect,projectile,damage,hitPlayer,hitSummon,hitCompanion,emit};

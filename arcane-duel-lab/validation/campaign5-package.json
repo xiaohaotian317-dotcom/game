@@ -1,0 +1,14 @@
+{
+  "version": "campaign5",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign5",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign5\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign5.zip",
+  "files": 321,
+  "runtimeFilesMatched": 239,
+  "bytes": 453194463,
+  "sha256": "8d82b473a127452d4693a394ec00741e3f6c832dbade033856976c0409c31ffd",
+  "originalSitesUnchanged": true,
+  "scope": "One captured pet deploys in campaign, follows and jumps, autonomously fights and takes damage; previous forge/capture compatible, evolution not implemented",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

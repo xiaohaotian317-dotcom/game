@@ -28,7 +28,7 @@ export class CampaignPainter{
   }
   if(w.campaign.lock){c.save();for(const x of [w.campaign.lock.x+14,w.campaign.lock.x+w.campaign.lock.width-14]){const g=c.createLinearGradient(x-12,0,x+12,0);g.addColorStop(0,'#d5b77a00');g.addColorStop(.5,'#d5b77a50');g.addColorStop(1,'#d5b77a00');c.fillStyle=g;c.fillRect(x-12,60,24,w.floor-60);for(let i=0;i<7;i++)ellipse(c,x,105+i*69,3,8,'#e5d3a1a0');}c.restore();}
  }
- effects(c,w){drawPets(c,w,this.art);drawSoloEffects(c,w,this.art);const cc=w.campaign;for(const h of cc.hazards){const age=w.time-h.born,color=h.kind==='lava'?'#ffac65':h.kind==='ice'?'#b8eafa':cc.stage.color;
+ effects(c,w,alpha=1){drawPets(c,w,this.art,alpha);drawSoloEffects(c,w,this.art);const cc=w.campaign;for(const h of cc.hazards){const age=w.time-h.born,color=h.kind==='lava'?'#ffac65':h.kind==='ice'?'#b8eafa':cc.stage.color;
    if(age<h.delay){const p=age/h.delay;ellipse(c,h.x,h.y-2,h.radius,9,'#0c152b90');c.save();c.setLineDash([6,4]);ellipse(c,h.x,h.y-2,h.radius,9,color,1.5);c.restore();ellipse(c,h.x,h.y-2,h.radius*p,7,color+'75');c.fillStyle=color;c.font='bold 18px serif';c.textAlign='center';c.fillText('!',h.x,h.y-26);continue;}
    const falling=age<h.delay+h.fall,kind=h.kind==='lava'?'fire':h.kind==='ice'?'ice':null;
    if(falling){const t=clamp((age-h.delay)/h.fall,0,1),y=h.y-300*(1-t);if(kind)atlas(c,this.art,kind,kind==='ice'?4+Math.min(3,Math.floor(t*4)):Math.min(3,Math.floor(t*4)),h.x,y,kind==='fire'?160:130,false);

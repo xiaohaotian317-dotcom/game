@@ -240,7 +240,7 @@ export class Renderer {
     c.save();if(!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
     for(const b of w.platforms)if(!authored&&!campaign&&b.type!=='ice')this.platform(b,w.time);
     if(campaign)campaign.ground(c,w,view);else if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
-    if(campaign)campaign.effects(c,w);
+    if(campaign)campaign.effects(c,w,alpha);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
     if(w.enemyMode)this.enemies.zones(w);
