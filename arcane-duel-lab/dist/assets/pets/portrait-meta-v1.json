@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "file": "pet-portraits-v2.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "frames": [
+    {
+      "pet": "frostfox",
+      "form": 0,
+      "rect": [
+        99,
+        60,
+        243,
+        322
+      ],
+      "bounds": [
+        103,
+        64,
+        338,
+        378
+      ],
+      "corePixels": 46672
+    },
+    {
+      "pet": "frostfox",
+      "form": 1,
+      "rect": [
+        487,
+        61,
+        277,
+        323
+      ],
+      "bounds": [
+        491,
+        65,
+        760,
+        380
+      ],
+      "corePixels": 53789
+    },
+    {
+      "pet": "frostfox",
+      "form": 2,
+      "rect": [
+        884,
+        44,
+        292,
+        340
+      ],
+      "bounds": [
+        888,
+        48,
+        1172,
+        380
+      ],
+      "corePixels": 62267
+    },
+    {
+      "pet": "emberwing",
+      "form": 0,
+      "rect": [
+        86,
+        465,
+        264,
+        309
+      ],
+      "bounds": [
+        90,
+        469,
+        346,
+        770
+      ],
+      "corePixels": 55144
+    },
+    {
+      "pet": "emberwing",
+      "form": 1,
+      "rect": [
+        481,
+        458,
+        286,
+        316
+      ],
+      "bounds": [
+        485,
+        462,
+        763,
+        770
+      ],
+      "corePixels": 61569
+    },
+    {
+      "pet": "emberwing",
+      "form": 2,
+      "rect": [
+        878,
+        444,
+        319,
+        340
+      ],
+      "bounds": [
+        882,
+        448,
+        1193,
+        780
+      ],
+      "corePixels": 71548
+    },
+    {
+      "pet": "mossdeer",
+      "form": 0,
+      "rect": [
+        112,
+        875,
+        219,
+        314
+      ],
+      "bounds": [
+        116,
+        879,
+        327,
+        1185
+      ],
+      "corePixels": 41717
+    },
+    {
+      "pet": "mossdeer",
+      "form": 1,
+      "rect": [
+        489,
+        861,
+        269,
+        332
+      ],
+      "bounds": [
+        493,
+        865,
+        754,
+        1189
+      ],
+      "corePixels": 54023
+    },
+    {
+      "pet": "mossdeer",
+      "form": 2,
+      "rect": [
+        882,
+        843,
+        318,
+        350
+      ],
+      "bounds": [
+        886,
+        847,
+        1196,
+        1189
+      ],
+      "corePixels": 67156
+    }
+  ],
+  "method": "Read-only alpha>100 connected bodies; confirmed isolated 3x3 portraits, original pixels preserved."
+}

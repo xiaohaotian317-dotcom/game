@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign6',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6'])
+parser.add_argument('--version',default='campaign7',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,7 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Simplified pets, three forms and eight-frame walks, nine skills, independent captured traits and persistent vitals; stage4 mirror pickup/health and coin upgrades; stage6 sword-rain artifact with Q; rank3 forge ten stones','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Fullscreen map, portrait stage details, independent two-hero selection and persistent 1/2 switching; themed hero/pet/boss bars, low-health edges, pause and actual-loot results; regional sparse combat areas and denser varied-height travel platforms with validated step routes; six painted elemental hero HUDs; restored pet vitals on new attempts and new spirit beast art','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 

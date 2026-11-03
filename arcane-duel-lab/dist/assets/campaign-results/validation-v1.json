@@ -1,0 +1,63 @@
+{
+  "version": "results-v1",
+  "tool": "built-in image_gen",
+  "status": "generated and visually inspected; user art approval pending",
+  "assets": [
+    {
+      "file": "treasure-coins-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBbox": [
+        0,
+        9,
+        1238,
+        1254
+      ],
+      "alpha16Bbox": [
+        23,
+        232,
+        1230,
+        1062
+      ],
+      "transparentRatio": 0.513872,
+      "sha256": "6c547c2207c4b4df609de63168a2db2d9c0d2122ec4f240233955f4486ccd87c",
+      "bytes": 2255267,
+      "pixelEdits": false
+    },
+    {
+      "file": "victory-crest-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBbox": [
+        0,
+        19,
+        1236,
+        1254
+      ],
+      "alpha16Bbox": [
+        31,
+        47,
+        1225,
+        1128
+      ],
+      "transparentRatio": 0.453485,
+      "sha256": "66617c256536f2f1d231b82d34f27e2fe742826b082acde79d8c6ab648dcb4fa",
+      "bytes": 2478270,
+      "pixelEdits": false
+    }
+  ]
+}

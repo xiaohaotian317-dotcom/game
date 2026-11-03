@@ -1,0 +1,168 @@
+{
+  "file": "hero-hud-shells-v1.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alphaRange": [
+    0,
+    254
+  ],
+  "zeroAlphaRatio": 0.300142,
+  "alphaBbox": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "rows": [
+    {
+      "hero": "fire",
+      "cell": [
+        0,
+        0,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        6,
+        8,
+        1017,
+        252
+      ],
+      "alpha32BboxLocal": [
+        7,
+        9,
+        1017,
+        251
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 252,
+      "mpCenterAlpha": 252
+    },
+    {
+      "hero": "nature",
+      "cell": [
+        0,
+        256,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        11,
+        5,
+        1009,
+        254
+      ],
+      "alpha32BboxLocal": [
+        11,
+        6,
+        1008,
+        254
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 252,
+      "mpCenterAlpha": 253
+    },
+    {
+      "hero": "frost",
+      "cell": [
+        0,
+        512,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        7,
+        4,
+        1013,
+        256
+      ],
+      "alpha32BboxLocal": [
+        7,
+        4,
+        1012,
+        256
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 252,
+      "mpCenterAlpha": 253
+    },
+    {
+      "hero": "lightning",
+      "cell": [
+        0,
+        768,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        7,
+        0,
+        1016,
+        250
+      ],
+      "alpha32BboxLocal": [
+        7,
+        0,
+        1015,
+        250
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 252,
+      "mpCenterAlpha": 253
+    },
+    {
+      "hero": "shadow",
+      "cell": [
+        0,
+        1024,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        5,
+        1,
+        1023,
+        256
+      ],
+      "alpha32BboxLocal": [
+        5,
+        1,
+        1023,
+        256
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 252,
+      "mpCenterAlpha": 253
+    },
+    {
+      "hero": "star",
+      "cell": [
+        0,
+        1280,
+        1024,
+        256
+      ],
+      "alpha16BboxLocal": [
+        7,
+        0,
+        1018,
+        256
+      ],
+      "alpha32BboxLocal": [
+        7,
+        0,
+        1017,
+        255
+      ],
+      "portraitCenterAlpha": 0,
+      "hpCenterAlpha": 253,
+      "mpCenterAlpha": 253
+    }
+  ],
+  "sha256": "6c231d2aa325645cf9f90040b69c0ad4b802d0aadceff5454ceaf854f0f36552",
+  "bytes": 2449871,
+  "pixelEdits": false
+}

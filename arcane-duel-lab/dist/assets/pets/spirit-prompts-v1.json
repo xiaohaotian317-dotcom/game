@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "task": "T22 initial spirit-beast redesign",
+  "date": "2026-11-03",
+  "source": "Exact prompts recovered from own tool-call session records, not reconstructed; portrait v2 prompt persisted before generation.",
+  "order": {
+    "body": [
+      "frostfox",
+      "emberwing",
+      "mossdeer"
+    ],
+    "poses": [
+      "idle0",
+      "idle1",
+      "walk0",
+      "walk1",
+      "attack",
+      "hurt"
+    ],
+    "walks": 8,
+    "portrait": "rows species; columns initial/awakened/final"
+  },
+  "records": [
+    {
+      "id": "body",
+      "selected": true,
+      "file": "pets-v4.png",
+      "tool": "built-in image_gen.imagegen",
+      "intent": "generate",
+      "prompt": "(.*?)",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\lobby\\hero-splashes-v1.png",
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pets-v3.png"
+      ],
+      "defaultOutputPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-733663e3-eabf-431c-8e4e-0b7014292788.png",
+      "projectPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pets-v4.png",
+      "conceptPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\灵宠\\v4\\已选\\pets-v4.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "949ea66f9f18b73e9f9c9dd1d2e82b39a73fe2308d7c6143dc02072abd026b4b",
+      "sourceSha256": "949ea66f9f18b73e9f9c9dd1d2e82b39a73fe2308d7c6143dc02072abd026b4b",
+      "alpha": {
+        "zero": 744291,
+        "partial": 828573,
+        "opaque": 0
+      },
+      "pixelsEdited": false
+    },
+    {
+      "id": "walk",
+      "selected": true,
+      "file": "walk-form1-v2.png",
+      "tool": "built-in image_gen.imagegen",
+      "intent": "edit",
+      "prompt": "(.*?)",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\walk-form1-v1.png",
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pets-v4.png"
+      ],
+      "defaultOutputPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-ebc39e12-e5de-469e-b03d-dc1134599c0a.png",
+      "projectPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\walk-form1-v2.png",
+      "conceptPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\灵宠\\v4\\已选\\walk-form1-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "901ab638d0f3d2c21c3b279561e255c61dc3f6f2dc5538da139b1e2732c3d5bd",
+      "sourceSha256": "901ab638d0f3d2c21c3b279561e255c61dc3f6f2dc5538da139b1e2732c3d5bd",
+      "alpha": {
+        "zero": 853520,
+        "partial": 719344,
+        "opaque": 0
+      },
+      "pixelsEdited": false
+    },
+    {
+      "id": "portrait-draft",
+      "selected": false,
+      "file": "pet-portraits-v1.png",
+      "tool": "built-in image_gen.imagegen",
+      "intent": "generate",
+      "prompt": "(.*?)",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\lobby\\hero-splashes-v1.png",
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pets-v4.png"
+      ],
+      "defaultOutputPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-e9b6bde9-5481-410f-8e69-cdcd36692288.png",
+      "projectPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pet-portraits-v1.png",
+      "conceptPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\灵宠\\v4\\未选稿\\pet-portraits-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "0de1aa61b4b7b19983c735bc95105993e1fa8dd73b32b3a8bb3005a353bcf3eb",
+      "sourceSha256": "0de1aa61b4b7b19983c735bc95105993e1fa8dd73b32b3a8bb3005a353bcf3eb",
+      "alpha": {
+        "zero": 475771,
+        "partial": 1096587,
+        "opaque": 158
+      },
+      "pixelsEdited": false,
+      "rejectionReason": "Column 3 upper/lower portraits connect through alpha and cannot be independently cropped without loss."
+    },
+    {
+      "id": "portrait",
+      "selected": true,
+      "file": "pet-portraits-v2.png",
+      "tool": "built-in image_gen.imagegen",
+      "intent": "edit",
+      "prompt": "Use case: precise-object-edit.\nAsset type: transparent game HUD beast portrait atlas, 3 rows x 3 columns, square 1536 x1536.\nEdit target: image 1 is the previous nine-portrait atlas. Keep the species identities, narrow serene eyes, hand-painted dark-fantasy anime brushwork, colors, and progression. CHANGE ONLY composition and portrait orientation: redraw all portraits as compact front three-quarter HEAD ONLY portraits with just a very short neck, showing both eyes (near eye larger), not profile busts.\nCRITICAL GRID: exactly nine independent cutouts on genuinely transparent alpha. Each imaginary equal square cell must have at least 20% completely empty transparent margin on all four sides. Every complete head, ear, antler tip, crest, fur lock and glow stays within the central 60% of its cell. Large transparent gutters between all rows and columns. The final form is no larger within its cell than initial form. No wisps or particles bridging cells. No backgrounds, no frames, no circles, no text.\nRows top to bottom: white/silver frost fox with blue inner ears, one crescent brow mark and narrow icy eyes; russet/charcoal eagle-lion griffin with hooked bronze beak, angular ember crest and amber eyes; tan/cream ancient forest spirit deer with regal short-to-medium crown antlers, serene GOLD pupils, exactly one luminous teal ancient forehead branching rune. Deer MUST feel like a mystical guardian, not an ordinary deer photograph or cute round-eyed Bambi. All deer heads front three-quarter, with both eyes visible, broad noble brow and elegant sharper muzzle.\nColumns left to right initial / awakened / final evolution. Initial minimal clean silhouette and one motif; awakened moderate crown/feather/frost accents; final more august crown silhouette, still compact and clean. Restrained magic accents inside silhouette. Keep the initial form serious and youthful by modest antlers/crest, not chibi proportions. No giant eyes, plush cheeks, silly expressions, armor, jewelry chains or bloom. Alpha fully zero outside all heads. Small-scale HUD legibility.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pet-portraits-v1.png"
+      ],
+      "defaultOutputPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19a28-72ea-7393-ba36-72e58d063916\\exec-cb3bd8aa-f3e9-490e-b4de-06875be046cd.png",
+      "projectPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\pets\\pet-portraits-v2.png",
+      "conceptPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\灵宠\\v4\\已选\\pet-portraits-v2.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "13608ebe29dab160e6308525c3d0f4b6ba324f2230e4cdff8d3b2cdc8966fa74",
+      "sourceSha256": "13608ebe29dab160e6308525c3d0f4b6ba324f2230e4cdff8d3b2cdc8966fa74",
+      "alpha": {
+        "zero": 733063,
+        "partial": 839190,
+        "opaque": 263
+      },
+      "pixelsEdited": false
+    }
+  ]
+}

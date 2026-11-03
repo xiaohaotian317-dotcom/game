@@ -1,0 +1,23 @@
+{
+  "checked": 2304,
+  "unreachable": [],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "method": "Real 120Hz physics, no spells/teleport. Each platform is reached from its declared support; support graph roots at ground. Travel high decks use low/mid stepping platforms. Four double-jump timings, steering toward actual landing center."
+}

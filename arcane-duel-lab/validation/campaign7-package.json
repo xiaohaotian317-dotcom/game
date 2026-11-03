@@ -1,0 +1,14 @@
+{
+  "version": "campaign7",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign7",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign7\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign7.zip",
+  "files": 368,
+  "runtimeFilesMatched": 286,
+  "bytes": 489209106,
+  "sha256": "a4e377a256f088b9d1a209c707f0847d34e8eeafbe7b78ae79af2dfb3d21018d",
+  "originalSitesUnchanged": true,
+  "scope": "Fullscreen map, portrait stage details, independent two-hero selection and persistent 1/2 switching; themed hero/pet/boss bars, low-health edges, pause and actual-loot results; regional sparse combat areas and denser varied-height travel platforms with validated step routes; six painted elemental hero HUDs; restored pet vitals on new attempts and new spirit beast art",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

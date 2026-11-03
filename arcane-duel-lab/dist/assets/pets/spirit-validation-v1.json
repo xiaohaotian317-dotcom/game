@@ -1,0 +1,72 @@
+{
+  "version": "spirit-v1",
+  "pngPixelsModified": false,
+  "files": [
+    {
+      "file": "pets-v4.png",
+      "sha256": "949ea66f9f18b73e9f9c9dd1d2e82b39a73fe2308d7c6143dc02072abd026b4b",
+      "bytes": 2617403,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 744291
+    },
+    {
+      "file": "walk-form1-v2.png",
+      "sha256": "901ab638d0f3d2c21c3b279561e255c61dc3f6f2dc5538da139b1e2732c3d5bd",
+      "bytes": 2461970,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 853520
+    },
+    {
+      "file": "pet-portraits-v2.png",
+      "sha256": "13608ebe29dab160e6308525c3d0f4b6ba324f2230e4cdff8d3b2cdc8966fa74",
+      "bytes": 1891775,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 733063
+    }
+  ],
+  "sheets": {
+    "pets-v4.png": {
+      "frames": 18,
+      "rows": 3,
+      "foreignBodyPixels": 0,
+      "coreRetained": true,
+      "anchoring": "fixed species naturalHeight, per-frame original foot anchor"
+    },
+    "walk-form1-v2.png": {
+      "frames": 24,
+      "rows": 3,
+      "foreignBodyPixels": 0,
+      "coreRetained": true,
+      "anchoring": "fixed species naturalHeight, per-frame original foot anchor"
+    },
+    "pet-portraits-v2.png": {
+      "frames": 9,
+      "isolatedHeads": true
+    }
+  },
+  "portraitFirstDraftRejected": true
+}

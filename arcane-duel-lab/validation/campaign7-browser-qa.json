@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-03",
+  "status": "complete for listed UI checks; user art/balance acceptance pending",
+  "origin": "http://127.0.0.1:4209",
+  "profile": "Isolated localhost fixture only; six owned heroes, sample pet, cleared stages and coins are injected. No Windows save changes.",
+  "checked": [
+    "Full map and cleaned stage details",
+    "Two empty team slots; selects only owned heroes; single or two-member entry",
+    "Actual 1 and 2 keyboard switching, reserve portrait only, active own abilities",
+    "Dedicated new spirit beast heads and 18 initial poses / 24 walking poses loaded",
+    "Actual moving and companion combat in stage1",
+    "Wounded pet 57/137 HP and 84/101 MP persists through actual recall and redeployment",
+    "Actual restart restores pet 137/137 HP and 101/101 MP",
+    "Victory actual picked items and +15 earned coins, new treasure coin/crest art",
+    "Failure retry flow and pause page",
+    "New dense travel step cluster viewed from isolated camera inspection",
+    "Six painted hero chassis selected and bounds checked; actual fire and frost theme/health values viewed",
+    "Macro sparse combat / dense travel platforms; 2304 real route checks passed",
+    "Native final package launched as isolated campaign7-smoke; 23 resources HTTP 200; QA process/profile cleaned"
+  ],
+  "fixtureOnly": [
+    "Boss/win/loss UI controls reproduce states, not natural full-stage completions",
+    "Static material screenshots use a labelled QA-only freeze/inspection action; the helper is outside dist"
+  ],
+  "viewportQA": {
+    "desktopMinimum": [
+      1000,
+      640
+    ],
+    "narrowCheckedBeforeNewHUD": [
+      703,
+      558
+    ]
+  },
+  "consoleErrorsAtLatestCheck": [],
+  "remaining": [],
+  "nativeWindowVisualQA": false,
+  "currentChecks": 273,
+  "sourceUpload": "pending"
+}

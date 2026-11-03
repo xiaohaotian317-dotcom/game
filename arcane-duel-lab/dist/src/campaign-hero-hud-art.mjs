@@ -1,0 +1,2 @@
+import meta from '../assets/hero-hud/hero-hud-meta-v1.json' with {type:'json'};
+export function heroHudStyle(hero){const f=meta.rows[hero],vars={'skin-y':f.row*20+'%','portrait-left':(f.avatar[0]-f.avatar[2])/1024,'portrait-top':(f.avatar[1]-f.avatar[2])/1024,'portrait-size':f.avatar[2]*2/1024};for(const [key,rect]of [['hp',f.life],['mp',f.mana],['xp',f.xp]])for(const [i,label]of ['left','top','width','height'].entries())vars[key+'-'+label]=rect[i]/1024;return Object.entries(vars).map(([k,v])=>'--'+k+':'+v).join(';');}

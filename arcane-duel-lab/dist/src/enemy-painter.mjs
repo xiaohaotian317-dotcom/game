@@ -24,7 +24,7 @@ export async function loadEnemyAssets(ids,assets,progress=()=>{}){
 export class EnemyPainter{
  constructor(ctx,assets){this.c=ctx;this.assets=assets;this.bossEffects=new BossFxPainter(ctx,assets);}
  health(w,e){
-  if(e.hp<=0)return;const c=this.c,boss=ENEMIES[e.enemyKind]?.boss,width=boss?112:e.egg?46:56;
+  if(e.hp<=0||w.campaign&&ENEMIES[e.enemyKind]?.boss)return;const c=this.c,boss=ENEMIES[e.enemyKind]?.boss,width=boss?112:e.egg?46:56;
   const y=e.y-(e.egg?65:e.visual*.97)-13;c.save();c.textAlign='center';c.font='600 '+(boss?13:11)+'px "Microsoft YaHei",sans-serif';
   const name=e.egg?'蛛卵 · 即将孵化':(e.baby?'幼蛛':ENEMIES[e.enemyKind].name);if(!w.campaign||boss||e.egg){c.lineWidth=3;c.strokeStyle='#09121b';c.strokeText(name,e.x,y-6);c.fillStyle=boss?'#f1d2a1':'#e5d6c1';c.fillText(name,e.x,y-6);}
   c.fillStyle='#07111de6';c.fillRect(e.x-width/2-2,y,width+4,9);c.fillStyle=boss?'#b16871':e.egg?'#b695d6':'#b59c76';c.fillRect(e.x-width/2,y+2,width*clamp(e.hp/e.maxHp,0,1),5);

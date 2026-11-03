@@ -1,0 +1,18 @@
+{
+  "version": "hero-hud-v1",
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "file": "hero-hud-shells-v1.png",
+  "prompt": "Use case: stylized-concept. Asset type: production TRANSPARENT six-hero HUD FRAME ATLAS for a polished dark fantasy hand-painted action RPG. Create exactly ONE COLUMN and SIX HORIZONTAL ROWS on a 1024x1536 portrait canvas. Each row is a separate complete horizontal HUD shell, no connecting artwork between rows, transparent empty gutters. Each row occupies a 1024x256 cell. HUD geometry identical for all six rows: a large EMPTY circular portrait socket on the LEFT, inner opening about 150 pixels in diameter, center x=115 and local y=115; attached to its right are TWO LONG EMPTY recessed dark charcoal slots: top health slot runs x=245 to 940, local y=75 to 115; second mana slot runs x=245 to 940, local y=135 to 163. Below those is a slim dark blank strip x=245 to 940 local y=184 to 203 for later experience/text overlay. All slots and portrait circle must be COMPLETELY EMPTY, untextured deep charcoal interiors or transparent interiors. NO health/mana color fill, NO prefilled bars. Do not paint ANY words, letters, numbers, symbols, icons, portraits or faces. The open long slots must stay unobstructed across their entire width for later live numeric text and bar fill. The decorative SHELL around each socket and slots has dimensional metal/wood/crystal materials, refined sculpted bevels and bold readable silhouettes. Main shell around x=25..985/local y=20..230, leaving a minimum 25px completely transparent empty separation from neighboring rows. Paint only physical shell ornament and subtle localized edge accents; NO floating particles, diffuse glow clouds or background. Row order TOP TO BOTTOM: 1 FIRE: dark obsidian-black iron with rich burnished copper and antique gold borders, sculpted sweeping flame-shaped fins around portrait ring and right end, a few glowing ember cracks ONLY in the metal perimeter. 2 NATURE: aged dark carved living wood bound with sculpted bronze vines and a few broad emerald leaves hugging the outer ring and terminal, elegant root grain; no flowers scattered over slots. 3 FROST: engraved silver alloy and large faceted icy cyan crystal fins around the portrait and right end, frosty edges with cool blue reflections; restrained, no snowstorm. 4 LIGHTNING: dark tempered steel and warm golden angular lightning-shaped armor ridges, small blue-white electrical seams ONLY along outer metal, clearly mechanical forged aesthetic. 5 SHADOW BLADE: blackened steel and muted amethyst metal, layered raven-feather shapes hugging the ring and dagger-like pointed right terminal, cool silver razor edges, stealthy and elegant. 6 STAR MAGE: deep indigo enamel and antique gold inlaid orbital filigree, celestial geometric engraved perimeter, a few tiny embedded blue cabochons; keep slots plain and absolutely empty. Unified premium artisanal dark fantasy painterly UI, dimensional yet clean and functional at game scale. Six different MATERIAL silhouettes, not merely recolors. All six circular openings aligned and same size; all six long slots aligned and same size. Genuine transparent alpha zero around physical shapes and between rows, no black rectangular background behind the collection. No title, no labels, no grid lines, no watermark, no mockup scenery.",
+  "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a19768-b16b-7de3-b602-f2a5225c2540\\exec-58004b33-e657-4223-8c22-f19ccc1a6e67.png",
+  "rowOrder": [
+    "fire",
+    "nature",
+    "frost",
+    "lightning",
+    "shadow",
+    "star"
+  ],
+  "pixelEdits": false,
+  "status": "generated and visually inspected; implementation and user approval pending"
+}
