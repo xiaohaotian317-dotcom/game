@@ -41,7 +41,7 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
 `;
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
-if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign8
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign9
 
 先退出旧客户端，完整解压后双击 ArcaneDuelCampaign.exe，无需GPT、插件、Node或网络。
 启动页→开始游戏→大厅→单机闯关→全屏世界选关→关卡介绍→独立双角色选择→开始挑战。地图只保留返回大厅和进度。
@@ -65,9 +65,12 @@ AD移动，空格二段跳，鼠标普攻，FER技能，Shift冲刺，1/2切换�
 平台保留原冰晶/熔岩等主题和原地面，每关A/B两样式，按空间压短下饰、高处保留长冰锥，避免穿地。传送门只显示按X结算。
 暂停页使用独立沙漏月翼金属浮雕外框和精制按钮，暂停时可继续/重试/回地图。
 胜利与失败各有独立凯旋金冠/银铁战损浮雕外框，显示本局金币、经验、实际拾取物品；窄窗口保留完整操作按钮，仅中间奖励区必要时滚动。
+英雄召唤改独立全屏页面：烬火之誓/万象新芽/霜月低语/惊雷破晓/夜鸦契约/星海回响，六个专属场景与URL、各自保底。大厅和旧召唤链接都进入新页面。
+立绘发梢/衣摆轻微流动，职业光芒与粒子呼吸，面部固定；动态可关闭，系统减少动态偏好自动适用。
+召唤单次1券、十连最多10券、20次内必得当前目标；抽中即停止并保留未使用券，已拥有英雄只预览不再扣券，不花金币。
 原网站、旧发行包与PvP战斗数值保留。真人难度、主观美术与两设备联机仍待验收。
 `,'utf8');
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign8':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign9':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
 
 

@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-03",
+  "version": "summon1 / campaign9",
+  "fixture": "127.0.0.1:4213, isolated from actual desktop and user4212 game",
+  "isNaturalGameplay": false,
+  "routes": {
+    "lobbyButton": "lobby.html -> summon.html?hero=nature",
+    "legacy": "campaign.html?panel=summon -> summon.html?hero=frost after nature unlocked"
+  },
+  "ui": {
+    "sixPools": "all six selected and visually inspected; distinct backgrounds/hero/skill/passive/titles",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "pityPersistence": "nature19 and frost7 retained across six-pool switching",
+    "actualGuaranteedTen": "sample30tickets/nature19 -> obtained nature, ticket29, other frost7 unchanged; owned pool buttons disabled",
+    "saveReload": "legacy navigation reloaded and retained acquired nature/ticket29/frost7",
+    "motion": "local mesh deformation/soft particles visible; on/off control exercised; face pinning and zero reduced motion verified by pure renderer weight tests",
+    "rapidSwitch": "star -> lightning -> shadow leaves one visible shadow scene; no stale scene deletion",
+    "cropFix": "lower-row source starts544, no floating boots in final shadow screenshot",
+    "consoleErrors": []
+  },
+  "tests": 291,
+  "screenshots": [
+    "summon1-nature.jpg",
+    "summon1-fire.jpg",
+    "summon1-frost.jpg",
+    "summon1-lightning.jpg",
+    "summon1-shadow-final.jpg",
+    "summon1-star.jpg",
+    "summon1-guarantee.jpg"
+  ],
+  "limits": [
+    "No native window visual manipulation or two-device LAN test this UI revision",
+    "Narrow responsive layout is implemented, no dedicated narrow viewport screenshot this turn",
+    "Early exploratory motion crops had layout/frame changes and are not quantitative proof of amplitude/static identity",
+    "Art and motion remain subject to user acceptance"
+  ]
+}

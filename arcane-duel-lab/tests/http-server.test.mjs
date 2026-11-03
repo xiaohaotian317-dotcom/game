@@ -16,7 +16,7 @@ async function post(base,route,body,origin,token){return fetch(base+'/api/duel/'
 
 test('standalone serves extensionless pages/assets and health without exposing build directories',async()=>{
  const app=await start();try{
-  for(const p of ['/','/lobby','/duel','/characters','/skills','/src/match-rules.mjs'])assert.equal((await fetch(app.base+p)).status,200,p);
+  for(const p of ['/','/lobby','/duel','/characters','/skills','/summon','/src/match-rules.mjs'])assert.equal((await fetch(app.base+p)).status,200,p);
   assert.deepEqual(await (await fetch(app.base+'/healthz')).json(),{status:'ok'});
   for(const p of ['/server/index.js','/client/index.html','/.openai/hosting.json','/absent'])assert.equal((await fetch(app.base+p)).status,404,p);
   const head=await fetch(app.base+'/lobby',{method:'HEAD'});assert.equal(head.status,200);assert.equal(await head.text(),'');

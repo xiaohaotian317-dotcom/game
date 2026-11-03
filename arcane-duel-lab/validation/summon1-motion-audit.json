@@ -1,0 +1,39 @@
+{
+  "motion": {
+    "size": [
+      668,
+      518
+    ],
+    "differenceBounds": [
+      0,
+      0,
+      668,
+      518
+    ],
+    "meanChannelDifference": [
+      32.22435727001595,
+      23.218354796199108,
+      19.26029986359328
+    ],
+    "identical": false
+  },
+  "still": {
+    "size": [
+      668,
+      518
+    ],
+    "differenceBounds": [
+      280,
+      0,
+      668,
+      518
+    ],
+    "meanChannelDifference": [
+      1.9475845606085127,
+      1.7726891776292975,
+      1.732717961759878
+    ],
+    "identical": false
+  },
+  "interpretation": "Exploratory captures had layout/frame changes between samples; they are not a quantitative animation-amplitude or static-identity proof. Face pinning/reduced-motion logic is tested separately; actual UI toggle and screenshots inspected."
+}

@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign8',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8'])
+parser.add_argument('--version',default='campaign9',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,7 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'22 face closeups; square reserve hero portraits and actual level badges; original themed platforms with two variants and clearance-compressed undersides; larger transparent world drops, proximity C prompt and immediate recovery; solo challenge, shared passives and stage-scaled coins; ornate hourglass pause menu and separate painted victory/defeat results with fixed actions','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'22 face closeups; square reserve hero portraits and actual level badges; original themed platforms with two variants and clearance-compressed undersides; larger transparent world drops, proximity C prompt and immediate recovery; solo challenge, shared passives and stage-scaled coins; ornate hourglass pause menu and separate painted victory/defeat results with fixed actions; independent six-hero summon pools with original themed scenes, subtle portrait motion, corrected routes and persistent per-hero pity','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 

@@ -1,9 +1,10 @@
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
-import {HERO_ORDER,loadProfile,saveProfile,summonHeroes} from './player-profile.mjs?v=20261030-duel12';
+import {HERO_ORDER,loadProfile,saveProfile} from './player-profile.mjs?v=20261030-duel12';
 import {splashStyle} from './lobby-art.mjs?v=20261030-duel12';
 import {loadSolo,saveSolo} from './campaign-profile.mjs';
+import {SOLO_KEY} from './campaign-growth-data.mjs';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
 const solo=loadSolo(storage);let profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected},preview='fire',stage='moon',busy=false,toastTimer;
@@ -12,7 +13,7 @@ const verses={fire:'让余烬，照亮最后的长夜。',nature:'万物有灵�
 const descriptions={fire:{attack:'发射焰矢，碰墙停止，命中附加持续灼烧。',q:'在鼠标下方第一块台面引爆火焰印记。',e:'朝指定方向快速投出火球；离屏前再次按 E，在火球当前位置引爆。',r:'陨石穿过上层平台，在指定台面约 0.86 秒内砸落。'},nature:{attack:'发射荆棘种子，碰墙停止。',q:'缚根锁住敌人，限制其移动。',e:'召唤主动寻敌的木灵鹿；3.5 秒内再按 E 指挥角跃冲撞。',r:'从鼠标下方台面生长古树，提供庇护与枝台。'}};
 function art(el,hero){el.style.cssText=splashStyle(hero);el.setAttribute('aria-label',HEROES[hero].name+' · '+HEROES[hero].given+'立绘');}
 function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,3500);}
-function persist(){solo.selected=profile.selected;saveSolo(storage,solo);if(!saveProfile(storage,profile))toast('当前浏览器无法保存进度，本次会话仍可继续体验。');}
+function persist(){Object.assign(solo,loadSolo(storage));solo.selected=profile.selected;saveSolo(storage,solo);if(!saveProfile(storage,profile))toast('当前浏览器无法保存进度，本次会话仍可继续体验。');}
 function decorate(){for(const el of $$('.frame')){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ornate-frame');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.innerHTML='<use href="#ornate-frame"/>';el.append(svg);}}
 function renderHeader(){
   $$('[data-balance]').forEach(el=>el.textContent=profile.coins.toLocaleString('en-US'));
@@ -34,7 +35,7 @@ function renderDetail(){
   $('#ownership-status').textContent=owned?'✦ 已拥有':'◇ 尚未唤醒';$('#equip-hero').disabled=!owned||profile.selected===preview;$('#equip-hero').textContent=profile.selected===preview?'当前展示英雄':owned?'设为展示英雄':'等待召唤';
 }
 function setView(view,push=true){
-  if(view==='summon'){location.href='campaign.html?panel=summon';return;}
+  if(view==='summon'){location.href='summon.html';return;}
   if(!['hall','summon','codex'].includes(view))view='hall';const hall=view==='hall';$('#shell').dataset.view=view;$('#hall-view').hidden=!hall;$('#summon-view').hidden=hall;$('#page-heading').hidden=hall;$('#page-heading').textContent=view==='codex'?'英雄图鉴':'英雄召唤';$('.summon-controls').hidden=view==='codex';
   $('.brand').innerHTML=hall?'<span class="brand-sigil">✧</span><span>秘境决斗<small>ARCANE DUEL</small></span>':'<span class="brand-sigil">‹</span> 返回大厅';
   document.title=(hall?'主大厅':view==='codex'?'英雄图鉴':'英雄召唤')+' · 秘境决斗';
@@ -45,16 +46,8 @@ function open(id){$(id).showModal();}
 function setSound(value){profile.sound=value;persist();renderHeader();}
 let audio;
 function chime(){if(!profile.sound)return;try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();[523.25,659.25,783.99].forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.09;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.035,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.6);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+.65);});}catch{}}
-function draw(count){
-  if(busy)return;let draw;try{draw=summonHeroes(profile,count);}catch(e){toast(e.message);return;}
-  busy=true;profile=draw.profile;persist();renderHeader();$('#summon-art').classList.add('summoning');chime();
-  setTimeout(()=>{
-    preview=(draw.results.find(r=>r.isNew)||draw.results[0]).hero;renderHeroes();renderDetail();$('#summon-art').classList.remove('summoning');
-    $('#summon-results').classList.toggle('single',count===1);
-    $('#summon-results').innerHTML=draw.results.map((r,i)=>'<figure class="result-hero '+(r.isNew?'is-new':'')+'" style="--delay:'+i*.045+'s"><div class="result-art"><div class="hero-art" style="'+splashStyle(r.hero)+'"></div></div><figcaption><span class="result-badge">'+(r.isNew?'NEW HERO':'STARLIGHT')+'</span><strong>'+HEROES[r.hero].name+'</strong><small>'+HEROES[r.hero].given+' · '+(r.isNew?'新英雄已解锁':'重复返还 '+r.refund+' 金币')+'</small></figcaption></figure>').join('');
-    const n=draw.results.filter(r=>r.isNew).length;$('#result-title').textContent=n?'星辉回应 · 新的同行者':'星辉再次与你相逢';$('#result-summary').textContent='本次消耗 '+draw.cost+' 金币 · 新英雄 '+n+' 位'+(draw.refund?' · 重复返还 '+draw.refund+' 金币':'');open('#result-dialog');
-  },550);
-}
+function draw(){location.href='summon.html';}
+
 decorate();renderHeader();renderHeroes();renderDetail();setView(new URLSearchParams(location.search).get('view')||'hall',false);
 $$('button[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 window.addEventListener('popstate',()=>setView(new URLSearchParams(location.search).get('view')||'hall',false));
@@ -70,7 +63,7 @@ $('#room-code').addEventListener('input',e=>e.target.value=e.target.value.toUppe
 $('#duel-practice').addEventListener('click',()=>location.href=practiceURL($('#duel-scene').value));
 $$('[data-stage]').forEach(b=>b.addEventListener('click',()=>{stage=b.dataset.stage;$$('[data-stage]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));}));
 $('#stage-enter').addEventListener('click',()=>location.href=practiceURL(stage));
-window.addEventListener('storage',e=>{if(e.key==='arcane-duel-profile-v1'){profile=loadProfile(storage);renderHeader();renderHeroes();renderDetail();}});
+window.addEventListener('storage',e=>{if(e.key===SOLO_KEY||e.key==='arcane-duel-profile-v1'){Object.assign(solo,loadSolo(storage));profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected};renderHeader();renderHeroes();renderDetail();}});
 
 async function loadLobbyArt(){
   const overlay=new LoadingScreen(),token=overlay.start('moon','正在准备大厅'),urls=['assets/lobby/backdrop-v1.png','assets/lobby/hero-splashes-v1.png','assets/lobby/mode-cards-v1.png'];let done=0;

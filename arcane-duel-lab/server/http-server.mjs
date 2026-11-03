@@ -4,7 +4,7 @@ import path from 'node:path';
 import {handleDuelRequest} from './rooms.mjs';
 
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
-const pages=new Set(['lobby','duel','characters','skills']);
+const pages=new Set(['lobby','duel','characters','skills','summon']);
 export function gameOrigin(value){
   if(!value)return null;
   const u=new URL(value);

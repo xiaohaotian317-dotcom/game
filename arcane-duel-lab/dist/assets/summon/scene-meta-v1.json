@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "file": "fire-sanctum-v1.png",
+      "sha256": "01b6a498fc6bd48bbaeab36b02d4905c1ad7f5df7915a726a3bac832cd1a21dd",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_a\\fire-sanctum-v1.png"
+    },
+    {
+      "file": "frost-sanctum-v1.png",
+      "sha256": "03e4fc773be857c1efb93233fcd6a2f7e8c028629016e2fc1097d4e2daa464d6",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_a\\frost-sanctum-v1.png"
+    },
+    {
+      "file": "nature-sanctum-v1.png",
+      "sha256": "d0b02de9c36084dbf0c42c21bb4d0c01cd18f5f46c822ae0994201c5c80c5ab4",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_a\\nature-sanctum-v1.png"
+    },
+    {
+      "file": "lightning-sanctum-v1.png",
+      "sha256": "accb4a76dc61ecbfa5de202c3e0c6056db097af92ecabb00bb93404072103cfd",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_b\\lightning-sanctum-v1.png"
+    },
+    {
+      "file": "shadow-sanctum-v1.png",
+      "sha256": "0071fe8f0b145d5e441986cf4fdb5b14c0249331171efc138d2255ceb1e2ed4b",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_b\\shadow-sanctum-v1.png"
+    },
+    {
+      "file": "star-sanctum-v1.png",
+      "sha256": "36e9deed696ccbadf9833699a6bde581abae7c3da1ade734d42292f4652762be",
+      "source": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T29\\pools_b\\star-sanctum-v1.png"
+    }
+  ]
+}
