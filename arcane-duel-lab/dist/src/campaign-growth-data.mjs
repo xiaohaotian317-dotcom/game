@@ -1,7 +1,7 @@
 export const SOLO_HEROES=['fire','nature','frost','lightning','shadow','star'];
 export const SOLO_NAMES={fire:'焰术师',nature:'森灵',frost:'霜语者',lightning:'雷行者',shadow:'影刃',star:'星术师'};
 export const SOLO_KEY='arcane-solo-growth-v1';
-export const BASE_STATS={fire:[180,105],nature:[180,110],frost:[165,115],lightning:[180,95],shadow:[165,95],star:[173,120]};
+export const BASE_STATS={fire:[120,65],nature:[125,70],frost:[112,75],lightning:[130,60],shadow:[115,60],star:[118,80]};
 export const XP_STEPS=[80,100,140,180,240,320,420,550,700,900,1150,1450];
 export const xpNeeded=level=>XP_STEPS[level-1]??Math.round(1450+(level-12)*350+(level-12)**2*65);
 export function experience(total=0){let level=1,xp=Math.max(0,Math.floor(total));while(level<50&&xp>=xpNeeded(level)){xp-=xpNeeded(level++);}return {level,xp,next:xpNeeded(level),total:Math.max(0,Math.floor(total))};}

@@ -1,0 +1,1368 @@
+{
+  "taskId": "T25-drop-v1",
+  "agent": "platform_art_early",
+  "status": "待主Agent检查接入；未改代码/正式assets/meta/项目文档，未获用户美术验收",
+  "generationMode": "built-in image_gen",
+  "pixelPolicy": "仅按字节复制原始PNG；未缩放、裁切、重绘或改写图像。alpha分析仅只读。",
+  "requestedSize": [
+    1024,
+    1024
+  ],
+  "requestedGrid": {
+    "columns": 4,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256
+  },
+  "actualSizeLimitation": "内置image_gen未提供size参数；两次prompt要求1024×1024均输出1254×1254。当前交付保留原始实尺，不能称为1024，也不能按256网格裁切。使用逐件显式crop。未通过脚本缩放。",
+  "referencePath": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/campaign-growth/items-v1.png",
+  "selected": {
+    "file": "drop-items-v1.png",
+    "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05c-f35c-7f03-9272-08ef05cc5ea0/exec-397fff51-3f41-47df-9040-22624e821df9.png",
+    "prompt": "NATIVE OUTPUT CANVAS MUST BE EXACTLY 1024 pixels wide and EXACTLY 1024 pixels high. This is a fixed-size 1024x1024 game texture atlas, not a cropped illustration. Do not auto-crop, resize or trim the canvas. Preserve the full square transparent canvas and its exact 1024x1024 dimensions.\n\nUse case: stylized-concept\nAsset type: production ground-loot sprite atlas for a dark Gothic fantasy side-scrolling action game.\nPrimary request: create ONE 1024 x 1024 PNG with a REAL transparent alpha background, exactly FOUR columns by FOUR rows of invisible 256 x 256 cells. Exactly 15 separate physical loot objects occupy cells 1 through 15 in reading order, and the last cell at row 4 column 4 remains entirely empty and transparent. This is a sprite sheet of isolated objects, not inventory interface icons, not item cards.\n\nComposition: Each physical object is centered horizontally within its own cell, complete and uncropped, approximately 150 to 190 pixels on its largest side. Use consistent slightly three-quarter front viewing perspective with modest top visibility, refined hand-painted 2D game materials, detailed polished Gothic fantasy style, clear strong silhouettes and small-scale readability. Let grounded solid objects end close to y210 relative to their cell, while taller bottles/crystals/sword may begin near y35-45. Leave at least 28-35 pixels of completely transparent space around each object and large empty gutters between objects. The entire silhouette and any effects must stay within their own cell; neighboring sprites never touch.\n\nStyle: hand-painted original dark-fantasy game loot, tactile weathered wood, aged carved gold and brass, beautiful purple alchemical glass, cut mineral facets, restrained luminous cores. Fine painted material detail, crisp clean silhouette, natural local shading on the object itself. Gold should look like substantial antique gold, not neon yellow. Restrained magical glow only inside or immediately hugging an object. Transparent pixels everywhere outside the physical objects. Solid object bodies should be nearly opaque.\n\nReading-order content, exactly:\nROW 1:\nCell 1: SMALL GOLD COIN CHEST, a modest compact walnut wooden chest with aged gold bands and clasp, lid slightly open revealing a few thick ancient coins; simple small-tier construction.\nCell 2: MEDIUM GOLD COIN CHEST, a distinct larger refined dark wood and blackened metal treasure chest reinforced with bronze-gold corners and rivets, partly open revealing stacked coins; more elaborate than cell 1.\nCell 3: LARGE GOLD COIN CHEST, an ornate antique-gold sculpted treasure chest with rich deep-red wood panels, carved gold relief, open lid and abundant treasure held inside; regal larger-tier design but contained in cell.\nCell 4: SMALL EXPERIENCE POTION, a small slim purple glass vial with a simple bronze collar and purple crystalline stopper, luminous violet liquid inside, delicate clean silhouette.\n\nROW 2:\nCell 5: MEDIUM EXPERIENCE POTION, a round purple alchemist bottle with elegant curved body, bronze-gold protective filigree and a small purple crystal stopper; visibly different from small vial.\nCell 6: LARGE EXPERIENCE POTION, a lavish tall faceted purple-crystal bottle with ornate antique-gold neck, base and handles, rich violet elixir, strong regal silhouette; clearly more elaborate than medium.\nCell 7: ONE GOLDEN HERO SUMMON TICKET, a single physical aged golden parchment voucher, slightly rolled at short ends and viewed at a gentle diagonal, an embossed sunburst seal and delicate gold ornament, no writing. It is a loose physical paper object with irregular curled paper edges, not a framed UI rectangle, not multiple tickets.\nCell 8: SMALL SPIRIT STONE, exactly one beautiful green mineral crystal shard, a simple strong emerald-green faceted silhouette and dim inner radiance, no pedestal or jewelry mount.\n\nROW 3:\nCell 9: MEDIUM SPIRIT STONE, a compact cluster of cyan/teal mineral crystals, 3 to 5 angular points attached directly together, deep cool facets, no separate base or pedestal.\nCell 10: HIGH-GRADE SPIRIT STONE, a distinctive compact violet and antique-gold crystal cluster with several large clean facets, thin natural golden mineral seams, dim purple inner energy, no broad halo, no pedestal.\nCell 11: HEALTH RED-DEW BLOOD CRYSTAL, a single substantial ruby-red crystal with a few tiny attached basal facets, unmistakable clean red mineral silhouette and a subtle warm red core, no heart-shaped graphic or UI badge, no pedestal.\nCell 12: MANA AZURE SPIRIT DEW, an elegant blue luminous drop-shaped glass bottle with a small silver-bronze neck cap, visible deep blue liquid and a bright internal dewdrop, clearly a physical flask rather than a blue crystal, no pedestal.\n\nROW 4:\nCell 13: HERO CHOICE TREASURE CHEST, a beautiful antique-gold and dark bronze chest decorated with a prominent sculpted SIX-POINTED STAR crest on the front (six points, no words), closed slightly domed lid with small jewel accents, distinct silhouette from the three coin chests.\nCell 14: DEMON CAPTURE MIRROR, an antique bronze HAND MIRROR with a short sculpted handle, round reflective muted teal glass, worn arcane bronze engraved rim, a small green-blue gem; a freestanding isolated physical mirror with no mount.\nCell 15: SKY-CONTROL SWORD, an isolated short-proportioned silver-and-gold fantasy sword, polished silver blade, antique-gold crossguard and hilt, a small blue gem, upright with very slight diagonal tilt, full blade point and pommel visible, compact readable broad silhouette, no scabbard.\nCell 16: COMPLETELY EMPTY, zero objects, zero decoration, fully transparent.\n\nAbsolute constraints: NO outer border, NO square frame, NO icon card, NO black square, NO backing panel, NO circular background medallion, NO grid lines, NO cell outlines, NO printed text, NO letters, NO numbers, NO labels, NO watermarks, NO scene, NO floor, NO ground tile, NO cast-shadow patch, NO pedestal, NO ground shadow, NO backdrop, NO gradient background, NO checkerboard pattern. Only the fifteen physical loot objects and real transparent alpha elsewhere. The last 256x256 cell must be entirely transparent.\n\nREPEAT EXACT DELIVERABLE: a 1024 x 1024 PNG. Fixed 4x4 cells, each 256 pixels square. The object centers are at x128,384,640,896 and y128,384,640,896. Each of the first 15 objects fits within a maximum 185px-wide x 185px-high central area of its own cell. This leaves 35.5px transparent padding on each side. Cell 16 is entirely transparent. No added cards, frames or background.",
+    "selectionReason": "第二稿透明本体、无卡框/底板、15件顺序正确、每件完整并分离；六芒徽记宝箱、镜、剑均单独可识别。",
+    "destinationPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T25\\drop_items\\drop-items-v1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "bytes": 1365223,
+    "sha256": "5e5864e8f1df9730a5c1f13baf090951ce52b6e26e167b3fdc53dbcbdd889614",
+    "sourceSha256": "5e5864e8f1df9730a5c1f13baf090951ce52b6e26e167b3fdc53dbcbdd889614",
+    "sourceBytesIdentical": true,
+    "alphaSummary": {
+      "min": 0,
+      "max": 255,
+      "zeroPixels": 1095593,
+      "totalPixels": 1572516,
+      "pixelsAtLeast16": 410423,
+      "gridBoundsX": [
+        0,
+        314,
+        627,
+        940,
+        1254
+      ],
+      "gridBoundsY": [
+        0,
+        314,
+        627,
+        940,
+        1254
+      ]
+    },
+    "frames": [
+      {
+        "index": 0,
+        "row": 1,
+        "column": 1,
+        "name": "小金币宝箱",
+        "cellRectXYWH": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            41,
+            28,
+            314,
+            314
+          ],
+          "8": [
+            68,
+            79,
+            259,
+            267
+          ],
+          "16": [
+            69,
+            79,
+            259,
+            267
+          ],
+          "64": [
+            70,
+            80,
+            258,
+            266
+          ],
+          "200": [
+            71,
+            80,
+            257,
+            265
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          64,
+          74,
+          200,
+          198
+        ],
+        "solidWidthHeight": [
+          190,
+          188
+        ],
+        "cellMarginPixelsLTRB": [
+          69,
+          79,
+          55,
+          47
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          164.0,
+          264
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          100.0,
+          190
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9596
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          134,
+          264
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 1,
+        "row": 1,
+        "column": 2,
+        "name": "中金币宝箱",
+        "cellRectXYWH": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            314,
+            49,
+            621,
+            314
+          ],
+          "8": [
+            353,
+            54,
+            591,
+            274
+          ],
+          "16": [
+            353,
+            55,
+            589,
+            274
+          ],
+          "64": [
+            354,
+            55,
+            589,
+            273
+          ],
+          "200": [
+            355,
+            56,
+            588,
+            273
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          348,
+          50,
+          246,
+          229
+        ],
+        "solidWidthHeight": [
+          236,
+          219
+        ],
+        "cellMarginPixelsLTRB": [
+          39,
+          55,
+          38,
+          40
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          471.0,
+          272
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          123.0,
+          222
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9694
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          426.5,
+          272
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 2,
+        "row": 1,
+        "column": 3,
+        "name": "大金币宝箱",
+        "cellRectXYWH": [
+          627,
+          0,
+          313,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            636,
+            23,
+            940,
+            314
+          ],
+          "8": [
+            660,
+            36,
+            909,
+            282
+          ],
+          "16": [
+            660,
+            36,
+            909,
+            282
+          ],
+          "64": [
+            661,
+            36,
+            908,
+            282
+          ],
+          "200": [
+            662,
+            37,
+            907,
+            281
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          655,
+          31,
+          259,
+          256
+        ],
+        "solidWidthHeight": [
+          249,
+          246
+        ],
+        "cellMarginPixelsLTRB": [
+          33,
+          36,
+          31,
+          32
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          784.5,
+          280
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          129.5,
+          249
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9727
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          741.0,
+          280
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 3,
+        "row": 1,
+        "column": 4,
+        "name": "小经验药水",
+        "cellRectXYWH": [
+          940,
+          0,
+          314,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            940,
+            19,
+            1234,
+            314
+          ],
+          "8": [
+            1060,
+            48,
+            1137,
+            274
+          ],
+          "16": [
+            1060,
+            48,
+            1137,
+            274
+          ],
+          "64": [
+            1060,
+            49,
+            1137,
+            273
+          ],
+          "200": [
+            1061,
+            50,
+            1136,
+            273
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          1055,
+          43,
+          87,
+          236
+        ],
+        "solidWidthHeight": [
+          77,
+          226
+        ],
+        "cellMarginPixelsLTRB": [
+          120,
+          48,
+          117,
+          40
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          1098.5,
+          272
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          43.5,
+          229
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9703
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          1099.0,
+          272
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 4,
+        "row": 2,
+        "column": 1,
+        "name": "中经验药水",
+        "cellRectXYWH": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            47,
+            314,
+            314,
+            597
+          ],
+          "8": [
+            79,
+            358,
+            238,
+            591
+          ],
+          "16": [
+            79,
+            358,
+            238,
+            591
+          ],
+          "64": [
+            79,
+            358,
+            237,
+            591
+          ],
+          "200": [
+            80,
+            359,
+            236,
+            590
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          74,
+          353,
+          169,
+          243
+        ],
+        "solidWidthHeight": [
+          159,
+          233
+        ],
+        "cellMarginPixelsLTRB": [
+          79,
+          44,
+          76,
+          36
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          158.5,
+          589
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          84.5,
+          236
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9712
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          157.5,
+          589
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 5,
+        "row": 2,
+        "column": 2,
+        "name": "大经验药水",
+        "cellRectXYWH": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            314,
+            314,
+            627,
+            617
+          ],
+          "8": [
+            374,
+            326,
+            566,
+            609
+          ],
+          "16": [
+            374,
+            326,
+            566,
+            609
+          ],
+          "64": [
+            375,
+            326,
+            565,
+            608
+          ],
+          "200": [
+            376,
+            327,
+            564,
+            607
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          369,
+          321,
+          202,
+          293
+        ],
+        "solidWidthHeight": [
+          192,
+          283
+        ],
+        "cellMarginPixelsLTRB": [
+          60,
+          12,
+          61,
+          18
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          470.0,
+          606
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          101.0,
+          285
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9727
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          470,
+          606
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 6,
+        "row": 2,
+        "column": 3,
+        "name": "金色角色抽奖券",
+        "cellRectXYWH": [
+          627,
+          314,
+          313,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            628,
+            316,
+            940,
+            627
+          ],
+          "8": [
+            644,
+            371,
+            916,
+            576
+          ],
+          "16": [
+            644,
+            372,
+            916,
+            574
+          ],
+          "64": [
+            644,
+            372,
+            916,
+            574
+          ],
+          "200": [
+            645,
+            373,
+            915,
+            573
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          639,
+          367,
+          282,
+          212
+        ],
+        "solidWidthHeight": [
+          272,
+          202
+        ],
+        "cellMarginPixelsLTRB": [
+          17,
+          58,
+          24,
+          53
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          780.0,
+          572
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          141.0,
+          205
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.967
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          695,
+          572
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 7,
+        "row": 2,
+        "column": 4,
+        "name": "小灵石",
+        "cellRectXYWH": [
+          940,
+          314,
+          314,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            940,
+            316,
+            1234,
+            627
+          ],
+          "8": [
+            1044,
+            373,
+            1158,
+            566
+          ],
+          "16": [
+            1044,
+            374,
+            1158,
+            566
+          ],
+          "64": [
+            1044,
+            374,
+            1158,
+            565
+          ],
+          "200": [
+            1045,
+            375,
+            1157,
+            564
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          1039,
+          369,
+          124,
+          202
+        ],
+        "solidWidthHeight": [
+          114,
+          192
+        ],
+        "cellMarginPixelsLTRB": [
+          104,
+          60,
+          96,
+          61
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          1101.0,
+          563
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          62.0,
+          194
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9604
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          1069.0,
+          563
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 8,
+        "row": 3,
+        "column": 1,
+        "name": "中灵石",
+        "cellRectXYWH": [
+          0,
+          627,
+          314,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            63,
+            627,
+            312,
+            908
+          ],
+          "8": [
+            67,
+            679,
+            251,
+            897
+          ],
+          "16": [
+            69,
+            679,
+            251,
+            897
+          ],
+          "64": [
+            69,
+            680,
+            250,
+            896
+          ],
+          "200": [
+            70,
+            681,
+            250,
+            895
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          64,
+          674,
+          192,
+          228
+        ],
+        "solidWidthHeight": [
+          182,
+          218
+        ],
+        "cellMarginPixelsLTRB": [
+          69,
+          52,
+          63,
+          43
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          160.0,
+          894
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          96.0,
+          220
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9649
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          154,
+          894
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 9,
+        "row": 3,
+        "column": 2,
+        "name": "高灵石",
+        "cellRectXYWH": [
+          314,
+          627,
+          313,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            318,
+            627,
+            619,
+            940
+          ],
+          "8": [
+            354,
+            658,
+            588,
+            909
+          ],
+          "16": [
+            355,
+            658,
+            586,
+            909
+          ],
+          "64": [
+            355,
+            658,
+            586,
+            908
+          ],
+          "200": [
+            356,
+            659,
+            585,
+            907
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          350,
+          653,
+          241,
+          261
+        ],
+        "solidWidthHeight": [
+          231,
+          251
+        ],
+        "cellMarginPixelsLTRB": [
+          41,
+          31,
+          41,
+          31
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          470.5,
+          906
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          120.5,
+          253
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9693
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          459.5,
+          906
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 10,
+        "row": 3,
+        "column": 3,
+        "name": "赤露血晶",
+        "cellRectXYWH": [
+          627,
+          627,
+          313,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            628,
+            627,
+            933,
+            940
+          ],
+          "8": [
+            694,
+            663,
+            865,
+            902
+          ],
+          "16": [
+            695,
+            663,
+            865,
+            902
+          ],
+          "64": [
+            695,
+            664,
+            865,
+            902
+          ],
+          "200": [
+            696,
+            665,
+            864,
+            901
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          690,
+          658,
+          180,
+          249
+        ],
+        "solidWidthHeight": [
+          170,
+          239
+        ],
+        "cellMarginPixelsLTRB": [
+          68,
+          36,
+          75,
+          38
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          780.0,
+          900
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          90.0,
+          242
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9719
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          780,
+          900
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 11,
+        "row": 3,
+        "column": 4,
+        "name": "湛蓝灵露",
+        "cellRectXYWH": [
+          940,
+          627,
+          314,
+          313
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            947,
+            628,
+            1240,
+            940
+          ],
+          "8": [
+            1024,
+            645,
+            1171,
+            907
+          ],
+          "16": [
+            1025,
+            645,
+            1170,
+            907
+          ],
+          "64": [
+            1025,
+            645,
+            1170,
+            907
+          ],
+          "200": [
+            1026,
+            646,
+            1169,
+            906
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          1020,
+          640,
+          155,
+          272
+        ],
+        "solidWidthHeight": [
+          145,
+          262
+        ],
+        "cellMarginPixelsLTRB": [
+          85,
+          18,
+          84,
+          33
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          1097.5,
+          905
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          77.5,
+          265
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9743
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          1097.5,
+          905
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 12,
+        "row": 4,
+        "column": 1,
+        "name": "英雄自选宝箱",
+        "cellRectXYWH": [
+          0,
+          940,
+          314,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            25,
+            947,
+            314,
+            1254
+          ],
+          "8": [
+            32,
+            991,
+            289,
+            1199
+          ],
+          "16": [
+            32,
+            991,
+            289,
+            1199
+          ],
+          "64": [
+            32,
+            992,
+            289,
+            1199
+          ],
+          "200": [
+            33,
+            993,
+            288,
+            1198
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          27,
+          986,
+          267,
+          218
+        ],
+        "solidWidthHeight": [
+          257,
+          208
+        ],
+        "cellMarginPixelsLTRB": [
+          32,
+          51,
+          25,
+          55
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          160.5,
+          1197
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          133.5,
+          211
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9679
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          105.0,
+          1197
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 13,
+        "row": 4,
+        "column": 2,
+        "name": "收妖镜",
+        "cellRectXYWH": [
+          314,
+          940,
+          313,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            314,
+            940,
+            627,
+            1254
+          ],
+          "8": [
+            377,
+            967,
+            577,
+            1222
+          ],
+          "16": [
+            377,
+            968,
+            576,
+            1222
+          ],
+          "64": [
+            378,
+            968,
+            576,
+            1221
+          ],
+          "200": [
+            378,
+            969,
+            575,
+            1220
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          372,
+          963,
+          209,
+          264
+        ],
+        "solidWidthHeight": [
+          199,
+          254
+        ],
+        "cellMarginPixelsLTRB": [
+          63,
+          28,
+          51,
+          32
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          476.5,
+          1219
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          104.5,
+          256
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9697
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          391,
+          1219
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 14,
+        "row": 4,
+        "column": 3,
+        "name": "御天剑",
+        "cellRectXYWH": [
+          627,
+          940,
+          313,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            627,
+            940,
+            935,
+            1238
+          ],
+          "8": [
+            703,
+            960,
+            862,
+            1223
+          ],
+          "16": [
+            705,
+            960,
+            862,
+            1223
+          ],
+          "64": [
+            705,
+            960,
+            861,
+            1223
+          ],
+          "200": [
+            706,
+            961,
+            860,
+            1222
+          ]
+        },
+        "cellAlphaMinMax": [
+          0,
+          255
+        ],
+        "recommendedCropRectXYWH": [
+          700,
+          955,
+          167,
+          273
+        ],
+        "solidWidthHeight": [
+          157,
+          263
+        ],
+        "cellMarginPixelsLTRB": [
+          78,
+          20,
+          78,
+          31
+        ],
+        "recommendedBottomAnchorXYInAtlas": [
+          783.5,
+          1221
+        ],
+        "recommendedBottomAnchorXYInCrop": [
+          83.5,
+          266
+        ],
+        "recommendedBottomAnchorUVInCrop": [
+          0.5,
+          0.9744
+        ],
+        "optionalOpaqueContactXYInAtlas": [
+          707.0,
+          1221
+        ],
+        "cropBasis": "alpha>=16主体bbox外加5px，只建议运行时drawImage源矩形；原PNG未裁切。",
+        "anchorBasis": "alpha>=200实体底行作为落地高度，x使用主体bbox中心；斜镜/斜剑可参考optionalOpaqueContact。"
+      },
+      {
+        "index": 15,
+        "row": 4,
+        "column": 4,
+        "name": null,
+        "cellRectXYWH": [
+          940,
+          940,
+          314,
+          314
+        ],
+        "alphaBoundsLTRBByThreshold": {
+          "1": [
+            947,
+            940,
+            1232,
+            1254
+          ],
+          "8": null,
+          "16": null,
+          "64": null,
+          "200": null
+        },
+        "cellAlphaMinMax": [
+          0,
+          1
+        ]
+      }
+    ],
+    "emptyFinalCell": {
+      "rectXYWH": [
+        940,
+        940,
+        314,
+        314
+      ],
+      "alphaMinMax": [
+        0,
+        1
+      ],
+      "hasSemanticPixelsAlphaAtLeast8": false
+    }
+  },
+  "rejectedGenerations": [
+    {
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05c-f35c-7f03-9272-08ef05cc5ea0/exec-4fc6bf4d-aa60-4eab-97fb-e1d92eccee63.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "prompt": "Use case: stylized-concept\nAsset type: production ground-loot sprite atlas for a dark Gothic fantasy side-scrolling action game.\nPrimary request: create ONE 1024 x 1024 PNG with a REAL transparent alpha background, exactly FOUR columns by FOUR rows of invisible 256 x 256 cells. Exactly 15 separate physical loot objects occupy cells 1 through 15 in reading order, and the last cell at row 4 column 4 remains entirely empty and transparent. This is a sprite sheet of isolated objects, not inventory interface icons, not item cards.\n\nComposition: Each physical object is centered horizontally within its own cell, complete and uncropped, approximately 150 to 190 pixels on its largest side. Use consistent slightly three-quarter front viewing perspective with modest top visibility, refined hand-painted 2D game materials, detailed polished Gothic fantasy style, clear strong silhouettes and small-scale readability. Let grounded solid objects end close to y210 relative to their cell, while taller bottles/crystals/sword may begin near y35-45. Leave at least 28-35 pixels of completely transparent space around each object and large empty gutters between objects. The entire silhouette and any effects must stay within their own cell; neighboring sprites never touch.\n\nStyle: hand-painted original dark-fantasy game loot, tactile weathered wood, aged carved gold and brass, beautiful purple alchemical glass, cut mineral facets, restrained luminous cores. Fine painted material detail, crisp clean silhouette, natural local shading on the object itself. Gold should look like substantial antique gold, not neon yellow. Restrained magical glow only inside or immediately hugging an object. Transparent pixels everywhere outside the physical objects. Solid object bodies should be nearly opaque.\n\nReading-order content, exactly:\nROW 1:\nCell 1: SMALL GOLD COIN CHEST, a modest compact walnut wooden chest with aged gold bands and clasp, lid slightly open revealing a few thick ancient coins; simple small-tier construction.\nCell 2: MEDIUM GOLD COIN CHEST, a distinct larger refined dark wood and blackened metal treasure chest reinforced with bronze-gold corners and rivets, partly open revealing stacked coins; more elaborate than cell 1.\nCell 3: LARGE GOLD COIN CHEST, an ornate antique-gold sculpted treasure chest with rich deep-red wood panels, carved gold relief, open lid and abundant treasure held inside; regal larger-tier design but contained in cell.\nCell 4: SMALL EXPERIENCE POTION, a small slim purple glass vial with a simple bronze collar and purple crystalline stopper, luminous violet liquid inside, delicate clean silhouette.\n\nROW 2:\nCell 5: MEDIUM EXPERIENCE POTION, a round purple alchemist bottle with elegant curved body, bronze-gold protective filigree and a small purple crystal stopper; visibly different from small vial.\nCell 6: LARGE EXPERIENCE POTION, a lavish tall faceted purple-crystal bottle with ornate antique-gold neck, base and handles, rich violet elixir, strong regal silhouette; clearly more elaborate than medium.\nCell 7: ONE GOLDEN HERO SUMMON TICKET, a single physical aged golden parchment voucher, slightly rolled at short ends and viewed at a gentle diagonal, an embossed sunburst seal and delicate gold ornament, no writing. It is a loose physical paper object with irregular curled paper edges, not a framed UI rectangle, not multiple tickets.\nCell 8: SMALL SPIRIT STONE, exactly one beautiful green mineral crystal shard, a simple strong emerald-green faceted silhouette and dim inner radiance, no pedestal or jewelry mount.\n\nROW 3:\nCell 9: MEDIUM SPIRIT STONE, a compact cluster of cyan/teal mineral crystals, 3 to 5 angular points attached directly together, deep cool facets, no separate base or pedestal.\nCell 10: HIGH-GRADE SPIRIT STONE, a distinctive compact violet and antique-gold crystal cluster with several large clean facets, thin natural golden mineral seams, dim purple inner energy, no broad halo, no pedestal.\nCell 11: HEALTH RED-DEW BLOOD CRYSTAL, a single substantial ruby-red crystal with a few tiny attached basal facets, unmistakable clean red mineral silhouette and a subtle warm red core, no heart-shaped graphic or UI badge, no pedestal.\nCell 12: MANA AZURE SPIRIT DEW, an elegant blue luminous drop-shaped glass bottle with a small silver-bronze neck cap, visible deep blue liquid and a bright internal dewdrop, clearly a physical flask rather than a blue crystal, no pedestal.\n\nROW 4:\nCell 13: HERO CHOICE TREASURE CHEST, a beautiful antique-gold and dark bronze chest decorated with a prominent sculpted SIX-POINTED STAR crest on the front (six points, no words), closed slightly domed lid with small jewel accents, distinct silhouette from the three coin chests.\nCell 14: DEMON CAPTURE MIRROR, an antique bronze HAND MIRROR with a short sculpted handle, round reflective muted teal glass, worn arcane bronze engraved rim, a small green-blue gem; a freestanding isolated physical mirror with no mount.\nCell 15: SKY-CONTROL SWORD, an isolated short-proportioned silver-and-gold fantasy sword, polished silver blade, antique-gold crossguard and hilt, a small blue gem, upright with very slight diagonal tilt, full blade point and pommel visible, compact readable broad silhouette, no scabbard.\nCell 16: COMPLETELY EMPTY, zero objects, zero decoration, fully transparent.\n\nAbsolute constraints: NO outer border, NO square frame, NO icon card, NO black square, NO backing panel, NO circular background medallion, NO grid lines, NO cell outlines, NO printed text, NO letters, NO numbers, NO labels, NO watermarks, NO scene, NO floor, NO ground tile, NO cast-shadow patch, NO pedestal, NO ground shadow, NO backdrop, NO gradient background, NO checkerboard pattern. Only the fifteen physical loot objects and real transparent alpha elsewhere. The last 256x256 cell must be entirely transparent.",
+      "rejectionReason": "原生尺寸1254×1254偏离1024目标，定向再生尺寸。第二稿透明无框质量相当且物件更紧凑；首稿默认源保留未删除。",
+      "sha256": "750fb3562658ec6e70fca9abb1e73a505c7a7fc41346e90738f5bc47f928bbc8"
+    }
+  ],
+  "reviewNotes": [
+    "已完整view_image检查第二稿：没有背包UI卡框、黑方底、地面或场景；透明围绕物品本体。",
+    "宝箱内部暗色/黑色是物体内部阴影，不是方形背景。票券本体是卷曲纸张，矩形来自物品本体。",
+    "末格无物体，alpha最大1，存在极低alpha残边，未脚本清理。",
+    "经验药水三档轮廓从小瓶/圆瓶/华丽双耳瓶递进；灵石绿单枚/青簇/紫金簇可区分；红晶与蓝滴瓶轮廓明确。",
+    "建议地面绘制按实测crop等比放大，不要读取背包items-v1卡框素材；背包原图由主Agent保持原状。",
+    "原图尺寸经主Agent确认可接受1254×1254，以实际rect接入；不再为1024目标重生或脚本缩放。"
+  ],
+  "items": [
+    "小金币宝箱",
+    "中金币宝箱",
+    "大金币宝箱",
+    "小经验药水",
+    "中经验药水",
+    "大经验药水",
+    "金色角色抽奖券",
+    "小灵石",
+    "中灵石",
+    "高灵石",
+    "赤露血晶",
+    "湛蓝灵露",
+    "英雄自选宝箱",
+    "收妖镜",
+    "御天剑",
+    null
+  ],
+  "analysisMethod": "Pillow只读RGBA/alpha，逐格测threshold1/8/16/64/200边界，5px crop padding；仅JSON写入，不修改任何PNG。"
+}

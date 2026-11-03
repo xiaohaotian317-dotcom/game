@@ -1,0 +1,765 @@
+{
+  "date": "2026-11-03",
+  "scope": "Documentation-only conservative compaction; no game edits, tests, build, packaging, deployment or account changes. Literal coverage and read-only code comparisons are not gameplay QA.",
+  "originalFullTextCommit": "3cc965f",
+  "originalWorkingTreeMatchedGitAfterLineEndingNormalization": true,
+  "files": [
+    {
+      "file": "AGENTS.md/项目需求.md",
+      "oldCharsLF": 34266,
+      "newCharsLF": 9748,
+      "oldLines": 443,
+      "newLines": 157,
+      "oldGitSHA256": "9a778b14c4799336ec9cb9735692fdfac8596652761840503f881f7696443ba7",
+      "newSHA256": "e83fbc1a8a0a48a7621916d9265fadf0bf7f98f8717eb6a6e180721a70795df0"
+    },
+    {
+      "file": "AGENTS.md/项目架构.md",
+      "oldCharsLF": 40695,
+      "newCharsLF": 10054,
+      "oldLines": 502,
+      "newLines": 144,
+      "oldGitSHA256": "ef81404610c0d75a3775b49e073bddc3161d0a4a0905701bf7a429f2fe87da84",
+      "newSHA256": "344eae1cc8795fd4a6aac2b36570b672b65c4936610f664c0fa1f164856105e4"
+    },
+    {
+      "file": "AGENTS.md/历史要求与约束及待完成事项.md",
+      "oldCharsLF": 36124,
+      "newCharsLF": 6639,
+      "oldLines": 512,
+      "newLines": 101,
+      "oldGitSHA256": "ea34d1c1b39584547fbb5e1722d3d276c6bfef868ab2f0013fb3d173bafdb621",
+      "newSHA256": "29c8f3e6e27e50a04bdeb0dd36374a803f024c8e51506e319c76ad3435830560"
+    }
+  ],
+  "oldCharsLF": 111085,
+  "newCharsLF": 26441,
+  "reductionPercent": 76.2,
+  "exactRepeatedLongParagraphCharsAfter": 0,
+  "retentionChecks": [
+    {
+      "id": "mode_scope",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "ui_quality",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "independent_actions",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "rig_constraints",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "controls",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "basic_collision_rate",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "melee",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "recasts",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "ground_target",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "fire",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "deer_frost",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "duel_flow",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "camera_loading",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "scene_style",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "map_team",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "waves",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "platform_routes",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "hazards_portal",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "boss_identity",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "boss_balance",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "new_save",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "growth",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "mana_cooldown",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "skills",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "panels_transfer",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "gacha_loot",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "inventory",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "equipment",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "forge",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "artifacts",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "capture_evolution",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "pet_vitals",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "hud_result",
+      "file": "项目需求.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "source_modules",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "saves",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "network",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "desktop",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "assets",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "art_preservation",
+      "file": "项目架构.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "authorization",
+      "file": "历史要求与约束及待完成事项.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "cloudflare",
+      "file": "历史要求与约束及待完成事项.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "verification",
+      "file": "历史要求与约束及待完成事项.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "pending",
+      "file": "历史要求与约束及待完成事项.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "maintenance",
+      "file": "历史要求与约束及待完成事项.md",
+      "passed": true,
+      "missing": []
+    },
+    {
+      "id": "11_stage_names_and_bosses_match_code",
+      "passed": true
+    },
+    {
+      "id": "36_skill_names_retained",
+      "passed": true
+    },
+    {
+      "id": "pet_forms_retained",
+      "passed": true
+    },
+    {
+      "id": "wave_totals_match_code",
+      "passed": true
+    },
+    {
+      "id": "initial_economy_matches_code",
+      "passed": true
+    },
+    {
+      "id": "xp_steps_match_code",
+      "passed": true
+    },
+    {
+      "id": "consumables_match_code",
+      "passed": true
+    },
+    {
+      "id": "entry_references_AGENTS.override.md",
+      "passed": true
+    },
+    {
+      "id": "entry_references_arcane-duel-lab/AGENTS.md",
+      "passed": true
+    },
+    {
+      "id": "only_three_memory_docs_modified",
+      "passed": true
+    }
+  ],
+  "referencePathChecks": [
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-platforms.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-team.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-companion.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-hero-hud-art.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-forge-ui.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/src/campaign-artifact-runtime.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pets-v4.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pets-meta-v3.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/pet-portraits-v2.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/pets/growth-meta-v2.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/hero-hud/hero-hud-shells-v1.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/hero-hud/hero-hud-meta-v1.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/boss-fx/platforms-v4.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/boss-fx/portal-v2.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/campaign-results/treasure-coins-v1.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/campaign-results/victory-crest-v1.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/heroes/lightning-core-v3.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/heroes/shadow-core-v2.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-tests.txt",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-platform-audit.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-browser-qa.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-native-startup.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-package.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign7-final-preview.png",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/cloudflare-report-submission.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/validation/campaign3-balance.json",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/scripts/audit-scene-routes.mjs",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/scripts/audit-campaign7-platforms.mjs",
+      "exists": true
+    },
+    {
+      "path": "发行/秘境决斗-秘境征途-campaign7/ArcaneDuelCampaign.exe",
+      "exists": true
+    },
+    {
+      "path": "发行/秘境决斗-秘境征途-campaign7.zip",
+      "exists": true
+    },
+    {
+      "path": "AGENTS.override.md",
+      "exists": true
+    },
+    {
+      "path": "arcane-duel-lab/AGENTS.md",
+      "exists": true
+    }
+  ],
+  "allPassed": true,
+  "readOnlyCodeSnapshot": {
+    "stageCount": 11,
+    "stages": [
+      {
+        "id": 1,
+        "name": "霜牙雪岭",
+        "boss": "霜牙狼王",
+        "melee": "墓甲骷卫",
+        "ranged": "枯枝鸦巫",
+        "mobs": 38
+      },
+      {
+        "id": 2,
+        "name": "熔炉火境",
+        "boss": "熔炉牛魔",
+        "melee": "铁角蛮牛",
+        "ranged": "蛛囊投手",
+        "mobs": 38
+      },
+      {
+        "id": 3,
+        "name": "千鳞毒沼",
+        "boss": "千鳞毒后",
+        "melee": "毒蝎人",
+        "ranged": "毒液蛇女",
+        "mobs": 44
+      },
+      {
+        "id": 4,
+        "name": "织梦蛛巢",
+        "boss": "织梦蛛后",
+        "melee": "蜘蛛人",
+        "ranged": "蛛囊投手",
+        "mobs": 44
+      },
+      {
+        "id": 5,
+        "name": "荆冠密林",
+        "boss": "荆冠古树",
+        "melee": "螳刃妖",
+        "ranged": "枯枝鸦巫",
+        "mobs": 50
+      },
+      {
+        "id": 6,
+        "name": "断钟石庭",
+        "boss": "断钟石像鬼",
+        "melee": "锁链蜥卫",
+        "ranged": "毒液蛇女",
+        "mobs": 50
+      },
+      {
+        "id": 7,
+        "name": "赤尾沙陵",
+        "boss": "赤尾蝎王",
+        "melee": "毒蝎人",
+        "ranged": "蛛囊投手",
+        "mobs": 56
+      },
+      {
+        "id": 8,
+        "name": "血月回廊",
+        "boss": "血月蝠爵",
+        "melee": "夜翼蝙蝠",
+        "ranged": "枯枝鸦巫",
+        "mobs": 56
+      },
+      {
+        "id": 9,
+        "name": "白骨王城",
+        "boss": "骷髅王",
+        "melee": "墓甲骷卫",
+        "ranged": "毒液蛇女",
+        "mobs": 60
+      },
+      {
+        "id": 10,
+        "name": "雷骨天脊",
+        "boss": "雷骨翼龙",
+        "melee": "铁角蛮牛",
+        "ranged": "蛛囊投手",
+        "mobs": 60
+      },
+      {
+        "id": 11,
+        "name": "无面星渊",
+        "boss": "无面星使",
+        "melee": "螳刃妖",
+        "ranged": "枯枝鸦巫",
+        "mobs": 60
+      }
+    ],
+    "baseStats": {
+      "fire": [
+        180,
+        105
+      ],
+      "nature": [
+        180,
+        110
+      ],
+      "frost": [
+        165,
+        115
+      ],
+      "lightning": [
+        180,
+        95
+      ],
+      "shadow": [
+        165,
+        95
+      ],
+      "star": [
+        173,
+        120
+      ]
+    },
+    "xpSteps": [
+      80,
+      100,
+      140,
+      180,
+      240,
+      320,
+      420,
+      550,
+      700,
+      900,
+      1150,
+      1450
+    ],
+    "initial": {
+      "coins": 300,
+      "tickets": 0,
+      "owned": [
+        "fire"
+      ],
+      "bag": [
+        {
+          "id": "item-1",
+          "type": "chestMedium",
+          "count": 2
+        },
+        {
+          "id": "item-2",
+          "type": "xpMedium",
+          "count": 3
+        }
+      ]
+    },
+    "skills": [
+      "爆燃印",
+      "火焰龙卷",
+      "烬星火球",
+      "熔核穿刺",
+      "陨火天坠",
+      "炼狱炎龙",
+      "缚根",
+      "荆棘扇刃",
+      "灵鹿召唤",
+      "花语治愈",
+      "古树庇护",
+      "荆棘王庭",
+      "霜缚环",
+      "寒锋扇刃",
+      "霜镜",
+      "冰晶追猎",
+      "寒域封界",
+      "极夜冰凰",
+      "贯雷刺",
+      "裂雷重拳",
+      "磁跃",
+      "雷链回旋",
+      "天雷贯落",
+      "雷神战躯",
+      "影袭",
+      "月弧飞刃",
+      "影步",
+      "鸦影伏杀",
+      "夜幕连斩",
+      "千鸦寂灭",
+      "引力井",
+      "星陨散射",
+      "折跃门",
+      "星辉回溯",
+      "星环坍缩",
+      "星海审判"
+    ],
+    "consumables": {
+      "chestSmall": 100,
+      "chestMedium": 200,
+      "chestLarge": 600,
+      "xpSmall": 40,
+      "xpMedium": 100,
+      "xpLarge": 300
+    },
+    "mirrorLevel1": {
+      "range": 420,
+      "cooldown": 6,
+      "channel": 1.15,
+      "chanceBonus": 0
+    },
+    "swordLevel1": {
+      "damage": 16,
+      "radius": 140,
+      "reach": 600,
+      "fall": 0.28,
+      "interval": 0.24,
+      "duration": 3.6,
+      "cooldown": 8,
+      "startMana": 8,
+      "manaPerSecond": 6
+    },
+    "swordBonus1": {
+      "health": 0,
+      "attack": 3
+    },
+    "pets": [
+      {
+        "name": "苔角灵鹿",
+        "forms": [
+          "苔芽幼鹿",
+          "荆冠灵鹿",
+          "翠庭圣鹿"
+        ],
+        "stage": 5,
+        "hp": 125,
+        "mp": 100,
+        "damage": 8,
+        "range": 350,
+        "cooldown": 1.4,
+        "ranged": true,
+        "regen": 1.2
+      },
+      {
+        "name": "烬羽狮鹫",
+        "forms": [
+          "烬羽幼兽",
+          "赤翎狮鹫",
+          "曜焰狮鹫"
+        ],
+        "stage": 7,
+        "hp": 165,
+        "mp": 125,
+        "damage": 12,
+        "range": 95,
+        "cooldown": 1.35,
+        "ranged": false,
+        "regen": 0.75
+      },
+      {
+        "name": "月霜灵狐",
+        "forms": [
+          "霜绒幼狐",
+          "月纹灵狐",
+          "霜月玄狐"
+        ],
+        "stage": 9,
+        "hp": 205,
+        "mp": 155,
+        "damage": 16,
+        "range": 390,
+        "cooldown": 1.3,
+        "ranged": true,
+        "regen": 0.9
+      }
+    ],
+    "artifactDrops": [
+      [
+        {
+          "type": "mirror",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "type": "skySword",
+          "count": 1
+        }
+      ]
+    ]
+  },
+  "changedTrackedFiles": [
+    "AGENTS.md/历史要求与约束及待完成事项.md",
+    "AGENTS.md/项目架构.md",
+    "AGENTS.md/项目需求.md"
+  ],
+  "gameTestResultReusedNotRerun": "Existing campaign7 report: 273 pass. No new gameplay test run during documentation compaction."
+}

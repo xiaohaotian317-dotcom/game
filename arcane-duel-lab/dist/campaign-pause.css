@@ -1,0 +1,26 @@
+/* Painted metal shell and controls; text and live status stay in the DOM. */
+#pause-dialog{width:min(550px,96vw,calc((100svh - 24px)*.81628));height:auto;aspect-ratio:1133/1388;max-width:none;max-height:none;padding:0;border:0;background:transparent;box-shadow:none;overflow:visible;isolation:isolate;container-type:inline-size;animation:result-arrive .3s ease-out;text-align:center}
+#pause-dialog::before{display:none}
+#pause-dialog::backdrop{background:#020811bf;backdrop-filter:blur(5px) saturate(.7)}
+.pause-frame{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;filter:drop-shadow(0 9px 15px #0009)}
+.pause-scene{position:absolute;inset:23% 6.5% 4.5%;z-index:0;clip-path:polygon(5% 0,95% 0,100% 9%,100% 94%,94% 100%,6% 100%,0 94%,0 9%);background:linear-gradient(#08161ddd,#07141ae8),var(--pause-scene) center/cover;filter:saturate(.65)}
+.pause-content{position:absolute;inset:30.5% 12.2% 10.5%;z-index:3;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:none}
+.pause-content h2{font-size:5.5cqw;line-height:1.2;letter-spacing:.2em;margin:0 0 1.1cqw;text-indent:.2em;color:#f2ddb0;text-shadow:0 2px 2px #000,0 0 17px #c4a56533}
+.pause-content .pause-stage{font-size:2.35cqw!important;line-height:1.4;letter-spacing:.14em;color:#a9c0c6!important;margin:0!important}
+.pause-summary{width:100%;display:flex;align-items:center;justify-content:center;gap:2.4cqw;padding:1.1cqw 0;margin:1.4cqw 0 0;text-align:left;background:none;border:0;position:relative}
+.pause-summary::before,.pause-summary::after{content:"";position:absolute;left:9%;right:9%;height:1px;background:linear-gradient(90deg,transparent,#9f8c5766,transparent)}
+.pause-summary::before{top:0}.pause-summary::after{bottom:0}
+.pause-summary canvas{width:8.5cqw;height:8.5cqw;flex:none;aspect-ratio:1;object-fit:contain;border:1px solid #c9b07c;border-radius:50%;box-shadow:0 0 0 3px #a68c5930;background:#172932}
+.pause-summary strong{font-size:2.65cqw;font-weight:400;color:#e2d2a5}
+.pause-summary small{display:block;font-size:1.85cqw;line-height:1.4;letter-spacing:0;color:#9fb9bf;margin-top:1.2cqw}
+.pause-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;width:88%;gap:.6cqw;margin:1.2cqw 0 0}
+.pause-actions button,.pause-actions #resume{position:relative;width:100%;aspect-ratio:1482/307;padding:0;margin:0!important;display:grid;place-items:center;border:0;background:transparent;box-shadow:none;isolation:isolate;font-size:2.7cqw;letter-spacing:.12em;text-indent:.12em;line-height:1.2;transition:filter .18s,transform .18s;color:#e8dec0;text-shadow:0 2px 3px #000;cursor:pointer}
+.pause-actions #resume{font-size:3.15cqw;color:#fff0ca}
+.pause-button-art{position:absolute;inset:0;z-index:-1;background-image:url('assets/pause/pause-controls-v1.png');background-repeat:no-repeat;pointer-events:none}
+#resume .pause-button-art{background-size:103.644% 333.55%;background-position:50% 4.742%}
+#restart .pause-button-art{background-size:103.714% 339.073%;background-position:50.91% 49.861%}
+#return-map .pause-button-art{background-size:103.784% 342.475%;background-position:50% 94.207%}
+.pause-actions button:hover{filter:brightness(1.22);transform:translateY(-1px)}
+.pause-actions button:focus-visible{outline:1px solid #f0d89d;outline-offset:-6px;border-radius:30%}
+.pause-content .pause-key{font-size:1.9cqw!important;line-height:1.4;color:#8da9ae!important;letter-spacing:.1em;margin:1cqw 0 0!important}
+@media(prefers-reduced-motion:reduce){#pause-dialog{animation:none}.pause-actions button{transition:none}}

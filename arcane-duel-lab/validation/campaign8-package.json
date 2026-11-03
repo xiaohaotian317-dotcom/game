@@ -1,0 +1,14 @@
+{
+  "version": "campaign8",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign8",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign8\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign8.zip",
+  "files": 397,
+  "runtimeFilesMatched": 315,
+  "bytes": 505338940,
+  "sha256": "663be7d472325281990fd0873dddc5007d674ec93e3bd1c0e8e76513ff986c2e",
+  "originalSitesUnchanged": true,
+  "scope": "22 face closeups; square reserve hero portraits and actual level badges; original themed platforms with two variants and clearance-compressed undersides; larger transparent world drops, proximity C prompt and immediate recovery; solo challenge, shared passives and stage-scaled coins; ornate hourglass pause menu; separate painted victory/defeat results with fixed actions",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

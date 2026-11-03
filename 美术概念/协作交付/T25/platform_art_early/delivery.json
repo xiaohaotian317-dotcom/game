@@ -1,0 +1,1398 @@
+{
+  "taskId": "T25-platform-v1",
+  "agent": "platform_art_early",
+  "status": "待主Agent检查；未接入运行资产，未获用户美术验收",
+  "generationMode": "built-in image_gen",
+  "pixelPolicy": "原始PNG按字节复制；未裁切、重绘、去底、缩放或修改原像素。alpha分析仅在内存读取。",
+  "allowedWriteDirectory": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T25/platform_art_early",
+  "requestedAtlasSize": [
+    1536,
+    1024
+  ],
+  "requestedGrid": {
+    "columns": 2,
+    "rows": 4,
+    "cellWidth": 768,
+    "cellHeight": 256
+  },
+  "referenceImages": [
+    "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/boss-fx/platforms-v4.png",
+    "C:/Users/XIAOHA~1/AppData/Local/Temp/codex-clipboard-92488108-c9e3-4e6e-80a1-ba98a19778ad.png"
+  ],
+  "globalReviewNotes": [
+    "已用view_image完整检查两张输出。各关两个平台的材料/构造有清楚差异。",
+    "全部为低厚度平台；无旧稿长冰锥、下垂根须或高柱。局部短碎边、叶片与装饰仍在主体附近。",
+    "图像RGB通道保留了渐变底色，但背景对应alpha为0；应按RGBA正常绘制，不能丢弃alpha后把RGB视作背景。",
+    "实际平台比目标约650px略宽；实际站立线较提示词目标y84偏低，应使用逐格显式裁切和建议锚点，不盲信等分cell中的同一归一化锚点。",
+    "画面风格和手感仍待主Agent接入检查及用户主观验收。",
+    "实际alpha>=16主体宽693～705px、高96～120px；比约650px目标稍宽，整体仍为浅厚度。站立线在各原始cell中约84～124px，未逐行严格命中84px目标；显式crop后的建议站立线位于crop上方12～34px。",
+    "alpha>=16语义主体未跨格；中心56px隔离带alpha最大1/2，横向20px行缝alpha最大1，存在肉眼不可见的极低alpha残边，未通过脚本清理。正常drawImage可按建议crop限定原图。"
+  ],
+  "files": [
+    {
+      "file": "stages01-04-platforms-v1.png",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05c-f35c-7f03-9272-08ef05cc5ea0/exec-c0aa60fa-d8c4-4f9a-b81e-3cae027410bb.png",
+      "prompt": "Use case: stylized-concept\nAsset type: production sprite atlas of eight isolated walkable platforms for a dark-fantasy side-scrolling action game.\nPrimary request: Generate ONE 1536 x 1024 landscape PNG with a REAL transparent alpha background. Exactly TWO columns and FOUR rows, exactly 8 separate platform sprites, one sprite in each invisible 768 x 256 cell. No visible grid. Every row contains two genuinely different platform designs for the same stage theme; they must differ in silhouette, construction and material, not be mirrored duplicates.\n\nExact layout: left column assets centered at x384, right at x1152. Four row centers y128,384,640,896. In each cell the complete platform is approximately 650 pixels wide and only 110 to 135 pixels high overall, with an elongated 5:1 to 6:1 width-to-height silhouette. Each platform has a long horizontal FLAT walkable top, whose front standing lip is near y84 relative to its row cell (global y84,340,596,852). A very narrow visible upper surface gives slight downward viewing perspective; front face remains nearly side-on. Keep the top unobstructed. Use the same scale and viewing angle throughout. Keep all pixels inside their cell, at least 45 transparent pixels left/right and at least 45 transparent pixels above/below. Large completely transparent gutters separate all 8 sprites.\n\nStyle/medium: refined detailed hand-painted 2D game asset, dark Gothic fantasy, tactile painted stone/ice/wood/chitin, believable compact construction, crisp readable silhouette, restrained highlights, richer detail on front face. Side view with only modest top visibility, not an isometric floating island. Subtle ambient occlusion inside the object only. No ambient backdrop, no cast shadow on an imaginary ground.\n\nROW 1, snow mountain theme:\nLEFT: broad thin slab of dark glacial rock capped by a smooth level layer of white snow and pale blue compact ice, a softly fractured natural-rock outline, only a few very short ice teeth at the underside, compact nearly horizontal bottom.\nRIGHT: weathered ice-sealed masonry cornice made from fitted blue-gray stone blocks and carved horizontal ledges, clean flat snowy tread, shallow stepped rectangular profile, a few short tiny ice fringes. Make its man-built layered silhouette visibly different from the natural slab at left.\nROW 2, volcanic furnace theme:\nLEFT: low wide dark red-black basalt slab with small dim ember-red fissures, irregular broken rock edges, level dark solid tread, shallow compact base.\nRIGHT: shallow riveted dark iron furnace cornice over blocky scorched stone, horizontal metal band and small rivets, level worn iron tread, squared engineered outline; a tiny internal orange glow, no flames.\nROW 3, poisonous swamp theme:\nLEFT: shallow fragmented gray green stone slab covered in compact poisonous moss and a few tiny olive plants at ends, clean flat central tread, short jagged rocky underside, dim toxic accents only.\nRIGHT: a shallow horizontal wooden platform woven from thick old roots and weathered timber, compact interlaced woody front face, only a few small leaves at ends, roots contained within a low horizontal band, flat walkable plank/root top. A clearly woody rectangular construction unlike left stone.\nROW 4, dream spider nest theme:\nLEFT: low old cracked gray stone cornice with a few sparse fine pale cobweb strands hugging the front and edges, top remains clear, compact stepped stone bottom, no hanging web curtains.\nRIGHT: shallow dark purple chitin shell platform composed of broad overlapping plated shell segments, flat tread with tiny beveled ridges, low curved armored front profile, short shell edge details only. It must read as chitin rather than wrapped stone.\n\nCRITICAL THINNESS RULE: these are shallow ledges, not large floating islands. Each sprite's entire depth below the standing lip is only about 90 to 110 pixels. The bottom must be shallow and compact, mostly horizontal. No long icicles, no long spikes, no pointed inverted triangle shape, no taper to a deep center, no hanging roots, no dangling vines, no pillars, no vertical support columns, no long stalactites. Short underside details at most 15 pixels. Do not let any decoration cross a cell boundary.\nNo text, no numbers, no labels, no frames, no borders, no scenery, no characters, no ground, no tall vegetation, no fog, no backdrop gradient, no glow that could cover a character, no checkerboard pattern. Background must be genuinely transparent.",
+      "stageRows": [
+        {
+          "stage": 1,
+          "theme": "霜牙雪岭",
+          "variants": [
+            "A 雪覆冰岩薄台",
+            "B 风化冰封石砌檐台"
+          ]
+        },
+        {
+          "stage": 2,
+          "theme": "熔炉火境",
+          "variants": [
+            "A 裂隙暗红玄武岩台",
+            "B 铆钉暗铁石炉檐台"
+          ]
+        },
+        {
+          "stage": 3,
+          "theme": "千鳞毒沼",
+          "variants": [
+            "A 苔藓毒苔碎石台",
+            "B 粗根浅木台"
+          ]
+        },
+        {
+          "stage": 4,
+          "theme": "织梦蛛巢",
+          "variants": [
+            "A 稀疏蛛丝旧石台",
+            "B 深紫几丁质短壳台"
+          ]
+        }
+      ],
+      "destinationPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T25\\platform_art_early\\stages01-04-platforms-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1930490,
+      "sha256": "8830f3147619f52c3d2f725c21c59239e45d58ee6f654e5f029426f39ac01adf",
+      "sourceSha256": "8830f3147619f52c3d2f725c21c59239e45d58ee6f654e5f029426f39ac01adf",
+      "sourceBytesIdentical": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixels": 987086,
+        "totalPixels": 1572864,
+        "pixelsAtLeast16": 492864,
+        "pixelsAtLeast200": 474268,
+        "samples": {
+          "(0, 0)": 0,
+          "(768, 0)": 0,
+          "(768, 128)": 0,
+          "(400, 250)": 0,
+          "(400, 520)": 0,
+          "(768, 1000)": 0,
+          "(1535, 1023)": 0
+        },
+        "centralGutterX740to796Max": 1,
+        "rowGutterMaxes": [
+          1,
+          1,
+          1
+        ]
+      },
+      "frames": [
+        {
+          "id": "stage01-a",
+          "theme": "霜牙雪岭",
+          "variant": "A 雪覆冰岩薄台",
+          "cellRectXYWH": [
+            0,
+            0,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              30,
+              8,
+              768,
+              256
+            ],
+            "8": [
+              32,
+              97,
+              737,
+              205
+            ],
+            "16": [
+              32,
+              98,
+              737,
+              205
+            ],
+            "64": [
+              33,
+              100,
+              736,
+              204
+            ],
+            "200": [
+              34,
+              101,
+              736,
+              203
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            26,
+            92,
+            717,
+            119
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            107
+          ],
+          "solidAspectRatio": 6.589,
+          "centralTopAlpha200MedianY": 102,
+          "centralTopAlpha200MinMaxY": [
+            101,
+            102
+          ],
+          "recommendedStandingLineYInAtlas": 106,
+          "recommendedStandingLineYInCrop": 14,
+          "recommendedStandingAnchorXYInAtlas": [
+            384.5,
+            106
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1176
+          ],
+          "standableCentralSpanXInAtlas": [
+            44,
+            725
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 99
+        },
+        {
+          "id": "stage01-b",
+          "theme": "霜牙雪岭",
+          "variant": "B 风化冰封石砌檐台",
+          "cellRectXYWH": [
+            768,
+            0,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              769,
+              9,
+              1514,
+              256
+            ],
+            "8": [
+              807,
+              97,
+              1501,
+              213
+            ],
+            "16": [
+              808,
+              98,
+              1501,
+              213
+            ],
+            "64": [
+              808,
+              99,
+              1501,
+              213
+            ],
+            "200": [
+              809,
+              101,
+              1500,
+              212
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            802,
+            92,
+            705,
+            127
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            693,
+            115
+          ],
+          "solidAspectRatio": 6.026,
+          "centralTopAlpha200MedianY": 102,
+          "centralTopAlpha200MinMaxY": [
+            101,
+            102
+          ],
+          "recommendedStandingLineYInAtlas": 106,
+          "recommendedStandingLineYInCrop": 14,
+          "recommendedStandingAnchorXYInAtlas": [
+            1154.5,
+            106
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1102
+          ],
+          "standableCentralSpanXInAtlas": [
+            820,
+            1489
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 107
+        },
+        {
+          "id": "stage02-a",
+          "theme": "熔炉火境",
+          "variant": "A 裂隙暗红玄武岩台",
+          "cellRectXYWH": [
+            0,
+            256,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              27,
+              256,
+              768,
+              512
+            ],
+            "8": [
+              31,
+              354,
+              736,
+              453
+            ],
+            "16": [
+              31,
+              354,
+              736,
+              453
+            ],
+            "64": [
+              32,
+              355,
+              736,
+              452
+            ],
+            "200": [
+              32,
+              356,
+              735,
+              452
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            25,
+            348,
+            717,
+            111
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            99
+          ],
+          "solidAspectRatio": 7.121,
+          "centralTopAlpha200MedianY": 357,
+          "centralTopAlpha200MinMaxY": [
+            356,
+            357
+          ],
+          "recommendedStandingLineYInAtlas": 361,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            383.5,
+            361
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1171
+          ],
+          "standableCentralSpanXInAtlas": [
+            43,
+            724
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 92
+        },
+        {
+          "id": "stage02-b",
+          "theme": "熔炉火境",
+          "variant": "B 铆钉暗铁石炉檐台",
+          "cellRectXYWH": [
+            768,
+            256,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              768,
+              256,
+              1510,
+              512
+            ],
+            "8": [
+              801,
+              353,
+              1505,
+              454
+            ],
+            "16": [
+              801,
+              353,
+              1505,
+              454
+            ],
+            "64": [
+              801,
+              354,
+              1505,
+              453
+            ],
+            "200": [
+              802,
+              355,
+              1504,
+              453
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            795,
+            347,
+            716,
+            113
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            704,
+            101
+          ],
+          "solidAspectRatio": 6.97,
+          "centralTopAlpha200MedianY": 356,
+          "centralTopAlpha200MinMaxY": [
+            355,
+            356
+          ],
+          "recommendedStandingLineYInAtlas": 360,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            1153.0,
+            360
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.115
+          ],
+          "standableCentralSpanXInAtlas": [
+            813,
+            1493
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 94
+        },
+        {
+          "id": "stage03-a",
+          "theme": "千鳞毒沼",
+          "variant": "A 苔藓毒苔碎石台",
+          "cellRectXYWH": [
+            0,
+            512,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              19,
+              512,
+              768,
+              768
+            ],
+            "8": [
+              36,
+              592,
+              732,
+              704
+            ],
+            "16": [
+              36,
+              592,
+              731,
+              704
+            ],
+            "64": [
+              37,
+              593,
+              730,
+              704
+            ],
+            "200": [
+              38,
+              593,
+              729,
+              703
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            30,
+            586,
+            707,
+            124
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            695,
+            112
+          ],
+          "solidAspectRatio": 6.205,
+          "centralTopAlpha200MedianY": 612,
+          "centralTopAlpha200MinMaxY": [
+            611,
+            612
+          ],
+          "recommendedStandingLineYInAtlas": 616,
+          "recommendedStandingLineYInCrop": 30,
+          "recommendedStandingAnchorXYInAtlas": [
+            383.5,
+            616
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.2419
+          ],
+          "standableCentralSpanXInAtlas": [
+            48,
+            719
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 88
+        },
+        {
+          "id": "stage03-b",
+          "theme": "千鳞毒沼",
+          "variant": "B 粗根浅木台",
+          "cellRectXYWH": [
+            768,
+            512,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              769,
+              512,
+              1536,
+              768
+            ],
+            "8": [
+              806,
+              587,
+              1501,
+              705
+            ],
+            "16": [
+              806,
+              587,
+              1501,
+              704
+            ],
+            "64": [
+              807,
+              588,
+              1500,
+              704
+            ],
+            "200": [
+              808,
+              589,
+              1499,
+              703
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            800,
+            581,
+            707,
+            129
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            695,
+            117
+          ],
+          "solidAspectRatio": 5.94,
+          "centralTopAlpha200MedianY": 611,
+          "centralTopAlpha200MinMaxY": [
+            611,
+            612
+          ],
+          "recommendedStandingLineYInAtlas": 615,
+          "recommendedStandingLineYInCrop": 34,
+          "recommendedStandingAnchorXYInAtlas": [
+            1153.5,
+            615
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.2636
+          ],
+          "standableCentralSpanXInAtlas": [
+            818,
+            1489
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 89
+        },
+        {
+          "id": "stage04-a",
+          "theme": "织梦蛛巢",
+          "variant": "A 稀疏蛛丝旧石台",
+          "cellRectXYWH": [
+            0,
+            768,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              23,
+              768,
+              768,
+              1024
+            ],
+            "8": [
+              33,
+              851,
+              736,
+              950
+            ],
+            "16": [
+              33,
+              852,
+              736,
+              948
+            ],
+            "64": [
+              33,
+              854,
+              735,
+              947
+            ],
+            "200": [
+              34,
+              855,
+              735,
+              946
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            27,
+            846,
+            715,
+            108
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            703,
+            96
+          ],
+          "solidAspectRatio": 7.323,
+          "centralTopAlpha200MedianY": 855,
+          "centralTopAlpha200MinMaxY": [
+            855,
+            856
+          ],
+          "recommendedStandingLineYInAtlas": 859,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            384.5,
+            859
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1204
+          ],
+          "standableCentralSpanXInAtlas": [
+            45,
+            724
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 89
+        },
+        {
+          "id": "stage04-b",
+          "theme": "织梦蛛巢",
+          "variant": "B 深紫几丁质短壳台",
+          "cellRectXYWH": [
+            768,
+            768,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              769,
+              768,
+              1507,
+              1013
+            ],
+            "8": [
+              800,
+              851,
+              1504,
+              953
+            ],
+            "16": [
+              801,
+              852,
+              1504,
+              953
+            ],
+            "64": [
+              801,
+              854,
+              1504,
+              953
+            ],
+            "200": [
+              802,
+              855,
+              1503,
+              952
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            795,
+            846,
+            715,
+            113
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            703,
+            101
+          ],
+          "solidAspectRatio": 6.96,
+          "centralTopAlpha200MedianY": 855,
+          "centralTopAlpha200MinMaxY": [
+            855,
+            855
+          ],
+          "recommendedStandingLineYInAtlas": 859,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            1152.5,
+            859
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.115
+          ],
+          "standableCentralSpanXInAtlas": [
+            813,
+            1492
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 94
+        }
+      ]
+    },
+    {
+      "file": "stages05-08-platforms-v1.png",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05c-f35c-7f03-9272-08ef05cc5ea0/exec-73f3964f-c8e4-49ea-b1f2-458baac9b82f.png",
+      "prompt": "Use case: stylized-concept\nAsset type: production sprite atlas of eight isolated walkable platforms for a dark-fantasy side-scrolling action game.\nPrimary request: Generate ONE 1536 x 1024 landscape PNG with a REAL transparent alpha background. Exactly TWO columns and FOUR rows, exactly 8 separate platform sprites, one sprite in each invisible 768 x 256 cell. No visible grid. Every row contains two genuinely different platform designs for the same stage theme; they must differ in silhouette, construction and material, not be mirrored duplicates.\n\nExact layout: left column assets centered at x384, right at x1152. Four row centers y128,384,640,896. In each cell the complete platform is approximately 650 pixels wide and only 110 to 135 pixels high overall, with an elongated 5:1 to 6:1 width-to-height silhouette. Each platform has a long horizontal FLAT walkable top, whose front standing lip is near y84 relative to its row cell (global y84,340,596,852). A very narrow visible upper surface gives slight downward viewing perspective; front face remains nearly side-on. Keep the top unobstructed. Use the same scale and viewing angle throughout. Keep all pixels inside their cell, at least 45 transparent pixels left/right and at least 45 transparent pixels above/below. Large completely transparent gutters separate all 8 sprites.\n\nStyle/medium: refined detailed hand-painted 2D game asset, dark Gothic fantasy, tactile painted stone/wood/iron, believable compact construction, crisp readable silhouette, restrained highlights, richer detail on front face. Side view with only modest top visibility, not an isometric floating island. Subtle ambient occlusion inside the object only. No ambient backdrop, no cast shadow on an imaginary ground.\n\nROW 1, thorn-crown ancient woodland theme:\nLEFT: shallow broad ancient root platform made of thick interwoven aged roots, roots gathered within a compact horizontal band, a smooth level mossy wood tread above, a few small vine leaves hugging either end, organic gently uneven ends, no dangling roots.\nRIGHT: ancient carved gray-green stone platform with moss and tiny woodland flowers only at the outer corners, smooth level clear central stone tread, shallow layered ornamental stone cornice, squared architectural construction distinctly different from the organic root platform.\nROW 2, broken-bell monastery stone courtyard theme:\nLEFT: low wide gray limestone monastery cornice, flat worn flagstone tread, carved Gothic horizontal molding and a few understated chipped runic reliefs along the front, shallow rectangular slab.\nRIGHT: ruined arch masonry platform made of larger pale-gray broken blocks, a single very shallow arch-shaped recess or short bracket shape in the front face, level clear flagstone top, broad blunt bottom, clearly different stepped contour and construction from left. Arch remains only a compact shallow underside support feature, not a tall archway, no columns.\nROW 3, red-tail desert tomb theme:\nLEFT: shallow wide weathered ochre sandstone slab with worn ancient incised patterns across its vertical front, level flat sandy tread, softly rounded eroded corners, fine painted stone grain.\nRIGHT: compact horizontal tan stratified layered rock platform with a few small fossil bone fragments embedded INSIDE its front face, level flat pale stone tread, angular broken layered outline, fossil details contained in the slab, no protruding long bones, clearly different from engraved sandstone at left.\nROW 4, blood-moon Gothic corridor theme:\nLEFT: shallow pale moonstone ledge with a long clear level smooth tread and small dim dark-red creeping vines hugging the front face and ends, cold pale worn stone with faint lunar carved motif, compact softly chipped outline.\nRIGHT: low broad Gothic dark-stone cornice reinforced by black wrought iron ornamental rail-pattern bands ON THE VERTICAL FRONT FACE ONLY, flat clear stone tread above, shallow squared architectural profile with miniature Gothic arches in the iron band, a few restrained dark burgundy accents. No railing or bars rise above the walking surface. Clearly different dark engineered silhouette from pale left moonstone.\n\nCRITICAL THINNESS RULE: these are shallow ledges, not large floating islands. Each sprite's entire depth below the standing lip is only about 90 to 110 pixels. The bottom must be shallow and compact, mostly horizontal. No long icicles, no long spikes, no pointed inverted triangle shape, no taper to a deep center, no hanging roots, no dangling vines, no pillars, no vertical support columns, no long stalactites. Short underside details at most 15 pixels. Do not let any decoration cross a cell boundary.\nNo text, no numbers, no labels, no frames, no borders, no scenery, no characters, no ground, no tall vegetation, no fog, no backdrop gradient, no glow that could cover a character, no checkerboard pattern. Background must be genuinely transparent.",
+      "stageRows": [
+        {
+          "stage": 5,
+          "theme": "荆冠密林",
+          "variants": [
+            "A 古根藤叶浅台",
+            "B 绿苔花草雕石台"
+          ]
+        },
+        {
+          "stage": 6,
+          "theme": "断钟石庭",
+          "variants": [
+            "A 灰石修院檐台",
+            "B 残拱短托石台"
+          ]
+        },
+        {
+          "stage": 7,
+          "theme": "赤尾沙陵",
+          "variants": [
+            "A 风蚀砂岩刻纹台",
+            "B 沙色层岩化石台"
+          ]
+        },
+        {
+          "stage": 8,
+          "theme": "血月回廊",
+          "variants": [
+            "A 苍白月石暗红蔓台",
+            "B 黑铁栏饰哥特石檐台"
+          ]
+        }
+      ],
+      "destinationPath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T25\\platform_art_early\\stages05-08-platforms-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2176529,
+      "sha256": "8d917b0e39a12807166e05cfca5ae13a17866bc2570654128100e0014e62cb5c",
+      "sourceSha256": "8d917b0e39a12807166e05cfca5ae13a17866bc2570654128100e0014e62cb5c",
+      "sourceBytesIdentical": true,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixels": 862445,
+        "totalPixels": 1572864,
+        "pixelsAtLeast16": 579574,
+        "pixelsAtLeast200": 562748,
+        "samples": {
+          "(0, 0)": 0,
+          "(768, 0)": 0,
+          "(768, 128)": 0,
+          "(400, 250)": 0,
+          "(400, 520)": 0,
+          "(768, 1000)": 0,
+          "(1535, 1023)": 0
+        },
+        "centralGutterX740to796Max": 2,
+        "rowGutterMaxes": [
+          1,
+          1,
+          1
+        ]
+      },
+      "frames": [
+        {
+          "id": "stage05-a",
+          "theme": "荆冠密林",
+          "variant": "A 古根藤叶浅台",
+          "cellRectXYWH": [
+            0,
+            0,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              0,
+              19,
+              768,
+              256
+            ],
+            "8": [
+              33,
+              105,
+              738,
+              224
+            ],
+            "16": [
+              33,
+              106,
+              738,
+              224
+            ],
+            "64": [
+              33,
+              106,
+              737,
+              223
+            ],
+            "200": [
+              34,
+              107,
+              737,
+              222
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            27,
+            100,
+            717,
+            130
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            118
+          ],
+          "solidAspectRatio": 5.975,
+          "centralTopAlpha200MedianY": 119,
+          "centralTopAlpha200MinMaxY": [
+            118,
+            120
+          ],
+          "recommendedStandingLineYInAtlas": 123,
+          "recommendedStandingLineYInCrop": 23,
+          "recommendedStandingAnchorXYInAtlas": [
+            385.5,
+            123
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1769
+          ],
+          "standableCentralSpanXInAtlas": [
+            45,
+            726
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 101
+        },
+        {
+          "id": "stage05-b",
+          "theme": "荆冠密林",
+          "variant": "B 绿苔花草雕石台",
+          "cellRectXYWH": [
+            768,
+            0,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              768,
+              17,
+              1514,
+              256
+            ],
+            "8": [
+              798,
+              106,
+              1503,
+              226
+            ],
+            "16": [
+              798,
+              106,
+              1503,
+              226
+            ],
+            "64": [
+              799,
+              107,
+              1503,
+              226
+            ],
+            "200": [
+              799,
+              108,
+              1502,
+              225
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            792,
+            100,
+            717,
+            132
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            120
+          ],
+          "solidAspectRatio": 5.875,
+          "centralTopAlpha200MedianY": 120,
+          "centralTopAlpha200MinMaxY": [
+            119,
+            120
+          ],
+          "recommendedStandingLineYInAtlas": 124,
+          "recommendedStandingLineYInCrop": 24,
+          "recommendedStandingAnchorXYInAtlas": [
+            1150.5,
+            124
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1818
+          ],
+          "standableCentralSpanXInAtlas": [
+            810,
+            1491
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 102
+        },
+        {
+          "id": "stage06-a",
+          "theme": "断钟石庭",
+          "variant": "A 灰石修院檐台",
+          "cellRectXYWH": [
+            0,
+            256,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              19,
+              256,
+              768,
+              512
+            ],
+            "8": [
+              32,
+              354,
+              738,
+              470
+            ],
+            "16": [
+              33,
+              355,
+              737,
+              470
+            ],
+            "64": [
+              33,
+              357,
+              737,
+              469
+            ],
+            "200": [
+              34,
+              358,
+              736,
+              468
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            27,
+            349,
+            716,
+            127
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            704,
+            115
+          ],
+          "solidAspectRatio": 6.122,
+          "centralTopAlpha200MedianY": 358,
+          "centralTopAlpha200MinMaxY": [
+            358,
+            359
+          ],
+          "recommendedStandingLineYInAtlas": 362,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            385.0,
+            362
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1024
+          ],
+          "standableCentralSpanXInAtlas": [
+            45,
+            725
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 108
+        },
+        {
+          "id": "stage06-b",
+          "theme": "断钟石庭",
+          "variant": "B 残拱短托石台",
+          "cellRectXYWH": [
+            768,
+            256,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              768,
+              257,
+              1510,
+              512
+            ],
+            "8": [
+              798,
+              354,
+              1503,
+              471
+            ],
+            "16": [
+              798,
+              355,
+              1503,
+              471
+            ],
+            "64": [
+              799,
+              356,
+              1503,
+              470
+            ],
+            "200": [
+              799,
+              357,
+              1502,
+              470
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            792,
+            349,
+            717,
+            128
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            116
+          ],
+          "solidAspectRatio": 6.078,
+          "centralTopAlpha200MedianY": 358,
+          "centralTopAlpha200MinMaxY": [
+            357,
+            360
+          ],
+          "recommendedStandingLineYInAtlas": 362,
+          "recommendedStandingLineYInCrop": 13,
+          "recommendedStandingAnchorXYInAtlas": [
+            1150.5,
+            362
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.1016
+          ],
+          "standableCentralSpanXInAtlas": [
+            810,
+            1491
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 109
+        },
+        {
+          "id": "stage07-a",
+          "theme": "赤尾沙陵",
+          "variant": "A 风蚀砂岩刻纹台",
+          "cellRectXYWH": [
+            0,
+            512,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              0,
+              512,
+              768,
+              768
+            ],
+            "8": [
+              32,
+              601,
+              738,
+              715
+            ],
+            "16": [
+              33,
+              601,
+              738,
+              714
+            ],
+            "64": [
+              33,
+              601,
+              737,
+              713
+            ],
+            "200": [
+              34,
+              602,
+              736,
+              713
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            27,
+            595,
+            717,
+            125
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            113
+          ],
+          "solidAspectRatio": 6.239,
+          "centralTopAlpha200MedianY": 603,
+          "centralTopAlpha200MinMaxY": [
+            602,
+            604
+          ],
+          "recommendedStandingLineYInAtlas": 607,
+          "recommendedStandingLineYInCrop": 12,
+          "recommendedStandingAnchorXYInAtlas": [
+            385.5,
+            607
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.096
+          ],
+          "standableCentralSpanXInAtlas": [
+            45,
+            726
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 107
+        },
+        {
+          "id": "stage07-b",
+          "theme": "赤尾沙陵",
+          "variant": "B 沙色层岩化石台",
+          "cellRectXYWH": [
+            768,
+            512,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              768,
+              512,
+              1516,
+              768
+            ],
+            "8": [
+              799,
+              601,
+              1503,
+              717
+            ],
+            "16": [
+              799,
+              601,
+              1503,
+              716
+            ],
+            "64": [
+              799,
+              601,
+              1503,
+              715
+            ],
+            "200": [
+              800,
+              602,
+              1502,
+              714
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            793,
+            595,
+            716,
+            127
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            704,
+            115
+          ],
+          "solidAspectRatio": 6.122,
+          "centralTopAlpha200MedianY": 603,
+          "centralTopAlpha200MinMaxY": [
+            602,
+            604
+          ],
+          "recommendedStandingLineYInAtlas": 607,
+          "recommendedStandingLineYInCrop": 12,
+          "recommendedStandingAnchorXYInAtlas": [
+            1151.0,
+            607
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.0945
+          ],
+          "standableCentralSpanXInAtlas": [
+            811,
+            1491
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 109
+        },
+        {
+          "id": "stage08-a",
+          "theme": "血月回廊",
+          "variant": "A 苍白月石暗红蔓台",
+          "cellRectXYWH": [
+            0,
+            768,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              27,
+              768,
+              768,
+              1004
+            ],
+            "8": [
+              32,
+              846,
+              737,
+              957
+            ],
+            "16": [
+              32,
+              846,
+              737,
+              957
+            ],
+            "64": [
+              33,
+              847,
+              737,
+              956
+            ],
+            "200": [
+              34,
+              848,
+              737,
+              955
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            26,
+            840,
+            717,
+            123
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            111
+          ],
+          "solidAspectRatio": 6.351,
+          "centralTopAlpha200MedianY": 848,
+          "centralTopAlpha200MinMaxY": [
+            848,
+            849
+          ],
+          "recommendedStandingLineYInAtlas": 852,
+          "recommendedStandingLineYInCrop": 12,
+          "recommendedStandingAnchorXYInAtlas": [
+            384.5,
+            852
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.0976
+          ],
+          "standableCentralSpanXInAtlas": [
+            44,
+            725
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 105
+        },
+        {
+          "id": "stage08-b",
+          "theme": "血月回廊",
+          "variant": "B 黑铁栏饰哥特石檐台",
+          "cellRectXYWH": [
+            768,
+            768,
+            768,
+            256
+          ],
+          "alphaBoundsLTRBByThreshold": {
+            "1": [
+              769,
+              768,
+              1520,
+              1024
+            ],
+            "8": [
+              798,
+              846,
+              1503,
+              960
+            ],
+            "16": [
+              798,
+              846,
+              1503,
+              960
+            ],
+            "64": [
+              799,
+              846,
+              1503,
+              960
+            ],
+            "200": [
+              799,
+              847,
+              1502,
+              959
+            ]
+          },
+          "recommendedCropRectXYWH": [
+            792,
+            840,
+            717,
+            126
+          ],
+          "cropPolicy": "建议运行时drawImage源矩形；不改写原PNG。6px边缘padding基于alpha>=16主体界限，低alpha抗锯齿请以实际renderer复核。",
+          "solidWidthHeight": [
+            705,
+            114
+          ],
+          "solidAspectRatio": 6.184,
+          "centralTopAlpha200MedianY": 848,
+          "centralTopAlpha200MinMaxY": [
+            848,
+            848
+          ],
+          "recommendedStandingLineYInAtlas": 852,
+          "recommendedStandingLineYInCrop": 12,
+          "recommendedStandingAnchorXYInAtlas": [
+            1150.5,
+            852
+          ],
+          "recommendedStandingAnchorUVInCrop": [
+            0.5,
+            0.0952
+          ],
+          "standableCentralSpanXInAtlas": [
+            810,
+            1491
+          ],
+          "standingLineBasis": "中心60%宽度内alpha>=200首行的中位数+4px；建议值，主Agent仍应目视校准前缘与实际碰撞。",
+          "belowStandingLinePixels": 108
+        }
+      ]
+    }
+  ],
+  "analysisMethod": "Pillow读取RGBA与alpha；按两列四行固定cell分别测threshold 1/8/16/64/200 bbox；未对PNG做任何写入。"
+}

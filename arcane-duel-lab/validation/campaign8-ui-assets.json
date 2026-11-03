@@ -1,0 +1,71 @@
+{
+  "assets": [
+    {
+      "file": "pause/pause-shell-v1.png",
+      "size": [
+        1133,
+        1388
+      ],
+      "sha256": "c5e8186e8d51b4afa2218744b166b4d2b24733d72da3fefa5280c7b5c60a1944",
+      "originalBytesPreserved": true,
+      "safeRect": [
+        145,
+        420,
+        843,
+        800
+      ],
+      "safeAlphaExtrema": [
+        0,
+        1
+      ]
+    },
+    {
+      "file": "pause/pause-controls-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "586f600af3c0bb0ae054663295e862813e523c04e010c04084cc037cb9940a7e",
+      "originalBytesPreserved": true
+    },
+    {
+      "file": "campaign-results/victory-shell-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "0d32879f85799dab812cd2c7a95e5dbc87700bd295ffa2fa133257e04a26f9db",
+      "originalBytesPreserved": true,
+      "safeRect": [
+        160,
+        360,
+        1216,
+        515
+      ],
+      "safeAlphaExtrema": [
+        0,
+        1
+      ]
+    },
+    {
+      "file": "campaign-results/defeat-shell-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "ff7ed3d04c12f9a10f96238deb640190dacb5ad9bd063edf48da254ab84f463a",
+      "originalBytesPreserved": true,
+      "safeRect": [
+        160,
+        360,
+        1216,
+        515
+      ],
+      "safeAlphaExtrema": [
+        0,
+        1
+      ]
+    }
+  ],
+  "method": "read-only alpha analysis and original byte comparison; no image editing"
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "size": [
+    1536,
+    1024
+  ],
+  "safeRect": [
+    160,
+    360,
+    1216,
+    515
+  ],
+  "victory": "victory-shell-v2.png",
+  "defeat": "defeat-shell-v2.png"
+}

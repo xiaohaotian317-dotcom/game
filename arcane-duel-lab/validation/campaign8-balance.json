@@ -1,0 +1,536 @@
+{
+  "version": "campaign8",
+  "method": "Real 120Hz simulation, fresh level-one fire, no equipment/potions/pets/passives, no movement/attacks. One stage melee plus ranged versus one boss in separate arenas; hazards disabled. This measures threat, not human playability or a natural full clear.",
+  "firstSkills": [
+    {
+      "hero": "fire",
+      "enemyHp": 30,
+      "remaining": 13,
+      "damage": 17
+    },
+    {
+      "hero": "nature",
+      "enemyHp": 30,
+      "remaining": 22,
+      "damage": 8
+    },
+    {
+      "hero": "frost",
+      "enemyHp": 30,
+      "remaining": 24,
+      "damage": 6
+    },
+    {
+      "hero": "lightning",
+      "enemyHp": 30,
+      "remaining": 16,
+      "damage": 14
+    },
+    {
+      "hero": "shadow",
+      "enemyHp": 30,
+      "remaining": 15,
+      "damage": 15
+    },
+    {
+      "hero": "star",
+      "enemyHp": 30,
+      "remaining": 23,
+      "damage": 7
+    }
+  ],
+  "levels": [
+    {
+      "stage": 1,
+      "name": "霜牙雪岭",
+      "minionFactor": 0.8,
+      "bossFactor": 1.15,
+      "killGold": 5,
+      "mobs": 38,
+      "mobGoldPerClear": 190,
+      "minions": {
+        "dead": true,
+        "seconds": 21.07,
+        "hits": [
+          7,
+          7,
+          7,
+          9,
+          7,
+          9,
+          7,
+          9,
+          6,
+          7,
+          9,
+          6,
+          9,
+          7,
+          9,
+          5
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 12.39,
+        "hits": [
+          17,
+          14,
+          17,
+          16,
+          16,
+          14,
+          17,
+          9
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 2,
+      "name": "熔炉火境",
+      "minionFactor": 0.9,
+      "bossFactor": 1.3,
+      "killGold": 6,
+      "mobs": 38,
+      "mobGoldPerClear": 228,
+      "minions": {
+        "dead": true,
+        "seconds": 11.57,
+        "hits": [
+          16,
+          4,
+          7,
+          16,
+          3,
+          3,
+          6,
+          3,
+          3,
+          16,
+          3,
+          4,
+          3,
+          6,
+          3,
+          3,
+          3,
+          3,
+          15
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 9.37,
+        "hits": [
+          20,
+          29,
+          17,
+          21,
+          26,
+          4,
+          3
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 3,
+      "name": "千鳞毒沼",
+      "minionFactor": 1.02,
+      "bossFactor": 1.47,
+      "killGold": 7,
+      "mobs": 44,
+      "mobGoldPerClear": 308,
+      "minions": {
+        "dead": true,
+        "seconds": 12.56,
+        "hits": [
+          9,
+          4,
+          3,
+          3,
+          7,
+          3,
+          4,
+          3,
+          4,
+          3,
+          4,
+          3,
+          9,
+          3,
+          12,
+          3,
+          4,
+          3,
+          4,
+          3,
+          3,
+          12,
+          3,
+          4,
+          3,
+          4
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 11.96,
+        "hits": [
+          18,
+          13,
+          4,
+          6,
+          4,
+          6,
+          4,
+          6,
+          4,
+          4,
+          15,
+          4,
+          6,
+          4,
+          18,
+          4
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 4,
+      "name": "织梦蛛巢",
+      "minionFactor": 1.15,
+      "bossFactor": 1.66,
+      "killGold": 9,
+      "mobs": 44,
+      "mobGoldPerClear": 396,
+      "minions": {
+        "dead": true,
+        "seconds": 11.42,
+        "hits": [
+          10,
+          5,
+          3,
+          3,
+          10,
+          3,
+          5,
+          3,
+          8,
+          3,
+          10,
+          3,
+          3,
+          9,
+          3,
+          8,
+          3,
+          3,
+          9,
+          3,
+          3,
+          10
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 11.08,
+        "hits": [
+          20,
+          13,
+          5,
+          5,
+          5,
+          5,
+          13,
+          5,
+          20,
+          5,
+          20,
+          4
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 5,
+      "name": "荆冠密林",
+      "minionFactor": 1.29,
+      "bossFactor": 1.88,
+      "killGold": 11,
+      "mobs": 50,
+      "mobGoldPerClear": 550,
+      "minions": {
+        "dead": true,
+        "seconds": 15.57,
+        "hits": [
+          9,
+          9,
+          12,
+          9,
+          12,
+          9,
+          12,
+          10,
+          12,
+          10,
+          12,
+          4
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 8.56,
+        "hits": [
+          26,
+          36,
+          23,
+          23,
+          12
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 6,
+      "name": "断钟石庭",
+      "minionFactor": 1.44,
+      "bossFactor": 2.12,
+      "killGold": 13,
+      "mobs": 50,
+      "mobGoldPerClear": 650,
+      "minions": {
+        "dead": true,
+        "seconds": 9.26,
+        "hits": [
+          13,
+          6,
+          4,
+          13,
+          4,
+          6,
+          4,
+          4,
+          13,
+          4,
+          13,
+          4,
+          4,
+          6,
+          4,
+          13,
+          4,
+          1
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 8.43,
+        "hits": [
+          30,
+          40,
+          19,
+          25,
+          6
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 7,
+      "name": "赤尾沙陵",
+      "minionFactor": 1.6,
+      "bossFactor": 2.4,
+      "killGold": 16,
+      "mobs": 56,
+      "mobGoldPerClear": 896,
+      "minions": {
+        "dead": true,
+        "seconds": 8.48,
+        "hits": [
+          14,
+          19,
+          5,
+          6,
+          5,
+          6,
+          5,
+          6,
+          5,
+          6,
+          5,
+          6,
+          5,
+          6,
+          5,
+          11,
+          5
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 7.28,
+        "hits": [
+          34,
+          46,
+          22,
+          7,
+          10,
+          1
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 8,
+      "name": "血月回廊",
+      "minionFactor": 1.78,
+      "bossFactor": 2.71,
+      "killGold": 19,
+      "mobs": 56,
+      "mobGoldPerClear": 1064,
+      "minions": {
+        "dead": true,
+        "seconds": 11.29,
+        "hits": [
+          18,
+          18,
+          14,
+          18,
+          14,
+          18,
+          14,
+          6
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 8.41,
+        "hits": [
+          33,
+          33,
+          51,
+          3
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 9,
+      "name": "白骨王城",
+      "minionFactor": 1.98,
+      "bossFactor": 3.05,
+      "killGold": 23,
+      "mobs": 60,
+      "mobGoldPerClear": 1380,
+      "minions": {
+        "dead": true,
+        "seconds": 7.07,
+        "hits": [
+          18,
+          8,
+          14,
+          6,
+          14,
+          6,
+          6,
+          22,
+          6,
+          8,
+          6,
+          6
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 5.69,
+        "hits": [
+          46,
+          61,
+          13
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 10,
+      "name": "雷骨天脊",
+      "minionFactor": 2.2,
+      "bossFactor": 3.43,
+      "killGold": 28,
+      "mobs": 60,
+      "mobGoldPerClear": 1680,
+      "minions": {
+        "dead": true,
+        "seconds": 5.03,
+        "hits": [
+          40,
+          9,
+          16,
+          40,
+          7,
+          7,
+          1
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 5.42,
+        "hits": [
+          48,
+          65,
+          7
+        ],
+        "remaining": 0
+      }
+    },
+    {
+      "stage": 11,
+      "name": "无面星渊",
+      "minionFactor": 2.44,
+      "bossFactor": 3.85,
+      "killGold": 34,
+      "mobs": 60,
+      "mobGoldPerClear": 2040,
+      "minions": {
+        "dead": true,
+        "seconds": 9.13,
+        "hits": [
+          17,
+          17,
+          22,
+          17,
+          22,
+          17,
+          8
+        ],
+        "remaining": 0
+      },
+      "boss": {
+        "dead": true,
+        "seconds": 5.64,
+        "hits": [
+          50,
+          69,
+          1
+        ],
+        "remaining": 0
+      }
+    }
+  ],
+  "progressionIntent": "Replaying cleared stages for gold, experience and equipment is intended. One pass is not expected to max all skills/passives.",
+  "sharedPassivesFullCost": 38000,
+  "ordinaryGoldAcrossOnePass": 9382
+}

@@ -1,0 +1,1397 @@
+{
+  "taskId": "T25-drop-equipment-v1",
+  "agent": "platform_art_late",
+  "status": "original generated PNGs delivered; pending main-agent inspection/integration and user art approval",
+  "tool": "built-in image_gen.imagegen; transparent_background=true",
+  "requestedCanvas": {
+    "width": 1024,
+    "height": 1024,
+    "columns": 4,
+    "rows": 4,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "populatedRows": 3
+  },
+  "actualCanvas": {
+    "width": 1254,
+    "height": 1254,
+    "columns": 4,
+    "rows": 4,
+    "populatedRows": 3,
+    "roundedGridEdges": [
+      0,
+      314,
+      627,
+      940,
+      1254
+    ]
+  },
+  "dimensionsMatchRequested": false,
+  "preservedOriginalPixels": true,
+  "postProcessing": "None. Both delivered PNGs are byte-for-byte copies of the built-in generated originals. Python/Pillow used only for read-only analysis.",
+  "referenceViewedOnly": [
+    "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/campaign-growth/equipment-v1.png",
+    "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/campaign-growth/armors-v1.png"
+  ],
+  "coordinateConvention": "Image origin top-left; x right/y down. boundsByAlphaThreshold uses [left,top,rightExclusive,bottomExclusive]. spriteRect and cellRect use [x,y,width,height].",
+  "frameOrder": "First six frames: melee gauntlets/chest armors white, green, blue, purple, red, orange. Next six: caster staves/robes in same quality order. Last row unused.",
+  "inspection": {
+    "positives": [
+      "12 isolated items in requested reading order per atlas",
+      "No UI card borders, dark rectangular backing, frames, grid, text, character or scene",
+      "Robes are empty clothing objects with no visible heads or hands",
+      "Staves have substantial visible shafts and clear compact heads",
+      "Each meaningful subject remains inside its intended logical cell"
+    ],
+    "limitations": [
+      "Built-in tool returned 1254×1254 rather than requested 1024×1024 despite exact prompt. No resizing or pixel editing performed; use explicit spriteRect instead of hardcoded256 grid.",
+      "Bodies are larger than requested140–180px, actual alpha>=32 extents mostly228–297px in the1254 canvas. Integrator can render each crop at desired world size.",
+      "Empty last row alpha range is0–1 rather than mathematically all0; negligible noise is excluded by explicit subject spriteRects.",
+      "No runtime integration, in-game world-size test, publication or user art approval performed."
+    ]
+  },
+  "files": [
+    {
+      "file": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T25/drop_equipment/drop-weapons-v1.png",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05d-f375-7b02-b1ed-7d7154d496fe/exec-75a8bb52-c776-4463-9786-3a31e244e812.png",
+      "sha256": "1b73f66ae8842142263cd9b5d6922659bc93a116ca99de7a80237f58ff2040c1",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "Use case: stylized-concept\nAsset type: transparent isolated WORLD-DROP EQUIPMENT sprite atlas for a finely hand-painted dark fantasy 2D game. These are physical equipment objects lying as loot in the game world, NOT inventory UI icons.\nCanvas: exactly 1024×1024 RGBA PNG with actual transparent background. Invisible layout is FOUR columns by FOUR rows, each cell 256×256. Populate ONLY first THREE rows with twelve separate isolated objects, one centered in each cell; entire last row y=768–1023 must remain totally empty transparent. Object centers x=128,384,640,896 and row centers y=128,384,640. Each object's longest dimension 160–180px, with generous transparent margins, fully contained inside its cell, no touching adjacent cells.\nPrimary request: twelve standalone equipment objects in precise reading order:\nRow 1 left to right: (1) common pale iron battle gauntlet: simple sturdy articulated steel fist and short wrist cuff, clean neutral silver-white; (2) green jade gauntlet: dark green jade plates, restrained bronze leaf-like trim, emerald inset; (3) blue silver gauntlet: blue-silver armored fist with small ice crystal facets; (4) purple rune gauntlet: deep violet dark metal fist, carved runes and small amethyst, elegant short claw tips.\nRow 2 left to right: (5) red gold gauntlet: crimson and dark steel dragon-scale fist with restrained red-gold trim; (6) orange gold gauntlet: ornate ivory-and-antique-gold heroic fist with orange sunstone, powerful readable armored shape; (7) common white staff: robust dark brown and silver staff with clear pale quartz head; (8) green jade staff: thick twisted wooden shaft, green jade crystal head, compact leaf trim.\nRow 3 left to right: (9) blue silver staff: thick dark blue-silver shaft and angular icy blue crystal head; (10) purple rune staff: substantial violet metal shaft with compact crescent and purple gemstone head; (11) red gold staff: robust black-red metal shaft with compact red dragon-shaped gemstone head; (12) orange gold staff: substantial antique-gold shaft with orange sun crystal and compact sculpted wing motif.\nStyle/medium: beautiful detailed original hand-painted dark fantasy 2D game equipment, consistent fine material texture and controlled painterly highlights, readable small silhouettes. Progression from simple plain iron to increasingly ornate green jade, blue silver, purple rune, red gold, orange gold. Colors belong to object material, not a rarity background. Clear near-front slightly oblique view of standalone item. Gauntlets are empty single armored gloves/fists with short cuff, no body, no severed anatomy. Staves diagonal lower-left to upper-right, chunky visible shafts (at least 12–18px wide), compact heads, not skinny needles. All six staves similar overall scale.\nTransparency and negative constraints: The entire image outside exact object silhouettes is real alpha0, including all cell gaps and final row. Absolutely NO black square, dark tile, card, inventory panel, rectangle, border, frame, colored backing, glowing square, circular badge, mat, ground, pedestal, base, backdrop, cast background shadow, glow cloud, detached VFX, particle field, grid line, checkerboard, text, numerals, labels, logo or watermark. No people, hands wearing the objects, heads, skeletons or scenery. No scene lighting gradients. Only twelve beautiful isolated equipment objects on actual transparency, each fully inside its invisible 256px cell.",
+      "generationMode": "generate",
+      "referencedImagePaths": [],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "blankLastRowAlphaRange": [
+        0,
+        1
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "row": 0,
+          "col": 0,
+          "cellRect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              58,
+              47,
+              293,
+              287
+            ],
+            "32": [
+              58,
+              47,
+              293,
+              287
+            ],
+            "128": [
+              59,
+              48,
+              292,
+              286
+            ]
+          },
+          "spriteRect": [
+            55,
+            44,
+            241,
+            246
+          ],
+          "bottomAnchorGlobal": [
+            154,
+            285
+          ],
+          "bottomAnchorWithinCrop": [
+            99,
+            241
+          ],
+          "visibleSizeAtAlpha32": [
+            235,
+            240
+          ],
+          "id": "gauntlet-white",
+          "quality": "white",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "col": 1,
+          "cellRect": [
+            314,
+            0,
+            313,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              366,
+              39,
+              596,
+              286
+            ],
+            "32": [
+              367,
+              39,
+              595,
+              286
+            ],
+            "128": [
+              367,
+              40,
+              594,
+              285
+            ]
+          },
+          "spriteRect": [
+            363,
+            36,
+            236,
+            253
+          ],
+          "bottomAnchorGlobal": [
+            453,
+            284
+          ],
+          "bottomAnchorWithinCrop": [
+            90,
+            248
+          ],
+          "visibleSizeAtAlpha32": [
+            228,
+            247
+          ],
+          "id": "gauntlet-green",
+          "quality": "green",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "col": 2,
+          "cellRect": [
+            627,
+            0,
+            313,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              675,
+              37,
+              907,
+              286
+            ],
+            "32": [
+              675,
+              39,
+              907,
+              285
+            ],
+            "128": [
+              676,
+              39,
+              906,
+              285
+            ]
+          },
+          "spriteRect": [
+            672,
+            34,
+            238,
+            255
+          ],
+          "bottomAnchorGlobal": [
+            756,
+            284
+          ],
+          "bottomAnchorWithinCrop": [
+            84,
+            250
+          ],
+          "visibleSizeAtAlpha32": [
+            232,
+            246
+          ],
+          "id": "gauntlet-blue",
+          "quality": "blue",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 3,
+          "row": 0,
+          "col": 3,
+          "cellRect": [
+            940,
+            0,
+            314,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              982,
+              31,
+              1221,
+              298
+            ],
+            "32": [
+              982,
+              31,
+              1221,
+              298
+            ],
+            "128": [
+              983,
+              32,
+              1220,
+              297
+            ]
+          },
+          "spriteRect": [
+            979,
+            28,
+            245,
+            273
+          ],
+          "bottomAnchorGlobal": [
+            1074,
+            296
+          ],
+          "bottomAnchorWithinCrop": [
+            95,
+            268
+          ],
+          "visibleSizeAtAlpha32": [
+            239,
+            267
+          ],
+          "id": "gauntlet-purple",
+          "quality": "purple",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "col": 0,
+          "cellRect": [
+            0,
+            314,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              54,
+              349,
+              293,
+              599
+            ],
+            "32": [
+              56,
+              349,
+              293,
+              598
+            ],
+            "128": [
+              57,
+              350,
+              292,
+              598
+            ]
+          },
+          "spriteRect": [
+            51,
+            346,
+            245,
+            256
+          ],
+          "bottomAnchorGlobal": [
+            131,
+            597
+          ],
+          "bottomAnchorWithinCrop": [
+            80,
+            251
+          ],
+          "visibleSizeAtAlpha32": [
+            237,
+            249
+          ],
+          "id": "gauntlet-red",
+          "quality": "red",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "col": 1,
+          "cellRect": [
+            314,
+            314,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              364,
+              340,
+              600,
+              602
+            ],
+            "32": [
+              364,
+              341,
+              600,
+              602
+            ],
+            "128": [
+              365,
+              341,
+              599,
+              602
+            ]
+          },
+          "spriteRect": [
+            361,
+            337,
+            242,
+            268
+          ],
+          "bottomAnchorGlobal": [
+            460,
+            601
+          ],
+          "bottomAnchorWithinCrop": [
+            99,
+            264
+          ],
+          "visibleSizeAtAlpha32": [
+            236,
+            261
+          ],
+          "id": "gauntlet-orange",
+          "quality": "orange",
+          "category": "melee-gauntlet",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 6,
+          "row": 1,
+          "col": 2,
+          "cellRect": [
+            627,
+            314,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              661,
+              330,
+              910,
+              607
+            ],
+            "32": [
+              661,
+              331,
+              909,
+              607
+            ],
+            "128": [
+              662,
+              331,
+              909,
+              607
+            ]
+          },
+          "spriteRect": [
+            658,
+            327,
+            255,
+            283
+          ],
+          "bottomAnchorGlobal": [
+            682,
+            606
+          ],
+          "bottomAnchorWithinCrop": [
+            24,
+            279
+          ],
+          "visibleSizeAtAlpha32": [
+            248,
+            276
+          ],
+          "id": "staff-white",
+          "quality": "white",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 7,
+          "row": 1,
+          "col": 3,
+          "cellRect": [
+            940,
+            314,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              979,
+              334,
+              1221,
+              609
+            ],
+            "32": [
+              979,
+              334,
+              1221,
+              609
+            ],
+            "128": [
+              980,
+              335,
+              1220,
+              609
+            ]
+          },
+          "spriteRect": [
+            976,
+            331,
+            248,
+            281
+          ],
+          "bottomAnchorGlobal": [
+            998,
+            608
+          ],
+          "bottomAnchorWithinCrop": [
+            22,
+            277
+          ],
+          "visibleSizeAtAlpha32": [
+            242,
+            275
+          ],
+          "id": "staff-green",
+          "quality": "green",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "col": 0,
+          "cellRect": [
+            0,
+            627,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              43,
+              641,
+              302,
+              927
+            ],
+            "32": [
+              43,
+              641,
+              301,
+              927
+            ],
+            "128": [
+              43,
+              642,
+              300,
+              926
+            ]
+          },
+          "spriteRect": [
+            40,
+            638,
+            265,
+            292
+          ],
+          "bottomAnchorGlobal": [
+            63,
+            925
+          ],
+          "bottomAnchorWithinCrop": [
+            23,
+            287
+          ],
+          "visibleSizeAtAlpha32": [
+            258,
+            286
+          ],
+          "id": "staff-blue",
+          "quality": "blue",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 9,
+          "row": 2,
+          "col": 1,
+          "cellRect": [
+            314,
+            627,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              353,
+              641,
+              606,
+              926
+            ],
+            "32": [
+              353,
+              641,
+              605,
+              925
+            ],
+            "128": [
+              354,
+              642,
+              605,
+              924
+            ]
+          },
+          "spriteRect": [
+            350,
+            638,
+            259,
+            291
+          ],
+          "bottomAnchorGlobal": [
+            375,
+            923
+          ],
+          "bottomAnchorWithinCrop": [
+            25,
+            285
+          ],
+          "visibleSizeAtAlpha32": [
+            252,
+            284
+          ],
+          "id": "staff-purple",
+          "quality": "purple",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 10,
+          "row": 2,
+          "col": 2,
+          "cellRect": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              666,
+              641,
+              917,
+              925
+            ],
+            "32": [
+              666,
+              642,
+              917,
+              925
+            ],
+            "128": [
+              667,
+              642,
+              916,
+              924
+            ]
+          },
+          "spriteRect": [
+            663,
+            638,
+            257,
+            290
+          ],
+          "bottomAnchorGlobal": [
+            684,
+            923
+          ],
+          "bottomAnchorWithinCrop": [
+            21,
+            285
+          ],
+          "visibleSizeAtAlpha32": [
+            251,
+            283
+          ],
+          "id": "staff-red",
+          "quality": "red",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 11,
+          "row": 2,
+          "col": 3,
+          "cellRect": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              978,
+              633,
+              1238,
+              924
+            ],
+            "32": [
+              979,
+              633,
+              1238,
+              924
+            ],
+            "128": [
+              979,
+              634,
+              1237,
+              923
+            ]
+          },
+          "spriteRect": [
+            975,
+            630,
+            266,
+            297
+          ],
+          "bottomAnchorGlobal": [
+            999,
+            922
+          ],
+          "bottomAnchorWithinCrop": [
+            24,
+            292
+          ],
+          "visibleSizeAtAlpha32": [
+            259,
+            291
+          ],
+          "id": "staff-orange",
+          "quality": "orange",
+          "category": "caster-staff",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        }
+      ]
+    },
+    {
+      "file": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T25/drop_equipment/drop-armors-v1.png",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a05d-f375-7b02-b1ed-7d7154d496fe/exec-57545282-ac8c-4eda-aa25-1dc052592e86.png",
+      "sha256": "e89154b0e22235b5886850a1ce8f4b2de91105daf742a0a7196d7e7eb5332355",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "Use case: stylized-concept\nAsset type: transparent isolated WORLD-DROP ARMOR sprite atlas for a finely hand-painted dark fantasy 2D game. These are physical equipment clothing objects as loot in the game world, NOT inventory UI icons.\nCanvas: exactly 1024×1024 RGBA PNG with actual transparent background. Invisible layout is FOUR columns by FOUR rows, each cell 256×256. Populate ONLY first THREE rows with twelve separate isolated objects, one centered in each cell; entire last row y=768–1023 must remain totally empty transparent. Object centers x=128,384,640,896 and row centers y=128,384,640. Each object's longest dimension 160–180px, with generous transparent margins, fully contained inside its cell. Fine object silhouettes must be readable as small ground drops.\nPrimary request: twelve standalone empty armor or robe CLOTHING OBJECTS in precise reading order:\nRow 1 left to right: (1) common pale iron melee breastplate: simple sturdy silver-white steel cuirass with small shoulders and short waist, worn iron and brown straps; (2) green jade melee chest armor: dark green plates, emerald inset, restrained bronze leaf-like trim; (3) blue silver melee chest armor: blue-silver breastplate and compact ice-facet shoulder plates, sapphire inset; (4) purple rune melee chest armor: deep violet dark metal cuirass with amethyst and carved runic trim, compact dark feather-like pauldrons.\nRow 2 left to right: (5) red gold melee chest armor: crimson dark steel dragon-scale breastplate, compact red-gold shoulder guards, ruby inset; (6) orange gold melee chest armor: ornate ivory-and-antique-gold heroic breastplate, compact sculpted gold eagle-like pauldrons and orange sunstone; (7) common white caster robe: simple heavy off-white fabric hooded empty robe with dark lining, restrained bronze trim and belt; (8) green jade caster robe: deep forest-green empty robe, compact leafy shoulder trim, jade gem clasp.\nRow 3 left to right: (9) blue silver caster robe: deep blue empty robe with silver embroidery, compact ice-crystal shoulders and blue gem; (10) purple rune caster robe: violet empty robe with compact crescent ornaments and subtle gold star embroidery; (11) red gold caster robe: crimson empty robe with black lining, compact red-gold dragon-themed shoulder ornaments and ruby clasp; (12) orange gold caster robe: ivory and antique-gold empty robe with compact sun-themed shoulder ornament and orange gemstone clasp.\nStyle/medium: beautiful original finely hand-painted dark fantasy 2D game equipment, consistent fine material textures, controlled painterly highlights, clear small silhouettes. Progression from simple plain iron to increasingly ornate green jade, blue silver, purple rune, red gold, orange gold; each quality has distinct material design, not just recoloring. Near-front view with a slight natural angle. Breastplates are only torso armor and attached short shoulder plates, no helmet, legs, stand, rack or separate accessories. Robes are only empty clothing, hood opening dark and hollow with NO face, NO head, NO person, NO mannequin, NO hands, NO feet. Hems end within each cell.\nTransparency and negative constraints: The entire image outside exact clothing silhouettes is real alpha0, including all cell gaps and final row. Absolutely NO black square, dark tile, card, inventory panel, rectangle, border, frame, colored backing, glowing square, circular badge, mat, ground, pedestal, base, backdrop, cast background shadow, glow cloud, detached VFX, particle field, grid line, checkerboard, text, numerals, labels, logo or watermark. No characters, faces, heads, bodies, mannequins, weapons, scenery or scene lighting gradients. Only twelve beautiful isolated clothing objects on actual transparency, each fully inside its invisible 256px cell.",
+      "generationMode": "generate",
+      "referencedImagePaths": [],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "blankLastRowAlphaRange": [
+        0,
+        1
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "row": 0,
+          "col": 0,
+          "cellRect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              31,
+              35,
+              284,
+              285
+            ],
+            "32": [
+              32,
+              35,
+              284,
+              284
+            ],
+            "128": [
+              32,
+              36,
+              283,
+              284
+            ]
+          },
+          "spriteRect": [
+            28,
+            32,
+            259,
+            256
+          ],
+          "bottomAnchorGlobal": [
+            169,
+            283
+          ],
+          "bottomAnchorWithinCrop": [
+            141,
+            251
+          ],
+          "visibleSizeAtAlpha32": [
+            252,
+            249
+          ],
+          "id": "armor-white",
+          "quality": "white",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "col": 1,
+          "cellRect": [
+            314,
+            0,
+            313,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              340,
+              36,
+              600,
+              290
+            ],
+            "32": [
+              340,
+              37,
+              600,
+              289
+            ],
+            "128": [
+              341,
+              37,
+              599,
+              289
+            ]
+          },
+          "spriteRect": [
+            337,
+            33,
+            266,
+            260
+          ],
+          "bottomAnchorGlobal": [
+            476,
+            288
+          ],
+          "bottomAnchorWithinCrop": [
+            139,
+            255
+          ],
+          "visibleSizeAtAlpha32": [
+            260,
+            252
+          ],
+          "id": "armor-green",
+          "quality": "green",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "col": 2,
+          "cellRect": [
+            627,
+            0,
+            313,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              650,
+              33,
+              916,
+              288
+            ],
+            "32": [
+              650,
+              34,
+              916,
+              288
+            ],
+            "128": [
+              651,
+              34,
+              915,
+              287
+            ]
+          },
+          "spriteRect": [
+            647,
+            30,
+            272,
+            261
+          ],
+          "bottomAnchorGlobal": [
+            785,
+            286
+          ],
+          "bottomAnchorWithinCrop": [
+            138,
+            256
+          ],
+          "visibleSizeAtAlpha32": [
+            266,
+            254
+          ],
+          "id": "armor-blue",
+          "quality": "blue",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 3,
+          "row": 0,
+          "col": 3,
+          "cellRect": [
+            940,
+            0,
+            314,
+            314
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              961,
+              34,
+              1235,
+              290
+            ],
+            "32": [
+              962,
+              34,
+              1234,
+              290
+            ],
+            "128": [
+              963,
+              35,
+              1234,
+              289
+            ]
+          },
+          "spriteRect": [
+            958,
+            31,
+            280,
+            262
+          ],
+          "bottomAnchorGlobal": [
+            1101,
+            288
+          ],
+          "bottomAnchorWithinCrop": [
+            143,
+            257
+          ],
+          "visibleSizeAtAlpha32": [
+            272,
+            256
+          ],
+          "id": "armor-purple",
+          "quality": "purple",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "col": 0,
+          "cellRect": [
+            0,
+            314,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              25,
+              342,
+              289,
+              604
+            ],
+            "32": [
+              25,
+              342,
+              288,
+              604
+            ],
+            "128": [
+              26,
+              343,
+              288,
+              603
+            ]
+          },
+          "spriteRect": [
+            22,
+            339,
+            270,
+            268
+          ],
+          "bottomAnchorGlobal": [
+            172,
+            602
+          ],
+          "bottomAnchorWithinCrop": [
+            150,
+            263
+          ],
+          "visibleSizeAtAlpha32": [
+            263,
+            262
+          ],
+          "id": "armor-red",
+          "quality": "red",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "col": 1,
+          "cellRect": [
+            314,
+            314,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              338,
+              342,
+              599,
+              609
+            ],
+            "32": [
+              338,
+              342,
+              599,
+              608
+            ],
+            "128": [
+              339,
+              343,
+              599,
+              608
+            ]
+          },
+          "spriteRect": [
+            335,
+            339,
+            267,
+            273
+          ],
+          "bottomAnchorGlobal": [
+            483,
+            607
+          ],
+          "bottomAnchorWithinCrop": [
+            148,
+            268
+          ],
+          "visibleSizeAtAlpha32": [
+            261,
+            266
+          ],
+          "id": "armor-orange",
+          "quality": "orange",
+          "category": "melee-chest-armor",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 6,
+          "row": 1,
+          "col": 2,
+          "cellRect": [
+            627,
+            314,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              683,
+              323,
+              883,
+              614
+            ],
+            "32": [
+              683,
+              323,
+              883,
+              613
+            ],
+            "128": [
+              684,
+              324,
+              882,
+              613
+            ]
+          },
+          "spriteRect": [
+            680,
+            320,
+            206,
+            297
+          ],
+          "bottomAnchorGlobal": [
+            770,
+            612
+          ],
+          "bottomAnchorWithinCrop": [
+            90,
+            292
+          ],
+          "visibleSizeAtAlpha32": [
+            200,
+            290
+          ],
+          "id": "robe-white",
+          "quality": "white",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 7,
+          "row": 1,
+          "col": 3,
+          "cellRect": [
+            940,
+            314,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              997,
+              321,
+              1197,
+              615
+            ],
+            "32": [
+              998,
+              322,
+              1196,
+              614
+            ],
+            "128": [
+              999,
+              322,
+              1196,
+              614
+            ]
+          },
+          "spriteRect": [
+            994,
+            318,
+            206,
+            300
+          ],
+          "bottomAnchorGlobal": [
+            1097,
+            613
+          ],
+          "bottomAnchorWithinCrop": [
+            103,
+            295
+          ],
+          "visibleSizeAtAlpha32": [
+            198,
+            292
+          ],
+          "id": "robe-green",
+          "quality": "green",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "col": 0,
+          "cellRect": [
+            0,
+            627,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              56,
+              635,
+              258,
+              932
+            ],
+            "32": [
+              56,
+              635,
+              258,
+              932
+            ],
+            "128": [
+              57,
+              636,
+              257,
+              931
+            ]
+          },
+          "spriteRect": [
+            53,
+            632,
+            208,
+            303
+          ],
+          "bottomAnchorGlobal": [
+            129,
+            930
+          ],
+          "bottomAnchorWithinCrop": [
+            76,
+            298
+          ],
+          "visibleSizeAtAlpha32": [
+            202,
+            297
+          ],
+          "id": "robe-blue",
+          "quality": "blue",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 9,
+          "row": 2,
+          "col": 1,
+          "cellRect": [
+            314,
+            627,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              368,
+              635,
+              570,
+              930
+            ],
+            "32": [
+              369,
+              635,
+              570,
+              929
+            ],
+            "128": [
+              369,
+              636,
+              569,
+              929
+            ]
+          },
+          "spriteRect": [
+            365,
+            632,
+            208,
+            301
+          ],
+          "bottomAnchorGlobal": [
+            461,
+            928
+          ],
+          "bottomAnchorWithinCrop": [
+            96,
+            296
+          ],
+          "visibleSizeAtAlpha32": [
+            201,
+            294
+          ],
+          "id": "robe-purple",
+          "quality": "purple",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 10,
+          "row": 2,
+          "col": 2,
+          "cellRect": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              682,
+              635,
+              887,
+              931
+            ],
+            "32": [
+              682,
+              636,
+              887,
+              931
+            ],
+            "128": [
+              683,
+              636,
+              886,
+              930
+            ]
+          },
+          "spriteRect": [
+            679,
+            632,
+            211,
+            302
+          ],
+          "bottomAnchorGlobal": [
+            773,
+            929
+          ],
+          "bottomAnchorWithinCrop": [
+            94,
+            297
+          ],
+          "visibleSizeAtAlpha32": [
+            205,
+            295
+          ],
+          "id": "robe-red",
+          "quality": "red",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        },
+        {
+          "index": 11,
+          "row": 2,
+          "col": 3,
+          "cellRect": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "boundsByAlphaThreshold": {
+            "8": [
+              996,
+              635,
+              1197,
+              932
+            ],
+            "32": [
+              997,
+              635,
+              1197,
+              932
+            ],
+            "128": [
+              997,
+              636,
+              1196,
+              931
+            ]
+          },
+          "spriteRect": [
+            993,
+            632,
+            207,
+            303
+          ],
+          "bottomAnchorGlobal": [
+            1101,
+            930
+          ],
+          "bottomAnchorWithinCrop": [
+            108,
+            298
+          ],
+          "visibleSizeAtAlpha32": [
+            200,
+            297
+          ],
+          "id": "robe-orange",
+          "quality": "orange",
+          "category": "caster-robe",
+          "bottomAnchorMethod": "Median x of alpha>=128 pixels in bottom7 subject rows; y is last alpha>=128 row. Anchor is ground-contact suggestion.",
+          "cropMethod": "Alpha>=8 object bounds, expanded3px within cell; no original image pixels changed."
+        }
+      ]
+    }
+  ]
+}

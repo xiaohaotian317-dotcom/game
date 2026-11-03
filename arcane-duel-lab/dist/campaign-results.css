@@ -1,0 +1,63 @@
+/* The painted shells supply the sculpture; all rewards remain live readable UI. */
+#result-dialog{--result-ink:#e6ce98;width:min(990px,96vw,calc((100svh - 26px)*1.5));height:auto;aspect-ratio:3/2;max-width:none;max-height:none;padding:0;border:0!important;background:transparent;box-shadow:none;overflow:visible;isolation:isolate;container-type:inline-size;animation:result-arrive .4s ease-out}
+#result-dialog::backdrop{background:#030914bf;backdrop-filter:blur(6px) saturate(.65)}
+.result-border{display:none}
+.result-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:2;pointer-events:none;filter:drop-shadow(0 8px 15px #0009)}
+#result-dialog .result-scene{inset:18% 5.8% 5.5%;z-index:0;background:linear-gradient(#07141be6,#08141beb),var(--result-scene) center/cover;clip-path:polygon(6% 0,94% 0,100% 10%,100% 91%,94% 100%,6% 100%,0 91%,0 10%);filter:saturate(.6)}
+.result-content{position:absolute;inset:35.2% 10.5% 14.5%;max-height:none;padding:0;z-index:3;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.9cqw;background:none}
+.result-heading{display:block;height:auto;padding:0;border:0;background:none;text-align:center;flex:none}
+.result-heading>small{display:block;font:500 .82cqw Georgia;letter-spacing:.36em;color:#b9a36f}
+.result-heading h2{font-size:3.8cqw;line-height:1.25;letter-spacing:.28em;text-indent:.28em;color:#f6dfaa;margin:.45cqw 0;text-shadow:0 2px 3px #000,0 0 20px #ceb26b33}
+.result-heading>span{font-size:1.15cqw;color:#97b2b5;letter-spacing:.1em}
+.result-scroll{overflow:auto;min-height:0;padding:0 1cqw;scrollbar-width:thin;scrollbar-color:#8b7954 #08141a}
+#result-copy{font-size:1.12cqw!important;line-height:1.65;color:#acbdba!important;max-width:90%;margin:.2cqw auto 1cqw!important;text-align:center}
+#result-rewards{overflow:visible}
+.result-totals{display:grid;grid-template-columns:1fr 1.6fr;gap:2cqw;padding:1cqw 2cqw;text-align:left;border:0;background:linear-gradient(90deg,transparent,#1a303654,transparent);position:relative}
+.result-totals::before,.result-totals::after{content:"";position:absolute;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,#b5a26970,transparent)}
+.result-totals::before{top:0}.result-totals::after{bottom:0}
+.result-totals>div{gap:1.7cqw;justify-content:center}
+.result-totals>div+div{border-left:1px solid #b5a26930}
+.result-totals .result-coin{width:7.3cqw;height:5.3cqw;flex:0 0 7.3cqw;padding:0;border:0;outline:0;border-radius:0;box-shadow:none;background:none;overflow:visible}
+.result-totals span{font-size:1.05cqw;color:#a9bdb8}
+.result-totals strong{font:2.7cqw Georgia;line-height:1.25;color:#f2d293;margin-top:.4cqw}
+.result-totals>div+div strong{font:1.25cqw "Microsoft YaHei",serif;line-height:1.65;color:#dfcfaa}
+.result-loot{margin:1.25cqw 0 0}
+.result-loot h3{font-size:1.2cqw;font-weight:400;letter-spacing:.2em;color:#cfbc8b;margin:0 0 1cqw}
+.result-loot-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:1.45cqw;max-height:none;overflow:visible;padding:.3cqw .5cqw 2cqw}
+.result-loot-grid article{width:6.8cqw;flex:none}
+.result-loot-grid .loot-token{width:5.9cqw;height:5.9cqw;max-width:none;padding:0;background:#0b1b22a0;border-color:var(--rarity);box-shadow:inset 0 0 0 2px #07131b,0 0 10px color-mix(in srgb,var(--rarity),transparent 85%)}
+.result-loot-grid .loot-token .item-art{inset:3px}
+.result-loot-grid .loot-token small{font-size:.87cqw;line-height:1.35;white-space:normal;left:-.6cqw;right:-.6cqw;bottom:-2cqw}
+.result-loot-grid .item-count{font-size:1.1cqw}
+.result-pet>i{width:5.9cqw;height:5.9cqw;background-repeat:no-repeat}
+.result-pet strong,.result-pet small{font-size:.87cqw;margin-top:.4cqw}
+.result-pet small{font-size:.75cqw}
+.result-empty{font-size:1.15cqw;margin:1cqw 0;color:#8ea8a6}
+.result-actions{position:relative;bottom:auto;display:flex;gap:2cqw;justify-content:center;align-items:center;margin:0;padding:0;background:none;border:0;z-index:4}
+.result-actions button{position:relative;display:grid!important;place-items:center;flex:0 1 31cqw;width:31cqw!important;min-width:0;aspect-ratio:1482/307;margin:0!important;padding:0;border:0;background:transparent;box-shadow:none;isolation:isolate;font-size:1.55cqw;line-height:1.3;letter-spacing:.09em;text-shadow:0 2px 3px #000;color:#f0dfb7;transition:filter .18s,transform .18s}
+.result-button-art{position:absolute;inset:0;z-index:-1;background:url('assets/pause/pause-controls-v1.png') no-repeat;pointer-events:none}
+#result-primary .result-button-art{background-size:103.644% 333.55%;background-position:50% 4.742%}
+#result-map .result-button-art{background-size:103.784% 342.475%;background-position:50% 94.207%}
+.result-actions button:hover{transform:translateY(-1px);filter:brightness(1.22)}
+.result-actions button:focus-visible{outline:1px solid #e5ce9a;outline-offset:-5px;border-radius:30%}
+.result-defeat .result-heading>small{color:#ab929d}
+.result-defeat .result-heading h2{color:#e7c6cf;text-shadow:0 2px 3px #000,0 0 20px #83485933}
+.result-defeat #result-primary .result-button-art{background-size:103.714% 339.073%;background-position:50.91% 49.861%}
+@media(max-width:650px){.result-heading>small{font-size:1.1cqw}.result-heading h2{font-size:4.3cqw}.result-heading>span{font-size:1.5cqw}#result-copy{font-size:1.55cqw!important}.result-totals span{font-size:1.5cqw}.result-totals>div+div strong{font-size:1.6cqw}.result-actions button{font-size:2cqw}.result-loot h3{font-size:1.6cqw}.result-loot-grid article{width:8.3cqw}.result-loot-grid .loot-token{width:7.3cqw;height:7.3cqw}.result-loot-grid .loot-token small{font-size:1.2cqw}.result-loot-grid{padding-bottom:3.3cqw}.result-empty{font-size:1.6cqw}}
+@media(prefers-reduced-motion:reduce){#result-dialog{animation:none}.result-actions button{transition:none}}
+
+/* Nine-slice the same original on narrow windows: crest/corners retain shape. */
+@media(max-width:650px){
+ #result-dialog{height:min(520px,calc(100svh - 24px));aspect-ratio:auto}
+ .result-frame{display:none}
+ .result-border{display:block;position:absolute;inset:0;z-index:2;pointer-events:none;border-style:solid;border-color:transparent;border-width:23.4375cqw 10.4167cqw 9.7cqw;border-image-source:url('assets/campaign-results/victory-shell-v2.png');border-image-slice:360 160 149 160;border-image-repeat:stretch;filter:drop-shadow(0 6px 12px #0009)}
+ .result-defeat .result-border{border-image-source:url('assets/campaign-results/defeat-shell-v2.png')}
+ #result-dialog .result-scene{inset:18cqw 5.8% 5cqw}
+ .result-content{inset:24cqw 10.5% 10cqw;gap:1.5cqw}
+ .result-heading>small{font-size:1.4cqw}.result-heading h2{font-size:5.3cqw}.result-heading>span{font-size:1.8cqw}
+ #result-copy{font-size:1.9cqw!important;max-width:95%;margin:.6cqw auto 1.7cqw!important}
+ .result-totals{padding:1.8cqw 1cqw}.result-totals span{font-size:1.8cqw}.result-totals strong{font-size:3.5cqw}.result-totals>div+div strong{font-size:1.85cqw}
+ .result-loot{margin:2.5cqw 0 0}.result-loot h3{font-size:2cqw;margin-bottom:2cqw}
+ .result-loot-grid{gap:2cqw;padding-bottom:4cqw}.result-loot-grid article{width:10cqw}.result-loot-grid .loot-token{width:9cqw;height:9cqw}.result-loot-grid .loot-token small{font-size:1.45cqw;bottom:-2.8cqw}
+ .result-actions button{font-size:2.25cqw}
+}

@@ -1,0 +1,522 @@
+{
+  "version": 2,
+  "policy": "Original strongly themed floating ledges plus matching edited variant; shorten underside at render, preserve collision and original PNGs.",
+  "images": {
+    "original-platforms-v4.png": [
+      1254,
+      1254
+    ],
+    "platform-variants-v2.png": [
+      1536,
+      1024
+    ]
+  },
+  "stages": {
+    "1": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            230,
+            326,
+            270
+          ],
+          "spriteRect": [
+            22,
+            298,
+            297,
+            132
+          ],
+          "standingX": [
+            0.08588957055214724,
+            0.9601226993865031
+          ],
+          "topNormalized": 0.26296296296296295,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            23,
+            150,
+            359,
+            126
+          ],
+          "spriteRect": [
+            23,
+            150,
+            359,
+            126
+          ],
+          "standingX": [
+            0.03064066852367688,
+            0.9693593314763231
+          ],
+          "topNormalized": 0.07142857142857142
+        }
+      ]
+    },
+    "2": {
+      "frames": [
+        {
+          "rect": [
+            326,
+            230,
+            314,
+            270
+          ],
+          "spriteRect": [
+            332,
+            301,
+            291,
+            128
+          ],
+          "standingX": [
+            0.03821656050955414,
+            0.9267515923566879
+          ],
+          "topNormalized": 0.2777777777777778,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            402,
+            153,
+            354,
+            133
+          ],
+          "spriteRect": [
+            402,
+            153,
+            354,
+            133
+          ],
+          "standingX": [
+            0.03389830508474576,
+            0.9689265536723164
+          ],
+          "topNormalized": 0.06015037593984962
+        }
+      ]
+    },
+    "3": {
+      "frames": [
+        {
+          "rect": [
+            640,
+            230,
+            314,
+            270
+          ],
+          "spriteRect": [
+            640,
+            291,
+            287,
+            181
+          ],
+          "standingX": [
+            0.012738853503184714,
+            0.8949044585987261
+          ],
+          "topNormalized": 0.26296296296296295,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            781,
+            149,
+            349,
+            134
+          ],
+          "spriteRect": [
+            781,
+            149,
+            349,
+            134
+          ],
+          "standingX": [
+            0.03151862464183381,
+            0.9684813753581661
+          ],
+          "topNormalized": 0.08955223880597014
+        }
+      ]
+    },
+    "4": {
+      "frames": [
+        {
+          "rect": [
+            954,
+            230,
+            300,
+            270
+          ],
+          "spriteRect": [
+            954,
+            300,
+            278,
+            141
+          ],
+          "standingX": [
+            0.013333333333333334,
+            0.9066666666666666
+          ],
+          "topNormalized": 0.27037037037037037,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            1153,
+            155,
+            363,
+            120
+          ],
+          "spriteRect": [
+            1153,
+            155,
+            363,
+            120
+          ],
+          "standingX": [
+            0.03305785123966942,
+            0.9696969696969697
+          ],
+          "topNormalized": 0.06666666666666667
+        }
+      ]
+    },
+    "5": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            520,
+            326,
+            300
+          ],
+          "spriteRect": [
+            16,
+            584,
+            305,
+            197
+          ],
+          "standingX": [
+            0.06748466257668712,
+            0.9662576687116564
+          ],
+          "topNormalized": 0.24,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            18,
+            438,
+            365,
+            152
+          ],
+          "spriteRect": [
+            18,
+            438,
+            365,
+            152
+          ],
+          "standingX": [
+            0.030136986301369864,
+            0.9671232876712329
+          ],
+          "topNormalized": 0.07236842105263158
+        }
+      ]
+    },
+    "6": {
+      "frames": [
+        {
+          "rect": [
+            326,
+            520,
+            314,
+            300
+          ],
+          "spriteRect": [
+            329,
+            588,
+            294,
+            145
+          ],
+          "standingX": [
+            0.028662420382165606,
+            0.9267515923566879
+          ],
+          "topNormalized": 0.24,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            398,
+            441,
+            361,
+            136
+          ],
+          "spriteRect": [
+            398,
+            441,
+            361,
+            136
+          ],
+          "standingX": [
+            0.0332409972299169,
+            0.9695290858725761
+          ],
+          "topNormalized": 0.051470588235294115
+        }
+      ]
+    },
+    "7": {
+      "frames": [
+        {
+          "rect": [
+            640,
+            520,
+            314,
+            300
+          ],
+          "spriteRect": [
+            640,
+            588,
+            288,
+            138
+          ],
+          "standingX": [
+            0.012738853503184714,
+            0.8980891719745223
+          ],
+          "topNormalized": 0.24,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            779,
+            442,
+            357,
+            132
+          ],
+          "spriteRect": [
+            779,
+            442,
+            357,
+            132
+          ],
+          "standingX": [
+            0.03081232492997199,
+            0.9663865546218487
+          ],
+          "topNormalized": 0.06060606060606061
+        }
+      ]
+    },
+    "8": {
+      "frames": [
+        {
+          "rect": [
+            954,
+            520,
+            300,
+            300
+          ],
+          "spriteRect": [
+            954,
+            584,
+            282,
+            185
+          ],
+          "standingX": [
+            0.013333333333333334,
+            0.92
+          ],
+          "topNormalized": 0.23333333333333334,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            1152,
+            439,
+            369,
+            141
+          ],
+          "spriteRect": [
+            1152,
+            439,
+            369,
+            141
+          ],
+          "standingX": [
+            0.02981029810298103,
+            0.9701897018970189
+          ],
+          "topNormalized": 0.07092198581560284
+        }
+      ]
+    },
+    "9": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            840,
+            326,
+            300
+          ],
+          "spriteRect": [
+            16,
+            898,
+            302,
+            147
+          ],
+          "standingX": [
+            0.06748466257668712,
+            0.9570552147239264
+          ],
+          "topNormalized": 0.20333333333333334,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            20,
+            728,
+            360,
+            123
+          ],
+          "spriteRect": [
+            20,
+            728,
+            360,
+            123
+          ],
+          "standingX": [
+            0.030555555555555555,
+            0.9694444444444444
+          ],
+          "topNormalized": 0.06504065040650407
+        }
+      ]
+    },
+    "10": {
+      "frames": [
+        {
+          "rect": [
+            326,
+            840,
+            314,
+            300
+          ],
+          "spriteRect": [
+            326,
+            898,
+            298,
+            148
+          ],
+          "standingX": [
+            0.01910828025477707,
+            0.9299363057324841
+          ],
+          "topNormalized": 0.20333333333333334,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            401,
+            728,
+            356,
+            127
+          ],
+          "spriteRect": [
+            401,
+            728,
+            356,
+            127
+          ],
+          "standingX": [
+            0.03089887640449438,
+            0.9662921348314607
+          ],
+          "topNormalized": 0.06299212598425197
+        }
+      ]
+    },
+    "11": {
+      "frames": [
+        {
+          "rect": [
+            640,
+            840,
+            314,
+            300
+          ],
+          "spriteRect": [
+            640,
+            899,
+            290,
+            144
+          ],
+          "standingX": [
+            0.012738853503184714,
+            0.9044585987261147
+          ],
+          "topNormalized": 0.20666666666666667,
+          "file": "original-platforms-v4.png",
+          "name": "原主题悬台"
+        },
+        {
+          "file": "platform-variants-v2.png",
+          "name": "同主题晶岩变体",
+          "rect": [
+            777,
+            729,
+            355,
+            119
+          ],
+          "spriteRect": [
+            777,
+            729,
+            355,
+            119
+          ],
+          "standingX": [
+            0.03380281690140845,
+            0.9661971830985916
+          ],
+          "topNormalized": 0.06722689075630252
+        }
+      ]
+    }
+  }
+}

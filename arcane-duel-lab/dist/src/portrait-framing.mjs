@@ -1,0 +1,2 @@
+// A square destination must sample a square region: resizing a tall crop changes the face.
+export function squarePortraitRect(bounds,framing){const [x,y,w,h]=framing,side=Math.min(Math.max(bounds.w*w,bounds.h*h),bounds.w,bounds.h),cx=bounds.x+bounds.w*(x+w/2),cy=bounds.y+bounds.h*(y+h/2);return [Math.max(bounds.x,Math.min(bounds.x+bounds.w-side,cx-side/2)),Math.max(bounds.y,Math.min(bounds.y+bounds.h-side,cy-side/2)),side,side];}

@@ -1,0 +1,30 @@
+{
+  "version": "campaign8",
+  "date": "2026-11-03",
+  "fixture": "127.0.0.1:4212/__qa/review (isolated browser save)",
+  "isNaturalFullPlaythrough": false,
+  "nativeWindowVisualQA": false,
+  "checks": {
+    "enemyFaces": "22 inspected across gallery including B11/S01 and actual stage10 detail",
+    "reservePortrait": "source square and CSS padding; actual canvas44x44 desktop and34x34 narrow",
+    "heroLevelBadge": "actual XP grant updated fire level1->2 and avatar badge immediately; main HUD shows real levels and independent hotkeys",
+    "platforms": "original icy ground preserved; original A and strong-themed B seen, lower decoration kept clear; high allowance110/180 validated by geometry tests",
+    "sharedPassives": "all four0 at start; upgraded once each, coins2400->1200, next cost700; saved and shared across heroes",
+    "dropPickup": "large transparent red/blue/chest/gear assets; near red C hint, distant items no hint; actual C consumed red. Exact capped amounts/no bag/no ledger covered by automatic tests; runtime HP later also regenerated because fixture had learned health passive",
+    "pause": "1280x720 and563x558; continue resumes; user explicitly accepted current style",
+    "victory": "563x558 full gold crown/sword sculpted shell; actual+15 coins/fire+15XP and picked items; fixed actions; map return works",
+    "defeat": "563x558 silver damaged sword/wing shell; empty reward state; retry starts fresh full hero/pet vitals",
+    "deadRegen": "UI test uncovered passive revive bug, fixed and regression added; full-party failure now opens result; living reserve rescue works"
+  },
+  "screenshots": [
+    "campaign8-detail.jpg",
+    "campaign8-passives.jpg",
+    "campaign8-drops.jpg",
+    "campaign8-pause.jpg",
+    "campaign8-victory-narrow.jpg",
+    "campaign8-defeat-narrow.jpg"
+  ],
+  "tests": 286,
+  "manualBalanceAccepted": false,
+  "resultArtAcceptedByUser": false
+}

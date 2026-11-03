@@ -43,7 +43,7 @@ export function enemyOnDamage(w,e,amount,{impact=true}={}){
  const d=ENEMIES[e.enemyKind];
  if(impact){
   if(d.boss){e.ai.poise+=amount;if(e.ai.poise>=110){e.ai.poise=0;e.ai.stagger=.65;e.ai.attack=null;e.ai.state='stagger';e.ai.readyAt=w.time+.75;e.ai.passiveUntil=0;}}
-  else{e.ai.stagger=.2;e.ai.attack=null;e.ai.state='hurt';e.ai.readyAt=Math.max(e.ai.readyAt,w.time+.4);}
+  else{if(w.campaign&&amount<20){const attack=e.ai.attack,step=attack?.plan.steps[attack.index];if(attack&&step&&(attack.age>=step.windup*.65||w.time<(e.ai.interruptImmuneUntil||0)))return;if(w.time<(e.ai.interruptImmuneUntil||0))return;e.ai.interruptImmuneUntil=w.time+1.3;}e.ai.stagger=.2;e.ai.attack=null;e.ai.state='hurt';e.ai.readyAt=Math.max(e.ai.readyAt,w.time+.4);}
  }
 }
 function fx(w,hooks,style,data={}){return hooks.effect(w,'enemyVfx',{style,duration:.6,...data});}
@@ -140,10 +140,13 @@ export function enemyCastOrigin(w,e){
 }
 export function enemyStrikeContact(w,e,t,s){
  const forward=(t.x-e.x)*e.face,overlap=Math.abs(t.x-e.x)<=e.w+t.w;
- return t.hp>0&&(overlap||forward>=0)&&forward<s.reach*(e.attackScale??e.scale)+t.w&&Math.abs(t.y-e.y)<Math.max(88,e.h*.72)&&clearLine(w,e.x,e.y-Math.min(e.h*.42,75),t.x,t.y-Math.min(t.h*.45,55));
+ const vertical=w.campaign&&!ENEMIES[e.enemyKind]?.boss?t.y>e.y-e.h*.85&&t.y-t.h<e.y-10:Math.abs(t.y-e.y)<Math.max(88,e.h*.72);
+ return t.hp>0&&(overlap||forward>=0)&&forward<enemyMeleeReach(w,e,s)+t.w&&vertical&&clearLine(w,e.x,e.y-Math.min(e.h*.42,75),t.x,t.y-Math.min(t.h*.45,55));
 }
+export function enemyMeleeReach(w,e,s){return (s.reach||0)*(e.attackScale??e.scale)*(w.campaign&&!ENEMIES[e.enemyKind]?.boss?1.35:1);}
+function meleeReady(w,e,plan){const s=plan.steps[0];if(!w.campaign||ENEMIES[e.enemyKind]?.boss||plan.kind!=='melee')return true;const gap=Math.abs(w.player.x-e.x),travel=s.type==='dash'?(s.speed||350)*s.active:0;return gap<=enemyMeleeReach(w,e,s)+w.player.w-14+travel;}
 function choosePlan(w,e,d){
- const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time);
+ const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time&&meleeReady(w,e,p));
  if(w.campaign&&!d.boss&&w.targets.filter(t=>t!==e&&t.hp>0&&t.ai?.attack).length>=w.campaign.attackBudget)return null;
  const specials=available.filter(p=>p.kind==='special');if(specials.length&&ai.sequence%3===2)return specials[Math.floor(ai.sequence/3)%specials.length];
  const preferred=available.filter(p=>p.kind===(distance<(d.boss?230:145)?'melee':'range'));
@@ -179,7 +182,7 @@ function fireStep(w,e,s,hooks){
   let count=w.targets.filter(t=>t.owner===e.id&&t.hp>0).length;
   for(const dx of [-100,100])if(count<4){const t=spawnEnemy(w,'M06',{x:e.x+dx,y:e.y,scale:.8,owner:e.id});if(t){t.ai.readyAt=w.time+.75;t.bornAt=w.time;t.flankOffset=Math.sign(dx)*65;count++;fx(w,hooks,'bone',{x:t.x,y:t.y,radius:65,duration:.9,enemyKind:e.enemyKind,ground:true});}}
  }else if(s.type==='melee'||s.type==='dash'){
-  fx(w,hooks,s.style,{x:e.x+e.face*(e.w+35),y:e.y-e.h*.4,face:e.face,radius:s.reach*(e.attackScale??e.scale),duration:.42,melee:true,enemyKind:e.enemyKind});
+  fx(w,hooks,s.style,{x:e.x+e.face*(e.w+35),y:e.y-e.h*.4,face:e.face,radius:enemyMeleeReach(w,e,s),duration:.42,melee:true,enemyKind:e.enemyKind});
  }
  if(s.lava){a.lastLava=e.x;const anchor=groundTarget(w,e.x+e.face*65,e.y-2);if(anchor)addZone(w,e,'lava',anchor,{radius:86*(e.attackScale??e.scale),life:5,damage:Math.max(2,Math.round(7*(e.damageFactor??1))),status:'burn',delay:.25});}
  hooks.emit(w,'enemyAttack',{enemyStyle:s.style,heavy:s.damage>=18||s.type==='summon'||s.type==='egg'});
@@ -201,7 +204,7 @@ function updateAttack(w,e,d,dt,hooks){
   }
   if(s.type==='melee'||s.type==='dash')for(const t of [w.player,...(w.fox?[w.fox]:[]),...(w.companion?.hp>0?[w.companion]:[])]){
    const key=t===w.player?'player':t===w.companion?'companion':'stag';if(a.victims.includes(key)||!enemyStrikeContact(w,e,t,s))continue;
-   a.victims.push(key);const accepted=t===w.player?hooks.hitPlayer(w,s.damage,e.x):t===w.companion?hooks.hitCompanion?.(w,s.damage,e.x):hooks.hitSummon(w,s.damage,e.x);
+   const accepted=t===w.player?hooks.hitPlayer(w,s.damage,e.x):t===w.companion?hooks.hitCompanion?.(w,s.damage,e.x):hooks.hitSummon(w,s.damage,e.x);if(accepted)a.victims.push(key);
    if(accepted&&t===w.player)traitOnHit(w,e,s,hooks);
   }
  }else{e.ai.state='recover';e.vx*=Math.exp(-10*dt);}

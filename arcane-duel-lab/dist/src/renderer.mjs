@@ -1,3 +1,4 @@
+import {squarePortraitRect} from './portrait-framing.mjs';
 import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
 import {EnemyPainter} from './enemy-painter.mjs';
 import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel12';
@@ -112,7 +113,7 @@ export class Renderer {
     }
     c.restore();
   }
-  portrait(canvas,hero){const c=canvas.getContext('2d'),b=this.assets.coreBounds[hero],p=RIGS[hero].portrait;c.clearRect(0,0,canvas.width,canvas.height);c.drawImage(this.assets[hero+'Core'],b.x+b.w*p[0],b.y+b.h*p[1],b.w*p[2],b.h*p[3],0,0,canvas.width,canvas.height);}
+  portrait(canvas,hero){const c=canvas.getContext('2d'),b=this.assets.coreBounds[hero],p=RIGS[hero].portrait;c.clearRect(0,0,canvas.width,canvas.height);c.drawImage(this.assets[hero+'Core'],...squarePortraitRect(b,p),0,0,canvas.width,canvas.height);}
   platform(b,t){
     if(!b.active)return;const c=this.ctx;
     if(b.type==='root'){

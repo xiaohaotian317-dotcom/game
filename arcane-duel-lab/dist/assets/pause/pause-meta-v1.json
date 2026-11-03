@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "shell": {
+    "file": "pause-shell-v1.png",
+    "size": [
+      1133,
+      1388
+    ],
+    "safeRect": [
+      145,
+      420,
+      843,
+      800
+    ]
+  },
+  "controls": {
+    "file": "pause-controls-v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "frames": {
+      "continue": [
+        27,
+        34,
+        1482,
+        307
+      ],
+      "retry": [
+        28,
+        360,
+        1481,
+        302
+      ],
+      "returnMap": [
+        28,
+        683,
+        1480,
+        299
+      ]
+    }
+  }
+}
