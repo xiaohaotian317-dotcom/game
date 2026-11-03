@@ -36,5 +36,11 @@
   "remaining": [],
   "nativeWindowVisualQA": false,
   "currentChecks": 273,
-  "sourceUpload": "pending"
+  "sourceUpload": {
+    "status": "pushed",
+    "commit": "46f5c72",
+    "repository": "https://github.com/xiaohaotian317-dotcom/game"
+  },
+  "finalPreview": "campaign7-final-preview.png",
+  "screenshotsNote": "Earlier screenshots may precede the final six hero chassis. Final-preview shows final painted HUD and new travel cluster; isolated inspection, not a natural full-stage clear."
 }
