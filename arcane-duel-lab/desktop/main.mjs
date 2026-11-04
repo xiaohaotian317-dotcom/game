@@ -5,7 +5,8 @@ import {LanRuntime} from './lan-runtime.mjs';
 const qa=process.argv.find(a=>a.startsWith('--qa-instance='))?.split('=')[1];
 const enemyPreview=app.getName()==='arcane-duel-enemy-preview';
 const campaignPreview=app.getName()==='arcane-duel-campaign-preview';
-const windowTitle=campaignPreview?'秘境决斗 · 秘境征途':enemyPreview?'秘境决斗 · 敌人交互试炼':'秘境决斗 · Windows局域网';
+const legacyMotion=process.argv.includes('--legacy-motion');
+const windowTitle=(campaignPreview?'秘境决斗 · 秘境征途':enemyPreview?'秘境决斗 · 敌人交互试炼':'秘境决斗 · Windows局域网')+(legacyMotion?' · 原版动作':'');
 if(qa&&/^[a-z0-9-]{1,20}$/i.test(qa))app.setPath('userData',path.resolve(import.meta.dirname,'.qa-profiles',qa));
 if(!qa&&!app.requestSingleInstanceLock()){app.quit();}else{
   let win,runtime,quitting=false;
@@ -15,7 +16,7 @@ if(!qa&&!app.requestSingleInstanceLock()){app.quit();}else{
     const gameRoot=app.isPackaged?app.getAppPath():path.resolve(import.meta.dirname,'..');
     runtime=new LanRuntime({root:path.join(gameRoot,'dist'),uiPort:qa?0:campaignPreview?44177:enemyPreview?44175:44173,hostBind:qa?'127.0.0.1':'0.0.0.0',testMode:!!qa});
     const origin=await runtime.start();
-    win=new BrowserWindow({width:1440,height:900,minWidth:1000,minHeight:640,backgroundColor:'#080f1c',title:windowTitle+(qa?' · 本机测试 '+qa:''),autoHideMenuBar:true,webPreferences:{preload:path.join(import.meta.dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true,backgroundThrottling:false}});
+    win=new BrowserWindow({width:1440,height:900,minWidth:1000,minHeight:640,backgroundColor:'#080f1c',title:windowTitle+(qa?' · 本机测试 '+qa:''),autoHideMenuBar:true,webPreferences:{preload:path.join(import.meta.dirname,'preload.cjs'),additionalArguments:[legacyMotion?'--arcane-motion=legacy':'--arcane-motion=v2'],contextIsolation:true,nodeIntegration:false,sandbox:true,backgroundThrottling:false}});
     win.webContents.on('page-title-updated',e=>{e.preventDefault();win.setTitle(windowTitle+(qa?' · 本机测试 '+qa:''));});
     win.webContents.setWindowOpenHandler(()=>({action:'deny'}));
     win.webContents.on('will-navigate',(e,url)=>{try{if(new URL(url).origin!==origin)e.preventDefault();}catch{e.preventDefault();}});

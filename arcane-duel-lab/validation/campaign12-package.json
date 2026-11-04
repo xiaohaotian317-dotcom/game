@@ -1,0 +1,14 @@
+{
+  "version": "campaign12",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign12",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign12\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign12.zip",
+  "files": 422,
+  "runtimeFilesMatched": 339,
+  "bytes": 523038160,
+  "sha256": "a9ba75437b68e18989cbd9a08cfefb650f92f91fed1850d016d0241927770584",
+  "originalSitesUnchanged": true,
+  "scope": "Six hero posture/idle/attack re-choreography, distinct class double-jumps, connected neck-weighted core mesh and hair/cape secondary motion; intact campaign11 runtime rollback via launcher; original physics/combat/economy/saves and Sites preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

@@ -1,0 +1,55 @@
+{
+  "version": "campaign12",
+  "task": "T33",
+  "date": "2026-11-04",
+  "url": "http://127.0.0.1:4216/__qa/motion",
+  "isolatedSaveFreeFixture": true,
+  "observed": [
+    "all six class second-jump comparison poses",
+    "all six attack release poses and shoulder/head continuity",
+    "final rigid-face pass and planted stance",
+    "lightning mirrored left/right attack",
+    "shadow rush with bounded cached ghosts"
+  ],
+  "finalScreenshots": [
+    "t33-final-fire-attack.jpg",
+    "t33-final-fire-curl.jpg",
+    "t33-final-fire-idle.jpg",
+    "t33-final-frost-attack.jpg",
+    "t33-final-ghost-timing.jpg",
+    "t33-final-lightning-attack.jpg",
+    "t33-final-lightning-left.jpg",
+    "t33-final-nature-attack.jpg",
+    "t33-final-shadow-attack.jpg",
+    "t33-final-star-attack.jpg"
+  ],
+  "intermediateScreenshots": "t33-* without final prefix were taken during iteration before the final rigid-face pass",
+  "paintTiming": {
+    "source": "visible QA status, two side-by-side renderers",
+    "meanJsPaintMs": 0.5,
+    "ghostFramesMeanJsPaintMs": 0.9,
+    "ghostFramesMaxJsPaintMs": 9.1,
+    "limitation": "JavaScript Canvas command submission wall time only; not GPU time, FPS, native full-campaign benchmark or network latency"
+  },
+  "tests": {
+    "final": 311,
+    "passed": 311,
+    "execution": "--test-concurrency=1",
+    "originalPlatformRoutes": 2304,
+    "priorParallelLanFailure": "One transient localhost LAN connection failure; standalone LAN tests and final full serial suite passed; original log retained"
+  },
+  "nativeWindowVisualQA": false,
+  "naturalCampaignBalanceQA": false,
+  "twoPhysicalDevicesQA": false,
+  "userArtAndFeelApproval": false,
+  "rollback": {
+    "legacySourceIdentical": true,
+    "browser": "?motion=legacy",
+    "desktop": "回退人物动作.cmd / --legacy-motion",
+    "bridgeContractUnitTest": true,
+    "nativeProcessArgumentsChecked": true
+  },
+  "originalSitesUnchanged": true,
+  "originalPNGsUnchanged": true,
+  "formalSaveDataAccessed": false
+}

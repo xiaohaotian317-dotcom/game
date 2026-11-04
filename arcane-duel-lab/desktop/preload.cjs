@@ -1,6 +1,7 @@
 const {contextBridge,ipcRenderer}=require('electron');
 contextBridge.exposeInMainWorld('arcaneDesktop',Object.freeze({
   lan:true,
+  motionVersion:process.argv.includes('--arcane-motion=legacy')?'legacy':'v2',
   state:()=>ipcRenderer.invoke('arcane:state'),
   host:options=>ipcRenderer.invoke('arcane:host',options),
   connect:options=>ipcRenderer.invoke('arcane:connect',options),

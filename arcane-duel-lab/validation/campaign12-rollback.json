@@ -1,0 +1,11 @@
+{
+  "baseline": "5a560a0",
+  "branch": "codex/campaign11-motion-baseline",
+  "legacySourceIdenticalIgnoringLineEndings": true,
+  "normalizedSha256": "ccf488c87323d9857123362ac90e5c237c2dfb402afd4158fe792fc339b67a0f",
+  "runtimeBrowser": "?motion=legacy",
+  "runtimeDesktop": "--legacy-motion",
+  "launcher": "回退人物动作.cmd",
+  "saveDataUntouched": true,
+  "originalPNGsUnmodified": true
+}

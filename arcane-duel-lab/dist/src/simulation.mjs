@@ -32,7 +32,7 @@ export function createWorld(hero='fire',scene='training') {
     platform('bridge',550,387,305,'wood'),platform('upper-right',875,345,220)
   ],player:{x:220,y:FLOOR,prevX:220,prevY:FLOOR,vx:0,vy:0,w:20,h:110,hp:120,maxHp:120,
     face:1,grounded:true,platformId:'ground',jumps:0,coyote:.1,jumpBuffer:0,drop:0,dash:0,dashCooldown:0,
-    hurt:0,invuln:0,land:0,recast:null,cast:null,buffer:null,stomp:false,dead:0,passiveGlow:0,cycle:0,
+    hurt:0,invuln:0,land:0,jumpAt:-99,recast:null,cast:null,buffer:null,stomp:false,dead:0,passiveGlow:0,cycle:0,
     cooldowns:{attack:0,q:0,e:0,r:0}},
     targets:[dummy('a',790,FLOOR),dummy('b',1170,502)],projectiles:[],effects:[],fox:null,trees:[],texts:[],events:[],
     stats:{damage:0,hits:0,combo:0,best:0,lastHit:-100,healed:0,casts:0},
@@ -161,7 +161,7 @@ export function requestCast(w,key,x=w.aim.x,y=w.aim.y) {
   if(w.player.cooldowns[key]<.2||w.player.cast)w.player.buffer={key,until:w.time+.2,x,y};return false;
 }
 function jump(w,boost=false) {
-  const p=w.player;p.vy=boost?-880:-(HEROES[w.hero].jump)*(w.jumpScale||1)*(p.jumps? .92:1);p.jumps++;p.grounded=false;p.coyote=0;p.jumpBuffer=0;p.land=0;
+  const p=w.player;p.vy=boost?-880:-(HEROES[w.hero].jump)*(w.jumpScale||1)*(p.jumps? .92:1);p.jumps++;p.jumpAt=w.time;p.grounded=false;p.coyote=0;p.jumpBuffer=0;p.land=0;
   effect(w,p.jumps===1?'dust':'airRing',{x:p.x,y:p.y,duration:.4,color:HEROES[w.hero].color});emit(w,'jump',{double:p.jumps>1});
 }
 function physics(w,a,dt,{drop=false,phase=false}={}) {

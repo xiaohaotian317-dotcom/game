@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign11',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11'])
+parser.add_argument('--version',default='campaign12',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,7 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Six continuous hero flight and landing rigs with planted foot IK; reauthored anchored 8-frame lightning punch and contact feedback; six painted ground-warning materials with true support/radius and timing; current hero skill mana costs increased 10%; level growth remains 5% health and 4% mana; original Sites and saves preserved','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Six hero posture/idle/attack re-choreography, distinct class double-jumps, connected neck-weighted core mesh and hair/cape secondary motion; intact campaign11 runtime rollback via launcher; original physics/combat/economy/saves and Sites preserved','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 

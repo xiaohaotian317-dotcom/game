@@ -1,4 +1,6 @@
 import {drawPunchCharge} from './combat-feedback.mjs';
+import {drawCoreSkin} from './character-skin.mjs';
+import {characterMotionVersion} from './character-rig.mjs?v=20261030-duel12';
 import {squarePortraitRect} from './portrait-framing.mjs';
 import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
 import {EnemyPainter} from './enemy-painter.mjs';
@@ -49,7 +51,7 @@ export class Renderer {
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.translate(anchor.x+3,anchor.y+6);c.rotate(o.cape*.45);
     c.scale(r.flip*r.widthScale,1);
     for(let i=0;i<20;i++){
-      const f=i/20,sh=b.h/20,sway=(Math.sin(time*3.7-f*3.2)*f*1.8-Math.abs(speed)/340*f*6)*r.flip;
+      const f=i/20,sh=b.h/20,tail=Math.pow(Math.max(0,(f-r.anchor[1])/(1-r.anchor[1])),1.35),sway=(characterMotionVersion()==='legacy'?(Math.sin(time*3.7-f*3.2)*f*1.8-Math.abs(speed)/340*f*6):(Math.sin(time*2.7-f*3.6)*tail*3.6-Math.abs(speed)/340*tail*9+(o.cloth||0)*tail*5))*r.flip;
       c.drawImage(this.assets[hero],b.x,b.y+b.h*f,b.w,sh+.5,-b.w*s*r.anchor[0]+sway,(f-r.anchor[1])*r.height,b.w*s,r.height/20+.4);
     }c.restore();
   }
@@ -89,9 +91,12 @@ export class Renderer {
     // Publish the exact hand that was drawn, including pose blending and render interpolation.
     if(hero==='lightning'&&!poseOverride){const scale=w.characterScale||1;this.roster.punchSocket={x:x+near.hand.x*p.face*scale*o.sx,y:y+near.hand.y*scale*o.sy,face:p.face};}
     c.save();c.globalAlpha*=.80;this.bone(c,hero,'upperArm',far.shoulder,far.elbow);this.bone(c,hero,'forearm',far.elbow,far.hand);c.restore();
-    // Crown, neck, collar and torso are one unbroken image, rotated as one piece.
+    // The original connected paint gains neck-weighted head and loose-hair motion.
+    if(characterMotionVersion()!=='legacy')drawCoreSkin(c,this.assets[hero+'Core'],core,hero,o,frame,!!poseOverride);
+    else {
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.scale(frame.scale,frame.scale);
     c.drawImage(this.assets[hero+'Core'],core.x,core.y,core.w,core.h,-r.hip[0]*core.w,-r.hip[1]*core.h,core.w,core.h);c.restore();
+    }
     // Reveal the relaxed free hand without giving it a casting gesture.
     if(p.cast){c.save();c.globalAlpha*=.96;this.bone(c,hero,'forearm',far.elbow,far.hand);c.restore();}
     if(hero==='shadow'){const dagger=this.assets.bounds.shadow.gear,scale=46/dagger.h;c.save();c.translate(far.hand.x,far.hand.y);c.rotate(-.4+o.lean);c.scale(scale,scale);c.drawImage(this.assets.shadow,dagger.x,dagger.y,dagger.w,dagger.h,-dagger.w*.53,-dagger.h*.8,dagger.w,dagger.h);c.restore();}
