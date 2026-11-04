@@ -1,0 +1,14 @@
+.map-menu{position:absolute;left:24px;bottom:24px;z-index:7;width:316px;max-width:calc(100vw - 48px);filter:drop-shadow(0 6px 14px #0009)}
+.map-menu-fold{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(8px);transition:grid-template-rows .24s ease,opacity .18s,transform .24s;pointer-events:none}
+.map-menu.expanded .map-menu-fold{grid-template-rows:1fr;opacity:1;transform:none;pointer-events:auto}
+.map-menu-links{min-height:0;overflow:hidden;display:grid;grid-template-columns:repeat(3,1fr);gap:0 9px;padding:0 18px;background:linear-gradient(135deg,#142831ed,#071721f5 65%);border:1px solid transparent;border-bottom:0;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%,0 12px);transition:padding .24s,border-color .24s;backdrop-filter:blur(12px)}
+.map-menu.expanded .map-menu-links{padding:16px 18px 10px;border-color:#b69b626e}
+.map-menu-links button{padding:0 5px 11px;background:none;border:0;display:grid;justify-items:center;gap:5px;font-size:11px;letter-spacing:.12em;color:#decca5;min-width:0}
+.map-menu-links button i{display:block;width:51px;height:51px;background-repeat:no-repeat;border:1px solid #b79b5a8c;box-shadow:0 2px 7px #0008,inset 0 0 0 2px #07121b}
+.map-menu-links button:hover i,.map-menu-links button:focus-visible i{box-shadow:0 0 14px #d4b77455;border-color:#e0c590}
+.map-menu-toggle{position:relative;width:190px;height:47px;display:flex;align-items:center;gap:11px;padding:0 17px 0 11px;border:1px solid #b69b6277;background:linear-gradient(110deg,#23323a,#0a1b27 70%);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);font-size:12px;letter-spacing:.16em;box-shadow:inset 0 0 0 3px #07151d,inset 0 0 0 4px #947b4133}
+.map-menu-toggle .map-menu-seal{display:grid;place-items:center;width:29px;height:29px;border:1px solid #b29a63;border-radius:50%;font:25px Georgia;color:#e1c588;box-shadow:inset 0 0 9px #c1a24d33}
+.map-menu-toggle b{font:18px Georgia;margin-left:auto;color:#d7bd82;transition:transform .24s}.map-menu.expanded .map-menu-toggle b{transform:rotate(180deg)}
+#world-screen #save-notice{bottom:286px;max-width:300px}
+@media(max-width:650px){.map-menu{left:12px;bottom:14px;width:270px;max-width:calc(100vw - 24px)}.map-menu-toggle{width:158px;height:42px;font-size:10px;gap:8px}.map-menu-links button i{width:43px;height:43px}.map-menu-links button{font-size:10px}.map-menu.expanded .map-menu-links{padding:12px 13px 6px}.map-progress{bottom:auto;top:12px}.map-menu-toggle .map-menu-seal{width:25px;height:25px;font-size:22px}}
+@media(prefers-reduced-motion:reduce){.map-menu-fold,.map-menu-links,.map-menu-toggle b{transition:none}}

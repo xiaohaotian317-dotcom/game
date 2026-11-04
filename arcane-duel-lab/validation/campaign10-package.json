@@ -1,0 +1,14 @@
+{
+  "version": "campaign10",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign10",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign10\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign10.zip",
+  "files": 413,
+  "runtimeFilesMatched": 331,
+  "bytes": 519063373,
+  "sha256": "ee1b89087cc5b21c030c140de0af3002ddad009ea775f0604c19d8bb7a2ae8ff",
+  "originalSitesUnchanged": true,
+  "scope": "Complete static summon portraits with per-hero atlas masks; collapsible six-system world-map drawer; solo level growth 5% health and 4% mana; all 36 hero skills cost 25% less mana; stronger learned mana regeneration; original Sites and saves preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

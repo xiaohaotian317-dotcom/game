@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09131b"><title>英雄召唤 · 秘境决斗</title><link rel="stylesheet" href="summon.css"><link rel="preload" as="image" href="assets/lobby/hero-splashes-v1.png"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09131b"><title>英雄召唤 · 秘境决斗</title><link rel="stylesheet" href="summon.css?v=20261104-summon2"><link rel="preload" as="image" href="assets/lobby/hero-splashes-v1.png"></head>
 <body>
 <div class="pool-scenery" id="pool-scenery" aria-hidden="true"></div><div class="pool-shade" aria-hidden="true"></div>
 <main class="summon-shell" id="summon-shell">
- <header class="pool-header"><a class="metal-button back-button" href="lobby.html"><i></i>‹ 返回大厅</a><div class="page-title"><small>THE SANCTUM OF WISHES</small><strong>英雄召唤</strong></div><div class="pool-tools"><span class="ticket-wallet"><i id="wallet-icon"></i><span>召唤券 <b id="ticket-total">0</b></span></span><button id="motion-toggle" aria-pressed="true">动态 开</button></div></header>
+ <header class="pool-header"><a class="metal-button back-button" href="lobby.html"><i></i>‹ 返回大厅</a><div class="page-title"><small>THE SANCTUM OF WISHES</small><strong>英雄召唤</strong></div><div class="pool-tools"><span class="ticket-wallet"><i id="wallet-icon"></i><span>召唤券 <b id="ticket-total">0</b></span></span></div></header>
  <section class="pool-layout">
   <nav class="pool-navigation" aria-label="六位英雄独立卡池"><small>六道契约</small><div id="pool-selectors"></div></nav>
-  <figure class="pool-stage"><div class="stage-aura" aria-hidden="true"></div><canvas id="hero-canvas" role="img" aria-label="英雄动态立绘"></canvas><figcaption id="pool-verse"></figcaption><p id="art-loading" role="status">正在唤醒秘境…</p></figure>
+  <figure class="pool-stage"><div class="stage-aura" aria-hidden="true"></div><canvas id="hero-canvas" role="img" aria-label="英雄静态立绘"></canvas><figcaption id="pool-verse"></figcaption><p id="art-loading" role="status">正在唤醒秘境…</p></figure>
   <aside class="pool-information" aria-live="polite"><div class="pool-identity"><span id="pool-english"></span><h1 id="pool-title"></h1><h2 id="hero-name"></h2><p id="hero-role"></p><p id="pool-copy"></p></div><div class="pool-skills" id="pool-skills" aria-label="英雄技能"></div><div class="pool-passive"><span>职业被动</span><strong id="passive-name"></strong><p id="passive-copy"></p></div><div class="pool-guarantee"><div><span id="status-label"></span><b id="pity-text"></b></div><div class="pity-track" role="progressbar" aria-label="当前卡池保底进度" aria-valuemin="0" aria-valuemax="20" id="pity-track"><i id="pity-fill"></i></div><small id="pity-caption"></small></div></aside>
  </section>
  <footer class="pool-footer"><div class="pool-footer-note"><span id="pool-notice">每位英雄独立保底，切换卡池不清零</span><button id="odds-open">召唤规则 ›</button></div><div class="draw-actions"><button class="metal-button" id="draw-one" data-draw="1"><i></i><strong>召唤一次</strong><span>1 张召唤券</span></button><button class="metal-button draw-ten" id="draw-ten" data-draw="10"><i></i><strong>召唤十次</strong><span>最多 10 张召唤券</span></button></div></footer>
 </main>
 <p class="summon-toast" id="summon-toast" hidden role="status"></p>
-<div id="summon-flare" class="summon-flare" hidden aria-hidden="true"></div>
+
 <dialog id="rules-dialog" class="wish-dialog" aria-labelledby="rules-title"><div class="wish-frame" aria-hidden="true"></div><div class="wish-content"><h2 id="rules-title">召唤契约</h2><div class="wish-scroll"><p>每位英雄拥有独立卡池。当前卡池只会唤醒对应英雄，或获得小灵石、小经验药水、小金币宝箱。</p><p>每次消耗1张召唤券，英雄基础概率10%；第20次内必得当前目标。切换卡池、退出页面会保留每位英雄自己的保底进度。</p><p>十连最多消耗10张券，途中获得目标英雄便停止，保留未使用的券。已拥有的英雄可预览，不再重复消耗召唤券。</p><p>召唤不消耗金币。召唤券来自首领战利品；首次通关必掉，已通关重刷有50%概率掉落，靠近按C拾取。</p></div><button class="metal-button" data-close-dialog><i></i>明白了</button></div></dialog>
 <dialog id="draw-result" class="wish-dialog" aria-labelledby="draw-result-title"><div class="wish-frame" aria-hidden="true"></div><div class="wish-content"><small id="draw-result-eyebrow"></small><h2 id="draw-result-title"></h2><div id="draw-rewards" class="wish-scroll draw-rewards"></div><p id="draw-result-copy"></p><button class="metal-button" data-close-dialog><i></i>收下馈赠</button></div></dialog>
-<script type="module" src="src/summon-app.mjs?v=20261103-summon1"></script>
+<script type="module" src="src/summon-app.mjs?v=20261104-summon2"></script>
 </body></html>

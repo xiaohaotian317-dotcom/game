@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-04",
+  "origin": "http://127.0.0.1:4214",
+  "isolatedProfile": true,
+  "userOriginalTabsUntouched": true,
+  "mapDrawer": {
+    "defaultCollapsed": true,
+    "buttonsVerified": [
+      "角色",
+      "背包",
+      "技能",
+      "灵宠",
+      "锻造炉",
+      "法器"
+    ],
+    "allOpenExistingPanelsAndReturnToMap": true,
+    "escapeCollapse": true,
+    "collapsedNavigationInert": true,
+    "screenshot": "t30-map-expanded.jpg"
+  },
+  "summon": {
+    "sixPoolsVisuallyReviewed": [
+      "fire",
+      "nature",
+      "frost",
+      "lightning",
+      "shadow",
+      "star"
+    ],
+    "completeHeadPerHeroRegions": true,
+    "staticRendererOnlyDrawsOnLoadSelectionResize": true,
+    "motionToggleRemoved": true,
+    "continuousParticlesAndDrawFlareRemoved": true,
+    "limitations": "No quantitative pixel stability measurement; browser DOM facade does not expose canvas context. Static behavior checked by renderer control flow and actual page inspection."
+  },
+  "growth": {
+    "testAction": "Used one existing medium XP potion in QA-only new profile",
+    "level": 2,
+    "hero": "fire",
+    "health": "126/126",
+    "mana": "68/68",
+    "growthDisplayed": "生命5% / 法力4% / 攻击2%",
+    "skillManaDisplayed": [
+      9,
+      15,
+      28.5
+    ],
+    "manaPassivePurchased": {
+      "coinsBefore": 300,
+      "coinsAfter": 0,
+      "rank": 1,
+      "currentPerSecond": 0.25,
+      "nextPerSecond": 0.5
+    }
+  },
+  "verificationLimitations": [
+    "No new native window visual interaction",
+    "No natural full campaign balance completion",
+    "No new two-device network test"
+  ]
+}

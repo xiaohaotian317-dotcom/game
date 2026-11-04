@@ -1,3 +1,4 @@
+import {mountMapMenu} from './campaign-map-menu.mjs';
 import {heroHudStyle} from './campaign-hero-hud-art.mjs';
 import {renderRunResult} from './campaign-result-ui.mjs';
 import {CampaignTeamSelection} from './campaign-team-ui.mjs';
@@ -29,8 +30,9 @@ let storage;try{storage=localStorage;}catch{}const profile=loadSolo(storage);her
 function persist(){if(!saveSolo(storage,profile))$('#save-notice').textContent='本机存档写入失败，本次会话仍可继续。';if(world)world.campaign.dirty=false;}
 function updateHeroSelect(){hero=world?.hero||profile.selected;}
 const systems=new CampaignSystemUI({getProfile:()=>profile,getWorld:()=>world,onPause:()=>{paused=true;resetInput();},onClose:()=>{paused=false;resetInput();if(world)canvas.focus();},onChange:()=>{syncSoloStats(world||{});persist();updateHeroSelect();if(!$('#team-screen').hidden)teamSelection.render();if(world)hotbar();}});
+const mapMenu=mountMapMenu($('#map-menu'),{onOpen:panel=>{if(!world&&!busy&&!$('#world-screen').hidden)systems.open(panel);},iconStyle:index=>sheetStyle('ui',index,uiMeta)});
 document.querySelectorAll('[data-system]').forEach(b=>b.addEventListener('click',()=>systems.open(b.dataset.system)));
-fetch('assets/campaign-growth/growth-ui-bounds-v1.json').then(r=>{if(!r.ok)throw Error('界面素材载入失败');return r.json();}).then(m=>{uiMeta=m;systems.meta=m;$('#solo-toolbar').innerHTML=['character','bag','skills','artifact','pet','forge'].map((key,i)=>`<button data-open-system="${key}" aria-label="打开${['角色','背包','技能','法器','灵宠','锻造炉'][i]}并暂停"><i style="${sheetStyle('ui',i,m)}"></i>${['角色','背包','技能','法器','灵宠','锻造炉'][i]}</button>`).join('');$('#solo-toolbar').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>systems.open(b.dataset.openSystem)));}).catch(e=>$('#save-notice').textContent=e.message);
+fetch('assets/campaign-growth/growth-ui-bounds-v1.json').then(r=>{if(!r.ok)throw Error('界面素材载入失败');return r.json();}).then(m=>{uiMeta=m;systems.meta=m;mapMenu.refreshIcons();$('#solo-toolbar').innerHTML=['character','bag','skills','artifact','pet','forge'].map((key,i)=>`<button data-open-system="${key}" aria-label="打开${['角色','背包','技能','法器','灵宠','锻造炉'][i]}并暂停"><i style="${sheetStyle('ui',i,m)}"></i>${['角色','背包','技能','法器','灵宠','锻造炉'][i]}</button>`).join('');$('#solo-toolbar').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>systems.open(b.dataset.openSystem)));}).catch(e=>$('#save-notice').textContent=e.message);
 function map(){
  updateHeroSelect();
  $('#stage-nodes').innerHTML=STAGES.map(s=>{const open=stageUnlocked(s,progress),done=progress.cleared.includes(s.id);return `<button class="stage-node ${open?'':'locked'} ${done?'cleared':''} ${petDungeonUnlocked(profile,s.id)?'pet-available':''}" style="left:${s.mapX}%;top:${s.mapY}%" data-stage="${s.id}" aria-label="第${s.id}关 ${s.name} ${done?'已通关':open?'可挑战':'尚未解锁'}"><i class="node-zoom" aria-hidden="true" style="background-position:${(s.mapX-7)/86*100}% ${(s.mapY-14)/72*100}%"></i><b>${done?'✓':open?s.id:'◇'}</b><span class="node-name">${s.name}</span><small>${done?'已通关':open?'点击进入':'未解锁'}</small></button>`;}).join('');
