@@ -1,0 +1,329 @@
+{
+  "version": "campaign11",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign11\\ArcaneDuelCampaign.exe",
+  "qaInstance": "campaign11-smoke",
+  "localhostOnly": true,
+  "checks": [
+    {
+      "path": "src/combat-feedback.mjs",
+      "status": 200,
+      "bytes": 4308
+    },
+    {
+      "path": "assets/combat-feedback/feedback-meta-v1.json",
+      "status": 200,
+      "bytes": 3088
+    },
+    {
+      "path": "assets/combat-feedback/lightning-punch-v1.png",
+      "status": 200,
+      "bytes": 1545254
+    },
+    {
+      "path": "assets/combat-feedback/landing-warning-rings-v2.png",
+      "status": 200,
+      "bytes": 2438470
+    },
+    {
+      "path": "campaign-map-menu.css",
+      "status": 200,
+      "bytes": 2672
+    },
+    {
+      "path": "src/campaign-map-menu.mjs",
+      "status": 200,
+      "bytes": 1804
+    },
+    {
+      "path": "summon.html",
+      "status": 200,
+      "bytes": 4035
+    },
+    {
+      "path": "summon.css",
+      "status": 200,
+      "bytes": 14475
+    },
+    {
+      "path": "src/summon-app.mjs",
+      "status": 200,
+      "bytes": 7962
+    },
+    {
+      "path": "src/summon-pools.mjs",
+      "status": 200,
+      "bytes": 3364
+    },
+    {
+      "path": "src/summon-motion.mjs",
+      "status": 200,
+      "bytes": 1791
+    },
+    {
+      "path": "assets/summon/scene-meta-v1.json",
+      "status": 200,
+      "bytes": 1621
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 11320
+    },
+    {
+      "path": "lobby.html",
+      "status": 200,
+      "bytes": 9694
+    },
+    {
+      "path": "campaign.html",
+      "status": 200,
+      "bytes": 7225
+    },
+    {
+      "path": "campaign-team.css",
+      "status": 200,
+      "bytes": 38990
+    },
+    {
+      "path": "src/campaign-team.mjs",
+      "status": 200,
+      "bytes": 3429
+    },
+    {
+      "path": "src/campaign-platforms.mjs",
+      "status": 200,
+      "bytes": 1728
+    },
+    {
+      "path": "src/campaign-hero-hud-art.mjs",
+      "status": 200,
+      "bytes": 527
+    },
+    {
+      "path": "assets/hero-hud/hero-hud-meta-v1.json",
+      "status": 200,
+      "bytes": 2784
+    },
+    {
+      "path": "src/campaign-team-ui.mjs",
+      "status": 200,
+      "bytes": 4554
+    },
+    {
+      "path": "src/campaign-enemy-ui.mjs",
+      "status": 200,
+      "bytes": 2077
+    },
+    {
+      "path": "campaign-pause.css",
+      "status": 200,
+      "bytes": 3631
+    },
+    {
+      "path": "campaign-results.css",
+      "status": 200,
+      "bytes": 7307
+    },
+    {
+      "path": "src/campaign-passives.mjs",
+      "status": 200,
+      "bytes": 1618
+    },
+    {
+      "path": "src/campaign-passive-ui.mjs",
+      "status": 200,
+      "bytes": 1888
+    },
+    {
+      "path": "src/campaign-pickups.mjs",
+      "status": 200,
+      "bytes": 730
+    },
+    {
+      "path": "src/campaign-drop-painter.mjs",
+      "status": 200,
+      "bytes": 1294
+    },
+    {
+      "path": "src/campaign-platform-art.mjs",
+      "status": 200,
+      "bytes": 1716
+    },
+    {
+      "path": "src/portrait-framing.mjs",
+      "status": 200,
+      "bytes": 435
+    },
+    {
+      "path": "assets/enemies/portraits-v1.json",
+      "status": 200,
+      "bytes": 2817
+    },
+    {
+      "path": "assets/world-drops/drop-meta-v1.json",
+      "status": 200,
+      "bytes": 8093
+    },
+    {
+      "path": "assets/campaign-platforms/platforms-meta-v1.json",
+      "status": 200,
+      "bytes": 11446
+    },
+    {
+      "path": "assets/pause/pause-meta-v1.json",
+      "status": 200,
+      "bytes": 585
+    },
+    {
+      "path": "assets/passives/passive-meta-v1.json",
+      "status": 200,
+      "bytes": 797
+    },
+    {
+      "path": "src/campaign-rewards.mjs",
+      "status": 200,
+      "bytes": 467
+    },
+    {
+      "path": "src/campaign-result-ui.mjs",
+      "status": 200,
+      "bytes": 1278
+    },
+    {
+      "path": "src/campaign-companion.mjs",
+      "status": 200,
+      "bytes": 10612
+    },
+    {
+      "path": "src/campaign-pet-painter.mjs",
+      "status": 200,
+      "bytes": 5769
+    },
+    {
+      "path": "assets/pets/pets-meta-v3.json",
+      "status": 200,
+      "bytes": 670747
+    },
+    {
+      "path": "assets/pets/growth-meta-v2.json",
+      "status": 200,
+      "bytes": 4351781
+    },
+    {
+      "path": "assets/pets/portrait-meta-v1.json",
+      "status": 200,
+      "bytes": 2500
+    },
+    {
+      "path": "assets/campaign-results/defeat-shell-v2.png",
+      "status": 200,
+      "bytes": 1802337
+    },
+    {
+      "path": "assets/campaign-results/treasure-coins-v1.png",
+      "status": 200,
+      "bytes": 2255267
+    },
+    {
+      "path": "assets/campaign-results/victory-crest-v1.png",
+      "status": 200,
+      "bytes": 2478270
+    },
+    {
+      "path": "assets/campaign-results/victory-shell-v2.png",
+      "status": 200,
+      "bytes": 1947581
+    },
+    {
+      "path": "assets/pets/pet-portraits-v2.png",
+      "status": 200,
+      "bytes": 1891775
+    },
+    {
+      "path": "assets/pets/pets-v4.png",
+      "status": 200,
+      "bytes": 2617403
+    },
+    {
+      "path": "assets/pets/walk-form1-v2.png",
+      "status": 200,
+      "bytes": 2461970
+    },
+    {
+      "path": "assets/hero-hud/hero-hud-shells-v1.png",
+      "status": 200,
+      "bytes": 2449871
+    },
+    {
+      "path": "assets/pause/pause-controls-v1.png",
+      "status": 200,
+      "bytes": 2714859
+    },
+    {
+      "path": "assets/pause/pause-shell-v1.png",
+      "status": 200,
+      "bytes": 1184924
+    },
+    {
+      "path": "assets/passives/passive-icons-v1.png",
+      "status": 200,
+      "bytes": 1703882
+    },
+    {
+      "path": "assets/world-drops/drop-armors-v1.png",
+      "status": 200,
+      "bytes": 1642519
+    },
+    {
+      "path": "assets/world-drops/drop-items-v1.png",
+      "status": 200,
+      "bytes": 1365223
+    },
+    {
+      "path": "assets/world-drops/drop-weapons-v1.png",
+      "status": 200,
+      "bytes": 1101030
+    },
+    {
+      "path": "assets/campaign-platforms/original-platforms-v4.png",
+      "status": 200,
+      "bytes": 1061154
+    },
+    {
+      "path": "assets/campaign-platforms/platform-variants-v2.png",
+      "status": 200,
+      "bytes": 1878310
+    },
+    {
+      "path": "assets/summon/fire-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2120653
+    },
+    {
+      "path": "assets/summon/frost-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2465919
+    },
+    {
+      "path": "assets/summon/lightning-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2436595
+    },
+    {
+      "path": "assets/summon/nature-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2578109
+    },
+    {
+      "path": "assets/summon/shadow-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2001078
+    },
+    {
+      "path": "assets/summon/star-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2503411
+    }
+  ],
+  "nativeWindowVisualQA": false
+}

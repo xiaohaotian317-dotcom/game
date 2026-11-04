@@ -1,0 +1,266 @@
+{
+  "task": "T32 landing_warning_art",
+  "requestVersion": 1,
+  "status": "art-delivered-pending-main-agent-integration-and-user-review",
+  "tool": "built-in image_gen",
+  "selected": {
+    "file": "landing-warning-rings-v2.png",
+    "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1a4ba-3e84-7cc2-9122-931fe4ba4e81\\exec-055208d5-3fc0-4263-acbe-2344b53fcb82.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "e4e62715cdeaf07a07ab555c8c116dd3f9579a584b6defc387e2d3e40f5a2e24",
+    "originalBytesPreserved": true,
+    "grid": [
+      3,
+      2
+    ],
+    "cellSize": [
+      512,
+      512
+    ],
+    "alphaZeroFraction": 0.5514361063639323,
+    "alphaLess16Fraction": 0.7259565989176432,
+    "alphaMinMax": [
+      0,
+      254
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "hero": "fire",
+        "rect": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          33,
+          23,
+          485,
+          468
+        ],
+        "alphaGT32BBoxLocal": [
+          36,
+          25,
+          482,
+          464
+        ],
+        "centerLocal": [
+          258,
+          244
+        ],
+        "centerNormalized": [
+          0.50390625,
+          0.4765625
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 0,
+        "alphaZeroFraction": 0.5579147338867188,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      },
+      {
+        "index": 1,
+        "hero": "nature",
+        "rect": [
+          512,
+          0,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          21,
+          17,
+          480,
+          462
+        ],
+        "alphaGT32BBoxLocal": [
+          28,
+          20,
+          478,
+          455
+        ],
+        "centerLocal": [
+          256,
+          243
+        ],
+        "centerNormalized": [
+          0.5,
+          0.474609375
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 1,
+        "alphaZeroFraction": 0.5206756591796875,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      },
+      {
+        "index": 2,
+        "hero": "frost",
+        "rect": [
+          1024,
+          0,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          26,
+          13,
+          487,
+          466
+        ],
+        "alphaGT32BBoxLocal": [
+          29,
+          15,
+          485,
+          465
+        ],
+        "centerLocal": [
+          256,
+          240
+        ],
+        "centerNormalized": [
+          0.5,
+          0.46875
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 0,
+        "alphaZeroFraction": 0.5099830627441406,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      },
+      {
+        "index": 3,
+        "hero": "lightning",
+        "rect": [
+          0,
+          512,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          32,
+          7,
+          493,
+          456
+        ],
+        "alphaGT32BBoxLocal": [
+          33,
+          10,
+          490,
+          453
+        ],
+        "centerLocal": [
+          262,
+          229
+        ],
+        "centerNormalized": [
+          0.51171875,
+          0.447265625
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 0,
+        "alphaZeroFraction": 0.5590438842773438,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      },
+      {
+        "index": 4,
+        "hero": "shadow",
+        "rect": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          17,
+          3,
+          494,
+          453
+        ],
+        "alphaGT32BBoxLocal": [
+          27,
+          12,
+          487,
+          451
+        ],
+        "centerLocal": [
+          256,
+          230
+        ],
+        "centerNormalized": [
+          0.5,
+          0.44921875
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 0,
+        "alphaZeroFraction": 0.5332565307617188,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      },
+      {
+        "index": 5,
+        "hero": "star",
+        "rect": [
+          1024,
+          512,
+          512,
+          512
+        ],
+        "alphaGT1BBoxLocal": [
+          28,
+          3,
+          477,
+          454
+        ],
+        "alphaGT32BBoxLocal": [
+          30,
+          9,
+          475,
+          451
+        ],
+        "centerLocal": [
+          250,
+          228
+        ],
+        "centerNormalized": [
+          0.48828125,
+          0.4453125
+        ],
+        "centerMethod": "iterated cardinal inner-edge midpoint at alpha>128, approximate painted ring center",
+        "centerAlpha": 0,
+        "alphaZeroFraction": 0.6277427673339844,
+        "nominalOuterRadius": 235,
+        "recommendedRuntime": "Draw from original full cell anchored at centerLocal, with about 2*235 source pixels mapping to intended world diameter. Squash Y in Canvas for ground perspective. Source circles are top-down; do not assume cell center (256,256)."
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "file": "landing-warning-rings-v1-rejected.png",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1a4ba-3e84-7cc2-9122-931fe4ba4e81\\exec-39026454-efd2-4352-bd21-d01aff2a8bc9.png",
+      "sha256": "31022d4183dab4096ee711c29af37ab8f3fd915bccd0efaba842029b76c541d7",
+      "reason": "Unwanted residual colored haze in blank areas, center alpha4..18; superseded by one targeted transparency correction."
+    }
+  ],
+  "prompts": "prompts.json",
+  "verification": {
+    "viewImageInspected": true,
+    "allSixRingsPresent": true,
+    "completeCircularRings": true,
+    "noTextOrLabels": true,
+    "onlyReadOnlyAlphaAnalysis": true,
+    "noScriptRedrawingOrPixelEditing": true
+  },
+  "notes": [
+    "Final full-cell crop preserves all elements. The image viewer displays hidden RGB under alpha; use the alpha channel when checking transparency.",
+    "Nature center has alpha1/255 at measured center (visually negligible); other five center alpha0. The source is retained untouched.",
+    "Centers are slightly above each nominal cell center; use per-frame centerLocal.",
+    "No game code, runtime metadata, source PNG pixel data, project memory, user save or release was modified."
+  ]
+}

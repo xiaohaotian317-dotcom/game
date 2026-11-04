@@ -1,6 +1,6 @@
-import {FROST_SNARE_DAMAGE,FROST_ECHO_DAMAGE} from './match-rules.mjs?v=20261030-duel12';
+import {FROST_SNARE_DAMAGE,FROST_ECHO_DAMAGE,GROUND_EFFECT_DELAYS} from './match-rules.mjs?v=20261030-duel12';
 import {EXTRA_HEROES} from './hero-roster.mjs?v=20261030-duel12';
-import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {groundTarget,resolveGroundTarget,lightningLandingTarget} from './targeting.mjs?v=20261030-duel12';
 import {segmentBox,clearLine,forwardMeleeContact} from './collision.mjs?v=20261030-duel12';
 import {targetPose} from './character-rig.mjs?v=20261030-duel12';
 import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
@@ -13,7 +13,7 @@ export function initExtra(w,hero){
 function recast(w,key,data={}){const r=EXTRA_HEROES[w.hero].recast;w.player.recast={...r,key,name:r.name,until:w.time+r.window,start:w.time,...data};}
 function point(w,c){const x=clamp(c.x,w.player.x-520,w.player.x+520);return resolveGroundTarget(w,c.target&&Math.abs(c.target.x-w.player.x)<=520?c.target:null)||groundTarget(w,x,c.y);}
 function field(w,kind,t,data={}){const f={id:++w.serial,kind,x:t.x,y:t.y,anchor:t,age:0,until:w.time+(data.duration||2.5),nextTick:w.time+(data.delay||0),...data};w.fields.push(f);return f;}
-function burst(w,c,data){w.player.burst={id:++w.serial,age:0,until:w.time+data.duration,hitIds:[],source:c.key,variant:c.variant,...data};}
+function burst(w,c,data){w.player.burst={id:++w.serial,age:0,until:w.time+data.duration,hitIds:[],source:c.key,variant:c.variant,warningLead:c.releaseAt,...data};}
 function teleport(w,a,x,y){a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if(a===w.player)a.invuln=Math.max(a.invuln,.15);}
 function frostPulse(w,t,amount,radius,duration,api,castId,echo=false){
   for(const target of w.targets)if(target.hp>0&&Math.hypot(target.x-t.x,target.y-t.y)<radius){api.damage(w,target,amount,{school:'frost',castId});target.frostSnareUntil=Math.max(target.frostSnareUntil||0,w.time+duration);}
@@ -26,8 +26,9 @@ export function releaseExtra(w,c,api){
     if(h==='shadow'||h==='lightning'){
       const thunder=h==='lightning',reach=thunder?125:137.5;
       const source=thunder?s:{x:p.x+p.face*26,y:p.y-57};
-      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,rangeScale:1.25,duration:thunder?.38:.35});
-      for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach))api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)});
+      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,reach,rangeScale:1.25,duration:thunder?.34:.35});
+      let landed=false;for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach))landed=api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)})||landed;
+      if(thunder&&landed)w.hitstop=Math.max(w.hitstop,.04);
       api.damageBridge(w,p.x+p.face*68.75,p.y-25,75,thunder?20:18);
     }else{
       const enhanced=h==='star'&&p.stars>=3;
@@ -50,7 +51,7 @@ export function releaseExtra(w,c,api){
   if(h==='frost'){
     if(c.key==='q'&&target){frostPulse(w,target,FROST_SNARE_DAMAGE,150,2.5,api,c.id);recast(w,'q',{data:{anchor:target}});}
     if(c.key==='e'){w.iceMirrors.push({id:++w.serial,x:clamp(p.x+p.face*90,25,w.width-25),y:p.y-62,until:w.time+2.7});api.effect(w,'frostCast',{x:p.x+p.face*90,y:p.y-62,duration:.45});}
-    if(c.key==='r'&&target)field(w,'frostDomain',target,{r:185,duration:3.2,delay:.18,castId:c.id});
+    if(c.key==='r'&&target)field(w,'frostDomain',target,{r:185,duration:3.2,delay:GROUND_EFFECT_DELAYS.frostDomain,warningLead:c.releaseAt,castId:c.id});
     api.emit(w,'frostSkill',{key:c.key});
   }
   if(h==='lightning'){
@@ -64,9 +65,7 @@ export function releaseExtra(w,c,api){
       api.effect(w,'thunderTether',{x:p.x,y:p.y-55,toX:tx,toY:ty-12,duration:.4});burst(w,c,{kind:'magnetLeap',duration:.28,vx:(tx-p.x)/.28,vy:(ty-p.y)/.28,phase:true,target:b?{x:tx,y:b.y,platformId:b.id,offsetX:tx-b.x}:null});
     }
     if(c.key==='r'&&target){
-      const enemy=w.targets.filter(t=>t.hp>0&&Math.abs(t.x-p.x)<560&&Math.hypot(t.x-c.x,t.y-40-c.y)<155).sort((a,b)=>Math.hypot(a.x-c.x,a.y-40-c.y)-Math.hypot(b.x-c.x,b.y-40-c.y))[0];
-      const face=Math.sign((enemy?.x??target.x)-p.x)||p.face;
-      const landing=enemy?(groundTarget(w,clamp(enemy.x-face*54,25,w.width-25),enemy.y-.1)||target):target;
+      const landing=lightningLandingTarget(w,c,target),face=landing.face;
       p.face=face;p.invuln=Math.max(p.invuln,.29);
       api.effect(w,'thunderTether',{x:p.x,y:p.y-60,toX:landing.x,toY:landing.y-40,duration:.4});
       burst(w,c,{kind:'thunderDive',duration:.24,vx:(landing.x-p.x)/.24,vy:(landing.y-p.y)/.24,phase:true,dodgeProjectiles:true,target:landing});
@@ -76,13 +75,13 @@ export function releaseExtra(w,c,api){
   if(h==='shadow'){
     if(c.key==='q'){burst(w,c,{kind:'shadowRush',duration:.21,vx:p.face*1000,vy:0,damage:25,phase:true,dodgeProjectiles:true});p.invuln=Math.max(p.invuln,.24);api.effect(w,'shadowRush',{x:p.x,y:p.y-55,face:p.face,duration:.5});}
     if(c.key==='e'&&target){const anchor=groundTarget(w,p.x,p.y);w.roleState.shadowMark={x:p.x,y:p.y,face:p.face,anchor,until:w.time+RECAST_WINDOWS.shadow};api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target.x,target.y);recast(w,'e');api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});}
-    if(c.key==='r'&&target)field(w,'shadowStorm',target,{r:190,duration:1.4,delay:.1,castId:c.id});
+    if(c.key==='r'&&target)field(w,'shadowStorm',target,{r:190,duration:1.4,delay:GROUND_EFFECT_DELAYS.shadowStorm,warningLead:c.releaseAt,castId:c.id});
     api.emit(w,'shadowSkill',{key:c.key});
   }
   if(h==='star'){
     if(c.key==='q'&&target){const f=field(w,'gravityWell',target,{r:185,duration:RECAST_WINDOWS.star+.7,castId:c.id});recast(w,'q',{data:{fieldId:f.id}});}
     if(c.key==='e'&&target){w.portals.push({id:++w.serial,a:{x:p.x,y:p.y,anchor:groundTarget(w,p.x,p.y)},b:{...target,anchor:target},until:w.time+4});api.effect(w,'portalFlash',{x:p.x,y:p.y-55,duration:.5});}
-    if(c.key==='r'&&target)field(w,'starCollapse',target,{r:205,duration:1.4,delay:.55,castId:c.id});
+    if(c.key==='r'&&target)field(w,'starCollapse',target,{r:205,duration:1.4,delay:GROUND_EFFECT_DELAYS.starCollapse,warningLead:c.releaseAt,castId:c.id});
     api.emit(w,'starSkill',{key:c.key});
   }
   return true;

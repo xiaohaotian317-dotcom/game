@@ -1,3 +1,5 @@
+import {drawLandingWarning,warningProgress,drawPunchStrike,drawPunchContact,punchFrame} from './combat-feedback.mjs';
+import {firstTerrainHit} from './collision.mjs?v=20261030-duel12';
 import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261030-duel12';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),ease=v=>1-Math.pow(1-clamp(v,0,1),3);
 const colors={frost:'#a9e9ff',lightning:'#ffe191',shadow:'#c6a5ff',star:'#d2bbff'};
@@ -24,7 +26,7 @@ export class RosterPainter{
   before(w){const c=this.c;
     for(const a of w.constructs||[]){const b=w.platforms.find(b=>b.id===a.platformId);if(!b)continue;const grow=ease(a.age/.22);this.sprite('frost',1,b.x+b.w/2,b.y+16,175,78,0,grow);line(c,[[b.x,b.y],[b.x+b.w,b.y]],'#ecfbff',2);for(let i=0;i<4;i++)star(c,b.x+20+i*36,b.y-3+Math.sin(w.time*2+i)*2,2,'#dff9ff',w.time);}
     for(const m of w.iceMirrors||[]){const fade=Math.min(1,(m.until-w.time)*3);this.sprite('frost',2,m.x,m.y,84,134,0,fade);c.save();c.globalAlpha=fade*.5;snow(c,m.x,m.y,23,w.time*.12);ring(c,m.x,m.y,25,57,'#b9edff',1);for(let i=0;i<5;i++)star(c,m.x+Math.sin(i*2.4+w.time)*27,m.y-48+i*23,1.8,'#dffaff',w.time);c.restore();}
-    for(const f of w.fields||[]){const t=w.time,color=colors[f.kind==='frostDomain'?'frost':f.kind==='shadowStorm'?'shadow':'star'];c.save();c.globalAlpha=Math.min(1,f.age*5,(f.until-t)*3);ring(c,f.x,f.y-1,f.r,13,color+'99',1.6);ring(c,f.x,f.y-1,f.r*.86,10,color+'66',1);
+    for(const f of w.fields||[]){const t=w.time,color=colors[f.kind==='frostDomain'?'frost':f.kind==='shadowStorm'?'shadow':'star'];c.save();c.globalAlpha=Math.min(1,f.age*5,(f.until-t)*3);drawLandingWarning(c,this.assets,{hero:f.kind==='frostDomain'?'frost':f.kind==='shadowStorm'?'shadow':'star',x:f.x,y:f.y,radius:f.r,progress:f.delay?warningProgress(f.age,f.warningLead,f.delay):1,clock:t,alpha:.58});
       if(f.kind==='frostDomain')this.frostField(w,f);
       else if(f.kind==='shadowStorm'){
         for(let i=0;i<4;i++){const a=t*7+i*TAU/4;this.slash({x:f.x+Math.cos(a)*f.r*.39,y:f.y-57+Math.sin(a)*35,face:i%2?1:-1},fract(t*2.8+i*.27));}
@@ -45,7 +47,15 @@ export class RosterPainter{
   effect(w,e){const c=this.c,t=clamp(e.age/e.duration,0,1),fade=1-t,k=e.kind;let hero;
     if(k.startsWith('frost')||k==='iceShatter')hero='frost';else if(k.startsWith('lightning')||k.startsWith('thunder')||k==='electricBurst')hero='lightning';else if(k.startsWith('shadow'))hero='shadow';else if(k.startsWith('star')||k==='portalFlash')hero='star';else return false;
     c.save();c.globalAlpha=Math.min(1,e.age/.025)*Math.pow(fade,.75);const color=colors[hero],clock=w.fxTime||w.time;
-    if(k==='thunderPunch'){const socket=e.attach==='fist'&&this.punchSocket?this.punchSocket:e;c.save();c.translate(socket.x,socket.y);c.scale((socket.face||1)*(e.rangeScale||1),e.rangeScale||1);this.sprite(hero,0,45,0,132,70,-.05+t*.15,.85);for(let i=0;i<5;i++)this.bolt(0,(i-2)*1.5,90+noise(i)*15,(i-2)*10,clock,(e.id||0)+i,1.6);star(c,0,0,6*fade,'#fff9e8',t);star(c,94,-3,9*fade,'#fff5d4',t);c.restore();}
+    if(k==='thunderPunch'){
+      const socket=e.attach==='fist'&&this.punchSocket?this.punchSocket:e,face=socket.face||e.face||1,reach=e.reach||125;
+      const wall=firstTerrainHit(w,w.player.x,w.player.y-45,w.player.x+face*reach,w.player.y-45),end=wall?wall.x:w.player.x+face*reach,extent=Math.max(0,(end-socket.x)*face);
+      c.save();c.translate(socket.x,socket.y);c.scale(face,1);c.beginPath();c.rect(-12,-65,extent+12,130);c.clip();
+      if(extent>8){drawPunchStrike(c,this.assets,0,0,1,e.age,e.duration,extent/114.08);if(e.age<.18){c.globalAlpha*=1-e.age/.18;this.bolt(0,0,extent*.93,-3,clock,e.id,1.35);this.bolt(2,1,extent*.72,17,clock,e.id+5,.85);}}
+      else punchFrame(c,this.assets,0,0,0,{sx:.2,sy:.2,alpha:fade});
+      c.restore();
+    }
+    else if(k==='lightningHit'&&e.basic&&drawPunchContact(c,this.assets,e.x,e.y,e.age,e.duration)){if(t<.5)this.bolt(e.x-14,e.y+5,e.x+13,e.y-15,clock,e.id,1.25);}
     else if(k==='thunderTether'){this.bolt(e.x,e.y,e.toX,e.toY,clock,e.id,2);this.sprite(hero,3,e.toX,e.toY,46,57,0,.8);}
     else if(k==='thunderImpact'){this.sprite(hero,2,e.x,e.y-145,190,315,0,Math.min(1,fade*2));this.sprite(hero,1,e.x,e.y-35,260*(.7+t),205);for(let i=0;i<8;i++){const a=i*TAU/8,rr=60+t*105;this.bolt(e.x,e.y-28,e.x+Math.cos(a)*rr,e.y-28+Math.sin(a)*rr*.48,clock,e.id+i,1.8);}ring(c,e.x,e.y,35+ease(t)*155,9+ease(t)*23,'#fff2bf',2.6);}
     else if(k==='shadowSlash')this.slash(e,t);

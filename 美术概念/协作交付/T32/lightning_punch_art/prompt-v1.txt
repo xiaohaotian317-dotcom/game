@@ -1,0 +1,16 @@
+Use case: stylized-concept.
+Asset type: a production-ready transparent sprite atlas for a hand-painted dark fantasy 2D side-scrolling action game, "lightning gauntlet basic punch" visual effect only.
+Primary request: exactly EIGHT distinct consecutive animation frames, laid out as a strict 4 columns by 2 rows sprite sheet on a fully transparent alpha background. Canvas landscape 1536 by 1024 if possible. Each equal cell is 384 by 512. Leave wide clear transparent gutters between all eight effects. No visible grid.
+Art direction: intricate painterly white-hot platinum and warm golden lightning with a few thin pale blue electric filaments. Powerful punch shock and sharp asymmetric forked electric branches, like gilded fantasy combat illustration. Crisp expressive silhouette at game size, controlled luminous detail rather than a huge glowing blob. Short-range melee punch impact, never a long laser, never a projectile.
+Geometry: every frame is oriented left to right with the same emitter anchor at cell-local x approximately 76 pixels, y 256 pixels. Keep every effect within its own cell, approximately x 45..350 and y 165..345, with no effect crossing a cell edge. The design is horizontally compressed into a short thrust cone or compact punch shock, with a dense narrow source, then fractured forked gold-white lightning toward the right. Do not draw an actual fist, arm, weapon or character. The attacker will be added by the game at the emitter anchor.
+Frame sequence in reading order:
+1 upper-left: tiny tightly coiled charge wisps around the emitter, a restrained gathering crescent facing right.
+2: charge intensifies into a compact angular electric knot near emitter, a small forward tongue begins.
+3: forceful short lightning thrust extends right, white core with golden fork branches, sharp forward motion.
+4: peak punch shock at the right-hand end, bright concentrated split impact core, jagged flaring branches along short thrust, plenty of transparent negative space.
+5 lower-left: fractured impact burst spreading mostly forward/up/down at the right-hand end, source remains small, asymmetric golden filaments.
+6: residual curved arcs and separated electric splinters, diminished white core.
+7: thinner scattered fading gold arcs, no dense core.
+8 lower-right: only a few final tiny electrical motes near the impact end and residual fine filaments.
+Composition: same scale and emitter alignment across all frames, visibly progressive energy evolution. Each effect occupies under 40 percent of cell height. The sheet must be actually transparent between and around all effects, including gutters. Clean semitransparent antialiasing and halos only around luminous strokes, no opaque background.
+Text: none. Avoid lettering, numbers, labels, grid lines, borders, checkerboard pattern, scenery, black or colored backdrop, broad smoke haze, circles filling the cell, a long beam, a literal fist, human body parts, logos and watermark.

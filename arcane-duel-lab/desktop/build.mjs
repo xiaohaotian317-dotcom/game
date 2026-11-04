@@ -41,7 +41,7 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
 `;
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
-if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign10
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign11
 
 先退出旧客户端，完整解压后双击 ArcaneDuelCampaign.exe，无需GPT、插件、Node或网络。
 启动页→开始游戏→大厅→单机闯关→全屏世界选关→关卡介绍→独立双角色选择→开始挑战。地图左下新增可收缩的行囊与修行侧栏，保留返回大厅和进度。
@@ -49,7 +49,7 @@ if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘�
 右上角色/背包/技能/法器/灵宠/锻造炉，打开全部暂停。第4关首领掉落收妖镜，靠近按C拾取；第5/7/9关各有更难的独立宠物副本。
 AD移动，空格二段跳，鼠标普攻，FER技能，Shift冲刺，1/2切换出战英雄，C拾取，传送门前X结算，P暂停，F11全屏。
 小怪每只5经验，金币随关卡从5增至34；回刷已通关赚金币和经验是正常成长路径。等级较快增加，每级生命5%/法力4%/攻击2%线性加成，后期所需经验变大。
-六职业单机全部36技能耗蓝降低25%（F9、E15、R28.5），衍生仍免费；回蓝被动1～5级每秒0.25/0.5/0.8/1.2/1.8法力。基础自动回蓝为0；技能面板新增被动技能二级页：回血/回蓝/暴击/暴伤全角色通用、0级起用金币递增强化。
+六职业单机全部36技能在campaign10当前耗蓝基础提高10%（F9.9、E16.5、R31.35），衍生仍免费；回蓝被动1～5级每秒0.25/0.5/0.8/1.2/1.8法力。基础自动回蓝为0；技能面板新增被动技能二级页：回血/回蓝/暴击/暴伤全角色通用、0级起用金币递增强化。
 初始只学F；每人六技能、每行二选一到FER，学习/强化用金币，可强化5次。技能耗蓝，二段共冷却不重复耗蓝。
 回血/回蓝掉落靠近按C立即恢复并显示实际数值，不入包；其他首领战利品需附近按C放入背包；宝箱与药水在背包使用。首关自选未拥有英雄宝箱仅一次。
 新关首通必给抽奖券，重刷50%；选择未拥有目标，20抽内必得，未中的为补给，十连命中即停止并保留未花券。
@@ -61,6 +61,7 @@ AD移动，空格二段跳，鼠标普攻，FER技能，Shift冲刺，1/2切换�
 在灵宠面板选择一只出战；一次最多一只，可在本关回收或切换，自动跟随、跳台和攻击敌人。每种形态8帧走路，脚底锚点固定。
 每次捕获会独立随机生命/法力/攻击（小幅±8%）；相同等级与形态，第9关灵狐强于第7关狮鹫，狮鹫强于第5关灵鹿。\n宠物独立生命/法力、自动使用已解锁技能；幼年1招，达到5级/10级在出战整备页手动进化，各解锁一招，最终形态小于角色。\n同一次关卡内回收、切换再放保留生命与法力；每次重新进入关卡或重试恢复满血满蓝。捕捉野宠时同伴停手。
 最多带两名已拥有英雄，场上仅一名；候补只显示头像，切换平滑展开/收起。各自血量/法力/冷却保留，候补不回血回蓝，冷却正常经过。\n一名倒下自动换存活队员，两位均倒下才失败。切换取消未完成技能/临时召唤，防跨职业混用；经验归击杀时上场者。\n地图不显示右上工具排、金币或抽奖券；左下侧栏可打开角色、背包、技能、灵宠、锻造炉和法器，支持收起。选人页整备和战斗中原暂停面板保留。\n六职业独立绘制火焰/藤叶/冰晶/雷电/影刃/星辰血蓝外框，真实生命/法力/经验动态槽；灵宠独立头像血蓝条，扣血有缓动和残血层；生命低于30%时轻微红色屏幕边缘。十一位首领各有主题血条；暂停/胜败结算页重做，显示本局实际金币及C拾取战利品。\n平台按区域疏密：战斗区留白，波次之间有低/中/高踏脚台群；高台约340–384，通过低台逐级攀登。六人16组布局共2304条真实阶梯跳跃路径全部可达。\n六英雄各新增3技能/独立华丽特效；随机平台疏密与形状、真实地面和无跳变锁镜。
+本版重点改善六职业起跳/顶点/下落/落地连续姿态、统一脚端IK过渡和落地缓冲；雷行者普攻重绘8帧透明雷拳，蓄电/前冲/命中/收招，拳头锚定、范围内且挡墙，命中电裂/音效/短暂停顿。落点预警采用六职业透明材质法阵及蓄力扫圈，真实跟随支撑与半径，雷行者大招预览与实际落点共用计算。
 本版修正全部22种敌人脸部特写、备用头像比例及头像下真实等级徽记；地面掉落物用更大透明原图，近处才提示C拾取。
 平台保留原冰晶/熔岩等主题和原地面，每关A/B两样式，按空间压短下饰、高处保留长冰锥，避免穿地。传送门只显示按X结算。
 暂停页使用独立沙漏月翼金属浮雕外框和精制按钮，暂停时可继续/重试/回地图。
@@ -70,7 +71,7 @@ AD移动，空格二段跳，鼠标普攻，FER技能，Shift冲刺，1/2切换�
 召唤单次1券、十连最多10券、20次内必得当前目标；抽中即停止并保留未使用券，已拥有英雄只预览不再扣券，不花金币。
 原网站、旧发行包与PvP战斗数值保留。真人难度、主观美术与两设备联机仍待验收。
 `,'utf8');
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign10':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign11':enemyPreview?'enemies1':'desktop1',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
 
 

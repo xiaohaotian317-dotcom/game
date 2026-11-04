@@ -20,7 +20,7 @@ export class Sound {
     const school=e.school||e.hero;
     if(['frost','lightning','shadow','star'].includes(school)&&['attack','hit'].includes(e.type)){
       if(school==='frost'){this.tone(1600,800,.19,.025,'sine');this.rustle(4800,.13,.035);}
-      if(school==='lightning'){this.rustle(3700,.15,.065);this.tone(210,45,.15,.045,'sawtooth');}
+      if(school==='lightning'){if(e.type==='hit'){this.rustle(2600,.11,.07);this.tone(100,28,.16,.055,'triangle');this.tone(1600,900,.055,.018,'square');}else{this.rustle(4200,.09,.035);this.tone(220,85,.08,.028,'triangle');}}
       if(school==='shadow'){this.rustle(3100,.12,.045);this.tone(330,90,.14,.025,'triangle');}
       if(school==='star'){this.tone(520,260,.28,.035);this.tone(780,390,.3,.016,'sine',.04);}return;
     }

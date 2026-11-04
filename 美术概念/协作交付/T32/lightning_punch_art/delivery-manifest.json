@@ -1,0 +1,493 @@
+{
+  "task": "T32-lightning-punch-art-v1",
+  "status": "generated-and-reviewed-awaiting-main-agent-integration",
+  "generator": "built-in image_gen",
+  "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a4b8-d5fe-7e93-a268-2cbc7894af85/exec-078ea24f-1209-4f22-a423-7d29c9d9b4cf.png",
+  "file": "lightning-punch-v1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "70eaf8c482997b69bd9f7246517dbe9e5956370c2505ba5c0a30ecc03e404c20",
+  "bytes": 1545254,
+  "alphaZeroFraction": 0.6783421834309896,
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "cell": [
+      384,
+      512
+    ]
+  },
+  "promptFile": "prompt-v1.txt",
+  "analysisFile": "alpha-analysis.json",
+  "frames": [
+    {
+      "index": 0,
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          70,
+          224,
+          173,
+          331
+        ],
+        "32": [
+          74,
+          227,
+          166,
+          324
+        ],
+        "128": [
+          79,
+          235,
+          152,
+          317
+        ],
+        "200": [
+          81,
+          240,
+          135,
+          312
+        ]
+      },
+      "emitterBrightestLocal": [
+        99,
+        277
+      ],
+      "anchorLocal": [
+        96,
+        280
+      ],
+      "name": "charge-wisps",
+      "recommendedCrop": [
+        60,
+        112,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        168
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 1,
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          71,
+          207,
+          242,
+          345
+        ],
+        "32": [
+          75,
+          211,
+          237,
+          340
+        ],
+        "128": [
+          79,
+          216,
+          227,
+          330
+        ],
+        "200": [
+          81,
+          229,
+          216,
+          326
+        ]
+      },
+      "emitterBrightestLocal": [
+        112,
+        269
+      ],
+      "anchorLocal": [
+        96,
+        280
+      ],
+      "name": "charge-knot",
+      "recommendedCrop": [
+        444,
+        112,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        168
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 2,
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          72,
+          201,
+          308,
+          354
+        ],
+        "32": [
+          75,
+          204,
+          304,
+          352
+        ],
+        "128": [
+          80,
+          213,
+          297,
+          344
+        ],
+        "200": [
+          82,
+          222,
+          280,
+          336
+        ]
+      },
+      "emitterBrightestLocal": [
+        139,
+        267
+      ],
+      "anchorLocal": [
+        96,
+        280
+      ],
+      "name": "short-thrust",
+      "recommendedCrop": [
+        828,
+        112,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        168
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 3,
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          72,
+          160,
+          344,
+          384
+        ],
+        "32": [
+          75,
+          165,
+          339,
+          378
+        ],
+        "128": [
+          80,
+          175,
+          334,
+          367
+        ],
+        "200": [
+          82,
+          189,
+          314,
+          344
+        ]
+      },
+      "emitterBrightestLocal": [
+        137,
+        275
+      ],
+      "anchorLocal": [
+        96,
+        280
+      ],
+      "name": "impact-peak",
+      "recommendedCrop": [
+        1212,
+        112,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        168
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 4,
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          73,
+          121,
+          342,
+          391
+        ],
+        "32": [
+          76,
+          128,
+          339,
+          385
+        ],
+        "128": [
+          80,
+          133,
+          329,
+          376
+        ],
+        "200": [
+          82,
+          150,
+          303,
+          368
+        ]
+      },
+      "emitterBrightestLocal": [
+        99,
+        279
+      ],
+      "anchorLocal": [
+        96,
+        278
+      ],
+      "name": "fractured-burst",
+      "recommendedCrop": [
+        60,
+        624,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        166
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 5,
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          75,
+          152,
+          337,
+          365
+        ],
+        "32": [
+          78,
+          153,
+          336,
+          361
+        ],
+        "128": [
+          81,
+          156,
+          325,
+          350
+        ],
+        "200": [
+          84,
+          157,
+          314,
+          343
+        ]
+      },
+      "emitterBrightestLocal": [
+        99,
+        278
+      ],
+      "anchorLocal": [
+        96,
+        278
+      ],
+      "name": "residual-arcs",
+      "recommendedCrop": [
+        444,
+        624,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        166
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 6,
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          75,
+          163,
+          322,
+          339
+        ],
+        "32": [
+          79,
+          164,
+          315,
+          337
+        ],
+        "128": [
+          83,
+          167,
+          307,
+          335
+        ],
+        "200": [
+          86,
+          168,
+          303,
+          300
+        ]
+      },
+      "emitterBrightestLocal": [
+        99,
+        277
+      ],
+      "anchorLocal": [
+        96,
+        278
+      ],
+      "name": "fading-arcs",
+      "recommendedCrop": [
+        828,
+        624,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        166
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    },
+    {
+      "index": 7,
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "alphaBboxLocalByThreshold": {
+        "8": [
+          77,
+          183,
+          323,
+          322
+        ],
+        "32": [
+          81,
+          185,
+          274,
+          320
+        ],
+        "128": [
+          85,
+          188,
+          271,
+          309
+        ],
+        "200": [
+          88,
+          190,
+          268,
+          285
+        ]
+      },
+      "emitterBrightestLocal": [
+        95,
+        279
+      ],
+      "anchorLocal": [
+        96,
+        278
+      ],
+      "name": "final-motes",
+      "recommendedCrop": [
+        1212,
+        624,
+        292,
+        290
+      ],
+      "anchorInCrop": [
+        36,
+        166
+      ],
+      "remarks": "Local alpha bboxes are [left,top,right,bottom], right/bottom exclusive. Raw PNG pixels preserved."
+    }
+  ],
+  "renderRecommendation": {
+    "emitterAnchor": "Align each frame anchor to actual fist socket. Face left by horizontal canvas mirror only. Do not put sprite center at fist.",
+    "commonCropLocal": [
+      60,
+      112,
+      292,
+      290
+    ],
+    "nominalForwardReachPixels": 248,
+    "nominalWorldScaleX": 0.5,
+    "nominalWorldScaleY": 0.3,
+    "drawLifetimeSeconds": 0.3,
+    "timing": "0/1 charge, 2/3 thrust+peak, 4 burst, 5/6/7 dissipation. Can use 0 as a separate preswing charge; use final lifetime fade because final source spark remains in original image.",
+    "composite": "source-over or controlled screen; avoid additive overexposure and full-body brightness bloom."
+  },
+  "qualityReview": {
+    "actualTransparentAlpha": true,
+    "all8FramesIndependent": true,
+    "cellsHaveClearAlphaGutters": true,
+    "noTextNoBodyNoBackground": true,
+    "nativeImageUnmodified": true,
+    "limitations": [
+      "Peak burst in frame4 has 270px alpha>8 vertical span (53% cell height), larger than requested 40%; compact runtime Y scale recommended without changing original image.",
+      "Exact emitter brightest pixel varies inside forks; use shared visible source anchor x96,y280(upper)/278(lower), not per-frame brightest peak.",
+      "This is one hand-painted effect atlas, not gameplay or damage verification."
+    ]
+  }
+}

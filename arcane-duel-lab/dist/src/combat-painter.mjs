@@ -1,3 +1,4 @@
+import {drawLandingWarning,castWarning,warningProgress} from './combat-feedback.mjs';
 import {resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
 const TAU=Math.PI*2,clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const ease=t=>1-Math.pow(1-clamp(t),3);
@@ -6,10 +7,13 @@ function halo(c,x,y,r,color,alpha){c.save();c.globalAlpha*=alpha;const g=c.creat
 export class CombatPainter{
   constructor(c,assets,scenePainter){this.c=c;this.a=assets;this.scenePainter=scenePainter;}
   target(w){
-    const cast=w.player.cast;if(!cast?.target||cast.released)return;
-    const t=resolveGroundTarget(w,cast.target);if(!t)return;const c=this.c,color=({fire:'#eeb676',nature:'#bad797',frost:'#b9edff',lightning:'#ffe1a0',shadow:'#cfadff',star:'#dec4ff'})[w.hero];
-    c.save();c.strokeStyle=color;c.lineWidth=1;c.setLineDash([3,5]);c.beginPath();c.moveTo(t.x,cast.y);c.lineTo(t.x,t.y);c.stroke();c.setLineDash([]);ring(c,t.x,t.y,cast.key==='r'?155:100,17,color,1.8);c.restore();
+    const clock=w.fxTime??w.time,warning=castWarning(w);
+    if(warning)drawLandingWarning(this.c,this.a,{...warning,clock});
+    const burst=w.player.burst;
+    if(burst?.kind==='thunderDive'){const t=resolveGroundTarget(w,burst.target);if(t)drawLandingWarning(this.c,this.a,{hero:'lightning',...t,radius:165,progress:warningProgress(burst.age,burst.warningLead,burst.duration),clock});}
+    for(const f of w.campaign?.soloFields||[])drawLandingWarning(this.c,this.a,{hero:f.hero,x:f.x,y:f.y,radius:f.r,progress:1,alpha:.36,clock});
   }
+
   sprite(atlas,key,x,y,width,{height,ax=.5,ay=.5,angle=0,alpha=1,flip=1}={}){
     const b=this.a.combatBounds?.[atlas]?.[key],im=this.a[atlas];if(!b||!im)return;
     const c=this.c,h=height??width*b.h/b.w;c.save();c.globalAlpha*=clamp(alpha);c.translate(x,y);c.rotate(angle);c.scale(flip,1);
@@ -50,7 +54,7 @@ export class CombatPainter{
     const c=this.c,growth=ease(t.age/.9),fade=clamp(t.until-w.time),clock=w.fxTime||w.time;
     c.save();c.globalAlpha*=fade;
     halo(c,t.x,t.y-125,265,'#adc761',.10+Math.sin(clock*2)*.025);
-    ring(c,t.x,t.y,160*growth,24*growth,'#d9d39a66',2);ring(c,t.x,t.y,134*growth,17*growth,'#91d09c88',1);
+    drawLandingWarning(c,this.a,{hero:'nature',x:t.x,y:t.y,radius:160,progress:warningProgress(t.age,t.warningLead,.9),clock,alpha:.55});
     c.save();c.beginPath();c.rect(t.x-300,t.y-360*growth,600,360*growth+15);c.clip();
     this.sprite('nature-vfx-v2','tree',t.x,t.y+7,490,{ay:1,alpha:Math.min(1,t.age*3)});c.restore();
     if(t.age>.65){
@@ -75,7 +79,7 @@ export class CombatPainter{
       this.sparks(e.x,e.y,e.age,{count:muzzle?7:15,color:fire?'#ffd78d':'#d8e99a',speed:fire?165:120,leaf:!fire});return true;
     }
     if(e.kind==='eruption'){
-      if(e.age<e.delay){const a=e.age/e.delay;ring(c,e.x,e.y-2,100,15,'#ffb762cc',2);ring(c,e.x,e.y-2,100*a,15*a,'#ffdca2',2);halo(c,e.x,e.y,90,'#ff6e28',a*.25);}
+      if(e.age<e.delay){const a=e.age/e.delay;drawLandingWarning(c,this.a,{hero:'fire',x:e.x,y:e.y,radius:100,progress:warningProgress(e.age,e.warningLead,e.delay),clock});}
       else{const age=e.age-e.delay,fade=clamp((e.duration-e.age)/.6),h=(200+Math.sin(clock*24)*12)*ease(age/.12);
         halo(c,e.x,e.y-80,180,'#ff8c32',fade*.30);this.sprite('fire-vfx-v2','eruption',e.x+Math.sin(clock*21)*3,e.y+7,190,{height:h,ay:1,alpha:fade});
         this.sparks(e.x,e.y-30,age,{count:25,speed:230,gravity:200});ring(c,e.x,e.y,95+age*100,15+age*14,'#ffc473'+Math.round(fade*160).toString(16).padStart(2,'0'),2);
@@ -84,7 +88,7 @@ export class CombatPainter{
     if(e.kind==='meteor'){
       if(e.age<e.delay){
         const a=clamp(e.age/e.delay),fall=a*a,x=e.startX+(e.x-e.startX)*fall,y=e.startY+(e.y-52-e.startY)*fall,angle=Math.atan2(e.y-e.startY,e.x-e.startX);
-        ring(c,e.x,e.y-2,155,23,'#ffbc76cc',2);ring(c,e.x,e.y-2,155*a,23*a,'#ffe0aa',2);halo(c,e.x,e.y,150,'#ff7725',a*.16);
+        drawLandingWarning(c,this.a,{hero:'fire',x:e.x,y:e.y,radius:155,progress:warningProgress(e.age,e.warningLead,e.delay),clock});
         c.save();c.globalCompositeOperation='screen';this.sprite('fire-vfx-v2','bolt',x-17,y-22,320,{height:76,ax:.95,angle,alpha:clamp(a*5)});c.restore();
         halo(c,x,y,120,'#ff8b30',.32);this.sprite('fire-vfx-v2','meteor',x,y,174,{ax:.60,ay:.57,angle:a*1.7});
         this.sparks(x,y-12,(e.age*.85)%1,{count:15,speed:100,gravity:-200});

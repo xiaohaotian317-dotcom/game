@@ -1,5 +1,5 @@
 import {stepCompanion,hitCompanion} from './campaign-companion.mjs';
-import {MAX_HEALTH} from './match-rules.mjs?v=20261030-duel12';
+import {MAX_HEALTH,GROUND_EFFECT_DELAYS} from './match-rules.mjs?v=20261030-duel12';
 import {cameraView} from './camera.mjs?v=20261030-duel12';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 import {soloSpec,soloPay,soloDamage,soloRelease,soloOnHit} from './campaign-growth-runtime.mjs';
@@ -64,7 +64,7 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   w.stats.damage+=actual;if(companionHit)w.stats.petDamage=(w.stats.petDamage||0)+actual;else{w.stats.hits++;w.stats.combo=w.time-w.stats.lastHit<2?w.stats.combo+1:1;
   w.stats.best=Math.max(w.stats.best,w.stats.combo);w.stats.lastHit=w.time;}
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
-  if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*.55,duration:.55,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
+  if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*(school==='lightning'&&basic?.85:.55),duration:school==='lightning'&&basic?.28:.55,basic,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
   if(!companionHit&&source!=='artifact'){extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
   soloOnHit(w,t,castId,source,extraHooks);}
   if(!companionHit&&source!=='artifact'&&w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
@@ -108,7 +108,7 @@ function release(w,c) {
   }
   const floor=resolveGroundTarget(w,c.target)||groundTarget(w,c.x,c.y);
   if(h==='fire'){
-    if(c.key==='q'&&floor){effect(w,'eruption',{x:floor.x,y:floor.y,anchor:floor,delay:.55,duration:1.7,triggered:false});emit(w,'charge');}
+    if(c.key==='q'&&floor){effect(w,'eruption',{x:floor.x,y:floor.y,anchor:floor,delay:GROUND_EFFECT_DELAYS.fireBlast,warningLead:c.releaseAt,duration:1.7,triggered:false});emit(w,'charge');}
     if(c.key==='e'){
       const dx=c.x-sx,dy=c.y-sy,length=Math.hypot(dx,dy)||1;
       projectile(w,'emberOrb',sx,sy,dx/length,dy/length,900,16,{owner:'player',fire:true,terrainCollision:false,pierceActors:true,hitIds:[],life:2.5,r:13,castId:c.id});
@@ -118,7 +118,7 @@ function release(w,c) {
     if(c.key==='r'&&floor){
       const x=floor.x,startX=x-130,startY=-130;
       // Flight is 20% faster; casting windup remains unchanged.
-      effect(w,'meteor',{x,y:floor.y,anchor:floor,startX,startY,delay:.82/BOSS_TUNING.fallSpeed,duration:2.37,triggered:false});emit(w,'meteor');
+      effect(w,'meteor',{x,y:floor.y,anchor:floor,startX,startY,delay:GROUND_EFFECT_DELAYS.meteorBase/BOSS_TUNING.fallSpeed,warningLead:c.releaseAt,duration:2.37,triggered:false});emit(w,'meteor');
     }
   }else{
     if(c.key==='q'){const y=groundTarget(w,p.x,p.y)?.y??w.floor,to=clamp(c.x,p.x-500,p.x+500);effect(w,'roots',{x:p.x,y,to,duration:2.4,triggered:false});emit(w,'roots');}
@@ -130,7 +130,7 @@ function release(w,c) {
     }
     if(c.key==='r'&&floor){
       const x=floor.x,y=floor.y,id='tree-'+(++w.serial);
-      w.trees.push({id,x,y,anchor:floor,age:0,until:w.time+9,nextHeal:0});
+      w.trees.push({id,x,y,anchor:floor,age:0,warningLead:c.releaseAt,until:w.time+9,nextHeal:0});
       w.platforms.push(platform(id+'-a',x-142,y-110,125,'root'),platform(id+'-b',x+18,y-210,125,'root'));
       for(const b of w.platforms.filter(b=>b.id.startsWith(id)))b.active=false;
       effect(w,'treeBirth',{x,y,duration:1.2});emit(w,'tree');
@@ -369,7 +369,7 @@ export function step(w,dt,input={}) {
   }
   if(p.grounded){
     p.jumps=0;
-    if(!wasGrounded&&oldVy>100){p.land=.18;effect(w,'dust',{x:p.x,y:p.y,duration:.4,color:HEROES[w.hero].color});emit(w,'land');
+    if(!wasGrounded&&oldVy>100){p.land=.18;p.landImpact=clamp(oldVy/1000,.25,1);effect(w,'dust',{x:p.x,y:p.y,duration:.4,color:HEROES[w.hero].color});emit(w,'land');
       if(p.stomp){p.stomp=false;area(w,p.x,p.y-28,125,40,{fire:true,knock:240});effect(w,'fireZone',{x:p.x,y:p.y,duration:2,nextTick:0});effect(w,'stompHit',{x:p.x,y:p.y,duration:.7});w.shake=7;emit(w,'explode');}
     }
   }

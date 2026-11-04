@@ -1,0 +1,14 @@
+{
+  "version": "campaign11",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign11",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign11\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign11.zip",
+  "files": 418,
+  "runtimeFilesMatched": 336,
+  "bytes": 523030316,
+  "sha256": "ce8f068398b0a2f472ca350ebdaadd9a3393d994fac4648dca0912e569254a14",
+  "originalSitesUnchanged": true,
+  "scope": "Six continuous hero flight and landing rigs with planted foot IK; reauthored anchored 8-frame lightning punch and contact feedback; six painted ground-warning materials with true support/radius and timing; current hero skill mana costs increased 10%; level growth remains 5% health and 4% mana; original Sites and saves preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

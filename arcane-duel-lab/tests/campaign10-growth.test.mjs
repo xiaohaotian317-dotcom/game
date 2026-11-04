@@ -17,12 +17,12 @@ test('existing hero XP gains stronger linear health and mana without changing le
  assert.equal(createWorld('fire').player.maxHp,180);
 });
 
-test('all 36 solo skills pay exactly 25 percent less mana, reject insufficient mana atomically and keep recasts free',()=>{
+test('all 36 solo skills pay ten percent more than campaign10 mana, reject insufficient mana atomically and keep recasts free',()=>{
  const p=freshSolo();p.owned=[...SOLO_HEROES];
  for(const hero of SOLO_HEROES)for(const skill of SOLO_SKILLS[hero]){
   p.heroes[hero].skills[skill.id]=0;p.heroes[hero].slots[skill.key]=skill.id;
   const w=createCampaign(hero,1,{profile:p}),spec=soloSpec(w,skill.key,HEROES[hero].skills[skill.key]);
-  const cost=[9,15,28.5][skill.row];assert.equal(skill.mana,cost);assert.equal(spec.soloSkill.id,skill.id);
+  const cost=[9.9,16.5,31.35][skill.row];assert.equal(skill.mana,cost);assert.equal(spec.soloSkill.id,skill.id);
   w.player.mp=cost-.01;assert.equal(soloPay(w,skill.key,false,spec),false);assert.equal(w.player.mp,cost-.01);
   w.player.mp=cost;assert.equal(soloPay(w,skill.key,false,spec),true);assert.equal(w.player.mp,0);
   assert.equal(soloPay(w,skill.key,true,spec),true);assert.equal(w.player.mp,0);

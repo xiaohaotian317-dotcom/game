@@ -3,3 +3,5 @@ export const BASE_MAX_HEALTH=Object.freeze({fire:120,nature:120,frost:110,lightn
 export const MAX_HEALTH=Object.freeze(Object.fromEntries(Object.entries(BASE_MAX_HEALTH).map(([hero,hp])=>[hero,Math.round(hp*1.5)])));
 export const FROST_SNARE_DAMAGE=18;
 export const FROST_ECHO_DAMAGE=12;
+
+export const GROUND_EFFECT_DELAYS=Object.freeze({fireBlast:.55,meteorBase:.82,treeGrowth:.9,frostDomain:.18,shadowStorm:.1,starCollapse:.55,thunderDive:.24});

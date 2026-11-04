@@ -14,3 +14,11 @@ export function resolveGroundTarget(w,target){
   const b=w.platforms.find(b=>b.id===target.platformId&&b.active);
   return b?{...target,x:b.x+target.offsetX,y:b.y}:groundTarget(w,target.x,target.y+.1);
 }
+// Both the preview and the actual dive resolve to the enemy's front support.
+export function lightningLandingTarget(w,cast,target){
+ if(!target)return null;
+ const p=w.player,enemy=w.targets.filter(t=>t.hp>0&&Math.abs(t.x-p.x)<560&&Math.hypot(t.x-cast.x,t.y-40-cast.y)<155).sort((a,b)=>Math.hypot(a.x-cast.x,a.y-40-cast.y)-Math.hypot(b.x-cast.x,b.y-40-cast.y))[0];
+ const face=Math.sign((enemy?.x??target.x)-p.x)||p.face;
+ const landing=enemy?(groundTarget(w,clamp(enemy.x-face*54,25,w.width-25),enemy.y-.1)||target):target;
+ return {...landing,face};
+}

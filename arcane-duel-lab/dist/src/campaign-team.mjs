@@ -31,7 +31,7 @@ export function switchTeamHero(w,slot,{forced=false}={}){
  const c=w.campaign,member=c?.team?.[slot];
  if(!member||slot===c.activeSlot||member.player.hp<=0||['complete','defeat'].includes(c.state))return false;
  if(!forced&&w.player.enemyControl?.until>w.time){c.notice='受控时无法切换英雄';c.noticeUntil=w.time+1.4;return false;}
- const current=w.player,position={x:current.x,y:current.y,vx:current.vx,vy:current.vy,face:current.face,grounded:current.grounded,platformId:current.platformId,jumps:current.jumps,coyote:current.coyote};
+ const current=w.player,position={x:current.x,y:current.y,vx:current.vx,vy:current.vy,face:current.face,grounded:current.grounded,platformId:current.platformId,jumps:current.jumps,coyote:current.coyote,land:current.land,landImpact:current.landImpact??.7};
  clearHeroActions(w);w.player=member.player;w.hero=member.hero;w.roleState=member.roleState;c.activeSlot=slot;
  Object.assign(w.player,position,{prevX:position.x,prevY:position.y,jumpBuffer:0,dead:0});
  w.player.cast=null;w.player.buffer=null;w.player.recast=null;w.player.burst=null;w.player.dash=0;

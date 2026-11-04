@@ -17,13 +17,42 @@ Object.assign(RIGS,{
 });
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t;
 const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
-export const basePose=()=>({bob:0,lean:.055,legA:0,legB:0,kneeA:0,kneeB:0,armA:.25,armB:.05,elbowA:1.12,elbowB:.55,weapon:.22,cape:0,sx:1,sy:1});
+export const basePose=()=>({bob:0,lean:.055,legA:0,legB:0,kneeA:0,kneeB:0,armA:.25,armB:.05,elbowA:1.12,elbowB:.55,weapon:.22,cape:0,sx:1,sy:1,air:0,shift:0,strike:0});
 export function rotatePoint(p,a){return{x:p.x*Math.cos(a)-p.y*Math.sin(a),y:p.x*Math.sin(a)+p.y*Math.cos(a)};}
 export function jointEnd(p,length,angle){return{x:p.x+Math.sin(angle)*length,y:p.y+Math.cos(angle)*length};}
 export function solveLimb(dx,dy,l1,l2,bend=1){
   const raw=Math.hypot(dx,dy)||1,d=clamp(raw,Math.abs(l1-l2)+.01,l1+l2-.02),x=dx*d/raw,y=dy*d/raw;
   const a=Math.atan2(x,y)+bend*Math.acos(clamp((l1*l1+d*d-l2*l2)/(2*l1*d),-1,1));
   return[a,Math.atan2(x-Math.sin(a)*l1,y-Math.cos(a)*l1)];
+}
+const FLIGHT={
+ fire:{tuck:1.04,lead:.5,trail:-.24,arm:-.55},
+ nature:{tuck:.94,lead:.44,trail:-.3,arm:-.62},
+ frost:{tuck:.82,lead:.32,trail:-.22,arm:-.42},
+ lightning:{tuck:1.2,lead:.67,trail:-.38,arm:.2},
+ shadow:{tuck:1.3,lead:.6,trail:-.48,arm:-.28},
+ star:{tuck:.9,lead:.36,trail:-.25,arm:-.36}
+};
+export function flightPose(hero,player,time=0){
+ const f=FLIGHT[hero]||FLIGHT.fire,vy=player.vy||0;
+ const launch=smooth((-vy-420)/260),fall=smooth((vy+140)/580),hang=Math.exp(-((vy/210)**2)),second=player.jumps>1?1:0;
+ return {air:1,legA:lerp(f.lead,.1,fall)-launch*.28+second*launch*.1,
+  kneeA:lerp(f.tuck,.22,fall)*(1-launch*.72),legB:lerp(f.trail,-.11,fall)-launch*.05,
+  kneeB:lerp(.62,.14,fall)*(1-launch*.6),armA:.28+launch*.07,elbowA:1.16+hang*.08,
+  armB:f.arm+fall*.14,elbowB:-.25+fall*.24,weapon:.3-fall*.15,
+  cape:-.12-launch*.1+fall*.05+Math.sin(time*3.1)*hang*.012};
+}
+// Both flight and walking share a foot target and one constant-length leg solve.
+// A visual air weight blends the targets without changing collision or jump physics.
+export function legChain(w,pose,back=false){
+ const p=w.player,hip={x:(back?7:-5)+(pose.shift||0),y:-83.5+pose.bob},phase=p.cycle+(back?Math.PI:0),v=clamp(Math.abs(p.vx)/340,0,1);
+ const stride=({frost:23,lightning:32,shadow:30,star:25})[w.hero]||28,lift=({frost:17,lightning:25,shadow:19,star:18})[w.hero]||21;
+ const a=back?pose.legB:pose.legA,k=back?pose.kneeB:pose.kneeA,airKnee=jointEnd(hip,41,a),airFoot=jointEnd(airKnee,43,a-k);
+ const strike=pose.strike||0,ground={x:hip.x+Math.sin(phase)*stride*v+(back?1:5)+(back?-5:12)*strike,y:-Math.max(0,Math.cos(phase))*lift*v-(back?0:3*Math.sin(strike*Math.PI))};
+ const weight=p.dash>0||p.dead>0||p.burst?1:clamp(pose.air||0,0,1),foot={x:lerp(ground.x,airFoot.x,weight),y:lerp(ground.y,airFoot.y,weight)};
+ if(p.grounded&&p.dash<=0&&p.dead<=0)foot.y=Math.min(0,foot.y);
+ const [upper,lower]=solveLimb(foot.x-hip.x,foot.y-hip.y,41,43,1),knee=jointEnd(hip,41,upper),ankle=jointEnd(knee,43,lower);
+ return {hip,knee,ankle};
 }
 export function targetPose(w){
   const p=w.player,n=w.hero==='nature',v=clamp(Math.abs(p.vx)/340,0,1),phase=p.cycle,t=w.time,o=basePose();
@@ -33,12 +62,8 @@ export function targetPose(w){
     o.bob-=Math.abs(Math.sin(phase))*2*v;
     o.armA=.25+Math.sin(phase)*.12*v;o.elbowA=1.12-Math.sin(phase)*.1*v;
     o.armB=.05-Math.sin(phase)*.32*v;o.elbowB=.55-Math.sin(phase)*.28*v;o.weapon=.22+Math.sin(phase)*.07*v;
-  }else if(p.vy<0){
-    o.legA=.48;o.kneeA=1.1;o.legB=-.24;o.kneeB=.62;o.armA=.30;o.elbowA=1.2;o.armB=-.62;o.elbowB=-.42;o.weapon=.36;o.cape=-.20;
-  }else{
-    o.legA=.25;o.kneeA=.48;o.legB=-.30;o.kneeB=.20;o.armA=.22;o.elbowA=1.02;o.armB=-.52;o.elbowB=-.16;o.weapon=.17;o.cape=-.14;
-  }
-  if(p.land>0){const f=Math.sin(clamp(p.land/.18,0,1)*Math.PI);o.bob+=f*6;o.lean+=f*.04;}
+  }else Object.assign(o,flightPose(w.hero,p,t));
+  if(p.land>0){const f=Math.sin(clamp(p.land/.18,0,1)*Math.PI);o.bob+=f*(3+2*(p.landImpact??.7));o.lean+=f*.025;}
   if(p.dash>0){o.lean=.28;o.legA=.65;o.kneeA=.9;o.legB=-.58;o.kneeB=.35;o.armA=.05;o.elbowA=.80;o.armB=-.70;o.elbowB=-.35;o.weapon=.50;o.cape=-.32;}
   if(p.cast){
     const c=p.cast,wind=smooth(c.age/c.releaseAt),recover=1-smooth((c.age-c.releaseAt)/(c.duration-c.releaseAt)),s=wind*recover;
@@ -64,36 +89,32 @@ export function targetPose(w){
   if(['frost','lightning','shadow','star'].includes(w.hero)){
     const c=p.cast,s=c?smooth(c.age/c.releaseAt)*(1-smooth((c.age-c.releaseAt)/(c.duration-c.releaseAt))):0;
     if(w.hero==='frost'){o.armA=lerp(o.armA,.38,s);o.elbowA=lerp(o.elbowA,c?.key==='r'?1.8:1.2,s);o.weapon=lerp(o.weapon,.04,s);o.lean=RIGS.frost.restLean+v*.055+s*.035;}
-    if(w.hero==='lightning'){o.armA=lerp(.35,1.45,s);o.elbowA=lerp(1.9,1.55,s);o.armB=.25;o.elbowB=2.0;o.lean=.07+v*.08+s*.04;o.weapon=0;}
+    if(w.hero==='lightning'){o.armA=lerp(.35,1.45,s);o.elbowA=lerp(1.9,1.55,s);o.armB=.25;o.elbowB=2.0;o.lean=.07+v*.08+s*.04;o.weapon=0;if(c?.key==='attack'){const release=Math.max(.001,c.releaseAt),wind=smooth(c.age/(release*.65))*(1-smooth((c.age-release*.55)/(release*.45))),strike=smooth((c.age-release*.55)/(release*.45))*(1-smooth((c.age-release)/Math.max(.001,c.duration-release)));const punchArm=solveLimb(46,30,28,29,-1);o.armA=.35-.32*wind+(punchArm[0]-.35)*strike;o.elbowA=1.9+.5*wind+(punchArm[1]-1.9)*strike;o.armB=.25-.2*wind+.08*strike;o.elbowB=2+.2*wind;o.lean=.07+v*.08-.025*wind+.055*strike;o.shift=3*strike-2*wind;o.bob+=1.8*wind+strike;o.strike=strike;}}
     if(w.hero==='shadow'){o.bob+=3+v*2;o.lean=.07+v*.08+s*.035;o.armA=lerp(.22,1.3,s);o.elbowA=lerp(.75,1.7,s);o.armB=.05;o.elbowB=.8;o.weapon=lerp(.5,1.05,s);}
     if(w.hero==='star'){o.armA=lerp(.5,.9,s);o.elbowA=lerp(1.25,1.5,s);o.weapon=.08;o.bob-=Math.sin(t*2.5)*.5;o.lean=.04+v*.045;o.armB=.05;o.elbowB=.6;}
-    if(!p.grounded){
-      if(w.hero==='frost'){o.legA=.22;o.kneeA=p.vy<0?.8:.38;o.legB=-.2;o.kneeB=.22;}
-      if(w.hero==='lightning'){o.legA=.7;o.kneeA=1.25;o.legB=-.4;o.kneeB=.42;}
-      if(w.hero==='shadow'){o.legA=.62;o.kneeA=1.35;o.legB=-.5;o.kneeB=.6;}
-      if(w.hero==='star'){o.legA=.25;o.kneeA=.65;o.legB=-.24;o.kneeB=.55;}
-    }
+    if(!p.grounded&&!c){const flight=flightPose(w.hero,p,t);o.armA+=flight.armA*.12;o.elbowA+=Math.sin(p.vy/650)*.06;o.armB+=flight.armB*.16;o.cape=flight.cape;}
     if(p.burst){o.lean=w.hero==='shadow'?.3:.24;o.legA=.6;o.kneeA=.9;o.legB=-.6;o.kneeB=.3;}
   }
   if(p.hurt>0){const f=p.hurt/.24;o.lean-=.16*f;o.armB=-.45;o.elbowB=-.70;o.bob+=2*f;}
   if(p.dead>0){o.bob=22;o.lean=-.25;o.legA=.65;o.kneeA=1.5;o.legB=-.35;o.kneeB=1.2;o.armA=.15;o.elbowA=.30;o.weapon=.75;}
   return o;
 }
-export function blendPose(current,target,dt,isR=false){
+export function blendPose(current,target,dt,isR=false,isPunch=false){
   const deltaTime=clamp(Number.isFinite(dt)?dt:1/60,0,.05);
   // A queued RAF timestamp can predate a start/resume event. Do not multiply
   // an unlimited joint rate by zero (Infinity * 0 would poison the whole pose).
   if(deltaTime===0)return current;
   const blend=1-Math.exp(-26*deltaTime);
-  const limits={armA:isR?2.4:6,armB:isR?2.4:6,elbowA:isR?3.2:9,elbowB:isR?3.2:9,weapon:isR?1.5:5,lean:1.3};
+  const limits={armA:isR?2.4:isPunch?18:6,armB:isR?2.4:6,elbowA:isR?3.2:isPunch?20:9,elbowB:isR?3.2:9,weapon:isR?1.5:5,lean:1.3,legA:5,legB:5,kneeA:7,kneeB:7,bob:85,cape:2,shift:75,strike:14};
   for(const key of Object.keys(current)){
-    const change=(target[key]-current[key])*blend,maxStep=(limits[key]??Infinity)*deltaTime;
+    const factor=key==='air'?1-Math.exp(-(target.air>current.air?30:40)*deltaTime):isPunch&&['armA','elbowA'].includes(key)?1-Math.exp(-48*deltaTime):blend;
+    const change=(target[key]-current[key])*factor,maxStep=(limits[key]??Infinity)*deltaTime;
     current[key]+=clamp(change,-maxStep,maxStep);
   }
   return current;
 }
 export function bodyFrame(hero,pose,coreBounds){
-  const r=RIGS[hero],s=r.coreHeight/coreBounds.h,origin={x:0,y:-86.5+pose.bob};
+  const r=RIGS[hero],s=r.coreHeight/coreBounds.h,origin={x:pose.shift||0,y:-86.5+pose.bob};
   const local=uv=>({x:(uv[0]-r.hip[0])*coreBounds.w*s,y:(uv[1]-r.hip[1])*r.coreHeight});
   const point=uv=>{const q=rotatePoint(local(uv),pose.lean);return{x:q.x+origin.x,y:q.y+origin.y};};
   return {origin,scale:s,local,point,near:point(r.nearShoulder),far:point(r.farShoulder)};

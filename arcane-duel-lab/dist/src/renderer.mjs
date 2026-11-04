@@ -1,8 +1,9 @@
+import {drawPunchCharge} from './combat-feedback.mjs';
 import {squarePortraitRect} from './portrait-framing.mjs';
 import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
 import {EnemyPainter} from './enemy-painter.mjs';
 import {WIDTH,HEIGHT,FLOOR,HEROES,clamp,lerp} from './simulation.mjs?v=20261030-duel12';
-import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip} from './character-rig.mjs?v=20261030-duel12';
+import {RIGS,basePose as coherentBase,targetPose as coherentPose,blendPose,bodyFrame,partTransform,armChain,jointEnd,solveLimb,weaponTip,legChain} from './character-rig.mjs?v=20261030-duel12';
 import {ScenePainter} from './scene-painter.mjs?v=20261030-duel12';
 import {CombatPainter} from './combat-painter.mjs?v=20261030-duel12';
 import {cameraView,updateCamera,fitDuelCamera} from './camera.mjs?v=20261030-duel12';
@@ -23,17 +24,17 @@ function leaf(c,x,y,len,angle,color){
 }
 function artImage(src){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('素材加载失败：'+src));i.src=src;});}
 export async function loadAssets(progress=()=>{},{scenes=true}={}){
-  const entries=[['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
+  const entries=[['lightningPunch','assets/combat-feedback/lightning-punch-v1.png'],['landingRings','assets/combat-feedback/landing-warning-rings-v2.png'],['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
   for(const key of ['fire-vfx-v2','nature-vfx-v2','wood-stag-v2','stone-covers-v2'])entries.push([key,'assets/combat/'+key+'.png']);
   if(scenes)for(const scene of ['moon','lava','garden'])entries.push([scene+'Field','assets/scenes/'+scene+'-field-v1.png'],[scene+'Props','assets/scenes/'+scene+'-props-v1.png']);
-  let count=0;const images={},total=entries.length+5+(scenes?1:0),completed=()=>progress(++count,total);
+  let count=0;const images={},total=entries.length+6+(scenes?1:0),completed=()=>progress(++count,total);
   const json=async url=>{const response=await fetch(url);if(!response.ok)throw new Error('素材信息加载失败：'+url);const value=await response.json();completed();return value;};
-  const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds]=await Promise.all([
-    json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),
+  const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds,feedbackMeta]=await Promise.all([
+    json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),json('assets/combat-feedback/feedback-meta-v1.json'),
     ...entries.map(async([key,url])=>{images[key]=await artImage(url);completed();})
   ]);
   for(const [hero,data] of Object.entries(refinementBounds)){rosterBounds[hero].fx=data.fx;if(data.core)rosterBounds[hero].coreV2=data.core;}
-  return {...images,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds};
+  return {...images,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds,feedbackMeta};
 }
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
@@ -70,7 +71,7 @@ export class Renderer {
   hero(w,alpha,dt,{poseOverride=null}={}){
     const c=this.ctx,p=w.player,hero=w.hero;
     const poseKey=w.poseKey||hero;this.poses[poseKey]||=coherentBase();
-    const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[poseKey],desired,dt,p.cast?.key==='r');
+    const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[poseKey],desired,dt,p.cast?.key==='r',hero==='lightning'&&p.cast?.key==='attack');
     const x=lerp(p.prevX,p.x,alpha),y=lerp(p.prevY,p.y,alpha);
     if(!poseOverride)ellipse(c,x,y+3,27,6,'rgba(1,4,12,.4)');
     if(p.passiveGlow>0)glow(c,x,y-60,80,HEROES[hero].color,p.passiveGlow*.16);
@@ -80,13 +81,7 @@ export class Renderer {
     this.cape(c,hero,o,w.time,p.vx*p.face,frame);
     const leg=(a,knee,back)=>{
       c.save();if(back)c.globalAlpha*=.79;
-      const hip={x:back?7:-5,y:frame.origin.y+3};let upper=a,lower=a-knee;
-      if(p.grounded&&p.dash<=0&&p.dead<=0){
-        const phase=p.cycle+(back?Math.PI:0),v=clamp(Math.abs(p.vx)/340,0,1);
-        const stride=({frost:23,lightning:32,shadow:30,star:25})[hero]||28,lift=({frost:17,lightning:25,shadow:19,star:18})[hero]||21;
-        [upper,lower]=solveLimb(Math.sin(phase)*stride*v+(back?1:5),-Math.max(0,Math.cos(phase))*lift*v-hip.y,41,43,1);
-      }
-      const k=jointEnd(hip,41,upper),ankle=jointEnd(k,43,lower);
+      const {hip,knee:k,ankle}=legChain(w,o,back);
       this.bone(c,hero,'thigh',hip,k);this.bone(c,hero,'shin',k,ankle);c.restore();
     };
     leg(o.legB,o.kneeB,true);leg(o.legA,o.kneeA,false);
@@ -105,6 +100,7 @@ export class Renderer {
     if(!r.weapon.skip){c.save();c.translate(near.hand.x,near.hand.y);c.rotate(angle);c.scale(ws,ws);
     c.drawImage(this.assets[hero],weapon.x,weapon.y,weapon.w,weapon.h,-r.weapon.grip[0]*weapon.w,-r.weapon.grip[1]*weapon.h,weapon.w,weapon.h);c.restore();}
     this.bone(c,hero,'forearm',near.elbow,near.hand);
+    if(hero==='lightning'&&p.cast?.key==='attack'&&!p.cast.released)drawPunchCharge(c,this.assets,near.hand.x,near.hand.y,p.cast.age/Math.max(.001,p.cast.releaseAt));
     if(p.cast){
       const strength=Math.sin(clamp(p.cast.age/p.cast.duration,0,1)*Math.PI);
       const tip=weaponTip(hero,near.hand,angle);
@@ -219,7 +215,7 @@ export class Renderer {
     c.fillStyle=g;c.beginPath();c.moveTo(x-w,y);c.bezierCurveTo(x-w*1.2,y-h*.4,x+Math.sin(time*8)*w,y-h*.65,x+w*.15,y-h);c.bezierCurveTo(x+w*1.4,y-h*.45,x+w,y-h*.2,x+w,y);c.closePath();c.fill();c.restore();
   }
   rivalLayer(w,alpha,dt){
-    const c=this.ctx;this.roster.before(w);for(const t of w.trees)this.tree(w,t);this.fox(w);
+    const c=this.ctx;this.combat.target(w);this.roster.before(w);for(const t of w.trees)this.tree(w,t);this.fox(w);
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.max(0,1-g.age/(g.duration||.8))*.45;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
     this.hero(w,alpha,dt);this.roster.passive(w);
     for(const s of w.projectiles){if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;const color='#f2b3b9';glow(c,s.x,s.y,22,color,.4);ellipse(c,s.x,s.y,6,6,color);}

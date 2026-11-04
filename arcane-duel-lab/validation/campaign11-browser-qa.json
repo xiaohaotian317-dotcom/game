@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-04",
+  "origin": "http://127.0.0.1:4215/__qa/motion",
+  "isolatedNoSaveWrites": true,
+  "actualRuntimeAssets": true,
+  "reviewedHeroes": [
+    "fire",
+    "nature",
+    "frost",
+    "lightning",
+    "shadow",
+    "star"
+  ],
+  "reviewedPoses": [
+    "six-hero apex",
+    "lightning punch contact freeze",
+    "fire meteor warning",
+    "frost field warning"
+  ],
+  "screenshots": "t32-*.jpg",
+  "fixtureScope": "Live original engine/rig/renderer, original backdrop with mechanisms removed in QA only; deterministic phase controls and live run/jump mode; not a natural campaign clear.",
+  "continuousWarningTiming": "Final source uses shared delay data and warningProgress; automated cross-release monotonicity check passes.",
+  "limitations": [
+    "No natural full-campaign balance run",
+    "No native window visual operations",
+    "No new two-device network run",
+    "No quantitative captured-video frame comparison"
+  ]
+}
