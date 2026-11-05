@@ -1,9 +1,10 @@
+import {duelLoadout,DUEL_RULESET} from './duel-skill-data.mjs';
 import {createWorld,step,hitSummon,interactNearest,STEP,HEROES} from './simulation.mjs?v=20261030-duel12';
 const SHARED=['platforms','obstacles','mechanisms','mirror','spring'];
-export function createDuel(heroes,scene='moon'){
+export function createDuel(heroes,scene='moon',loadouts=[]){
   const worlds=heroes.map(h=>createWorld(h,scene));
   for(const [side,w] of worlds.entries()){
-    w.duel=true;w.duelSide=side;w.duelSecondary=side===1;w.poseKey='duel-'+side;w.serial=side*1e6;w.targets=[];
+    w.duel=true;w.duelSkills={loadout:duelLoadout(w.hero,loadouts[side]),fields:[],castSkills:{},chained:[]};w.duelSide=side;w.duelSecondary=side===1;w.poseKey='duel-'+side;w.serial=side*1e6;w.targets=[];
     const p=w.player,x=side?w.width-w.spawn.x:w.spawn.x;Object.assign(p,{id:'p'+side,duelActor:true,x,prevX:x,face:side?-1:1,deadUntil:0,burnUntil:0,nextBurn:0,rootUntil:0,fieldForce:0});w.spawn={x,y:p.y};w.aim={x:side?x-300:x+300,y:p.y-50};
   }
   const match={worlds,tick:0,winner:undefined,ack:[0,0]};wireDuel(match);return match;
@@ -26,15 +27,16 @@ export function stepDuel(match,dt,inputs=[{},{}]){
   const hp=match.worlds.map(w=>w.player.hp);if(hp.some(n=>n<=0))match.winner=hp.every(n=>n<=0)?null:hp[0]<=0?1:0;
   return match.winner;
 }
-const STREAM=['hero','time','fxTime','player','aim','fireView','effects','projectiles','trees','fox','fields','constructs','iceMirrors','portals','ghosts','roleState','stats','shake','flash','impact','hitstop','serial'];
+const STREAM=['duelSkills','hero','time','fxTime','player','aim','fireView','effects','projectiles','trees','fox','fields','constructs','iceMirrors','portals','ghosts','roleState','stats','shake','flash','impact','hitstop','serial'];
 function compact(value){if(typeof value==='number')return Number.isFinite(value)?(Number.isInteger(value)?value:Math.round(value*1000)/1000):1e9;if(Array.isArray(value))return value.map(compact);if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).filter(([k,v])=>typeof v!=='function'&&v!==undefined).map(([k,v])=>[k,compact(v)]));return value;}
 export function duelSnapshot(match,{epoch,roundSerial,seq=match.tick}={}){
   const shared=Object.fromEntries(SHARED.map(k=>[k,match.worlds[0][k]]));
-  return compact({epoch,roundSerial,seq,tick:match.tick,scene:match.worlds[0].sceneId,ack:match.ack,shared,worlds:match.worlds.map(w=>{const stream=Object.fromEntries(STREAM.map(k=>[k,w[k]]));stream.effects=w.effects.slice(-65);stream.projectiles=w.projectiles.slice(-45).map(p=>({...p,trail:p.trail?.slice(-5)}));stream.ghosts=w.ghosts?.slice(-5);stream.texts=w.texts.slice(-12);return stream;})});
+  return compact({ruleset:DUEL_RULESET,epoch,roundSerial,seq,tick:match.tick,scene:match.worlds[0].sceneId,ack:match.ack,shared,worlds:match.worlds.map(w=>{const stream=Object.fromEntries(STREAM.map(k=>[k,w[k]]));stream.effects=w.effects.slice(-65);stream.projectiles=w.projectiles.slice(-45).map(p=>({...p,trail:p.trail?.slice(-5)}));stream.ghosts=w.ghosts?.slice(-5);stream.texts=w.texts.slice(-12);return stream;})});
 }
 export function restoreDuel(snapshot){
+  if(snapshot?.ruleset&&snapshot.ruleset!==DUEL_RULESET)return null;
   if(!snapshot||!Array.isArray(snapshot.worlds)||snapshot.worlds.length!==2||snapshot.worlds.some(w=>!HEROES[w.hero]))return null;
-  const match=createDuel(snapshot.worlds.map(w=>w.hero),snapshot.scene);match.tick=snapshot.tick;match.ack=snapshot.ack||[0,0];
+  let match;try{match=createDuel(snapshot.worlds.map(w=>w.hero),snapshot.scene,snapshot.worlds.map(w=>w.duelSkills?.loadout));}catch{return null;}match.tick=snapshot.tick;match.ack=snapshot.ack||[0,0];
   for(let side=0;side<2;side++){Object.assign(match.worlds[side],snapshot.worlds[side]);Object.assign(match.worlds[side],snapshot.shared);}
   return wireDuel(match);
 }

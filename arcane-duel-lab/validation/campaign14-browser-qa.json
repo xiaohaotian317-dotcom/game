@@ -1,0 +1,85 @@
+{
+  "task": "T36",
+  "date": "2026-11-05",
+  "origin": "http://127.0.0.1:4218",
+  "isolatedQAProfile": true,
+  "formalSavesTouched": false,
+  "browserSize": [
+    1280,
+    720
+  ],
+  "realRoomFlow": {
+    "roomCode": "T36QA1",
+    "twoLocalPages": true,
+    "guestReadyThenHostStart": true,
+    "heroes": [
+      "lightning",
+      "shadow"
+    ],
+    "separateHeroThenSkillStep": true,
+    "threeAlternateSkillsSelectedEach": true,
+    "rivalChoiceVisible": true,
+    "guestChangeClearedHostReady": true,
+    "bothReadyEnteredBattle": true,
+    "hotbarsMatchedLoadouts": true,
+    "guestReloadKeptLoadout": true,
+    "webRTCObserved": "direct, local RTT around 1 ms; not an inter-device or internet result",
+    "consoleErrorsObserved": []
+  },
+  "alternateVisualFixture": {
+    "realCreateDuelAndStep": true,
+    "allSixHeroes": true,
+    "rowsViewed": [
+      "F",
+      "E",
+      "R"
+    ],
+    "bothSeatsExercised": true,
+    "originalRuntimePaintingsReused": true,
+    "flatBackgroundForInspection": true,
+    "notNaturalGameplay": true,
+    "fieldMirroringAndLiveSupportAlsoUnitTested": true
+  },
+  "narrowLayout": {
+    "frame": [
+      600,
+      650
+    ],
+    "usesProductionCSSAndSkillMarkup": true,
+    "mockRoomNotNetworkFlow": true,
+    "scrollToPreparationControlsVerified": true,
+    "screenshots": [
+      "t36-selection-narrow-final.jpg",
+      "t36-selection-narrow-actions.jpg"
+    ]
+  },
+  "finalRegression": {
+    "tests": 336,
+    "passed": 336,
+    "file": "campaign14-tests.txt",
+    "includes48Loadouts": true,
+    "includes18AlternatesBothSeats": true,
+    "includes60SecondCooldownPacketChecks": true,
+    "directPacketLimitCharacters": 60000,
+    "packetLimitExceeded": false
+  },
+  "screenshots": [
+    "t36-skill-selection.jpg",
+    "t36-reconnected-hotbar.jpg",
+    "t36-six-ultimates-final.jpg",
+    "t36-six-f.jpg",
+    "t36-six-e.jpg",
+    "t36-rival-ultimates.jpg"
+  ],
+  "limits": [
+    "Same computer two browser tabs, not two physical Windows devices",
+    "Native startup and resource HTTP checks do not establish native window visual QA",
+    "No natural full 11-stage run, weak-network long-match validation or user visual/balance approval",
+    "Original Sites was not redeployed"
+  ],
+  "nativeReports": [
+    "campaign14-native-startup.json",
+    "campaign14-native-legacy-startup.json"
+  ],
+  "packageReport": "campaign14-package.json"
+}

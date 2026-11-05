@@ -1,3 +1,4 @@
+import {DUEL_RULESET,defaultDuelLoadout,duelLoadout,validateDuelLoadout} from '../dist/src/duel-skill-data.mjs';
 import {WIN_SCORE,MAX_HEALTH} from '../dist/src/match-rules.mjs';
 const HEROES=['fire','nature','frost','lightning','shadow','star'],SCENES=['moon','lava','garden'];
 class RoomError extends Error{constructor(message,status=400){super(message);this.status=status;}}
@@ -5,18 +6,20 @@ const fail=(message,status)=>{throw new RoomError(message,status);};
 const now=()=>Date.now(),id=()=>crypto.randomUUID();
 const codeOf=value=>String(value||'').trim().toUpperCase();
 const nameOf=value=>String(value||'冒险者').replace(/[<>\x00-\x1f]/g,'').trim().slice(0,16)||'冒险者';
-const slot=(name,hero)=>({name:nameOf(name),hero:HEROES.includes(hero)?hero:'fire',ready:false,locked:false,returned:false});
+const slot=(name,hero)=>{hero=HEROES.includes(hero)?hero:'fire';return {name:nameOf(name),hero,loadout:defaultDuelLoadout(hero),ready:false,locked:false,returned:false};};
+function hydrate(r){r.ruleset??=DUEL_RULESET;for(const p of r.slots)if(p)p.loadout=duelLoadout(p.hero,p.loadout);return r;}
+function checkedLoadout(hero,value){try{return validateDuelLoadout(hero,value);}catch(error){fail(error.message,400);}}
 function json(value,status=200){return new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store'}});}
 export class RoomService{
   constructor(db,{clock=now,random=Math.random}={}){this.db=db;this.clock=clock;this.random=random;}
   async row(code){const r=await this.db.prepare('SELECT * FROM duel_rooms WHERE code = ?').bind(code).first();if(!r||r.expires_at<this.clock())fail('房间不存在或已过期',404);return r;}
   seat(row,token){if(token&&token===row.host_token)return 0;if(token&&token===row.guest_token)return 1;fail('房间凭证无效，请重新加入',403);}
-  async view(row,seat){const r=JSON.parse(row.data),relay=await this.db.prepare('SELECT host_seen, guest_seen FROM duel_relay WHERE code = ?').bind(row.code).first();return {...r,code:row.code,seat,revision:row.revision,serverTime:this.clock(),seen:[relay?.host_seen||0,relay?.guest_seen||0]};}
+  async view(row,seat){const r=hydrate(JSON.parse(row.data)),relay=await this.db.prepare('SELECT host_seen, guest_seen FROM duel_relay WHERE code = ?').bind(row.code).first();return {...r,code:row.code,seat,revision:row.revision,serverTime:this.clock(),seen:[relay?.host_seen||0,relay?.guest_seen||0]};}
   async create(body){
     const wanted=codeOf(body.code);if(wanted&&!/^[A-Z0-9]{4,8}$/.test(wanted))fail('房间号需要 4～8 位字母或数字');
     await this.db.prepare('DELETE FROM duel_rooms WHERE expires_at < ?').bind(this.clock()).run();
     for(let attempt=0;attempt<8;attempt++){
-      const code=wanted||String(Math.floor(100000+this.random()*900000)),token=id(),time=this.clock(),data={phase:'waiting',winScore:WIN_SCORE,slots:[slot(body.name,body.hero),null],score:[0,0],round:1,roundSerial:0,epoch:id(),scene:null,startAt:0,winner:null,lastWinner:null,reason:null};
+      const code=wanted||String(Math.floor(100000+this.random()*900000)),token=id(),time=this.clock(),data={ruleset:DUEL_RULESET,phase:'waiting',winScore:WIN_SCORE,slots:[slot(body.name,body.hero),null],score:[0,0],round:1,roundSerial:0,epoch:id(),scene:null,startAt:0,winner:null,lastWinner:null,reason:null};
       try{await this.db.batch([
         this.db.prepare('INSERT INTO duel_rooms (code, revision, data, expires_at, host_token) VALUES (?, 0, ?, ?, ?)').bind(code,JSON.stringify(data),time+86400000,token),
         this.db.prepare('INSERT INTO duel_relay (code, host_seen, guest_seen) VALUES (?, ?, 0)').bind(code,time)
@@ -25,7 +28,7 @@ export class RoomService{
   }
   async mutate(code,token,fn,{joining=false}={}){
     for(let attempt=0;attempt<8;attempt++){
-      const row=await this.row(code),seat=joining?1:this.seat(row,token),r=JSON.parse(row.data),newToken=await fn(r,seat,row);
+      const row=await this.row(code),seat=joining?1:this.seat(row,token),r=hydrate(JSON.parse(row.data)),newToken=await fn(r,seat,row);
       const result=await this.db.prepare('UPDATE duel_rooms SET data = ?, revision = revision + 1, expires_at = ?, guest_token = ? WHERE code = ? AND revision = ?').bind(JSON.stringify(r),this.clock()+86400000,newToken===undefined?row.guest_token:newToken,code,row.revision).run();
       if(result.meta.changes)return {token:joining?newToken:undefined,room:await this.view(await this.row(code),seat)};
     }fail('房间状态正在更新，请再试一次',409);
@@ -50,10 +53,15 @@ export class RoomService{
       }
       if(body.type==='hero'){
         if(r.phase!=='selecting'||!HEROES.includes(body.hero))fail('当前不能选择这个英雄',409);
-        if(s.hero!==body.hero){s.hero=body.hero;r.slots.forEach(p=>p.locked=false);}return;
+        if(s.hero!==body.hero){s.hero=body.hero;s.loadout=defaultDuelLoadout(body.hero);r.slots.forEach(p=>p.locked=false);}return;
+      }
+      if(body.type==='loadout'){
+        if(r.phase!=='selecting')fail('只能在开战前选择技能',409);
+        const picked=checkedLoadout(s.hero,body.loadout);if(JSON.stringify(picked)!==JSON.stringify(s.loadout)){s.loadout=picked;r.slots.forEach(p=>p.locked=false);}return;
       }
       if(body.type==='lock'){
         if(r.phase!=='selecting')fail('当前不在英雄选择阶段',409);
+        if(body.ready===true){const picked=checkedLoadout(s.hero,body.loadout??s.loadout);if(JSON.stringify(picked)!==JSON.stringify(s.loadout)){s.loadout=picked;r.slots.forEach(p=>p.locked=false);}}
         s.locked=body.ready===true;
         if(r.slots.every(s=>s?.locked)){r.phase='countdown';r.roundSerial=1;r.startAt=this.clock()+3000;}return;
       }
@@ -86,7 +94,7 @@ export class RoomService{
     if(body.epoch===r.epoch){
       if(body.signal){const key=seat===0?'offer':'answer';const signal=JSON.stringify(body.signal);if(signal.length>30000)fail('连接信息过大');await this.db.prepare('UPDATE duel_relay SET '+key+' = ? WHERE code = ?').bind(signal,code).run();}
       const seq=Number.isSafeInteger(body.seq)&&body.seq>=0?body.seq:0;
-      if(seat===0&&body.snapshot){const snap=body.snapshot;if(snap.epoch!==r.epoch||snap.roundSerial!==r.roundSerial)fail('已进入新的回合',409);const raw=JSON.stringify(snap);if(raw.length>180000)fail('战斗数据过大');await this.db.prepare('UPDATE duel_relay SET snapshot = ?, host_seq = ? WHERE code = ? AND host_seq < ?').bind(raw,seq,code,seq).run();}
+      if(seat===0&&body.snapshot){const snap=body.snapshot;if(snap.ruleset&&snap.ruleset!==DUEL_RULESET)fail('双方战斗版本不一致，请使用同一版客户端',409);if(snap.epoch!==r.epoch||snap.roundSerial!==r.roundSerial)fail('已进入新的回合',409);const raw=JSON.stringify(snap);if(raw.length>180000)fail('战斗数据过大');await this.db.prepare('UPDATE duel_relay SET snapshot = ?, host_seq = ? WHERE code = ? AND host_seq < ?').bind(raw,seq,code,seq).run();}
       if(seat===1&&body.input){const raw=JSON.stringify(body.input);if(raw.length>12000)fail('输入数据过大');await this.db.prepare('UPDATE duel_relay SET input = ?, guest_seq = ? WHERE code = ? AND guest_seq < ?').bind(raw,seq,code,seq).run();}
     }
     const relay=await this.db.prepare('SELECT * FROM duel_relay WHERE code = ?').bind(code).first();

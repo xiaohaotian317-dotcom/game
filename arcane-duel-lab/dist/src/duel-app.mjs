@@ -1,3 +1,7 @@
+import {loadAlternateArt} from './alternate-skill-art.mjs';
+import {createDuelSelectionQueue} from './duel-selection-queue.mjs';
+import {DUEL_RULESET,duelLoadout,duelChosenSkill,duelSnapshotMatches} from './duel-skill-data.mjs';
+import {duelHotbarStyle,renderDuelSkillChoices,renderDuelSkillSlots} from './duel-skill-ui.mjs';
 import {reconcileRenderOffset} from './duel-view.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {HEROES,step,STEP} from './simulation.mjs?v=20261030-duel12';
@@ -14,6 +18,7 @@ const battleLoading=new LoadingScreen();let baseDone=0,baseTotal=0;
 const sceneNames={moon:'月光遗迹 · 断桥与月镜',lava:'熔岩祭坛 · 导流与摆锤',garden:'浮空花园 · 风道与藤桥'};
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let prefs;try{prefs=localStorage;}catch{}const profile=loadProfile(prefs),sound=new Sound();sound.enabled=profile.sound;
+let selectionStage='hero',selectionContext='',selectionRenderKey='',heroRenderKey='',selectionBusy=false;
 let room=null,renderer=null,assets=null,assetPromise=null,loadedKey='',loadingKey='',match=null,prediction=null,worker=null,workerKey='',lastSeq=-1,lastEvent=0,history=[],pending=[],predictionActions=[],actionId=Date.now()*1000,inputSeq=Date.now()*1000,noticeTimer,reporting=false,pausedForConnection=false;
 let keys=new Set(),pointerDown=false,aim={x:1200,y:520},lastFrame=performance.now(),accumulator=0,lastInput=0,lastUI=0,latestSnapshot=null,currentView='',snapshotAt=performance.now(),smoothEnemy=null;
 function notice(text){clearTimeout(noticeTimer);$('#duel-notice').hidden=!text;$('#duel-notice').textContent=text||'';if(text)noticeTimer=setTimeout(()=>$('#duel-notice').hidden=true,4500);}
@@ -24,27 +29,39 @@ async function loadBattle(r){
   const key=r.slots.map(s=>s?.hero||'fire').join(':');if(loadedKey===key&&assets)return true;
   if(loadingKey===key)return false;loadingKey=key;const token=battleLoading.start(r.scene);battleLoading.progress(baseDone,baseTotal?baseTotal+2:0,token);
   try{
-    assetPromise??=loadAssets((done,total)=>{baseDone=done;baseTotal=total;$('#asset-status').textContent='载入秘境 '+done+' / '+total;battleLoading.progress(done,total+2);});assets=await assetPromise;let ready=0;
-    await Promise.all(r.slots.filter(Boolean).map(async slot=>{await ensureHeroAssets(slot.hero,assets);battleLoading.progress(baseTotal+(++ready),baseTotal+2,token);}));
+    assetPromise??=loadAssets((done,total)=>{baseDone=done;baseTotal=total;$('#asset-status').textContent='载入秘境 '+done+' / '+total;battleLoading.progress(done,total+2);});assets=await assetPromise;let ready=0;const extra=new Set(r.slots.filter(Boolean).map(s=>s.hero)).size,total=baseTotal+2+extra;
+    await Promise.all(r.slots.filter(Boolean).map(async slot=>{await ensureHeroAssets(slot.hero,assets);battleLoading.progress(baseTotal+(++ready),total,token);}));
+    await loadAlternateArt(r.slots.filter(Boolean).map(s=>s.hero),assets,(done)=>battleLoading.progress(baseTotal+2+done,total,token));
     if(room?.slots.map(s=>s?.hero||'fire').join(':')!==key)return false;loadedKey=key;if(!renderer)renderer=new Renderer(canvas,assets);$('#asset-status').textContent='战斗素材已就绪';renderSelection();if(['countdown','active'].includes(room.phase))beginRound(room);battleLoading.finish(token);return true;
   }catch(e){assetPromise=null;notice(e.message+'，可点击重新加载。');battleLoading.fail(e.message,()=>loadBattle(room),token);return false;}finally{if(loadingKey===key)loadingKey='';}
 }
 
+const selectionQueue=createDuelSelectionQueue(()=>room,action);
 function renderRoom(){
   $('#room-number').textContent=room.code;$('#room-slots').innerHTML=room.slots.map((s,side)=>s?'<article class="room-seat '+(s.ready?'ready':'')+'"><span class="seat-badge">'+(side===0?'房主':'挑战者')+(side===room.seat?' · 你':'')+'</span><div class="hero-art" style="'+splashStyle(s.hero)+'"></div><strong>'+escape(s.name)+'</strong><span>'+HEROES[s.hero].name+' · '+(s.returned?'已返回房间':s.ready?'已准备':'等待准备')+'</span></article>':'<article class="room-seat empty"><span class="room-symbol">◇</span><strong>等待好友加入</strong><span>将房间号分享给你的对手</span></article>').join('');
   const waiting=room.phase==='waiting';$('#room-ready').hidden=room.seat===0;$('#room-start').hidden=room.seat!==0;$('#room-ready').disabled=!waiting;$('#room-start').disabled=!waiting;$('#room-ready').textContent=room.slots[room.seat]?.ready?'取消准备':'准备';
   $('#room-hint').textContent=!waiting?'等待对手返回房间，随后可以再来一场。':!room.slots[1]?'等待另一位玩家加入。':room.seat===0?(room.slots[1].ready?'对手已准备，可以开始选择英雄。':'等待对手准备。'):(room.slots[1].ready?'已准备，等待房主开始。':'准备好后点击准备，等待房主开始。');
 }
 function renderSelection(){
-  if(!room?.slots[1])return;const s=room.slots[room.seat],other=room.slots[1-room.seat],h=HEROES[s.hero];
+  if(!room?.slots[1])return;const s=room.slots[room.seat],other=room.slots[1-room.seat],h=HEROES[s.hero],loadout=duelLoadout(s.hero,s.loadout),context=room.epoch+':'+room.seat+':'+s.hero;
+  if(selectionContext!==context){selectionContext=context;selectionStage=s.locked?'skills':'hero';selectionRenderKey='';}
   $('#chosen-scene').textContent='随机战场 · '+sceneNames[room.scene];
-  $('#duel-heroes').innerHTML=HERO_ORDER.map(id=>'<button class="duel-hero" data-choose-hero="'+id+'" aria-label="选择'+HEROES[id].name+'" aria-pressed="'+(s.hero===id)+'"><span class="hero-art" style="'+splashStyle(id)+'"></span><strong>'+HEROES[id].name+'</strong></button>').join('');
-  $$('[data-choose-hero]').forEach(b=>b.addEventListener('click',()=>action({type:'hero',hero:b.dataset.chooseHero})));
+  const picking=selectionStage==='hero';$('#hero-pick-pane').hidden=!picking;$('#skill-pick-pane').hidden=picking;
+  $('#selection-step-label').textContent=picking?'01 · CHOOSE YOUR CHAMPION':'02 · CHOOSE YOUR BATTLE ARTS';$('#selection-heading').textContent=picking?'选择你的英雄':'搭配你的技能';$('#selection-help').textContent=picking?'六位英雄全部可用 · 下一步搭配技能':h.name+' · F / E / R 每行二选一';
+  if(heroRenderKey!==s.hero){heroRenderKey=s.hero;$('#duel-heroes').innerHTML=HERO_ORDER.map(id=>'<button class="duel-hero" data-choose-hero="'+id+'" aria-label="选择'+HEROES[id].name+'" aria-pressed="'+(s.hero===id)+'"><span class="hero-art" style="'+splashStyle(id)+'"></span><strong>'+HEROES[id].name+'</strong></button>').join('');$$('[data-choose-hero]').forEach(b=>b.addEventListener('click',()=>action({type:'hero',hero:b.dataset.chooseHero})));}
   $('#selected-name').textContent=h.name+' · '+h.given;$('#selected-role').textContent=h.role||(s.hero==='fire'?'烈焰爆发 · 陨火降临':'植物造物 · 召唤协同');$('#selected-passive').textContent='被动 · '+h.passive+'：'+h.passiveText;
-  $('#selected-skills').innerHTML=['attack','q','e','r'].map(k=>'<span><i style="'+skillArtStyle(s.hero,k)+'"></i>'+(k==='attack'?'普攻':k==='q'?'F':k.toUpperCase())+' · '+h.skills[k].name+'</span>').join('');
-  $('#selection-status').textContent=other.locked?'对手已确认英雄，等待你准备。':s.locked?'你已准备，等待对手确认英雄。':'选择完成后，双方都需要点击准备。';$('#hero-ready').textContent=s.locked?'取消准备':'确认英雄 · 准备';$('#hero-ready').disabled=false;
+  const renderKey=s.hero+':'+Object.values(loadout).join(',')+'|'+other.hero+':'+Object.values(duelLoadout(other.hero,other.loadout)).join(',');
+  if(selectionRenderKey!==renderKey){selectionRenderKey=renderKey;
+    $('#selected-skills').innerHTML=['attack','q','e','r'].map(k=>'<span><i style="'+duelHotbarStyle(s.hero,k,loadout)+'"></i>'+(k==='attack'?'普攻':k==='q'?'F':k.toUpperCase())+' · '+(duelChosenSkill(s.hero,k,loadout)?.name||h.skills[k].name)+'</span>').join('');
+    $('#duel-skill-choices').innerHTML=renderDuelSkillChoices(s.hero,loadout,h.skills);$$('[data-pick-skill]').forEach(b=>b.addEventListener('click',()=>{const skillId=b.dataset.pickSkill,key=['q','e','r'][Number(skillId.split('-')[1])];selectionQueue.choose(s.hero,key,skillId);}));
+    $('#duel-picked-slots').innerHTML=renderDuelSkillSlots(s.hero,loadout);$('#rival-picked-slots').innerHTML=renderDuelSkillSlots(other.hero,other.loadout);$('#loadout-hero-art').style.cssText=splashStyle(s.hero);$('#loadout-hero-name').textContent=h.name;
+  }
+  $('#rival-loadout-label').textContent=other.name+' · '+(other.locked?'已准备':'搭配技能中');
+  $('#selection-status').textContent=other.locked?'对手已准备，等待你确认搭配。':s.locked?'你已准备，等待对手确认搭配。':'选定三个技能后，双方点击准备。';$('#hero-ready').textContent=s.locked?'取消准备':'确认搭配 · 准备';$('#hero-ready').disabled=selectionBusy;
 }
+
 function applyRoom(next){
+  if(next.ruleset&&next.ruleset!==DUEL_RULESET){notice('双方客户端版本不一致，请使用同一版游戏包。');return;}
   const prior=room;room=next;networkStatus();
   if(next.phase==='closed'){link.stop({forget:true});worker?.terminate();worker=null;room=null;view('entrance');notice('房主已离开，房间已关闭。');return;}
   if(!next.slots[next.seat]){link.stop({forget:true});room=null;view('entrance');return;}
@@ -58,15 +75,15 @@ function applyRoom(next){
 }
 function beginRound(r){
   const key=r.epoch+':'+r.roundSerial;if(workerKey===key)return;workerKey=key;reporting=false;
-  const saved=link.resumeState?.epoch===r.epoch&&link.resumeState?.roundSerial===r.roundSerial?link.resumeState:null;
-  match=saved?restoreDuel(saved):createDuel(r.slots.map(s=>s.hero),r.scene);if(saved){inputSeq=Math.max(inputSeq,saved.ack?.[r.seat]||0);actionId=Math.max(actionId,saved.actionAck?.[r.seat]||0);}link.resumeState=null;prediction=null;match.worlds[r.seat].camera={x:0,y:0,overview:false};buildHotbar();
+  const saved=link.resumeState?.epoch===r.epoch&&link.resumeState?.roundSerial===r.roundSerial&&duelSnapshotMatches(link.resumeState,r.slots)?link.resumeState:null;
+  match=saved?restoreDuel(saved):createDuel(r.slots.map(s=>s.hero),r.scene,r.slots.map(s=>s.loadout));if(saved){inputSeq=Math.max(inputSeq,saved.ack?.[r.seat]||0);actionId=Math.max(actionId,saved.actionAck?.[r.seat]||0);}link.resumeState=null;prediction=null;match.worlds[r.seat].camera={x:0,y:0,overview:false};buildHotbar();
   for(const [i,id] of [[r.seat,'portrait-us'],[1-r.seat,'portrait-them'],[1-r.seat,'opponent-edge-portrait']])renderer.portrait($('#'+id),r.slots[i].hero);
-  if(r.seat===0){worker?.terminate();worker=new Worker(new URL('./duel-worker.mjs?v=20261030-duel12',import.meta.url),{type:'module'});worker.onmessage=({data})=>{if(data.kind==='state'){latestSnapshot=data.snapshot;acceptSnapshot(data.snapshot,true);link.setState(data.snapshot);}if(data.kind==='round')reportRound(data);};worker.onerror=e=>notice('战斗线程加载失败，请刷新恢复房间。');worker.postMessage({kind:'reset',heroes:r.slots.map(s=>s.hero),scene:r.scene,epoch:r.epoch,roundSerial:r.roundSerial,localStartAt:r.startAt-link.clockOffset,snapshot:saved});}
+  if(r.seat===0){worker?.terminate();worker=new Worker(new URL('./duel-worker.mjs?v=20261030-duel12',import.meta.url),{type:'module'});worker.onmessage=({data})=>{if(data.kind==='state'){latestSnapshot=data.snapshot;acceptSnapshot(data.snapshot,true);link.setState(data.snapshot);}if(data.kind==='round')reportRound(data);};worker.onerror=e=>notice('战斗线程加载失败，请刷新恢复房间。');worker.postMessage({kind:'reset',heroes:r.slots.map(s=>s.hero),loadouts:r.slots.map(s=>s.loadout),scene:r.scene,epoch:r.epoch,roundSerial:r.roundSerial,localStartAt:r.startAt-link.clockOffset,snapshot:saved});}
 }
 async function reportRound(data){if(reporting||room?.phase==='finished')return;reporting=true;clearControls();try{await link.action({type:'round',epoch:data.epoch,roundSerial:data.roundSerial,winner:data.winner,hp:data.hp});}catch(e){notice(e.message);setTimeout(()=>{reporting=false;if(room?.epoch===data.epoch&&room?.roundSerial===data.roundSerial)reportRound(data);},1200);}}
 function acceptSnapshot(snapshot,fromWorker=false){
   if(!room||snapshot.epoch!==room.epoch||snapshot.roundSerial!==room.roundSerial||snapshot.seq<lastSeq)return;
-  lastSeq=snapshot.seq;const restored=restoreDuel(snapshot);if(!restored)return;snapshotAt=performance.now();if(match?.worlds[room.seat]?.camera)restored.worlds[room.seat].camera=match.worlds[room.seat].camera;
+  if(!duelSnapshotMatches(snapshot,room.slots))return;const restored=restoreDuel(snapshot);if(!restored)return;lastSeq=snapshot.seq;snapshotAt=performance.now();if(match?.worlds[room.seat]?.camera)restored.worlds[room.seat].camera=match.worlds[room.seat].camera;
   if(!fromWorker&&room.seat===1){
     const displayed=prediction?{x:prediction.player.x+(prediction.renderOffset?.x||0),y:prediction.player.y+(prediction.renderOffset?.y||0)}:match?.worlds[1].player;
     prediction=restoreDuel(snapshot).worlds[1];prediction.targets=[];prediction.duelSecondary=true;prediction.duelHitSummon=null;
@@ -77,7 +94,8 @@ function acceptSnapshot(snapshot,fromWorker=false){
   for(const event of snapshot.events||[])if(event.id>lastEvent){lastEvent=event.id;sound.event(event);}
 }
 function showResult(){const won=room.winner===room.seat;$('#countdown').hidden=true;$('#connection-cover').hidden=true;$('#match-result').hidden=false;$('#match-result').classList.toggle('loss',!won);$('#result-heading').textContent=won?'胜利':'失败';$('#match-result-score').textContent=room.score[room.seat]+' : '+room.score[1-room.seat]+(room.reason==='disconnect'?' · 对手断线':room.reason==='opponentLeft'?' · 对手离开':' · 先到 3 分获胜');}
-function buildHotbar(){const h=HEROES[room.slots[room.seat].hero];$('#duel-hotbar').innerHTML=['attack','q','e','dash','r'].map(k=>'<button class="duel-skill" data-duel-skill="'+k+'" aria-label="'+(k==='dash'?'冲刺':h.skills[k].name)+'"><i class="skill-art" style="'+skillArtStyle(room.slots[room.seat].hero,k)+'"></i><b hidden></b><span>'+(k==='attack'?'LMB':k==='q'?'F':k==='dash'?'SHIFT':k.toUpperCase())+'</span></button>').join('');$$('[data-duel-skill]').forEach(b=>b.addEventListener('click',()=>queue(b.dataset.duelSkill)));}
+function buildHotbar(){const slot=room.slots[room.seat],h=HEROES[slot.hero];$('#duel-hotbar').innerHTML=['attack','q','e','dash','r'].map(k=>'<button class="duel-skill" data-duel-skill="'+k+'" aria-label="'+(k==='dash'?'冲刺':duelChosenSkill(slot.hero,k,slot.loadout)?.name||h.skills[k].name)+'"><i class="skill-art" style="'+duelHotbarStyle(slot.hero,k,slot.loadout)+'"></i><b hidden></b><span>'+(k==='attack'?'LMB':k==='q'?'F':k==='dash'?'SHIFT':k.toUpperCase())+'</span></button>').join('');$$('[data-duel-skill]').forEach(b=>b.addEventListener('click',()=>queue(b.dataset.duelSkill)));}
+
 function playable(){return room&&['countdown','active'].includes(room.phase)&&Date.now()+link.clockOffset>=room.startAt&&match&&!pausedForConnection&&!reporting;}
 function clearControls(){keys.clear();pointerDown=false;}
 function queue(type){if(!playable())return;sound.init();canvas.focus({preventScroll:true});const action={id:++actionId,type};pending.push(action);pending=pending.slice(-24);predictionActions.push(action);const packet=packetOf();link.sendActions(packet);if(room.seat===0)worker?.postMessage({kind:'input',side:0,packet});}
@@ -92,7 +110,7 @@ function updateBattle(){
   const remaining=Math.ceil((room.startAt-Date.now()-link.clockOffset)/1000);$('#countdown').hidden=remaining<=0;$('#countdown-number').textContent=Math.max(1,remaining);$('#countdown-caption').textContent=room.roundSerial>1?(room.lastWinner===null?'平局 · 再战一局':room.lastWinner===side?'上一局获胜':'上一局落败'):'准备迎战';
   const missing=Date.now()+link.clockOffset-(room.seen[1-side]||0),stale=side===0?performance.now()-link.lastPacketAt>2500:link.lastStateAt>0&&performance.now()-link.lastStateAt>2500;
   pausedForConnection=remaining<=0&&(stale||missing>5000);$('#connection-cover').hidden=!pausedForConnection;$('#connection-message').textContent=missing>5000?'对手暂时失去连接，恢复后可继续；30 秒后可结束本场。':'正在同步战斗状态，请稍候。';$('#claim-disconnect').hidden=missing<30000;worker?.postMessage({kind:'pause',value:pausedForConnection});
-  for(const el of $$('[data-duel-skill]')){const key=el.dataset.duelSkill,cooldown=key==='dash'?p.dashCooldown:p.cooldowns[key],recast=p.recast?.key===key&&p.recast.until>match.worlds[side].time,overlay=el.querySelector('b');overlay.hidden=!(cooldown>0||recast);overlay.textContent=recast?'再按 '+(key==='q'?'F':key.toUpperCase()):cooldown>=1?cooldown.toFixed(1):'0.'+Math.ceil(cooldown*10);el.classList.toggle('recast',!!recast);const h=room.slots[side].hero;el.querySelector('i').style.cssText=skillArtStyle(h,key,recast);}
+  for(const el of $$('[data-duel-skill]')){const key=el.dataset.duelSkill,cooldown=key==='dash'?p.dashCooldown:p.cooldowns[key],recast=p.recast?.key===key&&p.recast.until>match.worlds[side].time,overlay=el.querySelector('b');overlay.hidden=!(cooldown>0||recast);overlay.textContent=recast?'再按 '+(key==='q'?'F':key.toUpperCase()):cooldown>=1?cooldown.toFixed(1):'0.'+Math.ceil(cooldown*10);el.classList.toggle('recast',!!recast);const h=room.slots[side].hero;el.querySelector('i').style.cssText=duelHotbarStyle(h,key,room.slots[side].loadout,recast);}
 }
 function frame(time){
   const dt=Math.min(.05,(time-lastFrame)/1000);lastFrame=time;
@@ -116,7 +134,9 @@ async function action(body){try{return await link.action(body);}catch(e){notice(
 $('#create-form').addEventListener('submit',async e=>{e.preventDefault();$('#create-room').disabled=true;try{await link.enter('create',{code:$('#create-code').value,name:$('#player-name').value,hero:profile.selected});}catch(e){notice(e.message);}finally{$('#create-room').disabled=false;}});
 $('#join-form').addEventListener('submit',async e=>{e.preventDefault();$('#join-room').disabled=true;try{await link.enter('join',{code:$('#join-code').value,name:$('#player-name').value,hero:profile.selected});}catch(e){notice(e.message);}finally{$('#join-room').disabled=false;}});
 $('#room-ready').addEventListener('click',()=>action({type:'ready',ready:!room.slots[room.seat].ready}));$('#room-start').addEventListener('click',()=>action({type:'start'}));
-$('#hero-ready').addEventListener('click',async()=>{const r=room;$('#hero-ready').disabled=true;try{if(await loadBattle(r)||loadedKey===r.slots.map(s=>s.hero).join(':'))await action({type:'lock',ready:!room.slots[room.seat].locked});else notice('战斗素材正在载入，稍后再点击准备。');}finally{$('#hero-ready').disabled=false;}});
+$('#hero-next').addEventListener('click',()=>{selectionStage='skills';renderSelection();});
+$('#hero-prev').addEventListener('click',()=>{if(room.slots[room.seat].locked)action({type:'lock',ready:false});selectionStage='hero';renderSelection();});
+$('#hero-ready').addEventListener('click',async()=>{if(selectionBusy)return;selectionBusy=true;const epoch=room.epoch;$('#hero-ready').disabled=true;try{await selectionQueue.idle();if(room.phase!=='selecting'||room.epoch!==epoch)return;const r=room;if(await loadBattle(r)||loadedKey===r.slots.map(s=>s.hero).join(':'))await action({type:'lock',ready:!room.slots[room.seat].locked,loadout:room.slots[room.seat].loadout});else notice('战斗素材正在载入，稍后再点击准备。');}finally{selectionBusy=false;$('#hero-ready').disabled=false;}});
 $('#match-return').addEventListener('click',()=>action({type:'return'}));$('#claim-disconnect').addEventListener('click',()=>action({type:'forfeit'}));
 $('#copy-room').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(room.code);notice('房间号已复制：'+room.code);}catch{notice('房间号：'+room.code);}});
 async function leave(){if(room){const r=await action({type:'leave'});if(!r)return;}link.stop({forget:true});worker?.terminate();room=null;match=null;view('entrance');}

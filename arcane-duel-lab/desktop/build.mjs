@@ -31,7 +31,7 @@ const notes=`秘境决斗 · Windows 单机与局域网版 v${pkg.version}
 2. 房主进入大厅→双人决斗→创建局域网房间。
 3. 把房间内显示的“房主地址”和“房间号”告诉好友。
 4. 好友在大厅→双人决斗→加入好友，填地址与房间号。
-5. 挑战者准备，房主开始；双方选择英雄并准备，倒计时3秒后开始，先到3分获胜。
+5. 挑战者准备，房主开始；双方选择英雄、搭配F/E/R技能并准备，倒计时3秒后开始，先到3分获胜。
 
 若Windows弹出网络访问询问，请你确认允许游戏在专用网络通信。游戏不会自动修改系统防火墙。
 访客Wi-Fi/校园网可能隔离设备；只在同一Wi-Fi下仍不保证设备互通，需要实际双机验收。
@@ -41,7 +41,7 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
 `;
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
-if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign13
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign14
 
 完整解压后双击 ArcaneDuelCampaign.exe，无需GPT、插件、Node或网络。请保留整个文件夹。
 正常入口：主页面→开始游戏→大厅→单机闯关→世界图选关→选择1～2名已拥有角色→进入挑战。
@@ -49,6 +49,10 @@ AD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、1/2切换�
 本版沿用旧进度，不清档；新档仅焰术师，300金币、0券、2中金币箱与3中经验瓶。
 
 本版变化：
+• 双人决斗选定英雄后进入独立技能搭配页，六技能全部免费开放；F/E/R每行二选一，双方确认准备后开战。改选会取消双方准备，整场回合和重连保留搭配。
+• 双人模式的雷行者和影刃同样近远兼备；复用单机18个扩展招式及原图特效，不带入单机成长/装备/经济。双方须使用campaign14（LAN构建campaign14-skill6）。
+
+保留上版变化：
 • 单机全关首领攻击降低15%，英雄最终生命提高15%（取整）、攻击提高20%，法力上限不变。每级仍生命5%/法力4%/攻击2%线性成长。
 • 每只小怪7经验，分关金币6/8/9/11/14/16/20/24/29/35/43。前期升级更快，后期仍需回刷成长。
 • 六职业36技能耗蓝在campaign12基础减少10%：F8.91/E14.85/R28.215，界面适度取整显示，衍生免费。基础自动回蓝为0，共享被动可以金币升级。
@@ -69,12 +73,12 @@ AD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、1/2切换�
 第5/7/9关有更难的灵宠副本；三波和首领后出现野宠，压低生命后用镜捕捉。每次捕获资质略有不同，越后关卡总体越强。
 最多一宠出战，同次关卡收放保留血蓝/CD；重进或重试关卡恢复满。幼体1技能，5/10级手动进化解锁下一技能，最终仍低于人物。
 
-局域网：两台Windows连接同Wi-Fi/局域网并使用同版。大厅→双人决斗，房主创建后分享房主地址和房号，访客填写加入。访客准备→房主开始→双方选角准备→3秒倒计时，先3分获胜。
+局域网：两台Windows连接同Wi-Fi/局域网并使用同版。大厅→双人决斗，房主创建后分享房主地址和房号，访客填写加入。访客准备→房主开始→双方选角→F/E/R每行二选一→双方准备→3秒倒计时，先3分获胜。
 若系统询问，请自行按需允许专用网络通信；游戏不自动改防火墙。访客网络可能隔离设备，异地穿透/手机/云存档未完成。
 原Sites网页、旧发行包和正式存档保留；本版未重新部署网站。自动逻辑与隔离UI验证不能替代真人难度、美术手感和真实双设备长局验收。
 `,'utf8');
 if(campaignPreview)await writeFile(path.join(output[0],'回退人物动作.cmd'),'@echo off\r\nstart "" "%~dp0ArcaneDuelCampaign.exe" --legacy-motion\r\n','utf8');
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign13':enemyPreview?'enemies1':'desktop1',motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign14':enemyPreview?'enemies1':'desktop1',motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
 
 

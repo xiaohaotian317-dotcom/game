@@ -1,0 +1,21 @@
+import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {protectBlink,blinkProtected} from './blink-guard.mjs';
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+// Both modes execute the same alternate ability. Progression multipliers stay in soloDamage.
+export function releaseAlternate(w,cast,api,options){const s=cast.soloSkill||cast.duelSkill;if(!s?.column)return false;const p=w.player,row=s.row,hero=w.hero,rank=options.rank||0,origin=api.castMuzzle(w),dx=cast.x-origin.x,dy=cast.y-origin.y,angle=Math.atan2(dy,dx),floor=resolveGroundTarget(w,cast.target)||groundTarget(w,clamp(cast.x,p.x-580,p.x+580),cast.y)||{x:p.x+p.face*180,y:p.y},fx=(x,y,size=210,duration=.85,ground=false,field=false)=>api.effect(w,'soloSkill',{hero,row,x,y,size,duration,ground,soloSkill:s.id,face:p.face,fieldCastId:field?cast.id:undefined});
+ const shoot=(a,damage,speed=720,extra={})=>api.projectile(w,'soloBolt',origin.x,origin.y,Math.cos(a),Math.sin(a),speed,damage,{owner:'player',terrainCollision:false,school:hero,fire:hero==='fire',soloHero:hero,soloRow:row,castId:cast.id,life:1.5,...extra});
+ if(row===0){if(hero==='fire'){options.fields.push({hero,row,x:floor.x,y:floor.y,r:150,until:w.time+2.2,next:w.time,damage:10,castId:cast.id,root:0,anchor:floor});fx(floor.x,floor.y,330,2.2,true,true);}else if(hero==='lightning'){fx(p.x+p.face*95,p.y-58,250);for(const t of w.targets)if(t.hp>0&&(t.x-p.x)*p.face>=-t.w&&Math.abs(t.x-p.x)<160+t.w&&Math.abs(t.y-p.y)<150)api.damage(w,t,42,{school:hero,knock:p.face*180,castId:cast.id});}else{for(const d of [-.2,0,.2])shoot(angle+d,16,760,{homing:hero==='frost'});fx(origin.x,origin.y,145,.4);}}
+ else if(row===1){if(hero==='nature'||hero==='star'){const amount=Math.round(p.maxHp*(hero==='nature'?.13:.08)*(1+rank*.08));p.hp=Math.min(p.maxHp,p.hp+amount);if(hero==='nature'){p.enemyStatus={};p.burnUntil=w.time;}else p.shield=Math.min(30,(p.shield||0)+12);fx(p.x,p.y,260,1.25,true);}else if(hero==='shadow'){const x=clamp(p.x+Math.cos(angle)*280,35,w.width-35);fx(p.x,p.y-40,190,.75);p.x=p.prevX=x;protectBlink(w,p,.22);api.area(w,p.x,p.y-50,135,40,{school:hero,castId:cast.id});fx(p.x,p.y-45,260);}else{shoot(angle,hero==='fire'?44:hero==='lightning'?36:32,920,{pierceActors:true,hitIds:[],homing:hero==='frost'});fx(origin.x,origin.y,190,.6);}}
+ else{const x=hero==='lightning'?p.x:floor.x,y=hero==='lightning'?p.y:floor.y;options.fields.push({hero,row,x,y,r:hero==='lightning'?165:215,follow:hero==='lightning',until:w.time+3,next:w.time+.25,damage:hero==='nature'?14:20,castId:cast.id,root:hero==='nature'?.35:0,anchor:hero==='lightning'?null:floor});if(hero==='lightning')p.skillGuardUntil=w.time+3;fx(x,y,440,3,true,true);}
+ api.emit(w,'cast',{key:cast.key,heavy:row===2});return true;
+}
+export function tickAlternateFields(w,fields,api){const p=w.player;
+ for(const f of fields){if(f.follow){f.x=p.x;f.y=p.y;}else if(f.anchor?.platformId){const a=resolveGroundTarget(w,f.anchor);if(!a){f.until=w.time;continue;}f.x=a.x;f.y=a.y;}
+  if(w.time>=f.next&&w.time<f.until){f.next=w.time+.5;for(const t of w.targets)if(t.hp>0&&!blinkProtected(w,t)&&Math.abs(t.x-f.x)<f.r+t.w&&Math.abs(t.y-f.y)<160){const hit=api.damage(w,t,f.damage,{school:f.hero,castId:f.castId,root:f.root,impact:false,fire:f.hero==='fire'});if(hit&&f.hero==='frost')t.frostSnareUntil=w.time+1.4;}}}
+ return fields.filter(f=>f.until>w.time);
+}
+export function alternateOnHit(w,t,s,castId,source,state,api){if(!s?.column||source==='soloChain')return;
+ if(w.hero==='nature'&&s.row===0)t.rootUntil=w.time+.45;if(w.hero==='frost')t.frostSnareUntil=w.time+1.5;
+ if(s.row===1&&['lightning','frost'].includes(w.hero)){state.chained||=[];if(state.chained.includes(castId))return;state.chained.push(castId);if(state.chained.length>128)state.chained.shift();
+ for(const other of w.targets)if(other!==t&&other.hp>0&&!blinkProtected(w,other)&&Math.hypot(other.x-t.x,other.y-t.y)<150){const hit=api.damage(w,other,14,{school:w.hero,castId,source:'soloChain'});if(hit&&w.hero==='frost')other.frostSnareUntil=w.time+1.5;}api.effect(w,'soloSkill',{hero:w.hero,row:1,x:t.x,y:t.y-60,size:235,duration:.7});}
+}

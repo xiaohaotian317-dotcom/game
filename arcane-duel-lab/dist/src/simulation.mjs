@@ -1,3 +1,4 @@
+import {duelSkillSpec,recordDuelCast,releaseDuelSkill,duelSkillOnHit,stepDuelSkills} from './duel-skill-runtime.mjs';
 import {stepCompanion,hitCompanion} from './campaign-companion.mjs';
 import {blinkProtected} from './blink-guard.mjs';
 import {MAX_HEALTH,GROUND_EFFECT_DELAYS} from './match-rules.mjs?v=20261030-duel12';
@@ -54,6 +55,7 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   if(t.duelSummon)return w.duelHitSummon?.(amount,w.player.x)||false;
   if(t.duelActor){
     if(t.dead>0||t.hp<=0||(t.invuln>0&&!['overload','backstab'].includes(source)))return false;
+    if(t.skillGuardUntil>w.time)amount*=.8;
     const absorbed=Math.min(t.shield||0,amount);t.shield=Math.max(0,(t.shield||0)-absorbed);amount-=absorbed;
     if(absorbed)effect(w,'frostHit',{x:t.x,y:t.y-60,duration:.4});
     if(impact){t.hurt=Math.max(t.hurt,.12);t.invuln=Math.max(t.invuln,.055);t.cast=null;t.burst=null;}
@@ -68,7 +70,7 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
   text(w,t.x,t.y-t.h-10,label||Math.round(actual),fire?'#ffc27a':HEROES[w.hero].color);
   if(impact){effect(w,fire?'fireHit':school?school+'Hit':'leafHit',{x:t.x,y:t.y-t.h*(school==='lightning'&&basic&&!ranged?.85:.55),duration:school==='lightning'&&basic?.28:.55,basic,ranged,seed:w.serial+1});w.hitstop=Math.max(w.hitstop,amount>=30?.055:.027);w.shake=Math.max(w.shake,Math.min(9,amount*.2));emit(w,'hit',{fire,school,heavy:amount>=30});}
   if(!companionHit&&source!=='artifact'){extraOnHit(w,t,actual,{school,basic,castId,source},extraHooks);
-  soloOnHit(w,t,castId,source,extraHooks);}
+  soloOnHit(w,t,castId,source,extraHooks);duelSkillOnHit(w,t,castId,source,extraHooks);}
   if(!companionHit&&source!=='artifact'&&w.campaign?.progression&&w.campaign.stats.lifesteal&&actual>0)w.player.hp=Math.min(w.player.maxHp,w.player.hp+actual*w.campaign.stats.lifesteal);
   if(t.hp<=0){t.killedByPlayer=true;t.deadUntil=t.duelActor?1e9:w.time+2.5;if(t.duelActor){t.dead=1e9;t.recast=null;}t.vx=0;t.burnUntil=0;text(w,t.x,t.y-110,t.duelActor?'击倒':'击破','#ffe6aa',18);emit(w,'break');}
   if(t.enemyKind||t.egg)enemyOnDamage(w,t,actual,{impact});
@@ -96,6 +98,7 @@ export function fireOrbVisible(w,s){
 }
 function detonateOrb(w,id){const s=w.projectiles.find(p=>p.id===id&&p.kind==='emberOrb');if(!fireOrbVisible(w,s))return false;s.life=0;area(w,s.x,s.y,125,36,{fire:true,knock:190});effect(w,'orbExplosion',{x:s.x,y:s.y,radius:125,duration:.8});w.shake=Math.max(w.shake,8);w.hitstop=Math.max(w.hitstop,.045);emit(w,'explode',{heavy:true});return true;}
 function release(w,c) {
+  if(releaseDuelSkill(w,c,extraHooks))return;
   if(soloRelease(w,c,extraHooks))return;
   if(releaseExtra(w,c,extraHooks))return;
   const p=w.player,h=w.hero,socket=castMuzzle(w),sx=socket.x,sy=socket.y;
@@ -140,7 +143,7 @@ function release(w,c) {
   }
 }
 function beginCast(w,key) {
-  const p=w.player,s=soloSpec(w,key,HEROES[w.hero].skills[key]);
+  const p=w.player,s=duelSkillSpec(w,key,soloSpec(w,key,HEROES[w.hero].skills[key]));
   if(!s||p.dead>0||p.hurt>0||p.dash>0||p.enemyControl?.until>w.time)return false;
   const isRecast=p.recast&&p.recast.key===key&&p.recast.until>w.time;
   if(p.cast&&p.cast.age<p.cast.duration*.75&&!(isRecast&&w.hero==='fire'&&p.cast.key==='e'&&p.cast.released))return false;
@@ -148,14 +151,16 @@ function beginCast(w,key) {
   if(isRecast&&w.hero==='fire'&&!fireOrbVisible(w,w.projectiles.find(s=>s.id===p.recast.data?.projectileId))){p.recast=null;return false;}
   const variant=isRecast?(EXTRA_HEROES[w.hero]?.recast.variant||(w.hero==='fire'?'detonate':'command')):null;
   const recastData=isRecast?p.recast.data:null;
-  const needsGround=!s.soloSkill?.column&&!variant&&((w.hero==='fire'&&['q','r'].includes(key))||(w.hero==='nature'&&key==='r')||EXTRA_HEROES[w.hero]?.groundSkills.includes(key));
+  const alternate=s.duelSkill?.column;
+  const needsGround=!variant&&(alternate?(s.duelSkill.row===2&&w.hero!=='lightning'||s.duelSkill.row===0&&w.hero==='fire'):!s.soloSkill?.column&&((w.hero==='fire'&&['q','r'].includes(key))||(w.hero==='nature'&&key==='r')||EXTRA_HEROES[w.hero]?.groundSkills.includes(key)));
   const target=needsGround?groundTarget(w,EXTRA_HEROES[w.hero]?clamp(w.aim.x,p.x-520,p.x+520):w.aim.x,w.aim.y):null;
   if(needsGround&&!target)return false;
   if(!soloPay(w,key,isRecast,s))return false;
   if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(w.campaign?.progression?(key==='attack'?1/(w.campaign.stats?.attackSpeed||1):key==='r'?1.1:1.15):1);
   p.face=w.aim.x>=p.x?1:-1;
-  p.cast={id:++w.serial,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
+  p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
   if(w.campaign?.progression)w.campaign.castSkills[p.cast.id]=s.soloSkill?.id;
+  recordDuelCast(w,p.cast);
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
 }
 export function requestCast(w,key,x=w.aim.x,y=w.aim.y) {
@@ -186,7 +191,7 @@ function physics(w,a,dt,{drop=false,phase=false}={}) {
   if(a.y>(w.height||HEIGHT)+160){a.x=w.spawn.x;a.y=w.spawn.y;a.vy=0;a.grounded=true;a.platformId='ground';}
 }
 export function hitPlayer(w,amount,fromX,{dot=false,label=''}={}) {
-  if(w.campaign?.progression)amount*=1-(w.campaign.stats?.armor||0);if(w.player.soloGuardUntil>w.time)amount*=.8;
+  if(w.campaign?.progression)amount*=1-(w.campaign.stats?.armor||0);if(w.player.skillGuardUntil>w.time)amount*=.8;
   const p=w.player;if(blinkProtected(w,p)||(!dot&&p.invuln>0)||p.dead>0||p.hp<=0)return false;
   const absorbed=Math.min(p.shield||0,amount);p.shield=Math.max(0,(p.shield||0)-absorbed);if(absorbed)effect(w,'frostHit',{x:p.x,y:p.y-60,duration:.5});
   p.hp=Math.max(0,p.hp-(amount-absorbed));
@@ -381,7 +386,7 @@ export function step(w,dt,input={}) {
   const spring=w.spring;
   if(spring.enabled!==false&&p.grounded&&Math.min(Math.abs(p.y-spring.y),Math.abs(p.y-(spring.surfaceY??spring.y)))<8&&Math.abs(p.x-spring.x)<35&&spring.cooldown<=0){spring.charge+=dt;if(spring.charge>.16){jump(w,true);spring.charge=0;spring.cooldown=1.2;effect(w,'spring',{x:spring.x,y:spring.y,duration:.8});emit(w,'spring');}}
   else spring.charge=Math.max(0,spring.charge-dt*2);
-  updateTargets(w,dt);updateEnemies(w,dt,enemyHooks);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);stepCompanion(w,dt,{physics,damage});updateTrees(w,dt);
+  stepDuelSkills(w,extraHooks);updateTargets(w,dt);updateEnemies(w,dt,enemyHooks);updateProjectiles(w,dt);updateEffects(w,dt);updateFox(w,dt);stepCompanion(w,dt,{physics,damage});updateTrees(w,dt);
   if(w.time-w.stats.lastHit>2)w.stats.combo=0;
 }
 export function actionState(w){
@@ -391,6 +396,7 @@ export function actionState(w){
   if(p.stomp)return '落烬 · 下砸';
   if(p.dash>0)return '冲刺';
   if(p.cast&&VARIANT_LABELS[p.cast.variant])return VARIANT_LABELS[p.cast.variant];
+  if(p.cast?.duelSkill)return p.cast.duelSkill.name;
   if(p.cast)return p.cast.variant==='command'?'角跃令':p.cast.variant==='detonate'?'焰心引爆':HEROES[w.hero].skills[p.cast.key].name;
   if(!p.grounded)return p.vy<0?'起跳':'下落';
   if(p.land>0)return '落地';

@@ -1,0 +1,14 @@
+{
+  "version": "campaign14",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign14",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign14\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign14.zip",
+  "files": 451,
+  "runtimeFilesMatched": 368,
+  "bytes": 534446527,
+  "sha256": "05a6c7f1522de7da5ffeb476c2009278e50f1da5bf9c7158262756e877924aab",
+  "originalSitesUnchanged": true,
+  "scope": "PvP six-skill hero loadouts with separate hero/skill steps, one choice per F/E/R row, synchronized ready reset and persistent choices across rounds/reconnects; shared eighteen alternate skills and original VFX, PvP hybrid basics; campaign13 solo features, original saves/Sites and motion rollback preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

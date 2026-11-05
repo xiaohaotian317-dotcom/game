@@ -1,3 +1,4 @@
+import {drawAlternateSkills} from './alternate-skill-art.mjs';
 import {drawPunchCharge} from './combat-feedback.mjs';
 import {drawCoreSkin} from './character-skin.mjs';
 import {characterMotionVersion} from './character-rig.mjs?v=20261030-duel12';
@@ -220,11 +221,11 @@ export class Renderer {
     c.fillStyle=g;c.beginPath();c.moveTo(x-w,y);c.bezierCurveTo(x-w*1.2,y-h*.4,x+Math.sin(time*8)*w,y-h*.65,x+w*.15,y-h);c.bezierCurveTo(x+w*1.4,y-h*.45,x+w,y-h*.2,x+w,y);c.closePath();c.fill();c.restore();
   }
   rivalLayer(w,alpha,dt){
-    const c=this.ctx;this.combat.target(w);this.roster.before(w);for(const t of w.trees)this.tree(w,t);this.fox(w);
+    const c=this.ctx;if(w.duel&&this.assets.alternateArt)drawAlternateSkills(c,w,this.assets.alternateArt);this.combat.target(w);this.roster.before(w);for(const t of w.trees)this.tree(w,t);this.fox(w);
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.max(0,1-g.age/(g.duration||.8))*.45;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
     this.hero(w,alpha,dt);this.roster.passive(w);
-    for(const s of w.projectiles){if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;const color='#f2b3b9';glow(c,s.x,s.y,22,color,.4);ellipse(c,s.x,s.y,6,6,color);}
-    for(const e of w.effects)this.particles(w,e);
+    for(const s of w.projectiles){if(w.duel&&s.kind==='soloBolt')continue;if(this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;const color='#f2b3b9';glow(c,s.x,s.y,22,color,.4);ellipse(c,s.x,s.y,6,6,color);}
+    for(const e of w.effects)if(e.kind!=='soloSkill')this.particles(w,e);
   }
   duelMarker(w,label,color){const c=this.ctx,p=w.player,x=p.x,y=p.y-122;if(p.hp<=0)return;c.save();c.textAlign='center';c.font='600 13px "Microsoft YaHei",sans-serif';c.lineWidth=3;c.strokeStyle='#03101d';c.strokeText(label,x,y-10);c.fillStyle=color;c.fillText(label,x,y-10);c.fillStyle='#07121dcc';c.fillRect(x-33,y,66,5);c.fillStyle=color;c.fillRect(x-33,y,66*Math.max(0,p.hp/p.maxHp),5);c.restore();}
   draw(w,alpha=1,dt=.016,{opponent=null}={}){
@@ -242,7 +243,7 @@ export class Renderer {
     c.save();if(!w.duel&&!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
     for(const b of w.platforms)if(!authored&&!campaign&&b.type!=='ice')this.platform(b,w.time);
     if(campaign)campaign.ground(c,w,view);else if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
-    if(campaign)campaign.effects(c,w,alpha);
+    if(campaign)campaign.effects(c,w,alpha);else if(w.duel&&this.assets.alternateArt)drawAlternateSkills(c,w,this.assets.alternateArt);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);
     if(w.enemyMode)this.enemies.zones(w);
@@ -252,7 +253,7 @@ export class Renderer {
     for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
     this.hero(w,alpha,dt);this.roster.passive(w);if(w.enemyMode)this.enemies.player(w);
     for(const s of w.projectiles){
-      if(campaign&&s.kind==='soloBolt')continue;
+      if((campaign||w.duel)&&s.kind==='soloBolt')continue;
       if(this.enemies.projectile(w,s)||this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
       const color=s.kind==='fireball'?'#ffb35d':s.kind==='seed'?'#c4df85':'#c4a8f2';
       glow(c,s.x,s.y,25,color,.5);

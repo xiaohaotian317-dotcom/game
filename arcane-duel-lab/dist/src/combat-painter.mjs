@@ -11,7 +11,7 @@ export class CombatPainter{
     if(warning)drawLandingWarning(this.c,this.a,{...warning,clock});
     const burst=w.player.burst;
     if(burst?.kind==='thunderDive'){const t=resolveGroundTarget(w,burst.target);if(t)drawLandingWarning(this.c,this.a,{hero:'lightning',...t,radius:165,progress:warningProgress(burst.age,burst.warningLead,burst.duration),clock});}
-    for(const f of w.campaign?.soloFields||[])drawLandingWarning(this.c,this.a,{hero:f.hero,x:f.x,y:f.y,radius:f.r,progress:1,alpha:.36,clock});
+    for(const f of w.duelSkills?.fields||w.campaign?.soloFields||[])drawLandingWarning(this.c,this.a,{hero:f.hero,x:f.x,y:f.y,radius:f.r,progress:1,alpha:.36,clock});
   }
 
   sprite(atlas,key,x,y,width,{height,ax=.5,ay=.5,angle=0,alpha=1,flip=1}={}){
