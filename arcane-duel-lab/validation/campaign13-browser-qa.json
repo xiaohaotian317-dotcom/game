@@ -93,5 +93,8 @@
     "naturalFullCampaignClear": false,
     "twoRealDevicesLAN": false,
     "subjectiveArtAndBalanceApprovedByUser": false
-  }
+  },
+  "finalPreview": "campaign13-final-preview.jpg",
+  "sourceCommit": "b63c76c",
+  "repositoryPushed": true
 }
