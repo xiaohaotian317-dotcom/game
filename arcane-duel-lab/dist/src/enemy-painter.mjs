@@ -1,4 +1,5 @@
 import {ENEMIES} from './enemy-roster.mjs';
+import {drawEnemyGroundWarning,drawEnemyLava} from './enemy-ground-art.mjs';
 import {enemyAnimationFrame,enemyCastOrigin} from './enemy-simulation.mjs';
 import {BossFxPainter,loadBossEffects} from './boss-fx-painter.mjs';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -84,8 +85,8 @@ export class EnemyPainter{
  zones(w){
   const c=this.c;for(const z of w.enemyZones||[]){const age=w.time-z.created,p=clamp(age/z.delay,0,1),active=age>=z.delay,color=COLORS[z.style]||COLORS.star;
    c.save();const fade=clamp((z.delay+z.life-age)*2,0,1);c.globalAlpha=fade;
-   if(!active){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);this.bossEffects.falling(w,z);}
-   else if(this.bossEffects.zone(w,z)){c.restore();continue;}else{
+   if(!active){if(!drawEnemyGroundWarning(c,this.assets,{style:z.style,x:z.x,y:z.y,radius:z.radius,progress:p,clock:w.fxTime})){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);}this.bossEffects.falling(w,z);}
+   else if(this.bossEffects.zone(w,z)||z.style==='lava'&&drawEnemyLava(c,this.assets.campaignPainter?.art,z.x,z.y,z.radius,age-z.delay)){c.restore();continue;}else{
     glow(c,z.x,z.y-6,z.radius*1.15,color,.18);ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.25));ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.7),true,1.5);
     if(z.style==='lava'){
      const g=c.createLinearGradient(0,z.y-26,0,z.y+8);g.addColorStop(0,'#ff7c2144');g.addColorStop(.7,'#ffb24b');g.addColorStop(1,'#8c3026');ellipse(c,z.x,z.y,z.radius,12,g);
@@ -118,6 +119,7 @@ export class EnemyPainter{
   c.restore();return true;
  }
  effect(w,e){
+  if(e.kind==='enemyVfx'&&e.ground&&e.style==='lava'&&!ENEMIES[e.enemyKind]?.boss&&drawEnemyLava(this.c,this.assets.campaignPainter?.art,e.x,e.y,e.radius||65,e.age,{impact:true}))return true;
   if(this.bossEffects.effect(w,e))return true;
   if(e.kind!=='enemyVfx')return false;const c=this.c,p=clamp(e.age/e.duration,0,1),color=COLORS[e.style]||COLORS.star,r=(e.radius||50),fade=Math.pow(1-p,1.3);c.save();c.globalAlpha*=fade;
   glow(c,e.x,e.y,r*.9,color,.3);if(e.melee){c.translate(e.x,e.y);c.scale(e.face||1,1);c.strokeStyle=color;c.lineWidth=8*(1-p)+1;c.beginPath();c.ellipse(-r*.25,0,r*.7,r*.42,-.25,-1.5+p*.8,1.2+p*.8);c.stroke();c.lineWidth=2;c.strokeStyle='#fff5de';c.stroke();}

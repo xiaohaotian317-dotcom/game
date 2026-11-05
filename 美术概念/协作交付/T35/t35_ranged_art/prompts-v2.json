@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "task": "T35",
+  "mode": "built-in image_gen edit",
+  "prompt": "Use case: background-extraction.\nEdit target: the supplied eight-sprite atlas. Preserve the eight effects, their positions, directions, proportions, colors, ornate painterly thunder and spectral feather/blade materials, and exactly the same 4-column by 2-row atlas layout.\nChange only the transparency and bloom: REMOVE ALL background mist, gray-white color wash and broad ambient fog, especially around the top-row lightning sprites. Outside the narrow visible energy filaments there must be FULLY transparent pixels (alpha zero), not a translucent white rectangle or a sheet-wide glow. Each 384x512 imaginary cell on this 1536x1024 canvas must have at least 24 pixels of alpha-zero clear margin on every side. Keep the bright gold-white/blue lightning cores, branching tendrils, sharp violet-silver blades, and black feather smoke immediately attached to the effect. Tighten any glow to just 4-8 pixels around the effect silhouette. The eight sprites must remain isolated and clean for use directly in a 2D game, no background extraction by code later. Do not add borders, frames, grid lines, lettering, arrows, people, new objects, shadows cast on surfaces, or checkerboard texture. Produce actual RGBA transparency, never simulate transparency with a white/gray/black fill.",
+  "target": "hybrid-projectiles-v1.png",
+  "file": "hybrid-projectiles-v2.png",
+  "originalGeneratedPath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a9c4-5006-7a51-81a5-0b0cc13c33e6/exec-c3f4258a-2719-4b82-95cf-55f739ad900f.png"
+}

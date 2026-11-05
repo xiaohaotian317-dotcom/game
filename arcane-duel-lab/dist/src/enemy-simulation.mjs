@@ -2,6 +2,7 @@ import {ENEMIES,enemyDefinition} from './enemy-roster.mjs';
 import {BOSS_TUNING,bossReachScale} from './enemy-tuning.mjs';
 import {clearLine,firstTerrainHit,resolveSolidSides} from './collision.mjs?v=20261030-duel12';
 import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {blinkProtected} from './blink-guard.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const alive=a=>a.hp>0&&!(a.dead>0);
@@ -50,7 +51,7 @@ function fx(w,hooks,style,data={}){return hooks.effect(w,'enemyVfx',{style,durat
 function notice(w,type,data={}){(w.enemyEvents||=[]).push({type,time:w.time,...data});if(w.enemyEvents.length>80)w.enemyEvents.shift();}
 const statusSpec={poison:{duration:3.6,interval:.75,damage:3,color:'#b5d45d'},burn:{duration:3,interval:.75,damage:3,color:'#ffb16f'}};
 export function applyEnemyStatus(w,kind,source,hooks){
- const p=w.player;if(!alive(p))return;
+ const p=w.player;if(!alive(p)||blinkProtected(w,p))return;
  if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=w.campaign?(actor?.damageFactor??w.campaign.stage.damageFactor):1;p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
  if(kind==='snare'){p.enemySnareUntil=Math.max(p.enemySnareUntil||0,w.time+1.4);return;}
  if(kind==='freeze'||kind==='petrify'){
@@ -118,9 +119,9 @@ function updateZones(w,dt,hooks){
  for(const z of w.enemyZones||[]){
   const a=resolveGroundTarget(w,z.anchor);if(!a){z.life=-1;continue;}z.x=a.x;z.y=a.y;z.anchor=a;
   const age=w.time-z.created;if(age<z.delay)continue;
-  if(!z.activated){z.activated=true;fx(w,hooks,z.style,{x:z.x,y:z.y-12,radius:z.radius,duration:.75,enemyKind:z.enemyKind});notice(w,'zoneActivated',{style:z.style});}
+  if(!z.activated){z.activated=true;fx(w,hooks,z.style,{x:z.x,y:z.y,radius:z.radius,duration:.75,enemyKind:z.enemyKind,ground:true});notice(w,'zoneActivated',{style:z.style});}
   const p=w.player;
-  if(z.gravity&&alive(p)&&Math.abs(p.x-z.x)<z.radius+70&&Math.abs(p.y-z.y)<140&&!p.enemyControl){p.vx+=(z.x-p.x)*dt*4;}
+  if(z.gravity&&alive(p)&&!blinkProtected(w,p)&&Math.abs(p.x-z.x)<z.radius+70&&Math.abs(p.y-z.y)<140&&!p.enemyControl){p.vx+=(z.x-p.x)*dt*4;}
   if(age>z.delay+z.life)continue;
   if(alive(p)&&Math.abs(p.x-z.x)<z.radius+p.w&&Math.abs(p.y-z.y)<(z.style==='lightning'?210:95)&&w.time>=z.next){
    z.next=w.time+.75;const accepted=hooks.hitPlayer(w,z.damage,z.x);
@@ -194,7 +195,7 @@ function updateAttack(w,e,d,dt,hooks){
  if(!a.fired){a.fired=true;fireStep(w,e,s,hooks);}
  if(s.type==='leap'&&a.leaping&&!a.landed){
   if(!e.grounded)a.age=Math.min(a.age,s.windup+s.active-.00001);
-  else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y-15,radius:reach,duration:.85,enemyKind:e.enemyKind});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);if(w.companion?.hp>0&&Math.abs(w.companion.x-e.x)<reach+23&&Math.abs(w.companion.y-e.y)<100)hooks.hitCompanion?.(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
+  else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y,radius:reach,duration:.85,enemyKind:e.enemyKind,ground:true});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);if(w.companion?.hp>0&&Math.abs(w.companion.x-e.x)<reach+23&&Math.abs(w.companion.y-e.y)<100)hooks.hitCompanion?.(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
  }
  if(a.age<s.windup+s.active){
   e.ai.state=s.type==='projectile'||s.type==='zone'?'cast':s.type==='egg'||s.type==='summon'?'summon':'attack';
@@ -268,7 +269,7 @@ export function updateEnemies(w,dt,hooks){
   if(w.time>e.expires){e.hp=0;e.diedAt=w.time;e.deadUntil=Infinity;ai.attack=null;continue;}
   if(e.burnUntil>w.time&&w.time>=e.nextBurn){e.nextBurn+=.75;hooks.damage(w,e,4,{impact:false});if(e.hp<=0)continue;}
   if(d.boss&&e.hp/e.maxHp<=.5&&ai.phase===1){ai.phase=2;notice(w,'phase',{id:e.id,phase:2});fx(w,hooks,d.form==='wolf'?'ice':'star',{x:e.x,y:e.y-e.h*.4,radius:85,duration:.8,enemyKind:e.enemyKind});}
-  if(ai.passiveUntil>w.time&&e.hp>0&&ai.stagger<=0&&w.time>=ai.healTick){ai.healTick+=.4;const heal=Math.min(16,e.maxHp-e.hp);e.hp+=heal;if(heal){fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.6,radius:65,duration:.65,enemyKind:e.enemyKind,ground:true});notice(w,'healed',{id:e.id,amount:heal});}}
+  if(ai.passiveUntil>w.time&&e.hp>0&&ai.stagger<=0&&w.time>=ai.healTick){ai.healTick+=.4;const heal=Math.min(16,e.maxHp-e.hp);e.hp+=heal;if(heal){fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.6,radius:65,duration:.65,enemyKind:e.enemyKind,ground:false});notice(w,'healed',{id:e.id,amount:heal});}}
   if(d.id==='B10'&&alive(w.player)&&Math.abs(w.player.x-e.x)<260&&!w.player.enemyControl)w.player.vx+=(e.x-w.player.x)*dt*.25;
   if(!alive(w.player)){ai.attack=null;e.vx*=Math.exp(-8*dt);ai.state='idle';}
   else if(ai.stagger>0){e.vx*=Math.exp(-8*dt);ai.state='stagger';}

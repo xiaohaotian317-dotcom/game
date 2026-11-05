@@ -195,6 +195,45 @@
         83.5,
         266
       ]
+    },
+    "petXpSmall": {
+      "sheet": "petXp",
+      "rect": [
+        102,
+        482,
+        226,
+        374
+      ],
+      "anchor": [
+        113,
+        365
+      ]
+    },
+    "petXpMedium": {
+      "sheet": "petXp",
+      "rect": [
+        470,
+        260,
+        408,
+        602
+      ],
+      "anchor": [
+        204,
+        593
+      ]
+    },
+    "petXpLarge": {
+      "sheet": "petXp",
+      "rect": [
+        1005,
+        71,
+        462,
+        803
+      ],
+      "anchor": [
+        231,
+        794
+      ]
     }
   },
   "sheets": {
@@ -510,6 +549,16 @@
           ]
         }
       ]
+    },
+    "petXp": {
+      "file": "pet-xp-potions-v1.png",
+      "folder": "daily-ui",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "fb2bc157519c337dfedf3ab8f086900a1200e1305c5511b08df9900d4935906f",
+      "frames": []
     }
   }
 }

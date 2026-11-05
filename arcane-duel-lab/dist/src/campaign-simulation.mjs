@@ -1,3 +1,4 @@
+import {soloActivity} from './campaign-growth-runtime.mjs';
 import {initTeam,tickReserve,switchTeamHero,rescueWithReserve} from './campaign-team.mjs';
 import {stepArtifact} from './campaign-artifact-runtime.mjs';
 import {beginCompanionRun,spawnCompanion,hitCompanion} from './campaign-companion.mjs';
@@ -67,7 +68,7 @@ export function stepCampaign(w,dt,input={}){
    else if(c.encounter===4){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'首领已击败 · 走入传送门完成关卡');}
    else{c.state='travel';c.lock=null;say(w,'第 '+c.encounter+' 波清理完成 · 继续向右前进');}
   }
- }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){c.state='complete';c.cleared=true;if(c.progression&&!c.petDungeon)markPetRest(c.progression,c.stage.id);say(w,'秘境通关 · 新的道路已解锁');}
+ }else if(c.state==='portal'&&input.settle&&Math.abs(w.player.x-c.portal.x)<65&&w.player.y>w.floor-80){soloActivity(w,'clears');c.state='complete';c.cleared=true;c.dirty=true;if(c.progression&&!c.petDungeon)markPetRest(c.progression,c.stage.id);say(w,'秘境通关 · 新的道路已解锁');}
 }
 
 

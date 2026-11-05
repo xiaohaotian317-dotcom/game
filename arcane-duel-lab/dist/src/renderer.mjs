@@ -26,17 +26,17 @@ function leaf(c,x,y,len,angle,color){
 }
 function artImage(src){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('素材加载失败：'+src));i.src=src;});}
 export async function loadAssets(progress=()=>{},{scenes=true}={}){
-  const entries=[['lightningPunch','assets/combat-feedback/lightning-punch-v1.png'],['landingRings','assets/combat-feedback/landing-warning-rings-v2.png'],['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
+  const entries=[['hybridAttacks','assets/hybrid-attacks/hybrid-projectiles-v2.png'],['lightningPunch','assets/combat-feedback/lightning-punch-v1.png'],['landingRings','assets/combat-feedback/landing-warning-rings-v2.png'],['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
   for(const key of ['fire-vfx-v2','nature-vfx-v2','wood-stag-v2','stone-covers-v2'])entries.push([key,'assets/combat/'+key+'.png']);
   if(scenes)for(const scene of ['moon','lava','garden'])entries.push([scene+'Field','assets/scenes/'+scene+'-field-v1.png'],[scene+'Props','assets/scenes/'+scene+'-props-v1.png']);
-  let count=0;const images={},total=entries.length+6+(scenes?1:0),completed=()=>progress(++count,total);
+  let count=0;const images={},total=entries.length+7+(scenes?1:0),completed=()=>progress(++count,total);
   const json=async url=>{const response=await fetch(url);if(!response.ok)throw new Error('素材信息加载失败：'+url);const value=await response.json();completed();return value;};
-  const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds,feedbackMeta]=await Promise.all([
-    json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),json('assets/combat-feedback/feedback-meta-v1.json'),
+  const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds,feedbackMeta,hybridMeta]=await Promise.all([
+    json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),json('assets/combat-feedback/feedback-meta-v1.json'),json('assets/hybrid-attacks/projectile-meta-v2.json'),
     ...entries.map(async([key,url])=>{images[key]=await artImage(url);completed();})
   ]);
   for(const [hero,data] of Object.entries(refinementBounds)){rosterBounds[hero].fx=data.fx;if(data.core)rosterBounds[hero].coreV2=data.core;}
-  return {...images,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds,feedbackMeta};
+  return {...images,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds,feedbackMeta,hybridMeta};
 }
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
@@ -234,12 +234,12 @@ export class Renderer {
     if(w.duel){c.save();c.beginPath();c.rect(0,0,view.width,view.height);c.clip();}
     c.save();c.translate(-view.x,-view.y);
     const campaign=w.campaign&&this.assets.campaignPainter,authored=!campaign&&w.sceneId&&w.sceneId!=='training';
-    c.fillStyle='#0b1023';c.fillRect(view.x,0,view.width,height);
-    if(campaign)campaign.background(c,w,view);else if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w);c.restore();}else{
+    c.fillStyle='#0b1023';c.fillRect(view.x,view.y,view.width,Math.max(height,view.height));
+    if(campaign)campaign.background(c,w,view);else if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w,w.duel?view:null);c.restore();}else{
       c.drawImage(this.assets.backdrop,0,0,WIDTH,HEIGHT);
       const shade=c.createLinearGradient(0,0,0,HEIGHT);shade.addColorStop(0,'rgba(5,10,27,.09)');shade.addColorStop(.6,'rgba(5,12,30,.3)');shade.addColorStop(1,'rgba(3,8,22,.65)');c.fillStyle=shade;c.fillRect(0,0,WIDTH,HEIGHT);
     }
-    c.save();if(!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
+    c.save();if(!w.duel&&!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
     for(const b of w.platforms)if(!authored&&!campaign&&b.type!=='ice')this.platform(b,w.time);
     if(campaign)campaign.ground(c,w,view);else if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
     if(campaign)campaign.effects(c,w,alpha);

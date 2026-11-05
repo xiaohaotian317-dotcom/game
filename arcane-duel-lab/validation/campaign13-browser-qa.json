@@ -1,0 +1,97 @@
+{
+  "task": [
+    "T34",
+    "T35"
+  ],
+  "date": "2026-11-05",
+  "origin": "http://127.0.0.1:4217",
+  "isolatedQAProfile": true,
+  "formalSavesTouched": false,
+  "browserSize": [
+    1280,
+    720
+  ],
+  "daily": {
+    "fiveSimpleTasks": true,
+    "realUIClaims": [
+      100,
+      100,
+      300
+    ],
+    "walletBefore": 2400,
+    "walletAfter": 2900,
+    "rewardCap": 500,
+    "allThreeChestLidsOpened": true,
+    "reloadKeptClaims": true,
+    "dateFixtureReset": "2026-11-06",
+    "dateFixtureInjectsClockOnly": true,
+    "narrowFrame": [
+      600,
+      650
+    ],
+    "narrowFinal": "t34-daily-narrow-final.jpg",
+    "entryChecks": [
+      "standalone fixture",
+      "normal lobby footer",
+      "campaign panel=daily",
+      "battle toolbar code binding inspected; separate click not recorded"
+    ]
+  },
+  "petPotion": {
+    "realBagAction": "large potion x2 -> x1, selected mossdeer Lv1 -> Lv5, +300 pet XP",
+    "manualEvolutionPreserved": true,
+    "screenshot": "t34-pet-potion.jpg"
+  },
+  "bossHUD": {
+    "galleryCount": 11,
+    "galleryScreenshots": [
+      "t34-boss-gallery-a.jpg",
+      "t34-boss-gallery-b.jpg"
+    ],
+    "liveBoss": "B05",
+    "liveValues": "604 / 604",
+    "liveScreenshot": "t34-boss-live.jpg"
+  },
+  "groundFX": {
+    "fixture": "Frozen M08 lava pool, B05 lava field and environmental falling-fire impact on one support",
+    "screenshot": "t34-ground-fields.jpg",
+    "sourcePNGUnmodified": true,
+    "groundPlaneSeparateFromAlphaBottom": true,
+    "anchorGeometryUnitChecked": true,
+    "nativePerspectiveRocksMayExtendBelowSurface": true
+  },
+  "duel": {
+    "fixture": "same-machine local simulation with mechanics removed to isolate camera and projectiles, not a network room",
+    "viewWidth": 1353.9555555555555,
+    "viewHeight": 761.6,
+    "stationaryTurn": {
+      "beforeX": 423.02,
+      "afterX": 423.02,
+      "beforeY": -40.8,
+      "afterY": -40.8,
+      "face": [
+        1,
+        -1
+      ]
+    },
+    "walkingBothDirectionsAndJumpButtonsUsed": true,
+    "screenshots": [
+      "t35-lightning-ranged.jpg",
+      "t35-shadow-ranged.jpg"
+    ],
+    "realNetworkFramePacingVerified": false,
+    "clientEffectsStillUseAuthoritySnapshots": true
+  },
+  "preliminaryFixtureErrors": [
+    "Removed QA scene lift while mechanisms still referenced it; fixed fixture by disabling only its mechanisms. No production scene data changed.",
+    "First 600px daily layout had date overlap; fixed final CSS, previous unshipped package retained as desktop/.build/campaign13-preflight."
+  ],
+  "verification": {
+    "serialTestsPassed": 328,
+    "nativeResourcesEachMode": 87,
+    "nativeWindowVisualQA": false,
+    "naturalFullCampaignClear": false,
+    "twoRealDevicesLAN": false,
+    "subjectiveArtAndBalanceApprovedByUser": false
+  }
+}

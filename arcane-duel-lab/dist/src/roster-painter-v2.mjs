@@ -1,3 +1,4 @@
+import {drawHybridProjectile,drawHybridEffect} from './hybrid-attack-art.mjs';
 import {drawLandingWarning,warningProgress,drawPunchStrike,drawPunchContact,punchFrame} from './combat-feedback.mjs';
 import {firstTerrainHit} from './collision.mjs?v=20261030-duel12';
 import {fract,noise,lightningPath,shadowSlashShape} from './vfx-geometry.mjs?v=20261030-duel12';
@@ -14,7 +15,7 @@ export class RosterPainter{
   bolt(x0,y0,x1,y1,clock,seed=0,width=2){const c=this.c,pts=lightningPath(x0,y0,x1,y1,clock,seed);c.save();line(c,pts,'#8fcfff55',width*3.4);line(c,pts,'#ffce6bcc',width*1.9);line(c,pts,'#fff7dd',width*.7);for(const i of [4,8,11]){const p=pts[i],q=pts[Math.min(14,i+2)],side=i%2?1:-1;line(c,[p,[p[0]+(q[0]-p[0])*1.5+side*10,p[1]+(q[1]-p[1])*1.5-side*12]],i%2?'#ffe3a2':'#b9eaff',width*.55);}c.restore();}
   motes(x,y,age,count,color,speed=115){const c=this.c;for(let i=0;i<count;i++){const a=i*2.399+noise(i),r=age*speed*(.3+noise(i+7));star(c,x+Math.cos(a)*r,y+Math.sin(a)*r*.64+age*age*20,1+noise(i+23)*2.5,color,a+age);}}
   slash(e,t){const c=this.c,g=shadowSlashShape(t);c.save();c.translate(e.x,e.y);c.scale((e.face||1)*(e.rangeScale||1),e.rangeScale||1);this.sprite('shadow',0,g.center,0,g.width,g.height,g.angle,.92);for(const [i,pts] of g.arcs.entries()){c.strokeStyle=i?'#b785ff':'#f5eaff';c.lineWidth=i?1:2;c.beginPath();c.moveTo(...pts[0]);c.quadraticCurveTo(...pts[1],...pts[2]);c.stroke();}star(c,g.tip.x,g.tip.y,5*(1-t),'#f6eaff',.3);c.restore();}
-  projectile(w,s){const hero={iceNeedle:'frost',arc:'lightning',starBolt:'star'}[s.kind];if(!hero)return false;const c=this.c,a=Math.atan2(s.vy,s.vx);c.save();
+  projectile(w,s){if(drawHybridProjectile(this.c,this.assets,w,s))return true;const hero={iceNeedle:'frost',arc:'lightning',starBolt:'star'}[s.kind];if(!hero)return false;const c=this.c,a=Math.atan2(s.vy,s.vx);c.save();
     const trail=s.trail||[];for(let i=1;i<trail.length;i++){c.globalAlpha=i/trail.length*.7;line(c,[[trail[i-1].x,trail[i-1].y],[trail[i].x,trail[i].y]],colors[hero],1+i/trail.length*1.4);if(i%3===0)star(c,trail[i].x,trail[i].y+Math.sin(i+w.fxTime*9)*4,1.5,hero==='star'?'#ffe2a6':'#dff8ff',w.time);}
     c.globalAlpha=1;glow(c,s.x,s.y,22,colors[hero],.28);this.sprite(hero,0,s.x-27*Math.cos(a),s.y-27*Math.sin(a),100,44,a);if(s.homing)ring(c,s.x,s.y,14,8,'#ffe9b9bb',1,w.time*4);c.restore();return true;}
   frostField(w,f){const c=this.c,g=ease(f.age/.55),height=Math.min(242,f.y-14)*g;
@@ -44,7 +45,7 @@ export class RosterPainter{
     if(hero==='lightning'&&p.charge>=100)for(let i=0;i<3;i++){const a=w.time*4+i*TAU/3,x=p.x+Math.cos(a)*24,y=p.y-55+Math.sin(a)*36;this.bolt(x,y,x+6,y-24,w.fxTime,i,1.2);}
     if(hero==='star')for(let i=0;i<(p.stars||0);i++){const a=w.time*1.4+i*TAU/3,x=p.x+Math.cos(a)*37,y=p.y-65+Math.sin(a)*17;glow(c,x,y,9,'#ffe3a5',.5);star(c,x,y,4.2,'#fff4d6',a);}
   }
-  effect(w,e){const c=this.c,t=clamp(e.age/e.duration,0,1),fade=1-t,k=e.kind;let hero;
+  effect(w,e){if(drawHybridEffect(this.c,this.assets,e))return true;const c=this.c,t=clamp(e.age/e.duration,0,1),fade=1-t,k=e.kind;let hero;
     if(k.startsWith('frost')||k==='iceShatter')hero='frost';else if(k.startsWith('lightning')||k.startsWith('thunder')||k==='electricBurst')hero='lightning';else if(k.startsWith('shadow'))hero='shadow';else if(k.startsWith('star')||k==='portalFlash')hero='star';else return false;
     c.save();c.globalAlpha=Math.min(1,e.age/.025)*Math.pow(fade,.75);const color=colors[hero],clock=w.fxTime||w.time;
     if(k==='thunderPunch'){
@@ -55,7 +56,7 @@ export class RosterPainter{
       else punchFrame(c,this.assets,0,0,0,{sx:.2,sy:.2,alpha:fade});
       c.restore();
     }
-    else if(k==='lightningHit'&&e.basic&&drawPunchContact(c,this.assets,e.x,e.y,e.age,e.duration)){if(t<.5)this.bolt(e.x-14,e.y+5,e.x+13,e.y-15,clock,e.id,1.25);}
+    else if(k==='lightningHit'&&e.basic&&!e.ranged&&drawPunchContact(c,this.assets,e.x,e.y,e.age,e.duration)){if(t<.5)this.bolt(e.x-14,e.y+5,e.x+13,e.y-15,clock,e.id,1.25);}
     else if(k==='thunderTether'){this.bolt(e.x,e.y,e.toX,e.toY,clock,e.id,2);this.sprite(hero,3,e.toX,e.toY,46,57,0,.8);}
     else if(k==='thunderImpact'){this.sprite(hero,2,e.x,e.y-145,190,315,0,Math.min(1,fade*2));this.sprite(hero,1,e.x,e.y-35,260*(.7+t),205);for(let i=0;i<8;i++){const a=i*TAU/8,rr=60+t*105;this.bolt(e.x,e.y-28,e.x+Math.cos(a)*rr,e.y-28+Math.sin(a)*rr*.48,clock,e.id+i,1.8);}ring(c,e.x,e.y,35+ease(t)*155,9+ease(t)*23,'#fff2bf',2.6);}
     else if(k==='shadowSlash')this.slash(e,t);

@@ -1,0 +1,614 @@
+✔ only sixth boss and its loot preview grant the sword item (0.601ms)
+✖ mirror raises health, sword raises attack, only equipped artifact applies and upgrades survive save (1.8984ms)
+✔ switching artifacts in battle cannot repeatedly heal the player (1.0362ms)
+✔ held Q creates a targeted circle and real falling swords, consumes mana and stops on release (7.6205ms)
+✔ sword targets the first platform below the cursor and cannot hurt enemies on another floor or wild pets (1.4693ms)
+✔ empty mana, mirror equipment and capture phase cannot create sword rain (2.2295ms)
+✔ selected pet images preserve hashes and all three forms have eight distinct bounded anchored walk poses per species (23.3654ms)
+✔ live companion renderer selects all authored walk frames and keeps final form below the hero (4.9107ms)
+✔ 11 themed stages keep one melee and one ranged species per stage; difficulty grows and each next pair differs (1.0392ms)
+✔ progress normalizes hostile/corrupt storage, gates branches and keeps growth/rewards out (0.5769ms)
+✔ camera locks near player, both sides spawn near viewport fifths, capped falling spawns land before attacking (47.0845ms)
+✔ all 11 levels finish three waves, one boss, enter the portal and stop; no wave unlock with queued enemies (113.2219ms)
+✔ death shows defeat without automatic training respawn or accidental clear (0.2308ms)
+✔ ice warning is safe, drops to grounded impact and can be dodged by moving or jumping (1.127ms)
+✔ falling fireball leaves damaging magma for exactly five seconds after impact (3.0218ms)
+✔ wide flat route is continuously walkable by all six heroes without forced jumps (45.6521ms)
+✔ resize retains arena boundaries and precise pointer/camera mapping (2.008ms)
+✔ tutorial boss attacks have scaled actual damage and smaller danger areas, not only smaller artwork (8.2101ms)
+✔ six heroes keep actual attacks, grounded ultimates and kills on the new stage geometry (23.2686ms)
+✔ 17 concept/runtime PNGs match inspected hashes and the chosen FX preserve real transparency and per-frame foot anchors (31.6016ms)
+✔ all theme backgrounds, warnings, falling FX, impacts and portal frames draw finite undistorted source rectangles (4.4411ms)
+✔ wide displays keep feet and aim inside the visible view rather than cropping the road below the screen (0.0973ms)
+✖ existing hero XP gains stronger linear health and mana without changing level-one bases or attack growth (2.1823ms)
+✔ all 36 solo skills pay ten percent less than campaign12 mana, reject insufficient mana atomically and keep recasts free (2.5441ms)
+✔ learned mana passive restores its increased real amount while level zero and reserve heroes stay unchanged (14.8008ms)
+✖ level-up adds only the increased capacity difference instead of refilling all lost health and mana (0.2858ms)
+✔ daily selection has five unique simple goals, stays fixed today and resets exactly at the next local date (1.3063ms)
+✔ any three completed daily tasks pay 100 then 100 then 300 exactly once, even after reload (0.5097ms)
+✔ unfinished or unavailable daily claims cannot change wallet and invalid saved progress cannot unlock rewards (0.1345ms)
+✔ daily progress follows real solo skill releases, jumps, dashes and kills; recasts and training do not farm skill credit (6.8982ms)
+✔ pet experience potions require a real selected pet, grant only its XP and preserve manual evolution and save data (0.9142ms)
+✔ all 36 hero skills cost exactly ten percent less than campaign12 while pets and artifacts keep their own mana rules (0.0991ms)
+✔ a real shadow blink dodges normal damage, DoT and new control only after release, then expires (1.231ms)
+✔ blink guard precedes PvP special-hit exceptions and switching heroes carries the deadline without refreshing it (0.6775ms)
+✔ ground-contact metadata maps the lava plane to the true platform and leaves airborne frames centered (0.9467ms)
+✔ eleven original boss shells and daily/potion assets keep native hashes and bounded measured regions (7.742ms)
+✔ boss bodies shrink another 10 percent, HP grows 10 percent and normal movement drops 15 percent (2.2602ms)
+✔ boss cooldowns and active timing carry the real 20 percent frequency increase (2.9056ms)
+✔ regional platform layouts reproduce seeds and preserve clear combat floor plus localized climbing routes (0.7069ms)
+✔ every high deck has a lower accessible support instead of requiring an impossible direct ground jump (0.125ms)
+✔ spawn rate is 20 percent slower and later waves can drop onto the upper deck (15.4294ms)
+✔ ordinary ground minions never trigger a player-style jump toward a platform (32.8021ms)
+✔ camera follow cannot slow walking; fixed steps preserve elapsed time even at 12.5 FPS (6.0373ms)
+✔ fire E flies toward its accepted direction, does not jump, and quick recast detonates at the current orb (2.7378ms)
+✔ fire E passes a real wall while basic attacks stop; leaving the viewport closes recast (1.1678ms)
+✔ new orb and bounded viewport survive PvP snapshots and still detonate against a real opponent (3.5873ms)
+✔ meteor flight is exactly 20 percent faster while cast windup stays unchanged (0.3098ms)
+✔ all eleven selected boss atlases, portal and sparse platform art match inspected hashes and true alpha (20.7247ms)
+✔ boss windup, missiles, impacts, fields and falling meteor select their own atlas without stretching (1.7986ms)
+✔ theme platforms align their real standing surface and the portal keeps a stable source frame over time (1.9603ms)
+✔ new solo profile starts only fire, 300 coins, zero tickets and the specified stacked supplies (2.3938ms)
+✔ faster early levels give small linear bonuses and get progressively farther apart (0.326ms)
+✔ six heroes learn and equip only one skill in each row, with five meaningful upgrade purchases (0.5191ms)
+✔ weapon output and armor defense remain strictly separate and class locked (0.2352ms)
+✔ supplies grant their real displayed values and low sell prices cannot multiply money (0.2844ms)
+✔ transfer accepts a target below five only once and cannot relay received experience (0.2481ms)
+✔ targeted summon uses tickets, has persistent per-target 20 pity and stops consuming on success (0.3494ms)
+✔ forge consumes exact stones, 3 to 1 conversion, and never changes equipment color quality (0.2538ms)
+✔ boss loot keeps the 50 percent equipment pair, rarity tiers and accurate preview (0.2876ms)
+✖ only solo has reduced base damage, mana, initial F only and changed skill cooldowns (2.0339ms)
+✔ learned E recast is free, R cooldown grows ten percent, and utility skill upgrades reduce cooldown (5.4165ms)
+✔ 18 new skills create distinct active effects and real damage, healing or temporary shield (29.0853ms)
+✔ rewards are once per defeated ordinary enemy, never from summons, and first-choice chest cannot repeat (1.8336ms)
+✔ portal requires explicit X settlement and wave lock never jumps the camera (1.0967ms)
+✔ solo boss attack, range and body buffs do not change enemy lab defaults (0.3676ms)
+✔ selected growth art preserves hashes and has explicit non-overlapping finite source rectangles (7.2849ms)
+✔ explicit forge validates selected stone atomically for weapons and armor, preserving equipped references (2.0586ms)
+✔ insufficient or sold forge material never consumes another stack or equipment (0.1749ms)
+✔ three explicit synthesis slots reserve counts and reject mixed or missing materials without mutation (0.3005ms)
+✔ old campaign3 saves gain compatible empty pet inventory without losing heroes, coins or gear (0.7963ms)
+✔ new saves need a picked-up mirror and matching normal clear before pet dungeon entry (0.3169ms)
+✔ all three dungeons keep their stage theme and have stronger real enemy stats than normal (1.9957ms)
+✔ boss death creates exactly one hostile pet and no portal until capture or death (4.2367ms)
+✔ capture chance rises monotonically from full life to low life and remains bounded (0.1565ms)
+✔ mirror requires equipped artifact and distance, and pressing repeatedly cannot bypass cooldown or duplicate rolls (2.7163ms)
+✔ failed or interrupted capture grants nothing, later low-life retry can succeed (3.3174ms)
+✔ wild pet attacks actually hurt and ranged attacks are actual enemy projectiles (5.2268ms)
+✔ killing pet loses that capture and requires explicit X at portal, no pet XP or coin farming (0.9968ms)
+✔ all six heroes can damage and use their original F against a real wild pet (15.9336ms)
+✔ 18 selected pet frames keep source hashes, explicit crops, foot anchors and scale below human height (9.9747ms)
+✔ one owned companion is selectable, persists in old-compatible saves, and invalid references are cleared (3.0073ms)
+✔ all three captured pets spawn on valid ground as a separate friendly unit without replacing nature summon (0.7291ms)
+✔ companion follows forward and reverse movement with finite real physics (6.5673ms)
+✔ companion jumps onto sparse second-level platforms and can drop back to ground (5.7269ms)
+✔ distant return recalls to a real support without healing or restarting cooldown (0.3141ms)
+✔ all three companions autonomously damage enemies with distinct melee or ranged attacks (20.3922ms)
+✔ companion damage does not inherit active hero skill, critical, on-hit or lifesteal bonuses (0.5824ms)
+✔ companion stops attacking wild pets and clears lingering shots during capture phase (2.2021ms)
+✔ retreated pet stops attacking and remains collected; a new attempt restores it (2.3093ms)
+✔ enemy projectile and close combat can damage the companion independently of the player (4.4007ms)
+✔ campaign ground impact and lingering lava damage companion while invulnerability prevents rapid double hits (1.9251ms)
+✔ companion kills give the normal seven XP and increased coins once and release wave lock (4.9437ms)
+✔ companion drawing uses shared authored crops, finite interpolated positions and a body smaller than hero (0.9705ms)
+✔ fourth boss loot and battle preview contain the actual mirror item, other stages do not (0.6979ms)
+✔ mirror ownership comes from nearby C pickup and survives repeat drops without resetting upgrade (5.0987ms)
+✔ old auto-granted mirror saves migrate once, newly cleared saves do not auto-grant (0.9972ms)
+✔ artifact upgrade validates ownership, exact costs and cap atomically, with real capture benefits (0.3099ms)
+✔ pets have independent differentiated HP MP and attack, and increasing XP thresholds (0.1765ms)
+✔ manual evolution unlocks a new skill at level five and ten without consuming XP or permitting early evolution (0.7189ms)
+✔ juveniles cast only first skill and spend/regenerate their own mana (29.8088ms)
+✔ all nine pet skills execute real damage, area control or healing after final evolution (18.1645ms)
+✔ empty mana falls back to ordinary attack without free skill casts (2.0887ms)
+✔ only deployed living pet earns normal kill XP and it is saved once (0.8551ms)
+✔ capture rolls independent small traits and preserves them without rerolling on save (0.2401ms)
+✔ higher pet dungeon tier beats even strongest lower-tier rolls at equal level and form (0.1432ms)
+✔ recall and switch preserve each pets exact health and mana with only one active entity (0.3734ms)
+✔ new attempts restore pet health and mana, while recalls inside each attempt preserve both (0.4337ms)
+✔ one or two distinct owned heroes only, old saves remain one hero and malformed saved lineups are filtered (3.019ms)
+✔ switch retains each hero health mana and cooldown, moves exactly to the active location, and never resets world or pet (0.8042ms)
+✔ reserve cooldown passes with simulation time but reserve health and mana never regenerate (4.5137ms)
+✔ switch cancels unfinished hero casts, summoned temporary effects and friendly projectiles, keeping enemy attacks (0.3168ms)
+✔ falling hero is replaced by surviving reserve, both down loses, and invalid or dead slots cannot reset health (0.6299ms)
+✔ the selected hero casts its own original F and kill experience follows the current active hero (4.9639ms)
+✔ result inventory contains only picked-up real loot, groups counts, records currency without duplicating pickup (0.7935ms)
+✔ all eleven encounter cards use bounded existing portraits and short accessible introductions (0.3982ms)
+✔ fullscreen map has no old tools or wallet; battle has no wave row, new hero/pet bars and separate lineup screen (0.7685ms)
+✔ macro layout has dense travel clusters, sparse combat clearings, varied heights and supporting step paths (1.1039ms)
+✔ six heroes reach every macro layout platform through real ground and stepping routes in sixteen seeds (268.7517ms)
+✔ all pets including stowed and defeated pets start each new attempt full, but cannot heal by redeployment in that attempt (1.0026ms)
+✔ six painted hero HUDs preserve original PNG and keep real HP MP XP slots inside each measured shell (2.504ms)
+✔ zero shared passives give no mana regeneration, upgrades persist and affect all heroes without touching PvP (11.6404ms)
+✔ shared passive spending is atomic, escalates each level, and blocks malformed or exhausted upgrades (0.85ms)
+✔ restorative drops require proximity, use immediately, show real capped amounts and never enter bag or loot ledger (0.3998ms)
+✔ later-stage kill coins increase and the run ledger matches actual wallet earnings exactly once (1.7019ms)
+✔ ordinary melee closes into real range before winding up and can defeat an idle character (18.3352ms)
+✖ first boss deals materially more damage than first minions, final coefficients rise, and baselines remain solo-only (4.8372ms)
+✖ initial F no longer erases a first-wave minion and generic basics do not borrow another cast skill modifier (0.6511ms)
+✔ shared regeneration cannot revive fallen heroes or suppress failure and reserve rescue (0.6989ms)
+✔ every enemy has an explicit face crop contained in one source frame, including off-center heads (0.9035ms)
+✔ portrait samples remain square, retain the original face center and stay in the source bounds (0.1428ms)
+✔ all eleven themes provide two shallow original variants with valid collision anchors (2.8184ms)
+✔ both platform styles appear in every combat zone without changing collision or step routes (4.3678ms)
+✔ platform decoration is clipped above a lower deck or ground with 24 units of air (0.3767ms)
+✔ new idle stance bears weight between separated planted feet with unlocked knees (7.5223ms)
+✔ second jump has a distinct gather and opening sequence at identical velocity (0.611ms)
+✔ walking support feet remain on the floor through the whole gait cycle (3.9995ms)
+✔ actual jump input timestamps survive air switches and do not alter original trajectories (11.1675ms)
+✔ every basic attack retracts before release, extends on release and returns without moving a shoulder root (0.6792ms)
+✔ neck and hair skin remains connected with no flipped triangles over the full motion envelope (3.6809ms)
+✔ legacy switch restores original poses, bones and body anchors rather than approximating them (1.8384ms)
+✔ desktop preload carries the selected animation mode across every local page without touching a save (1.0445ms)
+✔ zero or slightly negative resume frame times never poison the pose (1.9531ms)
+✔ painted limb endpoints stay attached under rotation without stretching artwork (0.2174ms)
+✔ shoulders follow the same torso pivot when running in either direction (0.2352ms)
+✔ left and right attacks spawn projectiles and muzzle effects at the held staff tip (3.4452ms)
+✔ repeated R cycles keep both shoulder roots fixed and joint motion bounded (11.5189ms)
+✔ free hand stays relaxed and motionless relative to the torso through every cast (0.8079ms)
+✔ all six flight poses vary continuously through the apex instead of switching fixed silhouettes (1.7848ms)
+✔ real run/double-jump/landing uses continuous planted feet and constant length leg bones without mutating physics (26.2573ms)
+✔ airborne team switches carry current landing state rather than a reserve hero stale landing (2.2079ms)
+✔ painted warning follows the selected support while previewing the real spell radius (0.4867ms)
+✔ lightning ultimate warning and actual dive share the exact enemy-front landing point (1.7428ms)
+✔ meteor warning progress continues across cast release and reaches one only at impact (0.3637ms)
+✔ new punch and six warning materials preserve source hashes, valid rectangles and finite rendering (4.1692ms)
+✔ F is the only keyboard binding for slot one; G only interacts, and recast labels say F (1.0263ms)
+✖ lightning basic is a forward melee punch in either direction, with no projectile (4.8954ms)
+✖ lightning fists cannot hit distant targets, targets behind, or targets through walls (0.6777ms)
+✔ a charged melee fist consumes lightning charge only on a real hit (1.121ms)
+✔ lightning rush lets bullets pass through during movement; damage resumes after the dash (1.1934ms)
+✔ lightning ultimate physically advances and finishes in front of its aimed enemy (0.672ms)
+✔ shadow rush leaves full independent pose snapshots that linger after the actor finishes moving (0.7888ms)
+✔ five timed recasts keep their late window; fire now uses visible-flight detonation instead (6.5832ms)
+✔ star repulse is still backed by a live gravity well in the extended late window (1.3092ms)
+✔ ice crown and mirror source bounds include their top tips instead of starting at the quadrant seam (0.4742ms)
+✔ slash leading edge and both hand-drawn arcs mirror to the actor forward side (0.6875ms)
+✔ procedural lightning stays attached at both ends, has branches to animate and never returns NaN (0.6204ms)
+✔ lightning punch initially emits from its raised hand in both directions and at scene scale (0.5506ms)
+✔ punch glow follows the rendered blended hand and interpolation, and ghosts cannot move its anchor (2.9573ms)
+✔ held normal attacks keep a 50 percent longer interval without slowing projectile travel (12.3127ms)
+✔ a very fast projectile stops at the first thin wall before damaging a target behind it (0.7658ms)
+✔ stone decks block both fire and nature bolts while a broken bridge no longer blocks (0.4275ms)
+✔ near targets still receive the hit before a farther wall (0.6142ms)
+✔ meteor passes upper roofs and lands on the selected lower deck with 20 percent faster flight (1.0632ms)
+✔ the root skill can bind an enemy across a wall while basics remain blocked (0.8829ms)
+✔ the stag has its own health, intercepts enemy attacks and disappears on death (0.9035ms)
+✔ the stag pursues a target behind it and jumps over solid cover (2.0686ms)
+✔ both heroes can run the side courts and hop the covers without skills (5.513ms)
+✔ camera clamps to both ends and aiming remains aligned in follow and overview (0.3226ms)
+✔ a jump or spell pressed during impact pause is buffered instead of lost (0.2181ms)
+✔ real spell rendering uses finite coordinates throughout windup, impact and aftermath (244.8471ms)
+✖ both melee ranges increase exactly 25 percent, in both facings, without becoming ranged (4.8099ms)
+✔ frost ring applies a real 35 percent movement slow, then restores speed without weakening stronger frost (3.957ms)
+✔ frost ring supports a late low-damage echo, but no third cast or airborne platform (1.4341ms)
+✔ all 36 skill illustrations have unique atlas cells and real PNG assets, including six recasts (32.4143ms)
+✔ a duel has two real opposing actors, common terrain, and distinct independent state (1.0693ms)
+✔ both actors move from their own input without dummy AI overriding their motion (2.8195ms)
+✔ melee damages an overlapping real enemy and round death never auto-respawns (2.9163ms)
+✔ enemy frost shield absorbs damage in real PvP (0.9127ms)
+✔ network snapshots restore the two actors and shared terrain without cycles or dummy replacement (1.3351ms)
+✔ duplicate and reordered action packets execute a jump or cast only once (0.2303ms)
+✔ large reconnect sequence numbers preserve every integer through snapshot encoding (0.8593ms)
+✔ all six professions release every slot against a real rival without invalid world coordinates (38.6901ms)
+✔ an opponent ice mirror reflects a real enemy bolt back toward its caster (5.1987ms)
+✔ all professions start with integer maximum health increased by 50 percent (1.2267ms)
+✔ full viewport camera preserves aspect and pointer coordinates at every screen shape (1.0998ms)
+✔ camera follows its own player and clamps at both map edges independently of the rival (0.1633ms)
+✔ opponent direction appears only out of view and stays clear of HUD and hotbar on all edges (0.1778ms)
+✔ frost F and its single echo deal 18 plus 12 actual PvP damage while retaining control (5.3672ms)
+✔ all 21 enemy definitions have health, independent art and distinct boss active combos plus traits (0.6453ms)
+✔ each enemy can be placed, pursue and damage the actual player, without any dummy counterattack flag (116.7153ms)
+✔ sprite metadata covers 22 real transparent atlases and all 352 frames with matching hashes (36.2994ms)
+✔ ranged attacks originate at the calibrated frame mouth and can hit the visible upper body of a boss (1.8128ms)
+✔ all six heroes can damage and kill a placed enemy; dead enemies do not become respawning dummies (15.7101ms)
+✔ real combo steps are separated by windup, release and recovery, rather than hitting once per render (3.4768ms)
+✔ melee accepts contact overlap but cannot hit a target wholly behind or through a wall (0.2257ms)
+✔ poison is sustained real damage, refreshing its duration without stacking duplicate tick streams (1.378ms)
+✔ stone and frost passives accumulate on actual hits, block inputs temporarily and grant control resistance (2.6571ms)
+✔ spider trait visibly lays a damageable egg, which hatches exactly three attacking baby spiders (10.0136ms)
+✔ destroying a spider egg prevents its children, and skeleton summoning remains capped (25.0741ms)
+✔ spider queen has a separate telegraphed leap attack that deals damage only after landing (0.8273ms)
+✔ bull residue is grounded lava that burns the player and expires; tree regeneration is automatic (2.7321ms)
+✔ enemy minions and zones interact with the actual nature summon and can be cleared without stale poison (3.8539ms)
+✔ placement is reusable on all three maps and respects terrain/actor collisions and living cap (17.1668ms)
+✔ all 63 enemy/map combinations actually begin attacks on authored terrain instead of parking behind ledges (523.135ms)
+✔ enemy sprite/attack/status painters use finite coordinates during every actual attack (56.5064ms)
+✖ standalone serves extensionless pages/assets and health without exposing build directories (18.4561ms)
+✖ HTTPS reverse proxy origin permits two room clients while retaining cross-site protection (4.4088ms)
+✖ standalone rooms survive database/service restart with original member token (19.4556ms)
+✔ public origin configuration rejects paths, credentials and unsupported schemes (0.4463ms)
+✔ LAN address entry accepts private IPv4 and rejects external URLs, credentials and paths (0.6756ms)
+✔ connection hints list physical private IPv4 first and exclude IPv6/internal/public adapters (0.5378ms)
+✖ two desktop runtimes use local assets and one LAN host for room readiness/selection (15.3245ms)
+✖ client rejects incompatible hosts without making an unrelated connection (3.1637ms)
+✔ LAN peer negotiation never configures an external STUN/TURN server (0.3523ms)
+✔ lightning overlap hits but targets fully behind do not, facing -1 (5.6591ms)
+✔ lightning overlap hits but targets fully behind do not, facing 1 (1.3339ms)
+✔ shadow overlap hits but targets fully behind do not, facing -1 (1.3791ms)
+✔ shadow overlap hits but targets fully behind do not, facing 1 (0.9144ms)
+✖ body overlap still respects an actual intervening solid wall (1.1485ms)
+✔ new local profile starts with two heroes and 2400 experience coins (1.2003ms)
+✔ single summon unlocks a new hero without mutating prior profile (0.1759ms)
+✔ duplicates refund 20 and ten summons use the discounted 900 cost (0.089ms)
+✔ a hero repeated in the same ten draw becomes a duplicate after its first unlock (0.0927ms)
+✔ insufficient funds cannot spend, unlock, or borrow against future duplicate refunds (0.2793ms)
+✔ invalid random sources and draw counts fail without mutating saved state (0.1878ms)
+✔ corrupt and unknown saved versions recover safely; selection requires ownership (0.1799ms)
+✔ profile saves and reloads coins, heroes, sound and display selection (0.1496ms)
+✔ blocked browser storage is reported without preventing a playable local session (0.1317ms)
+✔ custom room code is unique, capacity is two, and secrets never appear in room state (4.7902ms)
+✔ host cannot start before guest ready; guests cannot start at all (1.168ms)
+✔ both hero confirmations are required and changing the lineup requires both players to reconfirm (1.4526ms)
+✔ round results are deduplicated, scores require deaths, first to three wins, then both return (1.9551ms)
+✔ simultaneous death restarts a countdown without giving either player a point (1.0292ms)
+✔ bad room tokens cannot read or alter a room; nonmembers cannot relay state (0.8915ms)
+✔ stale relay packets cannot replace newer state, and guest cannot publish host state (1.034ms)
+✔ early disconnect claims are rejected and a 30-second missing opponent can forfeit (1.1062ms)
+✔ room API rejects cross-origin mutations and malformed request bodies (13.5352ms)
+✔ a departing guest forfeits and the host can return to a joinable room (1.1997ms)
+✔ reconnecting clients receive the last relay sequence and can publish newer state immediately (0.868ms)
+✔ a 2-2 match continues and only the third point finishes, including full star health (1.1604ms)
+✔ six original professions have complete independent skill definitions and release windups (9.2927ms)
+✔ frost F slows with low damage, never creates support and recasts once without resetting cooldown (0.6439ms)
+✔ frost shield absorbs actual damage, recharges every eight seconds and never stacks (4.7407ms)
+✔ ice mirror reflects hostile projectiles back into enemies (0.8182ms)
+✔ frost slow reduces actual moving-target speed by 55 percent after the freeze ends (0.1294ms)
+✔ lightning miss cannot unlock Q2; a hit unlocks exactly one aimed turn (0.8739ms)
+✔ lightning movement charges its next basic hit and consumes the charge on impact (1.4713ms)
+✔ magnet leap lands on its visible upper anchor and thunder dive ignores intervening roofs (1.1179ms)
+✔ shadow return preserves life and cooldown, consumes mark and expires after its window (2.6001ms)
+✔ shadow melee needs proximity and sight; backstab uses the target facing and cooldown (0.6515ms)
+✔ gravity well pulls toward its center then Q2 repels with a single consumed recast (0.4991ms)
+✔ paired gates carry actors to supported exits with a travel cooldown (1.1237ms)
+✔ star stacks only once per cast even when two fields alternate damage ticks (0.2725ms)
+✔ all ranged new basics, including homing stars, stop at an actual wall (0.8274ms)
+✔ ground fields disappear when their supporting deck is destroyed (0.4094ms)
+✔ all four rigs stay finite with anchored shoulders through movement, skills and zero-time resume (41.2587ms)
+✔ new hero rendering, effects, fields and passive indicators use finite coordinates (1167.2341ms)
+✔ moon: frost reaches every deck using basic jumps without skill assistance (42.302ms)
+✔ moon: lightning reaches every deck using basic jumps without skill assistance (24.6459ms)
+✔ moon: shadow reaches every deck using basic jumps without skill assistance (21.8048ms)
+✔ moon: star reaches every deck using basic jumps without skill assistance (23.3352ms)
+✔ lava: frost reaches every deck using basic jumps without skill assistance (11.53ms)
+✔ lava: lightning reaches every deck using basic jumps without skill assistance (7.2428ms)
+✔ lava: shadow reaches every deck using basic jumps without skill assistance (7.1302ms)
+✔ lava: star reaches every deck using basic jumps without skill assistance (9.3474ms)
+✔ garden: frost reaches every deck using basic jumps without skill assistance (56.6595ms)
+✔ garden: lightning reaches every deck using basic jumps without skill assistance (25.0003ms)
+✔ garden: shadow reaches every deck using basic jumps without skill assistance (24.309ms)
+✔ garden: star reaches every deck using basic jumps without skill assistance (50.246ms)
+✔ each new scene starts the hero on the painted starting surface (5.7927ms)
+✔ broken moon bridge removes support and repair restores it (1.0038ms)
+✔ moon elevator carries its rider both up and down (2.892ms)
+✔ a real projectile can hit the rune switch and change the elevator target (0.7934ms)
+✔ lava warns before erupting, and valve routing makes the old lane safe (1.459ms)
+✔ hitting the hammer changes its momentum and produces a real swing (0.5353ms)
+✔ wind direction changes the movement of an airborne hero (0.3861ms)
+✔ vine growth enables support, then expiry removes it (5.5442ms)
+✔ landing on the lotus center launches the hero after the charge interval (0.7675ms)
+✔ moon: fire can reach every standing surface with basic jumps only (46.477ms)
+✔ moon: nature can reach every standing surface with basic jumps only (20.4628ms)
+✔ lava: fire can reach every standing surface with basic jumps only (9.9676ms)
+✔ lava: nature can reach every standing surface with basic jumps only (8.7324ms)
+✔ garden: fire can reach every standing surface with basic jumps only (45.4487ms)
+✔ garden: nature can reach every standing surface with basic jumps only (42.9765ms)
+✔ locomotion accelerates, brakes and stays on solid ground (3.5913ms)
+✔ double jump supports a new airborne impulse but forbids a third jump (1.9061ms)
+✔ one-way platforms catch falling actors and support downward traversal (0.8694ms)
+✔ jump input shortly before landing is buffered into the next jump (0.2147ms)
+✔ skills release after windup, rather than on key press (1.6779ms)
+✔ fire attacks deal damage and burning persists after projectile impact (1.9003ms)
+✔ refreshing burn extends its duration without multiplying tick rate (0.7944ms)
+✔ fire orb opens one visible-flight recast, detonates without jumping and preserves cooldown (1.067ms)
+✔ expired recast cannot bypass cooldown (1.9863ms)
+✔ eruption damages terrain, bridge rebuild restores collision (2.875ms)
+✔ summon creates one fox; command reuses the same fox and consumes recast (0.9469ms)
+✔ fox hits restore health and healing cannot exceed maximum (2.66ms)
+✔ root spell follows its platform and binds a nearby target (0.6868ms)
+✔ ancient tree grows two standable platforms, heals and expires cleanly (4.7903ms)
+✔ dash has brief invulnerability; subsequent hits interrupt casting (0.4301ms)
+✔ spring launches player and mirror orientation can be changed (0.1896ms)
+✔ each hero has an independently addressable pool, including already owned previews (1.3883ms)
+✔ changing targeted pools and saving preserves separate pity and never spends gold (0.6793ms)
+✔ targeted ten-draw stops at guaranteed hero and retains unused tickets and all other pools (0.6699ms)
+✔ static portraits keep complete source rectangles inside the viewport with head clearance (0.1683ms)
+✔ six independent scene assets preserve the delivered original byte hashes (10.0952ms)
+✔ atlas overlap masks retain hair tips and exclude adjacent heroes boots (0.1925ms)
+✔ the cursor selects the next standing deck below, never the nearest deck above (0.8433ms)
+✔ meteor can independently target either gap in a three-level arena (4.2064ms)
+✔ eruption and ancient tree use the same below-cursor grounding at every layer (3.6095ms)
+✔ target lock survives aim movement and follows the chosen moving platform (0.5818ms)
+✔ an ancient tree remains attached to its support and disperses when that support breaks (0.3859ms)
+ℹ tests 321
+ℹ suites 0
+ℹ pass 306
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6480.2235
+
+✖ failing tests:
+
+test at tests\campaign-artifacts.test.mjs:11:1
+✖ mirror raises health, sword raises attack, only equipped artifact applies and upgrades survive save (1.8984ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  161 !== 158
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign-artifacts.test.mjs:11:276)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 161,
+    expected: 158,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign10-growth.test.mjs:10:1
+✖ existing hero XP gains stronger linear health and mana without changing level-one bases or attack growth (2.1823ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  138 !== 120
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign10-growth.test.mjs:14:39)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 138,
+    expected: 120,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign10-growth.test.mjs:42:1
+✖ level-up adds only the increased capacity difference instead of refilling all lost health and mana (0.2858ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  145 !== 126
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign10-growth.test.mjs:45:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 145,
+    expected: 126,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign3.test.mjs:20:1
+✖ only solo has reduced base damage, mana, initial F only and changed skill cooldowns (2.0339ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  86 !== 88
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign3.test.mjs:20:421)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 86,
+    expected: 88,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\campaign8-balance.test.mjs:17:1
+✖ first boss deals materially more damage than first minions, final coefficients rise, and baselines remain solo-only (4.8372ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(s.bossDamageFactor>s.damageFactor*1.35)
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign8-balance.test.mjs:17:187)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\campaign8-balance.test.mjs:18:1
+✖ initial F no longer erases a first-wave minion and generic basics do not borrow another cast skill modifier (0.6511ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  14 !== 12
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign8-balance.test.mjs:18:274)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 14,
+    expected: 12,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\combat-refinement.test.mjs:17:1
+✖ lightning basic is a forward melee punch in either direction, with no projectile (4.8954ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/combat-refinement.test.mjs:18:178)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\combat-refinement.test.mjs:20:1
+✖ lightning fists cannot hit distant targets, targets behind, or targets through walls (0.6777ms)
+  AssertionError [ERR_ASSERTION]: distant
+
+  225 !== 240
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/combat-refinement.test.mjs:21:261)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 225,
+    expected: 240,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\combat9.test.mjs:8:1
+✖ both melee ranges increase exactly 25 percent, in both facings, without becoming ranged (4.8099ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/combat9.test.mjs:9:296)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\http-server.test.mjs:17:1
+✖ standalone serves extensionless pages/assets and health without exposing build directories (18.4561ms)
+  [TypeError [Error]: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:13080
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 13080
+    }
+  }
+
+test at tests\http-server.test.mjs:26:1
+✖ HTTPS reverse proxy origin permits two room clients while retaining cross-site protection (4.4088ms)
+  [TypeError [Error]: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:13082
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 13082
+    }
+  }
+
+test at tests\http-server.test.mjs:37:1
+✖ standalone rooms survive database/service restart with original member token (19.4556ms)
+  [TypeError [Error]: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:13084
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 13084
+    }
+  }
+
+test at tests\lan-client.test.mjs:21:1
+✖ two desktop runtimes use local assets and one LAN host for room readiness/selection (15.3245ms)
+  [TypeError [Error]: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:13086
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 13086
+    }
+  }
+
+test at tests\lan-client.test.mjs:38:1
+✖ client rejects incompatible hosts without making an unrelated connection (3.1637ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /版本不一致/. Input:
+
+  'Error: 连接不到房主。请核对地址、同一网络和房主的专用网络防火墙提示。'
+
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/lan-client.test.mjs:40:47)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: 连接不到房主。请核对地址、同一网络和房主的专用网络防火墙提示。
+        at LanRuntime.connect (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/desktop/lan-runtime.mjs:71:139)
+        at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/lan-client.test.mjs:40:47)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: /版本不一致/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\melee-overlap.test.mjs:11:1
+✖ body overlap still respects an actual intervening solid wall (1.1485ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  225 !== 240
+
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/melee-overlap.test.mjs:11:317)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 225,
+    expected: 240,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

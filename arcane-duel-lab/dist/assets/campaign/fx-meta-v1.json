@@ -233,7 +233,8 @@
         "bottomNormalized": 0.9776357827476039,
         "centerX": 161.5,
         "bottom": 306,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 262
       },
       {
         "index": 9,
@@ -258,7 +259,8 @@
         "bottomNormalized": 0.9744408945686901,
         "centerX": 159.0,
         "bottom": 305,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 266
       },
       {
         "index": 10,
@@ -283,7 +285,8 @@
         "bottomNormalized": 0.9808306709265175,
         "centerX": 157.5,
         "bottom": 307,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 264
       },
       {
         "index": 11,
@@ -308,7 +311,8 @@
         "bottomNormalized": 0.987220447284345,
         "centerX": 156.0,
         "bottom": 309,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 267
       },
       {
         "index": 12,
@@ -333,7 +337,8 @@
         "bottomNormalized": 0.8375796178343949,
         "centerX": 160.5,
         "bottom": 263,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 216
       },
       {
         "index": 13,
@@ -358,7 +363,8 @@
         "bottomNormalized": 0.8280254777070064,
         "centerX": 157.5,
         "bottom": 260,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 215
       },
       {
         "index": 14,
@@ -383,7 +389,8 @@
         "bottomNormalized": 0.8343949044585988,
         "centerX": 156.0,
         "bottom": 262,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 216
       },
       {
         "index": 15,
@@ -408,7 +415,8 @@
         "bottomNormalized": 0.8312101910828026,
         "centerX": 154.5,
         "bottom": 261,
-        "touchesCellEdge": false
+        "touchesCellEdge": false,
+        "groundContactY": 218
       }
     ],
     "alphaExtrema": [
@@ -420,7 +428,8 @@
       0,
       1,
       0
-    ]
+    ],
+    "groundContactNotes": "T34 perspective lava plane, frame-local original source Y; alpha bottom and PNG retained."
   },
   "ice": {
     "file": "ice-v1.png",

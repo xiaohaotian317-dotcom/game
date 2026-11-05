@@ -1,3 +1,5 @@
+import {DailyQuestDialog} from './daily-quests-ui.mjs';
+import {dailyArtStyle} from './daily-ui-art.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
@@ -72,3 +74,5 @@ async function loadLobbyArt(){
 
 
 
+
+const daily=new DailyQuestDialog({getProfile:()=>loadSolo(storage),onSave:next=>{if(!saveSolo(storage,next))return false;Object.assign(solo,next);profile.coins=next.coins;renderHeader();return true;}});$('#daily-open .daily-entry-art').style.cssText=dailyArtStyle('entry');$('#daily-open').addEventListener('click',()=>daily.open());

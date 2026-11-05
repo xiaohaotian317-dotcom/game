@@ -7,22 +7,22 @@ import {soloPay,soloSpec,syncSoloStats} from '../dist/src/campaign-growth-runtim
 import {createWorld,STEP,HEROES} from '../dist/src/simulation.mjs';
 const totalXP=level=>Array.from({length:level-1},(_,i)=>xpNeeded(i+1)).reduce((a,b)=>a+b,0);
 
-test('existing hero XP gains stronger linear health and mana without changing level-one bases or attack growth',()=>{
+test('existing hero XP gains stronger linear health and mana with a solo-only fifteen percent health and twenty percent attack uplift',()=>{
  const p=freshSolo();p.owned=[...SOLO_HEROES];
  for(const hero of SOLO_HEROES){const [hp,mp]=BASE_STATS[hero];
   for(const level of [1,2,5,10,20]){p.heroes[hero].exp=totalXP(level);const s=heroStats(normalizeSolo(p),hero);
-   assert.equal(s.level,level);assert.equal(s.maxHp,Math.round(hp*(1+.05*(level-1))));assert.equal(s.maxMp,Math.round(mp*(1+.04*(level-1))));assert.equal(s.attack,Math.round(10*(1+.02*(level-1))));
+   assert.equal(s.level,level);assert.equal(s.maxHp,Math.round(hp*(1+.05*(level-1))*1.15));assert.equal(s.maxMp,Math.round(mp*(1+.04*(level-1))));assert.equal(s.attack,Math.round(10*(1+.02*(level-1))*1.2));
   }
  }
  assert.equal(createWorld('fire').player.maxHp,180);
 });
 
-test('all 36 solo skills pay ten percent more than campaign10 mana, reject insufficient mana atomically and keep recasts free',()=>{
+test('all 36 solo skills pay ten percent less than campaign12 mana, reject insufficient mana atomically and keep recasts free',()=>{
  const p=freshSolo();p.owned=[...SOLO_HEROES];
  for(const hero of SOLO_HEROES)for(const skill of SOLO_SKILLS[hero]){
   p.heroes[hero].skills[skill.id]=0;p.heroes[hero].slots[skill.key]=skill.id;
   const w=createCampaign(hero,1,{profile:p}),spec=soloSpec(w,skill.key,HEROES[hero].skills[skill.key]);
-  const cost=[9.9,16.5,31.35][skill.row];assert.equal(skill.mana,cost);assert.equal(spec.soloSkill.id,skill.id);
+  const cost=[8.91,14.85,28.215][skill.row];assert.equal(skill.mana,cost);assert.equal(spec.soloSkill.id,skill.id);
   w.player.mp=cost-.01;assert.equal(soloPay(w,skill.key,false,spec),false);assert.equal(w.player.mp,cost-.01);
   w.player.mp=cost;assert.equal(soloPay(w,skill.key,false,spec),true);assert.equal(w.player.mp,0);
   assert.equal(soloPay(w,skill.key,true,spec),true);assert.equal(w.player.mp,0);
@@ -42,5 +42,5 @@ test('learned mana passive restores its increased real amount while level zero a
 test('level-up adds only the increased capacity difference instead of refilling all lost health and mana',()=>{
  const p=freshSolo(),w=createCampaign('fire',1,{profile:p});w.player.hp=50;w.player.mp=10;
  grantXP(p,'fire',80);syncSoloStats(w);
- assert.equal(w.player.maxHp,126);assert.equal(w.player.maxMp,68);assert.equal(w.player.hp,56);assert.equal(w.player.mp,13);
+ assert.equal(w.player.maxHp,145);assert.equal(w.player.maxMp,68);assert.equal(w.player.hp,57);assert.equal(w.player.mp,13);
 });

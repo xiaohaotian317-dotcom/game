@@ -1,0 +1,35 @@
+{
+  "task": "T34",
+  "agent": "daily_pet_ui_art",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "intent": "generate",
+  "referenceUse": "Existing project items/ui/pause sprites were visually inspected for style; no source PNG was edited or repainted.",
+  "references": [
+    "arcane-duel-lab/dist/assets/campaign-growth/items-v1.png",
+    "arcane-duel-lab/dist/assets/campaign-growth/ui-icons-v1.png",
+    "arcane-duel-lab/dist/assets/pause/pause-controls-v1.png"
+  ],
+  "images": [
+    {
+      "file": "daily-ui-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: production 2D hand-painted dark fantasy game UI sprite atlas, not a UI screenshot. Create a LANDSCAPE 1536x1024 RGBA TRANSPARENT PNG. Only the following NINE separate assets on an otherwise genuinely transparent canvas, generously spaced, no labels, no letters, no numbers, no watermark, no background or checkerboard baked in. Match an elegant gothic moonlit ruin game: worn antique gold and dark blue iron, acanthus filigree, tiny turquoise gems, carved rune details, refined painted highlights and realistic metal texture. Top row, x48..1488 y24..170: ONE very long ornate horizontal progression rail, thin and elegant, with golden sculpted end caps; long central rectangular inset is an EMPTY TRANSPARENT HOLE for code-rendered progress fill. No chest attached to the rail. Second row, x48..1228 y216..370: ONE long task-row ornamental frame, refined engraved dark steel and gold floral corners, very narrow elegant edges, the large inside is EMPTY TRANSPARENT for live text; no words. In the second row at x1280..1480 y198..390: ONE isolated circular daily quest entry badge depicting an aged rolled parchment and small radiant gold compass star, no text. Third row y430..670: exactly THREE closed treasure chests, centered at x256, x768, x1280, each kept inside a 340x240 area, same 3/4 front-view angle. Left chest: small dark carved wooden chest with gold bands and turquoise lock gem. Middle: medium blue-black iron chest with more elaborate gold filigree. Right: grand dark navy royal chest with wing-shaped gold fittings and a blue gem, visibly the richest. Fourth row y716..1000: exactly THREE OPEN treasure chests corresponding one-to-one to the closed chests above, same shape, same angle and same apparent scale, lid open and a tasteful cache of old thick gold coins visible, restrained golden light from inside, no giant glow clouds. Chest silhouettes clear at small UI sizes, no square card borders or floors behind icons. All outer empty space AND the rail/task window interiors must be truly transparent alpha. Do not draw a whole menu, do not connect these sprites, do not duplicate icons, keep every asset entirely within its allocated region.",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a6e7-3cd9-78c3-a527-673001c7ed28/exec-dbd356a3-0d9d-4568-8af9-e06a4baa5056.png",
+      "status": "superseded"
+    },
+    {
+      "file": "pet-xp-potions-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: THREE production inventory item sprites for a hand-painted dark fantasy action game, an isolated transparent sprite atlas, LANDSCAPE 1536x1024 RGBA. Genuinely TRANSPARENT background with three entirely separate potion bottles, centered left x256, middle x768, right x1280, occupying y150..900; generous transparent gutters. No text, no letters, no numbers, no watermark, no panel borders, no floors, no card backplates, no extra objects. The items are SMALL, MEDIUM and LARGE SPIRIT-BEAST EXPERIENCE ELIXIRS, recognizable as three sizes of the same item family. Elegant dark gothic fantasy painted style with warm antique gold fittings, clear glossy green-teal glass, jade and emerald glowing liquid with small star-like magical motes trapped INSIDE the glass. LEFT small elixir: simple pear-shaped little vial, cork or dark gold cap, one small gold clawprint seal, few clear bold details so the silhouette reads at 48 pixels. MIDDLE medium elixir: larger rounded flask, a single elegant antique-gold antler-shaped cage and engraved claw medallion, jade stopper, moderately more valuable. RIGHT large elixir: tall majestic amphora-like crystal flask, finely carved gold guardian-beast horn collar and tiny blue-green crystal cap, exquisite but readable, clearly most valuable. These are mysterious powerful spirit-beast elixirs, not cute animal characters; no cartoon ears or faces, no purple liquid (purple belongs to human experience potions), no red or blue healing/mana bottle look. Each bottle complete with ample margin, no cropping, same three-quarter view, consistent soft upper-left highlights. Small controlled magical glow only close to bottle; all surrounding empty space must have alpha zero.",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a6e7-3cd9-78c3-a527-673001c7ed28/exec-36d45564-7603-419a-a966-ce6477db0c60.png",
+      "status": "selected"
+    },
+    {
+      "file": "daily-ui-v2.png",
+      "status": "selected",
+      "intent": "precise-object-edit",
+      "referencePath": "美术概念\\协作交付\\T34\\daily_pet_ui_art\\daily-ui-v1.png",
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1a6e7-3cd9-78c3-a527-673001c7ed28/exec-59409a94-310b-4db0-babf-264a3e231d93.png",
+      "prompt": "Edit this existing game sprite atlas, precise-object-edit. PRESERVE every existing chest, badge, ornamental metal border, all positions, dimensions, colors, textures and the 1536x1024 layout exactly. Change ONLY the interiors of the two empty frames at top. The upper long progress rail interior (approximately x190 to1340, y63 to99) must become a completely empty TRANSPARENT alpha-zero hole, including removing the dark brown gradient/metal well shading currently inside. Keep its narrow gold inner rim untouched. The second long task row frame interior (approximately x170 to1100,y232 to326) must likewise become completely empty TRANSPARENT, remove any interior brown shading or haze, preserve only the ornate frame edges. All existing exterior empty canvas remains genuinely transparent, not a baked brown background or checkerboard. Do not change anything else. Do not move, resize, redraw or add any sprite. No text, no numerals, no watermark. Output RGBA transparent PNG, same image size."
+    }
+  ]
+}

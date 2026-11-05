@@ -1,0 +1,147 @@
+{
+  "file": "hybrid-projectiles-v2.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "d98c9229aed53eb296be93421b33f32792d4f01b4e791d47f7d7696d28c41a16",
+  "alphaExtrema": [
+    0,
+    254
+  ],
+  "zeroAlphaFraction": 0.6057014465332031,
+  "lowAlpha32Fraction": 0.8588485717773438,
+  "frames": [
+    {
+      "index": 0,
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.265,
+      "contentInsetAlpha32": [
+        71,
+        134,
+        78,
+        134
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 1,
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "edgeAlphaMax": 2,
+      "edgeAlphaMean": 0.249,
+      "contentInsetAlpha32": [
+        29,
+        147,
+        32,
+        159
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 2,
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.202,
+      "contentInsetAlpha32": [
+        32,
+        109,
+        21,
+        148
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 3,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.072,
+      "contentInsetAlpha32": [
+        35,
+        95,
+        44,
+        107
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 4,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.2,
+      "contentInsetAlpha32": [
+        42,
+        135,
+        60,
+        156
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 5,
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.252,
+      "contentInsetAlpha32": [
+        21,
+        140,
+        39,
+        156
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 6,
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.217,
+      "contentInsetAlpha32": [
+        19,
+        128,
+        41,
+        158
+      ],
+      "contentIsolated": true
+    },
+    {
+      "index": 7,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "edgeAlphaMax": 1,
+      "edgeAlphaMean": 0.147,
+      "contentInsetAlpha32": [
+        18,
+        109,
+        41,
+        130
+      ],
+      "contentIsolated": true
+    }
+  ],
+  "allContentIsolatedAlpha32": true,
+  "method": "Pillow read-only channel, bounds, and edge analysis; original PNG bytes unchanged."
+}

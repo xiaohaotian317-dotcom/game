@@ -1,0 +1,138 @@
+{
+  "task": "T34",
+  "method": "Read-only Pillow/numpy alpha and transparent-component analysis plus visual review of both complete originals",
+  "units": {
+    "B01": {
+      "hp": {
+        "alphaMean": 1.259,
+        "alphaMax": 4,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 1.055,
+        "alphaMax": 3,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B02": {
+      "hp": {
+        "alphaMean": 1.516,
+        "alphaMax": 6,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 1.64,
+        "alphaMax": 6,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B03": {
+      "hp": {
+        "alphaMean": 1.428,
+        "alphaMax": 234,
+        "alphaGreaterThan48Ratio": 0.001329
+      },
+      "name": {
+        "alphaMean": 1.249,
+        "alphaMax": 7,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B04": {
+      "hp": {
+        "alphaMean": 2.265,
+        "alphaMax": 239,
+        "alphaGreaterThan48Ratio": 0.001068
+      },
+      "name": {
+        "alphaMean": 1.331,
+        "alphaMax": 9,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B05": {
+      "hp": {
+        "alphaMean": 2.59,
+        "alphaMax": 204,
+        "alphaGreaterThan48Ratio": 0.000489
+      },
+      "name": {
+        "alphaMean": 1.263,
+        "alphaMax": 7,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B06": {
+      "hp": {
+        "alphaMean": 1.985,
+        "alphaMax": 37,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 1.197,
+        "alphaMax": 4,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B07": {
+      "hp": {
+        "alphaMean": 0.283,
+        "alphaMax": 2,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 1.637,
+        "alphaMax": 6,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B08": {
+      "hp": {
+        "alphaMean": 0.76,
+        "alphaMax": 73,
+        "alphaGreaterThan48Ratio": 0.000152
+      },
+      "name": {
+        "alphaMean": 1.221,
+        "alphaMax": 5,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B09": {
+      "hp": {
+        "alphaMean": 0.504,
+        "alphaMax": 3,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 0.737,
+        "alphaMax": 6,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B10": {
+      "hp": {
+        "alphaMean": 0.829,
+        "alphaMax": 5,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 0.777,
+        "alphaMax": 2,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    },
+    "B11": {
+      "hp": {
+        "alphaMean": 0.239,
+        "alphaMax": 1,
+        "alphaGreaterThan48Ratio": 0.0
+      },
+      "name": {
+        "alphaMean": 0.669,
+        "alphaMax": 4,
+        "alphaGreaterThan48Ratio": 0.0
+      }
+    }
+  }
+}

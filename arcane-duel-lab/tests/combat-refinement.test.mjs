@@ -14,11 +14,11 @@ test('F is the only keyboard binding for slot one; G only interacts, and recast 
   assert.equal(skillForCode('KeyF'),'q');assert.equal(skillForCode('KeyQ'),null);assert.equal(skillForCode('KeyG'),null);assert.equal(INTERACT_CODE,'KeyG');assert.equal(KEY_LABELS.q,'F');
   const app=readFileSync(new URL('../dist/src/app.mjs',import.meta.url),'utf8');assert.ok(app.includes('skillForCode(e.code)'));assert.ok(app.includes('keyLabels[rc.key]'));assert.ok(!app.includes("e.code==='KeyQ'"));
 });
-test('lightning basic is a forward melee punch in either direction, with no projectile',()=>{
-  for(const face of [-1,1]){const w=flat('lightning');w.targets[0].x=200+face*75;requestCast(w,'attack',200+face*500,650);advance(w,.3);assert.equal(w.targets[0].hp,220);assert.equal(w.projectiles.length,0);assert.ok(w.effects.some(e=>e.kind==='thunderPunch'&&e.face===face));}
+test('lightning basic retains forward melee in either direction and adds a travelling fist',()=>{
+  for(const face of [-1,1]){const w=flat('lightning');w.targets[0].x=200+face*75;requestCast(w,'attack',200+face*500,650);advance(w,.3);assert.equal(w.targets[0].hp,220);assert.ok(w.projectiles.some(s=>s.kind==='thunderFistBolt'));assert.ok(w.effects.some(e=>e.kind==='thunderPunch'&&e.face===face));}
 });
-test('lightning fists cannot hit distant targets, targets behind, or targets through walls',()=>{
-  for(const scenario of ['distant','behind','wall']){const w=flat('lightning');w.targets[0].x=scenario==='distant'?450:scenario==='behind'?130:275;if(scenario==='wall')w.obstacles=[{x:240,y:540,w:10,h:164}];requestCast(w,'attack',500,650);advance(w,.5);assert.equal(w.targets[0].hp,240,scenario);assert.equal(w.projectiles.length,0);}
+test('lightning ranged extension can hit distant targets while rear targets and wall cover remain safe',()=>{
+  for(const scenario of ['distant','behind','wall']){const w=flat('lightning');w.targets[0].x=scenario==='distant'?450:scenario==='behind'?130:275;if(scenario==='wall')w.obstacles=[{x:240,y:540,w:10,h:164}];requestCast(w,'attack',500,650);advance(w,.5);assert.equal(w.targets[0].hp,scenario==='distant'?225:240,scenario);if(scenario!=='behind')assert.equal(w.projectiles.length,0);}
 });
 test('a charged melee fist consumes lightning charge only on a real hit',()=>{
   const miss=flat('lightning');miss.player.charge=100;miss.targets=[];requestCast(miss,'attack',500,650);advance(miss,.4);assert.equal(miss.player.charge,100);

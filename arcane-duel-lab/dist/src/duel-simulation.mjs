@@ -38,7 +38,7 @@ export function restoreDuel(snapshot){
   for(let side=0;side<2;side++){Object.assign(match.worlds[side],snapshot.worlds[side]);Object.assign(match.worlds[side],snapshot.shared);}
   return wireDuel(match);
 }
-export function safeInput(value){const input={move:value?.move>0?1:value?.move<0?-1:0,attack:value?.attack===true,down:value?.down===true,drop:value?.drop===true,aim:{x:Math.max(0,Math.min(2304,Number(value?.aim?.x)||0)),y:Math.max(0,Math.min(800,Number(value?.aim?.y)||0))}};if(value?.view&&['x','y','width','height'].every(k=>Number.isFinite(value.view[k])))input.view={x:Math.max(0,Math.min(2304,value.view.x)),y:Math.max(0,Math.min(800,value.view.y)),width:Math.max(400,Math.min(1280,value.view.width)),height:Math.max(300,Math.min(800,value.view.height))};return input;}
+export function safeInput(value){const input={move:value?.move>0?1:value?.move<0?-1:0,attack:value?.attack===true,down:value?.down===true,drop:value?.drop===true,aim:{x:Math.max(0,Math.min(2304,Number(value?.aim?.x)||0)),y:Math.max(0,Math.min(800,Number(value?.aim?.y)||0))}};if(value?.view&&['x','y','width','height'].every(k=>Number.isFinite(value.view[k])))input.view={x:Math.max(0,Math.min(2304,value.view.x)),y:Math.max(-100,Math.min(800,value.view.y)),width:Math.max(400,Math.min(1440,value.view.width)),height:Math.max(300,Math.min(900,value.view.height))};return input;}
 export class InputInbox{
   constructor(){this.seq=-1;this.lastAction=0;this.input=safeInput({});this.actions=[];this.receivedAt=0;}
   receive(packet,time){if(!packet||!Number.isSafeInteger(packet.seq)||packet.seq<0)return;this.receivedAt=time;if(packet.seq>=this.seq){this.seq=packet.seq;this.input=safeInput(packet.input);}

@@ -1,3 +1,4 @@
+import {reconcileRenderOffset} from './duel-view.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {HEROES,step,STEP} from './simulation.mjs?v=20261030-duel12';
 import {createDuel,restoreDuel,safeInput} from './duel-simulation.mjs?v=20261030-duel12';
@@ -67,9 +68,10 @@ function acceptSnapshot(snapshot,fromWorker=false){
   if(!room||snapshot.epoch!==room.epoch||snapshot.roundSerial!==room.roundSerial||snapshot.seq<lastSeq)return;
   lastSeq=snapshot.seq;const restored=restoreDuel(snapshot);if(!restored)return;snapshotAt=performance.now();if(match?.worlds[room.seat]?.camera)restored.worlds[room.seat].camera=match.worlds[room.seat].camera;
   if(!fromWorker&&room.seat===1){
+    const displayed=prediction?{x:prediction.player.x+(prediction.renderOffset?.x||0),y:prediction.player.y+(prediction.renderOffset?.y||0)}:match?.worlds[1].player;
     prediction=restoreDuel(snapshot).worlds[1];prediction.targets=[];prediction.duelSecondary=true;prediction.duelHitSummon=null;
     const ack=snapshot.ack?.[1]??-1;history=history.filter(f=>f.seq>ack).slice(-40);for(const frame of history)step(prediction,STEP,frame.input);
-    const current=match?.worlds[1].player;if(current){const error=Math.hypot(current.x-prediction.player.x,current.y-prediction.player.y);if(error<90){prediction.renderOffset={x:current.x-prediction.player.x,y:current.y-prediction.player.y};}}
+    prediction.renderOffset=reconcileRenderOffset(displayed,prediction.player);
   }
   match=restored;pending=pending.filter(a=>a.id>(snapshot.actionAck?.[room.seat]||0));
   for(const event of snapshot.events||[])if(event.id>lastEvent){lastEvent=event.id;sound.event(event);}

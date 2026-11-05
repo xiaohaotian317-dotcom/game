@@ -28,7 +28,7 @@ export function waveComposition(stage,wave=1){const perSide=Math.min(10,stage.pe
 
 // Solo difficulty revision: final incoming coefficients, not multipliers on older tuning.
 const minionDamage=[.8,.9,1.02,1.15,1.29,1.44,1.6,1.78,1.98,2.2,2.44],bossDamage=[1.15,1.3,1.47,1.66,1.88,2.12,2.4,2.71,3.05,3.43,3.85];
-for(const [i,s]of STAGES.entries()){s.damageFactor=minionDamage[i];s.bossDamageFactor=bossDamage[i];s.minionHp=Math.round(s.minionHp*1.25);s.bossHp=Math.round(s.bossHp*1.12);s.attackBudget=Math.min(6,3+Math.floor(i/3));}
+for(const [i,s]of STAGES.entries()){s.damageFactor=minionDamage[i];s.bossDamageFactor=bossDamage[i]*.85;s.minionHp=Math.round(s.minionHp*1.25);s.bossHp=Math.round(s.bossHp*1.12);s.attackBudget=Math.min(6,3+Math.floor(i/3));}
 
 // Gold scales with difficult stages; replaying cleared stages is an intended way to grow.
-for(const [i,s]of STAGES.entries())s.killCoins=[5,6,7,9,11,13,16,19,23,28,34][i];
+for(const [i,s]of STAGES.entries())s.killCoins=[6,8,9,11,14,16,20,24,29,35,43][i];

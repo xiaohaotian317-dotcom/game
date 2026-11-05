@@ -11,14 +11,14 @@ test('all professions start with integer maximum health increased by 50 percent'
 test('full viewport camera preserves aspect and pointer coordinates at every screen shape',()=>{
   for(const [width,height] of [[1280,720],[1920,1080],[2560,1080],[390,844]]){
     const w=createDuel(['fire','nature']).worlds[0];fitDuelCamera(w,width,height);updateCamera(w,1/60);const v=cameraView(w);
-    assert.ok(Math.abs(width/v.width-height/v.height)<1e-10);assert.ok(v.width<=1280);assert.ok(v.height<=w.height+1e-8);
+    assert.ok(Math.abs(width/v.width-height/v.height)<1e-10);assert.ok(v.width<=1440);assert.ok(v.height<=w.height*1.12+1e-8);
     assert.deepEqual(worldPoint(w,.5,.5),{x:v.x+v.width/2,y:v.y+v.height/2});
   }
 });
 test('camera follows its own player and clamps at both map edges independently of the rival',()=>{
   const m=createDuel(['lightning','shadow']),w=m.worlds[1];fitDuelCamera(w,1280,720);updateCamera(w,.016);assert.ok(w.camera.x>900);
   const old=w.camera.x;w.player.x=1000;updateCamera(w,.1);assert.ok(w.camera.x<old);m.worlds[0].player.x=50;const before=w.camera.x;updateCamera(w,0);assert.equal(w.camera.x,before);
-  w.player.x=0;updateCamera(w,20);assert.ok(w.camera.x<.001);w.player.x=w.width;updateCamera(w,20);assert.ok(Math.abs(w.camera.x-(w.width-cameraView(w).width))<.001);
+  w.player.x=0;for(let i=0;i<360;i++)updateCamera(w,1/60);assert.ok(w.camera.x<.001);w.player.x=w.width;for(let i=0;i<360;i++)updateCamera(w,1/60);assert.ok(Math.abs(w.camera.x-(w.width-cameraView(w).width))<.001);
 });
 test('opponent direction appears only out of view and stays clear of HUD and hotbar on all edges',()=>{
   const view={x:600,y:100,width:900,height:500};assert.equal(opponentEdge(view,{x:1000,y:300,hp:100},1440,800),null);

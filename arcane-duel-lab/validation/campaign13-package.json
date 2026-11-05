@@ -1,0 +1,14 @@
+{
+  "version": "campaign13",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign13",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign13\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign13.zip",
+  "files": 444,
+  "runtimeFilesMatched": 361,
+  "bytes": 534436663,
+  "sha256": "e771cf7afd7d3e302b5686752d54ca299dc52ee56aa0291d61512d85f46e76ed",
+  "originalSitesUnchanged": true,
+  "scope": "Daily quests with original chest art, pet XP potions, themed boss HUDs, grounded enemy FX, blink protection, faster rewards, solo balance uplift, two hybrid basic attacks and smoother wider PvP camera; original saves/Sites and motion rollback preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

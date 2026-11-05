@@ -9,12 +9,12 @@ export class ScenePainter{
     c.drawImage(this.assets[scene+'Props'],b.x,b.y,b.w,b.h,-width*ax,-h*ay,width,h);c.restore();
     return {width,height:h};
   }
-  background(w){
-    const c=this.ctx,im=this.assets[w.sceneId+'Field'],o=w.sceneOffset||0;
-    c.drawImage(im,o,0,1440,w.height);
+  background(w,view=null){
+    const c=this.ctx,im=this.assets[w.sceneId+'Field'],o=w.sceneOffset||0,top=Math.min(0,view?.y||0),height=Math.max(w.height,view?.height||0);
+    c.drawImage(im,o,top,1440,height);
     if(o){
-      c.save();c.translate(o,0);c.scale(-1,1);c.drawImage(im,0,0,im.width*o/1440,im.height,0,0,o,w.height);c.restore();
-      c.save();c.translate(w.width,0);c.scale(-1,1);c.drawImage(im,im.width*(1440-o)/1440,0,im.width*o/1440,im.height,0,0,o,w.height);c.restore();
+      c.save();c.translate(o,0);c.scale(-1,1);c.drawImage(im,0,0,im.width*o/1440,im.height,0,top,o,height);c.restore();
+      c.save();c.translate(w.width,0);c.scale(-1,1);c.drawImage(im,im.width*(1440-o)/1440,0,im.width*o/1440,im.height,0,top,o,height);c.restore();
     }
   }
   cover(w,b){

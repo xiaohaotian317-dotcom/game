@@ -4,7 +4,8 @@ export const MAP_SYSTEMS=[
  {key:'skills',name:'技能',icon:2},
  {key:'pet',name:'灵宠',icon:4},
  {key:'forge',name:'锻造炉',icon:5},
- {key:'artifact',name:'法器',icon:3}
+ {key:'artifact',name:'法器',icon:3},
+ {key:'daily',name:'每日任务',icon:6}
 ];
 
 // The map drawer opens the same archive panels as the battle toolbar.

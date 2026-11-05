@@ -1,8 +1,9 @@
 import {FROST_SNARE_DAMAGE,FROST_ECHO_DAMAGE,GROUND_EFFECT_DELAYS} from './match-rules.mjs?v=20261030-duel12';
 import {EXTRA_HEROES} from './hero-roster.mjs?v=20261030-duel12';
 import {groundTarget,resolveGroundTarget,lightningLandingTarget} from './targeting.mjs?v=20261030-duel12';
-import {segmentBox,clearLine,forwardMeleeContact} from './collision.mjs?v=20261030-duel12';
+import {segmentBox,clearLine,forwardMeleeContact,firstTerrainHit} from './collision.mjs?v=20261030-duel12';
 import {targetPose} from './character-rig.mjs?v=20261030-duel12';
+import {blinkProtected,protectBlink} from './blink-guard.mjs';
 import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
@@ -14,9 +15,9 @@ function recast(w,key,data={}){const r=EXTRA_HEROES[w.hero].recast;w.player.reca
 function point(w,c){const x=clamp(c.x,w.player.x-520,w.player.x+520);return resolveGroundTarget(w,c.target&&Math.abs(c.target.x-w.player.x)<=520?c.target:null)||groundTarget(w,x,c.y);}
 function field(w,kind,t,data={}){const f={id:++w.serial,kind,x:t.x,y:t.y,anchor:t,age:0,until:w.time+(data.duration||2.5),nextTick:w.time+(data.delay||0),...data};w.fields.push(f);return f;}
 function burst(w,c,data){w.player.burst={id:++w.serial,age:0,until:w.time+data.duration,hitIds:[],source:c.key,variant:c.variant,warningLead:c.releaseAt,...data};}
-function teleport(w,a,x,y){a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if(a===w.player)a.invuln=Math.max(a.invuln,.15);}
+function teleport(w,a,x,y){const moved=Math.hypot(a.x-x,a.y-y)>1;a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if((a===w.player||a.duelActor)&&moved)protectBlink(w,a);}
 function frostPulse(w,t,amount,radius,duration,api,castId,echo=false){
-  for(const target of w.targets)if(target.hp>0&&Math.hypot(target.x-t.x,target.y-t.y)<radius){api.damage(w,target,amount,{school:'frost',castId});target.frostSnareUntil=Math.max(target.frostSnareUntil||0,w.time+duration);}
+  for(const target of w.targets)if(target.hp>0&&!blinkProtected(w,target)&&Math.hypot(target.x-t.x,target.y-t.y)<radius){api.damage(w,target,amount,{school:'frost',castId});target.frostSnareUntil=Math.max(target.frostSnareUntil||0,w.time+duration);}
   api.effect(w,'frostSnare',{x:t.x,y:t.y,r:radius,echo,duration:1.05});
 }
 export function releaseExtra(w,c,api){
@@ -24,10 +25,13 @@ export function releaseExtra(w,c,api){
   const p=w.player,h=w.hero,s=api.castMuzzle(w),dx=w.aim.x-s.x,dy=w.aim.y-s.y,length=Math.hypot(dx,dy)||1,d={x:dx/length,y:dy/length};
   if(c.key==='attack'){
     if(h==='shadow'||h==='lightning'){
-      const thunder=h==='lightning',reach=thunder?125:137.5;
+      const thunder=h==='lightning',reach=thunder?150:165;
       const source=thunder?s:{x:p.x+p.face*26,y:p.y-57};
-      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,reach,rangeScale:1.25,duration:thunder?.34:.35});
-      let landed=false;for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach))landed=api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)})||landed;
+      api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,reach,rangeScale:1.5,duration:thunder?.34:.35});
+      const struck=[];let landed=false;for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach)){struck.push(t.id);landed=api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)})||landed;}
+      // One swing has a close hit and a travelling extension, never two hits on one target.
+      if(!firstTerrainHit(w,p.x,p.y-57,source.x,source.y,3))api.projectile(w,thunder?'thunderFistBolt':'shadowCrescent',source.x,source.y,d.x,d.y,thunder?920:840,thunder?15:14,{owner:'player',school:h,basic:true,hybridBasic:true,excludeIds:struck,life:thunder?.78:.88,r:thunder?10:9});
+      api.effect(w,'hybridLaunch',{hero:h,...source,angle:Math.atan2(d.y,d.x),duration:.22});
       if(thunder&&landed)w.hitstop=Math.max(w.hitstop,.04);
       api.damageBridge(w,p.x+p.face*68.75,p.y-25,75,thunder?20:18);
     }else{
@@ -104,7 +108,7 @@ export function extraBefore(w,dt,api){
   for(const f of w.fields){
     f.age+=dt;const supported=w.platforms.some(b=>b.id===f.anchor?.platformId&&b.active),anchor=supported?resolveGroundTarget(w,f.anchor):null;if(anchor){f.x=anchor.x;f.y=anchor.y;}else f.until=w.time;
     if(w.time>=f.until)continue;
-    const targets=w.targets.filter(t=>t.hp>0&&Math.hypot(t.x-f.x,t.y-45-(f.y-45))<f.r);
+    const targets=w.targets.filter(t=>t.hp>0&&!blinkProtected(w,t)&&Math.hypot(t.x-f.x,t.y-45-(f.y-45))<f.r);
     if(f.kind==='gravityWell'||(f.kind==='starCollapse'&&f.age<.55))for(const t of targets)t.fieldForce+=clamp((f.x-t.x)*9,-1600,1600);
     if(f.kind==='frostDomain')for(const t of targets)t.slowUntil=w.time+.65;
     if(w.time>=f.nextTick){

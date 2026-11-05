@@ -1,0 +1,16 @@
+/* Live values sit in measured openings of each boss's original painted shell. */
+#boss-hud{position:absolute;left:50%;top:108px;transform:translateX(-50%);width:min(700px,54vw);height:auto;aspect-ratio:var(--boss-aspect,6/1);padding:0;display:block;border:0;clip-path:none;box-shadow:none;background:none;container-type:inline-size;overflow:visible;isolation:isolate;pointer-events:none}
+#boss-hud[hidden]{display:none!important}
+#boss-hud>.boss-hud-shell{position:absolute;inset:0;display:block;background-image:var(--boss-shell);background-repeat:no-repeat;background-size:var(--boss-shell-size);background-position:var(--boss-shell-position);z-index:3;filter:drop-shadow(0 3px 4px #0009)}
+#boss-hud>.boss-portrait{position:absolute;left:var(--boss-face-x);top:var(--boss-face-y);width:var(--boss-face-width);height:auto;aspect-ratio:1;flex:none;margin:0;border:0;border-radius:50%;box-shadow:none;z-index:1;background-color:#0a141d}
+#boss-hud>.boss-vitals{position:static;display:contents;margin:0;height:auto;border:0;background:none}
+#boss-hud .boss-heading{display:contents}
+#boss-hud #boss-name{position:absolute;left:var(--boss-name-x);top:var(--boss-name-y);width:var(--boss-name-width);color:var(--boss-light);margin:0;font-size:clamp(9px,1.8cqw,14px);line-height:1.2;letter-spacing:.06em;text-align:left;white-space:nowrap;z-index:4;text-shadow:0 1px 3px #000,0 0 5px #000}
+#boss-hud #boss-life{position:absolute;right:var(--boss-life-right);top:var(--boss-name-y);margin:0;font-size:clamp(9px,1.65cqw,12px);line-height:1.25;z-index:4;text-shadow:0 1px 3px #000,0 0 5px #000;color:#ece5d0}
+#boss-hud .boss-life-track{position:absolute;left:var(--boss-hp-x);top:var(--boss-hp-y);width:var(--boss-hp-width);height:var(--boss-hp-height);transform:none;border:0;box-shadow:none;background:#041017;z-index:1;margin:0;overflow:hidden;border-radius:8px}
+#boss-hud .boss-life-track>i{position:absolute;inset:0 auto 0 0;height:100%;max-width:100%;padding:0}
+#boss-hud #boss-fill{height:100%;max-width:100%;background:linear-gradient(90deg,var(--boss-dark),var(--boss-light));box-shadow:inset 0 1px 2px #ffffff55}
+#boss-hud .boss-life-trail{background:#f0dcb3;transition:width .8s ease-out .25s}
+#boss-hud .boss-ornament{display:none}
+@media(max-width:1150px) and (min-width:651px){#boss-hud{top:218px;width:min(640px,68vw)}}
+@media(max-width:650px){#boss-hud{top:205px;width:94vw;max-width:560px}}

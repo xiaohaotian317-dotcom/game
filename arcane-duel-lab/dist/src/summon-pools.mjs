@@ -16,7 +16,7 @@ export const POOLS={
  fire:{title:'烬火之誓',en:'OATH OF EMBERS',color:'#ef9655',dark:'#6d3024',role:'远程法术 · 爆发灼烧',verse:'让余烬，照亮最后的长夜。',copy:'执掌熔火与陨星的焰术师。以爆燃印铺开火线，让坠落的陨火终结战场。',face:[330,80]},
  nature:{title:'万象新芽',en:'WHISPER OF THE GROVE',color:'#b5d283',dark:'#314d3b',role:'远程法术 · 召唤协同',verse:'万物有灵，生生不息。',copy:'与古林缔约的森灵。荆棘听从她的呼唤，木灵鹿与古树共同守护旅途。',face:[805,85]},
  frost:{title:'霜月低语',en:'VOW OF THE FROST MOON',color:'#b3e9f0',dark:'#2d526e',role:'远程法术 · 寒霜控场',verse:'听见了吗，风雪正在低语。',copy:'踏雪而来的霜语者。让寒霜牵制追敌，以冰雪领域改变交锋的节奏。',face:[1304,105]},
- lightning:{title:'惊雷破晓',en:'HERALD OF THUNDER',color:'#f3d786',dark:'#5d4724',role:'近战雷拳 · 突进追击',verse:'雷鸣未落，拳锋已至。',copy:'以拳锋引雷的雷行者。穿过弹幕，逼近对手，让惊雷在近身的一瞬绽放。',face:[290,581]},
+ lightning:{title:'惊雷破晓',en:'HERALD OF THUNDER',color:'#f3d786',dark:'#5d4724',role:'雷拳电弧 · 突进追击',verse:'雷鸣未落，拳锋已至。',copy:'以拳锋引雷的雷行者。近身重拳与远程电弧衔接，穿过弹幕追击对手。',face:[290,581]},
  shadow:{title:'夜鸦契约',en:'COVENANT OF THE RAVEN',color:'#c0a4e3',dark:'#42304f',role:'近战双刃 · 位移背袭',verse:'黑夜之中，每一步都有回声。',copy:'潜行于月影之间的影刃。残影掠过刀锋，用一次返影与背袭改写战局。',face:[862,599]},
  star:{title:'星海回响',en:'ECHOES OF THE ASTRAL SEA',color:'#d5b6f0',dark:'#343661',role:'远程法术 · 空间牵引',verse:'循着星轨，抵达未知的彼岸。',copy:'观测星轨的星术师。以引力与折跃掌握距离，在群星坍缩时完成致命一击。',face:[1268,587]}
 };

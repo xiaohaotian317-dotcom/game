@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "task": "T35",
+  "status": "integrated; gameplay and visual verification pending",
+  "file": "hybrid-projectiles-v2.png",
+  "mode": "RGBA",
+  "size": [
+    1536,
+    1024
+  ],
+  "sha256": "d98c9229aed53eb296be93421b33f32792d4f01b4e791d47f7d7696d28c41a16",
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "cell": [
+      384,
+      512
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "hero": "lightning",
+      "phase": "launch",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "pivot": [
+        120,
+        260
+      ],
+      "contentBoundsAlpha32": [
+        71,
+        134,
+        306,
+        378
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "lighter"
+    },
+    {
+      "index": 1,
+      "hero": "lightning",
+      "phase": "flightA",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "pivot": [
+        198,
+        256
+      ],
+      "contentBoundsAlpha32": [
+        29,
+        147,
+        352,
+        353
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "lighter"
+    },
+    {
+      "index": 2,
+      "hero": "lightning",
+      "phase": "flightB",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "pivot": [
+        198,
+        256
+      ],
+      "contentBoundsAlpha32": [
+        32,
+        109,
+        363,
+        364
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "lighter"
+    },
+    {
+      "index": 3,
+      "hero": "lightning",
+      "phase": "impact",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "pivot": [
+        254,
+        256
+      ],
+      "contentBoundsAlpha32": [
+        35,
+        95,
+        340,
+        405
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "lighter"
+    },
+    {
+      "index": 4,
+      "hero": "shadow",
+      "phase": "launch",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "pivot": [
+        104,
+        264
+      ],
+      "contentBoundsAlpha32": [
+        42,
+        135,
+        324,
+        356
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "source-over"
+    },
+    {
+      "index": 5,
+      "hero": "shadow",
+      "phase": "flightA",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "pivot": [
+        210,
+        260
+      ],
+      "contentBoundsAlpha32": [
+        21,
+        140,
+        345,
+        356
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "source-over"
+    },
+    {
+      "index": 6,
+      "hero": "shadow",
+      "phase": "flightB",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "pivot": [
+        210,
+        260
+      ],
+      "contentBoundsAlpha32": [
+        19,
+        128,
+        343,
+        354
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "source-over"
+    },
+    {
+      "index": 7,
+      "hero": "shadow",
+      "phase": "impact",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "pivot": [
+        222,
+        264
+      ],
+      "contentBoundsAlpha32": [
+        18,
+        109,
+        343,
+        382
+      ],
+      "direction": "right",
+      "mirrorLeft": true,
+      "recommendedBlend": "source-over"
+    }
+  ],
+  "playback": {
+    "launchDuration": 0.09,
+    "flightLoop": [
+      1,
+      2
+    ],
+    "flightFrameSeconds": 0.075,
+    "impactDuration": 0.16,
+    "note": "Per-hero indices add 4 for shadow. Animate material with uniform scale/rotation/opacity; do not stretch or rebuild the PNG. Keep flight pivots stable. Spawn launch at real hand/weapon socket and impact at collision point. Values are integration suggestions, not user-locked balance."
+  },
+  "notes": [
+    "All rects and pivots use original native pixels. Pivot is local to each rect. All sprites right-facing; flip at render time for left.",
+    "Core alpha>32 silhouettes isolated in each cell. Faint alpha can remain in outer bloom; preserve original alpha. No scripted background removal or pixel alteration was applied. v2 is preferred because the built-in image edit removed the sheet-wide low-alpha wash.",
+    "Top-row launch source and impact contact point differ from in-flight visual centers; use phase pivot rather than tile midpoint.",
+    "Shadow smoke contains deliberate dark strokes; source-over keeps raven/steel material. Additive blend would erase the black feather silhouette.",
+    "Use 150-180 world-unit full-cell width for flight as a starting point, preserving 384:512 ratio; actual visible projectile core is about 125-150 wide. Impact may be slightly larger, not screen filling."
+  ]
+}
