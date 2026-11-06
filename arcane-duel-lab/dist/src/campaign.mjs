@@ -25,7 +25,7 @@ import {loadSolo,saveSolo} from './campaign-profile.mjs';
 import {SOLO_NAMES,experience,skillById} from './campaign-growth-data.mjs';
 import {syncSoloStats} from './campaign-growth-runtime.mjs';
 import {CampaignSystemUI,renderLootPreview,sheetStyle,soloSkillStyle} from './campaign-system-ui.mjs';
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],canvas=$('#campaign-arena'),sound=new Sound(),keys=new Set(),actions=[];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],canvas=$('#campaign-arena'),sound=new Sound({scene:'journey'}),keys=new Set(),actions=[];
 const clock=new FrameClock(STEP);
 let progress=normalizeProgress(null),hero='fire',selected=STAGES[0],world=null,assets=null,renderer=null,busy=false,paused=false,pointer=false,acc=0,last=performance.now(),uiAge=0,loadSerial=0,aim={u:.65,v:.65},resultShown=false,petMode=false;
 let storage;try{storage=localStorage;}catch{}const profile=loadSolo(storage);hero=profile.selected;progress=normalizeProgress(profile);let uiMeta=null;

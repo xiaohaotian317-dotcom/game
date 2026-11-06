@@ -41,7 +41,7 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 原网页版保持不变，本应用不通过原Sites地址加载资源或创建房间。
 `;
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
-if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign14
+if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),`秘境决斗 · 秘境征途 campaign15
 
 完整解压后双击 ArcaneDuelCampaign.exe，无需GPT、插件、Node或网络。请保留整个文件夹。
 正常入口：主页面→开始游戏→大厅→单机闯关→世界图选关→选择1～2名已拥有角色→进入挑战。
@@ -49,8 +49,14 @@ AD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、1/2切换�
 本版沿用旧进度，不清档；新档仅焰术师，300金币、0券、2中金币箱与3中经验瓶。
 
 本版变化：
+• 大厅右下技能图鉴、动作检视与试炼收进英雄图鉴；每位英雄可免费试玩六技能，每行二选一，试玩不改变正式养成。技能图鉴补齐36种招式的介绍。移除敌人试炼玩家入口。
+• 右上设置换为独立绘制的古金月琴面板，可分别开关/调节总声音、战斗音效与背景音乐。两首安静原创配乐随大厅/探索切换，离开或切至后台暂停。
+• 设置→兑换馈赠输入“秘境决斗666”，同一份存档限领一次：5抽奖券、3大金币宝箱、3大角色经验药水。箱子和药水入背包，未自动使用。
+• 三段清怪后赶路间隔1000/1100/1500缩为700/770/1050，战斗区和平台宽高保留，二段跳支撑路线已复核。
+
+保留上版变化：
 • 双人决斗选定英雄后进入独立技能搭配页，六技能全部免费开放；F/E/R每行二选一，双方确认准备后开战。改选会取消双方准备，整场回合和重连保留搭配。
-• 双人模式的雷行者和影刃同样近远兼备；复用单机18个扩展招式及原图特效，不带入单机成长/装备/经济。双方须使用campaign14（LAN构建campaign14-skill6）。
+• 双人模式的雷行者和影刃同样近远兼备；复用单机18个扩展招式及原图特效，不带入单机成长/装备/经济。双方建议使用campaign15（LAN协议仍为campaign14-skill6）。
 
 保留上版变化：
 • 单机全关首领攻击降低15%，英雄最终生命提高15%（取整）、攻击提高20%，法力上限不变。每级仍生命5%/法力4%/攻击2%线性成长。
@@ -78,7 +84,7 @@ AD移动、空格二段跳、鼠标普攻、FER技能、Shift冲刺、1/2切换�
 原Sites网页、旧发行包和正式存档保留；本版未重新部署网站。自动逻辑与隔离UI验证不能替代真人难度、美术手感和真实双设备长局验收。
 `,'utf8');
 if(campaignPreview)await writeFile(path.join(output[0],'回退人物动作.cmd'),'@echo off\r\nstart "" "%~dp0ArcaneDuelCampaign.exe" --legacy-motion\r\n','utf8');
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign14':enemyPreview?'enemies1':'desktop1',motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign15':enemyPreview?'enemies1':'desktop1',motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:enemyPreview||campaignPreview?21:undefined,stages:campaignPreview?11:undefined,bestiary:campaignPreview?{normal:10,boss:11}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
 
 

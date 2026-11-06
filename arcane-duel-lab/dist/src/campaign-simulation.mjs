@@ -10,7 +10,7 @@ import {spawnEnemy} from './enemy-simulation.mjs';
 import {STAGE_BY_ID,waveComposition} from './campaign-data.mjs';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-export const CAMPAIGN_FLOOR=760,CAMPAIGN_WIDTH=11200,CAMPAIGN_HEIGHT=960,CAMPAIGN_VIEW=1664;
+export const CAMPAIGN_FLOOR=760,CAMPAIGN_WIDTH=10120,CAMPAIGN_HEIGHT=960,CAMPAIGN_VIEW=1664;
 export const SPAWN_RATE=.8;
 import {campaignPlatforms} from './campaign-platforms.mjs';
 export {campaignPlatforms} from './campaign-platforms.mjs';
@@ -23,7 +23,7 @@ export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Mat
  w.platforms=[{id:'ground',x:0,y:w.floor,w:w.width,type:'stone',active:true,hp:Infinity,maxHp:Infinity}];
  w.platforms.push(...campaignPlatforms(seed));
  Object.assign(w.player,{x:170,y:w.floor,prevX:170,prevY:w.floor,grounded:true,platformId:'ground'});w.spawn={x:170,y:w.floor};w.camera={x:0,y:0,viewWidth:CAMPAIGN_VIEW,viewHeight:960};w.aim={x:600,y:w.floor-60};
- w.campaign={stage:activeStage,petDungeon,seed,state:'travel',encounter:0,triggers:[1400,3900,6500,9500],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(profile){syncSoloStats(w,true);initTeam(w,team||[hero]);beginCompanionRun(w);spawnCompanion(w);}return w;
+ w.campaign={stage:activeStage,petDungeon,seed,state:'travel',encounter:0,triggers:[1400,3600,5870,8420],lock:null,queue:[],attackBudget:stage.attackBudget,notice:'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(profile){syncSoloStats(w,true);initTeam(w,team||[hero]);beginCompanionRun(w);spawnCompanion(w);}return w;
 }
 function say(w,message){const c=w.campaign;c.notice=message;c.noticeUntil=w.time+3.5;c.events.push({time:w.time,message});}
 export function fitCampaignCamera(w,width,height){const aspect=Math.max(.3,width/Math.max(1,height));w.camera.viewWidth=Math.min(CAMPAIGN_VIEW,CAMPAIGN_HEIGHT*aspect);w.camera.viewHeight=w.camera.viewWidth/aspect;w.camera.y=clamp(w.floor-w.camera.viewHeight*.8,0,Math.max(0,w.height-w.camera.viewHeight));if(w.campaign.lock){const lock=w.campaign.lock;lock.x=clamp(lock.x+(lock.width-w.camera.viewWidth)/2,0,w.width-w.camera.viewWidth);lock.width=w.camera.viewWidth;}}

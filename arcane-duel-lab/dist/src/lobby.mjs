@@ -1,3 +1,9 @@
+import {Sound} from './audio.mjs';
+import {SettingsDialog} from './settings-dialog.mjs';
+import {PracticeDialog} from './practice-dialog.mjs';
+import {practiceURL as trialURL} from './practice-loadout.mjs';
+import {duelSkillChoices} from './duel-skill-data.mjs';
+import {duelChoiceStyle} from './duel-skill-ui.mjs';
 import {DailyQuestDialog} from './daily-quests-ui.mjs';
 import {dailyArtStyle} from './daily-ui-art.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
@@ -9,7 +15,7 @@ import {loadSolo,saveSolo} from './campaign-profile.mjs';
 import {SOLO_KEY} from './campaign-growth-data.mjs';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let storage;try{storage=window.localStorage;}catch{storage=null;}
-const solo=loadSolo(storage);let profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected},preview='fire',stage='moon',busy=false,toastTimer;
+const solo=loadSolo(storage);let profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected},preview=Object.hasOwn(HEROES,new URLSearchParams(location.search).get('hero'))?new URLSearchParams(location.search).get('hero'):'fire',stage='moon',busy=false,toastTimer;
 const roles={fire:'烈焰爆发 · 陨火降临',nature:'植物造物 · 召唤协同'};
 const verses={fire:'让余烬，照亮最后的长夜。',nature:'万物有灵，生生不息。',frost:'听见了吗，风雪正在低语。',lightning:'雷鸣未落，拳锋已至。',shadow:'黑夜之中，每一步都有回声。',star:'循着星轨，抵达未知的彼岸。'};
 const descriptions={fire:{attack:'发射焰矢，碰墙停止，命中附加持续灼烧。',q:'在鼠标下方第一块台面引爆火焰印记。',e:'朝指定方向快速投出火球；离屏前再次按 E，在火球当前位置引爆。',r:'陨石穿过上层平台，在指定台面约 0.86 秒内砸落。'},nature:{attack:'发射荆棘种子，碰墙停止。',q:'缚根锁住敌人，限制其移动。',e:'召唤主动寻敌的木灵鹿；3.5 秒内再按 E 指挥角跃冲撞。',r:'从鼠标下方台面生长古树，提供庇护与枝台。'}};
@@ -20,19 +26,21 @@ function decorate(){for(const el of $$('.frame')){const svg=document.createEleme
 function renderHeader(){
   $$('[data-balance]').forEach(el=>el.textContent=profile.coins.toLocaleString('en-US'));
   $('#owned-count').textContent=profile.owned.length+' / 6';art($('#profile-art'),profile.selected);art($('#hall-art'),profile.selected);
-  const h=HEROES[profile.selected];$('#hall-hero-label').innerHTML=h.name+' · '+h.given+' <span>›</span>';$('#practice-link').href=practiceURL('moon');
-  $('#sound-toggle').setAttribute('aria-pressed',String(profile.sound));$('#sound-toggle').setAttribute('aria-label',profile.sound?'关闭声音':'开启声音');$('#sound-setting').checked=profile.sound;
+  const h=HEROES[profile.selected];$('#hall-hero-label').innerHTML=h.name+' · '+h.given+' <span>›</span>';
+
   $$('[data-summon]').forEach(b=>b.disabled=busy||profile.coins<(b.dataset.summon==='10'?900:100));
 }
 function renderHeroes(){
-  $('#hero-list').innerHTML=HERO_ORDER.map(id=>{const h=HEROES[id];return '<button class="hero-thumb" data-hero="'+id+'" aria-label="预览'+h.name+'" aria-pressed="'+(preview===id)+'" style="--hero-color:'+h.color+'"><span class="hero-art" style="'+splashStyle(id)+'"></span><strong>'+h.name+'</strong><small>'+ (profile.owned.includes(id)?'已拥有':'未唤醒')+'</small></button>';}).join('');
-  $$('[data-hero]').forEach(b=>b.addEventListener('click',()=>{preview=b.dataset.hero;renderDetail();$$('[data-hero]').forEach(a=>a.setAttribute('aria-pressed',String(a.dataset.hero===preview)));}));
+ $('#hero-list').innerHTML=HERO_ORDER.map(id=>{const h=HEROES[id];return `<article class="hero-preview-card"><button class="hero-thumb" data-hero="${id}" aria-label="预览${h.name}" aria-pressed="${preview===id}" style="--hero-color:${h.color}"><span class="hero-art" style="${splashStyle(id)}"></span><strong>${h.name}</strong><small>${profile.owned.includes(id)?'已拥有':'未唤醒'}</small></button><button class="hero-try" data-try-hero="${id}" aria-label="试玩${h.name}">试玩 ›</button></article>`;}).join('');
+ $$('[data-hero]').forEach(b=>b.addEventListener('click',()=>{preview=b.dataset.hero;renderDetail();$$('[data-hero]').forEach(a=>a.setAttribute('aria-pressed',String(a.dataset.hero===preview)));}));
+ $$('[data-try-hero]').forEach(b=>b.onclick=()=>practice.open(b.dataset.tryHero));
 }
 function renderDetail(){
   const h=HEROES[preview],owned=profile.owned.includes(preview);art($('#summon-art'),preview);art($('#detail-art'),preview);
   $('#detail-name').textContent=h.name+' · '+h.given;$('#detail-role').textContent=h.role||roles[preview];$('#hero-verse').textContent=verses[preview];
   $('#detail-passive-name').textContent=h.passive;$('#detail-passive-copy').textContent=h.passiveText;
-  $('#detail-skills').innerHTML=['attack','q','e','r'].map(key=>{const label=key==='attack'?'普攻':key==='q'?'F':key.toUpperCase(),desc=(h.descriptions||descriptions[preview])[key];return '<button class="detail-skill" aria-label="'+label+' '+h.skills[key].name+'：'+desc+'" title="'+desc+'"><span class="skill-icon" style="'+skillArtStyle(preview,key)+'"></span><small><b>'+label+'</b>'+h.skills[key].name+'</small></button>';}).join('');
+  $('#detail-skills').innerHTML=duelSkillChoices(preview).map(s=>`<button class="detail-skill" title="${s.description}" aria-label="${['F','E','R'][s.row]} ${s.name}：${s.description}"><span class="skill-icon" style="${duelChoiceStyle(preview,s)}"></span><small><b>${['F','E','R'][s.row]}</b>${s.name}</small></button>`).join('');
+  $('#hero-skills').href='skills.html?hero='+preview;$('#hero-motion').href='characters.html?hero='+preview;
   $$('.detail-skill').forEach(b=>b.addEventListener('click',()=>toast(b.getAttribute('title'))));
   $('#ownership-status').textContent=owned?'✦ 已拥有':'◇ 尚未唤醒';$('#equip-hero').disabled=!owned||profile.selected===preview;$('#equip-hero').textContent=profile.selected===preview?'当前展示英雄':owned?'设为展示英雄':'等待召唤';
 }
@@ -43,13 +51,13 @@ function setView(view,push=true){
   document.title=(hall?'主大厅':view==='codex'?'英雄图鉴':'英雄召唤')+' · 秘境决斗';
   if(push){const url=new URL(location.href);if(hall)url.searchParams.delete('view');else url.searchParams.set('view',view);history.pushState({view},'',url);window.scrollTo({top:0,behavior:'instant'});}
 }
-function practiceURL(scene){return 'index.html?'+new URLSearchParams({play:'1',hero:profile.selected,scene,build:'ui10'});}
+function practiceURL(scene){return trialURL(profile.selected,undefined,scene);}
 function open(id){$(id).showModal();}
-function setSound(value){profile.sound=value;persist();renderHeader();}
-let audio;
-function chime(){if(!profile.sound)return;try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();[523.25,659.25,783.99].forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.09;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.035,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.6);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+.65);});}catch{}}
 function draw(){location.href='summon.html';}
 
+const sound=new Sound();
+const practice=new PracticeDialog({onConfirm:({hero,loadout,scene})=>location.href=trialURL(hero,loadout,scene)});
+const settings=new SettingsDialog({storage,onSave:next=>{Object.assign(solo,next);profile.coins=next.coins;profile.owned=next.owned;renderHeader();}});
 decorate();renderHeader();renderHeroes();renderDetail();setView(new URLSearchParams(location.search).get('view')||'hall',false);
 $$('button[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 window.addEventListener('popstate',()=>setView(new URLSearchParams(location.search).get('view')||'hall',false));
@@ -57,8 +65,8 @@ $('#profile-button').addEventListener('click',()=>setView('codex'));$('#hall-her
 $('#equip-hero').addEventListener('click',()=>{if(!profile.owned.includes(preview))return;profile.selected=preview;persist();renderHeader();renderDetail();toast('已将'+HEROES[preview].name+'设为展示英雄。');});
 $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.summon))));
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
-$('#settings-open').addEventListener('click',()=>open('#settings-dialog'));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
-$('#sound-toggle').addEventListener('click',()=>setSound(!profile.sound));$('#sound-setting').addEventListener('change',e=>setSound(e.target.checked));
+$('#settings-open').addEventListener('click',()=>settings.open());$('#hero-practice').addEventListener('click',()=>practice.open(preview));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
+
 $('#duel-open').addEventListener('click',()=>location.href=window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');
 $$('[data-room-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room-tab]').forEach(a=>a.setAttribute('aria-selected',String(a===b)));$('#create-room-panel').hidden=b.dataset.roomTab!=='create';$('#join-room-panel').hidden=b.dataset.roomTab!=='join';}));
 $('#room-code').addEventListener('input',e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,''));

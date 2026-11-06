@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "isolatedStorage": true,
+  "cases": [
+    {
+      "input": "toString",
+      "hero": "fire",
+      "mode": "game"
+    },
+    {
+      "input": "constructor",
+      "hero": "fire",
+      "mode": "game"
+    },
+    {
+      "input": "__proto__",
+      "hero": "fire",
+      "mode": "game"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,17 @@
+✔ standalone serves extensionless pages/assets and health without exposing build directories (87.7948ms)
+✔ HTTPS reverse proxy origin permits two room clients while retaining cross-site protection (25.5722ms)
+✔ standalone rooms survive database/service restart with original member token (47.3771ms)
+✔ public origin configuration rejects paths, credentials and unsupported schemes (0.4221ms)
+✔ LAN address entry accepts private IPv4 and rejects external URLs, credentials and paths (1.2715ms)
+✔ connection hints list physical private IPv4 first and exclude IPv6/internal/public adapters (0.9456ms)
+✔ two desktop runtimes use local assets and one LAN host for room readiness/selection (88.5568ms)
+✔ client rejects incompatible hosts without making an unrelated connection (6.7535ms)
+✔ LAN peer negotiation never configures an external STUN/TURN server (0.4838ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 508.1579

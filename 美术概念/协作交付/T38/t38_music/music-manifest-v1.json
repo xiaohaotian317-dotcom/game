@@ -1,0 +1,125 @@
+{
+  "delivery": "T38 original background music v1",
+  "tracks": [
+    {
+      "id": "moonlit-hall",
+      "title": "月下旅人",
+      "filename": "moonlit-hall.wav",
+      "sha256": "9a6961357b436b91c3e7882189e4da8c23a306c0751af8d5430e0155cfb9e42b",
+      "bytes": 11289644,
+      "duration_seconds": 64.0,
+      "frames": 2822400,
+      "sample_rate": 44100,
+      "channels": 2,
+      "bits_per_sample": 16,
+      "format": "PCM WAV, signed little-endian",
+      "bpm": 60,
+      "bars": 16,
+      "meter": "4/4",
+      "note_events": 151,
+      "peak_dbfs": -15.0494,
+      "rms_dbfs": -28.4046,
+      "crest_factor_db": 13.3552,
+      "dc_offset_by_channel": [
+        -1.509443702611253e-08,
+        -5.244127476837089e-09
+      ],
+      "clipped_samples": 0,
+      "stereo_correlation": 0.879497,
+      "spectral_energy_fraction": {
+        "below_50hz": 0.0,
+        "50_to_250hz": 0.225655,
+        "250_to_2000hz": 0.774184,
+        "2000_to_6000hz": 0.000161,
+        "above_6000hz": 0.0
+      },
+      "loop": {
+        "start_frame": 0,
+        "end_frame_exclusive": 2822400,
+        "implementation": "circular note tails, circular FIR reflections and periodic spectral filter",
+        "no_silence_padding": true,
+        "crossfade_required": false,
+        "first_minus_last_sample_by_channel": [
+          -0.00030517578125,
+          0.000457763671875
+        ],
+        "max_absolute_seam_step": 0.000457763671875,
+        "seam_step_dbfs": -66.7872,
+        "normal_adjacent_step_rms": 0.002110974259021256,
+        "normal_adjacent_step_p99": 0.0059814453125,
+        "first_derivative_seam_jump_by_channel": [
+          -6.103515625e-05,
+          -0.0001220703125
+        ],
+        "last_100ms_rms_dbfs": -28.7266,
+        "first_100ms_rms_dbfs": -29.1585
+      },
+      "provenance": "Original notes authored for this delivery; generated only by compose_music.py with NumPy and Python wave; no samples, downloads, existing tune or external music model.",
+      "quality_status": "Structural/signal checks performed. No claim of human or subjective listening approval."
+    },
+    {
+      "id": "realm-journey",
+      "title": "秘境微光",
+      "filename": "realm-journey.wav",
+      "sha256": "61a75e6e3d6b09388585b92892f13d5939c1774492e4b17c17a788a8b02c8440",
+      "bytes": 10584044,
+      "duration_seconds": 60.0,
+      "frames": 2646000,
+      "sample_rate": 44100,
+      "channels": 2,
+      "bits_per_sample": 16,
+      "format": "PCM WAV, signed little-endian",
+      "bpm": 64,
+      "bars": 16,
+      "meter": "4/4",
+      "note_events": 200,
+      "peak_dbfs": -13.4095,
+      "rms_dbfs": -27.3309,
+      "crest_factor_db": 13.9214,
+      "dc_offset_by_channel": [
+        -6.032008072326153e-09,
+        -7.519826506991686e-09
+      ],
+      "clipped_samples": 0,
+      "stereo_correlation": 0.925363,
+      "spectral_energy_fraction": {
+        "below_50hz": 0.0,
+        "50_to_250hz": 0.342845,
+        "250_to_2000hz": 0.657002,
+        "2000_to_6000hz": 0.000152,
+        "above_6000hz": 0.0
+      },
+      "loop": {
+        "start_frame": 0,
+        "end_frame_exclusive": 2646000,
+        "implementation": "circular note tails, circular FIR reflections and periodic spectral filter",
+        "no_silence_padding": true,
+        "crossfade_required": false,
+        "first_minus_last_sample_by_channel": [
+          0.001922607421875,
+          0.0025634765625
+        ],
+        "max_absolute_seam_step": 0.0025634765625,
+        "seam_step_dbfs": -51.8234,
+        "normal_adjacent_step_rms": 0.002387333211615056,
+        "normal_adjacent_step_p99": 0.007415771484375,
+        "first_derivative_seam_jump_by_channel": [
+          3.0517578125e-05,
+          0.000152587890625
+        ],
+        "last_100ms_rms_dbfs": -25.7281,
+        "first_100ms_rms_dbfs": -26.5056
+      },
+      "provenance": "Original notes authored for this delivery; generated only by compose_music.py with NumPy and Python wave; no samples, downloads, existing tune or external music model.",
+      "quality_status": "Structural/signal checks performed. No claim of human or subjective listening approval."
+    }
+  ],
+  "recommended_runtime": {
+    "loop_entire_file": true,
+    "default_music_volume": 0.35,
+    "pause_when_document_hidden": true,
+    "decode_to_audio_buffer": true,
+    "notes": "Use decoded AudioBufferSource loop (frame 0 to exact duration). Avoid timer-based play/restart. Distinct from master SFX volume."
+  },
+  "subjective_listening": "Not performed by this agent; waveform and musical-score inspection only."
+}

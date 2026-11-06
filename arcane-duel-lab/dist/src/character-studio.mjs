@@ -1,3 +1,5 @@
+import {Sound} from './audio.mjs';
+new Sound();
 import {Renderer,loadAssets,ensureHeroAssets} from './renderer.mjs?v=20261030-duel12';
 import {createWorld,HEROES} from './simulation.mjs?v=20261030-duel12';
 const $=s=>document.querySelector(s),buttons=[...document.querySelectorAll('[data-mode]')];

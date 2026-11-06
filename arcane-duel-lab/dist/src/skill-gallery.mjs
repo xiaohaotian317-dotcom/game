@@ -1,6 +1,10 @@
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
-import {skillArtStyle,ICON_ORDER} from './skill-icons.mjs?v=20261030-duel12';
-const extra={fire:['焰心引爆','E 二段 · 火球离屏前原位引爆'],nature:['角跃令','E 二段 · 指挥冲撞'],frost:['寒潮','F 二段 · 轻伤减速'],lightning:['折雷','F 二段 · 命中后变向'],shadow:['返影','E 二段 · 返回影标'],star:['斥星','F 二段 · 推开敌人']};
-const labels=['LMB','F','E','SHIFT','R','二段'];
-document.querySelector('#skills').innerHTML=['fire','nature','frost','lightning','shadow','star'].map(hero=>{const h=HEROES[hero];return '<section style="--accent:'+h.color+'"><div class="hero-heading"><h2>'+h.name+' · '+h.given+'</h2><span>'+h.passive+' · '+h.passiveText+'</span></div><div class="icon-grid">'+ICON_ORDER.map((key,i)=>{const s=h.skills[key],name=i===5?extra[hero][0]:s?.name||'冲刺',copy=i===5?extra[hero][1]:key==='dash'?'短暂无敌 · 位移闪避':key==='r'?'终极技能':key==='attack'?'普通攻击':h.descriptions?.[key]||'职业技能';return '<article><div class="art-frame"><span class="skill-art" role="img" aria-label="'+h.name+' '+name+'图标" style="'+skillArtStyle(hero,key,i===5)+'"></span><b class="key">'+labels[i]+'</b></div><h3>'+name+'</h3><p>'+copy+'</p></article>';}).join('')+'</div></section>';}).join('');
+import {SOLO_HEROES} from './campaign-growth-data.mjs';
+import {duelSkillChoices} from './duel-skill-data.mjs';
+import {duelChoiceStyle} from './duel-skill-ui.mjs';
+import {Sound} from './audio.mjs';
+new Sound();
+const params=new URLSearchParams(location.search),focus=params.get('hero'),order=SOLO_HEROES.includes(focus)?[focus,...SOLO_HEROES.filter(h=>h!==focus)]:SOLO_HEROES;
+document.querySelector('#skills').innerHTML=order.map(hero=>{const h=HEROES[hero];return `<section id="codex-${hero}" style="--accent:${h.color}"><div class="hero-heading"><h2>${h.name} · ${h.given}</h2><span>${h.passive} · ${h.passiveText}</span><a href="lobby.html?view=codex&hero=${hero}">试玩与动作检视 ›</a></div><div class="icon-grid">${duelSkillChoices(hero).map(s=>`<article><div class="art-frame"><span class="skill-art" role="img" aria-label="${h.name} ${s.name}图标" style="${duelChoiceStyle(hero,s)}"></span><b class="key">${['F','E','R'][s.row]} · ${s.column?'备选':'原生'}</b></div><h3>${s.name}</h3><p>${s.description}</p><small>${(s.cd??h.skills[s.key].cd).toFixed(1)} 秒冷却 · ${['技艺','秘术','终式'][s.row]}</small></article>`).join('')}</div></section>`;}).join('');
+document.querySelector('header>a').href='lobby.html?view=codex'+(SOLO_HEROES.includes(focus)?'&hero='+focus:'');
 

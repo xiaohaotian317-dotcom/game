@@ -1,0 +1,136 @@
+{
+  "task": "T38",
+  "agent": "settings_ui_art",
+  "status": "generated-and-visually-inspected-awaiting-main-agent-integration-and-user-art-review",
+  "scope": "Artwork only; no code, runtime assets, profile, Git or project-memory writes",
+  "entries": [
+    {
+      "file": "settings-shell-v1.png",
+      "sourceOriginal": "C:/Users/xiaohaotian/.codex/generated_images/01a1af84-b27a-7f72-aa0e-c7c02a86e4ce/exec-34113445-64be-4711-be60-5ed252fe3055.png",
+      "tool": "built-in image_gen.imagegen",
+      "pixelEdits": false,
+      "prompt": "prompt-v1.txt",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "35bbc551d31f59f58e53fa891cf4bf9469a4008f47274cf1b2585308c6eb00ab",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fullyTransparentPixels": 370689,
+        "above240Pixels": 1165167
+      }
+    },
+    {
+      "file": "settings-controls-v1.png",
+      "sourceOriginal": "C:/Users/xiaohaotian/.codex/generated_images/01a1af84-b27a-7f72-aa0e-c7c02a86e4ce/exec-d363999c-4028-4d58-88bb-65437d3bf345.png",
+      "tool": "built-in image_gen.imagegen",
+      "pixelEdits": false,
+      "prompt": "prompt-controls-v1.txt",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "c4ddf2553b5ba9b7b1cd17b26017383d4fb621ba4ba8934318c5b97db9ec68bd",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fullyTransparentPixels": 1205524,
+        "above240Pixels": 299113
+      }
+    }
+  ],
+  "shell": {
+    "file": "settings-shell-v1.png",
+    "rect": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "titleSafeRect": [
+      530,
+      255,
+      470,
+      80
+    ],
+    "contentSafeRect": [
+      160,
+      350,
+      1216,
+      500
+    ],
+    "note": "Preserve full aspect ratio. Top crest extends to about y240. DOM labels, close button, tabs, ranges, toggles, gift-code form remain independent. Outer transparency retained."
+  },
+  "controls": {
+    "file": "settings-controls-v1.png",
+    "rectFormat": "[x,y,width,height] in original PNG, padded alpha threshold8 bboxes, not assumed equal crop",
+    "sprites": {
+      "toggleOn": {
+        "rect": [
+          29,
+          149,
+          458,
+          239
+        ],
+        "state": "knob right, green-teal track"
+      },
+      "toggleOff": {
+        "rect": [
+          540,
+          149,
+          458,
+          239
+        ],
+        "state": "knob left, dark blue-gray track"
+      },
+      "volumeRail": {
+        "rect": [
+          1035,
+          215,
+          473,
+          106
+        ],
+        "suggestedHorizontalCapPixels": 55
+      },
+      "volumeThumb": {
+        "rect": [
+          163,
+          629,
+          181,
+          264
+        ],
+        "pivotNormalized": [
+          0.5,
+          0.5
+        ]
+      },
+      "musicEmblem": {
+        "rect": [
+          594,
+          571,
+          332,
+          376
+        ]
+      },
+      "giftEmblem": {
+        "rect": [
+          1098,
+          602,
+          355,
+          332
+        ]
+      }
+    }
+  },
+  "validation": {
+    "noBakedTextOrNumbers": true,
+    "outerAndBetweenSpriteTransparency": true,
+    "referenceStyleInspected": [
+      "pause-shell-v1.png",
+      "victory-shell-v2.png"
+    ],
+    "onlyAlphaAndHashReadOnlyAnalysis": true,
+    "sourceOriginalBytesCopiedUnchanged": true,
+    "notYetIntegrated": true
+  }
+}

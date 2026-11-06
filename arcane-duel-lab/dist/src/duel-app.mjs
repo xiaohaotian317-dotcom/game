@@ -17,7 +17,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],can
 const battleLoading=new LoadingScreen();let baseDone=0,baseTotal=0;
 const sceneNames={moon:'月光遗迹 · 断桥与月镜',lava:'熔岩祭坛 · 导流与摆锤',garden:'浮空花园 · 风道与藤桥'};
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let prefs;try{prefs=localStorage;}catch{}const profile=loadProfile(prefs),sound=new Sound();sound.enabled=profile.sound;
+let prefs;try{prefs=localStorage;}catch{}const profile=loadProfile(prefs),sound=new Sound({scene:'journey'});
 let selectionStage='hero',selectionContext='',selectionRenderKey='',heroRenderKey='',selectionBusy=false;
 let room=null,renderer=null,assets=null,assetPromise=null,loadedKey='',loadingKey='',match=null,prediction=null,worker=null,workerKey='',lastSeq=-1,lastEvent=0,history=[],pending=[],predictionActions=[],actionId=Date.now()*1000,inputSeq=Date.now()*1000,noticeTimer,reporting=false,pausedForConnection=false;
 let keys=new Set(),pointerDown=false,aim={x:1200,y:520},lastFrame=performance.now(),accumulator=0,lastInput=0,lastUI=0,latestSnapshot=null,currentView='',snapshotAt=performance.now(),smoothEnemy=null;

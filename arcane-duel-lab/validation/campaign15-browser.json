@@ -1,0 +1,255 @@
+{
+  "isolatedStorage": true,
+  "formalSavesTouched": false,
+  "musicStarted": [
+    {
+      "src": "http://127.0.0.1:4220/assets/music/moonlit-hall.wav",
+      "paused": false,
+      "time": 0.043537,
+      "ready": 4
+    }
+  ],
+  "rewards": {
+    "version": 1,
+    "redeemedCodes": [
+      "秘境决斗666"
+    ],
+    "daily": {
+      "day": "2026-11-06",
+      "taskIds": [
+        "boss",
+        "skills",
+        "attacks",
+        "pickups",
+        "hunt"
+      ],
+      "progress": {
+        "minions": 0,
+        "bosses": 0,
+        "skills": 0,
+        "jumps": 0,
+        "dashes": 0,
+        "pickups": 0,
+        "attacks": 0,
+        "clears": 0
+      },
+      "claimed": []
+    },
+    "passives": {
+      "health": 0,
+      "mana": 0,
+      "crit": 0,
+      "critDamage": 0
+    },
+    "petRestEpoch": 0,
+    "petRestAfterStage": null,
+    "petRestStages": [],
+    "artifacts": {},
+    "equippedArtifact": null,
+    "activePetId": null,
+    "pets": [],
+    "mirrorEquipped": false,
+    "coins": 300,
+    "tickets": 5,
+    "owned": [
+      "fire"
+    ],
+    "selected": "fire",
+    "lineup": [
+      "fire"
+    ],
+    "cleared": [],
+    "firstTickets": [],
+    "choiceClaimed": false,
+    "pity": {
+      "fire": 0,
+      "nature": 0,
+      "frost": 0,
+      "lightning": 0,
+      "shadow": 0,
+      "star": 0
+    },
+    "serial": 4,
+    "heroes": {
+      "fire": {
+        "exp": 0,
+        "skills": {
+          "fire-0-0": 0
+        },
+        "slots": {
+          "q": "fire-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "nature": {
+        "exp": 0,
+        "skills": {
+          "nature-0-0": 0
+        },
+        "slots": {
+          "q": "nature-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "frost": {
+        "exp": 0,
+        "skills": {
+          "frost-0-0": 0
+        },
+        "slots": {
+          "q": "frost-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "lightning": {
+        "exp": 0,
+        "skills": {
+          "lightning-0-0": 0
+        },
+        "slots": {
+          "q": "lightning-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "shadow": {
+        "exp": 0,
+        "skills": {
+          "shadow-0-0": 0
+        },
+        "slots": {
+          "q": "shadow-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "star": {
+        "exp": 0,
+        "skills": {
+          "star-0-0": 0
+        },
+        "slots": {
+          "q": "star-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      }
+    },
+    "bag": [
+      {
+        "id": "item-1",
+        "type": "chestMedium",
+        "count": 2
+      },
+      {
+        "id": "item-2",
+        "type": "xpMedium",
+        "count": 3
+      },
+      {
+        "type": "chestLarge",
+        "count": 3,
+        "id": "item-3"
+      },
+      {
+        "type": "xpLarge",
+        "count": 3,
+        "id": "item-4"
+      }
+    ]
+  },
+  "trial": {
+    "hero": "lightning",
+    "loadout": {
+      "q": "lightning-0-1",
+      "e": "lightning-1-1",
+      "r": "lightning-2-1"
+    },
+    "time": 0.6083333333333336,
+    "paused": false,
+    "mode": "game",
+    "state": "裂雷重拳",
+    "player": {
+      "x": 652,
+      "y": 495,
+      "vx": 0,
+      "vy": 0,
+      "hp": 180,
+      "grounded": true,
+      "jumps": 0,
+      "recast": null
+    },
+    "targets": [
+      {
+        "x": 1222,
+        "y": 550,
+        "hp": 240,
+        "burnUntil": 0
+      },
+      {
+        "x": 1557,
+        "y": 191,
+        "hp": 240,
+        "burnUntil": 0
+      }
+    ],
+    "stats": {
+      "damage": 0,
+      "hits": 0,
+      "combo": 0,
+      "best": 0,
+      "lastHit": -100,
+      "healed": 0,
+      "casts": 1
+    },
+    "fox": null,
+    "bridge": true
+  },
+  "narrowSettings": {
+    "width": 588,
+    "scroll": 620,
+    "height": 620
+  },
+  "pageErrors": [],
+  "failedResources": [],
+  "passed": true
+}

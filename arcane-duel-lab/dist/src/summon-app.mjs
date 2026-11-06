@@ -1,3 +1,5 @@
+import {Sound} from './audio.mjs';
+new Sound();
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
 import {loadSolo,saveSolo,summonSolo} from './campaign-profile.mjs';
 import {SOLO_KEY,SOLO_SKILLS,itemInfo} from './campaign-growth-data.mjs';

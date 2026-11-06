@@ -9,15 +9,24 @@ import {loadAssets,ensureHeroAssets,Renderer} from './renderer.mjs?v=20261030-du
 import {Sound} from './audio.mjs?v=20261030-duel12';
 import {worldPoint,cameraView} from './camera.mjs?v=20261030-duel12';
 import {loadProfile,saveProfile} from './player-profile.mjs?v=20261030-duel12';
+import {practiceLoadout,applyPracticeLoadout,practiceURL} from './practice-loadout.mjs';
+import {PracticeDialog} from './practice-dialog.mjs';
+import {duelChosenSkill} from './duel-skill-data.mjs';
+import {duelHotbarStyle} from './duel-skill-ui.mjs';
+import {loadAlternateArt} from './alternate-skill-art.mjs';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
 let profileStorage;try{profileStorage=window.localStorage;}catch{}
-sound.enabled=loadProfile(profileStorage).sound;
+
 $('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));
 const enterLobby=()=>{location.href='lobby.html';};
-let selectedScene=SCENES[initialParams.get('scene')]?initialParams.get('scene'):'moon';
-let world=createWorld(HEROES[initialParams.get('hero')]?initialParams.get('hero'):SCENES[selectedScene].defaultHero,selectedScene),renderer,mode='title',paused=false,pointerDown=false,pointerUV=null,aim={x:1120,y:500},last=performance.now(),accumulator=0,uiClock=0;
+let selectedScene=Object.hasOwn(SCENES,initialParams.get('scene'))?initialParams.get('scene'):'moon';
+let world=createWorld(Object.hasOwn(HEROES,initialParams.get('hero'))?initialParams.get('hero'):SCENES[selectedScene].defaultHero,selectedScene),renderer,mode='title',paused=false,pointerDown=false,pointerUV=null,aim={x:1120,y:500},last=performance.now(),accumulator=0,uiClock=0;
+const practiceLoads={};practiceLoads[world.hero]=practiceLoadout(world.hero,initialParams);applyPracticeLoadout(world,practiceLoads[world.hero]);
+let wasPausedBeforePicker=false;
+const practice=new PracticeDialog({onConfirm:async({hero,loadout,scene})=>{practiceLoads[hero]=loadout;selectedScene=scene;await choose(hero);},onClose:()=>{paused=wasPausedBeforePicker;last=performance.now();}});
+const chosenSkill=key=>duelChosenSkill(world.hero,key,world.duelSkills.loadout)||HEROES[world.hero].skills[key]||{name:'冲刺',cd:1.1};
 const descriptions={
   fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'朝指定方向快速投出火球；飞出视口前，再按 E 在火球当前位置引爆。',r:'在鼠标下方第一个台面标记落点，约 0.86 秒后陨石命中；可穿过上层平台。'},
   nature:{attack:'向瞄准方向弹出荆棘种子，碰墙停止，命中迸发枝叶。',q:'沿脚下台面催生根须，可穿过障碍束缚敌人，适合接木灵鹿角跃冲撞。',e:'播种召唤木灵鹿。3.5 秒内再按 E 指定角跃冲撞方向，命中触发共生恢复。',r:'在鼠标下方第一个可站立台面长出古树，形成两处枝台。树根附近周期恢复生命。'}
@@ -40,9 +49,9 @@ function buildHero(){
   $('#combo-help').textContent=h.comboHelp||(world.hero==='fire'?'E 投出火球，离开视口前再按 E 原位引爆。':'E 召唤木灵鹿，3.5 秒内再按 E 指挥角跃冲撞。');
   $$('.hero-button').forEach(b=>{b.classList.toggle('active',b.dataset.hero===world.hero);b.setAttribute('aria-pressed',String(b.dataset.hero===world.hero));});
   $('#hotbar').innerHTML=slotKeys.map(key=>{
-    const s=h.skills[key]||{name:'冲刺',icon:'dash',cd:1.1};
-    const desc=key==='dash'?'短距离冲刺，期间可躲避伤害；可以在空中调整位置。':descriptions[world.hero][key];
-    return '<button class="skill" data-skill="'+key+'" aria-label="'+keyLabels[key]+' '+s.name+'"><span class="skill-face"><span class="skill-art" aria-hidden="true" style="'+skillArtStyle(world.hero,key)+'"></span><span class="skill-key">'+keyLabels[key]+'</span><span class="cooldown" hidden></span></span><span class="skill-name">'+s.name+'</span><span class="skill-tooltip"><b>'+keyLabels[key]+' · '+s.name+'</b>'+desc+'</span></button>';
+    const s=chosenSkill(key);
+    const desc=key==='dash'?'短距离冲刺，期间可躲避伤害；可以在空中调整位置。':s.description||descriptions[world.hero][key];
+    return '<button class="skill" data-skill="'+key+'" aria-label="'+keyLabels[key]+' '+s.name+'"><span class="skill-face"><span class="skill-art" aria-hidden="true" style="'+duelHotbarStyle(world.hero,key,world.duelSkills.loadout)+'"></span><span class="skill-key">'+keyLabels[key]+'</span><span class="cooldown" hidden></span></span><span class="skill-name">'+s.name+'</span><span class="skill-tooltip"><b>'+keyLabels[key]+' · '+s.name+'</b>'+desc+'</span></button>';
   }).join('');
   $$('.skill').forEach(b=>b.addEventListener('click',()=>{sound.init();actions.push(b.dataset.skill);canvas.focus({preventScroll:true});}));
   updateUI();
@@ -53,7 +62,7 @@ function buildScene(){
   $('.arena-shell').style.aspectRatio=cameraView(world).width+' / '+world.height;
   $('#camera-button').textContent=world.camera?.overview?'镜头 全景':'镜头 跟随';
   $('#scene-name').textContent=s.name+' · '+s.subtitle;$('#scene-english').textContent=s.english;
-  $$('.scene-picker button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scene===selectedScene)));
+  $$('.scene-picker button[data-scene]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scene===selectedScene)));
   $('#mechanism-cards').innerHTML=s.cards.map((card,i)=>'<article class="mechanism-card"><span>'+(i+1)+'</span><div><h3>'+card.name+'</h3><p>'+card.copy+'</p></div><div class="mechanism-action"><output data-mechanism-status="'+card.id+'"></output><button data-mechanism="'+card.id+'">'+card.action+'</button></div></article>').join('');
   $$('[data-mechanism]').forEach(b=>b.addEventListener('click',()=>{triggerMechanism(world,b.dataset.mechanism);consumeEvents();updateUI();canvas.focus({preventScroll:true});}));
   $('#repair-button').textContent=selectedScene==='moon'?'修复断桥':'重置机关';
@@ -70,12 +79,12 @@ function updateUI(){
   $$('[data-mechanism-status]').forEach(e=>e.textContent=sceneStatus(world,e.dataset.mechanismStatus));
   $('#passive-flash').style.opacity=Math.min(.16,p.passiveGlow*.2);
   $$('.skill').forEach(b=>{
-    const key=b.dataset.skill,rc=p.recast?.key===key?p.recast:null,s=h.skills[key]||{name:'冲刺',icon:'dash',cd:1.1};
+    const key=b.dataset.skill,rc=p.recast?.key===key?p.recast:null,s=chosenSkill(key);
     const remaining=rc?Math.max(0,rc.until-world.time):key==='dash'?p.dashCooldown:p.cooldowns[key];
-    const max=rc?rc.window:s.cd,overlay=b.querySelector('.cooldown');
+    const max=rc?rc.window:(s.cd??h.skills[key]?.cd??1.1),overlay=b.querySelector('.cooldown');
     b.classList.toggle('recast',!!rc);
     const name=rc?rc.name:s.name,icon=rc?rc.icon:s.icon;
-    const art=b.querySelector('.skill-art'),style=skillArtStyle(world.hero,key,!!rc);if(art.getAttribute('style')!==style)art.setAttribute('style',style);
+    const art=b.querySelector('.skill-art'),style=duelHotbarStyle(world.hero,key,world.duelSkills.loadout,!!rc);if(art.getAttribute('style')!==style)art.setAttribute('style',style);
     b.querySelector('.skill-name').textContent=name;
     overlay.hidden=remaining<=.02;overlay.style.setProperty('--angle',(clamp(remaining/max,0,1)*360)+'deg');
     overlay.textContent=remaining>=1?remaining.toFixed(1):remaining>.02?remaining.toFixed(1):'';
@@ -90,19 +99,20 @@ let selectionId=0;
 async function choose(hero){
   const id=++selectionId;keys.clear();actions.length=0;pointerDown=false;
   if(renderer&&!renderer.assets[hero]){notice('正在加载'+HEROES[hero].name+'…');try{await ensureHeroAssets(hero,renderer.assets);}catch(e){notice(e.message+'，可再次选择重试。');console.error(e);return;}if(id!==selectionId)return;}
+  if(renderer){try{await loadAlternateArt([hero],renderer.assets);}catch(e){notice(e.message+'，请重新选择重试。');return;}if(id!==selectionId)return;}
   if(renderer)renderer.poses[hero]=Object.fromEntries(Object.entries(renderer.poses[hero]));
-  world=createWorld(hero,selectedScene);aim={...world.aim};pointerUV=null;keys.clear();actions.length=0;pointerDown=false;accumulator=0;
+  world=createWorld(hero,selectedScene);practiceLoads[hero]??=practiceLoadout(hero,new URLSearchParams());applyPracticeLoadout(world,practiceLoads[hero]);aim={...world.aim};pointerUV=null;keys.clear();actions.length=0;pointerDown=false;accumulator=0;
   $('#moving-button').setAttribute('aria-pressed','false');$('#counter-button').setAttribute('aria-pressed','false');$('#slow-button').setAttribute('aria-pressed','false');
   $('#freeze-button').setAttribute('aria-pressed','false');$('#frame-badge').hidden=true;
   buildScene();buildHero();if(mode==='game')canvas.focus({preventScroll:true});
-  notice(HEROES[hero].comboHelp||(hero==='fire'?'试试 E 起跳，再按 E 下砸。':'试试 E 召唤木灵鹿，再按 E 指挥角跃冲撞。'));
+  notice('六技能免费试玩：点击「技能搭配」调整 F / E / R，每行二选一。');
   if(renderer)renderer.portrait(document.querySelector('[data-hero='+hero+'] canvas'),hero);
-  const url=new URL(location.href);url.searchParams.set('hero',hero);url.searchParams.set('scene',selectedScene);history.replaceState(null,'',url);
+  history.replaceState(null,'',practiceURL(hero,world.duelSkills.loadout,selectedScene));
 }
 function notice(t){$('#notice').textContent=t;}
 function start(){
   if(!renderer)return;
-  mode='game';$('#title-screen').hidden=true;$('#game').hidden=false;paused=false;accumulator=0;last=performance.now();sound.init();canvas.focus({preventScroll:true});renderer.resize();buildHero();
+  mode='game';$('#title-screen').hidden=true;$('#game').hidden=false;paused=false;accumulator=0;last=performance.now();sound.setScene('journey');sound.init();canvas.focus({preventScroll:true});renderer.resize();buildHero();
 }
 function setPause(value){
   paused=value;keys.clear();actions.length=0;pointerDown=false;accumulator=0;$('#pause-overlay').hidden=!paused;$('#pause-button').innerHTML=paused?'继续 <kbd>P</kbd>':'暂停 <kbd>P</kbd>';last=performance.now();
@@ -113,6 +123,7 @@ function point(event){const r=canvas.getBoundingClientRect();pointerUV={u:(event
 canvas.addEventListener('pointermove',point);canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();point(e);pointerDown=true;canvas.setPointerCapture(e.pointerId);sound.init();canvas.focus({preventScroll:true});});
 window.addEventListener('pointerup',()=>pointerDown=false);canvas.addEventListener('pointercancel',()=>pointerDown=false);canvas.addEventListener('contextmenu',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
+  if(practice.isOpen||e.target.closest('input,select,textarea,dialog'))return;
   if(mode==='title'){if(e.code==='Enter'&&!$('#start-button').disabled)enterLobby();return;}
   if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD','ShiftLeft','ShiftRight','KeyF','KeyE','KeyR','KeyJ','KeyG'].includes(e.code))e.preventDefault();
   if(e.repeat)return;
@@ -135,8 +146,9 @@ $('#back-button').addEventListener('click',enterLobby);
 $('#pause-button').addEventListener('click',()=>setPause(!paused));$('#resume-button').addEventListener('click',()=>setPause(false));
 $('#freeze-button').addEventListener('click',freezeFrame);
 $$('.hero-button').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.hero)));
-$$('.scene-picker button').forEach(b=>b.addEventListener('click',()=>{selectedScene=b.dataset.scene;choose(world.hero);const url=new URL(location.href);url.searchParams.set('scene',selectedScene);url.searchParams.set('play','1');history.replaceState(null,'',url);notice('已进入'+SCENES[selectedScene].name+'。射击机关或靠近后按 G。');}));
+$$('.scene-picker button[data-scene]').forEach(b=>b.addEventListener('click',()=>{selectedScene=b.dataset.scene;choose(world.hero);const url=new URL(location.href);url.searchParams.set('scene',selectedScene);url.searchParams.set('play','1');history.replaceState(null,'',url);notice('已进入'+SCENES[selectedScene].name+'。射击机关或靠近后按 G。');}));
 $('#reset-button').addEventListener('click',()=>choose(world.hero));
+$('#practice-loadout-open').addEventListener('click',()=>{wasPausedBeforePicker=paused;paused=true;keys.clear();actions.length=0;pointerDown=false;accumulator=0;practice.open(world.hero,world.duelSkills.loadout,selectedScene,true);});
 $('#repair-button').addEventListener('click',()=>{if(selectedScene==='moon')repair(world);else choose(world.hero);notice('地图机关已复原。');canvas.focus({preventScroll:true});});
 for(const [id,field] of [['moving','moving'],['counter','counterattack'],['slow','slow']]){
   $('#'+id+'-button').addEventListener('click',e=>{world[field]=!world[field];e.currentTarget.setAttribute('aria-pressed',String(world[field]));canvas.focus({preventScroll:true});});
@@ -185,13 +197,13 @@ function loop(now){
   }
   requestAnimationFrame(loop);
 }
-window.duelLab={snapshot:()=>({hero:world.hero,time:world.time,paused,mode,state:actionState(world),player:{x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,hp:world.player.hp,grounded:world.player.grounded,jumps:world.player.jumps,recast:world.player.recast},targets:world.targets.map(t=>({x:t.x,y:t.y,hp:t.hp,burnUntil:t.burnUntil})),stats:{...world.stats},fox:world.fox?{x:world.fox.x,y:world.fox.y}:null,bridge:world.platforms.find(p=>p.id==='bridge').active})};
+window.duelLab={snapshot:()=>({hero:world.hero,loadout:world.duelSkills.loadout,time:world.time,paused,mode,state:actionState(world),player:{x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,hp:world.player.hp,grounded:world.player.grounded,jumps:world.player.jumps,recast:world.player.recast},targets:world.targets.map(t=>({x:t.x,y:t.y,hp:t.hp,burnUntil:t.burnUntil})),stats:{...world.stats},fox:world.fox?{x:world.fox.x,y:world.fox.y}:null,bridge:world.platforms.find(p=>p.id==='bridge')?.active??false})};
 async function init(){
   if(initialParams.get('play')!=='1'){$('#loading').textContent='准备就绪 · 点击进入主大厅';$('#start-button').disabled=false;positionTitleButton();return;}
   const loadingScreen=new LoadingScreen(),token=loadingScreen.start(selectedScene);
   try{
     let doneCount=0,totalCount=0;const assets=await loadAssets((done,total)=>{doneCount=done;totalCount=total;$('#loading').textContent='正在加载角色与秘境 '+done+' / '+total;loadingScreen.progress(done,total+1,token);});
-    await ensureHeroAssets(world.hero,assets);loadingScreen.progress(doneCount+1,totalCount+1,token);loadingScreen.finish(token);
+    await ensureHeroAssets(world.hero,assets);await loadAlternateArt([world.hero],assets);loadingScreen.progress(doneCount+1,totalCount+1,token);loadingScreen.finish(token);
     renderer=new Renderer(canvas,assets);$$('.hero-button').forEach(b=>{if(assets[b.dataset.hero])renderer.portrait(b.querySelector('canvas'),b.dataset.hero);});
     buildScene();buildHero();positionTitleButton();$('#loading').textContent='准备就绪 · 点击开始游戏';$('#start-button').disabled=false;
     const params=new URLSearchParams(location.search);if(params.get('play')==='1')start();

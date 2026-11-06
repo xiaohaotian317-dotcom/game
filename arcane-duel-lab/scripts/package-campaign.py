@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign14',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12','campaign13','campaign14'])
+parser.add_argument('--version',default='campaign15',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12','campaign13','campaign14','campaign15'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,7 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'PvP six-skill hero loadouts with separate hero/skill steps, one choice per F/E/R row, synchronized ready reset and persistent choices across rounds/reconnects; shared eighteen alternate skills and original VFX, PvP hybrid basics; campaign13 solo features, original saves/Sites and motion rollback preserved','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Hero codex six-skill free trials and complete descriptions, painted audio settings and per-save atomic redemption, two original quiet loop tracks, between-wave travel reduced thirty percent with full battle widths and verified platform routes; campaign14 PvP and solo growth, original Sites/saves/releases and motion rollback preserved','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 
