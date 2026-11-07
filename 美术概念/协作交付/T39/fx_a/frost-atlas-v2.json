@@ -1,0 +1,946 @@
+{
+  "version": "T39-frost-fx-v2",
+  "status": "rejected-draft-retained-for-source-traceability-use-frost-v3-instead",
+  "file": "hero-frost-fx-v2.png",
+  "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-6e8bd0b8-667a-4969-946e-0359cacf3e7d.png",
+  "generator": "built-in image_gen; transparent_background=true; one call for this atlas",
+  "promptFile": "frost-prompt-v2.txt",
+  "originalPixelsPreserved": true,
+  "sha256": "fcc204bc3456f3675575259067d2b0edadf57c7f9b1e02b971ff6173b847f5d5",
+  "sourceSha256": "fcc204bc3456f3675575259067d2b0edadf57c7f9b1e02b971ff6173b847f5d5",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "cols": 4,
+  "rows": 6,
+  "frameCount": 24,
+  "alphaThreshold": 16,
+  "alpha": {
+    "min": 0,
+    "max": 252,
+    "transparentPixels": 525,
+    "nearTransparentPixelsAtMost1": 54577,
+    "coverageByThreshold": {
+      "0": 0.9996662139892578,
+      "1": 0.9653008778889974,
+      "8": 0.36519813537597656,
+      "16": 0.27301470438639325,
+      "32": 0.19976488749186197,
+      "64": 0.15717124938964844,
+      "128": 0.1287695566813151,
+      "192": 0.10511207580566406,
+      "240": 0.05292956034342448
+    },
+    "outerEdgePixelsAbove16": 0
+  },
+  "gridAudit": {
+    "method": "Visually checked original; threshold16 alpha counted on every internal seam. Explicit rects below remain authoritative.",
+    "verticalSeamsAbove16": {
+      "255": 0,
+      "256": 0,
+      "511": 0,
+      "512": 0,
+      "767": 0,
+      "768": 0
+    },
+    "horizontalSeamsAbove16": {
+      "255": 0,
+      "256": 0,
+      "511": 0,
+      "512": 0,
+      "767": 0,
+      "768": 0,
+      "1023": 0,
+      "1024": 0,
+      "1279": 0,
+      "1280": 0
+    }
+  },
+  "coordinateNotes": "rect and spriteRect are absolute atlas pixels [x,y,w,h]; bbox and pivot/centerX/groundContactY are local to rect. Pivot is semantic fixed anchor, not changing alpha-bbox center. For ground spell use groundContactY at contact-plane ellipse center, not bottom of decorative glow.",
+  "sequence": "Each skill reads four frames in first row, then four frames in second row. 0-1 growth, 2-5 coherent primary motion, 6-7 dissipation.",
+  "skills": [
+    {
+      "id": "F",
+      "name": "寒锋扇刃",
+      "type": "projectile",
+      "pivot": [
+        128,
+        128
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": 0,
+          "stage": "growth",
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            70,
+            75,
+            125,
+            118
+          ],
+          "bbox": [
+            70,
+            75,
+            125,
+            118
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            132.5,
+            134.0
+          ],
+          "alpha16Pixels": 8540,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 61
+        },
+        {
+          "index": 1,
+          "phase": 1,
+          "stage": "growth",
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            303,
+            74,
+            152,
+            124
+          ],
+          "bbox": [
+            47,
+            74,
+            152,
+            124
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            123.0,
+            136.0
+          ],
+          "alpha16Pixels": 11582,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 47
+        },
+        {
+          "index": 2,
+          "phase": 2,
+          "stage": "primary",
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            533,
+            39,
+            206,
+            169
+          ],
+          "bbox": [
+            21,
+            39,
+            206,
+            169
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            124.0,
+            123.5
+          ],
+          "alpha16Pixels": 19507,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 21
+        },
+        {
+          "index": 3,
+          "phase": 3,
+          "stage": "primary",
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            785,
+            32,
+            222,
+            182
+          ],
+          "bbox": [
+            17,
+            32,
+            222,
+            182
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            128.0,
+            123.0
+          ],
+          "alpha16Pixels": 21866,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 17
+        },
+        {
+          "index": 4,
+          "phase": 4,
+          "stage": "primary",
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            17,
+            289,
+            234,
+            188
+          ],
+          "bbox": [
+            17,
+            33,
+            234,
+            188
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            134.0,
+            127.0
+          ],
+          "alpha16Pixels": 24098,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 5
+        },
+        {
+          "index": 5,
+          "phase": 5,
+          "stage": "primary",
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            267,
+            289,
+            244,
+            181
+          ],
+          "bbox": [
+            11,
+            33,
+            244,
+            181
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            133.0,
+            123.5
+          ],
+          "alpha16Pixels": 23626,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 1
+        },
+        {
+          "index": 6,
+          "phase": 6,
+          "stage": "dissipation",
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            529,
+            288,
+            227,
+            185
+          ],
+          "bbox": [
+            17,
+            32,
+            227,
+            185
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            130.5,
+            124.5
+          ],
+          "alpha16Pixels": 21617,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 12
+        },
+        {
+          "index": 7,
+          "phase": 7,
+          "stage": "dissipation",
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            789,
+            304,
+            207,
+            160
+          ],
+          "bbox": [
+            21,
+            48,
+            207,
+            160
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            124.5,
+            128.0
+          ],
+          "alpha16Pixels": 12780,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 21
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "冰晶追猎",
+      "type": "projectile",
+      "pivot": [
+        128,
+        128
+      ],
+      "frames": [
+        {
+          "index": 8,
+          "phase": 0,
+          "stage": "growth",
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            59,
+            576,
+            141,
+            117
+          ],
+          "bbox": [
+            59,
+            64,
+            141,
+            117
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            129.5,
+            122.5
+          ],
+          "alpha16Pixels": 11140,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 56
+        },
+        {
+          "index": 9,
+          "phase": 1,
+          "stage": "growth",
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            282,
+            593,
+            174,
+            82
+          ],
+          "bbox": [
+            26,
+            81,
+            174,
+            82
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            113.0,
+            122.0
+          ],
+          "alpha16Pixels": 8251,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 26
+        },
+        {
+          "index": 10,
+          "phase": 2,
+          "stage": "primary",
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            526,
+            586,
+            214,
+            96
+          ],
+          "bbox": [
+            14,
+            74,
+            214,
+            96
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            121.0,
+            122.0
+          ],
+          "alpha16Pixels": 11584,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 14
+        },
+        {
+          "index": 11,
+          "phase": 3,
+          "stage": "primary",
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            784,
+            578,
+            217,
+            105
+          ],
+          "bbox": [
+            16,
+            66,
+            217,
+            105
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            124.5,
+            118.5
+          ],
+          "alpha16Pixels": 12866,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 16
+        },
+        {
+          "index": 12,
+          "phase": 4,
+          "stage": "primary",
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            19,
+            842,
+            215,
+            105
+          ],
+          "bbox": [
+            19,
+            74,
+            215,
+            105
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            126.5,
+            126.5
+          ],
+          "alpha16Pixels": 13374,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 19
+        },
+        {
+          "index": 13,
+          "phase": 5,
+          "stage": "primary",
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            266,
+            842,
+            233,
+            84
+          ],
+          "bbox": [
+            10,
+            74,
+            233,
+            84
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            126.5,
+            116.0
+          ],
+          "alpha16Pixels": 11661,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 10
+        },
+        {
+          "index": 14,
+          "phase": 6,
+          "stage": "dissipation",
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            524,
+            833,
+            225,
+            108
+          ],
+          "bbox": [
+            12,
+            65,
+            225,
+            108
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            124.5,
+            119.0
+          ],
+          "alpha16Pixels": 11999,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 12
+        },
+        {
+          "index": 15,
+          "phase": 7,
+          "stage": "dissipation",
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            782,
+            849,
+            218,
+            78
+          ],
+          "bbox": [
+            14,
+            81,
+            218,
+            78
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            128
+          ],
+          "alphaBboxCenter": [
+            123.0,
+            120.0
+          ],
+          "alpha16Pixels": 7939,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 14
+        }
+      ]
+    },
+    {
+      "id": "R",
+      "name": "极夜冰凰",
+      "type": "ground",
+      "pivot": [
+        128,
+        222
+      ],
+      "frames": [
+        {
+          "index": 16,
+          "phase": 0,
+          "stage": "growth",
+          "rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            37,
+            1089,
+            171,
+            172
+          ],
+          "bbox": [
+            37,
+            65,
+            171,
+            172
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            122.5,
+            151.0
+          ],
+          "alpha16Pixels": 19727,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 19,
+          "groundContactY": 222
+        },
+        {
+          "index": 17,
+          "phase": 1,
+          "stage": "growth",
+          "rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            282,
+            1097,
+            187,
+            166
+          ],
+          "bbox": [
+            26,
+            73,
+            187,
+            166
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            119.5,
+            156.0
+          ],
+          "alpha16Pixels": 22224,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 17,
+          "groundContactY": 222
+        },
+        {
+          "index": 18,
+          "phase": 2,
+          "stage": "primary",
+          "rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            531,
+            1071,
+            195,
+            191
+          ],
+          "bbox": [
+            19,
+            47,
+            195,
+            191
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            116.5,
+            142.5
+          ],
+          "alpha16Pixels": 26243,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 18,
+          "groundContactY": 222
+        },
+        {
+          "index": 19,
+          "phase": 3,
+          "stage": "primary",
+          "rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            785,
+            1025,
+            222,
+            237
+          ],
+          "bbox": [
+            17,
+            1,
+            222,
+            237
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            128.0,
+            119.5
+          ],
+          "alpha16Pixels": 34144,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 1,
+          "groundContactY": 222
+        },
+        {
+          "index": 20,
+          "phase": 4,
+          "stage": "primary",
+          "rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            15,
+            1333,
+            237,
+            186
+          ],
+          "bbox": [
+            15,
+            53,
+            237,
+            186
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            133.5,
+            146.0
+          ],
+          "alpha16Pixels": 29926,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 4,
+          "groundContactY": 222
+        },
+        {
+          "index": 21,
+          "phase": 5,
+          "stage": "primary",
+          "rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            272,
+            1341,
+            234,
+            177
+          ],
+          "bbox": [
+            16,
+            61,
+            234,
+            177
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            133.0,
+            149.5
+          ],
+          "alpha16Pixels": 28260,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 6,
+          "groundContactY": 222
+        },
+        {
+          "index": 22,
+          "phase": 6,
+          "stage": "dissipation",
+          "rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            530,
+            1323,
+            218,
+            194
+          ],
+          "bbox": [
+            18,
+            43,
+            218,
+            194
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            127.0,
+            140.0
+          ],
+          "alpha16Pixels": 23304,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 18,
+          "groundContactY": 222
+        },
+        {
+          "index": 23,
+          "phase": 7,
+          "stage": "dissipation",
+          "rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            788,
+            1336,
+            187,
+            176
+          ],
+          "bbox": [
+            20,
+            56,
+            187,
+            176
+          ],
+          "centerX": 128,
+          "pivot": [
+            128,
+            222
+          ],
+          "alphaBboxCenter": [
+            113.5,
+            144.0
+          ],
+          "alpha16Pixels": 13157,
+          "edgePixelsAbove16": 0,
+          "minPaddingAt16": 20,
+          "groundContactY": 222
+        }
+      ]
+    }
+  ]
+}

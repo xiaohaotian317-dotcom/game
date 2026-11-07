@@ -1,0 +1,48 @@
+✔ gift code persists exact real supplies once, preserves existing growth and rejects repeats after reload (10.6009ms)
+✔ failed gift saving cannot consume a code, grant partial items or overwrite a more recent profile (1.2989ms)
+✔ audio levels normalize safely, respect legacy mute and persist three independently controllable channels (0.8014ms)
+✔ all forty-eight practice combinations are free real casts without solo progress or PvP camera mode (217.2537ms)
+✔ only between-wave travel contracts by thirty percent, keeping battle width, original platform geometry and destination bounds (2.6603ms)
+✔ all thirty-six catalog skills have real descriptions and new settings/music preserve delivered originals (41.3075ms)
+✔ alternate field artwork follows its live support once, mirrors the caster and disappears with the support (2.2476ms)
+✔ new PvP abilities remain below direct-channel packet limits through sustained real cooldown casts (536.0191ms)
+✔ rapid choices merge after delayed acknowledgements and stale queued choices cannot cross rooms or heroes (0.5584ms)
+✔ all forty-eight six-hero loadouts have exactly one valid skill in every slot and reject crossed or incomplete choices (1.0232ms)
+✔ all eighteen alternate skills perform real damage, healing or guarding from either seat without loading solo progression (41.334ms)
+✔ selected alternate fields and cast identity survive snapshot JSON restore, prediction replay and moving support updates (3.0501ms)
+✔ PvP lightning guard reduces incoming damage and near-ranged basics work for either actual opposing actor without double counting (13.3128ms)
+✔ room loadout changes clear confirmations, persist through reads, reject in-match changes and retain choices across rounds and returns (22.8645ms)
+✔ all 21 enemy definitions have health, independent art and distinct boss active combos plus traits (1.9867ms)
+✔ each enemy can be placed, pursue and damage the actual player, without any dummy counterattack flag (286.439ms)
+✔ sprite metadata covers 22 real transparent atlases and all 352 frames with matching hashes (97.8103ms)
+✔ ranged attacks originate at the calibrated frame mouth and can hit the visible upper body of a boss (6.7934ms)
+✔ all six heroes can damage and kill a placed enemy; dead enemies do not become respawning dummies (44.3051ms)
+✔ real combo steps are separated by windup, release and recovery, rather than hitting once per render (8.3249ms)
+✔ melee accepts contact overlap but cannot hit a target wholly behind or through a wall (0.3242ms)
+✔ poison is sustained real damage, refreshing its duration without stacking duplicate tick streams (3.6795ms)
+✔ stone and frost passives accumulate on actual hits, block inputs temporarily and grant control resistance (5.5683ms)
+✔ spider trait visibly lays a damageable egg, which hatches exactly three attacking baby spiders (25.6967ms)
+✔ destroying a spider egg prevents its children, and skeleton summoning remains capped (62.1118ms)
+✔ spider queen has a separate telegraphed leap attack that deals damage only after landing (1.7087ms)
+✔ bull residue is grounded lava that burns the player and expires; tree regeneration is automatic (6.0368ms)
+✔ enemy minions and zones interact with the actual nature summon and can be cleared without stale poison (7.8484ms)
+✔ placement is reusable on all three maps and respects terrain/actor collisions and living cap (34.1879ms)
+✔ all 63 enemy/map combinations actually begin attacks on authored terrain instead of parking behind ledges (1267.3116ms)
+✔ enemy sprite/attack/status painters use finite coordinates during every actual attack (185.2091ms)
+✔ missing and invalid rolls use neutral values while finite rolls stay within ten percent (1.7016ms)
+✔ new rolls sample each attribute once and can be saved without later changes (0.3999ms)
+✔ legacy equipment keeps the original quality, level and rank bonuses (0.3163ms)
+✔ every legacy quality retains its attack, critical and lifesteal tier (0.263ms)
+✔ small persistent rolls change only the relevant output or survival bonuses (0.27ms)
+✔ non-equipment and malformed levels still return finite numeric bonuses (0.4094ms)
+✔ white unenhanced weapons show only real attack with the solo multiplier (0.2864ms)
+✔ armor rows use the selected hero base health and contain only survival values (0.2502ms)
+✔ reading or displaying equipment never mutates the item or implicitly rerolls it (1.4567ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3648.6667

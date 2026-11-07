@@ -1,0 +1,775 @@
+{
+  "file": "hero-star-fx-v2.png",
+  "sourceImage": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T39\\fx_b\\hero-star-fx-v2.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+  "bytes": 2293631,
+  "alpha": {
+    "minMax": [
+      0,
+      252
+    ],
+    "zeroPixels": 153,
+    "opaquePixels": 0,
+    "intermediatePixels": 1572711,
+    "belowOrEqual10Fraction": 0.4763482411702474,
+    "belowOrEqual16Fraction": 0.5524915059407552,
+    "thresholdForBounds": 16,
+    "notice": "PNG kept byte-for-byte; low nonzero alpha fog remains in nominal empty regions. Rects measured at alpha>16, not asserted fully zero-alpha gutters."
+  },
+  "rowGapMeasurement": [
+    {
+      "nominal": 256,
+      "measured": 256,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 512,
+      "measured": 511,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 768,
+      "measured": 768,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1024,
+      "measured": 1021,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1280,
+      "measured": 1277,
+      "threePixelOccupancy": 0
+    }
+  ],
+  "columnGapMeasurements": [
+    {
+      "row": 0,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 509,
+          "threePixelOccupancy": 92
+        },
+        {
+          "nominal": 768,
+          "measured": 769,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 253,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 505,
+          "threePixelOccupancy": 229
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "skill": "F",
+      "phase": 0,
+      "rect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        33,
+        59,
+        190,
+        149
+      ],
+      "coreAlpha64Rect": [
+        41,
+        61,
+        173,
+        141
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 20450
+    },
+    {
+      "index": 1,
+      "skill": "F",
+      "phase": 1,
+      "rect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        287,
+        67,
+        177,
+        129
+      ],
+      "coreAlpha64Rect": [
+        294,
+        74,
+        164,
+        117
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 16150
+    },
+    {
+      "index": 2,
+      "skill": "F",
+      "phase": 2,
+      "rect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        524,
+        80,
+        212,
+        111
+      ],
+      "coreAlpha64Rect": [
+        534,
+        84,
+        194,
+        99
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 15756
+    },
+    {
+      "index": 3,
+      "skill": "F",
+      "phase": 3,
+      "rect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        770,
+        77,
+        239,
+        113
+      ],
+      "coreAlpha64Rect": [
+        779,
+        83,
+        227,
+        101
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 19363
+    },
+    {
+      "index": 4,
+      "skill": "F",
+      "phase": 4,
+      "rect": [
+        0,
+        256,
+        256,
+        255
+      ],
+      "spriteRect": [
+        11,
+        304,
+        224,
+        145
+      ],
+      "coreAlpha64Rect": [
+        25,
+        310,
+        197,
+        136
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 23006
+    },
+    {
+      "index": 5,
+      "skill": "F",
+      "phase": 5,
+      "rect": [
+        256,
+        256,
+        253,
+        255
+      ],
+      "spriteRect": [
+        261,
+        283,
+        248,
+        197
+      ],
+      "coreAlpha64Rect": [
+        277,
+        290,
+        216,
+        178
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 35095
+    },
+    {
+      "index": 6,
+      "skill": "F",
+      "phase": 6,
+      "rect": [
+        509,
+        256,
+        260,
+        255
+      ],
+      "spriteRect": [
+        509,
+        285,
+        259,
+        199
+      ],
+      "coreAlpha64Rect": [
+        532,
+        291,
+        217,
+        176
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 38078
+    },
+    {
+      "index": 7,
+      "skill": "F",
+      "phase": 7,
+      "rect": [
+        769,
+        256,
+        255,
+        255
+      ],
+      "spriteRect": [
+        777,
+        287,
+        231,
+        189
+      ],
+      "coreAlpha64Rect": [
+        788,
+        292,
+        218,
+        174
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 30192
+    },
+    {
+      "index": 8,
+      "skill": "E",
+      "phase": 0,
+      "rect": [
+        0,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        33,
+        541,
+        195,
+        201
+      ],
+      "coreAlpha64Rect": [
+        48,
+        555,
+        171,
+        176
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 28960
+    },
+    {
+      "index": 9,
+      "skill": "E",
+      "phase": 1,
+      "rect": [
+        256,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        285,
+        536,
+        199,
+        200
+      ],
+      "coreAlpha64Rect": [
+        294,
+        561,
+        180,
+        162
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 30096
+    },
+    {
+      "index": 10,
+      "skill": "E",
+      "phase": 2,
+      "rect": [
+        512,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        535,
+        530,
+        203,
+        214
+      ],
+      "coreAlpha64Rect": [
+        545,
+        545,
+        188,
+        187
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 32604
+    },
+    {
+      "index": 11,
+      "skill": "E",
+      "phase": 3,
+      "rect": [
+        768,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        772,
+        513,
+        222,
+        229
+      ],
+      "coreAlpha64Rect": [
+        800,
+        527,
+        189,
+        206
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 38412
+    },
+    {
+      "index": 12,
+      "skill": "E",
+      "phase": 4,
+      "rect": [
+        0,
+        768,
+        253,
+        253
+      ],
+      "spriteRect": [
+        23,
+        785,
+        222,
+        223
+      ],
+      "coreAlpha64Rect": [
+        32,
+        794,
+        191,
+        204
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 37482
+    },
+    {
+      "index": 13,
+      "skill": "E",
+      "phase": 5,
+      "rect": [
+        253,
+        768,
+        252,
+        253
+      ],
+      "spriteRect": [
+        255,
+        784,
+        250,
+        222
+      ],
+      "coreAlpha64Rect": [
+        273,
+        796,
+        223,
+        190
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 41426
+    },
+    {
+      "index": 14,
+      "skill": "E",
+      "phase": 6,
+      "rect": [
+        505,
+        768,
+        263,
+        253
+      ],
+      "spriteRect": [
+        505,
+        786,
+        245,
+        213
+      ],
+      "coreAlpha64Rect": [
+        542,
+        798,
+        194,
+        184
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 37771
+    },
+    {
+      "index": 15,
+      "skill": "E",
+      "phase": 7,
+      "rect": [
+        768,
+        768,
+        256,
+        253
+      ],
+      "spriteRect": [
+        788,
+        796,
+        219,
+        200
+      ],
+      "coreAlpha64Rect": [
+        801,
+        807,
+        195,
+        172
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 33364
+    },
+    {
+      "index": 16,
+      "skill": "R",
+      "phase": 0,
+      "rect": [
+        0,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        19,
+        1157,
+        219,
+        92
+      ],
+      "coreAlpha64Rect": [
+        21,
+        1165,
+        214,
+        82
+      ],
+      "groundProjectionPeakY": 1214,
+      "alpha16Pixels": 13569
+    },
+    {
+      "index": 17,
+      "skill": "R",
+      "phase": 1,
+      "rect": [
+        256,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        275,
+        1116,
+        221,
+        134
+      ],
+      "coreAlpha64Rect": [
+        277,
+        1123,
+        215,
+        124
+      ],
+      "groundProjectionPeakY": 1207,
+      "alpha16Pixels": 22615
+    },
+    {
+      "index": 18,
+      "skill": "R",
+      "phase": 2,
+      "rect": [
+        512,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        530,
+        1039,
+        221,
+        210
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1056,
+        214,
+        190
+      ],
+      "groundProjectionPeakY": 1210,
+      "alpha16Pixels": 30551
+    },
+    {
+      "index": 19,
+      "skill": "R",
+      "phase": 3,
+      "rect": [
+        768,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        783,
+        1023,
+        223,
+        226
+      ],
+      "coreAlpha64Rect": [
+        789,
+        1038,
+        215,
+        208
+      ],
+      "groundProjectionPeakY": 1205,
+      "alpha16Pixels": 35437
+    },
+    {
+      "index": 20,
+      "skill": "R",
+      "phase": 4,
+      "rect": [
+        0,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        16,
+        1279,
+        224,
+        225
+      ],
+      "coreAlpha64Rect": [
+        19,
+        1286,
+        218,
+        216
+      ],
+      "groundProjectionPeakY": 1451,
+      "alpha16Pixels": 36044
+    },
+    {
+      "index": 21,
+      "skill": "R",
+      "phase": 5,
+      "rect": [
+        256,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        272,
+        1282,
+        223,
+        224
+      ],
+      "coreAlpha64Rect": [
+        278,
+        1295,
+        213,
+        208
+      ],
+      "groundProjectionPeakY": 1459,
+      "alpha16Pixels": 34463
+    },
+    {
+      "index": 22,
+      "skill": "R",
+      "phase": 6,
+      "rect": [
+        512,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        531,
+        1303,
+        219,
+        201
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1311,
+        213,
+        191
+      ],
+      "groundProjectionPeakY": 1472,
+      "alpha16Pixels": 28496
+    },
+    {
+      "index": 23,
+      "skill": "R",
+      "phase": 7,
+      "rect": [
+        768,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        787,
+        1308,
+        217,
+        195
+      ],
+      "coreAlpha64Rect": [
+        789,
+        1313,
+        213,
+        188
+      ],
+      "groundProjectionPeakY": 1473,
+      "alpha16Pixels": 24490
+    }
+  ]
+}

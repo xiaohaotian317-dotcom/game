@@ -1,0 +1,1803 @@
+{
+  "file": "hero-star-fx-v3.png",
+  "sourceImage": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T39\\fx_b\\hero-star-fx-v3.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "8d20761555d95739052a7e7b5460bc460b8a43ba4fcab8f587740fd243ddaee2",
+  "bytes": 2162180,
+  "alpha": {
+    "minMax": [
+      0,
+      254
+    ],
+    "zeroPixels": 914005,
+    "opaquePixels": 0,
+    "intermediatePixels": 658859,
+    "belowOrEqual10Fraction": 0.8147672017415365,
+    "belowOrEqual16Fraction": 0.8232390085856119,
+    "thresholdForBounds": 16,
+    "notice": "Raw RGBA PNG from built-in image_gen edit preserved byte-for-byte. Strong improvement in true zero-alpha area; no script alpha thresholding or pixel cleanup. Bounds at alpha>16 are diagnostic measurements only."
+  },
+  "rowGapMeasurement": [
+    {
+      "nominal": 256,
+      "measured": 256,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 512,
+      "measured": 512,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 768,
+      "measured": 768,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1024,
+      "measured": 1024,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1280,
+      "measured": 1278,
+      "threePixelOccupancy": 0
+    }
+  ],
+  "columnGapMeasurements": [
+    {
+      "row": 0,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "skill": "F",
+      "phase": 0,
+      "rect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        42,
+        60,
+        173,
+        141
+      ],
+      "coreAlpha64Rect": [
+        43,
+        60,
+        171,
+        141
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 6636,
+      "phaseName": "星核聚拢",
+      "center": [
+        146,
+        136
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "centerLocal": [
+        146,
+        136
+      ],
+      "pivot": [
+        146,
+        136
+      ],
+      "pivotNormalized": [
+        0.570312,
+        0.53125
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        146,
+        136
+      ]
+    },
+    {
+      "index": 1,
+      "skill": "F",
+      "phase": 1,
+      "rect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        288,
+        72,
+        170,
+        121
+      ],
+      "coreAlpha64Rect": [
+        292,
+        73,
+        165,
+        118
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 7817,
+      "phaseName": "环轨压缩",
+      "center": [
+        409,
+        135
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "centerLocal": [
+        153,
+        135
+      ],
+      "pivot": [
+        153,
+        135
+      ],
+      "pivotNormalized": [
+        0.597656,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        153,
+        135
+      ]
+    },
+    {
+      "index": 2,
+      "skill": "F",
+      "phase": 2,
+      "rect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        524,
+        81,
+        208,
+        102
+      ],
+      "coreAlpha64Rect": [
+        528,
+        82,
+        202,
+        101
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 7685,
+      "phaseName": "单核射出",
+      "center": [
+        684,
+        135
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "centerLocal": [
+        172,
+        135
+      ],
+      "pivot": [
+        172,
+        135
+      ],
+      "pivotNormalized": [
+        0.671875,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        172,
+        135
+      ]
+    },
+    {
+      "index": 3,
+      "skill": "F",
+      "phase": 3,
+      "rect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        772,
+        79,
+        236,
+        104
+      ],
+      "coreAlpha64Rect": [
+        773,
+        81,
+        233,
+        102
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 10032,
+      "phaseName": "贯流加速",
+      "center": [
+        974,
+        135
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "centerLocal": [
+        206,
+        135
+      ],
+      "pivot": [
+        206,
+        135
+      ],
+      "pivotNormalized": [
+        0.804688,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        206,
+        135
+      ]
+    },
+    {
+      "index": 4,
+      "skill": "F",
+      "phase": 4,
+      "rect": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "spriteRect": [
+        17,
+        307,
+        207,
+        140
+      ],
+      "coreAlpha64Rect": [
+        18,
+        308,
+        202,
+        138
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 7039,
+      "phaseName": "命中内塌缩",
+      "center": [
+        187,
+        384
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "centerLocal": [
+        187,
+        128
+      ],
+      "pivot": [
+        187,
+        128
+      ],
+      "pivotNormalized": [
+        0.730469,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        256,
+        256,
+        255
+      ],
+      "previousV2Pivot": [
+        187,
+        128
+      ]
+    },
+    {
+      "index": 5,
+      "skill": "F",
+      "phase": 5,
+      "rect": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "spriteRect": [
+        274,
+        286,
+        221,
+        189
+      ],
+      "coreAlpha64Rect": [
+        283,
+        288,
+        208,
+        185
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 12098,
+      "phaseName": "环状星屑冲击",
+      "center": [
+        400,
+        384
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "centerLocal": [
+        144,
+        128
+      ],
+      "pivot": [
+        144,
+        128
+      ],
+      "pivotNormalized": [
+        0.5625,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        256,
+        256,
+        253,
+        255
+      ],
+      "previousV2Pivot": [
+        144,
+        128
+      ]
+    },
+    {
+      "index": 6,
+      "skill": "F",
+      "phase": 6,
+      "rect": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "spriteRect": [
+        524,
+        293,
+        222,
+        175
+      ],
+      "coreAlpha64Rect": [
+        530,
+        293,
+        216,
+        174
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 9828,
+      "phaseName": "环屑外散",
+      "center": [
+        656,
+        384
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "centerLocal": [
+        144,
+        128
+      ],
+      "pivot": [
+        144,
+        128
+      ],
+      "pivotNormalized": [
+        0.5625,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        509,
+        256,
+        260,
+        255
+      ],
+      "previousV2Pivot": [
+        147,
+        128
+      ]
+    },
+    {
+      "index": 7,
+      "skill": "F",
+      "phase": 7,
+      "rect": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "spriteRect": [
+        786,
+        295,
+        219,
+        174
+      ],
+      "coreAlpha64Rect": [
+        787,
+        296,
+        218,
+        172
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 3394,
+      "phaseName": "余星消散",
+      "center": [
+        912,
+        384
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "centerLocal": [
+        144,
+        128
+      ],
+      "pivot": [
+        144,
+        128
+      ],
+      "pivotNormalized": [
+        0.5625,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        769,
+        256,
+        255,
+        255
+      ],
+      "previousV2Pivot": [
+        143,
+        128
+      ]
+    },
+    {
+      "index": 8,
+      "skill": "E",
+      "phase": 0,
+      "rect": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "spriteRect": [
+        47,
+        555,
+        170,
+        172
+      ],
+      "coreAlpha64Rect": [
+        47,
+        557,
+        169,
+        170
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 3952,
+      "phaseName": "弧轨聚拢",
+      "center": [
+        128,
+        640
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        511,
+        256,
+        257
+      ],
+      "previousV2Pivot": [
+        128,
+        129
+      ]
+    },
+    {
+      "index": 9,
+      "skill": "E",
+      "phase": 1,
+      "rect": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "spriteRect": [
+        292,
+        559,
+        184,
+        167
+      ],
+      "coreAlpha64Rect": [
+        292,
+        560,
+        183,
+        165
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 7173,
+      "phaseName": "沙漏浮现",
+      "center": [
+        384,
+        640
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        256,
+        511,
+        256,
+        257
+      ],
+      "previousV2Pivot": [
+        128,
+        129
+      ]
+    },
+    {
+      "index": 10,
+      "skill": "E",
+      "phase": 2,
+      "rect": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "spriteRect": [
+        544,
+        542,
+        186,
+        190
+      ],
+      "coreAlpha64Rect": [
+        544,
+        545,
+        186,
+        186
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 13574,
+      "phaseName": "逆流充盈",
+      "center": [
+        640,
+        640
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        512,
+        511,
+        256,
+        257
+      ],
+      "previousV2Pivot": [
+        128,
+        129
+      ]
+    },
+    {
+      "index": 11,
+      "skill": "E",
+      "phase": 3,
+      "rect": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "spriteRect": [
+        800,
+        524,
+        189,
+        208
+      ],
+      "coreAlpha64Rect": [
+        801,
+        528,
+        187,
+        203
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 16720,
+      "phaseName": "护幕升起",
+      "center": [
+        896,
+        640
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        768,
+        511,
+        256,
+        257
+      ],
+      "previousV2Pivot": [
+        128,
+        129
+      ]
+    },
+    {
+      "index": 12,
+      "skill": "E",
+      "phase": 4,
+      "rect": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "spriteRect": [
+        32,
+        790,
+        190,
+        213
+      ],
+      "coreAlpha64Rect": [
+        33,
+        791,
+        186,
+        210
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 27691,
+      "phaseName": "护盾成形",
+      "center": [
+        128,
+        896
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        768,
+        253,
+        253
+      ],
+      "previousV2Pivot": [
+        128,
+        128
+      ]
+    },
+    {
+      "index": 13,
+      "skill": "E",
+      "phase": 5,
+      "rect": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "spriteRect": [
+        275,
+        793,
+        218,
+        193
+      ],
+      "coreAlpha64Rect": [
+        276,
+        794,
+        217,
+        185
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 19968,
+      "phaseName": "治愈环流",
+      "center": [
+        384,
+        896
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        253,
+        768,
+        252,
+        253
+      ],
+      "previousV2Pivot": [
+        131,
+        128
+      ]
+    },
+    {
+      "index": 14,
+      "skill": "E",
+      "phase": 6,
+      "rect": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "spriteRect": [
+        543,
+        794,
+        193,
+        189
+      ],
+      "coreAlpha64Rect": [
+        543,
+        795,
+        192,
+        187
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 10426,
+      "phaseName": "沙漏解体",
+      "center": [
+        640,
+        896
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        505,
+        768,
+        263,
+        253
+      ],
+      "previousV2Pivot": [
+        135,
+        128
+      ]
+    },
+    {
+      "index": 15,
+      "skill": "E",
+      "phase": 7,
+      "rect": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "spriteRect": [
+        800,
+        806,
+        197,
+        174
+      ],
+      "coreAlpha64Rect": [
+        801,
+        807,
+        196,
+        172
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 4361,
+      "phaseName": "轨迹消散",
+      "center": [
+        896,
+        896
+      ],
+      "groundContactY": null,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.5
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        768,
+        768,
+        256,
+        253
+      ],
+      "previousV2Pivot": [
+        128,
+        128
+      ]
+    },
+    {
+      "index": 16,
+      "skill": "R",
+      "phase": 0,
+      "rect": [
+        0,
+        1024,
+        256,
+        254
+      ],
+      "spriteRect": [
+        21,
+        1162,
+        216,
+        86
+      ],
+      "coreAlpha64Rect": [
+        22,
+        1164,
+        214,
+        84
+      ],
+      "groundProjectionPeakY": 1215,
+      "alpha16Pixels": 8399,
+      "phaseName": "贴地星阵",
+      "center": [
+        128,
+        1216
+      ],
+      "groundContactY": 1216,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        0,
+        1024,
+        256,
+        254
+      ],
+      "centerLocal": [
+        128,
+        192
+      ],
+      "pivot": [
+        128,
+        192
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.755906
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 192,
+      "groundContactYNormalized": 0.755906,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        1021,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        128,
+        195
+      ]
+    },
+    {
+      "index": 17,
+      "skill": "R",
+      "phase": 1,
+      "rect": [
+        256,
+        1024,
+        256,
+        254
+      ],
+      "spriteRect": [
+        276,
+        1124,
+        217,
+        125
+      ],
+      "coreAlpha64Rect": [
+        277,
+        1125,
+        215,
+        123
+      ],
+      "groundProjectionPeakY": 1215,
+      "alpha16Pixels": 11298,
+      "phaseName": "星海凝聚",
+      "center": [
+        384,
+        1218
+      ],
+      "groundContactY": 1218,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup",
+      "sourceRect": [
+        256,
+        1024,
+        256,
+        254
+      ],
+      "centerLocal": [
+        128,
+        194
+      ],
+      "pivot": [
+        128,
+        194
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.76378
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 194,
+      "groundContactYNormalized": 0.76378,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        256,
+        1021,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        128,
+        197
+      ]
+    },
+    {
+      "index": 18,
+      "skill": "R",
+      "phase": 2,
+      "rect": [
+        512,
+        1024,
+        256,
+        254
+      ],
+      "spriteRect": [
+        533,
+        1048,
+        214,
+        200
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1053,
+        213,
+        195
+      ],
+      "groundProjectionPeakY": 1214,
+      "alpha16Pixels": 13654,
+      "phaseName": "三束初升",
+      "center": [
+        640,
+        1218
+      ],
+      "groundContactY": 1218,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        512,
+        1024,
+        256,
+        254
+      ],
+      "centerLocal": [
+        128,
+        194
+      ],
+      "pivot": [
+        128,
+        194
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.76378
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 194,
+      "groundContactYNormalized": 0.76378,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        512,
+        1021,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        128,
+        197
+      ]
+    },
+    {
+      "index": 19,
+      "skill": "R",
+      "phase": 3,
+      "rect": [
+        768,
+        1024,
+        256,
+        254
+      ],
+      "spriteRect": [
+        789,
+        1031,
+        215,
+        217
+      ],
+      "coreAlpha64Rect": [
+        790,
+        1034,
+        213,
+        214
+      ],
+      "groundProjectionPeakY": 1215,
+      "alpha16Pixels": 17644,
+      "phaseName": "五束交错",
+      "center": [
+        896,
+        1218
+      ],
+      "groundContactY": 1218,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        768,
+        1024,
+        256,
+        254
+      ],
+      "centerLocal": [
+        128,
+        194
+      ],
+      "pivot": [
+        128,
+        194
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.76378
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 194,
+      "groundContactYNormalized": 0.76378,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        768,
+        1021,
+        256,
+        256
+      ],
+      "previousV2Pivot": [
+        128,
+        197
+      ]
+    },
+    {
+      "index": 20,
+      "skill": "R",
+      "phase": 4,
+      "rect": [
+        0,
+        1278,
+        256,
+        258
+      ],
+      "spriteRect": [
+        20,
+        1280,
+        218,
+        225
+      ],
+      "coreAlpha64Rect": [
+        21,
+        1283,
+        216,
+        221
+      ],
+      "groundProjectionPeakY": 1473,
+      "alpha16Pixels": 21611,
+      "phaseName": "中心审判",
+      "center": [
+        128,
+        1480
+      ],
+      "groundContactY": 1480,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        0,
+        1278,
+        256,
+        258
+      ],
+      "centerLocal": [
+        128,
+        202
+      ],
+      "pivot": [
+        128,
+        202
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.782946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 202,
+      "groundContactYNormalized": 0.782946,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        0,
+        1277,
+        256,
+        259
+      ],
+      "previousV2Pivot": [
+        128,
+        203
+      ]
+    },
+    {
+      "index": 21,
+      "skill": "R",
+      "phase": 5,
+      "rect": [
+        256,
+        1278,
+        256,
+        258
+      ],
+      "spriteRect": [
+        276,
+        1290,
+        217,
+        214
+      ],
+      "coreAlpha64Rect": [
+        277,
+        1291,
+        214,
+        213
+      ],
+      "groundProjectionPeakY": 1473,
+      "alpha16Pixels": 16798,
+      "phaseName": "侧束续击",
+      "center": [
+        384,
+        1482
+      ],
+      "groundContactY": 1482,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active",
+      "sourceRect": [
+        256,
+        1278,
+        256,
+        258
+      ],
+      "centerLocal": [
+        128,
+        204
+      ],
+      "pivot": [
+        128,
+        204
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.790698
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 204,
+      "groundContactYNormalized": 0.790698,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        256,
+        1277,
+        256,
+        259
+      ],
+      "previousV2Pivot": [
+        128,
+        205
+      ]
+    },
+    {
+      "index": 22,
+      "skill": "R",
+      "phase": 6,
+      "rect": [
+        512,
+        1278,
+        256,
+        258
+      ],
+      "spriteRect": [
+        533,
+        1306,
+        215,
+        198
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1308,
+        214,
+        195
+      ],
+      "groundProjectionPeakY": 1473,
+      "alpha16Pixels": 11479,
+      "phaseName": "星芒回落",
+      "center": [
+        640,
+        1481
+      ],
+      "groundContactY": 1481,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        512,
+        1278,
+        256,
+        258
+      ],
+      "centerLocal": [
+        128,
+        203
+      ],
+      "pivot": [
+        128,
+        203
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.786822
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 203,
+      "groundContactYNormalized": 0.786822,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        512,
+        1277,
+        256,
+        259
+      ],
+      "previousV2Pivot": [
+        128,
+        204
+      ]
+    },
+    {
+      "index": 23,
+      "skill": "R",
+      "phase": 7,
+      "rect": [
+        768,
+        1278,
+        256,
+        258
+      ],
+      "spriteRect": [
+        789,
+        1310,
+        216,
+        194
+      ],
+      "coreAlpha64Rect": [
+        790,
+        1311,
+        213,
+        193
+      ],
+      "groundProjectionPeakY": 1474,
+      "alpha16Pixels": 8744,
+      "phaseName": "阵纹残辉",
+      "center": [
+        896,
+        1480
+      ],
+      "groundContactY": 1480,
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate",
+      "sourceRect": [
+        768,
+        1278,
+        256,
+        258
+      ],
+      "centerLocal": [
+        128,
+        202
+      ],
+      "pivot": [
+        128,
+        202
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.782946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactLocalY": 202,
+      "groundContactYNormalized": 0.782946,
+      "anchorMethod": "v2 source-pixel semantic anchor retained after targeted edit visual inspection; recomputed local pivot for measured v3 rect",
+      "previousV2Rect": [
+        768,
+        1277,
+        256,
+        259
+      ],
+      "previousV2Pivot": [
+        128,
+        203
+      ]
+    }
+  ],
+  "schema": "t39-star-fx-v3",
+  "hero": "star",
+  "created": "2026-11-07",
+  "tool": "built-in image_gen targeted edit",
+  "originalGeneratedSource": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b18b-37ec-7303-8ecf-a7109deb4557\\exec-a81d0232-b5a3-4194-826c-13b25b5d126f.png",
+  "originalSha256": "8d20761555d95739052a7e7b5460bc460b8a43ba4fcab8f587740fd243ddaee2",
+  "rawCopyHashMatchesOriginal": true,
+  "editInput": {
+    "file": "hero-star-fx-v2.png",
+    "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+    "status": "rejected for runtime integration because low-alpha gray-white haze was excessive; retained unchanged as edit source"
+  },
+  "promptFile": "star-prompt-v3.txt",
+  "pixelEditing": "none outside built-in image_gen; raw output copied byte-for-byte",
+  "requestedFrameLayout": [
+    4,
+    6
+  ],
+  "frameCount": 24,
+  "skillFrames": {
+    "F": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "E": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "R": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "coordinateConvention": "All rect/spriteRect/coreAlpha64Rect/center are source-image pixels. Rect=[x,y,width,height]. Pivot is local pixels relative to rect, not normalized sprite bbox.",
+  "commonScaleRule": "Use a shared 256px reference scale for the complete sequence. Do not resize every spriteRect to the same height or width. Draw each measured rect with its per-frame pivot.",
+  "groundRule": "Only R is floor-anchored. Align groundContactY to actual support surface; preserve vertical aspect. F/E are centered flight/gesture effects, not ground-squashed.",
+  "phaseRule": "Eight distinct phases per skill; 0-1 windup,2-5 active,6-7 dissolve. F hit phases4-5 trigger on impact, not automatically during every flight loop.",
+  "transparencyAcceptance": "Substantially cleaner candidate. Empty-space samples now zero-alpha; local low-alpha fringes still require actual dark-scene visual check by main agent.",
+  "acceptance": "candidate pending main-agent integration/visual review; not user accepted",
+  "previousVersion": "hero-star-fx-v2.png",
+  "layoutReview": "All 24 phases remain in original 4x6 positions. Canvas remains1024x1536. F single core and ring impact, E hourglass/shield, R ground array/vertical beams preserved.",
+  "comparisonAuditFile": "star-alpha-comparison-v2-v3.json",
+  "validation": {
+    "uniqueAlphaTiles": 24,
+    "strongEdgePixels": [],
+    "framesAndPivotsInBounds": true,
+    "rawCopyHashMatchesOriginal": true,
+    "v2HashUnchanged": true,
+    "v2MetadataSourcePixelAnchorsRetainedForAll24Frames": true
+  }
+}

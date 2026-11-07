@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="scene-view.css?v=20261030-duel12">
-<link rel="stylesheet" href="skill-icons.css?v=20261030-duel12"><link rel="stylesheet" href="loading.css?v=20261030-duel12"><link rel="stylesheet" href="practice.css"></head>
+<link rel="stylesheet" href="skill-icons.css?v=20261030-duel12"><link rel="stylesheet" href="loading.css?v=20261030-duel12"><link rel="stylesheet" href="practice.css"><link rel="stylesheet" href="realm-controls.css"></head>
 <body>
   <svg class="svg-defs" aria-hidden="true"><defs>
     <symbol id="i-flame" viewBox="0 0 48 48"><path d="M27 3c4 14-4 14-1 22 4-1 7-5 8-9 13 17 5 29-9 29S4 33 12 20c0 9 4 10 6 8C14 16 26 14 27 3Z"/><path d="M24 27c-8 8-8 15 1 16 8-2 6-7-1-16Z"/></symbol>
@@ -25,7 +25,7 @@
 <symbol id="i-ice" viewBox="0 0 48 48"><path d="M24 2 31 16 43 24 31 31 24 46 17 31 5 24 17 16ZM24 2v44M5 24h38M10 10l28 28M38 10 10 38"/></symbol><symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 3 42 10v13c-2 12-10 19-18 23C16 42 8 35 6 23V10ZM24 11v25m-10-13h20"/></symbol><symbol id="i-bolt" viewBox="0 0 48 48"><path d="m29 3-19 25h13l-4 17 19-26H25Z"/></symbol><symbol id="i-blade" viewBox="0 0 48 48"><path d="M38 3 12 25l11 10L44 7ZM6 25l19 19M17 35 7 45l-4-4 10-10"/></symbol><symbol id="i-portal" viewBox="0 0 48 48"><path d="M24 3c23 0 23 42 0 42S1 3 24 3Zm0 7c14 0 14 28 0 28s-14-28 0-28ZM6 24h7m22 0h7"/></symbol><symbol id="i-orbit" viewBox="0 0 48 48"><path d="M24 3v8m0 26v8M3 24h8m26 0h8M24 13l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/></symbol>
   </defs></svg>
   <section id="title-screen" class="title-screen" aria-label="游戏启动界面">
-    <div class="edition">可操作版本 <span>三境机关试炼</span></div>
+    <button class="realm-exit-button" data-exit-app hidden>退出游戏</button><div class="edition">可操作版本 <span>三境机关试炼</span></div>
     <button id="start-button" class="start-hotspot" aria-label="开始游戏" disabled><span class="sr-only">开始游戏</span></button>
     <div id="loading" class="loading" role="status">正在唤醒秘境…</div>
     <div class="title-foot">键鼠操作 · 建议全屏体验</div>
@@ -33,7 +33,7 @@
   <main id="game" class="game scene-game" hidden>
     <header class="topbar">
       <button id="back-button" class="brand" title="返回主大厅" aria-label="返回主大厅"><svg><use href="#i-moon"/></svg><span>秘境决斗<small>返回主大厅</small></span></button>
-      <div class="top-actions"><button id="camera-button" class="quiet">镜头 跟随</button><button id="sound-button" class="quiet" aria-pressed="true">声音 开</button><button id="fullscreen-button" class="quiet">全屏</button><button id="pause-button" class="quiet">暂停 <kbd>P</kbd></button></div>
+      <div class="top-actions"><button id="trial-leave" class="quiet">退出试玩</button><button id="sound-button" class="quiet" aria-pressed="true">声音 开</button><button id="fullscreen-button" class="quiet">全屏</button><button id="pause-button" class="quiet">暂停 <kbd>P</kbd></button></div>
     </header>
     <nav class="hero-switch" aria-label="切换英雄"><button data-hero="fire" class="hero-button active"><canvas width="72" height="72" aria-hidden="true"></canvas><span>焰术师<small>烬绯</small></span><kbd>1</kbd></button><button data-hero="nature" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>森灵<small>荆歌</small></span><kbd>2</kbd></button><button data-hero="frost" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>霜语者<small>凝霜</small></span><kbd>3</kbd></button><button data-hero="lightning" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>雷行者<small>霆隼</small></span><kbd>4</kbd></button><button data-hero="shadow" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>影刃<small>朔鸦</small></span><kbd>5</kbd></button><button data-hero="star" class="hero-button"><canvas width="72" height="72" aria-hidden="true"></canvas><span>星术师<small>宿衡</small></span><kbd>6</kbd></button></nav>
     <nav class="scene-picker" aria-label="选择地图">
@@ -55,7 +55,7 @@
         <output id="role-meter" class="role-meter" hidden></output>
         <output id="summon-status" class="summon-status" hidden></output>
         <span id="frame-badge" class="frame-badge" hidden>画面定格 · V 继续</span>
-        <div id="pause-overlay" class="pause-overlay" hidden><div><span class="eyebrow">TAKE A BREATH</span><h2>秘境已暂停</h2><p>准备好后，继续你的连招。</p><button id="resume-button" class="gold-button">继续试炼</button></div></div>
+        <div id="pause-overlay" class="pause-overlay" hidden><div class="trial-pause-card"><span class="eyebrow">A MOMENT BETWEEN SPELLS</span><h2>试炼暂歇</h2><p>准备好后，继续磨炼招式。</p><button id="resume-button">继续试玩</button><button id="trial-back">返回英雄图鉴</button><button data-exit-app hidden>退出游戏</button></div></div>
       </section>
       <section id="mechanism-cards" class="mechanism-cards" aria-label="地图机关"></section>
       <p class="map-interaction-note">普攻碰墙停止 · 指定位置技能落到鼠标下方台面 · 2304 宽幅战场 · 镜头可切换跟随 / 全景</p>
@@ -77,5 +77,5 @@
     <footer class="footer"><span><i></i>连续施法与地形反馈 <a class="inspect-link" href="characters.html">放大查看角色 ↗</a></span><span>六职业动作试炼版本</span><span id="notice" aria-live="polite">先试试二段跳，再向木桩施法。</span></footer>
   </main>
   <script type="module" src="src/app.mjs?v=20261030-duel12"></script>
-</body>
+<script type="module" src="src/realm-controls.mjs"></script></body>
 </html>

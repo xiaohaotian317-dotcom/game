@@ -31,7 +31,7 @@ test('unfinished or unavailable daily claims cannot change wallet and invalid sa
 test('daily progress follows real solo skill releases, jumps, dashes and kills; recasts and training do not farm skill credit',()=>{
  const w=arena();requestCast(w,'q',400,w.floor-5);run(w,45);assert.equal(w.campaign.progression.daily.progress.skills,1);
  stepCampaign(w,STEP,{jump:true});stepCampaign(w,STEP,{dash:true});assert.equal(w.campaign.progression.daily.progress.jumps,1);assert.equal(w.campaign.progression.daily.progress.dashes,1);
- const e=spawnEnemy(w,'M06',{x:500});e.hp=1;damage(w,e,10000,{source:'artifact'});run(w,3);assert.equal(w.campaign.progression.daily.progress.minions,1);assert.equal(w.campaign.progression.coins,306);assert.equal(w.campaign.progression.heroes.fire.exp,7);assert.equal(w.campaign.rewards.xp.fire,7);run(w,10);assert.equal(w.campaign.progression.coins,306);
+ const e=spawnEnemy(w,'M06',{x:500});e.hp=1;damage(w,e,10000,{source:'artifact'});run(w,3);assert.equal(w.campaign.progression.daily.progress.minions,1);assert.equal(w.campaign.progression.coins,308);assert.equal(w.campaign.progression.heroes.fire.exp,9);assert.equal(w.campaign.rewards.xp.fire,9);run(w,10);assert.equal(w.campaign.progression.coins,308);
  const vanilla=createWorld('fire');step(vanilla,STEP,{jump:true});assert.equal(vanilla.campaign,undefined);
 });
 test('pet experience potions require a real selected pet, grant only its XP and preserve manual evolution and save data',()=>{

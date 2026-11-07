@@ -1,0 +1,15 @@
+Use case: stylized-concept
+Asset type: production game UI control sprite atlas, brand-new transparent PNG.
+Primary request: Create one premium hand-painted dark fantasy metal UI atlas that belongs with the provided visual references: aged gold acanthus relief, engraved dark teal enamel, tactile edge wear and softly painted bevels. These are isolated small game controls, not an illustration of a screen.
+
+Scene/backdrop: genuinely transparent alpha background. NO colored background, no gradient backdrop, no surrounding cast shadow haze, no checkerboard baked in.
+Composition/framing: landscape canvas, preferably 1536 by 1024. Exactly six independent assets with very large clear transparent gutters:
+TOP ROW, three equal-sized close buttons at x about 250, 768, 1285; y about 175. Each is one identical compact circular/floriated metal medallion, about 220 by 220, with the SAME outer contour and identical center. The central X is unmistakable, bold, made of two solid aged-gold diagonal bars, not a thin font. Left is normal dark teal and antique gold; middle is hover with brighter polished gold edges and subtle cyan inset glow; right is pressed with darker recessed face and restrained amber edge. X shape and outer silhouette remain consistent in all three.
+MIDDLE ROW at y about 515: one long scene-selector shell, about 1250 by 210, centered. A rich dark teal interior panel bounded by curved ancient gold leaf ends, shallow bevel, tiny inset blue gem accents. A broad quiet inner area is left empty for dynamic scene name, with a small engraved downward chevron near the right side. Softly curved/chamfered profile, not a generic rectangular outline.
+BOTTOM ROW at y about 830: two independent horizontal action button shells, each about 600 by 210, left centered x380 and right x1155. Left is back/secondary, dark teal silver-blue face with ancient gold edges; right is enter/primary, warmer ancient-gold outer relief and dark teal face, more prominent but not glowing white. Ornate tapered leaf ends, consistent with pause buttons. Both have generous blank safe center for text. NO arrow symbols on these bottom buttons, no writing.
+
+Style/medium: refined 2D hand-painted raster game assets with readable broad forms at small display size, rich carved metal material, painterly engraved detail; no photographic environment, no flat vector shapes.
+Lighting/mood: soft top-left painterly light, controlled highlights.
+Color palette: antique warm gold, dark petrol teal, charcoal, muted sapphire accents; match the settings and pause references.
+Text: no words, no numbers, no labels, no watermark. Only the three clear X close symbols and one tiny selector chevron.
+Constraints: exactly the six stated assets; no duplicates, no overlap, no cropping. At least 50 pixels true transparent padding around every asset and between them. Transparent empty safe space around each independent asset. Keep each close button the same size and contour. Do not connect any assets with decorative framing.

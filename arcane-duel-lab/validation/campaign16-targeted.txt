@@ -1,0 +1,74 @@
+✔ hybrid basics hit at range, preserve close damage without double hits, and cannot bypass thin cover or hit fully behind (40.7516ms)
+✔ solo strength boosts six heroes while public HP and mana stay independent; every boss factor is exactly 85 percent (6.9144ms)
+✔ the fifteen percent recovery drop uplift changes the real roll boundary while retaining the per-attempt cap (3.7322ms)
+✔ duel camera is wider, face independent, vertically stable through jumps and tracks position without direction offsets or inertia (1.3329ms)
+✔ successive prediction corrections keep the last displayed position and do not smooth large teleports (0.7197ms)
+✔ new ranged material keeps native RGBA hash and phase-specific pivots (2.6712ms)
+✔ wide duel view keeps fire-orb visibility aligned at both world edges (1.4861ms)
+✔ trial and duel share a farther, exact centered camera without facing shifts, inertia or interpolation jitter (5.4135ms)
+✔ lightning ranged fist reaches real distant targets and thunder form doubles both attack cadence and animation for exactly three seconds (11.7054ms)
+✔ requested shared skill damage and movement changes act on real world state (10.5749ms)
+✖ all bosses check real reach before plain melee and choose ranged or approach at distance; damage and move uplifts are single factors (15.4157ms)
+✔ gear is exclusive and hidden from bag while equipped, can transfer and return, and stored rolls survive reload and upgrades (4.1155ms)
+✔ experience and coin increases retain later-stage progression and the actual run ledger (1.6722ms)
+✔ continuous phase blends, refined 144-frame sources, minion maps and original sprite bytes remain bounded and complete (15.1288ms)
+✔ boss bodies shrink another 10 percent, HP grows 10 percent and normal movement retains the earlier reduction with a three percent uplift (6.354ms)
+✔ boss cooldowns and active timing carry the real 20 percent frequency increase (4.9142ms)
+✔ regional platform layouts reproduce seeds and preserve clear combat floor plus localized climbing routes (1.3134ms)
+✔ every high deck has a lower accessible support instead of requiring an impossible direct ground jump (0.6782ms)
+✔ spawn rate is 20 percent slower and later waves can drop onto the upper deck (42.3809ms)
+✔ ordinary ground minions never trigger a player-style jump toward a platform (94.7412ms)
+✔ camera follow cannot slow walking; fixed steps preserve elapsed time even at 12.5 FPS (18.5746ms)
+✔ fire E flies toward its accepted direction, does not jump, and quick recast detonates at the current orb (6.4918ms)
+✔ fire E passes a real wall while basic attacks stop; leaving the viewport closes recast (1.9695ms)
+✔ new orb and bounded viewport survive PvP snapshots and still detonate against a real opponent (9.3342ms)
+✔ meteor flight is exactly 20 percent faster while cast windup stays unchanged (0.7165ms)
+✔ all eleven selected boss atlases, portal and sparse platform art match inspected hashes and true alpha (27.7472ms)
+✔ boss windup, missiles, impacts, fields and falling meteor select their own atlas without stretching (3.6056ms)
+✔ theme platforms align their real standing surface and the portal keeps a stable source frame over time (4.5586ms)
+✔ one or two distinct owned heroes only, old saves remain one hero and malformed saved lineups are filtered (5.8648ms)
+✔ switch retains each hero health mana and cooldown, moves exactly to the active location, and never resets world or pet (2.1601ms)
+✔ reserve cooldown passes with simulation time but reserve health and mana never regenerate (8.6842ms)
+✔ switch cancels unfinished hero casts, summoned temporary effects and friendly projectiles, keeping enemy attacks (0.5007ms)
+✔ falling hero is replaced by surviving reserve, both down loses, and invalid or dead slots cannot reset health (1.3666ms)
+✔ the selected hero casts its own original F and kill experience follows the current active hero (9.9082ms)
+✔ result inventory contains only picked-up real loot, groups counts, records currency without duplicating pickup (1.6672ms)
+✔ all eleven encounter cards use bounded existing portraits and short accessible introductions (1.1006ms)
+✔ fullscreen map has no old tools or wallet; battle has no wave row, new hero/pet bars and separate lineup screen (3.0841ms)
+✔ macro layout has dense travel clusters, sparse combat clearings, varied heights and supporting step paths (2.294ms)
+✔ six heroes reach every macro layout platform through real ground and stepping routes in sixteen seeds (502.8615ms)
+✔ all pets including stowed and defeated pets start each new attempt full, but cannot heal by redeployment in that attempt (1.9682ms)
+✔ six painted hero HUDs preserve original PNG and keep real HP MP XP slots inside each measured shell (3.7086ms)
+✔ all professions start with integer maximum health increased by 50 percent (2.2299ms)
+✔ full viewport camera preserves aspect and pointer coordinates at every screen shape (2.3284ms)
+✔ camera follows its own player and clamps at both map edges independently of the rival (0.7226ms)
+✔ opponent direction appears only out of view and stays clear of HUD and hotbar on all edges (0.6675ms)
+✔ frost F and its single echo deal 18 plus 12 actual PvP damage while retaining control (10.7475ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 45
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1832.1268
+
+✖ failing tests:
+
+test at tests\campaign16.test.mjs:18:1
+✖ all bosses check real reach before plain melee and choose ranged or approach at distance; damage and move uplifts are single factors (15.4157ms)
+  AssertionError [ERR_ASSERTION]: B02
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign16.test.mjs:18:811)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,1544 @@
+{
+  "file": "hero-star-fx-v2.png",
+  "sourceImage": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T39\\fx_b\\hero-star-fx-v2.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+  "bytes": 2293631,
+  "alpha": {
+    "minMax": [
+      0,
+      252
+    ],
+    "zeroPixels": 153,
+    "opaquePixels": 0,
+    "intermediatePixels": 1572711,
+    "belowOrEqual10Fraction": 0.4763482411702474,
+    "belowOrEqual16Fraction": 0.5524915059407552,
+    "thresholdForBounds": 16,
+    "notice": "PNG kept byte-for-byte; low nonzero alpha fog remains in nominal empty regions. Rects measured at alpha>16, not asserted fully zero-alpha gutters."
+  },
+  "rowGapMeasurement": [
+    {
+      "nominal": 256,
+      "measured": 256,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 512,
+      "measured": 511,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 768,
+      "measured": 768,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1024,
+      "measured": 1021,
+      "threePixelOccupancy": 0
+    },
+    {
+      "nominal": 1280,
+      "measured": 1277,
+      "threePixelOccupancy": 0
+    }
+  ],
+  "columnGapMeasurements": [
+    {
+      "row": 0,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 509,
+          "threePixelOccupancy": 92
+        },
+        {
+          "nominal": 768,
+          "measured": 769,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 253,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 505,
+          "threePixelOccupancy": 229
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "gaps": [
+        {
+          "nominal": 256,
+          "measured": 256,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 512,
+          "measured": 512,
+          "threePixelOccupancy": 0
+        },
+        {
+          "nominal": 768,
+          "measured": 768,
+          "threePixelOccupancy": 0
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "skill": "F",
+      "phase": 0,
+      "rect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        33,
+        59,
+        190,
+        149
+      ],
+      "coreAlpha64Rect": [
+        41,
+        61,
+        173,
+        141
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 20450,
+      "phaseName": "星核聚拢",
+      "sourceRect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "center": [
+        146,
+        136
+      ],
+      "centerLocal": [
+        146,
+        136
+      ],
+      "pivot": [
+        146,
+        136
+      ],
+      "pivotNormalized": [
+        0.570312,
+        0.53125
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 1,
+      "skill": "F",
+      "phase": 1,
+      "rect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        287,
+        67,
+        177,
+        129
+      ],
+      "coreAlpha64Rect": [
+        294,
+        74,
+        164,
+        117
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 16150,
+      "phaseName": "环轨压缩",
+      "sourceRect": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "center": [
+        409,
+        135
+      ],
+      "centerLocal": [
+        153,
+        135
+      ],
+      "pivot": [
+        153,
+        135
+      ],
+      "pivotNormalized": [
+        0.597656,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 2,
+      "skill": "F",
+      "phase": 2,
+      "rect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        524,
+        80,
+        212,
+        111
+      ],
+      "coreAlpha64Rect": [
+        534,
+        84,
+        194,
+        99
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 15756,
+      "phaseName": "单核射出",
+      "sourceRect": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "center": [
+        684,
+        135
+      ],
+      "centerLocal": [
+        172,
+        135
+      ],
+      "pivot": [
+        172,
+        135
+      ],
+      "pivotNormalized": [
+        0.671875,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 3,
+      "skill": "F",
+      "phase": 3,
+      "rect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "spriteRect": [
+        770,
+        77,
+        239,
+        113
+      ],
+      "coreAlpha64Rect": [
+        779,
+        83,
+        227,
+        101
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 19363,
+      "phaseName": "贯流加速",
+      "sourceRect": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "center": [
+        974,
+        135
+      ],
+      "centerLocal": [
+        206,
+        135
+      ],
+      "pivot": [
+        206,
+        135
+      ],
+      "pivotNormalized": [
+        0.804688,
+        0.527344
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 4,
+      "skill": "F",
+      "phase": 4,
+      "rect": [
+        0,
+        256,
+        256,
+        255
+      ],
+      "spriteRect": [
+        11,
+        304,
+        224,
+        145
+      ],
+      "coreAlpha64Rect": [
+        25,
+        310,
+        197,
+        136
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 23006,
+      "phaseName": "命中内塌缩",
+      "sourceRect": [
+        0,
+        256,
+        256,
+        255
+      ],
+      "center": [
+        187,
+        384
+      ],
+      "centerLocal": [
+        187,
+        128
+      ],
+      "pivot": [
+        187,
+        128
+      ],
+      "pivotNormalized": [
+        0.730469,
+        0.501961
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 5,
+      "skill": "F",
+      "phase": 5,
+      "rect": [
+        256,
+        256,
+        253,
+        255
+      ],
+      "spriteRect": [
+        261,
+        283,
+        248,
+        197
+      ],
+      "coreAlpha64Rect": [
+        277,
+        290,
+        216,
+        178
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 35095,
+      "phaseName": "环状星屑冲击",
+      "sourceRect": [
+        256,
+        256,
+        253,
+        255
+      ],
+      "center": [
+        400,
+        384
+      ],
+      "centerLocal": [
+        144,
+        128
+      ],
+      "pivot": [
+        144,
+        128
+      ],
+      "pivotNormalized": [
+        0.56917,
+        0.501961
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 6,
+      "skill": "F",
+      "phase": 6,
+      "rect": [
+        509,
+        256,
+        260,
+        255
+      ],
+      "spriteRect": [
+        509,
+        285,
+        259,
+        199
+      ],
+      "coreAlpha64Rect": [
+        532,
+        291,
+        217,
+        176
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 38078,
+      "phaseName": "环屑外散",
+      "sourceRect": [
+        509,
+        256,
+        260,
+        255
+      ],
+      "center": [
+        656,
+        384
+      ],
+      "centerLocal": [
+        147,
+        128
+      ],
+      "pivot": [
+        147,
+        128
+      ],
+      "pivotNormalized": [
+        0.565385,
+        0.501961
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    },
+    {
+      "index": 7,
+      "skill": "F",
+      "phase": 7,
+      "rect": [
+        769,
+        256,
+        255,
+        255
+      ],
+      "spriteRect": [
+        777,
+        287,
+        231,
+        189
+      ],
+      "coreAlpha64Rect": [
+        788,
+        292,
+        218,
+        174
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 30192,
+      "phaseName": "余星消散",
+      "sourceRect": [
+        769,
+        256,
+        255,
+        255
+      ],
+      "center": [
+        912,
+        384
+      ],
+      "centerLocal": [
+        143,
+        128
+      ],
+      "pivot": [
+        143,
+        128
+      ],
+      "pivotNormalized": [
+        0.560784,
+        0.501961
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    },
+    {
+      "index": 8,
+      "skill": "E",
+      "phase": 0,
+      "rect": [
+        0,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        33,
+        541,
+        195,
+        201
+      ],
+      "coreAlpha64Rect": [
+        48,
+        555,
+        171,
+        176
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 28960,
+      "phaseName": "弧轨聚拢",
+      "sourceRect": [
+        0,
+        511,
+        256,
+        257
+      ],
+      "center": [
+        128,
+        640
+      ],
+      "centerLocal": [
+        128,
+        129
+      ],
+      "pivot": [
+        128,
+        129
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.501946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 9,
+      "skill": "E",
+      "phase": 1,
+      "rect": [
+        256,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        285,
+        536,
+        199,
+        200
+      ],
+      "coreAlpha64Rect": [
+        294,
+        561,
+        180,
+        162
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 30096,
+      "phaseName": "沙漏浮现",
+      "sourceRect": [
+        256,
+        511,
+        256,
+        257
+      ],
+      "center": [
+        384,
+        640
+      ],
+      "centerLocal": [
+        128,
+        129
+      ],
+      "pivot": [
+        128,
+        129
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.501946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 10,
+      "skill": "E",
+      "phase": 2,
+      "rect": [
+        512,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        535,
+        530,
+        203,
+        214
+      ],
+      "coreAlpha64Rect": [
+        545,
+        545,
+        188,
+        187
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 32604,
+      "phaseName": "逆流充盈",
+      "sourceRect": [
+        512,
+        511,
+        256,
+        257
+      ],
+      "center": [
+        640,
+        640
+      ],
+      "centerLocal": [
+        128,
+        129
+      ],
+      "pivot": [
+        128,
+        129
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.501946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 11,
+      "skill": "E",
+      "phase": 3,
+      "rect": [
+        768,
+        511,
+        256,
+        257
+      ],
+      "spriteRect": [
+        772,
+        513,
+        222,
+        229
+      ],
+      "coreAlpha64Rect": [
+        800,
+        527,
+        189,
+        206
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 38412,
+      "phaseName": "护幕升起",
+      "sourceRect": [
+        768,
+        511,
+        256,
+        257
+      ],
+      "center": [
+        896,
+        640
+      ],
+      "centerLocal": [
+        128,
+        129
+      ],
+      "pivot": [
+        128,
+        129
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.501946
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 12,
+      "skill": "E",
+      "phase": 4,
+      "rect": [
+        0,
+        768,
+        253,
+        253
+      ],
+      "spriteRect": [
+        23,
+        785,
+        222,
+        223
+      ],
+      "coreAlpha64Rect": [
+        32,
+        794,
+        191,
+        204
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 37482,
+      "phaseName": "护盾成形",
+      "sourceRect": [
+        0,
+        768,
+        253,
+        253
+      ],
+      "center": [
+        128,
+        896
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.505929,
+        0.505929
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 13,
+      "skill": "E",
+      "phase": 5,
+      "rect": [
+        253,
+        768,
+        252,
+        253
+      ],
+      "spriteRect": [
+        255,
+        784,
+        250,
+        222
+      ],
+      "coreAlpha64Rect": [
+        273,
+        796,
+        223,
+        190
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 41426,
+      "phaseName": "治愈环流",
+      "sourceRect": [
+        253,
+        768,
+        252,
+        253
+      ],
+      "center": [
+        384,
+        896
+      ],
+      "centerLocal": [
+        131,
+        128
+      ],
+      "pivot": [
+        131,
+        128
+      ],
+      "pivotNormalized": [
+        0.519841,
+        0.505929
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 14,
+      "skill": "E",
+      "phase": 6,
+      "rect": [
+        505,
+        768,
+        263,
+        253
+      ],
+      "spriteRect": [
+        505,
+        786,
+        245,
+        213
+      ],
+      "coreAlpha64Rect": [
+        542,
+        798,
+        194,
+        184
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 37771,
+      "phaseName": "沙漏解体",
+      "sourceRect": [
+        505,
+        768,
+        263,
+        253
+      ],
+      "center": [
+        640,
+        896
+      ],
+      "centerLocal": [
+        135,
+        128
+      ],
+      "pivot": [
+        135,
+        128
+      ],
+      "pivotNormalized": [
+        0.513308,
+        0.505929
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    },
+    {
+      "index": 15,
+      "skill": "E",
+      "phase": 7,
+      "rect": [
+        768,
+        768,
+        256,
+        253
+      ],
+      "spriteRect": [
+        788,
+        796,
+        219,
+        200
+      ],
+      "coreAlpha64Rect": [
+        801,
+        807,
+        195,
+        172
+      ],
+      "groundProjectionPeakY": null,
+      "alpha16Pixels": 33364,
+      "phaseName": "轨迹消散",
+      "sourceRect": [
+        768,
+        768,
+        256,
+        253
+      ],
+      "center": [
+        896,
+        896
+      ],
+      "centerLocal": [
+        128,
+        128
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.505929
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": null,
+      "groundContactLocalY": null,
+      "groundContactYNormalized": null,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    },
+    {
+      "index": 16,
+      "skill": "R",
+      "phase": 0,
+      "rect": [
+        0,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        19,
+        1157,
+        219,
+        92
+      ],
+      "coreAlpha64Rect": [
+        21,
+        1165,
+        214,
+        82
+      ],
+      "groundProjectionPeakY": 1214,
+      "alpha16Pixels": 13569,
+      "phaseName": "贴地星阵",
+      "sourceRect": [
+        0,
+        1021,
+        256,
+        256
+      ],
+      "center": [
+        128,
+        1216
+      ],
+      "centerLocal": [
+        128,
+        195
+      ],
+      "pivot": [
+        128,
+        195
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.761719
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1216,
+      "groundContactLocalY": 195,
+      "groundContactYNormalized": 0.761719,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 17,
+      "skill": "R",
+      "phase": 1,
+      "rect": [
+        256,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        275,
+        1116,
+        221,
+        134
+      ],
+      "coreAlpha64Rect": [
+        277,
+        1123,
+        215,
+        124
+      ],
+      "groundProjectionPeakY": 1207,
+      "alpha16Pixels": 22615,
+      "phaseName": "星海凝聚",
+      "sourceRect": [
+        256,
+        1021,
+        256,
+        256
+      ],
+      "center": [
+        384,
+        1218
+      ],
+      "centerLocal": [
+        128,
+        197
+      ],
+      "pivot": [
+        128,
+        197
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.769531
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1218,
+      "groundContactLocalY": 197,
+      "groundContactYNormalized": 0.769531,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "windup"
+    },
+    {
+      "index": 18,
+      "skill": "R",
+      "phase": 2,
+      "rect": [
+        512,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        530,
+        1039,
+        221,
+        210
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1056,
+        214,
+        190
+      ],
+      "groundProjectionPeakY": 1210,
+      "alpha16Pixels": 30551,
+      "phaseName": "三束初升",
+      "sourceRect": [
+        512,
+        1021,
+        256,
+        256
+      ],
+      "center": [
+        640,
+        1218
+      ],
+      "centerLocal": [
+        128,
+        197
+      ],
+      "pivot": [
+        128,
+        197
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.769531
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1218,
+      "groundContactLocalY": 197,
+      "groundContactYNormalized": 0.769531,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 19,
+      "skill": "R",
+      "phase": 3,
+      "rect": [
+        768,
+        1021,
+        256,
+        256
+      ],
+      "spriteRect": [
+        783,
+        1023,
+        223,
+        226
+      ],
+      "coreAlpha64Rect": [
+        789,
+        1038,
+        215,
+        208
+      ],
+      "groundProjectionPeakY": 1205,
+      "alpha16Pixels": 35437,
+      "phaseName": "五束交错",
+      "sourceRect": [
+        768,
+        1021,
+        256,
+        256
+      ],
+      "center": [
+        896,
+        1218
+      ],
+      "centerLocal": [
+        128,
+        197
+      ],
+      "pivot": [
+        128,
+        197
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.769531
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1218,
+      "groundContactLocalY": 197,
+      "groundContactYNormalized": 0.769531,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 20,
+      "skill": "R",
+      "phase": 4,
+      "rect": [
+        0,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        16,
+        1279,
+        224,
+        225
+      ],
+      "coreAlpha64Rect": [
+        19,
+        1286,
+        218,
+        216
+      ],
+      "groundProjectionPeakY": 1451,
+      "alpha16Pixels": 36044,
+      "phaseName": "中心审判",
+      "sourceRect": [
+        0,
+        1277,
+        256,
+        259
+      ],
+      "center": [
+        128,
+        1480
+      ],
+      "centerLocal": [
+        128,
+        203
+      ],
+      "pivot": [
+        128,
+        203
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.783784
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1480,
+      "groundContactLocalY": 203,
+      "groundContactYNormalized": 0.783784,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 21,
+      "skill": "R",
+      "phase": 5,
+      "rect": [
+        256,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        272,
+        1282,
+        223,
+        224
+      ],
+      "coreAlpha64Rect": [
+        278,
+        1295,
+        213,
+        208
+      ],
+      "groundProjectionPeakY": 1459,
+      "alpha16Pixels": 34463,
+      "phaseName": "侧束续击",
+      "sourceRect": [
+        256,
+        1277,
+        256,
+        259
+      ],
+      "center": [
+        384,
+        1482
+      ],
+      "centerLocal": [
+        128,
+        205
+      ],
+      "pivot": [
+        128,
+        205
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.791506
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1482,
+      "groundContactLocalY": 205,
+      "groundContactYNormalized": 0.791506,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "active"
+    },
+    {
+      "index": 22,
+      "skill": "R",
+      "phase": 6,
+      "rect": [
+        512,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        531,
+        1303,
+        219,
+        201
+      ],
+      "coreAlpha64Rect": [
+        533,
+        1311,
+        213,
+        191
+      ],
+      "groundProjectionPeakY": 1472,
+      "alpha16Pixels": 28496,
+      "phaseName": "星芒回落",
+      "sourceRect": [
+        512,
+        1277,
+        256,
+        259
+      ],
+      "center": [
+        640,
+        1481
+      ],
+      "centerLocal": [
+        128,
+        204
+      ],
+      "pivot": [
+        128,
+        204
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.787645
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1481,
+      "groundContactLocalY": 204,
+      "groundContactYNormalized": 0.787645,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    },
+    {
+      "index": 23,
+      "skill": "R",
+      "phase": 7,
+      "rect": [
+        768,
+        1277,
+        256,
+        259
+      ],
+      "spriteRect": [
+        787,
+        1308,
+        217,
+        195
+      ],
+      "coreAlpha64Rect": [
+        789,
+        1313,
+        213,
+        188
+      ],
+      "groundProjectionPeakY": 1473,
+      "alpha16Pixels": 24490,
+      "phaseName": "阵纹残辉",
+      "sourceRect": [
+        768,
+        1277,
+        256,
+        259
+      ],
+      "center": [
+        896,
+        1480
+      ],
+      "centerLocal": [
+        128,
+        203
+      ],
+      "pivot": [
+        128,
+        203
+      ],
+      "pivotNormalized": [
+        0.5,
+        0.783784
+      ],
+      "pivotBasis": "pixels relative to rect top-left; align this to effect world anchor",
+      "groundContactY": 1480,
+      "groundContactLocalY": 203,
+      "groundContactYNormalized": 0.783784,
+      "anchorMethod": "manual semantic feature alignment after visual inspection; R uses observed ellipse centerline, not alpha-bbox bottom",
+      "sourcePixelsPerReferenceUnit": 256,
+      "phaseRole": "dissipate"
+    }
+  ],
+  "hero": "star",
+  "originalGeneratedSource": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b18b-37ec-7303-8ecf-a7109deb4557\\exec-a1b58ff0-c98f-4dcd-8bf9-5643e2ed83be.png",
+  "originalSha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+  "rawCopyHashMatchesOriginal": true,
+  "promptFile": "star-prompt-v2.txt",
+  "tool": "built-in image_gen",
+  "requestedFrameLayout": [
+    4,
+    6
+  ],
+  "frameCount": 24,
+  "skillFrames": {
+    "F": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "E": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "R": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "coordinateConvention": "All rect/spriteRect/coreAlpha64Rect/center are source-image pixels. Rect=[x,y,width,height]. Pivot is local pixels relative to rect, not normalized sprite bbox.",
+  "commonScaleRule": "Use a shared 256px reference scale for the complete sequence. Do not resize every spriteRect to the same height or width. Draw each measured rect with its per-frame pivot.",
+  "groundRule": "Only R is floor-anchored. Align groundContactY to actual support surface; preserve vertical aspect. F/E are centered flight/gesture effects, not ground-squashed.",
+  "phaseRule": "Eight distinct phases per skill; 0-1 windup,2-5 active,6-7 dissolve. F hit phases4-5 trigger on impact, not automatically during every flight loop.",
+  "transparencyAcceptance": "RGBA alpha exists and raw bytes preserved; strict zero-alpha gutters were not fully achieved. Review the low-alpha background before final acceptance.",
+  "acceptance": "not user accepted; not installed in runtime by this agent"
+}

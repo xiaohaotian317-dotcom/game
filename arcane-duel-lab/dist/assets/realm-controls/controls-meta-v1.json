@@ -1,0 +1,223 @@
+{
+  "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1b188-681a-76a2-8fa2-0106444de3ea/exec-22045494-4f81-4987-af77-df9b2fb57ff7.png",
+  "savedPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/ornate-controls-v1.png",
+  "promptPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/prompt-ornate-controls-v1.txt",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "bytes": 2367833,
+  "sha256": "d169334d5b974603a9a7c1a4fac46c213de164a0423570a7a63331c667778f85",
+  "alpha": {
+    "min": 0,
+    "max": 254,
+    "zeroPixels": 803571,
+    "nonzeroPixels": 769293,
+    "opaque255Pixels": 0,
+    "subjectThreshold": 16,
+    "notes": "Genuinely transparent PNG. Alpha 1..8 tails extend beyond the material; preserve bytes and use explicit sourceRect. No post-generation background removal."
+  },
+  "sprites": {
+    "closeNormal": {
+      "sourceRect": [
+        86,
+        42,
+        384,
+        376
+      ],
+      "alphaBounds16": [
+        98,
+        55,
+        360,
+        348
+      ],
+      "pivot": [
+        278,
+        230
+      ],
+      "pivotLocal": [
+        192,
+        188
+      ],
+      "safeRect": [
+        188,
+        147,
+        180,
+        180
+      ],
+      "xCenter": [
+        278,
+        240
+      ]
+    },
+    "closeHover": {
+      "sourceRect": [
+        575,
+        42,
+        384,
+        376
+      ],
+      "alphaBounds16": [
+        588,
+        56,
+        357,
+        347
+      ],
+      "pivot": [
+        767,
+        230
+      ],
+      "pivotLocal": [
+        192,
+        188
+      ],
+      "safeRect": [
+        677,
+        147,
+        180,
+        180
+      ],
+      "xCenter": [
+        767,
+        240
+      ]
+    },
+    "closePressed": {
+      "sourceRect": [
+        1064,
+        42,
+        384,
+        376
+      ],
+      "alphaBounds16": [
+        1077,
+        56,
+        358,
+        347
+      ],
+      "pivot": [
+        1256,
+        230
+      ],
+      "pivotLocal": [
+        192,
+        188
+      ],
+      "safeRect": [
+        1166,
+        147,
+        180,
+        180
+      ],
+      "xCenter": [
+        1256,
+        240
+      ]
+    },
+    "sceneSelect": {
+      "sourceRect": [
+        108,
+        438,
+        1318,
+        266
+      ],
+      "alphaBounds16": [
+        118,
+        448,
+        1298,
+        246
+      ],
+      "pivot": [
+        767,
+        571
+      ],
+      "safeRect": [
+        360,
+        515,
+        700,
+        110
+      ],
+      "chevronCenter": [
+        1160,
+        575
+      ],
+      "suggestedNineSliceInsets": [
+        300,
+        72,
+        300,
+        72
+      ],
+      "nineSliceNote": "Optional only. Ends/crest stay fixed; do not stretch all art nonuniformly."
+    },
+    "back": {
+      "sourceRect": [
+        36,
+        735,
+        719,
+        249
+      ],
+      "alphaBounds16": [
+        46,
+        745,
+        699,
+        229
+      ],
+      "pivot": [
+        395.5,
+        859.5
+      ],
+      "safeRect": [
+        190,
+        803,
+        395,
+        105
+      ],
+      "suggestedNineSliceInsets": [
+        165,
+        65,
+        165,
+        65
+      ]
+    },
+    "enter": {
+      "sourceRect": [
+        775,
+        735,
+        727,
+        252
+      ],
+      "alphaBounds16": [
+        785,
+        745,
+        707,
+        232
+      ],
+      "pivot": [
+        1138.5,
+        861
+      ],
+      "safeRect": [
+        950,
+        803,
+        400,
+        105
+      ],
+      "suggestedNineSliceInsets": [
+        165,
+        65,
+        165,
+        65
+      ]
+    }
+  },
+  "integrationNotes": [
+    "Text remains DOM/canvas dynamic. Three X glyphs and selector chevron are the only baked symbols.",
+    "All close states intentionally use equal 384x376 crops and identical local pivots; generated contours vary at most a few source pixels, so do not independently size from each alpha bound.",
+    "At 44px width, actual metal silhouette width is about41px; preserve source aspect ratio.",
+    "Bottom back/enter shells have different actual widths and heights; preserve their aspect ratios or use the suggested nine-slice only after primary-agent review."
+  ],
+  "actualDeviations": [
+    "Requested 220px close art generated about360px wide; explicit measured crops supersede layout plan.",
+    "Selector material 1298x246 and action shells about700x230 are larger than requested; no cropping loss.",
+    "Soft alpha 1..8 outer tails remain in original PNG. SourceRect trims distant tails only at draw time; PNG bytes remain unchanged."
+  ]
+}

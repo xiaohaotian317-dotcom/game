@@ -1,0 +1,24 @@
+{
+  "hero": "star",
+  "created": "2026-11-07",
+  "candidates": [
+    {
+      "file": "hero-star-fx-v2.png",
+      "status": "rejected for runtime; preserved as source",
+      "reason": "Gray-white low-alpha haze across nominal background; main-agent visual rejection",
+      "manifest": "star-manifest-v2.json",
+      "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577"
+    },
+    {
+      "file": "hero-star-fx-v3.png",
+      "status": "preferred candidate pending main-agent visual review",
+      "reason": "Built-in image_gen transparency-only edit; true alpha0 coverage substantially improved",
+      "manifest": "star-manifest-v3.json",
+      "sha256": "8d20761555d95739052a7e7b5460bc460b8a43ba4fcab8f587740fd243ddaee2"
+    }
+  ],
+  "unchangedOtherHeroes": [
+    "hero-lightning-fx-v2.png",
+    "hero-shadow-fx-v2.png"
+  ]
+}

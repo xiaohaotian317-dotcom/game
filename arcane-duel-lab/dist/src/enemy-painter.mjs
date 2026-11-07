@@ -1,4 +1,5 @@
 import {ENEMIES} from './enemy-roster.mjs';
+import {loadMinionFx,minionWindup,minionEffect,minionProjectile,minionPoisonPool} from './minion-fx-painter.mjs';
 import {drawEnemyGroundWarning,drawEnemyLava} from './enemy-ground-art.mjs';
 import {enemyAnimationFrame,enemyCastOrigin} from './enemy-simulation.mjs';
 import {BossFxPainter,loadBossEffects} from './boss-fx-painter.mjs';
@@ -21,6 +22,7 @@ export async function loadEnemyAssets(ids,assets,progress=()=>{}){
   progress(++done,total);
  }));
  await loadBossEffects(bosses,assets,()=>progress(++done,total));
+ await loadMinionFx(assets);
 }
 export class EnemyPainter{
  constructor(ctx,assets){this.c=ctx;this.assets=assets;this.bossEffects=new BossFxPainter(ctx,assets);}
@@ -67,7 +69,7 @@ export class EnemyPainter{
    const {x:sx,y:sy}=enemyCastOrigin(w,e);line(c,[[sx,sy],[a.aim.x,a.aim.y]],rgba(color,.35),1.5);glow(c,sx,sy,22+p*18,color,.3+p*.2);
   }else if(s.type==='egg'||s.type==='summon')ellipse(c,e.x,e.y,60,18,rgba(color,.5),true);
   else{ellipse(c,a.aim.x,w.player.y,s.radius||(s.type==='leap'?156:72),15,rgba(color,.6),true);}
-  c.setLineDash([]);c.restore();this.bossEffects.windup(w,e);
+  c.setLineDash([]);c.restore();this.bossEffects.windup(w,e);minionWindup(c,this.assets,w,e);
  }
  egg(w,e){
   const c=this.c,age=w.time-e.bornAt,dead=e.hp<=0;if(dead&&!e.hatched&&w.time-(e.diedAt||0)>.7)return;
@@ -85,6 +87,7 @@ export class EnemyPainter{
  zones(w){
   const c=this.c;for(const z of w.enemyZones||[]){const age=w.time-z.created,p=clamp(age/z.delay,0,1),active=age>=z.delay,color=COLORS[z.style]||COLORS.star;
    c.save();const fade=clamp((z.delay+z.life-age)*2,0,1);c.globalAlpha=fade;
+   if(minionPoisonPool(c,this.assets,w,z)){c.restore();continue;}
    if(!active){if(!drawEnemyGroundWarning(c,this.assets,{style:z.style,x:z.x,y:z.y,radius:z.radius,progress:p,clock:w.fxTime})){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);}this.bossEffects.falling(w,z);}
    else if(this.bossEffects.zone(w,z)||z.style==='lava'&&drawEnemyLava(c,this.assets.campaignPainter?.art,z.x,z.y,z.radius,age-z.delay)){c.restore();continue;}else{
     glow(c,z.x,z.y-6,z.radius*1.15,color,.18);ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.25));ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.7),true,1.5);
@@ -104,6 +107,7 @@ export class EnemyPainter{
  }
  projectile(w,s){
   if(this.bossEffects.projectile(w,s))return true;
+  if(minionProjectile(this.c,this.assets,w,s))return true;
   if(!s.enemySource)return false;const c=this.c,color=COLORS[s.enemyStyle]||COLORS.star;c.save();
   const points=[...(s.trail||[]).slice(-8).map(p=>[p.x,p.y]),[s.x,s.y]];
   line(c,points,rgba(color,.18),12);line(c,points,rgba(color,.8),3);glow(c,s.x,s.y,23,color,.35);
@@ -119,6 +123,7 @@ export class EnemyPainter{
   c.restore();return true;
  }
  effect(w,e){
+  if(minionEffect(this.c,this.assets,w,e))return true;
   if(e.kind==='enemyVfx'&&e.ground&&e.style==='lava'&&!ENEMIES[e.enemyKind]?.boss&&drawEnemyLava(this.c,this.assets.campaignPainter?.art,e.x,e.y,e.radius||65,e.age,{impact:true}))return true;
   if(this.bossEffects.effect(w,e))return true;
   if(e.kind!=='enemyVfx')return false;const c=this.c,p=clamp(e.age/e.duration,0,1),color=COLORS[e.style]||COLORS.star,r=(e.radius||50),fade=Math.pow(1-p,1.3);c.save();c.globalAlpha*=fade;

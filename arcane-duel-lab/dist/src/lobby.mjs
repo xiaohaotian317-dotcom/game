@@ -31,7 +31,7 @@ function renderHeader(){
   $$('[data-summon]').forEach(b=>b.disabled=busy||profile.coins<(b.dataset.summon==='10'?900:100));
 }
 function renderHeroes(){
- $('#hero-list').innerHTML=HERO_ORDER.map(id=>{const h=HEROES[id];return `<article class="hero-preview-card"><button class="hero-thumb" data-hero="${id}" aria-label="预览${h.name}" aria-pressed="${preview===id}" style="--hero-color:${h.color}"><span class="hero-art" style="${splashStyle(id)}"></span><strong>${h.name}</strong><small>${profile.owned.includes(id)?'已拥有':'未唤醒'}</small></button><button class="hero-try" data-try-hero="${id}" aria-label="试玩${h.name}">试玩 ›</button></article>`;}).join('');
+ $('#hero-list').innerHTML=HERO_ORDER.map(id=>{const h=HEROES[id];return `<article class="hero-preview-card"><button class="hero-thumb" data-hero="${id}" aria-label="预览${h.name}" aria-pressed="${preview===id}" style="--hero-color:${h.color}"><span class="hero-art" style="${splashStyle(id)}"></span><strong>${h.name}</strong><small>${profile.owned.includes(id)?'已拥有':'未唤醒'}</small></button></article>`;}).join('');
  $$('[data-hero]').forEach(b=>b.addEventListener('click',()=>{preview=b.dataset.hero;renderDetail();$$('[data-hero]').forEach(a=>a.setAttribute('aria-pressed',String(a.dataset.hero===preview)));}));
  $$('[data-try-hero]').forEach(b=>b.onclick=()=>practice.open(b.dataset.tryHero));
 }

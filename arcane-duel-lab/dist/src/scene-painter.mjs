@@ -2,14 +2,19 @@ import {hammerPosition} from './scene-mechanics.mjs?v=20261030-duel12';
 const TAU=Math.PI*2;
 function glow(c,x,y,r,color,alpha){c.save();c.globalAlpha=alpha;const g=c.createRadialGradient(x,y,1,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'transparent');c.fillStyle=g;c.fillRect(x-r,y-r,r*2,r*2);c.restore();}
 export class ScenePainter{
-  constructor(assets,ctx){this.assets=assets;this.ctx=ctx;}
+  constructor(assets,ctx){this.assets=assets;this.ctx=ctx;this.backgroundCache=new Map();}
   prop(scene,key,x,y,width,{ax=.5,ay=1,angle=0,alpha=1,height}={}){
     const c=this.ctx,b=this.assets.sceneBounds[scene][key],h=height||width*b.h/b.w;
     c.save();c.globalAlpha*=alpha;c.translate(x,y);c.rotate(angle);
     c.drawImage(this.assets[scene+'Props'],b.x,b.y,b.w,b.h,-width*ax,-h*ay,width,h);c.restore();
     return {width,height:h};
   }
-  background(w,view=null){
+  background(w,view=null,{quiet=false}={}){
+    if(quiet&&typeof document!=='undefined'){
+      const top=Math.min(0,view?.y||0),height=Math.max(w.height,view?.height||0),key=[w.sceneId,w.width,height.toFixed(2),top.toFixed(2)].join(':');let canvas=this.backgroundCache.get(key);
+      if(!canvas){canvas=document.createElement('canvas');canvas.width=w.width;canvas.height=Math.ceil(height);const c=canvas.getContext('2d',{alpha:false});c.fillStyle='#0b1023';c.fillRect(0,0,canvas.width,canvas.height);c.translate(0,-top);c.globalAlpha=.9;c.filter='saturate(.76) contrast(.84) brightness(.98)';const prior=this.ctx;this.ctx=c;this.background(w,view);this.ctx=prior;if(this.backgroundCache.size>=4)this.backgroundCache.delete(this.backgroundCache.keys().next().value);this.backgroundCache.set(key,canvas);}
+      this.ctx.drawImage(canvas,0,top,w.width,height);return;
+    }
     const c=this.ctx,im=this.assets[w.sceneId+'Field'],o=w.sceneOffset||0,top=Math.min(0,view?.y||0),height=Math.max(w.height,view?.height||0);
     c.drawImage(im,o,top,1440,height);
     if(o){

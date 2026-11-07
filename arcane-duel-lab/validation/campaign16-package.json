@@ -1,0 +1,14 @@
+{
+  "version": "campaign16",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign16",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign16\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign16.zip",
+  "files": 502,
+  "runtimeFilesMatched": 419,
+  "bytes": 580977880,
+  "sha256": "ddd5f18a8b041daa5e32c14c11cad0a2a94f0b92cbf2ec17cfd737e7b2004321",
+  "originalSitesUnchanged": true,
+  "scope": "Painted controls and training sentinel, centered farther trial/PvP cameras, 144-phase shared hero skill art and minion material FX, requested skill balance and enemy AI/rates, faster XP/coins, exclusive persisted random gear ownership and real attributes; original Sites/saves/releases and full motion rollback preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

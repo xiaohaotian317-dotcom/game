@@ -13,6 +13,7 @@ import {practiceLoadout,applyPracticeLoadout,practiceURL} from './practice-loado
 import {PracticeDialog} from './practice-dialog.mjs';
 import {duelChosenSkill} from './duel-skill-data.mjs';
 import {duelHotbarStyle} from './duel-skill-ui.mjs';
+import {loadSentinel} from './training-sentinel.mjs';
 import {loadAlternateArt} from './alternate-skill-art.mjs';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
@@ -60,7 +61,7 @@ function buildScene(){
   const s=SCENES[selectedScene];$('#game').dataset.scene=selectedScene;
   document.title=s.name+' · 秘境决斗';
   $('.arena-shell').style.aspectRatio=cameraView(world).width+' / '+world.height;
-  $('#camera-button').textContent=world.camera?.overview?'镜头 全景':'镜头 跟随';
+
   $('#scene-name').textContent=s.name+' · '+s.subtitle;$('#scene-english').textContent=s.english;
   $$('.scene-picker button[data-scene]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scene===selectedScene)));
   $('#mechanism-cards').innerHTML=s.cards.map((card,i)=>'<article class="mechanism-card"><span>'+(i+1)+'</span><div><h3>'+card.name+'</h3><p>'+card.copy+'</p></div><div class="mechanism-action"><output data-mechanism-status="'+card.id+'"></output><button data-mechanism="'+card.id+'">'+card.action+'</button></div></article>').join('');
@@ -142,7 +143,7 @@ window.addEventListener('keyup',e=>keys.delete(e.code));
 window.addEventListener('blur',()=>{keys.clear();pointerDown=false;if(mode==='game'&&!paused)setPause(true);});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&mode==='game'&&!paused)setPause(true);});
 $('#start-button').addEventListener('click',enterLobby);
-$('#back-button').addEventListener('click',enterLobby);
+const leaveTrial=()=>{location.href='lobby.html?view=codex&hero='+world.hero;};$('#back-button').addEventListener('click',leaveTrial);$('#trial-leave').addEventListener('click',leaveTrial);$('#trial-back').addEventListener('click',leaveTrial);
 $('#pause-button').addEventListener('click',()=>setPause(!paused));$('#resume-button').addEventListener('click',()=>setPause(false));
 $('#freeze-button').addEventListener('click',freezeFrame);
 $$('.hero-button').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.hero)));
@@ -154,7 +155,6 @@ for(const [id,field] of [['moving','moving'],['counter','counterattack'],['slow'
   $('#'+id+'-button').addEventListener('click',e=>{world[field]=!world[field];e.currentTarget.setAttribute('aria-pressed',String(world[field]));canvas.focus({preventScroll:true});});
 }
 $('#sound-button').addEventListener('click',()=>{sound.enabled=!sound.enabled;const profile=loadProfile(profileStorage);profile.sound=sound.enabled;saveProfile(profileStorage,profile);$('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));if(sound.enabled)sound.init();});
-$('#camera-button').addEventListener('click',()=>{world.camera.overview=!world.camera.overview;world.camera.x=0;$('.arena-shell').style.aspectRatio=cameraView(world).width+' / '+world.height;$('#camera-button').textContent=world.camera.overview?'镜头 全景':'镜头 跟随';canvas.focus({preventScroll:true});});
 $('#fullscreen-button').addEventListener('click',async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen();}catch{notice('当前浏览器暂不支持全屏，可放大窗口体验。');}});
 function consumeEvents(){
   const goals=completed[world.hero];
@@ -180,7 +180,7 @@ function consumeEvents(){
   }world.events.length=0;
 }
 function loop(now){
-  const realDt=clamp((now-last)/1000,0,.05);last=now;
+  const realDt=clamp((now-last)/1000,0,.25);last=now;
   if(mode==='game'&&renderer){
     if(!paused&&!world.freezeFrame){
       accumulator+=realDt*(world.slow?.5:1);
@@ -203,7 +203,7 @@ async function init(){
   const loadingScreen=new LoadingScreen(),token=loadingScreen.start(selectedScene);
   try{
     let doneCount=0,totalCount=0;const assets=await loadAssets((done,total)=>{doneCount=done;totalCount=total;$('#loading').textContent='正在加载角色与秘境 '+done+' / '+total;loadingScreen.progress(done,total+1,token);});
-    await ensureHeroAssets(world.hero,assets);await loadAlternateArt([world.hero],assets);loadingScreen.progress(doneCount+1,totalCount+1,token);loadingScreen.finish(token);
+    await ensureHeroAssets(world.hero,assets);await loadSentinel(assets);await loadAlternateArt([world.hero],assets);loadingScreen.progress(doneCount+1,totalCount+1,token);loadingScreen.finish(token);
     renderer=new Renderer(canvas,assets);$$('.hero-button').forEach(b=>{if(assets[b.dataset.hero])renderer.portrait(b.querySelector('canvas'),b.dataset.hero);});
     buildScene();buildHero();positionTitleButton();$('#loading').textContent='准备就绪 · 点击开始游戏';$('#start-button').disabled=false;
     const params=new URLSearchParams(location.search);if(params.get('play')==='1')start();

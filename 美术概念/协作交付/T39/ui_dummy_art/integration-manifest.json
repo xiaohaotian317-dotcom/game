@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "task": "T39",
+  "role": "ui_dummy_art",
+  "status": "generated-and-measured; pending primary-agent integration and user art acceptance",
+  "generator": {
+    "mode": "built-in image_gen",
+    "originalPixelsPreserved": true,
+    "analysisOnly": "Alpha/crop/component scripts only read PNG and write JSON/text; no pixel edits, no raster crops exported."
+  },
+  "coordinateConvention": {
+    "rect": "[x,y,width,height], absolute PNG pixels unless explicitly named Local",
+    "pivot": "absolute PNG pixel [x,y]; convert to frame-local by subtracting sourceRect origin",
+    "orientation": "sentinel faces right in three-quarter side view",
+    "render": "drawImage using explicit sourceRect; do not crop on equal grid or normalize each frame height"
+  },
+  "references": [
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/settings/settings-shell-v1.png",
+      "role": "inspected style reference: antique-gold relief and dark teal"
+    },
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/settings/settings-controls-v1.png",
+      "role": "inspected style reference: control material"
+    },
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/pause/pause-controls-v1.png",
+      "role": "inspected style reference: ornate button shells"
+    }
+  ],
+  "assets": {
+    "ornate-controls-v1.png": {
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1b188-681a-76a2-8fa2-0106444de3ea/exec-22045494-4f81-4987-af77-df9b2fb57ff7.png",
+      "savedPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/ornate-controls-v1.png",
+      "promptPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/prompt-ornate-controls-v1.txt",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 2367833,
+      "sha256": "d169334d5b974603a9a7c1a4fac46c213de164a0423570a7a63331c667778f85",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixels": 803571,
+        "nonzeroPixels": 769293,
+        "opaque255Pixels": 0,
+        "subjectThreshold": 16,
+        "notes": "Genuinely transparent PNG. Alpha 1..8 tails extend beyond the material; preserve bytes and use explicit sourceRect. No post-generation background removal."
+      },
+      "sprites": {
+        "closeNormal": {
+          "sourceRect": [
+            86,
+            42,
+            384,
+            376
+          ],
+          "alphaBounds16": [
+            98,
+            55,
+            360,
+            348
+          ],
+          "pivot": [
+            278,
+            230
+          ],
+          "pivotLocal": [
+            192,
+            188
+          ],
+          "safeRect": [
+            188,
+            147,
+            180,
+            180
+          ],
+          "xCenter": [
+            278,
+            240
+          ]
+        },
+        "closeHover": {
+          "sourceRect": [
+            575,
+            42,
+            384,
+            376
+          ],
+          "alphaBounds16": [
+            588,
+            56,
+            357,
+            347
+          ],
+          "pivot": [
+            767,
+            230
+          ],
+          "pivotLocal": [
+            192,
+            188
+          ],
+          "safeRect": [
+            677,
+            147,
+            180,
+            180
+          ],
+          "xCenter": [
+            767,
+            240
+          ]
+        },
+        "closePressed": {
+          "sourceRect": [
+            1064,
+            42,
+            384,
+            376
+          ],
+          "alphaBounds16": [
+            1077,
+            56,
+            358,
+            347
+          ],
+          "pivot": [
+            1256,
+            230
+          ],
+          "pivotLocal": [
+            192,
+            188
+          ],
+          "safeRect": [
+            1166,
+            147,
+            180,
+            180
+          ],
+          "xCenter": [
+            1256,
+            240
+          ]
+        },
+        "sceneSelect": {
+          "sourceRect": [
+            108,
+            438,
+            1318,
+            266
+          ],
+          "alphaBounds16": [
+            118,
+            448,
+            1298,
+            246
+          ],
+          "pivot": [
+            767,
+            571
+          ],
+          "safeRect": [
+            360,
+            515,
+            700,
+            110
+          ],
+          "chevronCenter": [
+            1160,
+            575
+          ],
+          "suggestedNineSliceInsets": [
+            300,
+            72,
+            300,
+            72
+          ],
+          "nineSliceNote": "Optional only. Ends/crest stay fixed; do not stretch all art nonuniformly."
+        },
+        "back": {
+          "sourceRect": [
+            36,
+            735,
+            719,
+            249
+          ],
+          "alphaBounds16": [
+            46,
+            745,
+            699,
+            229
+          ],
+          "pivot": [
+            395.5,
+            859.5
+          ],
+          "safeRect": [
+            190,
+            803,
+            395,
+            105
+          ],
+          "suggestedNineSliceInsets": [
+            165,
+            65,
+            165,
+            65
+          ]
+        },
+        "enter": {
+          "sourceRect": [
+            775,
+            735,
+            727,
+            252
+          ],
+          "alphaBounds16": [
+            785,
+            745,
+            707,
+            232
+          ],
+          "pivot": [
+            1138.5,
+            861
+          ],
+          "safeRect": [
+            950,
+            803,
+            400,
+            105
+          ],
+          "suggestedNineSliceInsets": [
+            165,
+            65,
+            165,
+            65
+          ]
+        }
+      },
+      "integrationNotes": [
+        "Text remains DOM/canvas dynamic. Three X glyphs and selector chevron are the only baked symbols.",
+        "All close states intentionally use equal 384x376 crops and identical local pivots; generated contours vary at most a few source pixels, so do not independently size from each alpha bound.",
+        "At 44px width, actual metal silhouette width is about41px; preserve source aspect ratio.",
+        "Bottom back/enter shells have different actual widths and heights; preserve their aspect ratios or use the suggested nine-slice only after primary-agent review."
+      ],
+      "actualDeviations": [
+        "Requested 220px close art generated about360px wide; explicit measured crops supersede layout plan.",
+        "Selector material 1298x246 and action shells about700x230 are larger than requested; no cropping loss.",
+        "Soft alpha 1..8 outer tails remain in original PNG. SourceRect trims distant tails only at draw time; PNG bytes remain unchanged."
+      ]
+    },
+    "training-sentinel-v1.png": {
+      "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1b188-681a-76a2-8fa2-0106444de3ea/exec-d1bc9d84-f475-4e9a-a9c5-dc2b20c538ab.png",
+      "savedPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/training-sentinel-v1.png",
+      "promptPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T39/ui_dummy_art/prompt-training-sentinel-v1.txt",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 2363832,
+      "sha256": "7ac260d51a1ecb866950854cd7c3f23e838c09dd68254e321f36a2d187e4ae52",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "zeroPixels": 861022,
+        "nonzeroPixels": 711842,
+        "opaque255Pixels": 0,
+        "subjectThreshold": 16,
+        "notes": "Genuine transparent alpha, nearzero outer tails. Explicit per-pose sourceRect excludes neighboring debris; do not use 384x512 tiles."
+      },
+      "plannedGrid": {
+        "columns": 4,
+        "rows": 2,
+        "cellWidth": 384,
+        "cellHeight": 512,
+        "purpose": "ordering/search only; not final frame rect"
+      },
+      "referenceBodyHeightPixels": 403,
+      "suggestedWorldBodyHeight": 99,
+      "suggestedScale": 0.2456575682382134,
+      "worldHeightRationale": "Implementation suggestion only: 0.9 of 110px hero collision height; user asked about0.9 hero height, not a locked 99px.",
+      "frames": [
+        {
+          "id": 0,
+          "name": "idle",
+          "sourceRect": [
+            40,
+            48,
+            320,
+            428
+          ],
+          "bodyBounds16": [
+            52,
+            60,
+            296,
+            403
+          ],
+          "pivot": [
+            203,
+            462
+          ],
+          "pivotLocal": [
+            163,
+            414
+          ],
+          "core": [
+            248,
+            240
+          ],
+          "footContactRows": {
+            "y": 450,
+            "runs": [
+              [
+                89,
+                189
+              ],
+              [
+                215,
+                317
+              ]
+            ]
+          },
+          "safeRect": [
+            40,
+            48,
+            320,
+            428
+          ]
+        },
+        {
+          "id": 1,
+          "name": "breath",
+          "sourceRect": [
+            417,
+            43,
+            330,
+            433
+          ],
+          "bodyBounds16": [
+            429,
+            55,
+            306,
+            408
+          ],
+          "pivot": [
+            587,
+            462
+          ],
+          "pivotLocal": [
+            170,
+            419
+          ],
+          "core": [
+            632,
+            232
+          ],
+          "footContactRows": {
+            "y": 450,
+            "runs": [
+              [
+                472,
+                572
+              ],
+              [
+                598,
+                701
+              ]
+            ]
+          },
+          "safeRect": [
+            417,
+            43,
+            330,
+            433
+          ]
+        },
+        {
+          "id": 2,
+          "name": "lightHit",
+          "sourceRect": [
+            797,
+            73,
+            322,
+            403
+          ],
+          "bodyBounds16": [
+            809,
+            85,
+            297,
+            378
+          ],
+          "pivot": [
+            967,
+            462
+          ],
+          "pivotLocal": [
+            170,
+            389
+          ],
+          "core": [
+            997,
+            270
+          ],
+          "footContactRows": {
+            "y": 450,
+            "runs": [
+              [
+                855,
+                954
+              ],
+              [
+                975,
+                1078
+              ]
+            ]
+          },
+          "safeRect": [
+            797,
+            73,
+            322,
+            403
+          ]
+        },
+        {
+          "id": 3,
+          "name": "heavyHit",
+          "sourceRect": [
+            1148,
+            44,
+            382,
+            432
+          ],
+          "bodyBounds16": [
+            1160,
+            56,
+            358,
+            407
+          ],
+          "pivot": [
+            1356,
+            462
+          ],
+          "pivotLocal": [
+            208,
+            418
+          ],
+          "core": [
+            1350,
+            204
+          ],
+          "footContactRows": {
+            "y": 450,
+            "runs": [
+              [
+                1239,
+                1337
+              ],
+              [
+                1368,
+                1472
+              ]
+            ]
+          },
+          "safeRect": [
+            1148,
+            44,
+            382,
+            432
+          ]
+        },
+        {
+          "id": 4,
+          "name": "coreCrack",
+          "sourceRect": [
+            40,
+            564,
+            323,
+            423
+          ],
+          "bodyBounds16": [
+            52,
+            576,
+            299,
+            399
+          ],
+          "pivot": [
+            204,
+            974
+          ],
+          "pivotLocal": [
+            164,
+            410
+          ],
+          "core": [
+            248,
+            751
+          ],
+          "footContactRows": {
+            "y": 962,
+            "runs": [
+              [
+                89,
+                188
+              ],
+              [
+                214,
+                318
+              ]
+            ]
+          },
+          "safeRect": [
+            40,
+            564,
+            323,
+            423
+          ]
+        },
+        {
+          "id": 5,
+          "name": "rebound",
+          "sourceRect": [
+            401,
+            576,
+            342,
+            411
+          ],
+          "bodyBounds16": [
+            413,
+            588,
+            318,
+            387
+          ],
+          "pivot": [
+            581,
+            974
+          ],
+          "pivotLocal": [
+            180,
+            398
+          ],
+          "core": [
+            643,
+            776
+          ],
+          "footContactRows": {
+            "y": 962,
+            "runs": [
+              [
+                466,
+                568
+              ],
+              [
+                589,
+                695
+              ]
+            ]
+          },
+          "safeRect": [
+            401,
+            576,
+            342,
+            411
+          ]
+        },
+        {
+          "id": 6,
+          "name": "collapsed",
+          "sourceRect": [
+            754,
+            677,
+            356,
+            311
+          ],
+          "bodyBounds16": [
+            786,
+            689,
+            312,
+            287
+          ],
+          "allDebrisBounds16": [
+            766,
+            689,
+            332,
+            287
+          ],
+          "pivot": [
+            991,
+            975
+          ],
+          "pivotLocal": [
+            237,
+            298
+          ],
+          "core": [
+            965,
+            830
+          ],
+          "pivotNote": "Visual midpoint of two surviving foot/base blocks; fallen torso/debris is leftward. Ground baseline is reliable; base midpoint manually estimated from image.",
+          "safeRect": [
+            754,
+            677,
+            356,
+            311
+          ]
+        },
+        {
+          "id": 7,
+          "name": "repair",
+          "sourceRect": [
+            1180,
+            565,
+            333,
+            422
+          ],
+          "bodyBounds16": [
+            1192,
+            577,
+            309,
+            398
+          ],
+          "pivot": [
+            1355,
+            974
+          ],
+          "pivotLocal": [
+            175,
+            409
+          ],
+          "core": [
+            1395,
+            751
+          ],
+          "footContactRows": {
+            "y": 962,
+            "runs": [
+              [
+                1240,
+                1339
+              ],
+              [
+                1366,
+                1470
+              ]
+            ]
+          },
+          "safeRect": [
+            1180,
+            565,
+            333,
+            422
+          ]
+        }
+      ],
+      "integrationNotes": [
+        "Keep a single scale of worldHeight/referenceBodyHeightPixels for all frames, then anchor using per-frame pivotLocal. Never stretch each crop to the same height; lightHit/collapsed are intentionally shorter.",
+        "sourceRect includes about12px material padding and excludes neighboring frame fragments. Frame6 debris begins x766, two pixels left of planned column boundary; explicit crop is required.",
+        "Suggested semantic playback: idle<->breath slow; hit2->5->0; heavy3->4(optional)->5->0; collapse6 then repair7->0. Timing is primary-agent behavior work, not baked here.",
+        "Core locations are manual visual estimates for small runtime glints/hit feedback; foot contact rows and alpha bounds are actual source pixel measurements.",
+        "Each frame safeRect equals its sourceRect; all material/debris alpha>16 for that semantic frame lies within it. No text safe region is implied."
+      ],
+      "actualDeviations": [
+        "Idle body is403px high rather than planned330px; frames are more full than planned. Single render scale handles this.",
+        "View is right-facing three-quarter side view, not strict90-degree profile. It remains clearly a wooden/metal nonliving construct.",
+        "Heavy frame torso leans back and changes arm position but the head/core remain mostly upright, less dramatic than full20-degree spine recoil requested.",
+        "Frame6 is a low collapsed construct with some visible base blocks and debris, not fully separated rubble.",
+        "Repair frame is mostly fully assembled with teal repair arcs; it lacks large visibly returning detached armor plates. Primary agent can blend from6 to7 to0; do not claim the frame alone shows full reconstruction.",
+        "Alpha1..8 soft tails cross nominal cell borders. Main alpha>16 components are separate; explicit crops avoid adjacent debris and preserve original pixels."
+      ]
+    }
+  },
+  "audits": {
+    "alpha": "alpha-audit.json",
+    "components": "components-audit.json",
+    "scripts": [
+      "analyze-alpha.py",
+      "analyze-components.py",
+      "measure-feet.py"
+    ],
+    "verification": "Read-only source/copy SHA comparison recorded in provenance-verification.json. Alpha/components measure data; aesthetic and animation acceptance remain pending."
+  }
+}

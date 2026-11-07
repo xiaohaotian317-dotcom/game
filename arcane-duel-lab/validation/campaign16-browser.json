@@ -1,0 +1,308 @@
+{
+  "isolatedStorage": true,
+  "formalSavesTouched": false,
+  "fireRender": {
+    "frames": 92,
+    "callbackMeanMs": 2.0880434786819895,
+    "callbackP95Ms": 6.299999997019768,
+    "intervalP95Ms": 16.90000000000009
+  },
+  "equipped": {
+    "version": 1,
+    "redeemedCodes": [],
+    "daily": {
+      "day": "2026-11-07",
+      "taskIds": [
+        "attacks",
+        "dashes",
+        "clear",
+        "boss",
+        "skills"
+      ],
+      "progress": {
+        "minions": 0,
+        "bosses": 0,
+        "skills": 0,
+        "jumps": 0,
+        "dashes": 0,
+        "pickups": 0,
+        "attacks": 0,
+        "clears": 0
+      },
+      "claimed": []
+    },
+    "passives": {
+      "health": 0,
+      "mana": 0,
+      "crit": 0,
+      "critDamage": 0
+    },
+    "petRestEpoch": 0,
+    "petRestAfterStage": null,
+    "petRestStages": [],
+    "artifacts": {},
+    "equippedArtifact": null,
+    "activePetId": null,
+    "pets": [],
+    "mirrorEquipped": false,
+    "coins": 5000,
+    "tickets": 0,
+    "owned": [
+      "fire",
+      "nature",
+      "frost",
+      "lightning",
+      "shadow",
+      "star"
+    ],
+    "selected": "lightning",
+    "lineup": [
+      "fire"
+    ],
+    "cleared": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "firstTickets": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "choiceClaimed": false,
+    "pity": {
+      "fire": 0,
+      "nature": 0,
+      "frost": 0,
+      "lightning": 0,
+      "shadow": 0,
+      "star": 0
+    },
+    "serial": 6,
+    "heroes": {
+      "fire": {
+        "exp": 0,
+        "skills": {
+          "fire-0-0": 0
+        },
+        "slots": {
+          "q": "fire-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "nature": {
+        "exp": 0,
+        "skills": {
+          "nature-0-0": 0
+        },
+        "slots": {
+          "q": "nature-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "frost": {
+        "exp": 0,
+        "skills": {
+          "frost-0-0": 0
+        },
+        "slots": {
+          "q": "frost-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": "item-5",
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "lightning": {
+        "exp": 0,
+        "skills": {
+          "lightning-0-0": 0
+        },
+        "slots": {
+          "q": "lightning-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": "item-3",
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "shadow": {
+        "exp": 0,
+        "skills": {
+          "shadow-0-0": 0
+        },
+        "slots": {
+          "q": "shadow-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      },
+      "star": {
+        "exp": 0,
+        "skills": {
+          "star-0-0": 0
+        },
+        "slots": {
+          "q": "star-0-0",
+          "e": null,
+          "r": null
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null,
+          "artifact": null
+        },
+        "receivedFrom": null
+      }
+    },
+    "bag": [
+      {
+        "id": "item-1",
+        "type": "chestMedium",
+        "count": 2
+      },
+      {
+        "id": "item-2",
+        "type": "xpMedium",
+        "count": 3
+      },
+      {
+        "type": "equipment",
+        "slot": "weapon",
+        "role": "melee",
+        "quality": 0,
+        "stage": 2,
+        "count": 1,
+        "rolls": {
+          "attack": 1.08,
+          "health": 1,
+          "armor": 1,
+          "crit": 1,
+          "lifesteal": 1
+        },
+        "id": "item-3",
+        "rank": 0,
+        "level": 0
+      },
+      {
+        "type": "equipment",
+        "slot": "armor",
+        "role": "melee",
+        "quality": 2,
+        "stage": 3,
+        "count": 1,
+        "rolls": {
+          "attack": 1.0435717268085538,
+          "health": 0.9960531155590038,
+          "armor": 1.0584710128491062,
+          "crit": 0.9747569545715644,
+          "lifesteal": 0.9224090466076268
+        },
+        "id": "item-4",
+        "rank": 0,
+        "level": 0
+      },
+      {
+        "type": "equipment",
+        "slot": "weapon",
+        "role": "staff",
+        "quality": 0,
+        "stage": 2,
+        "count": 1,
+        "rolls": {
+          "attack": 1.0833100476991775,
+          "health": 0.9921549919966601,
+          "armor": 1.0181452282179804,
+          "crit": 1.074153285860098,
+          "lifesteal": 1.081711521862701
+        },
+        "id": "item-5",
+        "rank": 0,
+        "level": 0
+      },
+      {
+        "type": "equipment",
+        "slot": "armor",
+        "role": "staff",
+        "quality": 3,
+        "stage": 5,
+        "count": 1,
+        "rolls": {
+          "attack": 1.0436521889301265,
+          "health": 1.0804068023001787,
+          "armor": 1.0479824286298154,
+          "crit": 1.0498487446744784,
+          "lifesteal": 0.945207219894313
+        },
+        "id": "item-6",
+        "rank": 0,
+        "level": 0
+      }
+    ]
+  },
+  "gearAfterUpgrade": {
+    "type": "equipment",
+    "slot": "weapon",
+    "role": "melee",
+    "quality": 0,
+    "stage": 2,
+    "count": 1,
+    "rolls": {
+      "attack": 1.08,
+      "health": 1,
+      "armor": 1,
+      "crit": 1,
+      "lifesteal": 1
+    },
+    "id": "item-3",
+    "rank": 0,
+    "level": 1
+  },
+  "errors": [],
+  "failedResources": [],
+  "passed": true
+}

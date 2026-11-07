@@ -1,0 +1,864 @@
+{
+  "task": "T39/equipment_art",
+  "status": "read-only art/crop review complete; no new image generation warranted by inspected source",
+  "decision": "Keep existing equipment-v1.png and armors-v1.png. They visibly distinguish melee and staff categories. Improve semantic UI and aspect-preserving rendering; exact user screenshot issue has not been reproduced by this static audit.",
+  "inputs": [
+    {
+      "path": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\campaign-growth\\equipment-v1.png",
+      "sha256": "e28cf927a70c15a2d3f8748f81590d609986f3dd46af4cd6af3b771f38e4eb07",
+      "role": "view_image inspected original source"
+    },
+    {
+      "path": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\campaign-growth\\armors-v1.png",
+      "sha256": "816b7bccf6efecbd864b1549366be4fc26cac14d83d89e10d613febf70406dd8",
+      "role": "view_image inspected original source"
+    },
+    {
+      "path": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\campaign-growth\\growth-ui-bounds-v1.json",
+      "sha256": "514cb4fdd30f6da8f0d3f79ed9ba70c72c8adce9a9f2b6eaa89f72756e36124c",
+      "role": "read relevant equipment and armors crop sections"
+    }
+  ],
+  "mappingEvidence": {
+    "heroClass": {
+      "melee": [
+        "lightning",
+        "shadow"
+      ],
+      "staff": [
+        "fire",
+        "nature",
+        "frost",
+        "star"
+      ]
+    },
+    "itemInfo": "icon=(item.role===melee?0:6)+quality; sheet=weapon?equipment:armors",
+    "sheetStyle": "When meta exists, uses meta[sheet].frames[index].rect; otherwise fallback4columns3rows with same index order.",
+    "emptySlot": "equipmentClass(hero)===melee?0:6, already role-specific, but low-opacity/desaturated and no explicit item-class badge.",
+    "profileValidation": "normalizeSolo keeps equipment only when role is melee/staff and slot weapon/armor; equipped slots must match equipmentClass(hero)."
+  },
+  "assets": {
+    "equipment": {
+      "sourcePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\campaign-growth\\equipment-v1.png",
+      "file": "equipment-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "sha256": "e28cf927a70c15a2d3f8748f81590d609986f3dd46af4cd6af3b771f38e4eb07",
+      "declaredCols": 4,
+      "declaredRows": 3,
+      "frames": [
+        {
+          "index": 0,
+          "role": "melee",
+          "quality": 0,
+          "qualityName": "白/普通",
+          "category": "拳套",
+          "visualDescription": "铆钉钢铁皮革拳套",
+          "sourceRect": [
+            0,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            192.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "4f2a46f17b22995494557085fd207929146dccd4eb80392ceebc0c87a093bd93",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 1,
+          "role": "melee",
+          "quality": 1,
+          "qualityName": "绿/一般",
+          "category": "拳套",
+          "visualDescription": "荆棘翠玉拳套",
+          "sourceRect": [
+            384,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            576.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "dd143e8e270af04bf31f20e52b2cad5f7ef5bacaaa4d13edb6e74f516b8f57e8",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 2,
+          "role": "melee",
+          "quality": 2,
+          "qualityName": "蓝/高级",
+          "category": "拳套",
+          "visualDescription": "冰晶钢爪拳套",
+          "sourceRect": [
+            768,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            960.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "ad55036c05f6d905fb70af0748c302d0b738c5df1187a9e39206990ed646a45e",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 3,
+          "role": "melee",
+          "quality": 3,
+          "qualityName": "紫/史诗",
+          "category": "拳套",
+          "visualDescription": "黑紫羽刃拳套",
+          "sourceRect": [
+            1152,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            1344.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "a1a010d3452ccd20d59799b33b29f0cc655799d2abf8e0561778805755aaf574",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 4,
+          "role": "melee",
+          "quality": 4,
+          "qualityName": "红/传说",
+          "category": "拳套",
+          "visualDescription": "赤红龙鳞拳套",
+          "sourceRect": [
+            0,
+            318,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            192.0,
+            477.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "f74244052106033dd5de8458be9ae3d1000685ef7be15600ff926afa92bd0f0e",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 5,
+          "role": "melee",
+          "quality": 5,
+          "qualityName": "橙/无敌",
+          "category": "拳套",
+          "visualDescription": "白金曜阳拳套",
+          "sourceRect": [
+            384,
+            318,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            576.0,
+            477.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "0d32b163f4d1b4864e62d14d45d07f61e45661c870655818c434eea59815669b",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 6,
+          "role": "staff",
+          "quality": 0,
+          "qualityName": "白/普通",
+          "category": "法杖",
+          "visualDescription": "白晶木制长法杖",
+          "sourceRect": [
+            768,
+            318,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            960.0,
+            477.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "b582ee60a2e72c75435900ea7b080db33976eece0051b2a247a936957d631cf2",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 7,
+          "role": "staff",
+          "quality": 1,
+          "qualityName": "绿/一般",
+          "category": "法杖",
+          "visualDescription": "活木翠玉长法杖",
+          "sourceRect": [
+            1152,
+            318,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            1344.0,
+            477.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "0378eff8d3bc2175b24184d9d98ee08a488e782c8c21c35f635db8036e39876f",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 8,
+          "role": "staff",
+          "quality": 2,
+          "qualityName": "蓝/高级",
+          "category": "法杖",
+          "visualDescription": "冰晶银蓝长法杖",
+          "sourceRect": [
+            0,
+            636,
+            384,
+            388
+          ],
+          "sourceAspectRatio": 0.9896907216494846,
+          "center": [
+            192.0,
+            830.0
+          ],
+          "centerLocal": [
+            192.0,
+            194.0
+          ],
+          "containRelativeBox": {
+            "left": 0.005154639175257714,
+            "top": 0.0,
+            "width": 0.9896907216494846,
+            "height": 1.0
+          },
+          "contentPixelHash": "9107f3e7a92ca7bc3fd7811875bddd2b276447d4a79864beeeac1cda5a286081",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 9,
+          "role": "staff",
+          "quality": 3,
+          "qualityName": "紫/史诗",
+          "category": "法杖",
+          "visualDescription": "紫月悬晶长法杖",
+          "sourceRect": [
+            384,
+            636,
+            384,
+            388
+          ],
+          "sourceAspectRatio": 0.9896907216494846,
+          "center": [
+            576.0,
+            830.0
+          ],
+          "centerLocal": [
+            192.0,
+            194.0
+          ],
+          "containRelativeBox": {
+            "left": 0.005154639175257714,
+            "top": 0.0,
+            "width": 0.9896907216494846,
+            "height": 1.0
+          },
+          "contentPixelHash": "258339a1852ee21054becba44d335dc92d1666e93fe07611b1100a7a060c2b31",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 10,
+          "role": "staff",
+          "quality": 4,
+          "qualityName": "红/传说",
+          "category": "法杖",
+          "visualDescription": "赤龙血晶长法杖",
+          "sourceRect": [
+            768,
+            636,
+            384,
+            388
+          ],
+          "sourceAspectRatio": 0.9896907216494846,
+          "center": [
+            960.0,
+            830.0
+          ],
+          "centerLocal": [
+            192.0,
+            194.0
+          ],
+          "containRelativeBox": {
+            "left": 0.005154639175257714,
+            "top": 0.0,
+            "width": 0.9896907216494846,
+            "height": 1.0
+          },
+          "contentPixelHash": "8106e01da2c95a89baf2d016e8fd7fd891703b30cf18c7aa2338f36abce701d4",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 11,
+          "role": "staff",
+          "quality": 5,
+          "qualityName": "橙/无敌",
+          "category": "法杖",
+          "visualDescription": "金翼曜阳长法杖",
+          "sourceRect": [
+            1152,
+            636,
+            384,
+            388
+          ],
+          "sourceAspectRatio": 0.9896907216494846,
+          "center": [
+            1344.0,
+            830.0
+          ],
+          "centerLocal": [
+            192.0,
+            194.0
+          ],
+          "containRelativeBox": {
+            "left": 0.005154639175257714,
+            "top": 0.0,
+            "width": 0.9896907216494846,
+            "height": 1.0
+          },
+          "contentPixelHash": "d5513dd9fbe7e33943da3e8aa34699831cb1f9afb37b867394721c50e2ef4e6b",
+          "sourceRectWithinImage": true
+        }
+      ],
+      "all12ContentCropsUnique": true,
+      "sameQualityRolePairsHaveDifferentContent": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "armors": {
+      "sourcePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\campaign-growth\\armors-v1.png",
+      "file": "armors-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "sha256": "816b7bccf6efecbd864b1549366be4fc26cac14d83d89e10d613febf70406dd8",
+      "declaredCols": 4,
+      "declaredRows": 3,
+      "frames": [
+        {
+          "index": 0,
+          "role": "melee",
+          "quality": 0,
+          "qualityName": "白/普通",
+          "category": "战甲",
+          "visualDescription": "钢铁锁甲战甲",
+          "sourceRect": [
+            0,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            192.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "f4692913a07d7746f8e3247ef9a7a44d841424bd829b79437ab1da2a3df76d11",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 1,
+          "role": "melee",
+          "quality": 1,
+          "qualityName": "绿/一般",
+          "category": "战甲",
+          "visualDescription": "翠叶荆棘战甲",
+          "sourceRect": [
+            384,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            576.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "0c8f56e52b41b718ee8b9e0203bd49c85d88c8d1723283041f13c82d2185f593",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 2,
+          "role": "melee",
+          "quality": 2,
+          "qualityName": "蓝/高级",
+          "category": "战甲",
+          "visualDescription": "银蓝冰晶板甲",
+          "sourceRect": [
+            768,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            960.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "b09bc710e6e6e0d79372969e35e777f4fd63a40d26a6d93d5ca163b57969d160",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 3,
+          "role": "melee",
+          "quality": 3,
+          "qualityName": "紫/史诗",
+          "category": "战甲",
+          "visualDescription": "黑紫鸦羽战甲",
+          "sourceRect": [
+            1152,
+            0,
+            384,
+            318
+          ],
+          "sourceAspectRatio": 1.2075471698113207,
+          "center": [
+            1344.0,
+            159.0
+          ],
+          "centerLocal": [
+            192.0,
+            159.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.0859375,
+            "width": 1.0,
+            "height": 0.828125
+          },
+          "contentPixelHash": "1b828af437107e05df71c51b9d88516c4c6a9bd87f19a9740a981ee21173a464",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 4,
+          "role": "melee",
+          "quality": 4,
+          "qualityName": "红/传说",
+          "category": "战甲",
+          "visualDescription": "赤龙尖刺板甲",
+          "sourceRect": [
+            0,
+            318,
+            384,
+            332
+          ],
+          "sourceAspectRatio": 1.1566265060240963,
+          "center": [
+            192.0,
+            484.0
+          ],
+          "centerLocal": [
+            192.0,
+            166.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.06770833333333337,
+            "width": 1.0,
+            "height": 0.8645833333333333
+          },
+          "contentPixelHash": "4705ea7d84a9a9c5c14a8e7c947bb20b894667338b1a5498eff8864b27f1bbee",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 5,
+          "role": "melee",
+          "quality": 5,
+          "qualityName": "橙/无敌",
+          "category": "战甲",
+          "visualDescription": "白金凤翼重甲",
+          "sourceRect": [
+            384,
+            318,
+            384,
+            332
+          ],
+          "sourceAspectRatio": 1.1566265060240963,
+          "center": [
+            576.0,
+            484.0
+          ],
+          "centerLocal": [
+            192.0,
+            166.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.06770833333333337,
+            "width": 1.0,
+            "height": 0.8645833333333333
+          },
+          "contentPixelHash": "20b99ebbd49f2b9611d7d70c20f10281f197eddd0133051ce7413f294e1e7339",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 6,
+          "role": "staff",
+          "quality": 0,
+          "qualityName": "白/普通",
+          "category": "法袍",
+          "visualDescription": "白布连帽长法袍",
+          "sourceRect": [
+            768,
+            318,
+            384,
+            332
+          ],
+          "sourceAspectRatio": 1.1566265060240963,
+          "center": [
+            960.0,
+            484.0
+          ],
+          "centerLocal": [
+            192.0,
+            166.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.06770833333333337,
+            "width": 1.0,
+            "height": 0.8645833333333333
+          },
+          "contentPixelHash": "5eb78116269570f050385f73b1953a6bf6d97b6e546482f95b239018d8546118",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 7,
+          "role": "staff",
+          "quality": 1,
+          "qualityName": "绿/一般",
+          "category": "法袍",
+          "visualDescription": "翠绿连帽法袍",
+          "sourceRect": [
+            1152,
+            318,
+            384,
+            332
+          ],
+          "sourceAspectRatio": 1.1566265060240963,
+          "center": [
+            1344.0,
+            484.0
+          ],
+          "centerLocal": [
+            192.0,
+            166.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.06770833333333337,
+            "width": 1.0,
+            "height": 0.8645833333333333
+          },
+          "contentPixelHash": "82d238ff50c5e66b3957bd10a3fb3eb095390cda9dd3705ba532d7be256c102f",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 8,
+          "role": "staff",
+          "quality": 2,
+          "qualityName": "蓝/高级",
+          "category": "法袍",
+          "visualDescription": "蓝冰连帽法袍",
+          "sourceRect": [
+            0,
+            650,
+            384,
+            374
+          ],
+          "sourceAspectRatio": 1.0267379679144386,
+          "center": [
+            192.0,
+            837.0
+          ],
+          "centerLocal": [
+            192.0,
+            187.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.01302083333333337,
+            "width": 1.0,
+            "height": 0.9739583333333333
+          },
+          "contentPixelHash": "24014974d05c61efd72949c1af9de6783e6173500434383188c19c02909208aa",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 9,
+          "role": "staff",
+          "quality": 3,
+          "qualityName": "紫/史诗",
+          "category": "法袍",
+          "visualDescription": "紫月连帽法袍",
+          "sourceRect": [
+            384,
+            650,
+            384,
+            374
+          ],
+          "sourceAspectRatio": 1.0267379679144386,
+          "center": [
+            576.0,
+            837.0
+          ],
+          "centerLocal": [
+            192.0,
+            187.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.01302083333333337,
+            "width": 1.0,
+            "height": 0.9739583333333333
+          },
+          "contentPixelHash": "4c0483e91988eebdbbbf1a5f06762944a6ec87a9dac552f2aa4580609b1a35f5",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 10,
+          "role": "staff",
+          "quality": 4,
+          "qualityName": "红/传说",
+          "category": "法袍",
+          "visualDescription": "赤龙连帽法袍",
+          "sourceRect": [
+            768,
+            650,
+            384,
+            374
+          ],
+          "sourceAspectRatio": 1.0267379679144386,
+          "center": [
+            960.0,
+            837.0
+          ],
+          "centerLocal": [
+            192.0,
+            187.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.01302083333333337,
+            "width": 1.0,
+            "height": 0.9739583333333333
+          },
+          "contentPixelHash": "76ae391b5ba4e88de996eb5ce5978f1348bb95b6353306a8269aaab4cd13138d",
+          "sourceRectWithinImage": true
+        },
+        {
+          "index": 11,
+          "role": "staff",
+          "quality": 5,
+          "qualityName": "橙/无敌",
+          "category": "法袍",
+          "visualDescription": "白金曜阳连帽法袍",
+          "sourceRect": [
+            1152,
+            650,
+            384,
+            374
+          ],
+          "sourceAspectRatio": 1.0267379679144386,
+          "center": [
+            1344.0,
+            837.0
+          ],
+          "centerLocal": [
+            192.0,
+            187.0
+          ],
+          "containRelativeBox": {
+            "left": 0.0,
+            "top": 0.01302083333333337,
+            "width": 1.0,
+            "height": 0.9739583333333333
+          },
+          "contentPixelHash": "167acefa120f2d4266308917a763c2d3df199dc3f4820a5b7ca6ab3d74a124bb",
+          "sourceRectWithinImage": true
+        }
+      ],
+      "all12ContentCropsUnique": true,
+      "sameQualityRolePairsHaveDifferentContent": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "recommendations": [
+    "Do not replace distinct original art solely because category labels are weak. First use visible class labels/badges: 拳套/法杖 and 战甲/法袍, with melee versus caster shape cues.",
+    "Add the category as itemToken DOM data/class and meaningful short label, also for empty equipment slots; retain actual ownership/role checks in existing logic.",
+    "Preserve source aspect ratio. The current background-size math extracts a non-square sourceRect into a square item-art box, stretching the card. Use the per-frame containRelativeBox in this report for a centered span with the source rect aspect ratio, or SVG viewBox with preserveAspectRatio=meet.",
+    "Keep all original card borders and item shapes. Avoid RGB background removal, alpha repair or blind recropping into guessed6x2 layout; source art is4x3 with first6melee/last6staff.",
+    "The legal role/quality indices are distinct and match source content. This audit did not find a wrong-crop root cause for truly identical category icons. Primary agent should verify runtime DOM/image/meta and the exact user view if identical art persists.",
+    "Quality color alone is not the category. Existing item silhouettes already differ, and the new UI should make this obvious even when rarity borders match."
+  ],
+  "verificationLimit": "Static read and original image inspection only; no browser/runtime reproduction, no source edits, no new PNG, no subjective user acceptance.",
+  "cssEvidence": [
+    ".equipment-slots button:not(.loot-token){padding:3px 10px;margin-top:4px;font-size:10px;background:none}",
+    ".empty-equipment{height:65px;width:65px;display:grid;place-items:center;border:1px solid #aa8f5455;background:#0a1720;font-size:26px;color:#716b50}",
+    ".loot-token,.empty-bag-slot{aspect-ratio:1;width:100%;min-width:0;display:block;position:relative;padding:0;border:1px solid var(--rarity,#8c7950);background:#081521;box-shadow:inset 0 0 0 3px #b7a17b20;transition:transform .16s,box-shadow .16s;overflow:visible}",
+    ".loot-token:hover,.loot-token:focus-visible{transform:translateY(-2px);box-shadow:0 0 13px #d3b57744;border-color:#ffe8ae}",
+    ".item-art{display:block;position:absolute;inset:2px;background-repeat:no-repeat}",
+    ".item-detail>.loot-token{width:95px;margin-bottom:25px}",
+    ".forge-equipment>.loot-token{width:70px;flex-shrink:0}",
+    ".forge-equipment button:not(.loot-token){font-size:10px;padding:7px;margin:0 6px 0 0}",
+    ".loot-preview-row>.loot-token{width:49px;height:49px;aspect-ratio:auto;margin-bottom:12px}",
+    ".loot-token>small{position:absolute;left:-10px;right:-10px;bottom:-18px;font-size:8px;line-height:1.3;color:#d0c4a6;white-space:nowrap;letter-spacing:0}",
+    ".loot-preview-row>.loot-token{width:44px;height:44px}",
+    "\n@media(prefers-reduced-motion:reduce){.loot-token{transition:none}",
+    ".item-detail>.loot-token{width:76px;margin-bottom:14px}",
+    "\n.empty-equipment{background-repeat:no-repeat;opacity:.4;filter:saturate(.35)}"
+  ],
+  "fallbackRisk": {
+    "source": "campaign-system-ui.mjs:16-17 and campaign.mjs:34,39",
+    "fact": "The4x3 fallback assumes equal341.33px row heights. Actual equipment row boundaries are0/318/636/1024, armors0/318/650/1024. Fallback therefore samples neighboring-row strips before metadata arrives. It does not make legal melee/staff indices equal.",
+    "recommendation": "Use explicit existing frame rects from the start or ensure metadata before panel display; refresh an open panel after async metadata arrives. Runtime reproduction is still required."
+  }
+}

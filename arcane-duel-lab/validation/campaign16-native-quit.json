@@ -1,0 +1,13 @@
+{
+  "version": "campaign16",
+  "qaInstance": "campaign16-quit",
+  "formalSavesTouched": false,
+  "nativeWindowVisualQA": false,
+  "bridge": {
+    "quit": "function",
+    "motion": "v2"
+  },
+  "hiddenWindow": true,
+  "exitButtonClosedNativeApp": true,
+  "passed": true
+}

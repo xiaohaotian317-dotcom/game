@@ -1,0 +1,53 @@
+Use case: stylized-concept
+Asset type: production 2D dark-fantasy small-enemy ranged and poison-ground VFX atlas, original PNG with genuinely transparent alpha.
+Primary request: exactly 32 separate effect sprites, 4 columns by 8 rows. Four effect families, each family has eight truly evolving animation frames arranged as two consecutive rows of four. All effects only, NO enemy characters, no text, no labels, no icons. Small enemy combat scale: refined tactile matter, restrained magic, no boss-size white explosion.
+
+Canvas/composition: portrait 1024 by 1536 preferred. Eight evenly spaced rows, four columns. Each nominal cell is256x192. Keep every effect entirely within its cell. Give AT LEAST30px completely transparent gutter between every sprite. No mist, sparks, droplets or alpha haze crossing the gutters. Maintain equal consistent subject scale within each family. Horizontal moving projectiles face RIGHT (+X): concentrated head on right, trail streams left; neutral horizontal orientation suitable for runtime rotation. No arrows or annotation.
+Use strong visible material bodies with painterly translucent edges. Fully clear empty alpha, no black/colored tile, no gradient backdrop, no baked checkerboard. Avoid large atmospheric color fields around the effects.
+
+FAMILY 1 serpent venom jet, ROWS 0 and1, frames0..7 in reading order:
+0 compact glistening olive-green droplet gathers with a short curling fluid neck;
+1 sharp elastic launch streak directed right, thick viridian globule and a few trailing drops;
+2 flight A, dense pointed venom head at right and two long liquid ribbons behind to left;
+3 flight B, same head/anchor/scale but liquid ribbons curl and droplets shift;
+4 contact, head compresses into an asymmetric thick splash against an invisible point at right;
+5 impact, viscous poison fans outward in several short irregular liquid tongues, brighter yellow-green bubbles;
+6 runoff, separate droplets and thin sticky hanging strands, smaller material mass;
+7 dissipation, few separated dark-green beads and sparse venom mist threads.
+Detailed viscous liquid surface, amber-olive shadows, muted chartreuse highlight; not a plain light orb.
+
+FAMILY 2 spider-sac poison bomb, ROWS2 and3:
+0 small round lumpy membrane sac with yellow-green poison bulging within, short silk fibers;
+1 release, oval membrane stretches horizontally right with a little silk streamer left;
+2 flight A, solid ribbed olive poison bladder with partial translucent glossy membrane and small attached strands;
+3 flight B, same sac tumbles slightly, internal fluid visibly shifts; equal body size;
+4 contact, membrane tears and fluid starts spilling from an irregular split;
+5 toxic burst, torn membrane fragments and chunky mustard-green liquid splash with foam, local and controlled;
+6 sticky afterburst, tangled tiny silk wisps and several thick falling blobs;
+7 fade, a few separated olive bubbles and thread scraps.
+Clearly distinguish solid organic poison sac from the serpent's fluid spear. No skull, no whole spider.
+
+FAMILY 3 raven-witch withered feather curse, ROWS4 and5:
+0 a compact dark-plum feather fragment with a short brittle twig barb and restrained violet edge;
+1 release into a sharp right-pointing black-violet feather dart with wooden spine;
+2 flight A, long detailed dark feather dart with jagged barbs and a short dusty-violet wisp to left;
+3 flight B, same dart axis and head location, barbs flutter and trail twists;
+4 contact, dart tip fractures into pointed feather barbs and tiny wood splinters;
+5 impact, a small jagged flock-like burst of several feather shards and violet curse filaments, no full birds;
+6 dispersal, sparse broken quills, splinters and short curled wisps;
+7 fade, only a few dark feather flakes and dim violet thread.
+It is an actual feather attack tied to a withered-wood staff, NOT a root monster, not green plant magic, not a glowing orb.
+
+FAMILY4 ground poison pool, ROWS6 and7:
+ALL EIGHT are the same shallow irregular wet venom pool in side-view ground perspective. Broad horizontal ellipse silhouette about3.5:1, grounded bottom contact plane, consistent center and width. It is sticky physical liquid on an invisible floor, NOT a floating circle/ring. Fluid body is deep olive/viridian with jaundiced yellow-green foam patches, darker thick meniscus at edge, irregular lobes, small bubbles, a few restrained rising toxic smoke threads. No stones, no ground tile, no vertical pillar. Keep at least30px clear padding under and around the pool.
+0 small irregular wet poison stain begins to spread;
+1 thick rim expands and two foam blisters swell;
+2 mature wide viscous pool with several bubbles, short smoke curl;
+3 bubbles burst into low sticky splash tongues, same ellipse footprint;
+4 mature ripple/foam pattern changes and vapor curls shift, calm after burst;
+5 new bubbles rise on opposite side with tiny foam flecks, same width;
+6 pool begins to thin, a ragged darker liquid remnant with fewer bubbles;
+7 late evaporation, thin irregular wet residue and two faint smoke wisps, smaller mass.
+Pool contact plane must remain the same local y across all eight frames. Show real evolving bubbles/foam/ripples; no copy-paste identical pool and no simple neon ring.
+
+Style/medium: premium hand-painted 2D dark fantasy game VFX with crisp readable material silhouettes at small scale, layered painted texture, soft limited translucency on wisps only. Muted rich palette, no oversaturated neon, no empty vector circles. No opaque black boxes. Exactly32 sprites, complete padding, no overlaps.

@@ -1,0 +1,3104 @@
+{
+  "version": "T39",
+  "units": {
+    "fire": {
+      "file": "hero-fire-fx-v2.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            43,
+            146,
+            174,
+            95
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            295,
+            113,
+            176,
+            128
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            541,
+            18,
+            202,
+            223
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            799,
+            9,
+            198,
+            232
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            23,
+            267,
+            210,
+            230
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            280,
+            267,
+            207,
+            230
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            535,
+            269,
+            200,
+            228
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            811,
+            309,
+            169,
+            188
+          ],
+          "pivot": [
+            128,
+            230
+          ],
+          "centerX": 128,
+          "groundContactY": 230,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            60,
+            589,
+            127,
+            103
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            295,
+            586,
+            166,
+            100
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            521,
+            600,
+            233,
+            67
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            775,
+            576,
+            236,
+            91
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            12,
+            837,
+            230,
+            115
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            267,
+            839,
+            240,
+            104
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            531,
+            844,
+            209,
+            98
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            788,
+            854,
+            224,
+            83
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            26,
+            1139,
+            205,
+            95
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            272,
+            1108,
+            215,
+            126
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            517,
+            1085,
+            230,
+            149
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            773,
+            1088,
+            245,
+            146
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            10,
+            1344,
+            240,
+            146
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            264,
+            1351,
+            243,
+            140
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            523,
+            1358,
+            218,
+            132
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            779,
+            1384,
+            224,
+            106
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "fa8be9aa02bcae78d479c9072b2802e04df057cc0da04d5c445649cde88c73e3",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    },
+    "nature": {
+      "file": "hero-nature-fx-v2.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            77,
+            89,
+            109,
+            95
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            305,
+            77,
+            161,
+            108
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            535,
+            55,
+            226,
+            148
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            790,
+            56,
+            227,
+            159
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            15,
+            306,
+            237,
+            162
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            275,
+            313,
+            234,
+            139
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            534,
+            325,
+            229,
+            125
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            801,
+            324,
+            195,
+            114
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            28,
+            692,
+            194,
+            53
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            277,
+            667,
+            219,
+            79
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            528,
+            652,
+            222,
+            96
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            781,
+            623,
+            227,
+            123
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            9,
+            867,
+            234,
+            138
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            268,
+            876,
+            233,
+            129
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            523,
+            867,
+            232,
+            135
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            784,
+            895,
+            226,
+            107
+          ],
+          "pivot": [
+            128,
+            222
+          ],
+          "centerX": 128,
+          "groundContactY": 222,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            23,
+            1177,
+            205,
+            75
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            282,
+            1092,
+            202,
+            159
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            526,
+            1056,
+            225,
+            196
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            783,
+            1049,
+            227,
+            203
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            11,
+            1299,
+            236,
+            210
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            271,
+            1301,
+            228,
+            208
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            523,
+            1307,
+            229,
+            203
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            791,
+            1379,
+            213,
+            133
+          ],
+          "pivot": [
+            128,
+            214
+          ],
+          "centerX": 128,
+          "groundContactY": 214,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "083c1411695698b94fb85320654bc1b5cb351f9395b351ac46a7a59dc6d2e582",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    },
+    "frost": {
+      "file": "hero-frost-fx-v3.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            74,
+            78,
+            119,
+            112
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            303,
+            76,
+            147,
+            119
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            539,
+            45,
+            191,
+            160
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            790,
+            39,
+            206,
+            171
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            22,
+            295,
+            224,
+            181
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            275,
+            296,
+            229,
+            172
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            538,
+            297,
+            216,
+            174
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            797,
+            308,
+            194,
+            155
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            61,
+            577,
+            138,
+            117
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            283,
+            594,
+            175,
+            83
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            528,
+            588,
+            209,
+            92
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            786,
+            582,
+            212,
+            99
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            22,
+            843,
+            211,
+            103
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            272,
+            843,
+            223,
+            82
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            529,
+            837,
+            217,
+            102
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            784,
+            851,
+            213,
+            76
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1008,
+            256,
+            272
+          ],
+          "spriteRect": [
+            41,
+            1091,
+            165,
+            162
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1008,
+            256,
+            272
+          ],
+          "spriteRect": [
+            282,
+            1099,
+            183,
+            156
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1008,
+            256,
+            272
+          ],
+          "spriteRect": [
+            533,
+            1073,
+            189,
+            181
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1008,
+            256,
+            272
+          ],
+          "spriteRect": [
+            786,
+            1027,
+            220,
+            229
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1264,
+            256,
+            272
+          ],
+          "spriteRect": [
+            17,
+            1334,
+            229,
+            178
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1264,
+            256,
+            272
+          ],
+          "spriteRect": [
+            273,
+            1343,
+            230,
+            168
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1264,
+            256,
+            272
+          ],
+          "spriteRect": [
+            534,
+            1323,
+            210,
+            186
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1264,
+            256,
+            272
+          ],
+          "spriteRect": [
+            789,
+            1337,
+            185,
+            171
+          ],
+          "pivot": [
+            128,
+            238
+          ],
+          "centerX": 128,
+          "groundContactY": 238,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "4123f5fdb4765727c3012cd0f84f8be29eb52a18533d992ab8d1ab8d72476d2a",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    },
+    "lightning": {
+      "file": "hero-lightning-fx-v2.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            74,
+            95,
+            107,
+            99
+          ],
+          "pivot": [
+            156,
+            137
+          ],
+          "centerX": 156,
+          "groundContactY": 137,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            279,
+            77,
+            170,
+            127
+          ],
+          "pivot": [
+            167,
+            138
+          ],
+          "centerX": 167,
+          "groundContactY": 138,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            524,
+            79,
+            198,
+            113
+          ],
+          "pivot": [
+            180,
+            138
+          ],
+          "centerX": 180,
+          "groundContactY": 138,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            778,
+            63,
+            229,
+            144
+          ],
+          "pivot": [
+            205,
+            139
+          ],
+          "centerX": 205,
+          "groundContactY": 139,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            26,
+            278,
+            227,
+            214
+          ],
+          "pivot": [
+            206,
+            128
+          ],
+          "centerX": 206,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            281,
+            283,
+            214,
+            205
+          ],
+          "pivot": [
+            132,
+            129
+          ],
+          "centerX": 132,
+          "groundContactY": 129,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            543,
+            283,
+            199,
+            204
+          ],
+          "pivot": [
+            129,
+            129
+          ],
+          "centerX": 129,
+          "groundContactY": 129,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            818,
+            292,
+            169,
+            169
+          ],
+          "pivot": [
+            129,
+            129
+          ],
+          "centerX": 129,
+          "groundContactY": 129,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            66,
+            588,
+            141,
+            99
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            298,
+            558,
+            166,
+            162
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            552,
+            572,
+            168,
+            136
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            780,
+            558,
+            230,
+            152
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            15,
+            819,
+            236,
+            144
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            300,
+            815,
+            160,
+            156
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            556,
+            817,
+            167,
+            144
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            802,
+            822,
+            191,
+            120
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            13,
+            1194,
+            229,
+            51
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            276,
+            1075,
+            217,
+            170
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            539,
+            1058,
+            204,
+            187
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            785,
+            1054,
+            222,
+            191
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            9,
+            1299,
+            240,
+            203
+          ],
+          "pivot": [
+            128,
+            206
+          ],
+          "centerX": 128,
+          "groundContactY": 206,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            290,
+            1310,
+            194,
+            190
+          ],
+          "pivot": [
+            128,
+            206
+          ],
+          "centerX": 128,
+          "groundContactY": 206,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            552,
+            1327,
+            181,
+            168
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            812,
+            1346,
+            170,
+            145
+          ],
+          "pivot": [
+            128,
+            205
+          ],
+          "centerX": 128,
+          "groundContactY": 205,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "91f2baf70d5752efc43f9a79fed0624fff9a260f34474b88640d1f5d79940e5a",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    },
+    "shadow": {
+      "file": "hero-shadow-fx-v2.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            49,
+            64,
+            155,
+            138
+          ],
+          "pivot": [
+            134,
+            133
+          ],
+          "centerX": 134,
+          "groundContactY": 133,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            302,
+            52,
+            175,
+            161
+          ],
+          "pivot": [
+            157,
+            132
+          ],
+          "centerX": 157,
+          "groundContactY": 132,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            534,
+            48,
+            215,
+            158
+          ],
+          "pivot": [
+            202,
+            130
+          ],
+          "centerX": 202,
+          "groundContactY": 130,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            783,
+            45,
+            233,
+            161
+          ],
+          "pivot": [
+            225,
+            128
+          ],
+          "centerX": 225,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            19,
+            282,
+            222,
+            193
+          ],
+          "pivot": [
+            210,
+            124
+          ],
+          "centerX": 210,
+          "groundContactY": 124,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            279,
+            280,
+            213,
+            196
+          ],
+          "pivot": [
+            130,
+            127
+          ],
+          "centerX": 130,
+          "groundContactY": 127,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            538,
+            282,
+            205,
+            186
+          ],
+          "pivot": [
+            129,
+            127
+          ],
+          "centerX": 129,
+          "groundContactY": 127,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            793,
+            291,
+            186,
+            169
+          ],
+          "pivot": [
+            128,
+            127
+          ],
+          "centerX": 128,
+          "groundContactY": 127,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            55,
+            565,
+            141,
+            139
+          ],
+          "pivot": [
+            172,
+            122
+          ],
+          "centerX": 172,
+          "groundContactY": 122,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            290,
+            553,
+            174,
+            142
+          ],
+          "pivot": [
+            191,
+            133
+          ],
+          "centerX": 191,
+          "groundContactY": 133,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            519,
+            587,
+            240,
+            103
+          ],
+          "pivot": [
+            234,
+            131
+          ],
+          "centerX": 234,
+          "groundContactY": 131,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            785,
+            535,
+            226,
+            168
+          ],
+          "pivot": [
+            227,
+            114
+          ],
+          "centerX": 227,
+          "groundContactY": 114,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            12,
+            817,
+            235,
+            121
+          ],
+          "pivot": [
+            221,
+            111
+          ],
+          "centerX": 221,
+          "groundContactY": 111,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            272,
+            812,
+            221,
+            127
+          ],
+          "pivot": [
+            166,
+            113
+          ],
+          "centerX": 166,
+          "groundContactY": 113,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            533,
+            837,
+            222,
+            83
+          ],
+          "pivot": [
+            168,
+            114
+          ],
+          "centerX": 168,
+          "groundContactY": 114,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            806,
+            850,
+            176,
+            57
+          ],
+          "pivot": [
+            144,
+            115
+          ],
+          "centerX": 144,
+          "groundContactY": 115,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            34,
+            1157,
+            188,
+            87
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            285,
+            1097,
+            192,
+            147
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            536,
+            1051,
+            209,
+            193
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "spriteRect": [
+            788,
+            1034,
+            224,
+            210
+          ],
+          "pivot": [
+            128,
+            200
+          ],
+          "centerX": 128,
+          "groundContactY": 200,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            12,
+            1297,
+            217,
+            216
+          ],
+          "pivot": [
+            128,
+            213
+          ],
+          "centerX": 128,
+          "groundContactY": 213,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            274,
+            1297,
+            217,
+            215
+          ],
+          "pivot": [
+            128,
+            213
+          ],
+          "centerX": 128,
+          "groundContactY": 213,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            534,
+            1306,
+            215,
+            206
+          ],
+          "pivot": [
+            128,
+            213
+          ],
+          "centerX": 128,
+          "groundContactY": 213,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "spriteRect": [
+            808,
+            1342,
+            190,
+            170
+          ],
+          "pivot": [
+            128,
+            213
+          ],
+          "centerX": 128,
+          "groundContactY": 213,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "de13c001e6934e9992f9fe6dba52ce164d63694c5369f3e67fbfc651414036f9",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    },
+    "star": {
+      "file": "hero-star-fx-v3.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            42,
+            60,
+            173,
+            141
+          ],
+          "pivot": [
+            146,
+            136
+          ],
+          "centerX": 146,
+          "groundContactY": 136,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            288,
+            72,
+            170,
+            121
+          ],
+          "pivot": [
+            153,
+            135
+          ],
+          "centerX": 153,
+          "groundContactY": 135,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            524,
+            81,
+            208,
+            102
+          ],
+          "pivot": [
+            172,
+            135
+          ],
+          "centerX": 172,
+          "groundContactY": 135,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "spriteRect": [
+            772,
+            79,
+            236,
+            104
+          ],
+          "pivot": [
+            206,
+            135
+          ],
+          "centerX": 206,
+          "groundContactY": 135,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            17,
+            307,
+            207,
+            140
+          ],
+          "pivot": [
+            187,
+            128
+          ],
+          "centerX": 187,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            274,
+            286,
+            221,
+            189
+          ],
+          "pivot": [
+            144,
+            128
+          ],
+          "centerX": 144,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            524,
+            293,
+            222,
+            175
+          ],
+          "pivot": [
+            144,
+            128
+          ],
+          "centerX": 144,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "spriteRect": [
+            786,
+            295,
+            219,
+            174
+          ],
+          "pivot": [
+            144,
+            128
+          ],
+          "centerX": 144,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            47,
+            555,
+            170,
+            172
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            292,
+            559,
+            184,
+            167
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            544,
+            542,
+            186,
+            190
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "spriteRect": [
+            800,
+            524,
+            189,
+            208
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            32,
+            790,
+            190,
+            213
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            275,
+            793,
+            218,
+            193
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            543,
+            794,
+            193,
+            189
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "spriteRect": [
+            800,
+            806,
+            197,
+            174
+          ],
+          "pivot": [
+            128,
+            128
+          ],
+          "centerX": 128,
+          "groundContactY": 128,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1024,
+            256,
+            254
+          ],
+          "spriteRect": [
+            21,
+            1162,
+            216,
+            86
+          ],
+          "pivot": [
+            128,
+            192
+          ],
+          "centerX": 128,
+          "groundContactY": 192,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1024,
+            256,
+            254
+          ],
+          "spriteRect": [
+            276,
+            1124,
+            217,
+            125
+          ],
+          "pivot": [
+            128,
+            194
+          ],
+          "centerX": 128,
+          "groundContactY": 194,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1024,
+            256,
+            254
+          ],
+          "spriteRect": [
+            533,
+            1048,
+            214,
+            200
+          ],
+          "pivot": [
+            128,
+            194
+          ],
+          "centerX": 128,
+          "groundContactY": 194,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1024,
+            256,
+            254
+          ],
+          "spriteRect": [
+            789,
+            1031,
+            215,
+            217
+          ],
+          "pivot": [
+            128,
+            194
+          ],
+          "centerX": 128,
+          "groundContactY": 194,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            0,
+            1278,
+            256,
+            258
+          ],
+          "spriteRect": [
+            20,
+            1280,
+            218,
+            225
+          ],
+          "pivot": [
+            128,
+            202
+          ],
+          "centerX": 128,
+          "groundContactY": 202,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            256,
+            1278,
+            256,
+            258
+          ],
+          "spriteRect": [
+            276,
+            1290,
+            217,
+            214
+          ],
+          "pivot": [
+            128,
+            204
+          ],
+          "centerX": 128,
+          "groundContactY": 204,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            512,
+            1278,
+            256,
+            258
+          ],
+          "spriteRect": [
+            533,
+            1306,
+            215,
+            198
+          ],
+          "pivot": [
+            128,
+            203
+          ],
+          "centerX": 128,
+          "groundContactY": 203,
+          "referenceSize": 256
+        },
+        {
+          "rect": [
+            768,
+            1278,
+            256,
+            258
+          ],
+          "spriteRect": [
+            789,
+            1310,
+            216,
+            194
+          ],
+          "pivot": [
+            128,
+            202
+          ],
+          "centerX": 128,
+          "groundContactY": 202,
+          "referenceSize": 256
+        }
+      ],
+      "sha256": "8d20761555d95739052a7e7b5460bc460b8a43ba4fcab8f587740fd243ddaee2",
+      "framesPerSkill": 8,
+      "referenceSize": 256
+    }
+  },
+  "pixelsUnchanged": true,
+  "phaseSequence": "0-1 enter, 2-5 looping main movement, 6-7 dissipate",
+  "artAcceptance": "runtime inspection and user acceptance separate"
+}

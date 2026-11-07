@@ -61,7 +61,7 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
     if(impact){t.hurt=Math.max(t.hurt,.12);t.invuln=Math.max(t.invuln,.055);t.cast=null;t.burst=null;}
   }
   if(t.deadUntil>w.time||t.hp<=0)return false;
-  const actual=Math.min(t.hp,amount);t.hp=Math.max(0,t.hp-amount);t.hit=.15;
+  const actual=Math.min(t.hp,amount);t.hp=Math.max(0,t.hp-amount);t.hit=.15;t.lastHitFx=w.fxTime||w.time;t.lastHitDamage=amount;
   if(knock){const resistance=t.enemyKind?.startsWith('B')?.18:1;t.vx+=knock*resistance;t.vy=Math.min(t.vy,-Math.abs(knock)*.3*resistance);}
   if(fire){if(t.burnUntil<=w.time)t.nextBurn=w.time+.75;t.burnUntil=w.time+3;w.player.passiveGlow=.5;}
   if(root)t.rootUntil=w.time+(t.enemyKind?.startsWith('B')?Math.min(root,.9):root);
@@ -156,9 +156,10 @@ function beginCast(w,key) {
   const target=needsGround?groundTarget(w,EXTRA_HEROES[w.hero]?clamp(w.aim.x,p.x-520,p.x+520):w.aim.x,w.aim.y):null;
   if(needsGround&&!target)return false;
   if(!soloPay(w,key,isRecast,s))return false;
-  if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(w.campaign?.progression?(key==='attack'?1/(w.campaign.stats?.attackSpeed||1):key==='r'?1.1:1.15):1);
+  const attackRate=key==='attack'?(w.campaign?.stats?.attackSpeed||1)*(p.attackHasteUntil>w.time?2:1):1;
+  if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(key==='attack'?1/attackRate:w.campaign?.progression?(key==='r'?1.1:1.15):1);
   p.face=w.aim.x>=p.x?1:-1;
-  p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release,released:false,x:w.aim.x,y:w.aim.y,target};
+  p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration/attackRate,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release/attackRate,released:false,x:w.aim.x,y:w.aim.y,target};
   if(w.campaign?.progression)w.campaign.castSkills[p.cast.id]=s.soloSkill?.id;
   recordDuelCast(w,p.cast);
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
@@ -334,7 +335,7 @@ export function step(w,dt,input={}) {
   }
   w.time+=dt;
   const p=w.player;
-  if(input.view&&w.duel){const width=clamp(input.view.width,400,1440),height=clamp(input.view.height,300,900);w.fireView={width,height,x:clamp(input.view.x,clamp(p.x-width*.85,0,Math.max(0,w.width-width)),clamp(p.x-width*.15,0,Math.max(0,w.width-width))),y:clamp(input.view.y,-Math.max(0,height-w.height),Math.max(0,w.height-height))};}
+  if(input.view&&w.duel){const width=clamp(input.view.width,400,1680),height=clamp(input.view.height,300,1400);w.fireView={width,height,x:clamp(input.view.x,clamp(p.x-width*.85,0,Math.max(0,w.width-width)),clamp(p.x-width*.15,0,Math.max(0,w.width-width))),y:clamp(input.view.y,-Math.max(0,height-w.height),Math.max(0,w.height-height))};}
   const controlled=w.enemyMode&&p.enemyControl?.until>w.time;
   if(controlled){input={aim:input.aim};p.queuedDash=false;p.jumpBuffer=0;p.buffer=null;p.cast=null;p.burst=null;p.dash=0;p.stomp=false;}
   if(!w.duelSecondary)updateScene(w,dt,sceneHooks);

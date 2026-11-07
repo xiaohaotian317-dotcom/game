@@ -1,0 +1,20 @@
+{
+  "star": {
+    "uniqueAlphaTiles": 24,
+    "strongEdgePixels": [],
+    "framesAndPivotsInBounds": true,
+    "rawCopyHashMatchesOriginal": true
+  },
+  "lightning": {
+    "uniqueAlphaTiles": 24,
+    "strongEdgePixels": [],
+    "framesAndPivotsInBounds": true,
+    "rawCopyHashMatchesOriginal": true
+  },
+  "shadow": {
+    "uniqueAlphaTiles": 24,
+    "strongEdgePixels": [],
+    "framesAndPivotsInBounds": true,
+    "rawCopyHashMatchesOriginal": true
+  }
+}

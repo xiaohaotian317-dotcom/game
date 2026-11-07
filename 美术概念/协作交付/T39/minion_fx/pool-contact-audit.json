@@ -1,0 +1,154 @@
+[
+  {
+    "row": 6,
+    "col": 0,
+    "groundContactCenter": [
+      129,
+      1268
+    ],
+    "contactBand90pct": [
+      1266,
+      1271
+    ],
+    "peakSpanPixels": 162,
+    "maximumRow": [
+      162,
+      1269,
+      46,
+      207
+    ]
+  },
+  {
+    "row": 6,
+    "col": 1,
+    "groundContactCenter": [
+      385,
+      1263
+    ],
+    "contactBand90pct": [
+      1256,
+      1270
+    ],
+    "peakSpanPixels": 210,
+    "maximumRow": [
+      210,
+      1264,
+      280,
+      489
+    ]
+  },
+  {
+    "row": 6,
+    "col": 2,
+    "groundContactCenter": [
+      640,
+      1265
+    ],
+    "contactBand90pct": [
+      1254,
+      1276
+    ],
+    "peakSpanPixels": 218,
+    "maximumRow": [
+      218,
+      1264,
+      530,
+      747
+    ]
+  },
+  {
+    "row": 6,
+    "col": 3,
+    "groundContactCenter": [
+      894,
+      1267
+    ],
+    "contactBand90pct": [
+      1255,
+      1279
+    ],
+    "peakSpanPixels": 215,
+    "maximumRow": [
+      215,
+      1264,
+      791,
+      1005
+    ]
+  },
+  {
+    "row": 7,
+    "col": 0,
+    "groundContactCenter": [
+      127,
+      1462
+    ],
+    "contactBand90pct": [
+      1454,
+      1471
+    ],
+    "peakSpanPixels": 217,
+    "maximumRow": [
+      217,
+      1466,
+      17,
+      233
+    ]
+  },
+  {
+    "row": 7,
+    "col": 1,
+    "groundContactCenter": [
+      383,
+      1462
+    ],
+    "contactBand90pct": [
+      1451,
+      1472
+    ],
+    "peakSpanPixels": 216,
+    "maximumRow": [
+      216,
+      1461,
+      275,
+      490
+    ]
+  },
+  {
+    "row": 7,
+    "col": 2,
+    "groundContactCenter": [
+      638,
+      1460
+    ],
+    "contactBand90pct": [
+      1456,
+      1463
+    ],
+    "peakSpanPixels": 209,
+    "maximumRow": [
+      209,
+      1460,
+      534,
+      742
+    ]
+  },
+  {
+    "row": 7,
+    "col": 3,
+    "groundContactCenter": [
+      891,
+      1462
+    ],
+    "contactBand90pct": [
+      1460,
+      1465
+    ],
+    "peakSpanPixels": 149,
+    "maximumRow": [
+      149,
+      1463,
+      802,
+      977
+    ]
+  }
+]

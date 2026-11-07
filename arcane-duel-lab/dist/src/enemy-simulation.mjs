@@ -1,5 +1,5 @@
 import {ENEMIES,enemyDefinition} from './enemy-roster.mjs';
-import {BOSS_TUNING,bossReachScale} from './enemy-tuning.mjs';
+import {BOSS_TUNING,bossReachScale,enemyDamageFactor} from './enemy-tuning.mjs';
 import {clearLine,firstTerrainHit,resolveSolidSides} from './collision.mjs?v=20261030-duel12';
 import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
 import {blinkProtected} from './blink-guard.mjs';
@@ -52,7 +52,7 @@ function notice(w,type,data={}){(w.enemyEvents||=[]).push({type,time:w.time,...d
 const statusSpec={poison:{duration:3.6,interval:.75,damage:3,color:'#b5d45d'},burn:{duration:3,interval:.75,damage:3,color:'#ffb16f'}};
 export function applyEnemyStatus(w,kind,source,hooks){
  const p=w.player;if(!alive(p)||blinkProtected(w,p))return;
- if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=w.campaign?(actor?.damageFactor??w.campaign.stage.damageFactor):1;p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
+ if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=actor?enemyDamageFactor(actor):(w.campaign?.stage.damageFactor??1)*1.1;p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
  if(kind==='snare'){p.enemySnareUntil=Math.max(p.enemySnareUntil||0,w.time+1.4);return;}
  if(kind==='freeze'||kind==='petrify'){
   const key=kind+'ImmuneUntil';if((p[key]||0)>w.time||p.enemyControl?.until>w.time)return;
@@ -74,12 +74,12 @@ function traitOnHit(w,e,step,hooks){
    if(p.frostStacks>=3){p.frostStacks=0;applyEnemyStatus(w,'freeze',e.id,hooks);}}
  }
  if(e.enemyKind==='B03'&&w.time>e.ai.passiveAt){e.ai.passiveAt=w.time+1.5;e.hp=Math.min(e.maxHp,e.hp+8);fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.55,duration:.7,enemyKind:e.enemyKind});}
- if(e.enemyKind==='B09'){e.ai.charges=(e.ai.charges||0)+1;if(e.ai.charges%3===0)hooks.hitPlayer(w,5,e.x,{dot:true});}
+ if(e.enemyKind==='B09'){e.ai.charges=(e.ai.charges||0)+1;if(e.ai.charges%3===0)hooks.hitPlayer(w,Math.round(5*enemyDamageFactor(e)),e.x,{dot:true});}
 }
 export function enemyProjectileContact(w,s,actor,hooks,accepted){
  const source=w.targets.find(e=>e.id===s.enemySource);
  if(accepted&&actor===w.player&&source?.hp>0)traitOnHit(w,source,{status:s.enemyStatus},hooks);
- if(s.enemyPool){const support=groundTarget(w,s.x,s.y),style=source?.themeStyle||'venom';if(support&&Math.abs(support.y-s.y)<140)addZone(w,source||{id:s.enemySource},style,support,{radius:48,life:style==='lava'?5:3,damage:Math.max(1,Math.round(4*(source?.damageFactor??1))),status:style==='lava'?'burn':style==='venom'?'poison':null,delay:.2});}
+ if(s.enemyPool){const support=groundTarget(w,s.x,s.y),style=source?.themeStyle||'venom';if(support&&Math.abs(support.y-s.y)<140)addZone(w,source||{id:s.enemySource},style,support,{radius:48,life:style==='lava'?5:3,damage:Math.max(1,Math.round(4*enemyDamageFactor(source))),status:style==='lava'?'burn':style==='venom'?'poison':null,delay:.2});}
  fx(w,hooks,s.enemyStyle,{x:s.x,y:s.y,radius:36,duration:.5,enemyKind:s.enemyKind||source?.enemyKind});
 }
 function addZone(w,e,style,anchor,opts={}){
@@ -145,7 +145,8 @@ export function enemyStrikeContact(w,e,t,s){
  return t.hp>0&&(overlap||forward>=0)&&forward<enemyMeleeReach(w,e,s)+t.w&&vertical&&clearLine(w,e.x,e.y-Math.min(e.h*.42,75),t.x,t.y-Math.min(t.h*.45,55));
 }
 export function enemyMeleeReach(w,e,s){return (s.reach||0)*(e.attackScale??e.scale)*(w.campaign&&!ENEMIES[e.enemyKind]?.boss?1.35:1);}
-function meleeReady(w,e,plan){const s=plan.steps[0];if(!w.campaign||ENEMIES[e.enemyKind]?.boss||plan.kind!=='melee')return true;const gap=Math.abs(w.player.x-e.x),travel=s.type==='dash'?(s.speed||350)*s.active:0;return gap<=enemyMeleeReach(w,e,s)+w.player.w-14+travel;}
+export function enemyMeleeReady(w,e,s){if(!['melee','dash'].includes(s?.type))return true;const t=w.player,gap=Math.abs(t.x-e.x),travel=s.type==='dash'?(s.speed||350)*s.active*(ENEMIES[e.enemyKind]?.boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1):0;return gap<=enemyMeleeReach(w,e,s)+t.w-12+travel&&Math.abs(t.y-e.y)<Math.max(88,e.h*.72)&&clearLine(w,e.x,e.y-Math.min(e.h*.42,75),t.x,t.y-Math.min(t.h*.45,55));}
+function meleeReady(w,e,plan){return enemyMeleeReady(w,e,plan.steps[0]);}
 function choosePlan(w,e,d){
  const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time&&meleeReady(w,e,p));
  if(w.campaign&&!d.boss&&w.targets.filter(t=>t!==e&&t.hp>0&&t.ai?.attack).length>=w.campaign.attackBudget)return null;
@@ -155,7 +156,7 @@ function choosePlan(w,e,d){
  const other=available.filter(p=>p.kind==='range'||(p.kind==='melee'&&distance<240));return other[0]||null;
 }
 function startPlan(w,e,plan){
- if(e.damageFactor!==undefined||e.themeStyle){plan={...plan,steps:plan.steps.map(s=>({...s,damage:s.damage===undefined?undefined:Math.max(1,Math.round(s.damage*(e.damageFactor??1))),radius:s.radius===undefined?undefined:s.radius*(ENEMIES[e.enemyKind].boss?(e.attackScale??e.scale):1),style:!ENEMIES[e.enemyKind].boss&&e.themeStyle?e.themeStyle:s.style,status:!ENEMIES[e.enemyKind].boss&&e.themeStyle?(e.themeStyle==='ice'?'snare':e.themeStyle==='venom'?'poison':e.themeStyle==='lava'?'burn':null):s.status}))};}
+ if(e.damageFactor!==undefined||e.themeStyle){plan={...plan,steps:plan.steps.map(s=>({...s,damage:s.damage===undefined?undefined:Math.max(1,Math.round(s.damage*enemyDamageFactor(e))),radius:s.radius===undefined?undefined:s.radius*(ENEMIES[e.enemyKind].boss?(e.attackScale??e.scale):1),style:!ENEMIES[e.enemyKind].boss&&e.themeStyle?e.themeStyle:s.style,status:!ENEMIES[e.enemyKind].boss&&e.themeStyle?(e.themeStyle==='ice'?'snare':e.themeStyle==='venom'?'poison':e.themeStyle==='lava'?'burn':null):s.status}))};}
  e.ai.attack={plan,index:0,age:0,fired:false,victims:[],speed:(e.ai.phase===2?1.1:1)*(e.attackTempo||1)*(e.frequency||1)};
  e.ai.state='windup';e.face=Math.sign(w.player.x-e.x||e.face);e.ai.cooldowns[plan.id]=w.time+plan.cd/(e.frequency||1);e.ai.sequence++;
  e.ai.attack.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
@@ -185,7 +186,7 @@ function fireStep(w,e,s,hooks){
  }else if(s.type==='melee'||s.type==='dash'){
   fx(w,hooks,s.style,{x:e.x+e.face*(e.w+35),y:e.y-e.h*.4,face:e.face,radius:enemyMeleeReach(w,e,s),duration:.42,melee:true,enemyKind:e.enemyKind});
  }
- if(s.lava){a.lastLava=e.x;const anchor=groundTarget(w,e.x+e.face*65,e.y-2);if(anchor)addZone(w,e,'lava',anchor,{radius:86*(e.attackScale??e.scale),life:5,damage:Math.max(2,Math.round(7*(e.damageFactor??1))),status:'burn',delay:.25});}
+ if(s.lava){a.lastLava=e.x;const anchor=groundTarget(w,e.x+e.face*65,e.y-2);if(anchor)addZone(w,e,'lava',anchor,{radius:86*(e.attackScale??e.scale),life:5,damage:Math.max(2,Math.round(7*enemyDamageFactor(e))),status:'burn',delay:.25});}
  hooks.emit(w,'enemyAttack',{enemyStyle:s.style,heavy:s.damage>=18||s.type==='summon'||s.type==='egg'});
 }
 function updateAttack(w,e,d,dt,hooks){
@@ -201,7 +202,7 @@ function updateAttack(w,e,d,dt,hooks){
   e.ai.state=s.type==='projectile'||s.type==='zone'?'cast':s.type==='egg'||s.type==='summon'?'summon':'attack';
   if(s.type==='dash'){
    e.vx=e.face*(s.speed||350)*(d.boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1);if(d.flying)e.vy=clamp((w.player.y-20-e.y)*4,-300,300);
-   if(s.lava&&Math.abs(e.x-(a.lastLava??e.x))>75){a.lastLava=e.x;const p=groundTarget(w,e.x,e.y);if(p)addZone(w,e,'lava',p,{radius:50*(e.attackScale??e.scale),life:5,damage:Math.max(1,Math.round(6*(e.damageFactor??1))),status:'burn',delay:.35});}
+   if(s.lava&&Math.abs(e.x-(a.lastLava??e.x))>75){a.lastLava=e.x;const p=groundTarget(w,e.x,e.y);if(p)addZone(w,e,'lava',p,{radius:50*(e.attackScale??e.scale),life:5,damage:Math.max(1,Math.round(6*enemyDamageFactor(e))),status:'burn',delay:.35});}
   }
   if(s.type==='melee'||s.type==='dash')for(const t of [w.player,...(w.fox?[w.fox]:[]),...(w.companion?.hp>0?[w.companion]:[])]){
    const key=t===w.player?'player':t===w.companion?'companion':'stag';if(a.victims.includes(key)||!enemyStrikeContact(w,e,t,s))continue;
@@ -212,7 +213,7 @@ function updateAttack(w,e,d,dt,hooks){
  if(a.age>=s.windup+s.active+s.recover){
   a.index++;a.age=0;a.fired=false;a.victims=[];a.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
   if(a.index>=a.plan.steps.length){e.ai.attack=null;e.ai.state='idle';e.ai.readyAt=w.time+(d.boss?.45:.65)/(e.frequency||1);}
-  else{e.face=Math.sign(w.player.x-e.x||e.face);e.ai.state='windup';notice(w,'comboStep',{id:e.id,index:a.index});}
+  else if(!enemyMeleeReady(w,e,a.plan.steps[a.index])){e.ai.attack=null;e.ai.state='walk';e.ai.readyAt=w.time+.16;}else{e.face=Math.sign(w.player.x-e.x||e.face);e.ai.state='windup';notice(w,'comboStep',{id:e.id,index:a.index});}
  }
 }
 function passivePlan(w,e,d,hooks){
@@ -283,7 +284,7 @@ export function updateEnemies(w,dt,hooks){
     const plan=w.time>=ai.readyAt?choosePlan(w,e,d):null;
     const origin=plan?.steps[0]?.type==='projectile'?enemyCastOrigin(w,e):{x:e.x,y:e.y-Math.min(e.h*.42,75)};
     const targetedArea=plan?.steps[0]?.type==='zone';
-    if(plan&&Math.abs(w.player.y-e.y)<(plan.kind==='melee'?100:260)&&(targetedArea||clearLine(w,origin.x,origin.y,w.player.x,w.player.y-55)))startPlan(w,e,plan);
+   if(plan&&Math.abs(w.player.y-e.y)<(plan.kind==='melee'?100:260)&&(targetedArea||clearLine(w,origin.x,origin.y,w.player.x,w.player.y-55)))startPlan(w,e,plan);
    }
   }
   if(e.rootUntil>w.time)e.vx=0;else e.vx+=(e.fieldForce||0)*dt;

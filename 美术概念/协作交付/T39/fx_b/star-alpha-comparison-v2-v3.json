@@ -1,0 +1,92 @@
+{
+  "v2": {
+    "file": "hero-star-fx-v2.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+    "allPixels": {
+      "pixels": 1572864,
+      "zeroPixels": 153,
+      "zeroFraction": 9.72747802734375e-05,
+      "nonzeroPixels": 1572711,
+      "alphaAbove8": 897360,
+      "alphaAbove16": 703870,
+      "alphaAbove64": 445223,
+      "meanAlpha": 56.53325271606445,
+      "maxAlpha": 252
+    },
+    "nominalGridSeamsAndOuter4px": {
+      "pixels": 68361,
+      "zeroPixels": 88,
+      "zeroFraction": 0.0012872836851421131,
+      "nonzeroPixels": 68273,
+      "alphaAbove8": 5638,
+      "alphaAbove16": 923,
+      "alphaAbove64": 0,
+      "meanAlpha": 4.427700004388467,
+      "maxAlpha": 36
+    },
+    "sixteenPixelCellCornerPatches": {
+      "pixels": 24576,
+      "zeroPixels": 70,
+      "zeroFraction": 0.0028483072916666665,
+      "nonzeroPixels": 24506,
+      "alphaAbove8": 0,
+      "alphaAbove16": 0,
+      "alphaAbove64": 0,
+      "meanAlpha": 2.3636881510416665,
+      "maxAlpha": 6
+    }
+  },
+  "v3": {
+    "file": "hero-star-fx-v3.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "8d20761555d95739052a7e7b5460bc460b8a43ba4fcab8f587740fd243ddaee2",
+    "allPixels": {
+      "pixels": 1572864,
+      "zeroPixels": 914005,
+      "zeroFraction": 0.5811087290445963,
+      "nonzeroPixels": 658859,
+      "alphaAbove8": 298903,
+      "alphaAbove16": 278021,
+      "alphaAbove64": 240501,
+      "meanAlpha": 34.90159670511881,
+      "maxAlpha": 254
+    },
+    "nominalGridSeamsAndOuter4px": {
+      "pixels": 68361,
+      "zeroPixels": 64746,
+      "zeroFraction": 0.9471189713433098,
+      "nonzeroPixels": 3615,
+      "alphaAbove8": 9,
+      "alphaAbove16": 4,
+      "alphaAbove64": 0,
+      "meanAlpha": 0.05631866122496745,
+      "maxAlpha": 51
+    },
+    "sixteenPixelCellCornerPatches": {
+      "pixels": 24576,
+      "zeroPixels": 23815,
+      "zeroFraction": 0.9690348307291666,
+      "nonzeroPixels": 761,
+      "alphaAbove8": 0,
+      "alphaAbove16": 0,
+      "alphaAbove64": 0,
+      "meanAlpha": 0.030965169270833332,
+      "maxAlpha": 1
+    }
+  },
+  "validation": {
+    "uniqueAlphaTiles": 24,
+    "strongEdgePixels": [],
+    "framesAndPivotsInBounds": true,
+    "rawCopyHashMatchesOriginal": true,
+    "v2HashUnchanged": true,
+    "v2MetadataSourcePixelAnchorsRetainedForAll24Frames": true
+  }
+}

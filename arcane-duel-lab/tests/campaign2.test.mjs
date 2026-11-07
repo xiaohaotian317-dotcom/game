@@ -15,9 +15,9 @@ import {BossFxPainter} from '../dist/src/boss-fx-painter.mjs';
 import {STAGES} from '../dist/src/campaign-data.mjs';
 const run=(w,t,input={})=>{for(let i=0;i<Math.round(t/STEP);i++)step(w,STEP,input);};
 function flat(hero='fire'){const w=createWorld(hero);w.targets=[];w.platforms=w.platforms.filter(p=>p.id==='ground');w.mirror.enabled=w.spring.enabled=false;w.camera={x:0,y:0,viewWidth:1440,viewHeight:800};return w;}
-test('boss bodies shrink another 10 percent, HP grows 10 percent and normal movement drops 15 percent',()=>{
+test('boss bodies shrink another 10 percent, HP grows 10 percent and normal movement retains the earlier reduction with a three percent uplift',()=>{
  const base={B01:[1050,106],B02:[980,128],B03:[920,170],B04:[1100,104],B05:[1450,89],B06:[1250,115],B07:[1350,76],B08:[1050,186],B09:[1280,140],B10:[1200,125],B11:[1300,99]};
- for(const [id,[hp,speed]]of Object.entries(base)){const w=flat(),e=spawnEnemy(w,id,{x:600});assert.equal(e.scale,.72);assert.equal(e.hp,Math.round(hp*1.1));assert.ok(Math.abs(ENEMIES[id].speed-speed*.85)<1e-8);assert.equal(e.attackScale,.8*1.2);assert.equal(e.frequency,1.2);}
+ for(const [id,[hp,speed]]of Object.entries(base)){const w=flat(),e=spawnEnemy(w,id,{x:600});assert.equal(e.scale,.72);assert.equal(e.hp,Math.round(hp*1.1));assert.ok(Math.abs(ENEMIES[id].speed-speed*.85*1.03)<1e-8);assert.equal(e.attackScale,.8*1.2);assert.equal(e.frequency,1.2);}
  for(let id=1;id<=11;id++){const w=createCampaign('fire',id);assert.equal(w.campaign.stage.bossHp,STAGES[id-1].bossHp);if(id>3)assert.ok(w.campaign.stage.bossHp>STAGES[id-2].bossHp);}
 });
 test('boss cooldowns and active timing carry the real 20 percent frequency increase',()=>{

@@ -1,0 +1,84 @@
+{
+  "schema": "t39-fx-b-delivery-v2",
+  "created": "2026-11-07",
+  "tool": "built-in image_gen",
+  "pngPixelEditing": "none; raw copy only",
+  "status": "concept delivery pending main-agent integration and user visual acceptance",
+  "heroes": {
+    "star": {
+      "file": "hero-star-fx-v2.png",
+      "manifest": "star-manifest-v2.json",
+      "prompt": "star-prompt-v2.txt",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b18b-37ec-7303-8ecf-a7109deb4557\\exec-a1b58ff0-c98f-4dcd-8bf9-5643e2ed83be.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "e4150828ea189f600c7fe8a8abc2f7e0aed43d1a9fe76a8bd37d23a0b0272577",
+      "rawCopyHashMatchesOriginal": true,
+      "alpha": {
+        "minMax": [
+          0,
+          252
+        ],
+        "zeroPixels": 153,
+        "opaquePixels": 0,
+        "intermediatePixels": 1572711,
+        "belowOrEqual10Fraction": 0.4763482411702474,
+        "belowOrEqual16Fraction": 0.5524915059407552,
+        "thresholdForBounds": 16,
+        "notice": "PNG kept byte-for-byte; low nonzero alpha fog remains in nominal empty regions. Rects measured at alpha>16, not asserted fully zero-alpha gutters."
+      }
+    },
+    "lightning": {
+      "file": "hero-lightning-fx-v2.png",
+      "manifest": "lightning-manifest-v2.json",
+      "prompt": "lightning-prompt-v2.txt",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b18b-37ec-7303-8ecf-a7109deb4557\\exec-297a2fcd-af8c-4f62-9e2c-0132cc32708c.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "91f2baf70d5752efc43f9a79fed0624fff9a260f34474b88640d1f5d79940e5a",
+      "rawCopyHashMatchesOriginal": true,
+      "alpha": {
+        "minMax": [
+          0,
+          253
+        ],
+        "zeroPixels": 191953,
+        "opaquePixels": 0,
+        "intermediatePixels": 1380911,
+        "belowOrEqual10Fraction": 0.7859891255696615,
+        "belowOrEqual16Fraction": 0.8020280202229818,
+        "thresholdForBounds": 16,
+        "notice": "PNG kept byte-for-byte; low nonzero alpha fog remains in nominal empty regions. Rects measured at alpha>16, not asserted fully zero-alpha gutters."
+      }
+    },
+    "shadow": {
+      "file": "hero-shadow-fx-v2.png",
+      "manifest": "shadow-manifest-v2.json",
+      "prompt": "shadow-prompt-v2.txt",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b18b-37ec-7303-8ecf-a7109deb4557\\exec-c99b80f6-e68d-4d87-846b-b7c8152cf345.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "de13c001e6934e9992f9fe6dba52ce164d63694c5369f3e67fbfc651414036f9",
+      "rawCopyHashMatchesOriginal": true,
+      "alpha": {
+        "minMax": [
+          0,
+          253
+        ],
+        "zeroPixels": 75119,
+        "opaquePixels": 0,
+        "intermediatePixels": 1497745,
+        "belowOrEqual10Fraction": 0.7820027669270834,
+        "belowOrEqual16Fraction": 0.8094743092854818,
+        "thresholdForBounds": 16,
+        "notice": "PNG kept byte-for-byte; low nonzero alpha fog remains in nominal empty regions. Rects measured at alpha>16, not asserted fully zero-alpha gutters."
+      }
+    }
+  }
+}

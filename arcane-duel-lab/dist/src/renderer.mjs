@@ -1,4 +1,5 @@
 import {drawAlternateSkills} from './alternate-skill-art.mjs';
+import {drawSentinel} from './training-sentinel.mjs';
 import {drawPunchCharge} from './combat-feedback.mjs';
 import {drawCoreSkin} from './character-skin.mjs';
 import {characterMotionVersion} from './character-rig.mjs?v=20261030-duel12';
@@ -151,6 +152,7 @@ export class Renderer {
     }
   }
   dummy(w,t){
+    if(drawSentinel(this.ctx,w,t,this.assets))return;
     const c=this.ctx,dead=t.deadUntil>w.time;
     if(dead){const a=clamp((t.deadUntil-w.time)/2.5,0,1);glow(c,t.x,t.y-30,30,'#b7a0eb',a*.2);return;}
     c.save();c.translate(t.x,t.y);c.rotate(t.hit*Math.sin(w.time*55)*.3);
@@ -229,20 +231,20 @@ export class Renderer {
   }
   duelMarker(w,label,color){const c=this.ctx,p=w.player,x=p.x,y=p.y-122;if(p.hp<=0)return;c.save();c.textAlign='center';c.font='600 13px "Microsoft YaHei",sans-serif';c.lineWidth=3;c.strokeStyle='#03101d';c.strokeText(label,x,y-10);c.fillStyle=color;c.fillText(label,x,y-10);c.fillStyle='#07121dcc';c.fillRect(x-33,y,66,5);c.fillStyle=color;c.fillRect(x-33,y,66*Math.max(0,p.hp/p.maxHp),5);c.restore();}
   draw(w,alpha=1,dt=.016,{opponent=null}={}){
-    this.resize();if(w.duel)fitDuelCamera(w,this.canvas.width,this.canvas.height);updateCamera(w,dt);
+    this.resize();if(w.duel||w.duelSkills)fitDuelCamera(w,this.canvas.width,this.canvas.height);updateCamera(w,dt,{x:lerp(w.player.prevX,w.player.x,alpha),y:lerp(w.player.prevY,w.player.y,alpha)});
     const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/view.height;
     c.setTransform(sx,0,0,sy,0,0);
     if(w.duel){c.save();c.beginPath();c.rect(0,0,view.width,view.height);c.clip();}
     c.save();c.translate(-view.x,-view.y);
     const campaign=w.campaign&&this.assets.campaignPainter,authored=!campaign&&w.sceneId&&w.sceneId!=='training';
     c.fillStyle='#0b1023';c.fillRect(view.x,view.y,view.width,Math.max(height,view.height));
-    if(campaign)campaign.background(c,w,view);else if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);c.globalAlpha*=.9;c.filter='saturate(0.76) contrast(0.84) brightness(0.98)';this.scenePainter.background(w,w.duel?view:null);c.restore();}else{
+    if(campaign)campaign.background(c,w,view);else if(authored){c.save();c.fillStyle='#101a29';c.fillRect(0,0,w.width,w.height);this.scenePainter.background(w,view,{quiet:true});c.restore();}else{
       c.drawImage(this.assets.backdrop,0,0,WIDTH,HEIGHT);
       const shade=c.createLinearGradient(0,0,0,HEIGHT);shade.addColorStop(0,'rgba(5,10,27,.09)');shade.addColorStop(.6,'rgba(5,12,30,.3)');shade.addColorStop(1,'rgba(3,8,22,.65)');c.fillStyle=shade;c.fillRect(0,0,WIDTH,HEIGHT);
     }
-    c.save();if(!w.duel&&!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
+    c.save();if(!w.duel&&!w.duelSkills&&!this.reduced&&w.shake>.2)c.translate(Math.sin((w.fxTime||w.time)*119)*w.shake,Math.cos((w.fxTime||w.time)*97)*w.shake*.45);
     for(const b of w.platforms)if(!authored&&!campaign&&b.type!=='ice')this.platform(b,w.time);
-    if(campaign)campaign.ground(c,w,view);else if(authored){c.save();c.filter='saturate(0.88) contrast(0.92) brightness(0.98)';this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
+    if(campaign)campaign.ground(c,w,view);else if(authored){c.save();this.scenePainter.standingEdges(w);for(const b of w.obstacles||[])this.scenePainter.cover(w,b);this.scenePainter.back(w);c.restore();}else this.props(w);
     if(campaign)campaign.effects(c,w,alpha);else if(w.duelSkills&&this.assets.alternateArt)drawAlternateSkills(c,w,this.assets.alternateArt);
     this.combat.target(w);this.roster.before(w);
     for(const t of w.trees)this.tree(w,t);

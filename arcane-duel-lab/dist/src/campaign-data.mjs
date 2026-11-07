@@ -31,4 +31,4 @@ const minionDamage=[.8,.9,1.02,1.15,1.29,1.44,1.6,1.78,1.98,2.2,2.44],bossDamage
 for(const [i,s]of STAGES.entries()){s.damageFactor=minionDamage[i];s.bossDamageFactor=bossDamage[i]*.85;s.minionHp=Math.round(s.minionHp*1.25);s.bossHp=Math.round(s.bossHp*1.12);s.attackBudget=Math.min(6,3+Math.floor(i/3));}
 
 // Gold scales with difficult stages; replaying cleared stages is an intended way to grow.
-for(const [i,s]of STAGES.entries())s.killCoins=[6,8,9,11,14,16,20,24,29,35,43][i];
+for(const [i,s]of STAGES.entries())s.killCoins=[8,10,12,14,18,20,25,30,36,44,54][i];

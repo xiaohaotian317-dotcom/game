@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "threshold": 16,
+  "pngPixelsChanged": false,
+  "files": {
+    "melee-v1.png": {
+      "sha256": "8d6584506d33c8611bb604db4cff213ea0c86f26629cc8150d0f097b34ea60dd",
+      "sourceSha256": "8d6584506d33c8611bb604db4cff213ea0c86f26629cc8150d0f097b34ea60dd",
+      "size": [
+        948,
+        1659
+      ],
+      "frames": 28,
+      "geometryErrors": [],
+      "uncoveredMaterialPixels": 0,
+      "multiplyCoveredMaterialPixels": 0,
+      "sourceByteHashEqual": true,
+      "passed": true
+    },
+    "ranged-v1.png": {
+      "sha256": "20a5082d950106de7f6a9a3277e7c431e6a70ccf1db6a86ded12adb4d9a33a22",
+      "sourceSha256": "20a5082d950106de7f6a9a3277e7c431e6a70ccf1db6a86ded12adb4d9a33a22",
+      "size": [
+        1024,
+        1536
+      ],
+      "frames": 32,
+      "geometryErrors": [],
+      "uncoveredMaterialPixels": 0,
+      "multiplyCoveredMaterialPixels": 0,
+      "sourceByteHashEqual": true,
+      "passed": true
+    }
+  },
+  "frameCount": 60
+}

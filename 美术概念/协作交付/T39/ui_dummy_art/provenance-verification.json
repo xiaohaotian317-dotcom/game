@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "assets": {
+    "ornate-controls-v1.png": {
+      "sha256": "d169334d5b974603a9a7c1a4fac46c213de164a0423570a7a63331c667778f85",
+      "sourceSha256": "d169334d5b974603a9a7c1a4fac46c213de164a0423570a7a63331c667778f85",
+      "hashMatchesOriginal": true,
+      "sizeMatches": true,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "rects": {
+        "closeNormal": {
+          "sourceRect": [
+            86,
+            42,
+            384,
+            376
+          ],
+          "geometryValid": true
+        },
+        "closeHover": {
+          "sourceRect": [
+            575,
+            42,
+            384,
+            376
+          ],
+          "geometryValid": true
+        },
+        "closePressed": {
+          "sourceRect": [
+            1064,
+            42,
+            384,
+            376
+          ],
+          "geometryValid": true
+        },
+        "sceneSelect": {
+          "sourceRect": [
+            108,
+            438,
+            1318,
+            266
+          ],
+          "geometryValid": true
+        },
+        "back": {
+          "sourceRect": [
+            36,
+            735,
+            719,
+            249
+          ],
+          "geometryValid": true
+        },
+        "enter": {
+          "sourceRect": [
+            775,
+            735,
+            727,
+            252
+          ],
+          "geometryValid": true
+        }
+      }
+    },
+    "training-sentinel-v1.png": {
+      "sha256": "7ac260d51a1ecb866950854cd7c3f23e838c09dd68254e321f36a2d187e4ae52",
+      "sourceSha256": "7ac260d51a1ecb866950854cd7c3f23e838c09dd68254e321f36a2d187e4ae52",
+      "hashMatchesOriginal": true,
+      "sizeMatches": true,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "rects": {
+        "0": {
+          "sourceRect": [
+            40,
+            48,
+            320,
+            428
+          ],
+          "geometryValid": true
+        },
+        "1": {
+          "sourceRect": [
+            417,
+            43,
+            330,
+            433
+          ],
+          "geometryValid": true
+        },
+        "2": {
+          "sourceRect": [
+            797,
+            73,
+            322,
+            403
+          ],
+          "geometryValid": true
+        },
+        "3": {
+          "sourceRect": [
+            1148,
+            44,
+            382,
+            432
+          ],
+          "geometryValid": true
+        },
+        "4": {
+          "sourceRect": [
+            40,
+            564,
+            323,
+            423
+          ],
+          "geometryValid": true
+        },
+        "5": {
+          "sourceRect": [
+            401,
+            576,
+            342,
+            411
+          ],
+          "geometryValid": true
+        },
+        "6": {
+          "sourceRect": [
+            754,
+            677,
+            356,
+            311
+          ],
+          "geometryValid": true
+        },
+        "7": {
+          "sourceRect": [
+            1180,
+            565,
+            333,
+            422
+          ],
+          "geometryValid": true
+        }
+      }
+    }
+  },
+  "notes": [
+    "PNG files are never written by this script.",
+    "SourceRect/pivot geometry checks do not establish subjective art acceptance."
+  ]
+}

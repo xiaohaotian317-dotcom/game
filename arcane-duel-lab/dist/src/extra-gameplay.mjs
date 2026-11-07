@@ -77,7 +77,7 @@ export function releaseExtra(w,c,api){
     api.emit(w,'thunderSkill',{key:c.key});
   }
   if(h==='shadow'){
-    if(c.key==='q'){burst(w,c,{kind:'shadowRush',duration:.21,vx:p.face*1000,vy:0,damage:25,phase:true,dodgeProjectiles:true});p.invuln=Math.max(p.invuln,.24);api.effect(w,'shadowRush',{x:p.x,y:p.y-55,face:p.face,duration:.5});}
+    if(c.key==='q'){burst(w,c,{kind:'shadowRush',duration:.21,vx:p.face*1000,vy:0,damage:33,phase:true,dodgeProjectiles:true});p.invuln=Math.max(p.invuln,.24);api.effect(w,'shadowRush',{x:p.x,y:p.y-55,face:p.face,duration:.5});for(const offset of [-.14,0,.14])api.projectile(w,'soloBolt',p.x+p.face*28,p.y-57,Math.cos(offset)*p.face,Math.sin(offset),960,6,{owner:'player',terrainCollision:false,school:'shadow',soloHero:'shadow',soloRow:0,castId:c.id,life:1.1});}
     if(c.key==='e'&&target){const anchor=groundTarget(w,p.x,p.y);w.roleState.shadowMark={x:p.x,y:p.y,face:p.face,anchor,until:w.time+RECAST_WINDOWS.shadow};api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});teleport(w,p,target.x,target.y);recast(w,'e');api.effect(w,'shadowFlash',{x:p.x,y:p.y-50,duration:.45});}
     if(c.key==='r'&&target)field(w,'shadowStorm',target,{r:190,duration:1.4,delay:GROUND_EFFECT_DELAYS.shadowStorm,warningLead:c.releaseAt,castId:c.id});
     api.emit(w,'shadowSkill',{key:c.key});

@@ -16,7 +16,7 @@ if(!qa&&!app.requestSingleInstanceLock()){app.quit();}else{
     const gameRoot=app.isPackaged?app.getAppPath():path.resolve(import.meta.dirname,'..');
     runtime=new LanRuntime({root:path.join(gameRoot,'dist'),uiPort:qa?0:campaignPreview?44177:enemyPreview?44175:44173,hostBind:qa?'127.0.0.1':'0.0.0.0',testMode:!!qa});
     const origin=await runtime.start();
-    win=new BrowserWindow({width:1440,height:900,minWidth:1000,minHeight:640,backgroundColor:'#080f1c',title:windowTitle+(qa?' · 本机测试 '+qa:''),autoHideMenuBar:true,webPreferences:{preload:path.join(import.meta.dirname,'preload.cjs'),additionalArguments:[legacyMotion?'--arcane-motion=legacy':'--arcane-motion=v2'],contextIsolation:true,nodeIntegration:false,sandbox:true,backgroundThrottling:false}});
+    win=new BrowserWindow({show:!qa,width:1440,height:900,minWidth:1000,minHeight:640,backgroundColor:'#080f1c',title:windowTitle+(qa?' · 本机测试 '+qa:''),autoHideMenuBar:true,webPreferences:{preload:path.join(import.meta.dirname,'preload.cjs'),additionalArguments:[legacyMotion?'--arcane-motion=legacy':'--arcane-motion=v2'],contextIsolation:true,nodeIntegration:false,sandbox:true,backgroundThrottling:false}});
     win.webContents.on('page-title-updated',e=>{e.preventDefault();win.setTitle(windowTitle+(qa?' · 本机测试 '+qa:''));});
     win.webContents.setWindowOpenHandler(()=>({action:'deny'}));
     win.webContents.on('will-navigate',(e,url)=>{try{if(new URL(url).origin!==origin)e.preventDefault();}catch{e.preventDefault();}});
@@ -24,6 +24,7 @@ if(!qa&&!app.requestSingleInstanceLock()){app.quit();}else{
     win.webContents.session.setPermissionRequestHandler((wc,permission,callback)=>callback(wc===win.webContents&&allowed.has(permission)));
     win.webContents.session.setPermissionCheckHandler((wc,permission,requestingOrigin)=>wc===win.webContents&&requestingOrigin===origin&&allowed.has(permission));
     function checked(event,fn){if(event.sender!==win.webContents||event.senderFrame!==win.webContents.mainFrame||new URL(event.senderFrame.url).origin!==origin)throw new Error('非法窗口请求');return fn();}
+    ipcMain.handle('arcane:quit',e=>checked(e,()=>{setImmediate(()=>app.quit());return true;}));
     ipcMain.handle('arcane:state',e=>checked(e,()=>runtime.state()));
     ipcMain.handle('arcane:host',(e,options)=>checked(e,()=>runtime.host({port:options?.port})));
     ipcMain.handle('arcane:connect',(e,options)=>checked(e,()=>runtime.connect({address:options?.address})));
