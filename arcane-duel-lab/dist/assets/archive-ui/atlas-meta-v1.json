@@ -1,0 +1,661 @@
+{
+  "schema": 1,
+  "files": {
+    "archive-controls-v1.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b"
+    }
+  },
+  "elements": {
+    "portrait": {
+      "role": "A full-body portrait border",
+      "rect": [
+        23,
+        7,
+        708,
+        990
+      ],
+      "alphaBounds16": [
+        29,
+        13,
+        696,
+        978
+      ],
+      "safeRect": [
+        110,
+        155,
+        545,
+        705
+      ],
+      "safeAlphaMax": 3,
+      "centerOpening": true,
+      "slice": [
+        170,
+        235,
+        170,
+        205
+      ],
+      "crestRect": [
+        317,
+        7,
+        122,
+        124
+      ],
+      "lowerCrestRect": [
+        329,
+        898,
+        103,
+        93
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          360,
+          462
+        ],
+        "crest": [
+          62,
+          63
+        ],
+        "lowerCrest": [
+          52,
+          47
+        ],
+        "note": "Frame approximately0.78 via slicing; crest sizes use natural source aspect, not horizontal stretching."
+      },
+      "headRoomRect": [
+        160,
+        155,
+        440,
+        100
+      ],
+      "feetRoomRect": [
+        150,
+        780,
+        460,
+        80
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            193,
+            7,
+            124,
+            235
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            317,
+            7,
+            122,
+            235
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            439,
+            7,
+            122,
+            235
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            193,
+            792,
+            136,
+            205
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            329,
+            792,
+            103,
+            205
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            432,
+            792,
+            129,
+            205
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        23,
+        7,
+        708,
+        990
+      ],
+      "sourceAspect": 0.7151515151515152,
+      "center": [
+        377,
+        502
+      ],
+      "centerLocal": [
+        354,
+        495
+      ],
+      "safeRectLocal": [
+        87,
+        148,
+        545,
+        705
+      ],
+      "safeRectRelative": [
+        0.1228813559322034,
+        0.1494949494949495,
+        0.769774011299435,
+        0.7121212121212122
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          23,
+          193,
+          561,
+          731
+        ],
+        "y": [
+          7,
+          242,
+          792,
+          997
+        ]
+      },
+      "file": "archive-controls-v1.png",
+      "renderScale": 0.25
+    },
+    "attributes": {
+      "role": "B statistics border",
+      "rect": [
+        769,
+        36,
+        746,
+        347
+      ],
+      "alphaBounds16": [
+        775,
+        42,
+        734,
+        335
+      ],
+      "safeRect": [
+        837,
+        144,
+        608,
+        170
+      ],
+      "safeAlphaMax": 1,
+      "centerOpening": true,
+      "slice": [
+        100,
+        110,
+        100,
+        100
+      ],
+      "crestRect": [
+        1012,
+        36,
+        266,
+        102
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          650,
+          283
+        ],
+        "crest": [
+          232,
+          89
+        ],
+        "note": "Frame about2.3:1 via slicing; keep crest source aspect2.608."
+      },
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            869,
+            36,
+            143,
+            110
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1012,
+            36,
+            266,
+            110
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1278,
+            36,
+            137,
+            110
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        769,
+        36,
+        746,
+        347
+      ],
+      "sourceAspect": 2.14985590778098,
+      "center": [
+        1142,
+        209.5
+      ],
+      "centerLocal": [
+        373,
+        173.5
+      ],
+      "safeRectLocal": [
+        68,
+        108,
+        608,
+        170
+      ],
+      "safeRectRelative": [
+        0.09115281501340483,
+        0.3112391930835735,
+        0.8150134048257373,
+        0.4899135446685879
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          769,
+          869,
+          1415,
+          1515
+        ],
+        "y": [
+          36,
+          146,
+          283,
+          383
+        ]
+      },
+      "file": "archive-controls-v1.png",
+      "renderScale": 0.25
+    },
+    "transfer": {
+      "role": "C transfer-power card border",
+      "rect": [
+        740,
+        436,
+        780,
+        169
+      ],
+      "alphaBounds16": [
+        746,
+        442,
+        768,
+        157
+      ],
+      "safeRect": [
+        935,
+        478,
+        508,
+        84
+      ],
+      "safeAlphaMax": 2,
+      "centerOpening": true,
+      "slice": [
+        185,
+        40,
+        95,
+        32
+      ],
+      "emblemRect": [
+        740,
+        436,
+        185,
+        169
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          650,
+          130
+        ],
+        "note": "About5:1; the entire twin-soul emblem stays in fixed left185px source cap; no icon overlaps text zone."
+      },
+      "sourceRect": [
+        740,
+        436,
+        780,
+        169
+      ],
+      "sourceAspect": 4.615384615384615,
+      "center": [
+        1130,
+        520.5
+      ],
+      "centerLocal": [
+        390,
+        84.5
+      ],
+      "safeRectLocal": [
+        195,
+        42,
+        508,
+        84
+      ],
+      "safeRectRelative": [
+        0.25,
+        0.2485207100591716,
+        0.6512820512820513,
+        0.4970414201183432
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          740,
+          925,
+          1425,
+          1520
+        ],
+        "y": [
+          436,
+          476,
+          573,
+          605
+        ]
+      },
+      "file": "archive-controls-v1.png",
+      "renderScale": 0.48
+    },
+    "experience": {
+      "role": "D thin XP trough and diamond ends",
+      "rect": [
+        745,
+        643,
+        760,
+        68
+      ],
+      "alphaBounds16": [
+        751,
+        649,
+        748,
+        56
+      ],
+      "safeRect": [
+        813,
+        668,
+        624,
+        17
+      ],
+      "safeAlphaMax": 253,
+      "centerOpening": false,
+      "slice": [
+        68,
+        24,
+        68,
+        24
+      ],
+      "fillRect": [
+        813,
+        668,
+        624,
+        17
+      ],
+      "leftCapRect": [
+        745,
+        643,
+        68,
+        68
+      ],
+      "rightCapRect": [
+        1437,
+        643,
+        68,
+        68
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          500,
+          26
+        ],
+        "note": "Stretch only horizontal channel; keep diamond ends proportional."
+      },
+      "fillNote": "The empty recess is opaque dark teal. Draw dynamic XP fill ABOVE the track, clipped to fillRect, not behind the opaque PNG trough.",
+      "sourceRect": [
+        745,
+        643,
+        760,
+        68
+      ],
+      "sourceAspect": 11.176470588235293,
+      "center": [
+        1125,
+        677
+      ],
+      "centerLocal": [
+        380,
+        34
+      ],
+      "safeRectLocal": [
+        68,
+        25,
+        624,
+        17
+      ],
+      "safeRectRelative": [
+        0.08947368421052632,
+        0.36764705882352944,
+        0.8210526315789474,
+        0.25
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          745,
+          813,
+          1437,
+          1505
+        ],
+        "y": [
+          643,
+          667,
+          687,
+          711
+        ]
+      },
+      "file": "archive-controls-v1.png",
+      "renderScale": 0.25
+    },
+    "upgrade": {
+      "role": "E primary equipment-upgrade shell",
+      "rect": [
+        751,
+        764,
+        752,
+        201
+      ],
+      "alphaBounds16": [
+        757,
+        770,
+        740,
+        189
+      ],
+      "safeRect": [
+        891,
+        821,
+        468,
+        85
+      ],
+      "safeAlphaMax": 254,
+      "centerOpening": false,
+      "slice": [
+        150,
+        58,
+        150,
+        54
+      ],
+      "crestRect": [
+        1082,
+        764,
+        90,
+        54
+      ],
+      "lowerCrestRect": [
+        1082,
+        911,
+        90,
+        54
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          240,
+          60
+        ],
+        "crest": [
+          29,
+          17
+        ],
+        "lowerCrest": [
+          29,
+          17
+        ],
+        "note": "About4:1; blank face is a deliberate solid dark-teal material, text remains DOM."
+      },
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            901,
+            764,
+            181,
+            58
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082,
+            764,
+            90,
+            58
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1172,
+            764,
+            181,
+            58
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            901,
+            911,
+            181,
+            54
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082,
+            911,
+            90,
+            54
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1172,
+            911,
+            181,
+            54
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        751,
+        764,
+        752,
+        201
+      ],
+      "sourceAspect": 3.7412935323383083,
+      "center": [
+        1127,
+        864.5
+      ],
+      "centerLocal": [
+        376,
+        100.5
+      ],
+      "safeRectLocal": [
+        140,
+        57,
+        468,
+        85
+      ],
+      "safeRectRelative": [
+        0.18617021276595744,
+        0.2835820895522388,
+        0.6223404255319149,
+        0.4228855721393035
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          751,
+          901,
+          1353,
+          1503
+        ],
+        "y": [
+          764,
+          822,
+          911,
+          965
+        ]
+      },
+      "file": "archive-controls-v1.png",
+      "renderScale": 0.25
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Use case: stylized-concept
+Asset type: shippable 2D dark-fantasy in-game stage-title plate atlas, original transparent PNG.
+Primary request: exactly ELEVEN independent horizontal title-plate borders with distinct stage themes. NO words, no digits, no labels, no fake runes. This is an atlas of usable UI frames, not a whole-screen concept. Premium hand-painted antique gold/old bronze and dark teal-black patinated metal, cohesive with an ornate gothic fantasy pause/settings UI. Slender sculpted edges and restrained tactile theme decorations, not plain rectangle outlines, not huge glowing boss banners.
+
+Canvas/layout: landscape1536 by1024 preferred. TWO COLUMNS by SIX ROWS. Each nominal cell768 by170.7. Each frame about680 by140 (aspect4.8:1), completely isolated with generous transparent gutters, all corners fit. Read in normal row order: stage1 upper-left, stage2 upper-right, stage3 second-row-left, and so forth. Final stage11 bottom-left. BOTTOM-RIGHT CELL IS COMPLETELY EMPTY TRANSPARENT: do not draw a twelfth frame, emblem, tile or text there.
+Each plate is a wide low frame. Keep the broad middle roughly440 by64 completely clean and fully transparent for dynamic stage-name text. All theme decoration is in the outer rim and compact left/right endcaps. No object or gem in the text center. No title portraits; theme motifs are carved border ornament, not a creature illustration covering the center.
+
+STAGE1, row0 left: snow-wolf ice realm. Aged pale-gold/silver rim, compact ice crystal fangs and small wolf-ear/white-fur-like carved edge accents. Muted frosty blue, crystalline texture.
+STAGE2, row0 right: forge bull and lava. Old warm bronze/gold, curved bull-horn endcaps, thin lava seams and a few red-copper forge rivets. No fire plume across text.
+STAGE3, row1 left: venom serpent scales. Deep olive-gold/green bronze, subtle snake-scale relief, curling serpent-like edge ends and restrained jade poison droplet gem accents.
+STAGE4, row1 right: dream spider silk. Tarnished lavender-silver and gold, fine physical spider-silk filaments across endcap ornament, pointed clawlike corners, muted amethyst accents.
+STAGE5, row2 left: ancient tree woodland. Old gold over knotted dark ironwood rails, small carved leaves and mossy root-twist endcaps, rich forest green.
+STAGE6, row2 right: gargoyle and ruined stone bell. Cracked old gray stone set in antique gold, compact gothic wing/bell-metal end motifs, very small bell clapper form at edge, muted slate.
+STAGE7, row3 left: scorpion sand tomb. Sand-worn old gold, chitin/scorpion-tail curved endcaps and small amber stone, fine dune-grit texture, warm ochre.
+STAGE8, row3 right: blood-moon bat corridor. Dark red old copper/gold, bat-wing end silhouettes and restrained blood-red crescent ornament confined to rim, wine-red inset.
+STAGE9, row4 left: skeleton silver-bone citadel. Aged silver/gold with ivory bone-joint endcaps and a small bone-crown-like rim accent, cool gray and muted ivory; no giant skull in text area.
+STAGE10, row4 right: lightning dragon ridge. Old gold with compact draconic fin/scale edges, narrow painted forked lightning inlays, muted electric-gold and cool steel accents, no wide flash.
+STAGE11, row5 left: deep astral abyss. Antique gold with blue-violet cosmic mineral/ring-arc endcaps, tiny star-shaped metal studs and deep indigo gem accents. No galaxy rectangle, no broad fog.
+CELL12 row5 right remains EMPTY alpha.
+
+Style/material: refined hand-painted raster fantasy UI, old metal thickness and engraved relief, soft top-left painted light, controlled highlights. Themes must differ by material and silhouette, not merely the same frame recolored. Broad readable forms at small HUD size. Keep all ornaments modest enough to avoid hiding battle action.
+Transparency: background and center openings are genuine transparent alpha. No opaque black box, no backdrop gradient, no checkerboard, no environmental scene, no drop-shadow fog spanning sprites. At least20px clear transparent gutter between all material silhouettes.
+ABSOLUTELY NO text, letters, numbers, progress, symbols resembling writing or watermarks. Exactly11 frames, no characters and no extra UI.

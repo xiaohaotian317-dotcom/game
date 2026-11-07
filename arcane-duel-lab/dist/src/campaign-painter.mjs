@@ -1,3 +1,4 @@
+import {drawPortalInterior} from './combat-presentation.mjs';
 import {drawEnemyGroundWarning} from './enemy-ground-art.mjs';
 import {drawArtifact} from './campaign-artifact-runtime.mjs';
 import {drawPets} from './campaign-pet-painter.mjs';
@@ -47,7 +48,7 @@ export class CampaignPainter{
    else if(kind==='ice')atlas(c,this.art,'ice',8+Math.min(7,Math.floor(impactAge*14)),h.x,h.y+1,155);
    else{ellipse(c,h.x,h.y-3,h.radius*(1+impactAge*.1),11,color+'45');ellipse(c,h.x,h.y-5,h.radius,10,color,1);}
   }
-  const p=cc.portal;if(p){const age=w.time-p.born;c.save();c.globalAlpha=clamp(age*2,0,1);if(this.art.portalImage&&this.art.newMeta?.portal){drawFxFrame(c,this.art.portalImage,this.art.newMeta.portal,5,p.x,p.y,260,{ground:true});c.save();c.translate(p.x,p.y-132);c.rotate(age*.17);ellipse(c,0,0,38,38,'#bdfaf019',1);c.restore();}else atlas(c,this.art,'portal',5,p.x,p.y,260);c.fillStyle='#fff0c4';c.font='14px "Microsoft YaHei"';c.textAlign='center';c.fillText('按X结算',p.x,p.y-270);c.restore();}
+  const p=cc.portal;if(p){const age=w.time-p.born;c.save();c.globalAlpha=clamp(age*2,0,1);if(this.art.portalImage&&this.art.newMeta?.portal){drawFxFrame(c,this.art.portalImage,this.art.newMeta.portal,5,p.x,p.y,260,{ground:true});drawPortalInterior(c,w,p);}else atlas(c,this.art,'portal',5,p.x,p.y,260);c.fillStyle='#fff0c4';c.font='14px "Microsoft YaHei"';c.textAlign='center';c.fillText('按X结算',p.x,p.y-270);c.restore();}
  }
 }
 

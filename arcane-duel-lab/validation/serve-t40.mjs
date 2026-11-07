@@ -1,0 +1,2 @@
+import path from 'node:path';import {createGameServer} from '../server/http-server.mjs';import {localDatabase} from '../server/local-db.mjs';
+const db=localDatabase(),root=path.resolve(import.meta.dirname,'../dist'),server=createGameServer({root,db});server.listen(4222,'127.0.0.1',()=>console.log('T40 QA http://127.0.0.1:4222/campaign?panel=character · PID '+process.pid));process.on('SIGINT',()=>server.close(()=>{db.close();process.exit();}));

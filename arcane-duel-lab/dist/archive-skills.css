@@ -1,0 +1,100 @@
+/* Load after campaign-system.css and archive-ui.css. The extra archive scope
+   deliberately outranks the old >=1000px compact skill-card rules. */
+#solo-system[data-panel=skills] .system-body:has(>.archive-skills){display:flex;flex-direction:column;overflow:hidden}
+#solo-system[data-panel=skills] .archive-skills{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0;min-width:0;height:100%}
+#solo-system[data-panel=skills] .archive-skills .skill-subtabs{flex:none;gap:10px;margin:0;padding:0 0 9px;border-bottom:1px solid #b89a5d55}
+#solo-system[data-panel=skills] .archive-skills .skill-subtabs button{min-height:36px;padding:7px 23px;font-size:13px;line-height:20px}
+#solo-system[data-panel=skills] .archive-skills .skill-subtabs small{font-size:11px;letter-spacing:0}
+#solo-system[data-panel=skills] .archive-skills-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none;min-width:0}
+#solo-system[data-panel=skills] .archive-skills .hero-view-label{height:auto;min-height:30px;margin:0;font-size:12px;line-height:20px}
+#solo-system[data-panel=skills] .archive-skills .hero-view-label select{height:32px;min-width:110px;width:auto;padding:4px 10px;font-size:12px}
+#solo-system[data-panel=skills] .archive-skill-wallet{display:flex;gap:12px;align-items:baseline;flex:none;margin:0;color:#baa579;font-size:11px;white-space:nowrap}
+#solo-system[data-panel=skills] .archive-skill-wallet b{font:20px Georgia,serif;color:#f4d68e;font-variant-numeric:tabular-nums}
+#solo-system[data-panel=skills] .archive-skills-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#a1834e #0b1b25;padding:2px 8px 8px 2px;scroll-padding:8px}
+#solo-system[data-panel=skills] .archive-skills-scroll:focus-visible{outline:1px solid #dec080;outline-offset:1px}
+#solo-system[data-panel=skills] .archive-skills .archive-skills-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-rows:auto;align-content:start;gap:14px;min-height:0;flex:none}
+#solo-system[data-panel=skills] .archive-skill-row{min-width:0}
+#solo-system[data-panel=skills] .archive-skill-row-label{display:flex;align-items:center;gap:9px;margin:0 4px 7px;color:#d2ba82;font-size:12px}
+#solo-system[data-panel=skills] .archive-skill-row-label kbd{display:grid;place-items:center;width:27px;height:24px;border:1px solid #a98b535c;background:#192f34;font:15px Georgia,serif;color:#f5dda4}
+#solo-system[data-panel=skills] .archive-skill-row-label small{margin-left:auto;color:#91a8a8;font-size:11px;letter-spacing:0}
+#solo-system[data-panel=skills] .archive-skill-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-card{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0;padding:27px 25px 21px;border:0;background:radial-gradient(ellipse at 20% 15%,#36514638,transparent 68%),linear-gradient(130deg,#112b30,#091923);box-shadow:none}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-card.equipped{background:radial-gradient(ellipse at 20% 15%,#98764126,transparent 68%),linear-gradient(130deg,#19342f,#0b2028);box-shadow:inset 0 0 20px #ba9f4914}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-card.locked{background:linear-gradient(130deg,#10222a,#091821)}
+#solo-system[data-panel=skills] .archive-skill-card>.archive-frame{z-index:0}
+#solo-system[data-panel=skills] .archive-skill-card>*:not(.archive-frame){position:relative;z-index:1}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-heading{display:flex;align-items:center;gap:12px;flex:none;min-width:0;font-size:12px;line-height:1.5}
+#solo-system[data-panel=skills] .archive-skills .system-skill-art{display:block;flex:0 0 54px;width:54px;height:54px;margin:0;border:1px solid #c4a66b85;background-repeat:no-repeat;box-shadow:0 3px 12px #0007,inset 0 0 0 2px #ead49816}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-title{min-width:0;flex:1}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-title>small{display:block;font-size:11px;line-height:16px;color:#a4b5ad;letter-spacing:0}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-card h3{margin:3px 0;font:17px/1.35 SimSun,serif;letter-spacing:.06em;color:#f2dfaf;overflow-wrap:anywhere}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-rank{display:block;color:#c6aa70;font:11px/16px Georgia,'Microsoft YaHei',serif;font-variant-numeric:tabular-nums}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-description{min-height:36px;margin:0;font-size:12px;line-height:1.6;color:#b9cac7;overflow-wrap:anywhere}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-meta{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex:none;font-size:11px;line-height:17px;color:#8faead}
+#solo-system[data-panel=skills] .archive-skill-meta b{font-weight:500;color:#b2d4df;font-variant-numeric:tabular-nums}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex:none;flex-wrap:wrap;height:auto;min-height:38px;margin-top:auto;padding-top:2px;font-size:12px;line-height:18px}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-primary{flex:1;min-width:145px;max-width:245px;min-height:38px;height:38px;padding:6px 22px!important;font:13px/20px SimSun,serif;letter-spacing:.03em;box-shadow:0 3px 8px #0004!important}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-primary>span:not(.archive-frame){gap:10px}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-primary b{font:14px SimSun,serif;font-weight:500;white-space:nowrap}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-primary small{display:inline;font:12px Georgia,'Microsoft YaHei',serif;line-height:18px;color:#dcc58a;letter-spacing:0;white-space:nowrap}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-primary:disabled{opacity:.65}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-equip{min-height:36px;height:36px;padding:6px 13px;font:12px/20px SimSun,serif;color:#e8d9ae;border:1px solid #a98c525e;background:linear-gradient(110deg,#28403c,#122d35);box-shadow:inset 0 0 0 2px #06151a55}
+#solo-system[data-panel=skills] .archive-skill-equipped{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:29px;padding:4px 10px;border-block:1px solid #c3a96a55;color:#daca99;font-size:11px;line-height:19px;white-space:nowrap}
+#solo-system[data-panel=skills] .archive-skill-equipped:before{content:'◆';color:#ddc16e;font-size:8px}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-hint{display:block;min-height:16px;margin:0;text-align:right;font-size:11px;line-height:16px;color:#8da9a5;letter-spacing:0}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-hint.shortfall{color:#d4a784}
+#solo-system[data-panel=skills] .archive-loadout-panel{flex:none;min-width:0;padding-top:8px;border-top:1px solid #aa8d5355}
+#solo-system[data-panel=skills] .archive-loadout-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;font-size:12px;color:#e3d3aa}
+#solo-system[data-panel=skills] .archive-loadout-label small{font-size:11px;line-height:16px;letter-spacing:0;color:#8ca7a8}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex:none;margin:0;padding:0;border:0}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout>div{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0;min-height:64px;max-width:none;padding:8px 10px 8px 66px;border:1px solid #b59b604f;background:linear-gradient(115deg,#142e32,#0a1b26);box-shadow:inset 0 0 0 2px #050f1680}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout i{top:9px;left:10px;width:44px;height:44px;transform:none;border-color:#bda66885}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout kbd{left:8px;top:-10px;padding:1px 7px;background:#193237;font:12px/16px Georgia,serif}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout strong{font-size:12px;line-height:18px;overflow-wrap:anywhere}
+#solo-system[data-panel=skills] .archive-skills .archive-skill-loadout small{display:block;margin-top:3px;color:#92adaa;font-size:11px;line-height:16px;letter-spacing:0}
+
+/* Passive markup stays owned by renderPassivePanel; only its controls/layout change. */
+#solo-system[data-panel=skills] .system-body:has(>.passive-school){overflow:auto;gap:12px}
+#solo-system[data-panel=skills] .system-body>.skill-subtabs{flex:none;margin-bottom:8px;padding-bottom:10px}
+#solo-system[data-panel=skills] .passive-school{flex:none;min-width:0}
+#solo-system[data-panel=skills] .passive-card [data-upgrade-passive]{position:relative;isolation:isolate;display:block;width:100%;min-height:38px;height:auto;padding:8px 22px!important;border:1px solid #c3a26390;background:linear-gradient(110deg,#3d4530,#133438 57%,#263a30);box-shadow:inset 0 0 0 2px #0a1a2055,0 3px 8px #0004;color:#f1dca8;font:13px/20px SimSun,serif;letter-spacing:.02em}
+#solo-system[data-panel=skills] .passive-card [data-upgrade-passive]:hover:enabled{filter:brightness(1.18);text-shadow:0 0 8px #e8b65955}
+#solo-system[data-panel=skills] .passive-card [data-upgrade-passive]:disabled{opacity:.65}
+#solo-system[data-panel=skills] .passive-card [data-upgrade-passive]:focus-visible{outline:2px solid #f5d38b;outline-offset:3px}
+#solo-system[data-panel=skills] .passive-card [data-upgrade-passive]>span:not(.archive-frame){position:relative;z-index:3}
+
+@media(max-width:1100px){
+ #solo-system[data-panel=skills] .archive-skills{gap:8px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-card{padding:25px 21px 19px;gap:7px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-card h3{font-size:16px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-primary{min-width:141px;padding-inline:18px!important}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-equip{padding-inline:10px}
+ #solo-system[data-panel=skills] .archive-loadout-label{margin-bottom:9px}
+}
+@media(max-width:750px){
+ #solo-system[data-panel=skills] .archive-skill-pair{gap:10px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-card{padding-inline:19px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-heading{gap:8px}
+ #solo-system[data-panel=skills] .archive-skills .system-skill-art{flex-basis:46px;width:46px;height:46px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-actions{justify-content:space-between}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-primary{max-width:none}
+ #solo-system[data-panel=skills] .archive-loadout-label small{max-width:70%;text-align:right}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout{gap:7px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout>div{padding-left:53px;padding-right:6px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout i{left:7px;top:12px;width:36px;height:36px}
+ #solo-system[data-panel=skills] .passive-card [data-upgrade-passive]{padding-inline:15px!important;font-size:12px}
+}
+@media(max-width:600px){
+ #solo-system[data-panel=skills] .archive-skill-pair{grid-template-columns:minmax(0,1fr)}
+ #solo-system[data-panel=skills] .archive-skills .skill-subtabs button{padding-inline:14px;font-size:12px}
+ #solo-system[data-panel=skills] .archive-skills .skill-subtabs small{font-size:10px;margin-left:5px}
+ #solo-system[data-panel=skills] .archive-skills-toolbar{gap:8px}
+ #solo-system[data-panel=skills] .archive-skills .hero-view-label{font-size:11px;gap:7px}
+ #solo-system[data-panel=skills] .archive-skill-wallet{gap:7px;font-size:10px}
+ #solo-system[data-panel=skills] .archive-skill-wallet b{font-size:18px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-card{padding:26px 24px 20px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout>div{min-height:89px;padding:43px 6px 7px;align-items:center;text-align:center}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout i{top:5px;left:50%;transform:translateX(-50%);width:32px;height:32px}
+ #solo-system[data-panel=skills] .archive-skills .archive-skill-loadout small{font-size:10px;line-height:15px}
+ #solo-system[data-panel=skills] .archive-loadout-label small{font-size:10px}
+}

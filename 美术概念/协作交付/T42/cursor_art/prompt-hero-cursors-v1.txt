@@ -1,0 +1,16 @@
+Use case: stylized-concept
+Asset type: production 2D dark-fantasy IN-GAME AIM CURSOR sprite atlas, true transparent PNG, six tiny restrained cursors.
+Primary request: exactly SIX small, unobtrusive, hollow-center aim-pointer designs for six heroes. These are meant to display at only24 to30px in the actual game. Prioritize LOW-DETAIL STRONG SIMPLE SILHOUETTES, thin readable material edges and subdued brightness. Do not make skill icons, ornate medallions, UI buttons, big targets or flashy effects.
+
+Canvas/layout:1536 by1024 landscape, THREE COLUMNS by TWO ROWS, planned512x512 cells. Centers at(256,256),(768,256),(1280,256),(256,768),(768,768),(1280,768). Each cursor's entire visible footprint fits within roughly220x220px around its center, leaving huge completely transparent gutters. Same natural diameter for all six. All6 center holes line up to the stated centers. Center is an empty transparent hole about50px diameter (roughly5-6px when displayed24px). A few tiny inward-facing notches or very small paired points near that hollow center make the aim hotspot clear, WITHOUT filling the center and WITHOUT long crossing bars. No mouse arrow, no large plus sign/crosshair.
+
+TOP LEFT / fire: a small broken ember circle made of only3 short curved burnt-amber flame tips and one restrained dark-red ember edge. Compact, quiet, no plume or particles outside silhouette.
+TOP MIDDLE / nature: a thin open leaf ring formed from3 or4 simple narrow sage-green leaves with dark bronze stems; sparse, readable, no veins or botanical illustration.
+TOP RIGHT / frost: a tiny muted blue-gray snow-crystal ring, only6 short crisp crystal points with a hollow center; small dark-silver beveled edges, no huge white snowflake or many tiny branches.
+BOTTOM LEFT / lightning: a slim broken ring of3 short forked muted-gold electric arcs, with dark bronze undertone and tiny inward point tips; no big lightning bolt, no white flash, no radiating glow.
+BOTTOM MIDDLE / shadow: a restrained raven-feather crescent in charcoal-violet/dark silver, only2 broad curved feather silhouettes wrapping a hollow center with a small opposing notch for aiming; no whole bird, no long blade or black disk.
+BOTTOM RIGHT / star: two slender muted-blue/old-gold orbital arcs with3 small stud-like star points, hollow center; no large central star, no white core, no complex galaxy.
+
+Style/medium: tasteful hand-painted raster game cursor, minimal material cues with slightly tactile metal/leaf/crystal/feather edges. Broad clean shapes not fine filigree. Outline line weight sufficient to remain about1px when scaled to24-30px. Subdued mid-dark colors and restrained pale edge only where essential; NO neon, NO bloom, NO halo, NO bright white. Keep attention on the hero and skills, not the cursor.
+Alpha: genuinely transparent background, all center holes fully transparent, all empty cell areas clear. No gradient backdrop, black/colored squares, baked checkerboard or cast-shadow fog. Do not connect cells.
+Text/avoid: no text, digits, letters, fake runes, labels, arrows, full character or weapon art. Exactly6 small cursors in the stated order, no extra assets.

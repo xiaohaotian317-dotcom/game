@@ -52,7 +52,7 @@ function notice(w,type,data={}){(w.enemyEvents||=[]).push({type,time:w.time,...d
 const statusSpec={poison:{duration:3.6,interval:.75,damage:3,color:'#b5d45d'},burn:{duration:3,interval:.75,damage:3,color:'#ffb16f'}};
 export function applyEnemyStatus(w,kind,source,hooks){
  const p=w.player;if(!alive(p)||blinkProtected(w,p))return;
- if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=actor?enemyDamageFactor(actor):(w.campaign?.stage.damageFactor??1)*1.1;p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
+ if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=actor?enemyDamageFactor(actor):(w.campaign?.stage.damageFactor??1)*enemyDamageFactor({enemyKind:'M01'});p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
  if(kind==='snare'){p.enemySnareUntil=Math.max(p.enemySnareUntil||0,w.time+1.4);return;}
  if(kind==='freeze'||kind==='petrify'){
   const key=kind+'ImmuneUntil';if((p[key]||0)>w.time||p.enemyControl?.until>w.time)return;
@@ -148,7 +148,8 @@ export function enemyMeleeReach(w,e,s){return (s.reach||0)*(e.attackScale??e.sca
 export function enemyMeleeReady(w,e,s){if(!['melee','dash'].includes(s?.type))return true;const t=w.player,gap=Math.abs(t.x-e.x),travel=s.type==='dash'?(s.speed||350)*s.active*(ENEMIES[e.enemyKind]?.boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1):0;return gap<=enemyMeleeReach(w,e,s)+t.w-12+travel&&Math.abs(t.y-e.y)<Math.max(88,e.h*.72)&&clearLine(w,e.x,e.y-Math.min(e.h*.42,75),t.x,t.y-Math.min(t.h*.45,55));}
 function meleeReady(w,e,plan){return enemyMeleeReady(w,e,plan.steps[0]);}
 function choosePlan(w,e,d){
- const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time&&meleeReady(w,e,p));
+ if(e.ai.descent)return null;const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time&&meleeReady(w,e,p));
+ if(d.boss){const close=available.filter(p=>p.kind==='melee'),streak=ai.rangeStreak||0,threshold=1;if(close.length&&streak>0)return close[ai.sequence%close.length];if(streak>=threshold&&w.time>=(ai.nextPursuitAt||0)&&Math.abs(w.player.y-e.y)<190){const chase=clamp((distance-140)/Math.max(45,d.speed)+.4,1.8,4.5);ai.pursuitUntil=w.time+chase;ai.nextPursuitAt=w.time+chase+1.2;}if(ai.pursuitUntil>w.time&&!close.length)return null;}
  if(w.campaign&&!d.boss&&w.targets.filter(t=>t!==e&&t.hp>0&&t.ai?.attack).length>=w.campaign.attackBudget)return null;
  const specials=available.filter(p=>p.kind==='special');if(specials.length&&ai.sequence%3===2)return specials[Math.floor(ai.sequence/3)%specials.length];
  const preferred=available.filter(p=>p.kind===(distance<(d.boss?230:145)?'melee':'range'));
@@ -156,9 +157,11 @@ function choosePlan(w,e,d){
  const other=available.filter(p=>p.kind==='range'||(p.kind==='melee'&&distance<240));return other[0]||null;
 }
 function startPlan(w,e,plan){
+ if(ENEMIES[e.enemyKind].boss&&plan.steps.length>1)plan={...plan,steps:plan.steps.map((s,i)=>({...s,windup:i?Math.max(.2,s.windup*.55):s.windup,recover:i<plan.steps.length-1?Math.max(.12,s.recover*.55):s.recover}))};
  if(e.damageFactor!==undefined||e.themeStyle){plan={...plan,steps:plan.steps.map(s=>({...s,damage:s.damage===undefined?undefined:Math.max(1,Math.round(s.damage*enemyDamageFactor(e))),radius:s.radius===undefined?undefined:s.radius*(ENEMIES[e.enemyKind].boss?(e.attackScale??e.scale):1),style:!ENEMIES[e.enemyKind].boss&&e.themeStyle?e.themeStyle:s.style,status:!ENEMIES[e.enemyKind].boss&&e.themeStyle?(e.themeStyle==='ice'?'snare':e.themeStyle==='venom'?'poison':e.themeStyle==='lava'?'burn':null):s.status}))};}
  e.ai.attack={plan,index:0,age:0,fired:false,victims:[],speed:(e.ai.phase===2?1.1:1)*(e.attackTempo||1)*(e.frequency||1)};
  e.ai.state='windup';e.face=Math.sign(w.player.x-e.x||e.face);e.ai.cooldowns[plan.id]=w.time+plan.cd/(e.frequency||1);e.ai.sequence++;
+ if(ENEMIES[e.enemyKind].boss&&!plan.passive){if(plan.kind==='melee'||['melee','dash','leap'].includes(plan.steps[0]?.type)){e.ai.rangeStreak=0;e.ai.pursuitUntil=0;}else e.ai.rangeStreak=(e.ai.rangeStreak||0)+1;}
  e.ai.attack.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
  notice(w,'attackStarted',{id:e.id,enemyKind:e.enemyKind,pattern:plan.id,source:plan.passive?'passive':'active'});
 }
@@ -191,6 +194,7 @@ function fireStep(w,e,s,hooks){
 }
 function updateAttack(w,e,d,dt,hooks){
  const a=e.ai.attack,s=stepPlan(e);if(!s){e.ai.attack=null;return;}
+ if(a.waitingLink){navigate(w,e,d,dt,hooks);if(enemyMeleeReady(w,e,s)){a.waitingLink=false;e.vx*=.3;e.face=Math.sign(w.player.x-e.x||e.face);notice(w,'comboStep',{id:e.id,index:a.index});}else if(w.time>=a.linkUntil){e.ai.attack=null;e.ai.readyAt=w.time+.16;}return;}
  const previous=a.age;a.age+=dt*a.speed;
  if(a.age<s.windup){e.ai.state='windup';e.vx*=Math.exp(-12*dt);return;}
  if(!a.fired){a.fired=true;fireStep(w,e,s,hooks);}
@@ -212,8 +216,8 @@ function updateAttack(w,e,d,dt,hooks){
  }else{e.ai.state='recover';e.vx*=Math.exp(-10*dt);}
  if(a.age>=s.windup+s.active+s.recover){
   a.index++;a.age=0;a.fired=false;a.victims=[];a.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
-  if(a.index>=a.plan.steps.length){e.ai.attack=null;e.ai.state='idle';e.ai.readyAt=w.time+(d.boss?.45:.65)/(e.frequency||1);}
-  else if(!enemyMeleeReady(w,e,a.plan.steps[a.index])){e.ai.attack=null;e.ai.state='walk';e.ai.readyAt=w.time+.16;}else{e.face=Math.sign(w.player.x-e.x||e.face);e.ai.state='windup';notice(w,'comboStep',{id:e.id,index:a.index});}
+  if(a.index>=a.plan.steps.length){e.ai.attack=null;e.ai.state='idle';e.ai.readyAt=w.time+(d.boss?.28:.65)/(e.frequency||1);}
+  else if(!enemyMeleeReady(w,e,a.plan.steps[a.index])){if(d.boss&&Math.abs(w.player.y-e.y)<90&&Math.abs(w.player.x-e.x)<enemyMeleeReach(w,e,a.plan.steps[a.index])+w.player.w+120){a.waitingLink=true;a.linkUntil=w.time+.45;e.ai.state='walk';}else{e.ai.attack=null;e.ai.state='walk';e.ai.readyAt=w.time+.16;}}else{e.face=Math.sign(w.player.x-e.x||e.face);e.ai.state='windup';notice(w,'comboStep',{id:e.id,index:a.index});}
  }
 }
 function passivePlan(w,e,d,hooks){
@@ -230,9 +234,10 @@ function passivePlan(w,e,d,hooks){
 }
 function navigate(w,e,d,dt,hooks){
  const p=w.player,dx=p.x-e.x,abs=Math.abs(dx),root=e.rootUntil>w.time;
+ const pursue=d.boss&&(e.ai.pursuitUntil>w.time||e.ai.attack?.waitingLink);
  const slow=Math.min(e.slowUntil>w.time?.45:1,e.frostSnareUntil>w.time?.65:1);
  if(d.flying){
-  const tx=p.x-Math.sign(dx||e.face)*(d.ranged?280:90),ty=p.y-65;
+  const tx=p.x-Math.sign(dx||e.face)*(pursue?65:d.ranged?280:90),ty=p.y-65;
   let desiredY=clamp(ty,60+e.h*.5,w.floor-45);
   const obstruction=firstTerrainHit(w,e.x,e.y-e.h*.5,tx,desiredY-e.h*.5);
   // Flying units can cross one-way decks just as a player can drop through
@@ -242,14 +247,15 @@ function navigate(w,e,d,dt,hooks){
  }else{
   let tx=p.x+(e.flankOffset||0),ty=p.y;
   if(d.boss&&p.y<e.y-100){const ledges=w.platforms.filter(b=>b.active&&b.y<e.y-35&&b.y>=e.y-265&&b.w>e.w*2&&Math.abs(b.x+b.w/2-e.x)<470).sort((a,b)=>(Math.abs(a.x+a.w/2-p.x)+Math.abs(a.y-p.y))-(Math.abs(b.x+b.w/2-p.x)+Math.abs(b.y-p.y)));if(ledges[0]){tx=clamp(p.x,ledges[0].x+e.w,ledges[0].x+ledges[0].w-e.w);ty=ledges[0].y;}}
-  if(p.y>e.y+95&&e.grounded){const ledge=w.platforms.find(b=>b.id===e.platformId);if(ledge&&ledge.id!=='ground')tx=dx>0?ledge.x+ledge.w+e.w+10:ledge.x-e.w-10;}
-  const travel=tx-e.x,spacing=e.owner?8:d.ranged?280:d.boss?135:70;
-  let dir=Math.abs(travel)>spacing?Math.sign(travel):d.ranged&&abs<190?-Math.sign(dx):0;
+  if(!e.grounded||p.y<=e.y+85||e.platformId==='ground')e.ai.descent=null;
+  if(p.y>e.y+85&&e.grounded){const ledge=w.platforms.find(b=>b.id===e.platformId);if(ledge&&ledge.id!=='ground'){if(e.ai.descent?.platformId!==ledge.id){const direction=Math.abs(dx)>25?Math.sign(dx):e.x-ledge.x<ledge.x+ledge.w-e.x?-1:1;e.ai.descent={platformId:ledge.id,x:direction>0?ledge.x+ledge.w+e.w+28:ledge.x-e.w-28};}tx=e.ai.descent.x;}}
+  const travel=tx-e.x,spacing=e.owner?8:pursue?60:d.ranged?280:d.boss?135:70;
+  let dir=e.ai.descent?Math.sign(travel):Math.abs(travel)>spacing?Math.sign(travel):d.ranged&&!pursue&&abs<190?-Math.sign(dx):0;
   // Ranged actors must advance around blocked sightlines, rather than parking
   // forever at their preferred spacing behind a short ledge or cover.
   const origin=enemyCastOrigin(w,e);
-  if(d.ranged&&!clearLine(w,origin.x,origin.y,p.x,p.y-p.h*.5))dir=Math.sign(dx);
-  if(!d.ranged&&!clearLine(w,e.x,e.y-Math.min(e.h*.42,75),p.x,p.y-45)&&abs>e.w+p.w)dir=Math.sign(dx);
+  if(!e.ai.descent&&d.ranged&&!clearLine(w,origin.x,origin.y,p.x,p.y-p.h*.5))dir=Math.sign(dx);
+  if(!e.ai.descent&&!d.ranged&&!clearLine(w,e.x,e.y-Math.min(e.h*.42,75),p.x,p.y-45)&&abs>e.w+p.w)dir=Math.sign(dx);
   if(ty<e.y-50)dir=Math.abs(travel)>25?Math.sign(travel):0;
   e.vx=lerp(e.vx,root?0:dir*d.speed*slow,1-Math.exp(-10*dt));
   const wall=(w.obstacles||[]).some(b=>b.actor!==false&&b.active!==false&&b.y<e.y&&b.y+b.h>e.y-10&&Math.abs(b.x+b.w/2-e.x)<e.w+85&&Math.sign(b.x+b.w/2-e.x)===Math.sign(travel));
@@ -302,7 +308,17 @@ export function enemyAnimationFrame(e,time){
  if(e.ai.state==='spawn')return 6;
  if(e.ai.state==='hatch')return 11;
  const a=e.ai.attack,s=stepPlan(e);
+ if(a?.waitingLink)return Math.floor(e.cycle*1.7)%6;
  if(a&&s){if(a.age<s.windup)return 7;if(a.age<s.windup+s.active)return s.type==='egg'||s.type==='summon'?11:s.type==='projectile'||s.type==='zone'?10:8;return 9;}
  if(e.ai.passiveUntil>time&&Math.abs(e.vx)<12)return 11;
  return Math.abs(e.vx)>12||ENEMIES[e.enemyKind]?.flying?Math.floor(e.cycle*1.7+time*(ENEMIES[e.enemyKind]?.flying?9:0))%6:6;
+}
+export function enemyAnimationBlend(e,time){
+ const frame=enemyAnimationFrame(e,time),a=e.ai?.attack,s=stepPlan(e);
+ if(!ENEMIES[e.enemyKind]?.boss||!s||a.waitingLink||e.hp<=0||e.ai.stagger>0||e.hit>.06)return {a:frame,b:frame,mix:0};
+ const active=s.type==='egg'||s.type==='summon'?11:s.type==='projectile'||s.type==='zone'?10:8;
+ const blend=(from,to,age,end,span)=>({a:from,b:to,mix:clamp((age-end+Math.min(.1,span*.45))/Math.min(.1,span*.45),0,1)});
+ if(a.age<s.windup)return blend(7,active,a.age,s.windup,s.windup);
+ if(a.age<s.windup+s.active)return blend(active,9,a.age,s.windup+s.active,s.active);
+ return blend(9,a.index+1<a.plan.steps.length?7:6,a.age,s.windup+s.active+s.recover,s.recover);
 }

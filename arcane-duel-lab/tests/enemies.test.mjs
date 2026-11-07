@@ -61,8 +61,8 @@ test('melee accepts contact overlap but cannot hit a target wholly behind or thr
 test('poison is sustained real damage, refreshing its duration without stacking duplicate tick streams',()=>{
  const w=flat(),e=spawnEnemy(w,'M07',{x:1000,y:w.floor});e.ai.readyAt=100;e.ai.nextPassive=100;
  bullet(w,e,{status:'poison',style:'venom'});const hp=w.player.hp;assert.ok(w.player.enemyStatus.poison);
- applyEnemyStatus(w,'poison',e.id,statusHooks);run(w,2.3);assert.equal(hp-w.player.hp,9);
- run(w,2);assert.equal(w.player.enemyStatus.poison,undefined);assert.equal(hp-w.player.hp,12);
+ applyEnemyStatus(w,'poison',e.id,statusHooks);run(w,2.3);assert.equal(hp-w.player.hp,12);
+ run(w,2);assert.equal(w.player.enemyStatus.poison,undefined);assert.equal(hp-w.player.hp,16);
 });
 test('stone and frost passives accumulate on actual hits, block inputs temporarily and grant control resistance',()=>{
  for(const [id,kind] of [['B06','petrify'],['B08','freeze']]){

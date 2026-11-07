@@ -32,3 +32,7 @@ for(const [i,s]of STAGES.entries()){s.damageFactor=minionDamage[i];s.bossDamageF
 
 // Gold scales with difficult stages; replaying cleared stages is an intended way to grow.
 for(const [i,s]of STAGES.entries())s.killCoins=[8,10,12,14,18,20,25,30,36,44,54][i];
+
+// T41: wider late-stage threat steps; minion HP remains unchanged by explicit request.
+export const STAGE_THREAT=[1,1.08,1.18,1.32,1.48,1.67,1.90,2.16,2.46,2.80,3.18];
+for(const [i,s]of STAGES.entries()){s.damageFactor*=STAGE_THREAT[i];s.bossDamageFactor*=STAGE_THREAT[i];}

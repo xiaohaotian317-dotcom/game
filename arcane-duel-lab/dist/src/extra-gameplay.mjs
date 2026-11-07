@@ -28,15 +28,16 @@ export function releaseExtra(w,c,api){
       const thunder=h==='lightning',reach=thunder?150:165;
       const source=thunder?s:{x:p.x+p.face*26,y:p.y-57};
       api.effect(w,thunder?'thunderPunch':'shadowSlash',{...source,face:p.face,attach:thunder?'fist':null,originX:p.x,reach,rangeScale:1.5,duration:thunder?.34:.35});
-      const struck=[];let landed=false;for(const t of w.targets)if(forwardMeleeContact(w,p,t,reach)){struck.push(t.id);landed=api.damage(w,t,thunder?20:18,{school:h,basic:true,knock:p.face*(thunder?95:75)})||landed;}
+      const closeTargets=w.targets.filter(t=>forwardMeleeContact(w,p,t,reach)),struck=closeTargets.map(t=>t.id);api.reserveBasicHits?.(w,c.id,struck);
+      let landed=false;for(const t of closeTargets)landed=api.damage(w,t,thunder?20:18,{school:h,basic:true,castId:c.id,knock:p.face*(thunder?95:75)})||landed;
       // One swing has a close hit and a travelling extension, never two hits on one target.
-      if(!firstTerrainHit(w,p.x,p.y-57,source.x,source.y,3))api.projectile(w,thunder?'thunderFistBolt':'shadowCrescent',source.x,source.y,d.x,d.y,thunder?920:840,thunder?15:14,{owner:'player',school:h,basic:true,hybridBasic:true,excludeIds:struck,life:thunder?.78:.88,r:thunder?10:9});
+      if(!firstTerrainHit(w,p.x,p.y-57,source.x,source.y,3))api.projectile(w,thunder?'thunderFistBolt':'shadowCrescent',source.x,source.y,d.x,d.y,thunder?920:840,thunder?15:14,{owner:'player',school:h,basic:true,castId:c.id,hybridBasic:true,excludeIds:struck,life:thunder?.78:.88,r:thunder?10:9});
       api.effect(w,'hybridLaunch',{hero:h,...source,angle:Math.atan2(d.y,d.x),duration:.22});
       if(thunder&&landed)w.hitstop=Math.max(w.hitstop,.04);
       api.damageBridge(w,p.x+p.face*68.75,p.y-25,75,thunder?20:18);
     }else{
       const enhanced=h==='star'&&p.stars>=3;
-      api.projectile(w,h==='frost'?'iceNeedle':h==='lightning'?'arc':'starBolt',s.x,s.y,d.x,d.y,h==='lightning'?900:h==='frost'?820:700,enhanced?27:h==='lightning'?20:16,{owner:'player',school:h,basic:true,homing:enhanced,life:h==='lightning'?.5:3.5});
+      api.projectile(w,h==='frost'?'iceNeedle':h==='lightning'?'arc':'starBolt',s.x,s.y,d.x,d.y,h==='lightning'?900:h==='frost'?820:700,enhanced?27:h==='lightning'?20:16,{owner:'player',school:h,basic:true,castId:c.id,homing:enhanced,life:h==='lightning'?.5:3.5});
       if(enhanced)p.stars=0;
       api.effect(w,h+'Cast',{x:s.x,y:s.y,angle:Math.atan2(d.y,d.x),duration:.24});
     }

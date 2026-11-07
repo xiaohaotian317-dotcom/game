@@ -1,0 +1,146 @@
+✔ only sixth boss and its loot preview grant the sword item (0.6067ms)
+✔ mirror raises health, sword raises attack, only equipped artifact applies and upgrades survive save (2.0772ms)
+✔ switching artifacts in battle cannot repeatedly heal the player (1.0367ms)
+✔ held Q creates a targeted circle and real falling swords, consumes mana and stops on release (8.0413ms)
+✔ sword targets the first platform below the cursor and cannot hurt enemies on another floor or wild pets (1.2966ms)
+✔ empty mana, mirror equipment and capture phase cannot create sword rain (2.4673ms)
+✔ 11 themed stages keep one melee and one ranged species per stage; difficulty grows and each next pair differs (0.6988ms)
+✔ progress normalizes hostile/corrupt storage, gates branches and keeps growth/rewards out (0.582ms)
+✔ camera locks near player, both sides spawn near viewport fifths, capped falling spawns land before attacking (65.7872ms)
+✔ all 11 levels finish three waves, one boss, enter the portal and stop; no wave unlock with queued enemies (121.2066ms)
+✔ death shows defeat without automatic training respawn or accidental clear (0.2517ms)
+✔ ice warning is safe, drops to grounded impact and can be dodged by moving or jumping (1.0918ms)
+✔ falling fireball leaves damaging magma for exactly five seconds after impact (3.1174ms)
+✔ wide flat route is continuously walkable by all six heroes without forced jumps (47.2505ms)
+✔ resize retains arena boundaries and precise pointer/camera mapping (2.243ms)
+✔ tutorial boss attacks have scaled actual damage and smaller danger areas, not only smaller artwork (9.0506ms)
+✔ six heroes keep actual attacks, grounded ultimates and kills on the new stage geometry (28.2762ms)
+✔ 17 concept/runtime PNGs match inspected hashes and the chosen FX preserve real transparency and per-frame foot anchors (34.3119ms)
+✔ all theme backgrounds, warnings, falling FX, impacts and portal frames draw finite undistorted source rectangles (4.6198ms)
+✔ wide displays keep feet and aim inside the visible view rather than cropping the road below the screen (0.1151ms)
+✔ existing hero XP gains stronger linear health and mana with a solo-only current solo health, mana and attack multipliers (3.5896ms)
+✔ all 36 solo skills pay integer mana from the common skill data, reject insufficient mana atomically and keep recasts free (2.7619ms)
+✔ learned mana passive restores its increased real amount while level zero and reserve heroes stay unchanged (15.2445ms)
+✔ level-up adds only the increased capacity difference instead of refilling all lost health and mana (0.2403ms)
+✔ hybrid basics hit at range, preserve close damage without double hits, and cannot bypass thin cover or hit fully behind (14.0212ms)
+✔ solo strength boosts six heroes while public HP and mana stay independent; stage threat grows on top of the prior boss tuning (2.8334ms)
+✔ the fifteen percent recovery drop uplift changes the real roll boundary while retaining the per-attempt cap (1.496ms)
+✔ duel camera is wider, face independent, vertically stable through jumps and tracks position without direction offsets or inertia (0.9664ms)
+✔ successive prediction corrections keep the last displayed position and do not smooth large teleports (0.4511ms)
+✔ new ranged material keeps native RGBA hash and phase-specific pivots (1.892ms)
+✔ wide duel view keeps fire-orb visibility aligned at both world edges (0.4273ms)
+✔ trial and duel share a farther, exact centered camera without facing shifts, inertia or interpolation jitter (1.6031ms)
+✔ lightning ranged fist reaches real distant targets and thunder form doubles both attack cadence and animation for exactly three seconds (6.8022ms)
+✔ requested shared skill damage and movement changes act on real world state (4.2818ms)
+✖ all bosses check real reach before plain melee and choose ranged or approach at distance; damage and move uplifts are single factors (2.7531ms)
+✔ gear is exclusive and hidden from bag while equipped, can transfer and return, and stored rolls survive reload and upgrades (2.1395ms)
+✔ experience and coin increases retain later-stage progression and the actual run ledger (1.7567ms)
+✔ real equipment UI actions cannot refill injured heroes and panel tooltips follow the selected hero (1.3788ms)
+✔ continuous phase blends, refined 144-frame sources, minion maps and original sprite bytes remain bounded and complete (10.6995ms)
+✔ zero shared passives give no mana regeneration, upgrades persist and affect all heroes without touching PvP (12.5758ms)
+✔ shared passive spending is atomic, escalates each level, and blocks malformed or exhausted upgrades (1.0546ms)
+✔ restorative drops require proximity, use immediately, show real capped amounts and never enter bag or loot ledger (0.4722ms)
+✔ later-stage kill coins increase and the run ledger matches actual wallet earnings exactly once (2.0038ms)
+✔ ordinary melee closes into real range before winding up and can defeat an idle character (15.4348ms)
+✖ first boss deals materially more damage than first minions, final coefficients rise, and baselines remain solo-only (1.139ms)
+✔ initial F no longer erases a first-wave minion and generic basics do not borrow another cast skill modifier (7.0566ms)
+✔ shared regeneration cannot revive fallen heroes or suppress failure and reserve rescue (0.8554ms)
+✔ all 21 enemy definitions have health, independent art and distinct boss active combos plus traits (0.671ms)
+✔ each enemy can be placed, pursue and damage the actual player, without any dummy counterattack flag (119.7933ms)
+✔ sprite metadata covers 22 real transparent atlases and all 352 frames with matching hashes (36.6208ms)
+✔ ranged attacks originate at the calibrated frame mouth and can hit the visible upper body of a boss (1.8775ms)
+✔ all six heroes can damage and kill a placed enemy; dead enemies do not become respawning dummies (15.2185ms)
+✔ real combo steps are separated by windup, release and recovery, rather than hitting once per render (4.0838ms)
+✔ melee accepts contact overlap but cannot hit a target wholly behind or through a wall (0.2077ms)
+✔ poison is sustained real damage, refreshing its duration without stacking duplicate tick streams (1.3671ms)
+✔ stone and frost passives accumulate on actual hits, block inputs temporarily and grant control resistance (2.3774ms)
+✔ spider trait visibly lays a damageable egg, which hatches exactly three attacking baby spiders (10.2921ms)
+✔ destroying a spider egg prevents its children, and skeleton summoning remains capped (27.7642ms)
+✔ spider queen has a separate telegraphed leap attack that deals damage only after landing (0.834ms)
+✔ bull residue is grounded lava that burns the player and expires; tree regeneration is automatic (2.8377ms)
+✔ enemy minions and zones interact with the actual nature summon and can be cleared without stale poison (3.8125ms)
+✔ placement is reusable on all three maps and respects terrain/actor collisions and living cap (16.6374ms)
+✔ all 63 enemy/map combinations actually begin attacks on authored terrain instead of parking behind ledges (587.7751ms)
+✔ enemy sprite/attack/status painters use finite coordinates during every actual attack (74.5345ms)
+✔ missing and invalid rolls use neutral values while finite rolls stay within ten percent (1.1898ms)
+✔ new rolls sample each attribute once and can be saved without later changes (0.2382ms)
+✔ legacy equipment keeps the original quality, level and rank bonuses (0.2015ms)
+✔ every legacy quality retains its attack, critical and lifesteal tier (0.1297ms)
+✔ small persistent rolls change only the relevant output or survival bonuses (0.1559ms)
+✔ non-equipment and malformed levels still return finite numeric bonuses (0.3522ms)
+✔ white unenhanced weapons show only real attack with the solo multiplier (0.3395ms)
+✖ armor rows use the selected hero base health and contain only survival values (0.6116ms)
+✔ reading or displaying equipment never mutates the item or implicitly rerolls it (0.7411ms)
+ℹ tests 73
+ℹ suites 0
+ℹ pass 70
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2081.2183
+
+✖ failing tests:
+
+test at tests\campaign16.test.mjs:20:1
+✖ all bosses check real reach before plain melee and choose ranged or approach at distance; damage and move uplifts are single factors (2.7531ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(Math.abs(enemyDamageFactor({enemyKind:'B05',damageFactor:1.3})-1.391)<1e-12)
+  
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign16.test.mjs:20:292)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\campaign8-balance.test.mjs:17:1
+✖ first boss deals materially more damage than first minions, final coefficients rise, and baselines remain solo-only (1.139ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  124 !== 138
+  
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/campaign8-balance.test.mjs:17:535)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 124,
+    expected: 138,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\equipment-stats.test.mjs:86:1
+✖ armor rows use the selected hero base health and contain only survival values (0.6116ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '+7.4' !== '+8.22'
+  
+      at TestContext.<anonymous> (file:///C:/Users/xiaohaotian/Desktop/%E5%8F%8C%E4%BA%BA/arcane-duel-lab/tests/equipment-stats.test.mjs:93:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '+7.4',
+    expected: '+8.22',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

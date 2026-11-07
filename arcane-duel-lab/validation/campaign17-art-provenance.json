@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "archive-ui/archive-controls-v1.png",
+      "sha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b",
+      "originalBytes": true
+    },
+    {
+      "file": "realm-hud/stage-title-plates-v1.png",
+      "sha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+      "originalBytes": true
+    },
+    {
+      "file": "realm-hud/artifact-pet-controls-v2.png",
+      "sha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+      "originalBytes": true
+    },
+    {
+      "file": "realm-hud/boss-warning-rings-v1.png",
+      "sha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+      "originalBytes": true
+    },
+    {
+      "file": "aim-cursors/hero-cursors-v1.png",
+      "sha256": "6093fe505fd9f75bb419f520801ec9b814b2d7cb09560a43d2b1d401b9572d06",
+      "originalBytes": true
+    }
+  ],
+  "pixelsEdited": false,
+  "sourcePromptsRetained": true
+}

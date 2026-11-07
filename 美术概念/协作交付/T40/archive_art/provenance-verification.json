@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "sourceSha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b",
+  "savedSha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b",
+  "sourceBytesUnchanged": true,
+  "sizeMatches": true,
+  "elements": {
+    "portraitFrame": {
+      "geometryValid": true,
+      "safeAlphaExtrema": [
+        0,
+        3
+      ],
+      "safeMaterialOver16Pixels": 0,
+      "hollowSafeValid": true
+    },
+    "statFrame": {
+      "geometryValid": true,
+      "safeAlphaExtrema": [
+        0,
+        1
+      ],
+      "safeMaterialOver16Pixels": 0,
+      "hollowSafeValid": true
+    },
+    "transferFrame": {
+      "geometryValid": true,
+      "safeAlphaExtrema": [
+        0,
+        2
+      ],
+      "safeMaterialOver16Pixels": 0,
+      "hollowSafeValid": true
+    },
+    "xpTrack": {
+      "geometryValid": true,
+      "safeAlphaExtrema": [
+        251,
+        253
+      ],
+      "safeMaterialOver16Pixels": 10608,
+      "hollowSafeValid": true
+    },
+    "upgradeButton": {
+      "geometryValid": true,
+      "safeAlphaExtrema": [
+        251,
+        254
+      ],
+      "safeMaterialOver16Pixels": 39780,
+      "hollowSafeValid": true
+    }
+  },
+  "uncoveredMaterialOver16Pixels": 0,
+  "multiplyCoveredMaterialOver16Pixels": 0
+}

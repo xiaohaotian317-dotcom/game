@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "activeElementCount": 27,
+  "files": {
+    "stage-title-plates-v1.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+      "sourceSha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+      "originalBytesEqual": true,
+      "elements": 11,
+      "safeAreaMaterialOver16Pixels": 0,
+      "uncoveredMaterialOver16Pixels": 0,
+      "multiplyCoveredMaterialOver16Pixels": 0,
+      "passed": true
+    },
+    "artifact-pet-controls-v2.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+      "sourceSha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+      "originalBytesEqual": true,
+      "elements": 5,
+      "safeAreaMaterialOver16Pixels": 0,
+      "uncoveredMaterialOver16Pixels": 0,
+      "multiplyCoveredMaterialOver16Pixels": 0,
+      "passed": true
+    },
+    "boss-warning-rings-v1.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+      "sourceSha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+      "originalBytesEqual": true,
+      "elements": 11,
+      "safeAreaMaterialOver16Pixels": 0,
+      "uncoveredMaterialOver16Pixels": 0,
+      "multiplyCoveredMaterialOver16Pixels": 0,
+      "passed": true
+    }
+  },
+  "elementErrors": []
+}

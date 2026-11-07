@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "task": "T40",
+  "role": "archive_art",
+  "status": "generated and measured; pending primary-agent integration/runtime review and user art acceptance",
+  "generator": {
+    "mode": "built-in image_gen",
+    "originalPngBytesPreserved": true,
+    "noPixelEdits": true
+  },
+  "file": "archive-controls-v1.png",
+  "width": 1536,
+  "height": 1024,
+  "mode": "RGBA",
+  "bytes": 1922522,
+  "sha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b",
+  "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1b188-681a-76a2-8fa2-0106444de3ea/exec-10038f5a-2712-4424-8176-4dc7648c189c.png",
+  "savedPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T40/archive_art/archive-controls-v1.png",
+  "promptPath": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T40/archive_art/prompt-archive-controls-v1.txt",
+  "coordinateConvention": {
+    "rect": "[x,y,width,height], absolute PNG px",
+    "slice": "[L,T,R,B], source px relative to element sourceRect",
+    "safeRect": "absolute PNG pixel area for dynamic DOM content/fill; safeRectLocal and safeRectRelative are supplied",
+    "source": "All pieces must reference this unchanged source PNG. Do not export script-cropped PNGs."
+  },
+  "alpha": {
+    "min": 0,
+    "max": 254,
+    "zeroPixels": 998264,
+    "oneToEightPixels": 185738,
+    "materialOver16Pixels": 383221,
+    "opaque255Pixels": 0,
+    "cropThreshold": 16,
+    "notes": "Genuine alpha PNG. Empty A/B/C safe regions have max alpha3/1/2 and no material alpha>16. Nearzero soft tails remain untouched. D/E centers are intentionally filled dark teal."
+  },
+  "elements": {
+    "portraitFrame": {
+      "role": "A full-body portrait border",
+      "rect": [
+        23,
+        7,
+        708,
+        990
+      ],
+      "alphaBounds16": [
+        29,
+        13,
+        696,
+        978
+      ],
+      "safeRect": [
+        110,
+        155,
+        545,
+        705
+      ],
+      "safeAlphaMax": 3,
+      "centerOpening": true,
+      "slice": [
+        170,
+        235,
+        170,
+        205
+      ],
+      "crestRect": [
+        317,
+        7,
+        122,
+        124
+      ],
+      "lowerCrestRect": [
+        329,
+        898,
+        103,
+        93
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          360,
+          462
+        ],
+        "crest": [
+          62,
+          63
+        ],
+        "lowerCrest": [
+          52,
+          47
+        ],
+        "note": "Frame approximately0.78 via slicing; crest sizes use natural source aspect, not horizontal stretching."
+      },
+      "headRoomRect": [
+        160,
+        155,
+        440,
+        100
+      ],
+      "feetRoomRect": [
+        150,
+        780,
+        460,
+        80
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            193,
+            7,
+            124,
+            235
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            317,
+            7,
+            122,
+            235
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            439,
+            7,
+            122,
+            235
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            193,
+            792,
+            136,
+            205
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            329,
+            792,
+            103,
+            205
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            432,
+            792,
+            129,
+            205
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        23,
+        7,
+        708,
+        990
+      ],
+      "sourceAspect": 0.7151515151515152,
+      "center": [
+        377,
+        502
+      ],
+      "centerLocal": [
+        354,
+        495
+      ],
+      "safeRectLocal": [
+        87,
+        148,
+        545,
+        705
+      ],
+      "safeRectRelative": [
+        0.1228813559322034,
+        0.1494949494949495,
+        0.769774011299435,
+        0.7121212121212122
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          23,
+          193,
+          561,
+          731
+        ],
+        "y": [
+          7,
+          242,
+          792,
+          997
+        ]
+      }
+    },
+    "statFrame": {
+      "role": "B statistics border",
+      "rect": [
+        769,
+        36,
+        746,
+        347
+      ],
+      "alphaBounds16": [
+        775,
+        42,
+        734,
+        335
+      ],
+      "safeRect": [
+        837,
+        144,
+        608,
+        170
+      ],
+      "safeAlphaMax": 1,
+      "centerOpening": true,
+      "slice": [
+        100,
+        110,
+        100,
+        100
+      ],
+      "crestRect": [
+        1012,
+        36,
+        266,
+        102
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          650,
+          283
+        ],
+        "crest": [
+          232,
+          89
+        ],
+        "note": "Frame about2.3:1 via slicing; keep crest source aspect2.608."
+      },
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            869,
+            36,
+            143,
+            110
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1012,
+            36,
+            266,
+            110
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1278,
+            36,
+            137,
+            110
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        769,
+        36,
+        746,
+        347
+      ],
+      "sourceAspect": 2.14985590778098,
+      "center": [
+        1142,
+        209.5
+      ],
+      "centerLocal": [
+        373,
+        173.5
+      ],
+      "safeRectLocal": [
+        68,
+        108,
+        608,
+        170
+      ],
+      "safeRectRelative": [
+        0.09115281501340483,
+        0.3112391930835735,
+        0.8150134048257373,
+        0.4899135446685879
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          769,
+          869,
+          1415,
+          1515
+        ],
+        "y": [
+          36,
+          146,
+          283,
+          383
+        ]
+      }
+    },
+    "transferFrame": {
+      "role": "C transfer-power card border",
+      "rect": [
+        740,
+        436,
+        780,
+        169
+      ],
+      "alphaBounds16": [
+        746,
+        442,
+        768,
+        157
+      ],
+      "safeRect": [
+        935,
+        478,
+        508,
+        84
+      ],
+      "safeAlphaMax": 2,
+      "centerOpening": true,
+      "slice": [
+        185,
+        40,
+        95,
+        32
+      ],
+      "emblemRect": [
+        740,
+        436,
+        185,
+        169
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          650,
+          130
+        ],
+        "note": "About5:1; the entire twin-soul emblem stays in fixed left185px source cap; no icon overlaps text zone."
+      },
+      "sourceRect": [
+        740,
+        436,
+        780,
+        169
+      ],
+      "sourceAspect": 4.615384615384615,
+      "center": [
+        1130,
+        520.5
+      ],
+      "centerLocal": [
+        390,
+        84.5
+      ],
+      "safeRectLocal": [
+        195,
+        42,
+        508,
+        84
+      ],
+      "safeRectRelative": [
+        0.25,
+        0.2485207100591716,
+        0.6512820512820513,
+        0.4970414201183432
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          740,
+          925,
+          1425,
+          1520
+        ],
+        "y": [
+          436,
+          476,
+          573,
+          605
+        ]
+      }
+    },
+    "xpTrack": {
+      "role": "D thin XP trough and diamond ends",
+      "rect": [
+        745,
+        643,
+        760,
+        68
+      ],
+      "alphaBounds16": [
+        751,
+        649,
+        748,
+        56
+      ],
+      "safeRect": [
+        813,
+        668,
+        624,
+        17
+      ],
+      "safeAlphaMax": 253,
+      "centerOpening": false,
+      "slice": [
+        68,
+        24,
+        68,
+        24
+      ],
+      "fillRect": [
+        813,
+        668,
+        624,
+        17
+      ],
+      "leftCapRect": [
+        745,
+        643,
+        68,
+        68
+      ],
+      "rightCapRect": [
+        1437,
+        643,
+        68,
+        68
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          500,
+          26
+        ],
+        "note": "Stretch only horizontal channel; keep diamond ends proportional."
+      },
+      "fillNote": "The empty recess is opaque dark teal. Draw dynamic XP fill ABOVE the track, clipped to fillRect, not behind the opaque PNG trough.",
+      "sourceRect": [
+        745,
+        643,
+        760,
+        68
+      ],
+      "sourceAspect": 11.176470588235293,
+      "center": [
+        1125,
+        677
+      ],
+      "centerLocal": [
+        380,
+        34
+      ],
+      "safeRectLocal": [
+        68,
+        25,
+        624,
+        17
+      ],
+      "safeRectRelative": [
+        0.08947368421052632,
+        0.36764705882352944,
+        0.8210526315789474,
+        0.25
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          745,
+          813,
+          1437,
+          1505
+        ],
+        "y": [
+          643,
+          667,
+          687,
+          711
+        ]
+      }
+    },
+    "upgradeButton": {
+      "role": "E primary equipment-upgrade shell",
+      "rect": [
+        751,
+        764,
+        752,
+        201
+      ],
+      "alphaBounds16": [
+        757,
+        770,
+        740,
+        189
+      ],
+      "safeRect": [
+        891,
+        821,
+        468,
+        85
+      ],
+      "safeAlphaMax": 254,
+      "centerOpening": false,
+      "slice": [
+        150,
+        58,
+        150,
+        54
+      ],
+      "crestRect": [
+        1082,
+        764,
+        90,
+        54
+      ],
+      "lowerCrestRect": [
+        1082,
+        911,
+        90,
+        54
+      ],
+      "targetSizeSuggestion": {
+        "frame": [
+          240,
+          60
+        ],
+        "crest": [
+          29,
+          17
+        ],
+        "lowerCrest": [
+          29,
+          17
+        ],
+        "note": "About4:1; blank face is a deliberate solid dark-teal material, text remains DOM."
+      },
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            901,
+            764,
+            181,
+            58
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082,
+            764,
+            90,
+            58
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1172,
+            764,
+            181,
+            58
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            901,
+            911,
+            181,
+            54
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082,
+            911,
+            90,
+            54
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1172,
+            911,
+            181,
+            54
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "sourceRect": [
+        751,
+        764,
+        752,
+        201
+      ],
+      "sourceAspect": 3.7412935323383083,
+      "center": [
+        1127,
+        864.5
+      ],
+      "centerLocal": [
+        376,
+        100.5
+      ],
+      "safeRectLocal": [
+        140,
+        57,
+        468,
+        85
+      ],
+      "safeRectRelative": [
+        0.18617021276595744,
+        0.2835820895522388,
+        0.6223404255319149,
+        0.4228855721393035
+      ],
+      "sliceOrder": "L,T,R,B (PNG px, relative to sourceRect)",
+      "svgCuts": {
+        "x": [
+          751,
+          901,
+          1353,
+          1503
+        ],
+        "y": [
+          764,
+          822,
+          911,
+          965
+        ]
+      }
+    }
+  },
+  "references": [
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/pause/pause-shell-v1.png",
+      "role": "inspected style reference, unchanged"
+    },
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/settings/settings-shell-v1.png",
+      "role": "inspected style reference, unchanged"
+    }
+  ],
+  "nineSliceNotes": [
+    "Use each explicit rect, not an assumed atlas grid. slice order is L,T,R,B, unlike CSS top/right/bottom/left.",
+    "A, B and E have protected center ornaments. When the top/bottom center strip changes width, REPLACE that strip with topCenterSegments/bottomCenterSegments. Stretch only leftRail/rightRail; keep crestBand or compact crestRect centered at natural aspect.",
+    "If using a compact crestRect overlay, first OMIT its full protected crestBand from the ordinary stretched center strip. Overlaying on a stretched original crest leaves distorted duplicate metal underneath.",
+    "Center openings of A/B/C remain transparent; DOM controls/backgrounds can sit below or above the border, keeping content within safeRect.",
+    "C's entire left185px source cap includes the twin-soul emblem and remains fixed. D's68px end caps include both diamond terminals. No extra symbol is needed.",
+    "Corner/crest target dimensions are suggestions for the listed display size, not locked requirements. Scale their width and height together."
+  ],
+  "integrationNotes": [
+    "No characters, words, letters, digits, fake runes or values are baked into this image. Portrait should use the existing complete SUMMON_RECTS/REGIONS and preserve head/feet.",
+    "Keep the actual portrait inside portraitFrame.safeRect. headRoomRect and feetRoomRect are extra explicit clear zones; do not enlarge a hero until its head or feet cross them.",
+    "All names/stats/levels/selection fields and equipment-upgrade copy remain real DOM.",
+    "XP dynamic fill must be rendered over the opaque empty trough inside fillRect. Button text goes over E's blank face.",
+    "Analyze alpha only once at load time if needed; all explicit crop/slice data is already supplied."
+  ],
+  "actualDeviations": [
+    "Generated portrait material bounds696x978 have width/height0.712 instead of planned0.78. The supplied slices permit a slightly wider/shorter target while protecting corners and center diamonds; do not globally distort the PNG.",
+    "Generated statistics material ratio734/335=2.191 instead of planned2.3. Use supplied slices for exact target ratio.",
+    "Transfer material ratio768/157=4.892 and button740/189=3.915 are close to requested5:1/4:1; keep source proportions or slice.",
+    "Outside padding is not uniformly50px: the tallest portrait crest starts13px from top. No material is clipped; sourceRect adds safe6px padding.",
+    "Original A/B/C openings contain a small amount of alpha1..3 tail pixels. No alpha thresholding, background removal or pixel fixing was applied."
+  ],
+  "audits": {
+    "alpha": "alpha-audit.json",
+    "components": "components-audit.json",
+    "verification": "provenance-verification.json",
+    "scripts": [
+      "analyze-alpha.py",
+      "analyze-components.py",
+      "verify-delivery.py"
+    ]
+  }
+}

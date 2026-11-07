@@ -1,0 +1,251 @@
+{
+  "isolatedProfile": true,
+  "formalSavesTouched": false,
+  "checks": [
+    {
+      "selector": "[data-hero-view]",
+      "hero": "fire",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "nature",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "frost",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "lightning",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "shadow",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "star",
+      "menuBounds": {
+        "x": 194.859375,
+        "y": 368.59375,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "fire",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "nature",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "frost",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "lightning",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "shadow",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "star",
+      "menuBounds": {
+        "x": 129.625,
+        "y": 352.203125,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "fire",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "nature",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "frost",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "lightning",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "shadow",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "star",
+      "menuBounds": {
+        "x": 225,
+        "y": 341.796875,
+        "width": 330,
+        "height": 263
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "fire",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "nature",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "frost",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "lightning",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "shadow",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    },
+    {
+      "selector": "[data-hero-view]",
+      "hero": "star",
+      "menuBounds": {
+        "x": 77,
+        "y": 290.59375,
+        "width": 330,
+        "height": 247
+      }
+    }
+  ],
+  "equipmentCompatibilityAndAssignment": true,
+  "ownershipPreserved": true,
+  "errors": [],
+  "failedResources": [],
+  "passed": true
+}

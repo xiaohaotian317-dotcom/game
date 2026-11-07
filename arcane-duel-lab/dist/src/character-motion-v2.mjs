@@ -16,6 +16,16 @@ const STYLE={
  shadow:{lean:.085,crouch:5.2,breath:2.35,phase:2.9,head:-.012,tuck:1.75,split:1.05,double:'scissor'},
  star:{lean:.095,crouch:2.4,breath:1.7,phase:3.7,head:-.035,tuck:1.12,split:.57,double:'orbit'}
 };
+// Both knees gather forward, then extend below the body with a small lead/trail
+// offset. Angles are paired with knee flexion instead of opening the hips apart.
+const DOUBLE_LEGS={
+ staff:{gather:[.78,.65,1.85,1.95],extend:[.23,.08,.45,.48]},
+ bound:{gather:[.84,.68,1.95,2.02],extend:[.29,.11,.56,.58]},
+ fold:{gather:[.73,.67,1.75,1.88],extend:[.17,.14,.55,.68]},
+ kick:{gather:[.94,.76,2.12,2.20],extend:[.38,.10,.38,.50]},
+ scissor:{gather:[1.00,.88,2.32,2.40],extend:[.36,.19,.62,.68]},
+ orbit:{gather:[.80,.72,1.85,1.96],extend:[.22,.18,.48,.56]}
+};
 export function flightPose(hero,p,time=0){
  if(version==='legacy')return legacy.flightPose(hero,p,time);
  const f=STYLE[hero]||STYLE.fire,vy=p.vy||0,age=Math.max(0,time-(p.jumpAt??-99));
@@ -30,14 +40,10 @@ export function flightPose(hero,p,time=0){
  if(p.jumps>1){
   const curl=smooth(age/.065)*(1-smooth((age-.16)/.17));
   const open=smooth((age-.10)/.15)*(1-smooth((age-.33)/.25)),sign=f.double==='scissor'?-1:1;
-  o.legA+=f.split*curl*sign;o.kneeA+=.75*curl;
-  o.legB-=f.split*.55*curl*sign;o.kneeB+=.85*curl;
-  if(f.double==='kick'){o.legA+=open*.58;o.kneeA-=open*.72;o.legB-=open*.32;}
-  else if(f.double==='scissor'){o.legA+=open*1.1;o.legB-=open*.65;o.kneeA-=open*.6;o.kneeB+=open*.2;}
-  else if(f.double==='bound'){o.legA+=open*.26;o.legB-=open*.46;o.kneeB-=open*.22;}
-  else if(f.double==='fold'){o.legA-=open*.24;o.kneeB+=open*.48;}
-  else if(f.double==='orbit'){o.legA+=open*.30;o.legB+=open*.20;o.twist=.075*curl;}
-  else{o.legA+=open*.2;o.legB-=open*.22;o.weapon-=open*.20;}
+  const legs=DOUBLE_LEGS[f.double];
+  for(const [index,key]of ['legA','legB','kneeA','kneeB'].entries())o[key]=mix(mix(o[key],legs.gather[index],curl),legs.extend[index],open);
+  if(f.double==='orbit')o.twist=.075*curl;
+  else if(f.double==='staff')o.weapon-=open*.20;
   o.armA+=.22*curl-.08*open;o.elbowA+=.16*curl+.20*open;
   o.armB-=.35*curl;o.elbowB-=.26*curl;o.head-=curl*.035;
   o.twist+=.055*curl*sign-.035*open;o.cloth-=curl*1.5;
@@ -122,7 +128,10 @@ export function legChain(w,pose,back=false){
  const p=w.player,hip={x:(back?-6:5)+(pose.shift||0),y:-83.5+pose.bob},phase=(p.cycle||0)+(back?Math.PI:0),v=clamp(Math.abs(p.vx)/340,0,1);
  const stride=({frost:23,lightning:32,shadow:30,star:25})[w.hero]||28,lift=({frost:17,lightning:25,shadow:19,star:18})[w.hero]||21;
  const a=back?pose.legB:pose.legA,k=back?pose.kneeB:pose.kneeA,knee=jointEnd(hip,41,a),air=jointEnd(knee,43,a-k),strike=pose.strike||0;
- const ground={x:hip.x+Math.sin(phase)*stride*v+(back?-13:16)*(pose.spread??1)*(1-v*.8)+(back?-5:12)*strike,y:-Math.max(0,Math.cos(phase))*lift*v-(back?0:3*Math.sin(strike*Math.PI))};
+ // A cached walking pose can still have an air weight below one at re-launch.
+ // Keep that foot hint close too, so blending cannot reintroduce a wide stride.
+ const compact=p.jumps>1&&!p.grounded&&p.dash<=0&&!p.burst&&!p.stomp&&p.dead<=0;
+ const ground={x:hip.x+Math.sin(phase)*stride*v*(compact?.25:1)+(back?-13:16)*(pose.spread??1)*(1-v*.8)*(compact?.35:1)+(back?-5:12)*strike*(compact?.4:1),y:-Math.max(0,Math.cos(phase))*lift*v-(back?0:3*Math.sin(strike*Math.PI))};
  const weight=p.dash>0||p.dead>0||p.burst?1:clamp(pose.air||0,0,1),foot={x:mix(ground.x,air.x,weight),y:mix(ground.y,air.y,weight)};
  if(p.grounded&&p.dash<=0&&p.dead<=0){
   foot.y=Math.min(0,foot.y);

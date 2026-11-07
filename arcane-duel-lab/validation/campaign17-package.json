@@ -1,0 +1,14 @@
+{
+  "version": "campaign17",
+  "release": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign17",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign17\\ArcaneDuelCampaign.exe",
+  "archive": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign17.zip",
+  "files": 527,
+  "runtimeFilesMatched": 444,
+  "bytes": 590510361,
+  "sha256": "006623cd030ea2454913e1cbfe444a0d77b3b1e348c4e8ca20f327288fab9726",
+  "originalSitesUnchanged": true,
+  "scope": "Painted archive, avatar hero selection, themed stage/artifact/pet HUD and boss warning rings, close-knee double jumps, integer damage/mana, stronger staged enemies and pursuit, solo basic splash and real critical labels, subtle cursors and flowing portal; original Sites/saves/releases and full motion rollback preserved",
+  "nativeWindowVisualQA": false,
+  "browserVisualQA": true
+}

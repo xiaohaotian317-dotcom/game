@@ -1,0 +1,115 @@
+{
+  "task": "T40",
+  "isolatedStorage": true,
+  "formalSavesTouched": false,
+  "heroes": [
+    {
+      "hero": "fire",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    },
+    {
+      "hero": "nature",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    },
+    {
+      "hero": "frost",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    },
+    {
+      "hero": "lightning",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    },
+    {
+      "hero": "shadow",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    },
+    {
+      "hero": "star",
+      "viewport": "1280x720",
+      "portrait": {
+        "x": 97,
+        "y": 379.59375,
+        "width": 345.734375,
+        "height": 189.796875
+      }
+    }
+  ],
+  "equipment": [
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "card": {
+        "x": 887,
+        "y": 229.59375,
+        "width": 320,
+        "height": 355
+      },
+      "button": {
+        "x": 905,
+        "y": 426.59375,
+        "width": 284,
+        "height": 40
+      },
+      "position": 0.6112676056338028,
+      "cardOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "size": {
+        "width": 1000,
+        "height": 640
+      },
+      "card": {
+        "x": 663,
+        "y": 213.203125,
+        "width": 290,
+        "height": 355
+      },
+      "button": {
+        "x": 681,
+        "y": 410.203125,
+        "width": 254,
+        "height": 40
+      },
+      "position": 0.6112676056338028,
+      "cardOverflow": 0,
+      "bodyOverflow": 0
+    }
+  ],
+  "upgradeTransferUnequipPower": true,
+  "errors": [],
+  "failedResources": [],
+  "passed": true
+}

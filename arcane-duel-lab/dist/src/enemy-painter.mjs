@@ -1,7 +1,8 @@
+import {drawBossWarning} from './realm-hud-art.mjs';
 import {ENEMIES} from './enemy-roster.mjs';
 import {loadMinionFx,minionWindup,minionEffect,minionProjectile,minionPoisonPool} from './minion-fx-painter.mjs';
 import {drawEnemyGroundWarning,drawEnemyLava} from './enemy-ground-art.mjs';
-import {enemyAnimationFrame,enemyCastOrigin} from './enemy-simulation.mjs';
+import {enemyAnimationFrame,enemyAnimationBlend,enemyCastOrigin} from './enemy-simulation.mjs';
 import {BossFxPainter,loadBossEffects} from './boss-fx-painter.mjs';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const COLORS={venom:'#b9e66d',web:'#d2b7f5',claw:'#fa9c86',slash:'#d1edbc',sonic:'#e7a4d5',rock:'#c9bda4',stone:'#c8d2b7',lava:'#ffae59',ice:'#b6ecff',lightning:'#ffe4a1',star:'#cbb5ff',bone:'#e6dabc',root:'#badc84',heal:'#bffb98',feather:'#c8a6ef',chain:'#b4d5de',eggHatch:'#d4b3eb'};
@@ -39,30 +40,24 @@ export class EnemyPainter{
   const d=ENEMIES[e.enemyKind],img=this.assets.enemies?.[e.enemyKind];if(!d||!img)return;
   const dead=e.hp<=0,age=dead?w.time-(e.diedAt??w.time):0;if(age>2.1)return;
   const x=e.prevX+(e.x-e.prevX)*alpha,y=e.prevY+(e.y-e.prevY)*alpha;
-  const meta=this.assets.enemyArt?.[e.enemyKind];let frame=enemyAnimationFrame(e,w.time);
-  const semantic=['walk','walk','walk','walk','walk','walk','idle','windup','melee','recover','ranged','summon','hurt','stagger','dying','dead'][frame];
-  const override=meta?.frameOverrides?.[semantic==='recover'?'recovery':semantic]??meta?.frameOverrides?.[frame];
-  if(Array.isArray(override))frame=override[frame<6?frame%override.length:0];else if(Number.isInteger(override))frame=override;
-  const cw=img.width/4,ch=img.height/4,rect=meta?.frames?.[frame]?.rect||[(frame%4)*cw,Math.floor(frame/4)*ch,cw,ch];
-  const footFrame=d.flying&&frame<7?6:frame,foot=meta?.frames?.[footFrame]?.bottomNormalized??.96;
+  const meta=this.assets.enemyArt?.[e.enemyKind],blend=enemyAnimationBlend(e,w.time),cw=img.width/4,ch=img.height/4;
   let size=e.visual/.76,bob=d.flying?Math.sin(w.fxTime*3+e.id.length)*3:Math.abs(e.vx)<12?Math.sin(w.fxTime*2)*.7:0;
   c.save();c.globalAlpha=dead?clamp(1-(age-.65)/1.45,0,1):1;
   if(!d.flying)ellipse(c,x,y+1,e.w*1.15,5,'#02070c66');
   c.translate(x,y+bob);c.scale(e.face,1);
   if(e.bornAt){const birth=clamp((w.time-e.bornAt)/.45,0,1);c.globalAlpha*=birth;c.translate(0,(1-birth)*12);c.scale(.7+.3*birth,.7+.3*birth);}
   if(!dead&&e.hit>.04)c.filter='brightness(1.65) saturate(.5)';
-  const source=meta?.frames?.[frame]?.spriteRect||rect;
-  c.drawImage(img,...source,-size/2+(source[0]-rect[0])/rect[2]*size,-size*foot+(source[1]-rect[1])/rect[3]*size,source[2]/rect[2]*size,source[3]/rect[3]*size);
+  for(const [raw,opacity]of [[blend.a,1-blend.mix],[blend.b,blend.mix]]){if(opacity<=.001)continue;let frame=raw;const semantic=['walk','walk','walk','walk','walk','walk','idle','windup','melee','recover','ranged','summon','hurt','stagger','dying','dead'][frame],override=meta?.frameOverrides?.[semantic==='recover'?'recovery':semantic]??meta?.frameOverrides?.[frame];if(Array.isArray(override))frame=override[frame<6?frame%override.length:0];else if(Number.isInteger(override))frame=override;const rect=meta?.frames?.[frame]?.rect||[(frame%4)*cw,Math.floor(frame/4)*ch,cw,ch],footFrame=d.flying&&frame<7?6:frame,foot=meta?.frames?.[footFrame]?.bottomNormalized??.96,source=meta?.frames?.[frame]?.spriteRect||rect;c.save();c.globalAlpha*=opacity;c.drawImage(img,...source,-size/2+(source[0]-rect[0])/rect[2]*size,-size*foot+(source[1]-rect[1])/rect[3]*size,source[2]/rect[2]*size,source[3]/rect[3]*size);c.restore();}
   c.restore();
   if(!dead&&e.ai?.passiveUntil>w.time){glow(c,x,y-e.h*.6,60,COLORS.heal,.2);for(let i=0;i<7;i++){const t=(w.time*.6+i/7)%1;ellipse(c,x+Math.sin(i*2.4)*30*(1-t),y-e.h*.5-t*65,2.5,4,COLORS.heal);}}
   this.health(w,e);this.telegraph(w,e);
  }
  telegraph(w,e){
-  const a=e.ai?.attack,s=a?.plan.steps[a.index];if(!s||e.hp<=0||a.age>=s.windup)return;
+  const a=e.ai?.attack,s=a?.plan.steps[a.index];if(!s||e.hp<=0||a.waitingLink||a.age>=s.windup)return;
   const c=this.c,p=a.age/s.windup,color=COLORS[s.style]||'#f7ca88';
   c.save();c.lineWidth=2;c.setLineDash([5,6]);
   if(s.type==='melee'||s.type==='dash'){
-   const reach=s.reach*(e.attackScale??e.scale),xx=e.x+e.face*(reach*.5);ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.18));ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.7),true);
+   const reach=s.reach*(e.attackScale??e.scale),xx=e.x+e.face*(reach*.5);if(!ENEMIES[e.enemyKind]?.boss||!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:xx,y:e.y,radius:reach*.58,progress:p,color})){ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.18));ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.7),true);}
    c.setLineDash([]);const y=e.y-e.h*.58;glow(c,e.x+e.face*e.w,y,25+p*12,color,.25+p*.2);
    line(c,[[e.x+e.face*e.w,y],[e.x+e.face*(e.w+24+p*12),y-3]],color,2);
   }else if(s.type==='projectile'){
@@ -88,7 +83,7 @@ export class EnemyPainter{
   const c=this.c;for(const z of w.enemyZones||[]){const age=w.time-z.created,p=clamp(age/z.delay,0,1),active=age>=z.delay,color=COLORS[z.style]||COLORS.star;
    c.save();const fade=clamp((z.delay+z.life-age)*2,0,1);c.globalAlpha=fade;
    if(minionPoisonPool(c,this.assets,w,z)){c.restore();continue;}
-   if(!active){if(!drawEnemyGroundWarning(c,this.assets,{style:z.style,x:z.x,y:z.y,radius:z.radius,progress:p,clock:w.fxTime})){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);}this.bossEffects.falling(w,z);}
+   if(!active){if(ENEMIES[z.enemyKind]?.boss&&drawBossWarning(c,this.assets,{bossId:z.enemyKind,x:z.x,y:z.y,radius:z.radius,progress:p,color})){}else if(!drawEnemyGroundWarning(c,this.assets,{style:z.style,x:z.x,y:z.y,radius:z.radius,progress:p,clock:w.fxTime})){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);}this.bossEffects.falling(w,z);}
    else if(this.bossEffects.zone(w,z)||z.style==='lava'&&drawEnemyLava(c,this.assets.campaignPainter?.art,z.x,z.y,z.radius,age-z.delay)){c.restore();continue;}else{
     glow(c,z.x,z.y-6,z.radius*1.15,color,.18);ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.25));ellipse(c,z.x,z.y-2,z.radius,14,rgba(color,.7),true,1.5);
     if(z.style==='lava'){

@@ -1,0 +1,447 @@
+{
+  "file": "hero-cursors-v1.png",
+  "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-6bcfac77-6e31-4f47-ba0c-8ab767b4600c.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "bytes": 1446990,
+  "sha256": "6093fe505fd9f75bb419f520801ec9b814b2d7cb09560a43d2b1d401b9572d06",
+  "sourceSha256": "6093fe505fd9f75bb419f520801ec9b814b2d7cb09560a43d2b1d401b9572d06",
+  "alphaExtrema": [
+    0,
+    254
+  ],
+  "alphaZero": 1356585,
+  "alphaOneToEight": 117143,
+  "alphaOver16": 97101,
+  "frames": [
+    {
+      "hero": "fire",
+      "plannedCell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          157,
+          149,
+          239,
+          236
+        ],
+        "16": [
+          157,
+          149,
+          239,
+          236
+        ],
+        "32": [
+          158,
+          150,
+          237,
+          234
+        ],
+        "64": [
+          158,
+          150,
+          237,
+          234
+        ],
+        "128": [
+          158,
+          150,
+          236,
+          234
+        ]
+      },
+      "sourceRect": [
+        153,
+        145,
+        247,
+        244
+      ],
+      "center": [
+        276,
+        267
+      ],
+      "pivot": [
+        276,
+        267
+      ],
+      "pivotLocal": [
+        123,
+        122
+      ],
+      "outerRadius16": 129.46814279968643,
+      "outerRadius128": 128.40560735419618,
+      "clearCenterRadius16": 48.79549159502341,
+      "safeHollowCircle": [
+        276,
+        267,
+        46
+      ],
+      "safeHollowAlphaMax": 1,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 84.7113148753606,
+      "materialLumaP95": 179.04219999999998
+    },
+    {
+      "hero": "nature",
+      "plannedCell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          634,
+          140,
+          260,
+          254
+        ],
+        "16": [
+          634,
+          140,
+          260,
+          253
+        ],
+        "32": [
+          635,
+          141,
+          259,
+          252
+        ],
+        "64": [
+          635,
+          141,
+          259,
+          252
+        ],
+        "128": [
+          635,
+          141,
+          258,
+          251
+        ]
+      },
+      "sourceRect": [
+        630,
+        136,
+        268,
+        261
+      ],
+      "center": [
+        766,
+        267
+      ],
+      "pivot": [
+        766,
+        267
+      ],
+      "pivotLocal": [
+        136,
+        131
+      ],
+      "outerRadius16": 133.9589489358587,
+      "outerRadius128": 132.9812016790343,
+      "clearCenterRadius16": 67.1863081289633,
+      "safeHollowCircle": [
+        766,
+        267,
+        65
+      ],
+      "safeHollowAlphaMax": 1,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 87.17693066649788,
+      "materialLumaP95": 138.6932
+    },
+    {
+      "hero": "frost",
+      "plannedCell": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          1129,
+          120,
+          262,
+          290
+        ],
+        "16": [
+          1129,
+          120,
+          262,
+          290
+        ],
+        "32": [
+          1129,
+          120,
+          262,
+          290
+        ],
+        "64": [
+          1130,
+          121,
+          260,
+          288
+        ],
+        "128": [
+          1130,
+          121,
+          260,
+          288
+        ]
+      },
+      "sourceRect": [
+        1125,
+        116,
+        270,
+        298
+      ],
+      "center": [
+        1262,
+        266
+      ],
+      "pivot": [
+        1262,
+        266
+      ],
+      "pivotLocal": [
+        137,
+        150
+      ],
+      "outerRadius16": 151.23822268196622,
+      "outerRadius128": 150.3595690337,
+      "clearCenterRadius16": 57.0087712549569,
+      "safeHollowCircle": [
+        1262,
+        266,
+        55
+      ],
+      "safeHollowAlphaMax": 1,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 105.90403068703249,
+      "materialLumaP95": 202.54099999999997
+    },
+    {
+      "hero": "lightning",
+      "plannedCell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          150,
+          656,
+          252,
+          246
+        ],
+        "16": [
+          150,
+          656,
+          252,
+          246
+        ],
+        "32": [
+          150,
+          656,
+          252,
+          246
+        ],
+        "64": [
+          151,
+          656,
+          251,
+          245
+        ],
+        "128": [
+          151,
+          657,
+          250,
+          244
+        ]
+      },
+      "sourceRect": [
+        146,
+        652,
+        260,
+        254
+      ],
+      "center": [
+        276,
+        779
+      ],
+      "pivot": [
+        276,
+        779
+      ],
+      "pivotLocal": [
+        130,
+        127
+      ],
+      "outerRadius16": 141.9929575718458,
+      "outerRadius128": 140.5844941663198,
+      "clearCenterRadius16": 60.07495318350236,
+      "safeHollowCircle": [
+        276,
+        779,
+        58
+      ],
+      "safeHollowAlphaMax": 1,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 98.50131484162895,
+      "materialLumaP95": 208.016
+    },
+    {
+      "hero": "shadow",
+      "plannedCell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          633,
+          649,
+          267,
+          257
+        ],
+        "16": [
+          633,
+          649,
+          267,
+          257
+        ],
+        "32": [
+          633,
+          649,
+          267,
+          257
+        ],
+        "64": [
+          634,
+          649,
+          265,
+          256
+        ],
+        "128": [
+          634,
+          650,
+          265,
+          255
+        ]
+      },
+      "sourceRect": [
+        629,
+        645,
+        275,
+        265
+      ],
+      "center": [
+        767,
+        779
+      ],
+      "pivot": [
+        767,
+        779
+      ],
+      "pivotLocal": [
+        138,
+        134
+      ],
+      "outerRadius16": 140.6627171641441,
+      "outerRadius128": 139.84634424968,
+      "clearCenterRadius16": 54.57105459856901,
+      "safeHollowCircle": [
+        767,
+        779,
+        52
+      ],
+      "safeHollowAlphaMax": 2,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 71.49618410958904,
+      "materialLumaP95": 123.7826
+    },
+    {
+      "hero": "star",
+      "plannedCell": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "alphaBounds": {
+        "8": [
+          1126,
+          638,
+          261,
+          260
+        ],
+        "16": [
+          1127,
+          638,
+          260,
+          260
+        ],
+        "32": [
+          1127,
+          638,
+          259,
+          260
+        ],
+        "64": [
+          1127,
+          639,
+          259,
+          259
+        ],
+        "128": [
+          1128,
+          640,
+          257,
+          257
+        ]
+      },
+      "sourceRect": [
+        1123,
+        634,
+        268,
+        268
+      ],
+      "center": [
+        1262,
+        779
+      ],
+      "pivot": [
+        1262,
+        779
+      ],
+      "pivotLocal": [
+        139,
+        145
+      ],
+      "outerRadius16": 143.27944723511465,
+      "outerRadius128": 142.00352108310554,
+      "clearCenterRadius16": 72.0,
+      "safeHollowCircle": [
+        1262,
+        779,
+        70
+      ],
+      "safeHollowAlphaMax": 1,
+      "centerPixelAlpha": 0,
+      "materialLumaMean": 91.56248965590937,
+      "materialLumaP95": 180.944
+    }
+  ]
+}

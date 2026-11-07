@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "sourceBytesUnchanged": true,
+  "sha256": "6093fe505fd9f75bb419f520801ec9b814b2d7cb09560a43d2b1d401b9572d06",
+  "sourceSha256": "6093fe505fd9f75bb419f520801ec9b814b2d7cb09560a43d2b1d401b9572d06",
+  "size": [
+    1536,
+    1024
+  ],
+  "frameCount": 6,
+  "elementErrors": [],
+  "uncoveredMaterialOver16Pixels": 0,
+  "multiplyCoveredMaterialOver16Pixels": 0
+}

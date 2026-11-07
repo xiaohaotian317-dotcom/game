@@ -1,0 +1,1513 @@
+{
+  "task": "T41/T42 isolated browser HUD QA",
+  "formalSavesTouched": false,
+  "isolatedContext": true,
+  "fixture": "Production campaign.html and actual clicks; full ownership/clear/artifacts/pet localStorage fixture, Renderer.draw prototype observes world, encounter triggers disabled at spawn. Not natural campaign completion.",
+  "checks": [
+    {
+      "name": "pet locked without mirror 5",
+      "passed": true
+    },
+    {
+      "name": "pet locked without mirror 7",
+      "passed": true
+    },
+    {
+      "name": "pet locked without mirror 9",
+      "passed": true
+    },
+    {
+      "name": "pet locked before own clear 5",
+      "passed": true
+    },
+    {
+      "name": "pet locked before own clear 7",
+      "passed": true
+    },
+    {
+      "name": "pet locked before own clear 9",
+      "passed": true
+    },
+    {
+      "name": "pet unlocked 5",
+      "passed": true
+    },
+    {
+      "name": "pet actual entry reaches pet team",
+      "passed": true
+    },
+    {
+      "name": "pet unlocked 7",
+      "passed": true
+    },
+    {
+      "name": "pet unlocked 9",
+      "passed": true
+    },
+    {
+      "name": "stage title 1",
+      "passed": true,
+      "id": 1,
+      "text": "霜牙雪岭",
+      "frame": "14 0 740 177",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.34375,
+        "y": 41.34375,
+        "width": 128.234375,
+        "height": 15.796875,
+        "right": 703.578125,
+        "bottom": 57.140625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 62.1875,
+        "right": 770,
+        "bottom": 77.1875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "artifact below party and pet",
+      "passed": true,
+      "party": {
+        "x": 25,
+        "y": 15,
+        "width": 463.375,
+        "height": 114,
+        "right": 488.375,
+        "bottom": 129,
+        "display": "flex",
+        "visible": true
+      },
+      "pet": {
+        "x": 32,
+        "y": 136,
+        "width": 274,
+        "height": 96,
+        "right": 306,
+        "bottom": 232,
+        "display": "flex",
+        "visible": true
+      },
+      "artifact": {
+        "x": 30,
+        "y": 239,
+        "width": 300,
+        "height": 57.5625,
+        "right": 330,
+        "bottom": 296.5625,
+        "display": "block",
+        "visible": true
+      },
+      "buttons": [
+        {
+          "text": "角色",
+          "width": 48,
+          "height": 62,
+          "x": 889,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "背包",
+          "width": 48,
+          "height": 62,
+          "x": 942,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "技能",
+          "width": 48,
+          "height": 62,
+          "x": 995,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "法器",
+          "width": 48,
+          "height": 62,
+          "x": 1048,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "灵宠",
+          "width": 48,
+          "height": 62,
+          "x": 1101,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "锻造炉",
+          "width": 48,
+          "height": 62,
+          "x": 1154,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        },
+        {
+          "text": "每日任务",
+          "width": 48,
+          "height": 62,
+          "x": 1207,
+          "y": 15,
+          "svg": false,
+          "disabled": false
+        }
+      ],
+      "icons": [
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        },
+        {
+          "width": 38,
+          "height": 38
+        }
+      ]
+    },
+    {
+      "0": {
+        "width": 38,
+        "height": 38
+      },
+      "1": {
+        "width": 38,
+        "height": 38
+      },
+      "2": {
+        "width": 38,
+        "height": 38
+      },
+      "3": {
+        "width": 38,
+        "height": 38
+      },
+      "4": {
+        "width": 38,
+        "height": 38
+      },
+      "5": {
+        "width": 38,
+        "height": 38
+      },
+      "6": {
+        "width": 38,
+        "height": 38
+      },
+      "name": "toolbar enlarged at 1280",
+      "passed": true
+    },
+    {
+      "name": "mirror upgrade debits 150 and increases level",
+      "passed": true
+    },
+    {
+      "name": "mirror upgrade does not heal",
+      "passed": true,
+      "before": {
+        "hp": 40,
+        "mp": 22,
+        "maxHp": 145,
+        "coins": 50000,
+        "level": 1
+      },
+      "after": {
+        "hp": 40,
+        "mp": 22,
+        "maxHp": 150,
+        "coins": 49850,
+        "level": 2
+      }
+    },
+    {
+      "0": {
+        "text": "卸下收妖镜",
+        "width": 108,
+        "height": 42,
+        "x": 583.265625,
+        "y": 513.28125,
+        "svg": true,
+        "disabled": false
+      },
+      "1": {
+        "text": "升级法宝 · 150金币",
+        "width": 350,
+        "height": 42,
+        "x": 583.265625,
+        "y": 597.28125,
+        "svg": true,
+        "disabled": false
+      },
+      "name": "artifact upgrade/equip use artwork",
+      "passed": true
+    },
+    {
+      "name": "artifact per-level white instruction absent",
+      "passed": true
+    },
+    {
+      "name": "sword upgrade debits and does not heal",
+      "passed": true,
+      "before": {
+        "hp": 40,
+        "mp": 22,
+        "coins": 49850,
+        "level": 1
+      },
+      "after": {
+        "hp": 40,
+        "mp": 22,
+        "coins": 49700,
+        "level": 2
+      }
+    },
+    {
+      "name": "sword HUD uses separate frame",
+      "passed": true
+    },
+    {
+      "0": {
+        "text": "强化225 金币",
+        "width": 245,
+        "height": 38,
+        "x": 361,
+        "y": 492.53125,
+        "svg": true,
+        "disabled": false
+      },
+      "1": {
+        "text": "学习650 金币",
+        "width": 245,
+        "height": 38,
+        "x": 925,
+        "y": 492.53125,
+        "svg": true,
+        "disabled": false
+      },
+      "2": {
+        "text": "学习650 金币",
+        "width": 245,
+        "height": 38,
+        "x": 361,
+        "y": 787.46875,
+        "svg": true,
+        "disabled": false
+      },
+      "3": {
+        "text": "学习1,300 金币",
+        "width": 245,
+        "height": 38,
+        "x": 925,
+        "y": 787.46875,
+        "svg": true,
+        "disabled": false
+      },
+      "4": {
+        "text": "学习1,300 金币",
+        "width": 245,
+        "height": 38,
+        "x": 361,
+        "y": 1082.40625,
+        "svg": true,
+        "disabled": false
+      },
+      "5": {
+        "text": "学习2,600 金币",
+        "width": 245,
+        "height": 38,
+        "x": 925,
+        "y": 1082.40625,
+        "svg": true,
+        "disabled": false
+      },
+      "name": "active skill buttons use artwork and practical height",
+      "passed": true
+    },
+    {
+      "0": {
+        "text": "修习下一级 · 450金币",
+        "width": 386,
+        "height": 38,
+        "x": 226,
+        "y": 573.59375,
+        "svg": true,
+        "disabled": false
+      },
+      "1": {
+        "text": "修习下一级 · 450金币",
+        "width": 386,
+        "height": 38,
+        "x": 798,
+        "y": 573.59375,
+        "svg": true,
+        "disabled": false
+      },
+      "2": {
+        "text": "修习下一级 · 450金币",
+        "width": 386,
+        "height": 38,
+        "x": 226,
+        "y": 847.59375,
+        "svg": true,
+        "disabled": false
+      },
+      "3": {
+        "text": "修习下一级 · 450金币",
+        "width": 386,
+        "height": 38,
+        "x": 798,
+        "y": 847.59375,
+        "svg": true,
+        "disabled": false
+      },
+      "name": "passive buttons use artwork and practical height",
+      "passed": true
+    },
+    {
+      "name": "passive actual click spends advertised starting 450",
+      "passed": true
+    },
+    {
+      "name": "artifact stack retained at 1000",
+      "passed": true
+    },
+    {
+      "name": "stage title 2",
+      "passed": true,
+      "id": 2,
+      "text": "熔炉火境",
+      "frame": "788 1 729 174",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 574.1875,
+        "y": 41.375,
+        "width": 130.171875,
+        "height": 16.03125,
+        "right": 704.359375,
+        "bottom": 57.40625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 62.046875,
+        "right": 770,
+        "bottom": 77.046875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 3",
+      "passed": true,
+      "id": 3,
+      "text": "千鳞毒沼",
+      "frame": "18 175 733 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 574.546875,
+        "y": 39.828125,
+        "width": 129.453125,
+        "height": 15.953125,
+        "right": 704,
+        "bottom": 55.78125,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.296875,
+        "right": 770,
+        "bottom": 75.296875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 4",
+      "passed": true,
+      "id": 4,
+      "text": "织梦蛛巢",
+      "frame": "781 176 743 169",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.421875,
+        "y": 39.125,
+        "width": 127.71875,
+        "height": 15.734375,
+        "right": 703.140625,
+        "bottom": 54.859375,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.125,
+        "right": 770,
+        "bottom": 74.125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 5",
+      "passed": true,
+      "id": 5,
+      "text": "荆冠密林",
+      "frame": "13 344 742 169",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.515625,
+        "y": 39.859375,
+        "width": 127.890625,
+        "height": 15.75,
+        "right": 703.40625,
+        "bottom": 55.609375,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.203125,
+        "right": 770,
+        "bottom": 74.203125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 6",
+      "passed": true,
+      "id": 6,
+      "text": "断钟石庭",
+      "frame": "771 344 762 168",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 577.203125,
+        "y": 39.21875,
+        "width": 124.53125,
+        "height": 15.34375,
+        "right": 701.734375,
+        "bottom": 54.5625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 57.3125,
+        "right": 770,
+        "bottom": 72.3125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 7",
+      "passed": true,
+      "id": 7,
+      "text": "赤尾沙陵",
+      "frame": "12 511 745 171",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.609375,
+        "y": 40.8125,
+        "width": 127.375,
+        "height": 15.703125,
+        "right": 702.984375,
+        "bottom": 56.515625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.671875,
+        "right": 770,
+        "bottom": 74.671875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 8",
+      "passed": true,
+      "id": 8,
+      "text": "血月回廊",
+      "frame": "774 512 757 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 576.625,
+        "y": 40.0625,
+        "width": 125.359375,
+        "height": 15.4375,
+        "right": 701.984375,
+        "bottom": 55.5,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 58.375,
+        "right": 770,
+        "bottom": 73.375,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 9",
+      "passed": true,
+      "id": 9,
+      "text": "白骨王城",
+      "frame": "15 681 738 173",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.171875,
+        "y": 41.0625,
+        "width": 128.578125,
+        "height": 15.84375,
+        "right": 703.75,
+        "bottom": 56.90625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.9375,
+        "right": 770,
+        "bottom": 75.9375,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 10",
+      "passed": true,
+      "id": 10,
+      "text": "雷骨天脊",
+      "frame": "778 681 749 173",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.953125,
+        "y": 40.671875,
+        "width": 126.6875,
+        "height": 15.609375,
+        "right": 702.640625,
+        "bottom": 56.28125,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.046875,
+        "right": 770,
+        "bottom": 75.046875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "name": "stage title 11",
+      "passed": true,
+      "id": 11,
+      "text": "无面星渊",
+      "frame": "11 854 746 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.859375,
+        "y": 39.734375,
+        "width": 127.203125,
+        "height": 15.671875,
+        "right": 703.0625,
+        "bottom": 55.40625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.234375,
+        "right": 770,
+        "bottom": 74.234375,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "0": {
+        "src": "assets/realm-hud/stage-title-plates-v1.png",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      "1": {
+        "src": "assets/realm-hud/artifact-pet-controls-v2.png",
+        "loaded": true,
+        "width": 1254,
+        "height": 1254
+      },
+      "2": {
+        "src": "assets/archive-ui/archive-controls-v1.png",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      "name": "all HUD originals decode",
+      "passed": true
+    },
+    {
+      "name": "no page exceptions",
+      "passed": true
+    },
+    {
+      "name": "no failed HTTP resources",
+      "passed": true
+    },
+    {
+      "name": "no unexpected failed requests",
+      "passed": true
+    }
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "text": "霜牙雪岭",
+      "frame": "14 0 740 177",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.34375,
+        "y": 41.34375,
+        "width": 128.234375,
+        "height": 15.796875,
+        "right": 703.578125,
+        "bottom": 57.140625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 62.1875,
+        "right": 770,
+        "bottom": 77.1875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 2,
+      "text": "熔炉火境",
+      "frame": "788 1 729 174",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 574.1875,
+        "y": 41.375,
+        "width": 130.171875,
+        "height": 16.03125,
+        "right": 704.359375,
+        "bottom": 57.40625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 62.046875,
+        "right": 770,
+        "bottom": 77.046875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 3,
+      "text": "千鳞毒沼",
+      "frame": "18 175 733 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 574.546875,
+        "y": 39.828125,
+        "width": 129.453125,
+        "height": 15.953125,
+        "right": 704,
+        "bottom": 55.78125,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.296875,
+        "right": 770,
+        "bottom": 75.296875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 4,
+      "text": "织梦蛛巢",
+      "frame": "781 176 743 169",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.421875,
+        "y": 39.125,
+        "width": 127.71875,
+        "height": 15.734375,
+        "right": 703.140625,
+        "bottom": 54.859375,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.125,
+        "right": 770,
+        "bottom": 74.125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 5,
+      "text": "荆冠密林",
+      "frame": "13 344 742 169",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.515625,
+        "y": 39.859375,
+        "width": 127.890625,
+        "height": 15.75,
+        "right": 703.40625,
+        "bottom": 55.609375,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.203125,
+        "right": 770,
+        "bottom": 74.203125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 6,
+      "text": "断钟石庭",
+      "frame": "771 344 762 168",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 577.203125,
+        "y": 39.21875,
+        "width": 124.53125,
+        "height": 15.34375,
+        "right": 701.734375,
+        "bottom": 54.5625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 57.3125,
+        "right": 770,
+        "bottom": 72.3125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 7,
+      "text": "赤尾沙陵",
+      "frame": "12 511 745 171",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.609375,
+        "y": 40.8125,
+        "width": 127.375,
+        "height": 15.703125,
+        "right": 702.984375,
+        "bottom": 56.515625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.671875,
+        "right": 770,
+        "bottom": 74.671875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 8,
+      "text": "血月回廊",
+      "frame": "774 512 757 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 576.625,
+        "y": 40.0625,
+        "width": 125.359375,
+        "height": 15.4375,
+        "right": 701.984375,
+        "bottom": 55.5,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 58.375,
+        "right": 770,
+        "bottom": 73.375,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 9,
+      "text": "白骨王城",
+      "frame": "15 681 738 173",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.171875,
+        "y": 41.0625,
+        "width": 128.578125,
+        "height": 15.84375,
+        "right": 703.75,
+        "bottom": 56.90625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.9375,
+        "right": 770,
+        "bottom": 75.9375,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 10,
+      "text": "雷骨天脊",
+      "frame": "778 681 749 173",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.953125,
+        "y": 40.671875,
+        "width": 126.6875,
+        "height": 15.609375,
+        "right": 702.640625,
+        "bottom": 56.28125,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 60.046875,
+        "right": 770,
+        "bottom": 75.046875,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "id": 11,
+      "text": "无面星渊",
+      "frame": "11 854 746 170",
+      "image": "assets/realm-hud/stage-title-plates-v1.png",
+      "title": {
+        "x": 575.859375,
+        "y": 39.734375,
+        "width": 127.203125,
+        "height": 15.671875,
+        "right": 703.0625,
+        "bottom": 55.40625,
+        "display": "grid",
+        "visible": true
+      },
+      "plate": {
+        "x": 510,
+        "y": 15,
+        "width": 260,
+        "height": 59.234375,
+        "right": 770,
+        "bottom": 74.234375,
+        "display": "block",
+        "visible": true
+      }
+    }
+  ],
+  "petEntries": [
+    {
+      "stage": 5,
+      "state": "missing-mirror",
+      "disabled": true,
+      "text": "灵宠副本 · 苔角灵鹿\n需先通关本关并拾取收妖镜\n进入副本 ›",
+      "pet": "mossdeer",
+      "frame": "107 499 1038 250",
+      "rect": {
+        "x": 578.171875,
+        "y": 562.1875,
+        "width": 532.8125,
+        "height": 128.3125,
+        "right": 1110.984375,
+        "bottom": 690.5,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "stage": 7,
+      "state": "missing-mirror",
+      "disabled": true,
+      "text": "灵宠副本 · 烬羽狮鹫\n需先通关本关并拾取收妖镜\n进入副本 ›",
+      "pet": "emberwing",
+      "frame": "84 756 1068 239",
+      "rect": {
+        "x": 578.171875,
+        "y": 571.1875,
+        "width": 532.8125,
+        "height": 119.21875,
+        "right": 1110.984375,
+        "bottom": 690.40625,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "stage": 9,
+      "state": "missing-mirror",
+      "disabled": true,
+      "text": "灵宠副本 · 月霜灵狐\n需先通关本关并拾取收妖镜\n进入副本 ›",
+      "pet": "frostfox",
+      "frame": "90 1000 1060 246",
+      "rect": {
+        "x": 578.171875,
+        "y": 566.1875,
+        "width": 532.8125,
+        "height": 123.640625,
+        "right": 1110.984375,
+        "bottom": 689.828125,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "stage": 5,
+      "state": "own-stage-not-cleared",
+      "disabled": true
+    },
+    {
+      "stage": 7,
+      "state": "own-stage-not-cleared",
+      "disabled": true
+    },
+    {
+      "stage": 9,
+      "state": "own-stage-not-cleared",
+      "disabled": true
+    },
+    {
+      "stage": 5,
+      "state": "unlocked",
+      "disabled": false,
+      "text": "灵宠副本 · 苔角灵鹿\n已解锁\n进入副本 ›",
+      "pet": "mossdeer",
+      "frame": "107 499 1038 250",
+      "portraitStyle": "background-image: url(\"assets/pets/pet-portraits-v2.png\"); background-size: 376.758% 376.758%; background-position: 5.97942% 93.9663%; aspect-ratio: 1 / 1;",
+      "rect": {
+        "x": 578.171875,
+        "y": 562.1875,
+        "width": 532.8125,
+        "height": 128.3125,
+        "right": 1110.984375,
+        "bottom": 690.5,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "stage": 7,
+      "state": "unlocked",
+      "disabled": false,
+      "text": "灵宠副本 · 烬羽狮鹫\n已解锁\n进入副本 ›",
+      "pet": "emberwing",
+      "frame": "84 756 1068 239",
+      "portraitStyle": "background-image: url(\"assets/pets/pet-portraits-v2.png\"); background-size: 382.854% 382.854%; background-position: 5.85346% 49.1905%; aspect-ratio: 1 / 1;",
+      "rect": {
+        "x": 578.171875,
+        "y": 571.1875,
+        "width": 532.8125,
+        "height": 119.21875,
+        "right": 1110.984375,
+        "bottom": 690.40625,
+        "display": "block",
+        "visible": true
+      }
+    },
+    {
+      "stage": 9,
+      "state": "unlocked",
+      "disabled": false,
+      "text": "灵宠副本 · 月霜灵狐\n已解锁\n进入副本 ›",
+      "pet": "frostfox",
+      "frame": "90 1000 1060 246",
+      "portraitStyle": "background-image: url(\"assets/pets/pet-portraits-v2.png\"); background-size: 367.397% 367.397%; background-position: 5.46084% 5.51562%; aspect-ratio: 1 / 1;",
+      "rect": {
+        "x": 578.171875,
+        "y": 566.1875,
+        "width": 532.8125,
+        "height": 123.640625,
+        "right": 1110.984375,
+        "bottom": 689.828125,
+        "display": "block",
+        "visible": true
+      }
+    }
+  ],
+  "artifactTransactions": [
+    {
+      "id": "mirror",
+      "before": {
+        "hp": 40,
+        "mp": 22,
+        "maxHp": 145,
+        "coins": 50000,
+        "level": 1
+      },
+      "after": {
+        "hp": 40,
+        "mp": 22,
+        "maxHp": 150,
+        "coins": 49850,
+        "level": 2
+      },
+      "buttons": [
+        {
+          "text": "卸下收妖镜",
+          "width": 108,
+          "height": 42,
+          "x": 583.265625,
+          "y": 513.28125,
+          "svg": true,
+          "disabled": false
+        },
+        {
+          "text": "升级法宝 · 150金币",
+          "width": 350,
+          "height": 42,
+          "x": 583.265625,
+          "y": 597.28125,
+          "svg": true,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": "sword",
+      "before": {
+        "hp": 40,
+        "mp": 22,
+        "coins": 49850,
+        "level": 1
+      },
+      "after": {
+        "hp": 40,
+        "mp": 22,
+        "coins": 49700,
+        "level": 2
+      }
+    }
+  ],
+  "screenshots": [
+    "t41-pet-5-locked.jpg",
+    "t41-pet-7-locked.jpg",
+    "t41-pet-9-locked.jpg",
+    "t41-pet-5-unlocked.jpg",
+    "t41-pet-7-unlocked.jpg",
+    "t41-pet-9-unlocked.jpg",
+    "t41-stage-1-hud.jpg",
+    "t41-mirror-pet-stack.jpg",
+    "t41-artifact-mirror-before.jpg",
+    "t41-artifact-mirror-after.jpg",
+    "t41-artifact-sword-panel.jpg",
+    "t41-sword-pet-stack.jpg",
+    "t41-skills-active.jpg",
+    "t41-skills-passive.jpg",
+    "t41-hud-1000.jpg",
+    "t41-stage-6-hud.jpg",
+    "t41-stage-11-hud.jpg"
+  ],
+  "errors": [],
+  "failedResources": [],
+  "requestFailures": [],
+  "responses": 1030,
+  "hudLayout": {
+    "party": {
+      "x": 25,
+      "y": 15,
+      "width": 463.375,
+      "height": 114,
+      "right": 488.375,
+      "bottom": 129,
+      "display": "flex",
+      "visible": true
+    },
+    "pet": {
+      "x": 32,
+      "y": 136,
+      "width": 274,
+      "height": 96,
+      "right": 306,
+      "bottom": 232,
+      "display": "flex",
+      "visible": true
+    },
+    "artifact": {
+      "x": 30,
+      "y": 239,
+      "width": 300,
+      "height": 57.5625,
+      "right": 330,
+      "bottom": 296.5625,
+      "display": "block",
+      "visible": true
+    },
+    "buttons": [
+      {
+        "text": "角色",
+        "width": 48,
+        "height": 62,
+        "x": 889,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "背包",
+        "width": 48,
+        "height": 62,
+        "x": 942,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "技能",
+        "width": 48,
+        "height": 62,
+        "x": 995,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "法器",
+        "width": 48,
+        "height": 62,
+        "x": 1048,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "灵宠",
+        "width": 48,
+        "height": 62,
+        "x": 1101,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "锻造炉",
+        "width": 48,
+        "height": 62,
+        "x": 1154,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      },
+      {
+        "text": "每日任务",
+        "width": 48,
+        "height": 62,
+        "x": 1207,
+        "y": 15,
+        "svg": false,
+        "disabled": false
+      }
+    ],
+    "icons": [
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      },
+      {
+        "width": 38,
+        "height": 38
+      }
+    ]
+  },
+  "activeButtons": [
+    {
+      "text": "强化225 金币",
+      "width": 245,
+      "height": 38,
+      "x": 361,
+      "y": 492.53125,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "学习650 金币",
+      "width": 245,
+      "height": 38,
+      "x": 925,
+      "y": 492.53125,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "学习650 金币",
+      "width": 245,
+      "height": 38,
+      "x": 361,
+      "y": 787.46875,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "学习1,300 金币",
+      "width": 245,
+      "height": 38,
+      "x": 925,
+      "y": 787.46875,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "学习1,300 金币",
+      "width": 245,
+      "height": 38,
+      "x": 361,
+      "y": 1082.40625,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "学习2,600 金币",
+      "width": 245,
+      "height": 38,
+      "x": 925,
+      "y": 1082.40625,
+      "svg": true,
+      "disabled": false
+    }
+  ],
+  "passiveButtons": [
+    {
+      "text": "修习下一级 · 450金币",
+      "width": 386,
+      "height": 38,
+      "x": 226,
+      "y": 573.59375,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "修习下一级 · 450金币",
+      "width": 386,
+      "height": 38,
+      "x": 798,
+      "y": 573.59375,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "修习下一级 · 450金币",
+      "width": 386,
+      "height": 38,
+      "x": 226,
+      "y": 847.59375,
+      "svg": true,
+      "disabled": false
+    },
+    {
+      "text": "修习下一级 · 450金币",
+      "width": 386,
+      "height": 38,
+      "x": 798,
+      "y": 847.59375,
+      "svg": true,
+      "disabled": false
+    }
+  ],
+  "hud1000": {
+    "party": {
+      "x": 25,
+      "y": 15,
+      "width": 415.40625,
+      "height": 103,
+      "right": 440.40625,
+      "bottom": 118,
+      "display": "flex",
+      "visible": true
+    },
+    "pet": {
+      "x": 32,
+      "y": 125,
+      "width": 274,
+      "height": 96,
+      "right": 306,
+      "bottom": 221,
+      "display": "flex",
+      "visible": true
+    },
+    "artifact": {
+      "x": 30,
+      "y": 228,
+      "width": 282,
+      "height": 59.234375,
+      "right": 312,
+      "bottom": 287.234375,
+      "display": "block",
+      "visible": true
+    },
+    "title": {
+      "x": 385,
+      "y": 127,
+      "width": 230,
+      "height": 55,
+      "right": 615,
+      "bottom": 182,
+      "display": "block",
+      "visible": true
+    },
+    "toolbar": {
+      "x": 641,
+      "y": 15,
+      "width": 334,
+      "height": 57,
+      "right": 975,
+      "bottom": 72,
+      "display": "flex",
+      "visible": true
+    }
+  },
+  "imageLoadCheck": [
+    {
+      "src": "assets/realm-hud/stage-title-plates-v1.png",
+      "loaded": true,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "assets/realm-hud/artifact-pet-controls-v2.png",
+      "loaded": true,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "assets/archive-ui/archive-controls-v1.png",
+      "loaded": true,
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "passed": true,
+  "finishedAt": "2026-11-07T10:10:18.418Z"
+}

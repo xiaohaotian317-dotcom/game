@@ -1,5 +1,5 @@
 import {SOLO_HEROES,SOLO_SKILLS,skillById} from './campaign-growth-data.mjs';
-export const DUEL_RULESET='duel-skill6-v2';
+export const DUEL_RULESET='duel-skill6-v3';
 export const DUEL_SKILL_KEYS=Object.freeze(['q','e','r']);
 export function defaultDuelLoadout(hero){if(!SOLO_HEROES.includes(hero))throw Error('未知英雄');return Object.fromEntries(DUEL_SKILL_KEYS.map((key,row)=>[key,`${hero}-${row}-0`]));}
 export function validateDuelLoadout(hero,input){if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).length!==3||DUEL_SKILL_KEYS.some(k=>!Object.hasOwn(input,k)))throw Error('请在F、E、R每行各选择一个技能');

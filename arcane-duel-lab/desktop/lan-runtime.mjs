@@ -2,7 +2,7 @@ import os from 'node:os';
 import {createGameServer} from '../server/http-server.mjs';
 import {localDatabase} from '../server/local-db.mjs';
 
-export const LAN_PROTOCOL='arcane-duel-lan-v1',LAN_BUILD='campaign16-combat',LAN_PORT=44174;
+export const LAN_PROTOCOL='arcane-duel-lan-v1',LAN_BUILD='campaign17-combat',LAN_PORT=44174;
 export function privateIPv4(ip){
   const p=String(ip).split('.');if(p.length!==4||p.some(v=>!/^\d{1,3}$/.test(v)||Number(v)>255))return false;
   const [a,b]=p.map(Number);return a===10||a===127||(a===172&&b>=16&&b<=31)||(a===192&&b===168)||(a===169&&b===254);

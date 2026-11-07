@@ -1,9 +1,10 @@
+import {loadBossWarningArt} from './realm-hud-art.mjs';
 import {ENEMIES} from './enemy-roster.mjs';
 import {enemyCastOrigin} from './enemy-simulation.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export async function loadBossEffects(ids,assets,progress=()=>{}){
  const bosses=[...new Set(ids)].filter(id=>ENEMIES[id]?.boss);if(!bosses.length)return;
- assets.bossFx||={};assets.bossFxPending||={};
+ await loadBossWarningArt(assets);assets.bossFx||={};assets.bossFxPending||={};
  if(!assets.bossFxMeta){await (assets.bossMetaPending||=(async()=>{try{const r=await fetch('assets/boss-fx/bounds-v2.json');if(!r.ok)throw new Error('首领特效信息载入失败');assets.bossFxMeta=await r.json();}catch(e){delete assets.bossMetaPending;throw e;}})());}progress();
  await Promise.all(bosses.map(async id=>{if(!assets.bossFx[id])await (assets.bossFxPending[id]||=(async()=>{try{const img=new Image();await new Promise((yes,no)=>{img.onload=yes;img.onerror=()=>no(new Error('首领特效载入失败：'+ENEMIES[id].name));img.src='assets/boss-fx/'+assets.bossFxMeta.units[id].file;});assets.bossFx[id]=img;}catch(e){delete assets.bossFxPending[id];throw e;}})());progress();}));
 }
@@ -15,7 +16,7 @@ export function drawFxFrame(c,img,meta,frame,x,y,size,{ground=false,angle=0,alph
 export class BossFxPainter{
  constructor(c,assets){this.c=c;this.a=assets;}
  sprite(id,frame,x,y,size,options={}){const a=Math.floor(frame),mix=frame-a,base=Math.floor(a/4)*4,img=this.a.bossFx?.[id],meta=this.a.bossFxMeta?.units?.[id],alpha=options.alpha??1;const drawn=drawFxFrame(this.c,img,meta,a,x,y,size,{...options,alpha:alpha*(1-mix)});if(mix>.001)drawFxFrame(this.c,img,meta,base+(a-base+1)%4,x,y,size,{...options,alpha:alpha*mix});return drawn;}
- windup(w,e){const a=e.ai?.attack,s=a?.plan.steps[a.index];if(!ENEMIES[e.enemyKind]?.boss||!s||a.age>=s.windup)return false;const p=clamp(a.age/s.windup,0,1),o=enemyCastOrigin(w,e);return this.sprite(e.enemyKind,Math.min(3,p*3),o.x,o.y,100+p*38,{alpha:.6+p*.35});}
+ windup(w,e){const a=e.ai?.attack,s=a?.plan.steps[a.index];if(!ENEMIES[e.enemyKind]?.boss||!s||a.waitingLink||a.age>=s.windup)return false;const p=clamp(a.age/s.windup,0,1),o=enemyCastOrigin(w,e);return this.sprite(e.enemyKind,Math.min(3,p*3),o.x,o.y,100+p*38,{alpha:.6+p*.35});}
  projectile(w,s){const id=s.enemyKind||w.targets.find(e=>e.id===s.enemySource)?.enemyKind;if(!ENEMIES[id]?.boss)return false;const angle=Math.atan2(s.vy,s.vx);return this.sprite(id,4+s.age*14%4,s.x,s.y,96,{angle});}
  effect(w,e){if(e.kind!=='enemyVfx'||!ENEMIES[e.enemyKind]?.boss)return false;const p=clamp(e.age/e.duration,0,1),ground=!!e.ground&&!e.melee;return this.sprite(e.enemyKind,(ground?12:8)+Math.min(3,p*3),e.x,e.y,Math.max(95,Math.min(390,(e.radius||75)*2.1)),{alpha:Math.min(1,(1-p)*4),ground,angle:e.melee&&e.face<0?Math.PI:0});}
  zone(w,z){if(!ENEMIES[z.enemyKind]?.boss)return false;const age=w.time-z.created,active=age>=z.delay;if(!active)return false;const life=z.life||1,fade=Math.min(1,(z.delay+life-age)*3);return this.sprite(z.enemyKind,12+age*8%4,z.x,z.y,Math.min(390,z.radius*2.5),{ground:true,alpha:Math.max(0,fade)});}

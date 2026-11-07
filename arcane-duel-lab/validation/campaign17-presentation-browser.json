@@ -1,0 +1,1040 @@
+{
+  "task": "T42 production presentation QA",
+  "url": "http://127.0.0.1:4222/__qa/presentation",
+  "isolatedContext": true,
+  "formalSavesTouched": false,
+  "originalImagesModified": false,
+  "screenshots": [
+    "t42-motion.jpg",
+    "t42-cursors.jpg",
+    "t42-warnings.jpg",
+    "t42-portal.jpg",
+    "t42-damage.jpg",
+    "t42-scene.jpg"
+  ],
+  "motion": [
+    {
+      "hero": "fire",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 18.8220261027926,
+          "kneeSpan": 15.044732216083204,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 42.99999999999999
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 24.43169093900123,
+          "kneeSpan": 17.070576012206605,
+          "bones": [
+            {
+              "thigh": 40.99999999999999,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 42.99999999999999
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 30.9224893356316,
+          "kneeSpan": 21.65049262287407,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43.00000000000001
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hero": "nature",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 19.18915976232678,
+          "kneeSpan": 15.77764378533589,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43.00000000000001
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 26.22778938865428,
+          "kneeSpan": 18.223130894974084,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 31.771604097619296,
+          "kneeSpan": 22.63551498279913,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hero": "frost",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 16.508949044047498,
+          "kneeSpan": 12.880488677776377,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43.00000000000001
+            },
+            {
+              "thigh": 41,
+              "shin": 43.00000000000001
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 18.373476067658736,
+          "kneeSpan": 12.215208611333104,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 26.65058082721329,
+          "kneeSpan": 18.14242729524934,
+          "bones": [
+            {
+              "thigh": 40.99999999999999,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hero": "lightning",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 18.91366987056553,
+          "kneeSpan": 15.91832334153781,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43.00000000000001
+            },
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43.00000000000001
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 38.85955788268431,
+          "kneeSpan": 22.11456916341228,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 41.00000000000001,
+              "shin": 42.99999999999999
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 39.594367939046606,
+          "kneeSpan": 25.61508932934156,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hero": "shadow",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 15.30500169383011,
+          "kneeSpan": 13.934357647062757,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 40.99999999999999,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 26.882478330239284,
+          "kneeSpan": 17.700028870242136,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 41.00000000000001,
+              "shin": 42.99999999999999
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 30.041950391444715,
+          "kneeSpan": 22.34106695342348,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hero": "star",
+      "samples": [
+        {
+          "age": 0.10833333333333367,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 16.79029467139752,
+          "kneeSpan": 13.377437506323794,
+          "bones": [
+            {
+              "thigh": 41.00000000000001,
+              "shin": 42.99999999999999
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.26666666666666705,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 17.502318489252445,
+          "kneeSpan": 12.607202035856885,
+          "bones": [
+            {
+              "thigh": 41,
+              "shin": 43
+            },
+            {
+              "thigh": 41,
+              "shin": 43
+            }
+          ]
+        },
+        {
+          "age": 0.4166666666666665,
+          "jumps": 2,
+          "grounded": false,
+          "footSpan": 26.022614106210092,
+          "kneeSpan": 18.40168144665876,
+          "bones": [
+            {
+              "thigh": 40.99999999999999,
+              "shin": 42.99999999999999
+            },
+            {
+              "thigh": 40.99999999999999,
+              "shin": 42.99999999999999
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cursors": [
+    {
+      "hero": "fire",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        153,
+        145,
+        247,
+        244
+      ],
+      "pivotLocal": [
+        123,
+        122
+      ],
+      "outerRadius": 129.4681,
+      "scale": 0.10041083479250874,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 88,
+        "y": 38,
+        "width": 24,
+        "height": 24,
+        "maxAlpha": 157
+      },
+      "alpha": 0.62,
+      "expectedAlpha": 0.62
+    },
+    {
+      "hero": "nature",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        630,
+        136,
+        268,
+        261
+      ],
+      "pivotLocal": [
+        136,
+        131
+      ],
+      "outerRadius": 133.9589,
+      "scale": 0.0970446905730041,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 87,
+        "y": 38,
+        "width": 26,
+        "height": 24,
+        "maxAlpha": 178
+      },
+      "alpha": 0.7,
+      "expectedAlpha": 0.7
+    },
+    {
+      "hero": "frost",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        1125,
+        116,
+        270,
+        298
+      ],
+      "pivotLocal": [
+        137,
+        150
+      ],
+      "outerRadius": 151.2382,
+      "scale": 0.08595711929922466,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 89,
+        "y": 37,
+        "width": 22,
+        "height": 25,
+        "maxAlpha": 139
+      },
+      "alpha": 0.55,
+      "expectedAlpha": 0.55
+    },
+    {
+      "hero": "lightning",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        146,
+        652,
+        260,
+        254
+      ],
+      "pivotLocal": [
+        130,
+        127
+      ],
+      "outerRadius": 141.993,
+      "scale": 0.09155380899058405,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 88,
+        "y": 39,
+        "width": 24,
+        "height": 22,
+        "maxAlpha": 147
+      },
+      "alpha": 0.58,
+      "expectedAlpha": 0.58
+    },
+    {
+      "hero": "shadow",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        629,
+        645,
+        275,
+        265
+      ],
+      "pivotLocal": [
+        138,
+        134
+      ],
+      "outerRadius": 140.6627,
+      "scale": 0.09241966775840361,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 87,
+        "y": 38,
+        "width": 25,
+        "height": 24,
+        "maxAlpha": 188
+      },
+      "alpha": 0.74,
+      "expectedAlpha": 0.74
+    },
+    {
+      "hero": "star",
+      "source": "http://127.0.0.1:4222/assets/aim-cursors/hero-cursors-v1.png",
+      "rect": [
+        1123,
+        634,
+        268,
+        268
+      ],
+      "pivotLocal": [
+        139,
+        145
+      ],
+      "outerRadius": 143.2794,
+      "scale": 0.0907318149015141,
+      "hotspot": [
+        100,
+        50
+      ],
+      "expectedHotspot": [
+        100,
+        50
+      ],
+      "bounds": {
+        "x": 88,
+        "y": 38,
+        "width": 23,
+        "height": 23,
+        "maxAlpha": 156
+      },
+      "alpha": 0.62,
+      "expectedAlpha": 0.62
+    }
+  ],
+  "warnings": [
+    {
+      "boss": "B01",
+      "radius": 100,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        22,
+        524,
+        728,
+        162
+      ],
+      "expectedRect": [
+        22,
+        524,
+        728,
+        162
+      ],
+      "destination": [
+        189.09784765684628,
+        119.7265251482119,
+        222.25614410013736,
+        61.962134251290884
+      ],
+      "centerLocal": [
+        363.26,
+        79.14999999999998
+      ],
+      "groundContactYLocal": 79.14999999999998,
+      "scaleX": 0.3052969012364524,
+      "scaleY": 0.3824823101931536
+    },
+    {
+      "boss": "B02",
+      "radius": 125,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        789,
+        188,
+        730,
+        161
+      ],
+      "expectedRect": [
+        789,
+        188,
+        730,
+        161
+      ],
+      "destination": [
+        159.65601133284065,
+        114.00485436893206,
+        281.0113328406011,
+        78.15533980582525
+      ],
+      "centerLocal": [
+        364.5799999999999,
+        74.14999999999998
+      ],
+      "groundContactYLocal": 74.14999999999998,
+      "scaleX": 0.38494703128849467,
+      "scaleY": 0.4854368932038835
+    },
+    {
+      "boss": "B03",
+      "radius": 150,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        785,
+        527,
+        737,
+        151
+      ],
+      "expectedRect": [
+        785,
+        527,
+        737,
+        151
+      ],
+      "destination": [
+        133.46000723850892,
+        105.76612108065471,
+        333.42381469417296,
+        89.33149280220863
+      ],
+      "centerLocal": [
+        368.1199999999999,
+        74.76999999999998
+      ],
+      "groundContactYLocal": 74.76999999999998,
+      "scaleX": 0.4524068041983351,
+      "scaleY": 0.5915992900808519
+    },
+    {
+      "boss": "B04",
+      "radius": 100,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        23,
+        189,
+        717,
+        160
+      ],
+      "expectedRect": [
+        23,
+        189,
+        717,
+        160
+      ],
+      "destination": [
+        189.38244185329137,
+        120.77129700690713,
+        221.1734221728669,
+        61.39677666922487
+      ],
+      "centerLocal": [
+        358.6,
+        76.17000000000002
+      ],
+      "groundContactYLocal": 76.17000000000002,
+      "scaleX": 0.30847060275155774,
+      "scaleY": 0.3837298541826554
+    },
+    {
+      "boss": "B05",
+      "radius": 125,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        797,
+        2,
+        712,
+        176
+      ],
+      "expectedRect": [
+        797,
+        2,
+        712,
+        176
+      ],
+      "destination": [
+        161.32915926860412,
+        109.88926899531869,
+        277.2326573840451,
+        79.22218221101909
+      ],
+      "centerLocal": [
+        356.1400000000001,
+        89.11
+      ],
+      "groundContactYLocal": 89.11,
+      "scaleX": 0.38937170980905217,
+      "scaleY": 0.45012603528988115
+    },
+    {
+      "boss": "B06",
+      "radius": 150,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        799,
+        348,
+        708,
+        167
+      ],
+      "expectedRect": [
+        799,
+        348,
+        708,
+        167
+      ],
+      "destination": [
+        131.79611650485433,
+        100.97376093294463,
+        336.950314106225,
+        97.37609329446063
+      ],
+      "centerLocal": [
+        353.43000000000006,
+        84.07999999999998
+      ],
+      "groundContactYLocal": 84.07999999999998,
+      "scaleX": 0.4759185227489054,
+      "scaleY": 0.5830903790087463
+    },
+    {
+      "boss": "B07",
+      "radius": 100,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        21,
+        354,
+        720,
+        160
+      ],
+      "expectedRect": [
+        21,
+        354,
+        720,
+        160
+      ],
+      "destination": [
+        182.95660036166367,
+        119.62749615975423,
+        232.4980625161457,
+        61.44393241167435
+      ],
+      "centerLocal": [
+        362.46,
+        79.08999999999997
+      ],
+      "groundContactYLocal": 79.08999999999997,
+      "scaleX": 0.32291397571686903,
+      "scaleY": 0.3840245775729647
+    },
+    {
+      "boss": "B08",
+      "radius": 125,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        21,
+        3,
+        726,
+        175
+      ],
+      "expectedRect": [
+        21,
+        3,
+        726,
+        175
+      ],
+      "destination": [
+        160.14859115851777,
+        110.10082493125572,
+        279.76447376533696,
+        80.20164986251146
+      ],
+      "centerLocal": [
+        362.92,
+        87.06
+      ],
+      "groundContactYLocal": 87.06,
+      "scaleX": 0.3853505148282878,
+      "scaleY": 0.4582951420714941
+    },
+    {
+      "boss": "B09",
+      "radius": 150,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        793,
+        694,
+        716,
+        161
+      ],
+      "expectedRect": [
+        793,
+        694,
+        716,
+        161
+      ],
+      "destination": [
+        133.3260903305913,
+        107.43647656691135,
+        333.38506906720477,
+        90.9090909090909
+      ],
+      "centerLocal": [
+        357.96000000000004,
+        75.38
+      ],
+      "groundContactYLocal": 75.38,
+      "scaleX": 0.46562160484246473,
+      "scaleY": 0.564652738565782
+    },
+    {
+      "boss": "B10",
+      "radius": 100,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        28,
+        853,
+        711,
+        170
+      ],
+      "expectedRect": [
+        28,
+        853,
+        711,
+        170
+      ],
+      "destination": [
+        187.86872806601536,
+        117.20489538097115,
+        224.79370198235796,
+        67.11409395973155
+      ],
+      "centerLocal": [
+        354.66,
+        83.07000000000005
+      ],
+      "groundContactYLocal": 83.07000000000005,
+      "scaleX": 0.31616554427898447,
+      "scaleY": 0.3947887879984209
+    },
+    {
+      "boss": "B11",
+      "radius": 125,
+      "groundY": 150,
+      "source": "http://127.0.0.1:4222/assets/realm-hud/boss-warning-rings-v1.png",
+      "sourceRect": [
+        21,
+        685,
+        723,
+        168
+      ],
+      "expectedRect": [
+        21,
+        685,
+        723,
+        168
+      ],
+      "destination": [
+        159.87263610758612,
+        109.97409326424872,
+        279.72082082391904,
+        80.59873344847438
+      ],
+      "centerLocal": [
+        362.19,
+        83.42999999999995
+      ],
+      "groundContactYLocal": 83.42999999999995,
+      "scaleX": 0.38688910210777183,
+      "scaleY": 0.47975436576472846
+    }
+  ],
+  "portal": {
+    "seconds": 6,
+    "frames": 181,
+    "clipAntialiasMarginPx": 2,
+    "minChangedInnerPixels": 3509,
+    "maxChangedInnerPixels": 4168,
+    "outsideEllipseChangedPixels": 0,
+    "outsideExamples": [],
+    "meanInnerRGBRange": [
+      101.02615965480044,
+      101.39281161125821
+    ],
+    "samples": [
+      {
+        "time": 0,
+        "frameSource": {
+          "source": "http://127.0.0.1:4222/assets/boss-fx/portal-v2.png",
+          "args": [
+            364,
+            324,
+            215,
+            303,
+            -89.29712460063898,
+            -250.8626198083067,
+            178.59424920127796,
+            251.69329073482427
+          ],
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            160,
+            330
+          ],
+          "alpha": 1
+        }
+      },
+      {
+        "time": 3,
+        "frameSource": {
+          "source": "http://127.0.0.1:4222/assets/boss-fx/portal-v2.png",
+          "args": [
+            364,
+            324,
+            215,
+            303,
+            -89.29712460063898,
+            -250.8626198083067,
+            178.59424920127796,
+            251.69329073482427
+          ],
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            160,
+            330
+          ],
+          "alpha": 1
+        }
+      },
+      {
+        "time": 6,
+        "frameSource": {
+          "source": "http://127.0.0.1:4222/assets/boss-fx/portal-v2.png",
+          "args": [
+            364,
+            324,
+            215,
+            303,
+            -89.29712460063898,
+            -250.8626198083067,
+            178.59424920127796,
+            251.69329073482427
+          ],
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            160,
+            330
+          ],
+          "alpha": 1
+        }
+      }
+    ],
+    "expectedFrame": 5,
+    "expectedSpriteRect": [
+      364,
+      324,
+      215,
+      303
+    ]
+  },
+  "damage": [
+    {
+      "x": 300,
+      "y": 140,
+      "text": "29",
+      "color": "#ff9b4c",
+      "size": 22,
+      "age": 0.1,
+      "duration": 1.1,
+      "lane": 0,
+      "damage": true,
+      "critical": false,
+      "splash": false,
+      "incoming": false,
+      "actualHpLost": 29
+    },
+    {
+      "x": 300,
+      "y": 140,
+      "text": "43",
+      "color": "#ff9b4c",
+      "size": 22,
+      "age": 0.1,
+      "duration": 1.1,
+      "lane": 0,
+      "damage": true,
+      "critical": true,
+      "splash": false,
+      "incoming": false,
+      "actualHpLost": 43
+    }
+  ],
+  "finite": {
+    "calls": 16105,
+    "invalid": []
+  },
+  "boundary": [
+    "QA constructed worlds and telegraphs",
+    "No PNG pixels modified",
+    "No formal save read/write",
+    "No natural stage completion or human art acceptance",
+    "Portal uses 181 production renders over six seconds of simulation clock"
+  ],
+  "passed": true,
+  "errors": [],
+  "failedResources": [],
+  "resourceCount": 167
+}

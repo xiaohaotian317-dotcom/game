@@ -2,9 +2,10 @@ export const SOLO_HEROES=['fire','nature','frost','lightning','shadow','star'];
 export const SOLO_NAMES={fire:'焰术师',nature:'森灵',frost:'霜语者',lightning:'雷行者',shadow:'影刃',star:'星术师'};
 export const SOLO_KEY='arcane-solo-growth-v1';
 export const BASE_STATS={fire:[120,65],nature:[125,70],frost:[112,75],lightning:[130,60],shadow:[115,60],star:[118,80]};
-export const SOLO_SKILL_MANA=[8.91,14.85,28.215];
+export const SOLO_SKILL_MANA=[9,15,28];
+export const SOLO_BASIC_SPLASH=Object.freeze({radius:65,ratio:.35,maxTargets:3});
 export const SOLO_KILL_XP=9;
-export const SOLO_BALANCE={health:1.15,attack:1.2,recoveryDropChance:.035*1.15};
+export const SOLO_BALANCE={health:1.15*.9,mana:1.05,attack:1.2,recoveryDropChance:.035*1.15};
 export const LEVEL_GROWTH={health:.05,mana:.04,attack:.02};
 export const XP_STEPS=[80,100,140,180,240,320,420,550,700,900,1150,1450];
 export const xpNeeded=level=>XP_STEPS[level-1]??Math.round(1450+(level-12)*350+(level-12)**2*65);
@@ -15,9 +16,9 @@ const baseNames={fire:['爆燃印','烬星火球','陨火天坠'],nature:['缚�
 const newNames={fire:['火焰龙卷','熔核穿刺','炼狱炎龙'],nature:['荆棘扇刃','花语治愈','荆棘王庭'],frost:['寒锋扇刃','冰晶追猎','极夜冰凰'],lightning:['裂雷重拳','雷链回旋','雷神战躯'],shadow:['月弧飞刃','鸦影伏杀','千鸦寂灭'],star:['星陨散射','星辉回溯','星海审判']};
 const newDescriptions={fire:['在指定台面卷起火焰旋涡，持续灼烧附近敌人。','朝瞄准方向射出熔核长枪，贯穿多个目标，基础伤害36。','炎龙掠过指定区域，爆裂火焰分次冲击。'],nature:['向前展开三枚荆棘叶刃，命中短暂缠绕。','绽放花环，回复少量生命并清除一次毒火持续伤害。','荆棘王庭在台面生长，连续伤害并束缚敌人。'],frost:['扇形射出三枚寒锋，减速命中的敌人。','冰晶沿瞄准方向追猎，命中后扩散寒霜。','冰凰降临指定台面，多段冰雪攻击并延长减速。'],lightning:['向瞄准方向轰出远程雷拳，命中炸开分叉电弧。','雷链向前穿刺，在敌群中产生连锁雷击。','进入雷神战躯，雷场持续攻击并减伤，释放后3秒普攻速度提高100%。'],shadow:['投出三道月弧飞刃，削弱敌群。','向指定方向远距疾袭，留下鸦影并在终点斩击。','群鸦围绕目标区域交替斩落，连续打击。'],star:['凝成单枚高速星核，命中内塌缩后引发星环冲击。','星辉回流，少量回复生命并获得临时小护盾。','星海法阵分次坠落星芒，覆盖指定台面。']};
 const baseDescriptions={fire:['指定台面延迟爆燃，附加持续灼烧。','高速定向火球，离屏前再按同键原位引爆。','岩质陨石穿过上层平台，砸向光标下方台面。'],nature:['沿地面蔓生荆棘并缠绕敌人。','召唤自动追敌的木灵鹿，再按同键发出角跃令。','从指定台面长出古树，治疗附近玩家并提供枝台。'],frost:['寒霜环低伤减速，再按同键激起寒潮。','放置可以折射弹体的霜镜。','冰雪领域在指定台面持续压制敌人。'],lightning:['贯雷突刺穿过普通敌弹，命中可衍生折雷。','磁跃快速移动并留下雷电反馈。','突至目标身前，以重雷完成贴身爆发。'],shadow:['向前突刺增伤，留下完整鸦影并掷出三柄飞刀。','闪现后可在窗口内返影，不恢复损失生命。','追击斩击并释放近身暗影连击。'],star:['引力井牵制敌人，可再按同键斥星。','打开折跃通道，利用位移改变交战位置。','星环在指定区域坍缩，多段引力伤害。']};
-export const SOLO_SKILLS=Object.fromEntries(SOLO_HEROES.map(hero=>[hero,[0,1,2].flatMap(row=>[0,1].map(column=>({id:`${hero}-${row}-${column}`,hero,row,column,key:['q','e','r'][row],name:(column?newNames:baseNames)[hero][row],description:(column?newDescriptions:baseDescriptions)[hero][row],cost:column?[500,1000,2000][row]:[0,500,1000][row],mana:SOLO_SKILL_MANA[row],cd:column?[5.2,7.2,14][row]:null})))]));
+export const SOLO_SKILLS=Object.fromEntries(SOLO_HEROES.map(hero=>[hero,[0,1,2].flatMap(row=>[0,1].map(column=>({id:`${hero}-${row}-${column}`,hero,row,column,key:['q','e','r'][row],name:(column?newNames:baseNames)[hero][row],description:(column?newDescriptions:baseDescriptions)[hero][row],cost:column?[650,1300,2600][row]:[0,650,1300][row],mana:SOLO_SKILL_MANA[row],cd:column?[5.2,7.2,14][row]:null})))]));
 export const skillById=id=>SOLO_SKILLS[String(id).split('-')[0]]?.find(s=>s.id===id);
-export const upgradeCosts=[[150,250,400,600,900],[200,350,550,800,1100],[300,500,800,1200,1800]];
+export const upgradeCosts=[[225,375,600,900,1350],[300,525,825,1200,1650],[450,750,1200,1800,2700]];
 export const ITEMS={
  petXpSmall:{name:'小型宠物经验药水',description:'选择一只已捕获灵宠，增加40点经验。不会自动进化，不能给英雄使用。',kind:'petXp',value:40,sell:8,icon:0,sheet:'petXp',color:'#88cdb6'},
  petXpMedium:{name:'中型宠物经验药水',description:'选择一只已捕获灵宠，增加100点经验。5级、10级仍需手动进化。',kind:'petXp',value:100,sell:18,icon:1,sheet:'petXp',color:'#a9dfbe'},

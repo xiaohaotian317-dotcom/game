@@ -1,0 +1,3521 @@
+{
+  "schemaVersion": 1,
+  "task": "T41",
+  "role": "hud_art",
+  "status": "three active atlases generated and measured; pending primary-agent integration/runtime QA and user acceptance",
+  "generator": {
+    "mode": "built-in image_gen",
+    "noPixelEdits": true,
+    "sourcePngBytesPreserved": true,
+    "scriptPolicy": "Only read PNG alpha/components/provenance and write JSON/text. No cropped/repaired PNGs exported."
+  },
+  "coordinateConvention": {
+    "rect": "[x,y,width,height], absolute source PNG pixels",
+    "slice": "[L,T,R,B] relative to sourceRect",
+    "pivotAndCenters": "absolute PNG coordinates plus explicit Local coordinates",
+    "avatarCircle": "[centerX,centerY,radius], absolute source pixels; use existing actual portrait/icon images in this empty opening",
+    "ringGroundContactY": "center of the projected floor ellipse, not its lowest ornamental point"
+  },
+  "assets": {
+    "stage-title-plates-v1.png": {
+      "file": "stage-title-plates-v1.png",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-483f567e-7cb0-457c-9ef6-0250165d4794.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2615608,
+      "sha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+      "sourceSha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaZero": 137287,
+      "alphaOneToEight": 868061,
+      "alphaOver16": 529905,
+      "promptPath": "prompt-stage-title-plates-v1.txt",
+      "originalPngBytesPreserved": true
+    },
+    "artifact-pet-controls-v2.png": {
+      "file": "artifact-pet-controls-v2.png",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-f9980885-97a6-48d8-bead-8f6d18f1fca2.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 1180079,
+      "sha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+      "sourceSha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaZero": 1082148,
+      "alphaOneToEight": 189854,
+      "alphaOver16": 291847,
+      "promptPath": "prompt-artifact-pet-controls-v2.txt",
+      "originalPngBytesPreserved": true
+    },
+    "boss-warning-rings-v1.png": {
+      "file": "boss-warning-rings-v1.png",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-ca8d9453-c04c-4f07-9db4-344a87aaff2c.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2460672,
+      "sha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+      "sourceSha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZero": 449120,
+      "alphaOneToEight": 638837,
+      "alphaOver16": 456480,
+      "promptPath": "prompt-boss-warning-rings-v1.txt",
+      "originalPngBytesPreserved": true
+    }
+  },
+  "rejectedAssets": [
+    {
+      "file": "artifact-pet-controls-v1.png",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-bcd49774-9a4a-4d38-b0b0-160045ba541c.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2225919,
+      "sha256": "8958390ab1ca9ef93dc74ace8f58fa9bd73d98ebf1a136807bb9f862b71efca3",
+      "sourceSha256": "8958390ab1ca9ef93dc74ace8f58fa9bd73d98ebf1a136807bb9f862b71efca3",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZero": 867493,
+      "alphaOneToEight": 257476,
+      "alphaOver16": 436020,
+      "status": "rejected source layout; kept unchanged for provenance",
+      "reason": "Global material bounds overlap between sword/deer and deer/griffin rows; ordinary crop could include a neighboring decoration. Use v2 instead.",
+      "promptPath": "prompt-artifact-pet-controls-v1.txt"
+    }
+  ],
+  "stageTitles": [
+    {
+      "stage": 1,
+      "materialBounds16": [
+        18,
+        4,
+        732,
+        169
+      ],
+      "sourceRect": [
+        14,
+        0,
+        740,
+        177
+      ],
+      "safeRect": [
+        200,
+        75,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 4,
+        "zero": 2,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        14,
+        0,
+        740,
+        177
+      ],
+      "sourceAspectRatio": 4.1807909604519775,
+      "pivot": [
+        384.0,
+        88.5
+      ],
+      "pivotLocal": [
+        370.0,
+        88.5
+      ],
+      "safeRectLocal": [
+        186,
+        75,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.25135135135135134,
+        0.423728813559322,
+        0.49324324324324326,
+        0.2542372881355932
+      ],
+      "textAnchor": [
+        382.5,
+        97.5
+      ],
+      "slice": [
+        205,
+        65,
+        205,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          14,
+          219,
+          549,
+          754
+        ],
+        "y": [
+          0,
+          65,
+          112,
+          177
+        ]
+      },
+      "id": "stage1",
+      "stageId": 1,
+      "theme": "snowWolf",
+      "stageNameForMappingOnly": "霜牙雪岭",
+      "bossId": "B08",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        0,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        112,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            219,
+            0,
+            95.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            0,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            0,
+            95.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            219,
+            112,
+            95.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            112,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            112,
+            95.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 2,
+      "materialBounds16": [
+        792,
+        5,
+        721,
+        166
+      ],
+      "sourceRect": [
+        788,
+        1,
+        729,
+        174
+      ],
+      "safeRect": [
+        968,
+        75,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 579,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        788,
+        1,
+        729,
+        174
+      ],
+      "sourceAspectRatio": 4.189655172413793,
+      "pivot": [
+        1152.5,
+        88.0
+      ],
+      "pivotLocal": [
+        364.5,
+        87.0
+      ],
+      "safeRectLocal": [
+        180,
+        74,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.24691358024691357,
+        0.42528735632183906,
+        0.5006858710562414,
+        0.25862068965517243
+      ],
+      "textAnchor": [
+        1150.5,
+        97.5
+      ],
+      "slice": [
+        190,
+        65,
+        190,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          788,
+          978,
+          1327,
+          1517
+        ],
+        "y": [
+          1,
+          66,
+          110,
+          175
+        ]
+      },
+      "id": "stage2",
+      "stageId": 2,
+      "theme": "forgeBull",
+      "stageNameForMappingOnly": "熔炉火境",
+      "bossId": "B05",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        1082.0,
+        1,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        1082.0,
+        110,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            978,
+            1,
+            104.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            1,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            1,
+            105.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            978,
+            110,
+            104.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            110,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            110,
+            105.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 3,
+      "materialBounds16": [
+        22,
+        179,
+        725,
+        162
+      ],
+      "sourceRect": [
+        18,
+        175,
+        733,
+        170
+      ],
+      "safeRect": [
+        200,
+        245,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 4,
+        "zero": 3,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        18,
+        175,
+        733,
+        170
+      ],
+      "sourceAspectRatio": 4.311764705882353,
+      "pivot": [
+        384.5,
+        260.0
+      ],
+      "pivotLocal": [
+        366.5,
+        85.0
+      ],
+      "safeRectLocal": [
+        182,
+        70,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.24829467939972716,
+        0.4117647058823529,
+        0.4979536152796726,
+        0.2647058823529412
+      ],
+      "textAnchor": [
+        382.5,
+        267.5
+      ],
+      "slice": [
+        185,
+        65,
+        185,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          18,
+          203,
+          566,
+          751
+        ],
+        "y": [
+          175,
+          240,
+          280,
+          345
+        ]
+      },
+      "id": "stage3",
+      "stageId": 3,
+      "theme": "venomSerpent",
+      "stageNameForMappingOnly": "千鳞毒沼",
+      "bossId": "B04",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        175,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        280,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            203,
+            175,
+            111.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            175,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            175,
+            112.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            203,
+            280,
+            111.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            280,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            280,
+            112.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 4,
+      "materialBounds16": [
+        785,
+        180,
+        735,
+        161
+      ],
+      "sourceRect": [
+        781,
+        176,
+        743,
+        169
+      ],
+      "safeRect": [
+        968,
+        245,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 1,
+        "max": 4,
+        "zero": 0,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        781,
+        176,
+        743,
+        169
+      ],
+      "sourceAspectRatio": 4.396449704142012,
+      "pivot": [
+        1152.5,
+        260.5
+      ],
+      "pivotLocal": [
+        371.5,
+        84.5
+      ],
+      "safeRectLocal": [
+        187,
+        69,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.25168236877523553,
+        0.40828402366863903,
+        0.49125168236877526,
+        0.26627218934911245
+      ],
+      "textAnchor": [
+        1150.5,
+        267.5
+      ],
+      "slice": [
+        185,
+        65,
+        185,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          781,
+          966,
+          1339,
+          1524
+        ],
+        "y": [
+          176,
+          241,
+          280,
+          345
+        ]
+      },
+      "id": "stage4",
+      "stageId": 4,
+      "theme": "spiderSilk",
+      "stageNameForMappingOnly": "织梦蛛巢",
+      "bossId": "B02",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        1082.0,
+        176,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        1082.0,
+        280,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            966,
+            176,
+            116.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            176,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            176,
+            117.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            966,
+            280,
+            116.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            280,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            280,
+            117.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 5,
+      "materialBounds16": [
+        17,
+        348,
+        734,
+        161
+      ],
+      "sourceRect": [
+        13,
+        344,
+        742,
+        169
+      ],
+      "safeRect": [
+        200,
+        415,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 7,
+        "zero": 14,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        13,
+        344,
+        742,
+        169
+      ],
+      "sourceAspectRatio": 4.390532544378698,
+      "pivot": [
+        384.0,
+        428.5
+      ],
+      "pivotLocal": [
+        371.0,
+        84.5
+      ],
+      "safeRectLocal": [
+        187,
+        71,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.25202156334231807,
+        0.42011834319526625,
+        0.4919137466307278,
+        0.26627218934911245
+      ],
+      "textAnchor": [
+        382.5,
+        437.5
+      ],
+      "slice": [
+        245,
+        65,
+        245,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          13,
+          258,
+          510,
+          755
+        ],
+        "y": [
+          344,
+          409,
+          448,
+          513
+        ]
+      },
+      "id": "stage5",
+      "stageId": 5,
+      "theme": "ancientTree",
+      "stageNameForMappingOnly": "荆冠密林",
+      "bossId": "B07",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        344,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        448,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            258,
+            344,
+            56.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            344,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            344,
+            56.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            258,
+            448,
+            56.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            448,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            448,
+            56.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 6,
+      "materialBounds16": [
+        775,
+        348,
+        754,
+        160
+      ],
+      "sourceRect": [
+        771,
+        344,
+        762,
+        168
+      ],
+      "safeRect": [
+        968,
+        415,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 4,
+        "zero": 39,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        771,
+        344,
+        762,
+        168
+      ],
+      "sourceAspectRatio": 4.535714285714286,
+      "pivot": [
+        1152.0,
+        428.0
+      ],
+      "pivotLocal": [
+        381.0,
+        84.0
+      ],
+      "safeRectLocal": [
+        197,
+        71,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.2585301837270341,
+        0.4226190476190476,
+        0.479002624671916,
+        0.26785714285714285
+      ],
+      "textAnchor": [
+        1150.5,
+        437.5
+      ],
+      "slice": [
+        205,
+        65,
+        205,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          771,
+          976,
+          1328,
+          1533
+        ],
+        "y": [
+          344,
+          409,
+          447,
+          512
+        ]
+      },
+      "id": "stage6",
+      "stageId": 6,
+      "theme": "gargoyleBell",
+      "stageNameForMappingOnly": "断钟石庭",
+      "bossId": "B06",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        1082.0,
+        344,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        1082.0,
+        447,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            976,
+            344,
+            106.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            344,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            344,
+            106.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            976,
+            447,
+            106.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            447,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            447,
+            106.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 7,
+      "materialBounds16": [
+        16,
+        515,
+        737,
+        163
+      ],
+      "sourceRect": [
+        12,
+        511,
+        745,
+        171
+      ],
+      "safeRect": [
+        200,
+        585,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 5,
+        "zero": 3,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        12,
+        511,
+        745,
+        171
+      ],
+      "sourceAspectRatio": 4.356725146198831,
+      "pivot": [
+        384.5,
+        596.5
+      ],
+      "pivotLocal": [
+        372.5,
+        85.5
+      ],
+      "safeRectLocal": [
+        188,
+        74,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.2523489932885906,
+        0.4327485380116959,
+        0.4899328859060403,
+        0.2631578947368421
+      ],
+      "textAnchor": [
+        382.5,
+        607.5
+      ],
+      "slice": [
+        190,
+        65,
+        190,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          12,
+          202,
+          567,
+          757
+        ],
+        "y": [
+          511,
+          576,
+          617,
+          682
+        ]
+      },
+      "id": "stage7",
+      "stageId": 7,
+      "theme": "sandScorpion",
+      "stageNameForMappingOnly": "赤尾沙陵",
+      "bossId": "B01",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        511,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        617,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            202,
+            511,
+            112.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            511,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            511,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            202,
+            617,
+            112.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            617,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            617,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 8,
+      "materialBounds16": [
+        778,
+        516,
+        749,
+        162
+      ],
+      "sourceRect": [
+        774,
+        512,
+        757,
+        170
+      ],
+      "safeRect": [
+        968,
+        585,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 630,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        774,
+        512,
+        757,
+        170
+      ],
+      "sourceAspectRatio": 4.452941176470588,
+      "pivot": [
+        1152.5,
+        597.0
+      ],
+      "pivotLocal": [
+        378.5,
+        85.0
+      ],
+      "safeRectLocal": [
+        194,
+        73,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.2562747688243065,
+        0.4294117647058823,
+        0.4821664464993395,
+        0.2647058823529412
+      ],
+      "textAnchor": [
+        1150.5,
+        607.5
+      ],
+      "slice": [
+        195,
+        65,
+        195,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          774,
+          969,
+          1336,
+          1531
+        ],
+        "y": [
+          512,
+          577,
+          617,
+          682
+        ]
+      },
+      "id": "stage8",
+      "stageId": 8,
+      "theme": "bloodMoonBat",
+      "stageNameForMappingOnly": "血月回廊",
+      "bossId": "B03",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        1082.0,
+        512,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        1082.0,
+        617,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            969,
+            512,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            512,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            512,
+            114.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            969,
+            617,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            617,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            617,
+            114.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 9,
+      "materialBounds16": [
+        19,
+        685,
+        730,
+        165
+      ],
+      "sourceRect": [
+        15,
+        681,
+        738,
+        173
+      ],
+      "safeRect": [
+        200,
+        755,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 1,
+        "max": 4,
+        "zero": 0,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        15,
+        681,
+        738,
+        173
+      ],
+      "sourceAspectRatio": 4.265895953757226,
+      "pivot": [
+        384.0,
+        767.5
+      ],
+      "pivotLocal": [
+        369.0,
+        86.5
+      ],
+      "safeRectLocal": [
+        185,
+        74,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.2506775067750677,
+        0.4277456647398844,
+        0.494579945799458,
+        0.26011560693641617
+      ],
+      "textAnchor": [
+        382.5,
+        777.5
+      ],
+      "slice": [
+        190,
+        65,
+        190,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          15,
+          205,
+          563,
+          753
+        ],
+        "y": [
+          681,
+          746,
+          789,
+          854
+        ]
+      },
+      "id": "stage9",
+      "stageId": 9,
+      "theme": "silverBone",
+      "stageNameForMappingOnly": "白骨王城",
+      "bossId": "B11",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        681,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        789,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            205,
+            681,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            681,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            681,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            205,
+            789,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            789,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            789,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 10,
+      "materialBounds16": [
+        782,
+        685,
+        741,
+        165
+      ],
+      "sourceRect": [
+        778,
+        681,
+        749,
+        173
+      ],
+      "safeRect": [
+        968,
+        755,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 4,
+        "zero": 196,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        778,
+        681,
+        749,
+        173
+      ],
+      "sourceAspectRatio": 4.329479768786127,
+      "pivot": [
+        1152.5,
+        767.5
+      ],
+      "pivotLocal": [
+        374.5,
+        86.5
+      ],
+      "safeRectLocal": [
+        190,
+        74,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.253671562082777,
+        0.4277456647398844,
+        0.48731642189586116,
+        0.26011560693641617
+      ],
+      "textAnchor": [
+        1150.5,
+        777.5
+      ],
+      "slice": [
+        195,
+        65,
+        195,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          778,
+          973,
+          1332,
+          1527
+        ],
+        "y": [
+          681,
+          746,
+          789,
+          854
+        ]
+      },
+      "id": "stage10",
+      "stageId": 10,
+      "theme": "lightningDragon",
+      "stageNameForMappingOnly": "雷骨天脊",
+      "bossId": "B09",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        1082.0,
+        681,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        1082.0,
+        789,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            973,
+            681,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            681,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            681,
+            110.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            973,
+            789,
+            109.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            1082.0,
+            789,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            1222.0,
+            789,
+            110.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    },
+    {
+      "stage": 11,
+      "materialBounds16": [
+        15,
+        858,
+        738,
+        163
+      ],
+      "sourceRect": [
+        11,
+        854,
+        746,
+        170
+      ],
+      "safeRect": [
+        200,
+        925,
+        365,
+        45
+      ],
+      "safeAlpha": {
+        "min": 1,
+        "max": 4,
+        "zero": 0,
+        "over16": 0,
+        "pixels": 16425
+      },
+      "rect": [
+        11,
+        854,
+        746,
+        170
+      ],
+      "sourceAspectRatio": 4.3882352941176475,
+      "pivot": [
+        384.0,
+        939.0
+      ],
+      "pivotLocal": [
+        373.0,
+        85.0
+      ],
+      "safeRectLocal": [
+        189,
+        71,
+        365,
+        45
+      ],
+      "safeRectRelative": [
+        0.25335120643431636,
+        0.4176470588235294,
+        0.48927613941018766,
+        0.2647058823529412
+      ],
+      "textAnchor": [
+        382.5,
+        947.5
+      ],
+      "slice": [
+        190,
+        65,
+        190,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          11,
+          201,
+          567,
+          757
+        ],
+        "y": [
+          854,
+          919,
+          959,
+          1024
+        ]
+      },
+      "id": "stage11",
+      "stageId": 11,
+      "theme": "astralAbyss",
+      "stageNameForMappingOnly": "无面星渊",
+      "bossId": "B10",
+      "file": "stage-title-plates-v1.png",
+      "crestRect": [
+        314.0,
+        854,
+        140,
+        65
+      ],
+      "lowerCrestRect": [
+        314.0,
+        959,
+        140,
+        65
+      ],
+      "topCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            201,
+            854,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            854,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            854,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "bottomCenterSegments": [
+        {
+          "role": "leftRail",
+          "rect": [
+            201,
+            959,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        },
+        {
+          "role": "crestBand",
+          "rect": [
+            314.0,
+            959,
+            140,
+            65
+          ],
+          "mode": "fixedAspectCenter"
+        },
+        {
+          "role": "rightRail",
+          "rect": [
+            454.0,
+            959,
+            113.0,
+            65
+          ],
+          "mode": "stretchX"
+        }
+      ],
+      "displaySuggestion": {
+        "width": 280,
+        "height": 64,
+        "note": "Keep ornaments proportional. Native plate aspect is within4-5:1; direct contain is preferred unless width variation is needed."
+      }
+    }
+  ],
+  "artifactHud": [
+    {
+      "id": "mirrorHud",
+      "materialBounds16": [
+        149,
+        45,
+        956,
+        177
+      ],
+      "sourceRect": [
+        145,
+        41,
+        964,
+        185
+      ],
+      "safeRect": [
+        390,
+        108,
+        650,
+        46
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 28263,
+        "over16": 0,
+        "pixels": 29900
+      },
+      "avatarCircle": [
+        247,
+        133,
+        54
+      ],
+      "avatarAlpha": {
+        "max": 1,
+        "over16": 0,
+        "pixels": 9145
+      },
+      "rect": [
+        145,
+        41,
+        964,
+        185
+      ],
+      "sourceAspectRatio": 5.210810810810811,
+      "pivot": [
+        627.0,
+        133.5
+      ],
+      "pivotLocal": [
+        482.0,
+        92.5
+      ],
+      "safeRectLocal": [
+        245,
+        67,
+        650,
+        46
+      ],
+      "safeRectRelative": [
+        0.254149377593361,
+        0.3621621621621622,
+        0.6742738589211619,
+        0.24864864864864866
+      ],
+      "textAnchor": [
+        715.0,
+        131.0
+      ],
+      "slice": [
+        250,
+        65,
+        80,
+        65
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          145,
+          395,
+          1029,
+          1109
+        ],
+        "y": [
+          41,
+          106,
+          161,
+          226
+        ]
+      },
+      "file": "artifact-pet-controls-v2.png",
+      "avatarCircleLocal": [
+        102,
+        92,
+        54
+      ],
+      "avatarRect": [
+        193,
+        79,
+        108,
+        108
+      ],
+      "avatarAnchor": [
+        247,
+        133
+      ],
+      "displaySuggestion": {
+        "width": 250,
+        "height": 48
+      },
+      "artifactId": "mirror",
+      "itemType": "mirror"
+    },
+    {
+      "id": "swordHud",
+      "materialBounds16": [
+        124,
+        269,
+        1006,
+        205
+      ],
+      "sourceRect": [
+        120,
+        265,
+        1014,
+        213
+      ],
+      "safeRect": [
+        405,
+        345,
+        650,
+        55
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 32181,
+        "over16": 0,
+        "pixels": 35750
+      },
+      "avatarCircle": [
+        247,
+        374,
+        52
+      ],
+      "avatarAlpha": {
+        "max": 2,
+        "over16": 0,
+        "pixels": 8497
+      },
+      "rect": [
+        120,
+        265,
+        1014,
+        213
+      ],
+      "sourceAspectRatio": 4.76056338028169,
+      "pivot": [
+        627.0,
+        371.5
+      ],
+      "pivotLocal": [
+        507.0,
+        106.5
+      ],
+      "safeRectLocal": [
+        285,
+        80,
+        650,
+        55
+      ],
+      "safeRectRelative": [
+        0.28106508875739644,
+        0.3755868544600939,
+        0.6410256410256411,
+        0.25821596244131456
+      ],
+      "textAnchor": [
+        730.0,
+        372.5
+      ],
+      "slice": [
+        290,
+        75,
+        90,
+        60
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          120,
+          410,
+          1044,
+          1134
+        ],
+        "y": [
+          265,
+          340,
+          418,
+          478
+        ]
+      },
+      "file": "artifact-pet-controls-v2.png",
+      "avatarCircleLocal": [
+        127,
+        109,
+        52
+      ],
+      "avatarRect": [
+        195,
+        322,
+        104,
+        104
+      ],
+      "avatarAnchor": [
+        247,
+        374
+      ],
+      "displaySuggestion": {
+        "width": 250,
+        "height": 53
+      },
+      "artifactId": "sword",
+      "itemType": "skySword"
+    }
+  ],
+  "petEntries": [
+    {
+      "id": "deerEntry",
+      "materialBounds16": [
+        111,
+        503,
+        1030,
+        242
+      ],
+      "sourceRect": [
+        107,
+        499,
+        1038,
+        250
+      ],
+      "safeRect": [
+        420,
+        590,
+        650,
+        80
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 50067,
+        "over16": 0,
+        "pixels": 52000
+      },
+      "avatarCircle": [
+        243,
+        625,
+        76
+      ],
+      "avatarAlpha": {
+        "max": 4,
+        "over16": 0,
+        "pixels": 18125
+      },
+      "rect": [
+        107,
+        499,
+        1038,
+        250
+      ],
+      "sourceAspectRatio": 4.152,
+      "pivot": [
+        626.0,
+        624.0
+      ],
+      "pivotLocal": [
+        519.0,
+        125.0
+      ],
+      "safeRectLocal": [
+        313,
+        91,
+        650,
+        80
+      ],
+      "safeRectRelative": [
+        0.3015414258188825,
+        0.364,
+        0.626204238921002,
+        0.32
+      ],
+      "textAnchor": [
+        745.0,
+        630.0
+      ],
+      "slice": [
+        360,
+        90,
+        120,
+        60
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          107,
+          467,
+          1025,
+          1145
+        ],
+        "y": [
+          499,
+          589,
+          689,
+          749
+        ]
+      },
+      "file": "artifact-pet-controls-v2.png",
+      "avatarCircleLocal": [
+        136,
+        126,
+        76
+      ],
+      "avatarRect": [
+        167,
+        549,
+        152,
+        152
+      ],
+      "avatarAnchor": [
+        243,
+        625
+      ],
+      "displaySuggestion": {
+        "width": 600,
+        "height": 150,
+        "note": "Approx4:1, keep left portrait cap fixed and stretch only long quiet rails."
+      },
+      "petTheme": "deer",
+      "parentStage": 5
+    },
+    {
+      "id": "griffinEntry",
+      "materialBounds16": [
+        88,
+        760,
+        1060,
+        231
+      ],
+      "sourceRect": [
+        84,
+        756,
+        1068,
+        239
+      ],
+      "safeRect": [
+        450,
+        837,
+        610,
+        83
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 50272,
+        "over16": 0,
+        "pixels": 50630
+      },
+      "avatarCircle": [
+        247,
+        882,
+        76
+      ],
+      "avatarAlpha": {
+        "max": 3,
+        "over16": 0,
+        "pixels": 18125
+      },
+      "rect": [
+        84,
+        756,
+        1068,
+        239
+      ],
+      "sourceAspectRatio": 4.468619246861925,
+      "pivot": [
+        618.0,
+        875.5
+      ],
+      "pivotLocal": [
+        534.0,
+        119.5
+      ],
+      "safeRectLocal": [
+        366,
+        81,
+        610,
+        83
+      ],
+      "safeRectRelative": [
+        0.34269662921348315,
+        0.3389121338912134,
+        0.5711610486891385,
+        0.3472803347280335
+      ],
+      "textAnchor": [
+        755.0,
+        878.5
+      ],
+      "slice": [
+        370,
+        80,
+        110,
+        60
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          84,
+          454,
+          1042,
+          1152
+        ],
+        "y": [
+          756,
+          836,
+          935,
+          995
+        ]
+      },
+      "file": "artifact-pet-controls-v2.png",
+      "avatarCircleLocal": [
+        163,
+        126,
+        76
+      ],
+      "avatarRect": [
+        171,
+        806,
+        152,
+        152
+      ],
+      "avatarAnchor": [
+        247,
+        882
+      ],
+      "displaySuggestion": {
+        "width": 600,
+        "height": 150,
+        "note": "Approx4:1, keep left portrait cap fixed and stretch only long quiet rails."
+      },
+      "petTheme": "griffin",
+      "parentStage": 7
+    },
+    {
+      "id": "foxEntry",
+      "materialBounds16": [
+        94,
+        1004,
+        1052,
+        238
+      ],
+      "sourceRect": [
+        90,
+        1000,
+        1060,
+        246
+      ],
+      "safeRect": [
+        415,
+        1089,
+        650,
+        80
+      ],
+      "safeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 46572,
+        "over16": 0,
+        "pixels": 52000
+      },
+      "avatarCircle": [
+        246,
+        1120,
+        64
+      ],
+      "avatarAlpha": {
+        "max": 1,
+        "over16": 0,
+        "pixels": 12853
+      },
+      "rect": [
+        90,
+        1000,
+        1060,
+        246
+      ],
+      "sourceAspectRatio": 4.308943089430894,
+      "pivot": [
+        620.0,
+        1123.0
+      ],
+      "pivotLocal": [
+        530.0,
+        123.0
+      ],
+      "safeRectLocal": [
+        325,
+        89,
+        650,
+        80
+      ],
+      "safeRectRelative": [
+        0.30660377358490565,
+        0.3617886178861789,
+        0.6132075471698113,
+        0.3252032520325203
+      ],
+      "textAnchor": [
+        740.0,
+        1129.0
+      ],
+      "slice": [
+        340,
+        85,
+        110,
+        60
+      ],
+      "sliceOrder": "L,T,R,B; PNG pixels relative to sourceRect",
+      "svgCuts": {
+        "x": [
+          90,
+          430,
+          1040,
+          1150
+        ],
+        "y": [
+          1000,
+          1085,
+          1186,
+          1246
+        ]
+      },
+      "file": "artifact-pet-controls-v2.png",
+      "avatarCircleLocal": [
+        156,
+        120,
+        64
+      ],
+      "avatarRect": [
+        182,
+        1056,
+        128,
+        128
+      ],
+      "avatarAnchor": [
+        246,
+        1120
+      ],
+      "displaySuggestion": {
+        "width": 600,
+        "height": 150,
+        "note": "Approx4:1, keep left portrait cap fixed and stretch only long quiet rails."
+      },
+      "petTheme": "fox",
+      "parentStage": 9
+    }
+  ],
+  "bossWarnings": [
+    {
+      "stage": 1,
+      "materialBounds16": [
+        25,
+        7,
+        718,
+        167
+      ],
+      "sourceRect": [
+        21,
+        3,
+        726,
+        175
+      ],
+      "center": [
+        383.92,
+        90.06
+      ],
+      "groundContactY": 90.06,
+      "radiusX": 324.38,
+      "radiusY": 54.55,
+      "innerSafeRect": [
+        204,
+        75,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 3465,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 324.3839535709381,
+        "verticalSampleCount": 113,
+        "sampleCenterYSpread": [
+          86.09355969321462,
+          93.1179952993964
+        ]
+      },
+      "rect": [
+        21,
+        3,
+        726,
+        175
+      ],
+      "sourceAspectRatio": 4.148571428571429,
+      "pivot": [
+        383.92,
+        90.06
+      ],
+      "pivotLocal": [
+        362.92,
+        87.06
+      ],
+      "id": "B08",
+      "stageId": 1,
+      "bossId": "B08",
+      "theme": "snowWolf",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        362.92,
+        87.06
+      ],
+      "groundContactYLocal": 87.06,
+      "radiusYRatio": 0.1681669646710648,
+      "safeRect": [
+        204,
+        75,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        183,
+        72,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 2,
+      "materialBounds16": [
+        801,
+        6,
+        704,
+        168
+      ],
+      "sourceRect": [
+        797,
+        2,
+        712,
+        176
+      ],
+      "center": [
+        1153.14,
+        91.11
+      ],
+      "groundContactY": 91.11,
+      "radiusX": 321.03,
+      "radiusY": 55.54,
+      "innerSafeRect": [
+        973,
+        76,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 8074,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 321.02783677992903,
+        "verticalSampleCount": 112,
+        "sampleCenterYSpread": [
+          88.98140891120906,
+          93.02445439680838
+        ]
+      },
+      "rect": [
+        797,
+        2,
+        712,
+        176
+      ],
+      "sourceAspectRatio": 4.045454545454546,
+      "pivot": [
+        1153.14,
+        91.11
+      ],
+      "pivotLocal": [
+        356.1400000000001,
+        89.11
+      ],
+      "id": "B05",
+      "stageId": 2,
+      "bossId": "B05",
+      "theme": "forgeBull",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        356.1400000000001,
+        89.11
+      ],
+      "groundContactYLocal": 89.11,
+      "radiusYRatio": 0.17300563810235806,
+      "safeRect": [
+        973,
+        76,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        176,
+        74,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 3,
+      "materialBounds16": [
+        27,
+        193,
+        709,
+        152
+      ],
+      "sourceRect": [
+        23,
+        189,
+        717,
+        160
+      ],
+      "center": [
+        381.6,
+        265.17
+      ],
+      "groundContactY": 265.17,
+      "radiusX": 324.18,
+      "radiusY": 52.12,
+      "innerSafeRect": [
+        202,
+        250,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 920,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 324.1756137539892,
+        "verticalSampleCount": 113,
+        "sampleCenterYSpread": [
+          263.16507523210026,
+          266.5265908441144
+        ]
+      },
+      "rect": [
+        23,
+        189,
+        717,
+        160
+      ],
+      "sourceAspectRatio": 4.48125,
+      "pivot": [
+        381.6,
+        265.17
+      ],
+      "pivotLocal": [
+        358.6,
+        76.17000000000002
+      ],
+      "id": "B04",
+      "stageId": 3,
+      "bossId": "B04",
+      "theme": "venomSerpent",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        358.6,
+        76.17000000000002
+      ],
+      "groundContactYLocal": 76.17000000000002,
+      "radiusYRatio": 0.1607748781541119,
+      "safeRect": [
+        202,
+        250,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        179,
+        61,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 4,
+      "materialBounds16": [
+        793,
+        192,
+        722,
+        153
+      ],
+      "sourceRect": [
+        789,
+        188,
+        730,
+        161
+      ],
+      "center": [
+        1153.58,
+        262.15
+      ],
+      "groundContactY": 262.15,
+      "radiusX": 324.72,
+      "radiusY": 51.5,
+      "innerSafeRect": [
+        974,
+        247,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 3,
+        "zero": 12,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 324.7160209995336,
+        "verticalSampleCount": 113,
+        "sampleCenterYSpread": [
+          261.4352194514945,
+          264.2090114991445
+        ]
+      },
+      "rect": [
+        789,
+        188,
+        730,
+        161
+      ],
+      "sourceAspectRatio": 4.53416149068323,
+      "pivot": [
+        1153.58,
+        262.15
+      ],
+      "pivotLocal": [
+        364.5799999999999,
+        74.14999999999998
+      ],
+      "id": "B02",
+      "stageId": 4,
+      "bossId": "B02",
+      "theme": "spiderSilk",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        364.5799999999999,
+        74.14999999999998
+      ],
+      "groundContactYLocal": 74.14999999999998,
+      "radiusYRatio": 0.1585981768908598,
+      "safeRect": [
+        974,
+        247,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        185,
+        59,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 5,
+      "materialBounds16": [
+        25,
+        358,
+        712,
+        152
+      ],
+      "sourceRect": [
+        21,
+        354,
+        720,
+        160
+      ],
+      "center": [
+        383.46,
+        433.09
+      ],
+      "groundContactY": 433.09,
+      "radiusX": 309.68,
+      "radiusY": 52.08,
+      "innerSafeRect": [
+        203,
+        418,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 5210,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 309.68357621065405,
+        "verticalSampleCount": 107,
+        "sampleCenterYSpread": [
+          427.5912402805899,
+          436.8127879996838
+        ]
+      },
+      "rect": [
+        21,
+        354,
+        720,
+        160
+      ],
+      "sourceAspectRatio": 4.5,
+      "pivot": [
+        383.46,
+        433.09
+      ],
+      "pivotLocal": [
+        362.46,
+        79.08999999999997
+      ],
+      "id": "B07",
+      "stageId": 5,
+      "bossId": "B07",
+      "theme": "ancientTree",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        362.46,
+        79.08999999999997
+      ],
+      "groundContactYLocal": 79.08999999999997,
+      "radiusYRatio": 0.16817359855334538,
+      "safeRect": [
+        203,
+        418,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        182,
+        64,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 6,
+      "materialBounds16": [
+        803,
+        352,
+        700,
+        159
+      ],
+      "sourceRect": [
+        799,
+        348,
+        708,
+        167
+      ],
+      "center": [
+        1152.43,
+        432.08
+      ],
+      "groundContactY": 432.08,
+      "radiusX": 315.18,
+      "radiusY": 51.45,
+      "innerSafeRect": [
+        972,
+        417,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 4,
+        "zero": 2689,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 315.17665108979446,
+        "verticalSampleCount": 110,
+        "sampleCenterYSpread": [
+          430.5979386290678,
+          434.8977955346707
+        ]
+      },
+      "rect": [
+        799,
+        348,
+        708,
+        167
+      ],
+      "sourceAspectRatio": 4.2395209580838324,
+      "pivot": [
+        1152.43,
+        432.08
+      ],
+      "pivotLocal": [
+        353.43000000000006,
+        84.07999999999998
+      ],
+      "id": "B06",
+      "stageId": 6,
+      "bossId": "B06",
+      "theme": "gargoyleBell",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        353.43000000000006,
+        84.07999999999998
+      ],
+      "groundContactYLocal": 84.07999999999998,
+      "radiusYRatio": 0.16324005330287455,
+      "safeRect": [
+        972,
+        417,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        173,
+        69,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 7,
+      "materialBounds16": [
+        26,
+        528,
+        720,
+        154
+      ],
+      "sourceRect": [
+        22,
+        524,
+        728,
+        162
+      ],
+      "center": [
+        385.26,
+        603.15
+      ],
+      "groundContactY": 603.15,
+      "radiusX": 327.55,
+      "radiusY": 52.29,
+      "innerSafeRect": [
+        205,
+        588,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 1208,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 327.5455694329106,
+        "verticalSampleCount": 114,
+        "sampleCenterYSpread": [
+          600.4277058880391,
+          607.5950133115325
+        ]
+      },
+      "rect": [
+        22,
+        524,
+        728,
+        162
+      ],
+      "sourceAspectRatio": 4.493827160493828,
+      "pivot": [
+        385.26,
+        603.15
+      ],
+      "pivotLocal": [
+        363.26,
+        79.14999999999998
+      ],
+      "id": "B01",
+      "stageId": 7,
+      "bossId": "B01",
+      "theme": "sandScorpion",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        363.26,
+        79.14999999999998
+      ],
+      "groundContactYLocal": 79.14999999999998,
+      "radiusYRatio": 0.15963974965654099,
+      "safeRect": [
+        205,
+        588,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        183,
+        64,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 8,
+      "materialBounds16": [
+        789,
+        531,
+        729,
+        143
+      ],
+      "sourceRect": [
+        785,
+        527,
+        737,
+        151
+      ],
+      "center": [
+        1153.12,
+        601.77
+      ],
+      "groundContactY": 601.77,
+      "radiusX": 331.56,
+      "radiusY": 50.71,
+      "innerSafeRect": [
+        973,
+        587,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 2528,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 331.55902584210816,
+        "verticalSampleCount": 116,
+        "sampleCenterYSpread": [
+          598.9883678337583,
+          605.3193988295773
+        ]
+      },
+      "rect": [
+        785,
+        527,
+        737,
+        151
+      ],
+      "sourceAspectRatio": 4.880794701986755,
+      "pivot": [
+        1153.12,
+        601.77
+      ],
+      "pivotLocal": [
+        368.1199999999999,
+        74.76999999999998
+      ],
+      "id": "B03",
+      "stageId": 8,
+      "bossId": "B03",
+      "theme": "bloodMoonBat",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        368.1199999999999,
+        74.76999999999998
+      ],
+      "groundContactYLocal": 74.76999999999998,
+      "radiusYRatio": 0.1529436602726505,
+      "safeRect": [
+        973,
+        587,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        188,
+        60,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 9,
+      "materialBounds16": [
+        25,
+        689,
+        715,
+        160
+      ],
+      "sourceRect": [
+        21,
+        685,
+        723,
+        168
+      ],
+      "center": [
+        383.19,
+        768.43
+      ],
+      "groundContactY": 768.43,
+      "radiusX": 323.09,
+      "radiusY": 52.11,
+      "innerSafeRect": [
+        203,
+        753,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 4133,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 323.09071428271005,
+        "verticalSampleCount": 113,
+        "sampleCenterYSpread": [
+          766.7869810431382,
+          772.1008302644198
+        ]
+      },
+      "rect": [
+        21,
+        685,
+        723,
+        168
+      ],
+      "sourceAspectRatio": 4.303571428571429,
+      "pivot": [
+        383.19,
+        768.43
+      ],
+      "pivotLocal": [
+        362.19,
+        83.42999999999995
+      ],
+      "id": "B11",
+      "stageId": 9,
+      "bossId": "B11",
+      "theme": "silverBone",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        362.19,
+        83.42999999999995
+      ],
+      "groundContactYLocal": 83.42999999999995,
+      "radiusYRatio": 0.16128632888668792,
+      "safeRect": [
+        203,
+        753,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        182,
+        68,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 10,
+      "materialBounds16": [
+        797,
+        698,
+        708,
+        153
+      ],
+      "sourceRect": [
+        793,
+        694,
+        716,
+        161
+      ],
+      "center": [
+        1150.96,
+        769.38
+      ],
+      "groundContactY": 769.38,
+      "radiusX": 322.15,
+      "radiusY": 53.13,
+      "innerSafeRect": [
+        971,
+        754,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 2146,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 322.14770732143785,
+        "verticalSampleCount": 112,
+        "sampleCenterYSpread": [
+          767.7311150723676,
+          771.7945475443448
+        ]
+      },
+      "rect": [
+        793,
+        694,
+        716,
+        161
+      ],
+      "sourceAspectRatio": 4.447204968944099,
+      "pivot": [
+        1150.96,
+        769.38
+      ],
+      "pivotLocal": [
+        357.96000000000004,
+        75.38
+      ],
+      "id": "B09",
+      "stageId": 10,
+      "bossId": "B09",
+      "theme": "lightningDragon",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        357.96000000000004,
+        75.38
+      ],
+      "groundContactYLocal": 75.38,
+      "radiusYRatio": 0.16492317243520102,
+      "safeRect": [
+        971,
+        754,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        178,
+        60,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    },
+    {
+      "stage": 11,
+      "materialBounds16": [
+        32,
+        857,
+        703,
+        162
+      ],
+      "sourceRect": [
+        28,
+        853,
+        711,
+        170
+      ],
+      "center": [
+        382.66,
+        936.07
+      ],
+      "groundContactY": 936.07,
+      "radiusX": 316.29,
+      "radiusY": 50.66,
+      "innerSafeRect": [
+        203,
+        921,
+        360,
+        30
+      ],
+      "innerSafeAlpha": {
+        "min": 0,
+        "max": 3,
+        "zero": 3266,
+        "over16": 0,
+        "pixels": 10800
+      },
+      "measurement": {
+        "horizontalMidlineRadiusX": 316.29001269318996,
+        "verticalSampleCount": 110,
+        "sampleCenterYSpread": [
+          933.1375899911998,
+          938.805591669824
+        ]
+      },
+      "rect": [
+        28,
+        853,
+        711,
+        170
+      ],
+      "sourceAspectRatio": 4.182352941176471,
+      "pivot": [
+        382.66,
+        936.07
+      ],
+      "pivotLocal": [
+        354.66,
+        83.07000000000005
+      ],
+      "id": "B10",
+      "stageId": 11,
+      "bossId": "B10",
+      "theme": "astralAbyss",
+      "file": "boss-warning-rings-v1.png",
+      "centerLocal": [
+        354.66,
+        83.07000000000005
+      ],
+      "groundContactYLocal": 83.07000000000005,
+      "radiusYRatio": 0.16016946473173352,
+      "safeRect": [
+        203,
+        921,
+        360,
+        30
+      ],
+      "safeRectLocal": [
+        175,
+        68,
+        360,
+        30
+      ],
+      "measurementMethod": "Alpha>128 perimeter midline fit: weighted left/right material centers near horizontal axis, then median top/bottom material centers sampled away from center crests and endcaps. Excludes protruding ornaments from physical radius.",
+      "rendering": "sx=physicalDangerRadius/radiusX; sy=(physicalDangerRadius*groundProjectionRatio)/radiusY; destX=worldX-centerLocal.x*sx; destY=supportY-groundContactYLocal*sy. Keep center tied to actual support anchor.",
+      "warningOnly": true,
+      "nineSlice": false,
+      "nineSliceReason": "Never nine-slice a danger ellipse. Scale the whole measured ellipse from center/radius to match physics."
+    }
+  ],
+  "emptyTwelfthCells": {
+    "stage-title-plates-v1.png": {
+      "rect": [
+        768,
+        853,
+        768,
+        171
+      ],
+      "alpha": {
+        "min": 0,
+        "max": 1,
+        "zero": 111785,
+        "over16": 0,
+        "pixels": 131328
+      }
+    },
+    "boss-warning-rings-v1.png": {
+      "rect": [
+        768,
+        853,
+        768,
+        171
+      ],
+      "alpha": {
+        "min": 0,
+        "max": 2,
+        "zero": 120816,
+        "over16": 0,
+        "pixels": 131328
+      }
+    }
+  },
+  "integrationNotes": [
+    "All stage names, boss IDs and theme names in JSON are mapping data only; no writing/numbers/labels are baked into PNG.",
+    "Use sourceRect values, not equal atlas cells. Source PNGs must remain unchanged.",
+    "Title plates have top/bottom central ornament. For width changes, replace ordinary top/bottom center strips with supplied rail/crestBand segments; do not draw stretched crest underneath a fixed overlay.",
+    "Controls-v2 keeps all avatar circles and content openings empty. Existing hero/pet/artifact images remain the real content; do not replace them with generated portraits.",
+    "Controls have all large decoration inside the fixed left/right slice caps. The long plain middle rails can stretch. Use approximately4:1 for pet entries.",
+    "Text/content safe rectangles and avatar circles were tightened after alpha inspection to avoid metal tips. Do not enlarge the masks blindly into ornaments.",
+    "Boss warning ellipses are ground telegraphs only. Center at the real support anchor, scale radiusX to actual danger radius; radiusY is display perspective only. No damage, HP, AI or timings are changed by this art.",
+    "Ring ornaments extend slightly outside the fitted dominant boundary; they are decoration, not extra hit radius. Do not scale by full alpha bbox or treat its bottom as groundContactY.",
+    "Never nine-slice the warning ellipse. Whole-ellipse scaling preserves circular physical radius projection.",
+    "Correct Canvas/SVG compositing must respect alpha. Native images contain some alpha1..8 tails and arbitrary low-alpha RGB; never chroma-key by RGB or threshold/repair PNG pixels.",
+    "Keep HUD compact below hero/pet HUD; placement, unlock states, buttons, cooldown values and progress remain primary-agent code.",
+    "No minion or boss numeric balance is altered by this delivery."
+  ],
+  "actualDeviations": [
+    "Control-v1 was1536x1024 with overlapping neighboring row bounds and was rejected. It remains archived unchanged.",
+    "Control-v2 is1254x1254 rather than requested1536-square; it has clean separated5 rows and native pet-frame aspect ratios near4.2-4.5:1.",
+    "Some title/ring rows have less than requested20-30px material gutter; explicit crops were measured and will be verified for zero neighboring alpha>16 material.",
+    "Title plates are centered on transparent/near-transparent openings rather than filled panels; supply a quiet DOM background behind the text if necessary.",
+    "Native empty regions and centers contain alpha1..8 edge/tail values. All practical safe areas and avatar masks are audited; original bytes remain intact.",
+    "Boss rings include small decorative crest/clasp details on the perimeter. The measured fitted ellipse excludes these projections."
+  ],
+  "audits": {
+    "alphaAndComponents": "alpha-components-audit.json",
+    "frameAndRingMeasurements": "frame-measurements.json",
+    "verification": "provenance-verification.json"
+  }
+}

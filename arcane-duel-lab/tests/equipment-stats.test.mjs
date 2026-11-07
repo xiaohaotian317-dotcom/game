@@ -86,12 +86,12 @@ test('white unenhanced weapons show only real attack with the solo multiplier',(
 test('armor rows use the selected hero base health and contain only survival values',()=>{
  const armor=equipment('armor');
  assert.deepEqual(equipmentAttributeRows(armor),[
-  {key:'health',label:'生命值',value:'+7.59'},
+  {key:'health',label:'生命值',value:'+6.83'},
   {key:'armor',label:'防御',value:'+1.4%'},
   {key:'regen',label:'生命回复',value:'+0.1/秒'}
  ]);
- assert.equal(equipmentAttributeRows(armor,'lightning')[0].value,'+8.22');
- assert.equal(equipmentAttributeRows(armor,'star')[0].value,'+7.46');
+ assert.equal(equipmentAttributeRows(armor,'lightning')[0].value,'+7.4');
+ assert.equal(equipmentAttributeRows(armor,'star')[0].value,'+6.72');
  assert.deepEqual(equipmentAttributeRows(armor,'constructor'),equipmentAttributeRows(armor,'fire'));
  assert.deepEqual(equipmentAttributeRows(armor,'unknown'),equipmentAttributeRows(armor,'fire'));
 });

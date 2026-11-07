@@ -40,8 +40,8 @@ test('pet experience potions require a real selected pet, grant only its XP and 
  const big=addItem(p,{type:'petXpLarge',count:1});usePetExperienceItem(p,big.id,'pet-3');assert.equal(p.pets[0].exp,340);assert.ok(petExperience(p.pets[0].exp).level>=5);assert.equal(p.pets[0].form,0);assert.equal(p.pets[0].vitals.hp,17);assert.equal(p.heroes.fire.exp,0);assert.equal(normalizeSolo(p).pets[0].exp,340);assert.ok(!p.bag.some(i=>i.id===big.id));
  for(const [id,type]of [[5,'petXpSmall'],[7,'petXpMedium'],[9,'petXpLarge']]){assert.ok(stageLoot(id).some(i=>i.type===type));assert.ok(lootPreview(id).guaranteed.some(i=>i.type===type));}
 });
-test('all 36 hero skills cost exactly ten percent less than campaign12 while pets and artifacts keep their own mana rules',()=>{
- for(const list of Object.values(SOLO_SKILLS))for(const s of list)assert.ok(Math.abs(s.mana-[9.9,16.5,31.35][s.row]*.9)<1e-10);
+test('all 36 hero skills use integer mana while pets and artifacts keep their own mana rules',()=>{
+ for(const list of Object.values(SOLO_SKILLS))for(const s of list)assert.equal(s.mana,[9,15,28][s.row]);
 });
 test('a real shadow blink dodges normal damage, DoT and new control only after release, then expires',()=>{
  const w=createWorld('shadow');w.targets=[];requestCast(w,'e',600,w.floor-20);assert.equal(blinkProtected(w),false);const hp=w.player.hp;assert.equal(hitPlayer(w,2,0,{dot:true}),true);

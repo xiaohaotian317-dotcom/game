@@ -1,0 +1,24 @@
+Use case: stylized-concept
+Asset type: production 2D hand-painted dark-fantasy BOSS GROUND DANGER TELEGRAPH atlas, genuine transparent PNG.
+Primary request: exactly ELEVEN independent low horizontal elliptical warning rings, all different in material and silhouette. They are pre-attack boundary telegraphs only, NOT the attack impact, not explosions, not columns, not bosses. Elegant and formidable but restrained, clear readable danger perimeter, transparent quiet center so characters remain visible. Hand-painted tactile ancient fantasy material, cohesive with antique-gold/teal game UI and painted elemental effects.
+
+Canvas/layout: landscape1536 by1024 preferred, TWO COLUMNS by SIX ROWS, nominal cells768 by170.7. One low ground ellipse centered in each used cell, around620px wide by100-115px deep (floor perspective, about5.5:1). Eleven total, in normal reading order; final bottom-right cell fully empty transparent. At least30px clear transparent gutter, no touching/cropping.
+Each ring has a clean continuous elliptical danger boundary made from the stated material, with a small amount of fine repeating inner edge detail. Overall center is transparent, no opaque disk, no bright filling, no cloud across the interior. Tiny understated material chips may hug the perimeter but must not stick far beyond it. The ellipse is viewed downward in a 2D side-scroller ground plane: broad horizontal oval, not a vertical portal or top-down round medallion. Stable center and consistent scale among rings.
+No readable writing, no numbers, no textual runes, no UI labels. Decorative nonalphabetic hatching/geometric motifs are fine only on the ring edge.
+
+ROW0 LEFT, stage1 snow-wolf: icy silver-blue ellipse built from sharp short ice fangs/etched crystalline rim, old pale-gold glints, clear cold perimeter. No tall ice spikes or wolf body.
+ROW0 RIGHT, stage2 fire-bull: heavy dark lava-crust ellipse with narrow molten amber fissures and tiny hornlike rim clasps, glowing seams kept thin. No central lava pool, no erupting flame.
+ROW1 LEFT, stage3 venom-serpent: olive-jade scaled venom ellipse, viscous droplets and small foam beads tightly along rim, clean readable acid-green edge, no poison cloud filling center.
+ROW1 RIGHT, stage4 spider: layered pearl-violet silk ellipse with physical woven thread segments around perimeter, short clawlike silk knots, empty web-free center; not a plain line circle.
+ROW2 LEFT, stage5 ancient tree: living dark ironwood/root braid ellipse with short thorns and small leaves in edge, muted emerald sap accents, no growing roots through center.
+ROW2 RIGHT, stage6 gargoyle: cracked gray stone-and-bell-metal ellipse with fine masonry hatching and small gothic chip facets, warm old-bronze seams; no stone pillars.
+ROW3 LEFT, stage7 sand scorpion: sand-worn antique-gold/chitin ellipse with short segmented stinger barbs and subtle amber sand grains, solid clear ochre boundary, no dust cloud.
+ROW3 RIGHT, stage8 blood-moon bat: dark copper/crimson ellipse with fine batwing scallop edges, small blood-red crescent motifs repeating along rim, restrained wine-red highlight, no red opaque disk.
+ROW4 LEFT, stage9 skeleton king: aged ivory bone-segment and tarnished silver ellipse, small joints and fine grave engravings around perimeter, quiet cool glow only on edge, no skull pile in center.
+ROW4 RIGHT, stage10 lightning dragon: old-gold/steel ellipse with small dragon-scale facets and narrow forked lightning arcs closely tracing the boundary, gold-white line detail with controlled brightness, no lightning bolt through center.
+ROW5 LEFT, stage11 astral herald: deep indigo/violet mineral and old-gold elliptical geometric orbit, tiny inlaid star studs and short angular constellation segments around perimeter, empty transparent interior, no galaxy fog or opaque square.
+ROW5 RIGHT: EMPTY transparent, no twelfth ring.
+
+Lighting/material: detailed painterly material shading, restrained top-left highlights, no white-hot cores, no bloom haze outside the ring, no flashing impression. Rich matte dark colors plus clear brighter thin outer boundary. Not the same generic circle recolored: each has genuinely distinct carved/woven/crusted/segmented material.
+Alpha: background AND ring centers fully transparent, only perimeter material and a few near-edge translucent accents. No ground plane texture, no rectangular tile, no cast-shadow fog, no baked checkerboard. All eleven ellipses and all edge ornaments fully visible with padding.
+Text: NO words, letters, digits, labels, watermark, fake writing. Exactly11 warning rings, not skill explosions or attack bodies.

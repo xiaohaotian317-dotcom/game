@@ -1,0 +1,374 @@
+{
+  "stage-title-plates-v1.png": {
+    "file": "stage-title-plates-v1.png",
+    "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-483f567e-7cb0-457c-9ef6-0250165d4794.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "bytes": 2615608,
+    "sha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+    "sourceSha256": "a6e649558fee10bd5e0c4f8c1ae5a21431b3279da471d9470bae6b5596e179c6",
+    "alphaExtrema": [
+      0,
+      253
+    ],
+    "alphaZero": 137287,
+    "alphaOneToEight": 868061,
+    "alphaOver16": 529905,
+    "componentsOver16": [
+      {
+        "area": 57134,
+        "rect": [
+          17,
+          348,
+          734,
+          161
+        ]
+      },
+      {
+        "area": 53959,
+        "rect": [
+          775,
+          348,
+          754,
+          160
+        ]
+      },
+      {
+        "area": 49745,
+        "rect": [
+          22,
+          179,
+          725,
+          162
+        ]
+      },
+      {
+        "area": 48171,
+        "rect": [
+          782,
+          685,
+          741,
+          165
+        ]
+      },
+      {
+        "area": 47587,
+        "rect": [
+          18,
+          4,
+          732,
+          169
+        ]
+      },
+      {
+        "area": 47528,
+        "rect": [
+          792,
+          5,
+          721,
+          166
+        ]
+      },
+      {
+        "area": 46473,
+        "rect": [
+          19,
+          685,
+          730,
+          165
+        ]
+      },
+      {
+        "area": 46360,
+        "rect": [
+          15,
+          858,
+          738,
+          163
+        ]
+      },
+      {
+        "area": 45242,
+        "rect": [
+          785,
+          180,
+          735,
+          161
+        ]
+      },
+      {
+        "area": 44933,
+        "rect": [
+          16,
+          515,
+          737,
+          163
+        ]
+      },
+      {
+        "area": 42768,
+        "rect": [
+          778,
+          516,
+          749,
+          162
+        ]
+      }
+    ]
+  },
+  "artifact-pet-controls-v1.png": {
+    "file": "artifact-pet-controls-v1.png",
+    "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-bcd49774-9a4a-4d38-b0b0-160045ba541c.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "bytes": 2225919,
+    "sha256": "8958390ab1ca9ef93dc74ace8f58fa9bd73d98ebf1a136807bb9f862b71efca3",
+    "sourceSha256": "8958390ab1ca9ef93dc74ace8f58fa9bd73d98ebf1a136807bb9f862b71efca3",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "alphaZero": 867493,
+    "alphaOneToEight": 257476,
+    "alphaOver16": 436020,
+    "componentsOver16": [
+      {
+        "area": 105492,
+        "rect": [
+          88,
+          558,
+          1358,
+          228
+        ]
+      },
+      {
+        "area": 105271,
+        "rect": [
+          85,
+          790,
+          1367,
+          227
+        ]
+      },
+      {
+        "area": 98645,
+        "rect": [
+          124,
+          304,
+          1298,
+          254
+        ]
+      },
+      {
+        "area": 64385,
+        "rect": [
+          181,
+          6,
+          1172,
+          163
+        ]
+      },
+      {
+        "area": 62226,
+        "rect": [
+          163,
+          174,
+          1215,
+          147
+        ]
+      }
+    ]
+  },
+  "artifact-pet-controls-v2.png": {
+    "file": "artifact-pet-controls-v2.png",
+    "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-f9980885-97a6-48d8-bead-8f6d18f1fca2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "bytes": 1180079,
+    "sha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+    "sourceSha256": "6ea3ed95f5217475517f399dd71126aa9ab9102371a6a252a21b55faadc2da8e",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "alphaZero": 1082148,
+    "alphaOneToEight": 189854,
+    "alphaOver16": 291847,
+    "componentsOver16": [
+      {
+        "area": 71311,
+        "rect": [
+          88,
+          760,
+          1060,
+          231
+        ]
+      },
+      {
+        "area": 64230,
+        "rect": [
+          111,
+          503,
+          1030,
+          242
+        ]
+      },
+      {
+        "area": 63092,
+        "rect": [
+          94,
+          1004,
+          1052,
+          238
+        ]
+      },
+      {
+        "area": 53537,
+        "rect": [
+          124,
+          269,
+          1006,
+          205
+        ]
+      },
+      {
+        "area": 39664,
+        "rect": [
+          149,
+          45,
+          956,
+          177
+        ]
+      }
+    ]
+  },
+  "boss-warning-rings-v1.png": {
+    "file": "boss-warning-rings-v1.png",
+    "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b188-681a-76a2-8fa2-0106444de3ea\\exec-ca8d9453-c04c-4f07-9db4-344a87aaff2c.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "bytes": 2460672,
+    "sha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+    "sourceSha256": "5cc8357b3bdb875ccfb8a59a8fda2ef23f5bf75bc4087da6d36783439e7bbc88",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "alphaZero": 449120,
+    "alphaOneToEight": 638837,
+    "alphaOver16": 456480,
+    "componentsOver16": [
+      {
+        "area": 49161,
+        "rect": [
+          25,
+          358,
+          712,
+          152
+        ]
+      },
+      {
+        "area": 43961,
+        "rect": [
+          793,
+          192,
+          722,
+          153
+        ]
+      },
+      {
+        "area": 43581,
+        "rect": [
+          797,
+          698,
+          708,
+          153
+        ]
+      },
+      {
+        "area": 42918,
+        "rect": [
+          803,
+          352,
+          700,
+          159
+        ]
+      },
+      {
+        "area": 41517,
+        "rect": [
+          27,
+          193,
+          709,
+          152
+        ]
+      },
+      {
+        "area": 41435,
+        "rect": [
+          801,
+          6,
+          704,
+          168
+        ]
+      },
+      {
+        "area": 41073,
+        "rect": [
+          25,
+          689,
+          715,
+          160
+        ]
+      },
+      {
+        "area": 40911,
+        "rect": [
+          26,
+          528,
+          720,
+          154
+        ]
+      },
+      {
+        "area": 37926,
+        "rect": [
+          25,
+          7,
+          718,
+          167
+        ]
+      },
+      {
+        "area": 37179,
+        "rect": [
+          32,
+          857,
+          703,
+          162
+        ]
+      },
+      {
+        "area": 36808,
+        "rect": [
+          789,
+          531,
+          729,
+          143
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+Use case: stylized-concept
+Asset type: production dark-fantasy empty HUD and pet-entry frames, clean separated sprite atlas.
+CRITICAL COMPOSITION: a TRUE SQUARE canvas1536x1536, not a landscape sheet. EXACTLY5 rows. All artwork for each row MUST be inside these disjoint boxes, leaving very large alpha gaps:
+row0 box x150..1386,y50..230, height180;
+row1 box x150..1386,y330..510, height180;
+row2 box x150..1386,y610..830, height220;
+row3 box x150..1386,y930..1150,height220;
+row4 box x150..1386,y1250..1470,height220.
+At least100px fully transparent horizontal bands between every row. Do NOT draw any antler, feather, ice crystal, shadow, vine or glow outside its assigned row box. Shrink decorative motifs to fit. Keep whole frames inside the stated bounds. No overlapping row bounding boxes. This generous spacing is the essential change.
+
+Create5 beautifully crafted empty frames matching antique gold/aged bronze/dark petrol-teal fantasy UI, hand-painted sculpted worn metal bevels, quiet gothic engraving, controlled top-left light:
+row0 capture-mirror HUD: slim old bronze rim, tiny etched concentric mirror patterns on the rim, restrained teal inlay; EMPTY left circular icon hole centered aroundx270,y140, radius65. Long quiet fully transparent content opening to its right.
+row1 heavenly-sword HUD: silver and old-gold rim with restrained small sword-crossguard/feather details outside the opening; EMPTY left circle centeredx270,y420,radius65. Long transparent quiet content opening. No actual sword item inside.
+row2 deer pet-dungeon entry: ancient-gold and dark ironwood, short green-vine/leaf rim, SMALL antler-branch tips contained inside the row220px height. EMPTY left portrait circle centeredx270,y720,radius80. Broad transparent content opening on right.
+row3 griffin pet-dungeon entry: fire-copper/old-gold, layered small sculpted feather rim and muted ember-red enamel, no flame plume. EMPTY left portrait circle centeredx270,y1040,radius80. Broad transparent content opening on right.
+row4 moon-frost fox pet-dungeon entry: silver-blue/old-gold, small moon-arc/fur-like/ice crystal rim accents contained in row, no snow cloud. EMPTY left circle centeredx270,y1360,radius80. Broad transparent content opening on right.
+
+All left circles and all right content centers MUST be true transparent alpha with no characters, artifact item pictures or text. Left ring separated from the long content rim by a short sculpted neck. No added slots, no fake buttons, no subdivision rows.
+All material is elegant, broad and restrained enough for compact HUD. The3 lower frames will later be horizontally resized with nine-slice to4:1, so keep plain stretchable mid rails and all decorations confined to endcaps.
+Background and all gaps fully transparent, no backdrop/gradient/black tiles/checkerboard or shadows spanning frames.
+No text, digits, letters, progress, fake runes, labels, portraits, characters or watermarks. Exactly5 independent frames in stated order, no extra objects. Square image,100px blank alpha bands between all rows.
