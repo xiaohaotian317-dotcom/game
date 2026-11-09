@@ -1,0 +1,28 @@
+.chapter-select{position:fixed;right:28px;bottom:24px;display:flex;gap:12px;z-index:6;filter:drop-shadow(0 4px 10px #000b)}
+.chapter-select button{min-width:185px;padding:13px 27px;clip-path:polygon(8% 0,92% 0,100% 50%,92% 100%,8% 100%,0 50%);border:0;background:linear-gradient(110deg,#273541,#08131f 35%,#293540);box-shadow:inset 0 0 0 2px #a18b56;color:#c8b88f;letter-spacing:.12em}
+.chapter-select button.active{background:linear-gradient(110deg,#775b2d,#30291d,#72572c);box-shadow:inset 0 0 0 2px #e3c784;color:#fff0c6}
+.chapter-select button:disabled{opacity:.65}
+.node-zoom{background-image:var(--world-map-art,url('assets/campaign/world-map-v1.png'))}
+.stage-node.endless b,.stage-node.twin b{width:32px;height:32px;border-radius:4px;transform:translateX(-50%) rotate(45deg);font-size:17px;box-shadow:0 0 18px #c2ab8c77;background:#141b2de8}
+.hero-life .shield-fill{position:absolute;top:0;bottom:0;background:linear-gradient(#fff,#c9eaf6 45%,#fff);box-shadow:0 0 9px #c8eeff,inset 0 0 2px #fff;transition:width .2s ease-out,left .18s ease-out;z-index:3;max-width:35%}
+.hero-life small{z-index:4}
+#second-boss-hud{position:absolute;left:50%;top:228px;transform:translateX(-50%);width:min(700px,54vw);aspect-ratio:var(--boss-aspect,6/1);pointer-events:none;container-type:inline-size;isolation:isolate}
+#second-boss-hud>.boss-hud-shell{position:absolute;inset:0;background-image:var(--boss-shell);background-size:var(--boss-shell-size);background-position:var(--boss-shell-position);background-repeat:no-repeat;z-index:3;filter:drop-shadow(0 3px 4px #0009)}
+#second-boss-hud>.boss-portrait{position:absolute;left:var(--boss-face-x);top:var(--boss-face-y);width:var(--boss-face-width);aspect-ratio:1;border-radius:50%;background-color:#0a141d;z-index:1}
+#second-boss-hud .boss-vitals,#second-boss-hud .boss-heading{display:contents}
+#second-boss-hud strong{position:absolute;left:var(--boss-name-x);top:var(--boss-name-y);width:var(--boss-name-width);font-size:clamp(9px,1.8cqw,14px);line-height:1.2;z-index:4;color:var(--boss-light);text-shadow:0 1px 3px #000}
+#second-boss-hud .boss-heading span{position:absolute;right:var(--boss-life-right);top:var(--boss-name-y);z-index:4;font-size:clamp(9px,1.65cqw,12px);color:#ece5d0}
+#second-boss-hud .boss-life-track{position:absolute;left:var(--boss-hp-x);top:var(--boss-hp-y);width:var(--boss-hp-width);height:var(--boss-hp-height);overflow:hidden;border-radius:8px;background:#041017}
+#second-boss-hud .boss-life-track i{position:absolute;inset:0 auto 0 0;height:100%;max-width:100%}
+#second-boss-hud .boss-current-fill{background:linear-gradient(90deg,var(--boss-dark),var(--boss-light));box-shadow:inset 0 1px 2px #ffffff55}
+#second-boss-hud .boss-life-trail{background:#f0dcb3;transition:width .8s ease-out .25s}
+#second-boss-hud .boss-ornament{display:none}
+@media(max-width:1150px){#second-boss-hud{top:330px;width:68vw}.chapter-select{right:12px;bottom:16px;gap:6px}.chapter-select button{min-width:130px;padding:10px 17px;font-size:11px}}
+
+#world-screen .map-progress{bottom:90px;pointer-events:none}
+@media(max-width:650px){#world-screen .map-progress{bottom:auto;top:12px}.chapter-select{max-width:calc(100vw - 24px);gap:4px}.chapter-select button{min-width:0;padding:10px 14px;font-size:10px}}
+
+.twin-battle #boss-hud,.twin-battle #second-boss-hud{width:min(560px,44vw)}
+.twin-battle #boss-hud{top:108px}.twin-battle #second-boss-hud{top:215px}
+.twin-battle #battle-notice{top:325px}
+@media(max-width:1150px){.twin-battle #boss-hud,.twin-battle #second-boss-hud{width:60vw}.twin-battle #boss-hud{top:215px}.twin-battle #second-boss-hud{top:320px}.twin-battle #battle-notice{top:420px}}

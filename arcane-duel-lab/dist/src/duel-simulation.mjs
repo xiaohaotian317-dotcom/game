@@ -11,7 +11,7 @@ export function createDuel(heroes,scene='moon',loadouts=[]){
 }
 export function wireDuel(match){
   const [a,b]=match.worlds;for(const key of SHARED)b[key]=a[key];
-  for(let side=0;side<2;side++){const w=match.worlds[side],rival=match.worlds[1-side];if(rival.fox){rival.fox.duelSummon=true;rival.fox.id='stag-'+(1-side);rival.fox.deadUntil=0;}
+  for(let side=0;side<2;side++){const w=match.worlds[side],rival=match.worlds[1-side];w.player.duelHero=w.hero;if(rival.fox){rival.fox.duelSummon=true;rival.fox.id='stag-'+(1-side);rival.fox.deadUntil=0;}
     w.targets=[rival.player,...(rival.fox?[rival.fox]:[])];w.duelRivalMirrors=rival.iceMirrors;w.duelHitSummon=(amount,x)=>hitSummon(rival,amount,x);
   }return match;
 }

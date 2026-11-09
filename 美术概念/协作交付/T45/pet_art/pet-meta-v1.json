@@ -1,0 +1,3236 @@
+{
+  "version": "T45-pet-meta-v1",
+  "status": "staging-original-art-awaiting-main-agent-integration-and-user-art-acceptance",
+  "petId": "dawnlion",
+  "name": "镇曜灵猊",
+  "alphaThreshold": 16,
+  "coordinateNotes": "rect/spriteRect/faceRect/faceCrop.rect are atlas absolute [x,y,w,h]. bbox/pivot/centerX/groundContactY and sockets.pixel are frame-rect-local pixels. naturalHeight is target runtime rendered height (74/92/106), all below hero110. No PNG pixels edited; no clipRects. Alpha16 bounds are read-only measurements, not alpha cutoff for rendering. Lower-opacity glows outside alpha16 bounds remain intact in original source.",
+  "motion": {
+    "0": {
+      "file": "dawnlion-form1-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-ce7a2342-063e-4ebe-8d87-34bb9de51e41.png",
+      "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "sourceSha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form1-motion-prompt-v1.txt",
+      "promptSha256": "0e562f038d14a09452cc24176e7cf05bca1ef9ed7f23f09f4c74190c05d46edc",
+      "references": [],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.43891699671100326,
+          "1": 0.283646080548624,
+          "8": 0.2543923241480532,
+          "16": 0.25085976867643955,
+          "32": 0.24742196581783588,
+          "64": 0.2431275739006789,
+          "128": 0.23652350755095655,
+          "192": 0.2298997275703395,
+          "240": 0.2191557987327315
+        },
+        "outerEdgeAbove16": 0
+      },
+      "form": 0,
+      "name": "曜纹幼猊",
+      "cols": 4,
+      "rows": 4,
+      "naturalHeight": 74,
+      "referenceFrame": 6,
+      "referenceSourceHeight": 175,
+      "idleHeight": 175,
+      "scaleRule": "All frames share naturalHeight/referenceSourceHeight source-pixel scale; never resize independently to bbox.",
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedWalkFps": 11,
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            17,
+            88,
+            259,
+            163
+          ],
+          "bbox": [
+            17,
+            88,
+            259,
+            163
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            249
+          ],
+          "groundContactY": 249,
+          "alphaBottomNormalized": 0.7993630573248408,
+          "minPaddingAt16": 17,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk0",
+          "phase": 0,
+          "bottomNormalized": 0.7929936305732485
+        },
+        {
+          "index": 1,
+          "rect": [
+            314,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            331,
+            89,
+            259,
+            163
+          ],
+          "bbox": [
+            17,
+            89,
+            259,
+            163
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            250
+          ],
+          "groundContactY": 250,
+          "alphaBottomNormalized": 0.802547770700637,
+          "minPaddingAt16": 17,
+          "edgePixels": {
+            "1": 2,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk1",
+          "phase": 1,
+          "bottomNormalized": 0.7961783439490446
+        },
+        {
+          "index": 2,
+          "rect": [
+            627,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            641,
+            91,
+            264,
+            162
+          ],
+          "bbox": [
+            14,
+            91,
+            264,
+            162
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            251
+          ],
+          "groundContactY": 251,
+          "alphaBottomNormalized": 0.8057324840764332,
+          "minPaddingAt16": 14,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk2",
+          "phase": 2,
+          "bottomNormalized": 0.7993630573248408
+        },
+        {
+          "index": 3,
+          "rect": [
+            940,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            953,
+            92,
+            269,
+            162
+          ],
+          "bbox": [
+            13,
+            92,
+            269,
+            162
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            252
+          ],
+          "groundContactY": 252,
+          "alphaBottomNormalized": 0.8089171974522293,
+          "minPaddingAt16": 13,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk3",
+          "phase": 3,
+          "bottomNormalized": 0.802547770700637
+        },
+        {
+          "index": 4,
+          "rect": [
+            0,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            12,
+            407,
+            273,
+            167
+          ],
+          "bbox": [
+            12,
+            93,
+            273,
+            167
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            258
+          ],
+          "groundContactY": 258,
+          "alphaBottomNormalized": 0.8306709265175719,
+          "minPaddingAt16": 12,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk4",
+          "phase": 4,
+          "bottomNormalized": 0.8242811501597445
+        },
+        {
+          "index": 5,
+          "rect": [
+            314,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            326,
+            407,
+            270,
+            164
+          ],
+          "bbox": [
+            12,
+            93,
+            270,
+            164
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8210862619808307,
+          "minPaddingAt16": 12,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk5",
+          "phase": 5,
+          "bottomNormalized": 0.8146964856230032
+        },
+        {
+          "index": 6,
+          "rect": [
+            627,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            642,
+            397,
+            261,
+            175
+          ],
+          "bbox": [
+            15,
+            83,
+            261,
+            175
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            256
+          ],
+          "groundContactY": 256,
+          "alphaBottomNormalized": 0.8242811501597445,
+          "minPaddingAt16": 15,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "idle",
+          "phase": 0,
+          "bottomNormalized": 0.8178913738019169
+        },
+        {
+          "index": 7,
+          "rect": [
+            940,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            955,
+            411,
+            263,
+            160
+          ],
+          "bbox": [
+            15,
+            97,
+            263,
+            160
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8210862619808307,
+          "minPaddingAt16": 15,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "windup",
+          "phase": 0,
+          "bottomNormalized": 0.8146964856230032
+        },
+        {
+          "index": 8,
+          "rect": [
+            0,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            14,
+            722,
+            293,
+            164
+          ],
+          "bbox": [
+            14,
+            95,
+            293,
+            164
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            257
+          ],
+          "groundContactY": 257,
+          "alphaBottomNormalized": 0.8274760383386581,
+          "minPaddingAt16": 7,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "claw",
+          "phase": 0,
+          "bottomNormalized": 0.8210862619808307
+        },
+        {
+          "index": 9,
+          "rect": [
+            314,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            328,
+            719,
+            259,
+            167
+          ],
+          "bbox": [
+            14,
+            92,
+            259,
+            167
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            257
+          ],
+          "groundContactY": 257,
+          "alphaBottomNormalized": 0.8274760383386581,
+          "minPaddingAt16": 14,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "recovery",
+          "phase": 0,
+          "bottomNormalized": 0.8210862619808307
+        },
+        {
+          "index": 10,
+          "rect": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            639,
+            704,
+            269,
+            186
+          ],
+          "bbox": [
+            12,
+            77,
+            269,
+            186
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            261
+          ],
+          "groundContactY": 261,
+          "alphaBottomNormalized": 0.8402555910543131,
+          "minPaddingAt16": 12,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "roar",
+          "phase": 0,
+          "bottomNormalized": 0.8338658146964856
+        },
+        {
+          "index": 11,
+          "rect": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            955,
+            698,
+            270,
+            192
+          ],
+          "bbox": [
+            15,
+            71,
+            270,
+            192
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            261
+          ],
+          "groundContactY": 261,
+          "alphaBottomNormalized": 0.8402555910543131,
+          "minPaddingAt16": 15,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "skyfire",
+          "phase": 0,
+          "bottomNormalized": 0.8338658146964856
+        },
+        {
+          "index": 12,
+          "rect": [
+            0,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            15,
+            1015,
+            280,
+            186
+          ],
+          "bbox": [
+            15,
+            75,
+            280,
+            186
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            259
+          ],
+          "groundContactY": 259,
+          "alphaBottomNormalized": 0.8312101910828026,
+          "minPaddingAt16": 15,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "hurt",
+          "phase": 0,
+          "bottomNormalized": 0.8248407643312102
+        },
+        {
+          "index": 13,
+          "rect": [
+            314,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            329,
+            1038,
+            262,
+            158
+          ],
+          "bbox": [
+            15,
+            98,
+            262,
+            158
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            254
+          ],
+          "groundContactY": 254,
+          "alphaBottomNormalized": 0.8152866242038217,
+          "minPaddingAt16": 15,
+          "edgePixels": {
+            "1": 3,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "stagger",
+          "phase": 0,
+          "bottomNormalized": 0.8089171974522293
+        },
+        {
+          "index": 14,
+          "rect": [
+            627,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            636,
+            1062,
+            263,
+            134
+          ],
+          "bbox": [
+            9,
+            122,
+            263,
+            134
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            254
+          ],
+          "groundContactY": 254,
+          "alphaBottomNormalized": 0.8152866242038217,
+          "minPaddingAt16": 9,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dying",
+          "phase": 0,
+          "bottomNormalized": 0.8089171974522293
+        },
+        {
+          "index": 15,
+          "rect": [
+            940,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            950,
+            1075,
+            289,
+            122
+          ],
+          "bbox": [
+            10,
+            135,
+            289,
+            122
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8184713375796179,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dead",
+          "phase": 0,
+          "bottomNormalized": 0.8121019108280255
+        }
+      ],
+      "faceCrop": {
+        "rect": [
+          833,
+          422,
+          72,
+          72
+        ],
+        "frame": 6,
+        "kind": "motion-fallback-face"
+      },
+      "sockets": {
+        "claw": {
+          "frame": 8,
+          "pixel": [
+            298,
+            203
+          ],
+          "ground": 257
+        },
+        "roar": {
+          "frame": 10,
+          "pixel": [
+            261,
+            120
+          ],
+          "ground": 261
+        },
+        "skyfire": {
+          "frame": 11,
+          "pixel": [
+            157.0,
+            261
+          ],
+          "kind": "grounded-cast-base"
+        }
+      }
+    },
+    "1": {
+      "file": "dawnlion-form2-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-a12e6c39-b4aa-4979-809b-7850c5c72ca8.png",
+      "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "sourceSha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form2-motion-prompt-v1.txt",
+      "promptSha256": "882cc4a054cc8f4f2064feb8165359001e69997d784d398acdf3d5193b0faef1",
+      "references": [
+        {
+          "file": "dawnlion-form1-motion-v1.png",
+          "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.3838256653668389,
+          "1": 0.33087866832515533,
+          "8": 0.3023632191977697,
+          "16": 0.29841604155379026,
+          "32": 0.2946908012382704,
+          "64": 0.28990420447232335,
+          "128": 0.28270300588356495,
+          "192": 0.27522454461512635,
+          "240": 0.2623152959969883
+        },
+        "outerEdgeAbove16": 0
+      },
+      "form": 1,
+      "name": "金鬃灵猊",
+      "cols": 4,
+      "rows": 4,
+      "naturalHeight": 92,
+      "referenceFrame": 6,
+      "referenceSourceHeight": 186,
+      "idleHeight": 186,
+      "scaleRule": "All frames share naturalHeight/referenceSourceHeight source-pixel scale; never resize independently to bbox.",
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedWalkFps": 11,
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            10,
+            83,
+            272,
+            174
+          ],
+          "bbox": [
+            10,
+            83,
+            272,
+            174
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8184713375796179,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk0",
+          "phase": 0,
+          "bottomNormalized": 0.8121019108280255
+        },
+        {
+          "index": 1,
+          "rect": [
+            314,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            326,
+            83,
+            266,
+            177
+          ],
+          "bbox": [
+            12,
+            83,
+            266,
+            177
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            258
+          ],
+          "groundContactY": 258,
+          "alphaBottomNormalized": 0.8280254777070064,
+          "minPaddingAt16": 12,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk1",
+          "phase": 1,
+          "bottomNormalized": 0.821656050955414
+        },
+        {
+          "index": 2,
+          "rect": [
+            627,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            638,
+            84,
+            268,
+            174
+          ],
+          "bbox": [
+            11,
+            84,
+            268,
+            174
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            256
+          ],
+          "groundContactY": 256,
+          "alphaBottomNormalized": 0.821656050955414,
+          "minPaddingAt16": 11,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk2",
+          "phase": 2,
+          "bottomNormalized": 0.8152866242038217
+        },
+        {
+          "index": 3,
+          "rect": [
+            940,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            952,
+            86,
+            271,
+            171
+          ],
+          "bbox": [
+            12,
+            86,
+            271,
+            171
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8184713375796179,
+          "minPaddingAt16": 12,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk3",
+          "phase": 3,
+          "bottomNormalized": 0.8121019108280255
+        },
+        {
+          "index": 4,
+          "rect": [
+            0,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            9,
+            402,
+            277,
+            174
+          ],
+          "bbox": [
+            9,
+            88,
+            277,
+            174
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            260
+          ],
+          "groundContactY": 260,
+          "alphaBottomNormalized": 0.8370607028753994,
+          "minPaddingAt16": 9,
+          "edgePixels": {
+            "1": 7,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk4",
+          "phase": 4,
+          "bottomNormalized": 0.8306709265175719
+        },
+        {
+          "index": 5,
+          "rect": [
+            314,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            323,
+            405,
+            276,
+            171
+          ],
+          "bbox": [
+            9,
+            91,
+            276,
+            171
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            260
+          ],
+          "groundContactY": 260,
+          "alphaBottomNormalized": 0.8370607028753994,
+          "minPaddingAt16": 9,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk5",
+          "phase": 5,
+          "bottomNormalized": 0.8306709265175719
+        },
+        {
+          "index": 6,
+          "rect": [
+            627,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            634,
+            392,
+            272,
+            186
+          ],
+          "bbox": [
+            7,
+            78,
+            272,
+            186
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            262
+          ],
+          "groundContactY": 262,
+          "alphaBottomNormalized": 0.8434504792332268,
+          "minPaddingAt16": 7,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "idle",
+          "phase": 0,
+          "bottomNormalized": 0.8370607028753994
+        },
+        {
+          "index": 7,
+          "rect": [
+            940,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            950,
+            409,
+            274,
+            167
+          ],
+          "bbox": [
+            10,
+            95,
+            274,
+            167
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            260
+          ],
+          "groundContactY": 260,
+          "alphaBottomNormalized": 0.8370607028753994,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "windup",
+          "phase": 0,
+          "bottomNormalized": 0.8306709265175719
+        },
+        {
+          "index": 8,
+          "rect": [
+            0,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            10,
+            712,
+            303,
+            176
+          ],
+          "bbox": [
+            10,
+            85,
+            303,
+            176
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            259
+          ],
+          "groundContactY": 259,
+          "alphaBottomNormalized": 0.8338658146964856,
+          "minPaddingAt16": 1,
+          "edgePixels": {
+            "1": 9,
+            "8": 1,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "claw",
+          "phase": 0,
+          "bottomNormalized": 0.8274760383386581
+        },
+        {
+          "index": 9,
+          "rect": [
+            314,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            324,
+            710,
+            265,
+            179
+          ],
+          "bbox": [
+            10,
+            83,
+            265,
+            179
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            260
+          ],
+          "groundContactY": 260,
+          "alphaBottomNormalized": 0.8370607028753994,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 16,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "recovery",
+          "phase": 0,
+          "bottomNormalized": 0.8306709265175719
+        },
+        {
+          "index": 10,
+          "rect": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            635,
+            695,
+            278,
+            198
+          ],
+          "bbox": [
+            8,
+            68,
+            278,
+            198
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            264
+          ],
+          "groundContactY": 264,
+          "alphaBottomNormalized": 0.8498402555910544,
+          "minPaddingAt16": 8,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "roar",
+          "phase": 0,
+          "bottomNormalized": 0.8434504792332268
+        },
+        {
+          "index": 11,
+          "rect": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            949,
+            683,
+            278,
+            210
+          ],
+          "bbox": [
+            9,
+            56,
+            278,
+            210
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            264
+          ],
+          "groundContactY": 264,
+          "alphaBottomNormalized": 0.8498402555910544,
+          "minPaddingAt16": 9,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "skyfire",
+          "phase": 0,
+          "bottomNormalized": 0.8434504792332268
+        },
+        {
+          "index": 12,
+          "rect": [
+            0,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            10,
+            1012,
+            289,
+            191
+          ],
+          "bbox": [
+            10,
+            72,
+            289,
+            191
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            261
+          ],
+          "groundContactY": 261,
+          "alphaBottomNormalized": 0.8375796178343949,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 6,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "hurt",
+          "phase": 0,
+          "bottomNormalized": 0.8312101910828026
+        },
+        {
+          "index": 13,
+          "rect": [
+            314,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            324,
+            1030,
+            265,
+            168
+          ],
+          "bbox": [
+            10,
+            90,
+            265,
+            168
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            256
+          ],
+          "groundContactY": 256,
+          "alphaBottomNormalized": 0.821656050955414,
+          "minPaddingAt16": 10,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "stagger",
+          "phase": 0,
+          "bottomNormalized": 0.8152866242038217
+        },
+        {
+          "index": 14,
+          "rect": [
+            627,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            633,
+            1060,
+            269,
+            139
+          ],
+          "bbox": [
+            6,
+            120,
+            269,
+            139
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            257
+          ],
+          "groundContactY": 257,
+          "alphaBottomNormalized": 0.8248407643312102,
+          "minPaddingAt16": 6,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dying",
+          "phase": 0,
+          "bottomNormalized": 0.8184713375796179
+        },
+        {
+          "index": 15,
+          "rect": [
+            940,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            944,
+            1070,
+            301,
+            128
+          ],
+          "bbox": [
+            4,
+            130,
+            301,
+            128
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            256
+          ],
+          "groundContactY": 256,
+          "alphaBottomNormalized": 0.821656050955414,
+          "minPaddingAt16": 4,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dead",
+          "phase": 0,
+          "bottomNormalized": 0.8152866242038217
+        }
+      ],
+      "faceCrop": {
+        "rect": [
+          831,
+          414,
+          77,
+          77
+        ],
+        "frame": 6,
+        "kind": "motion-fallback-face"
+      },
+      "sockets": {
+        "claw": {
+          "frame": 8,
+          "pixel": [
+            304,
+            200
+          ],
+          "ground": 259
+        },
+        "roar": {
+          "frame": 10,
+          "pixel": [
+            263,
+            122
+          ],
+          "ground": 264
+        },
+        "skyfire": {
+          "frame": 11,
+          "pixel": [
+            157.0,
+            264
+          ],
+          "kind": "grounded-cast-base"
+        }
+      }
+    },
+    "2": {
+      "file": "dawnlion-form3-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-64e79db2-1356-4335-9d3f-fc325a978814.png",
+      "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "sourceSha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form3-motion-prompt-v2.txt",
+      "promptSha256": "ae8f13ef791c9ba3a62d2b223284432d1fd9fcbac8f537a05325482aaffe3d75",
+      "references": [
+        {
+          "file": "dawnlion-form3-motion-v1.png",
+          "sha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.31024231231987465,
+          "1": 0.27075527371422614,
+          "8": 0.2464521823625324,
+          "16": 0.24244713567302337,
+          "32": 0.23856418631034595,
+          "64": 0.23365231259968103,
+          "128": 0.2260708317117282,
+          "192": 0.2186330695522335,
+          "240": 0.20661474986582012
+        },
+        "outerEdgeAbove16": 0
+      },
+      "form": 2,
+      "name": "镇曜玄猊",
+      "cols": 4,
+      "rows": 4,
+      "naturalHeight": 106,
+      "referenceFrame": 6,
+      "referenceSourceHeight": 161,
+      "idleHeight": 161,
+      "scaleRule": "All frames share naturalHeight/referenceSourceHeight source-pixel scale; never resize independently to bbox.",
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedWalkFps": 11,
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            45,
+            100,
+            231,
+            156
+          ],
+          "bbox": [
+            45,
+            100,
+            231,
+            156
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            254
+          ],
+          "groundContactY": 254,
+          "alphaBottomNormalized": 0.8152866242038217,
+          "minPaddingAt16": 38,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk0",
+          "phase": 0,
+          "bottomNormalized": 0.8089171974522293
+        },
+        {
+          "index": 1,
+          "rect": [
+            314,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            356,
+            99,
+            227,
+            161
+          ],
+          "bbox": [
+            42,
+            99,
+            227,
+            161
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            258
+          ],
+          "groundContactY": 258,
+          "alphaBottomNormalized": 0.8280254777070064,
+          "minPaddingAt16": 42,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk1",
+          "phase": 1,
+          "bottomNormalized": 0.821656050955414
+        },
+        {
+          "index": 2,
+          "rect": [
+            627,
+            0,
+            313,
+            314
+          ],
+          "spriteRect": [
+            666,
+            101,
+            226,
+            157
+          ],
+          "bbox": [
+            39,
+            101,
+            226,
+            157
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            256
+          ],
+          "groundContactY": 256,
+          "alphaBottomNormalized": 0.821656050955414,
+          "minPaddingAt16": 39,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk2",
+          "phase": 2,
+          "bottomNormalized": 0.8152866242038217
+        },
+        {
+          "index": 3,
+          "rect": [
+            940,
+            0,
+            314,
+            314
+          ],
+          "spriteRect": [
+            975,
+            102,
+            232,
+            157
+          ],
+          "bbox": [
+            35,
+            102,
+            232,
+            157
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            257
+          ],
+          "groundContactY": 257,
+          "alphaBottomNormalized": 0.8248407643312102,
+          "minPaddingAt16": 35,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk3",
+          "phase": 3,
+          "bottomNormalized": 0.8184713375796179
+        },
+        {
+          "index": 4,
+          "rect": [
+            0,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            45,
+            413,
+            230,
+            155
+          ],
+          "bbox": [
+            45,
+            99,
+            230,
+            155
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            252
+          ],
+          "groundContactY": 252,
+          "alphaBottomNormalized": 0.8115015974440895,
+          "minPaddingAt16": 39,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk4",
+          "phase": 4,
+          "bottomNormalized": 0.805111821086262
+        },
+        {
+          "index": 5,
+          "rect": [
+            314,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            357,
+            411,
+            228,
+            158
+          ],
+          "bbox": [
+            43,
+            97,
+            228,
+            158
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            253
+          ],
+          "groundContactY": 253,
+          "alphaBottomNormalized": 0.8146964856230032,
+          "minPaddingAt16": 42,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "walk5",
+          "phase": 5,
+          "bottomNormalized": 0.8083067092651757
+        },
+        {
+          "index": 6,
+          "rect": [
+            627,
+            314,
+            313,
+            313
+          ],
+          "spriteRect": [
+            663,
+            407,
+            224,
+            161
+          ],
+          "bbox": [
+            36,
+            93,
+            224,
+            161
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            252
+          ],
+          "groundContactY": 252,
+          "alphaBottomNormalized": 0.8115015974440895,
+          "minPaddingAt16": 36,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "idle",
+          "phase": 0,
+          "bottomNormalized": 0.805111821086262
+        },
+        {
+          "index": 7,
+          "rect": [
+            940,
+            314,
+            314,
+            313
+          ],
+          "spriteRect": [
+            974,
+            418,
+            236,
+            152
+          ],
+          "bbox": [
+            34,
+            104,
+            236,
+            152
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            254
+          ],
+          "groundContactY": 254,
+          "alphaBottomNormalized": 0.8178913738019169,
+          "minPaddingAt16": 34,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "windup",
+          "phase": 0,
+          "bottomNormalized": 0.8115015974440895
+        },
+        {
+          "index": 8,
+          "rect": [
+            0,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            51,
+            721,
+            241,
+            158
+          ],
+          "bbox": [
+            51,
+            94,
+            241,
+            158
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            250
+          ],
+          "groundContactY": 250,
+          "alphaBottomNormalized": 0.805111821086262,
+          "minPaddingAt16": 22,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "claw",
+          "phase": 0,
+          "bottomNormalized": 0.7987220447284346
+        },
+        {
+          "index": 9,
+          "rect": [
+            314,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            360,
+            724,
+            216,
+            155
+          ],
+          "bbox": [
+            46,
+            97,
+            216,
+            155
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            250
+          ],
+          "groundContactY": 250,
+          "alphaBottomNormalized": 0.805111821086262,
+          "minPaddingAt16": 46,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "recovery",
+          "phase": 0,
+          "bottomNormalized": 0.7987220447284346
+        },
+        {
+          "index": 10,
+          "rect": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "spriteRect": [
+            664,
+            714,
+            228,
+            167
+          ],
+          "bbox": [
+            37,
+            87,
+            228,
+            167
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            252
+          ],
+          "groundContactY": 252,
+          "alphaBottomNormalized": 0.8115015974440895,
+          "minPaddingAt16": 37,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "roar",
+          "phase": 0,
+          "bottomNormalized": 0.805111821086262
+        },
+        {
+          "index": 11,
+          "rect": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "spriteRect": [
+            974,
+            711,
+            228,
+            173
+          ],
+          "bbox": [
+            34,
+            84,
+            228,
+            173
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            255
+          ],
+          "groundContactY": 255,
+          "alphaBottomNormalized": 0.8210862619808307,
+          "minPaddingAt16": 34,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "skyfire",
+          "phase": 0,
+          "bottomNormalized": 0.8146964856230032
+        },
+        {
+          "index": 12,
+          "rect": [
+            0,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            47,
+            1031,
+            242,
+            159
+          ],
+          "bbox": [
+            47,
+            91,
+            242,
+            159
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            248
+          ],
+          "groundContactY": 248,
+          "alphaBottomNormalized": 0.7961783439490446,
+          "minPaddingAt16": 25,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "hurt",
+          "phase": 0,
+          "bottomNormalized": 0.7898089171974523
+        },
+        {
+          "index": 13,
+          "rect": [
+            314,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            358,
+            1040,
+            218,
+            148
+          ],
+          "bbox": [
+            44,
+            100,
+            218,
+            148
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            246
+          ],
+          "groundContactY": 246,
+          "alphaBottomNormalized": 0.7898089171974523,
+          "minPaddingAt16": 44,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "stagger",
+          "phase": 0,
+          "bottomNormalized": 0.7834394904458599
+        },
+        {
+          "index": 14,
+          "rect": [
+            627,
+            940,
+            313,
+            314
+          ],
+          "spriteRect": [
+            659,
+            1061,
+            228,
+            127
+          ],
+          "bbox": [
+            32,
+            121,
+            228,
+            127
+          ],
+          "centerX": 156.5,
+          "pivot": [
+            156.5,
+            246
+          ],
+          "groundContactY": 246,
+          "alphaBottomNormalized": 0.7898089171974523,
+          "minPaddingAt16": 32,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dying",
+          "phase": 0,
+          "bottomNormalized": 0.7834394904458599
+        },
+        {
+          "index": 15,
+          "rect": [
+            940,
+            940,
+            314,
+            314
+          ],
+          "spriteRect": [
+            973,
+            1080,
+            239,
+            107
+          ],
+          "bbox": [
+            33,
+            140,
+            239,
+            107
+          ],
+          "centerX": 157.0,
+          "pivot": [
+            157.0,
+            245
+          ],
+          "groundContactY": 245,
+          "alphaBottomNormalized": 0.7866242038216561,
+          "minPaddingAt16": 33,
+          "edgePixels": {
+            "1": 0,
+            "8": 0,
+            "16": 0
+          },
+          "touchesCellEdge": false,
+          "action": "dead",
+          "phase": 0,
+          "bottomNormalized": 0.7802547770700637
+        }
+      ],
+      "faceCrop": {
+        "rect": [
+          826,
+          424,
+          68,
+          68
+        ],
+        "frame": 6,
+        "kind": "motion-fallback-face"
+      },
+      "sockets": {
+        "claw": {
+          "frame": 8,
+          "pixel": [
+            282,
+            192
+          ],
+          "ground": 250
+        },
+        "roar": {
+          "frame": 10,
+          "pixel": [
+            238,
+            119
+          ],
+          "ground": 252
+        },
+        "skyfire": {
+          "frame": 11,
+          "pixel": [
+            157.0,
+            255
+          ],
+          "kind": "grounded-cast-base"
+        }
+      }
+    }
+  },
+  "portraits": {
+    "0": {
+      "file": "dawnlion-portraits-skills-v1.png",
+      "form": 0,
+      "name": "曜纹幼猊",
+      "rect": [
+        36,
+        40,
+        377,
+        388
+      ],
+      "frame": 0,
+      "faceRect": [
+        226,
+        130,
+        188,
+        188
+      ],
+      "note": "Dedicated newly painted head/bust portrait. rect preserves full mane/horns; faceRect is tighter square HUD/capture closeup. Both atlas absolute."
+    },
+    "1": {
+      "file": "dawnlion-portraits-skills-v1.png",
+      "form": 1,
+      "name": "金鬃灵猊",
+      "rect": [
+        455,
+        25,
+        392,
+        399
+      ],
+      "frame": 1,
+      "faceRect": [
+        663,
+        128,
+        190,
+        190
+      ],
+      "note": "Dedicated newly painted head/bust portrait. rect preserves full mane/horns; faceRect is tighter square HUD/capture closeup. Both atlas absolute."
+    },
+    "2": {
+      "file": "dawnlion-portraits-skills-v1.png",
+      "form": 2,
+      "name": "镇曜玄猊",
+      "rect": [
+        888,
+        9,
+        404,
+        429
+      ],
+      "frame": 2,
+      "faceRect": [
+        1096,
+        111,
+        196,
+        196
+      ],
+      "note": "Dedicated newly painted head/bust portrait. rect preserves full mane/horns; faceRect is tighter square HUD/capture closeup. Both atlas absolute."
+    }
+  },
+  "species": {
+    "file": "dawnlion-portraits-skills-v1.png",
+    "frame": 3,
+    "rect": [
+      1338,
+      70,
+      423,
+      327
+    ],
+    "note": "Final-form full-body right-facing species display; do not use as a face avatar."
+  },
+  "skills": {
+    "claw": {
+      "name": "曜爪",
+      "kind": "claw",
+      "icon": {
+        "file": "dawnlion-portraits-skills-v1.png",
+        "frame": 4,
+        "rect": [
+          18,
+          454,
+          405,
+          409
+        ],
+        "pivot": [
+          202.5,
+          204.5
+        ]
+      },
+      "fx": {
+        "file": "dawnlion-skills-fx-v1.png",
+        "rows": 3,
+        "cols": 4,
+        "frames": [
+          {
+            "index": 0,
+            "rect": [
+              0,
+              0,
+              362,
+              362
+            ],
+            "spriteRect": [
+              61,
+              122,
+              178,
+              135
+            ],
+            "bbox": [
+              61,
+              122,
+              178,
+              135
+            ],
+            "centerX": 111,
+            "pivot": [
+              111,
+              191
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.7099447513812155,
+            "minPaddingAt16": 61,
+            "edgePixels": {
+              "1": 149,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "claw",
+            "phase": 0,
+            "bottomNormalized": 0.7099447513812155
+          },
+          {
+            "index": 1,
+            "rect": [
+              362,
+              0,
+              362,
+              362
+            ],
+            "spriteRect": [
+              387,
+              113,
+              270,
+              145
+            ],
+            "bbox": [
+              25,
+              113,
+              270,
+              145
+            ],
+            "centerX": 81,
+            "pivot": [
+              81,
+              192
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.712707182320442,
+            "minPaddingAt16": 25,
+            "edgePixels": {
+              "1": 450,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "claw",
+            "phase": 1,
+            "bottomNormalized": 0.712707182320442
+          },
+          {
+            "index": 2,
+            "rect": [
+              724,
+              0,
+              362,
+              362
+            ],
+            "spriteRect": [
+              735,
+              102,
+              337,
+              165
+            ],
+            "bbox": [
+              11,
+              102,
+              337,
+              165
+            ],
+            "centerX": 75,
+            "pivot": [
+              75,
+              190
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.7375690607734806,
+            "minPaddingAt16": 11,
+            "edgePixels": {
+              "1": 679,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "claw",
+            "phase": 2,
+            "bottomNormalized": 0.7375690607734806
+          },
+          {
+            "index": 3,
+            "rect": [
+              1086,
+              0,
+              362,
+              362
+            ],
+            "spriteRect": [
+              1118,
+              106,
+              298,
+              147
+            ],
+            "bbox": [
+              32,
+              106,
+              298,
+              147
+            ],
+            "centerX": 83,
+            "pivot": [
+              83,
+              190
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.6988950276243094,
+            "minPaddingAt16": 32,
+            "edgePixels": {
+              "1": 577,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "claw",
+            "phase": 3,
+            "bottomNormalized": 0.6988950276243094
+          }
+        ],
+        "suggestedFps": 10,
+        "suggestedDuration": 0.4,
+        "referenceSourceSize": [
+          362,
+          362
+        ],
+        "grounded": false,
+        "note": "claw origin is measured solar glint at left of slash; ring origin is open center; flame origin is seal support-plane center. Fixed source-pixel scale across phases."
+      }
+    },
+    "ring": {
+      "name": "日轮啸",
+      "kind": "ring",
+      "icon": {
+        "file": "dawnlion-portraits-skills-v1.png",
+        "frame": 5,
+        "rect": [
+          457,
+          455,
+          414,
+          413
+        ],
+        "pivot": [
+          207.0,
+          206.5
+        ]
+      },
+      "fx": {
+        "file": "dawnlion-skills-fx-v1.png",
+        "rows": 3,
+        "cols": 4,
+        "frames": [
+          {
+            "index": 4,
+            "rect": [
+              0,
+              362,
+              362,
+              362
+            ],
+            "spriteRect": [
+              83,
+              433,
+              198,
+              194
+            ],
+            "bbox": [
+              83,
+              71,
+              198,
+              194
+            ],
+            "centerX": 180,
+            "pivot": [
+              180,
+              170
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.7320441988950276,
+            "minPaddingAt16": 71,
+            "edgePixels": {
+              "1": 333,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "ring",
+            "phase": 0,
+            "bottomNormalized": 0.7320441988950276
+          },
+          {
+            "index": 5,
+            "rect": [
+              362,
+              362,
+              362,
+              362
+            ],
+            "spriteRect": [
+              403,
+              410,
+              269,
+              239
+            ],
+            "bbox": [
+              41,
+              48,
+              269,
+              239
+            ],
+            "centerX": 180,
+            "pivot": [
+              180,
+              171
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.7928176795580111,
+            "minPaddingAt16": 41,
+            "edgePixels": {
+              "1": 575,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "ring",
+            "phase": 1,
+            "bottomNormalized": 0.7928176795580111
+          },
+          {
+            "index": 6,
+            "rect": [
+              724,
+              362,
+              362,
+              362
+            ],
+            "spriteRect": [
+              725,
+              385,
+              336,
+              293
+            ],
+            "bbox": [
+              1,
+              23,
+              336,
+              293
+            ],
+            "centerX": 177,
+            "pivot": [
+              177,
+              170
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.8729281767955801,
+            "minPaddingAt16": 1,
+            "edgePixels": {
+              "1": 910,
+              "8": 2,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "ring",
+            "phase": 2,
+            "bottomNormalized": 0.8729281767955801
+          },
+          {
+            "index": 7,
+            "rect": [
+              1086,
+              362,
+              362,
+              362
+            ],
+            "spriteRect": [
+              1098,
+              378,
+              318,
+              287
+            ],
+            "bbox": [
+              12,
+              16,
+              318,
+              287
+            ],
+            "centerX": 178,
+            "pivot": [
+              178,
+              171
+            ],
+            "groundContactY": null,
+            "alphaBottomNormalized": 0.8370165745856354,
+            "minPaddingAt16": 12,
+            "edgePixels": {
+              "1": 815,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "ring",
+            "phase": 3,
+            "bottomNormalized": 0.8370165745856354
+          }
+        ],
+        "suggestedFps": 10,
+        "suggestedDuration": 0.4,
+        "referenceSourceSize": [
+          362,
+          362
+        ],
+        "grounded": false,
+        "note": "claw origin is measured solar glint at left of slash; ring origin is open center; flame origin is seal support-plane center. Fixed source-pixel scale across phases."
+      }
+    },
+    "flame": {
+      "name": "镇曜天火",
+      "kind": "flame",
+      "icon": {
+        "file": "dawnlion-portraits-skills-v1.png",
+        "frame": 6,
+        "rect": [
+          901,
+          455,
+          414,
+          416
+        ],
+        "pivot": [
+          207.0,
+          208.0
+        ]
+      },
+      "fx": {
+        "file": "dawnlion-skills-fx-v1.png",
+        "rows": 3,
+        "cols": 4,
+        "frames": [
+          {
+            "index": 8,
+            "rect": [
+              0,
+              724,
+              362,
+              362
+            ],
+            "spriteRect": [
+              85,
+              727,
+              200,
+              295
+            ],
+            "bbox": [
+              85,
+              3,
+              200,
+              295
+            ],
+            "centerX": 181,
+            "pivot": [
+              181,
+              272
+            ],
+            "groundContactY": 272,
+            "alphaBottomNormalized": 0.8232044198895028,
+            "minPaddingAt16": 3,
+            "edgePixels": {
+              "1": 338,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "flame",
+            "phase": 0,
+            "bottomNormalized": 0.7513812154696132
+          },
+          {
+            "index": 9,
+            "rect": [
+              362,
+              724,
+              362,
+              362
+            ],
+            "spriteRect": [
+              427,
+              746,
+              221,
+              277
+            ],
+            "bbox": [
+              65,
+              22,
+              221,
+              277
+            ],
+            "centerX": 181,
+            "pivot": [
+              181,
+              272
+            ],
+            "groundContactY": 272,
+            "alphaBottomNormalized": 0.8259668508287292,
+            "minPaddingAt16": 22,
+            "edgePixels": {
+              "1": 394,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "flame",
+            "phase": 1,
+            "bottomNormalized": 0.7513812154696132
+          },
+          {
+            "index": 10,
+            "rect": [
+              724,
+              724,
+              362,
+              362
+            ],
+            "spriteRect": [
+              782,
+              750,
+              242,
+              273
+            ],
+            "bbox": [
+              58,
+              26,
+              242,
+              273
+            ],
+            "centerX": 181,
+            "pivot": [
+              181,
+              272
+            ],
+            "groundContactY": 272,
+            "alphaBottomNormalized": 0.8259668508287292,
+            "minPaddingAt16": 26,
+            "edgePixels": {
+              "1": 500,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "flame",
+            "phase": 2,
+            "bottomNormalized": 0.7513812154696132
+          },
+          {
+            "index": 11,
+            "rect": [
+              1086,
+              724,
+              362,
+              362
+            ],
+            "spriteRect": [
+              1147,
+              799,
+              232,
+              223
+            ],
+            "bbox": [
+              61,
+              75,
+              232,
+              223
+            ],
+            "centerX": 181,
+            "pivot": [
+              181,
+              272
+            ],
+            "groundContactY": 272,
+            "alphaBottomNormalized": 0.8232044198895028,
+            "minPaddingAt16": 61,
+            "edgePixels": {
+              "1": 337,
+              "8": 0,
+              "16": 0
+            },
+            "touchesCellEdge": false,
+            "action": "flame",
+            "phase": 3,
+            "bottomNormalized": 0.7513812154696132
+          }
+        ],
+        "suggestedFps": 10,
+        "suggestedDuration": 0.8,
+        "referenceSourceSize": [
+          362,
+          362
+        ],
+        "grounded": true,
+        "note": "claw origin is measured solar glint at left of slash; ring origin is open center; flame origin is seal support-plane center. Fixed source-pixel scale across phases."
+      }
+    }
+  },
+  "uiAtlas": {
+    "file": "dawnlion-portraits-skills-v1.png",
+    "cols": 4,
+    "rows": 2,
+    "frames": [
+      {
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "spriteRect": [
+          36,
+          40,
+          377,
+          388
+        ],
+        "bbox": [
+          36,
+          40,
+          377,
+          388
+        ],
+        "centerX": 222.0,
+        "pivot": [
+          222.0,
+          222.0
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.963963963963964,
+        "minPaddingAt16": 16,
+        "edgePixels": {
+          "1": 486,
+          "8": 1,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 1,
+        "rect": [
+          444,
+          0,
+          443,
+          444
+        ],
+        "spriteRect": [
+          455,
+          25,
+          392,
+          399
+        ],
+        "bbox": [
+          11,
+          25,
+          392,
+          399
+        ],
+        "centerX": 221.5,
+        "pivot": [
+          221.5,
+          222.0
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.954954954954955,
+        "minPaddingAt16": 11,
+        "edgePixels": {
+          "1": 966,
+          "8": 1,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 2,
+        "rect": [
+          887,
+          0,
+          443,
+          444
+        ],
+        "spriteRect": [
+          888,
+          9,
+          404,
+          429
+        ],
+        "bbox": [
+          1,
+          9,
+          404,
+          429
+        ],
+        "centerX": 221.5,
+        "pivot": [
+          221.5,
+          222.0
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.9864864864864865,
+        "minPaddingAt16": 1,
+        "edgePixels": {
+          "1": 990,
+          "8": 28,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 3,
+        "rect": [
+          1330,
+          0,
+          444,
+          444
+        ],
+        "spriteRect": [
+          1338,
+          70,
+          423,
+          327
+        ],
+        "bbox": [
+          8,
+          70,
+          423,
+          327
+        ],
+        "centerX": 222.0,
+        "pivot": [
+          222.0,
+          222.0
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.8941441441441441,
+        "minPaddingAt16": 8,
+        "edgePixels": {
+          "1": 516,
+          "8": 4,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 4,
+        "rect": [
+          0,
+          444,
+          444,
+          443
+        ],
+        "spriteRect": [
+          18,
+          454,
+          405,
+          409
+        ],
+        "bbox": [
+          18,
+          10,
+          405,
+          409
+        ],
+        "centerX": 222.0,
+        "pivot": [
+          222.0,
+          221.5
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.945823927765237,
+        "minPaddingAt16": 10,
+        "edgePixels": {
+          "1": 243,
+          "8": 0,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 5,
+        "rect": [
+          444,
+          444,
+          443,
+          443
+        ],
+        "spriteRect": [
+          457,
+          455,
+          414,
+          413
+        ],
+        "bbox": [
+          13,
+          11,
+          414,
+          413
+        ],
+        "centerX": 221.5,
+        "pivot": [
+          221.5,
+          221.5
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.9571106094808126,
+        "minPaddingAt16": 11,
+        "edgePixels": {
+          "1": 753,
+          "8": 0,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 6,
+        "rect": [
+          887,
+          444,
+          443,
+          443
+        ],
+        "spriteRect": [
+          901,
+          455,
+          414,
+          416
+        ],
+        "bbox": [
+          14,
+          11,
+          414,
+          416
+        ],
+        "centerX": 221.5,
+        "pivot": [
+          221.5,
+          221.5
+        ],
+        "groundContactY": null,
+        "alphaBottomNormalized": 0.963882618510158,
+        "minPaddingAt16": 11,
+        "edgePixels": {
+          "1": 759,
+          "8": 0,
+          "16": 0
+        },
+        "touchesCellEdge": false
+      },
+      {
+        "index": 7,
+        "empty": true,
+        "rect": [
+          1330,
+          444,
+          444,
+          443
+        ]
+      }
+    ],
+    "note": "Intentionally split UI and FX into two atlases for readable portrait/icon sizes. Final cell7 is transparent."
+  },
+  "sources": {
+    "dawnlion-form1-motion-v1.png": {
+      "file": "dawnlion-form1-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-ce7a2342-063e-4ebe-8d87-34bb9de51e41.png",
+      "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "sourceSha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form1-motion-prompt-v1.txt",
+      "promptSha256": "0e562f038d14a09452cc24176e7cf05bca1ef9ed7f23f09f4c74190c05d46edc",
+      "references": [],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.43891699671100326,
+          "1": 0.283646080548624,
+          "8": 0.2543923241480532,
+          "16": 0.25085976867643955,
+          "32": 0.24742196581783588,
+          "64": 0.2431275739006789,
+          "128": 0.23652350755095655,
+          "192": 0.2298997275703395,
+          "240": 0.2191557987327315
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form2-motion-v1.png": {
+      "file": "dawnlion-form2-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-a12e6c39-b4aa-4979-809b-7850c5c72ca8.png",
+      "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "sourceSha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form2-motion-prompt-v1.txt",
+      "promptSha256": "882cc4a054cc8f4f2064feb8165359001e69997d784d398acdf3d5193b0faef1",
+      "references": [
+        {
+          "file": "dawnlion-form1-motion-v1.png",
+          "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.3838256653668389,
+          "1": 0.33087866832515533,
+          "8": 0.3023632191977697,
+          "16": 0.29841604155379026,
+          "32": 0.2946908012382704,
+          "64": 0.28990420447232335,
+          "128": 0.28270300588356495,
+          "192": 0.27522454461512635,
+          "240": 0.2623152959969883
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form3-motion-v1.png": {
+      "file": "dawnlion-form3-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-930bf0e1-2bc1-4dbc-a108-139b7072b238.png",
+      "sha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b",
+      "sourceSha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form3-motion-prompt-v1.txt",
+      "promptSha256": "02944cf6a36274d1b26825190ec1117bcaed01bb5cff2fd42a39e85d8c6467d3",
+      "references": [
+        {
+          "file": "dawnlion-form2-motion-v1.png",
+          "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.4684747245814987,
+          "1": 0.41080472313159294,
+          "8": 0.37323753780565666,
+          "16": 0.36755810433725317,
+          "32": 0.3623645164818673,
+          "64": 0.3561280139597944,
+          "128": 0.34672715571733453,
+          "192": 0.33734982664723284,
+          "240": 0.3197976999916058
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form3-motion-v2.png": {
+      "file": "dawnlion-form3-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-64e79db2-1356-4335-9d3f-fc325a978814.png",
+      "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "sourceSha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form3-motion-prompt-v2.txt",
+      "promptSha256": "ae8f13ef791c9ba3a62d2b223284432d1fd9fcbac8f537a05325482aaffe3d75",
+      "references": [
+        {
+          "file": "dawnlion-form3-motion-v1.png",
+          "sha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.31024231231987465,
+          "1": 0.27075527371422614,
+          "8": 0.2464521823625324,
+          "16": 0.24244713567302337,
+          "32": 0.23856418631034595,
+          "64": 0.23365231259968103,
+          "128": 0.2260708317117282,
+          "192": 0.2186330695522335,
+          "240": 0.20661474986582012
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-portraits-skills-v1.png": {
+      "file": "dawnlion-portraits-skills-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-53c89617-f3ae-40c8-b9fb-cc652431ad67.png",
+      "sha256": "8e50c96257205130840ef85f75cadee5b6e8f3dcf77d31f11a38f86a7701eb88",
+      "sourceSha256": "8e50c96257205130840ef85f75cadee5b6e8f3dcf77d31f11a38f86a7701eb88",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-portraits-skills-prompt-v1.txt",
+      "promptSha256": "83ef6b82e521f7c9365a7e1ef10a4252902ba03231c41724f242fd037b6f2f26",
+      "references": [
+        {
+          "file": "dawnlion-form1-motion-v1.png",
+          "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+        },
+        {
+          "file": "dawnlion-form2-motion-v1.png",
+          "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b"
+        },
+        {
+          "file": "dawnlion-form3-motion-v2.png",
+          "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.627736985061689,
+          "1": 0.520798353773471,
+          "8": 0.4796096439997,
+          "16": 0.47610670984749015,
+          "32": 0.4729081852487833,
+          "64": 0.4692037942521884,
+          "128": 0.46370281493043064,
+          "192": 0.45835880671455026,
+          "240": 0.4466876554617683
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-skills-fx-v1.png": {
+      "file": "dawnlion-skills-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-ba4b16df-61c1-4d84-83ae-a3b80853f31a.png",
+      "sha256": "cb9826023d13f86f56ab81ccc7dd715364f848cc88d32ae48897fdd8f2318726",
+      "sourceSha256": "cb9826023d13f86f56ab81ccc7dd715364f848cc88d32ae48897fdd8f2318726",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-skills-fx-prompt-v1.txt",
+      "promptSha256": "80e84f1b7cd29cb52ab70e5cf03c0ee815ac97913fadccfd1f92f31916ae3c8d",
+      "references": [],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          253
+        ],
+        "coverage": {
+          "0": 0.9740462490969954,
+          "1": 0.5461956798225532,
+          "8": 0.19842571960562863,
+          "16": 0.16779542240265355,
+          "32": 0.14635860219977004,
+          "64": 0.1275945483959586,
+          "128": 0.10497809895912823,
+          "192": 0.08014356501124305,
+          "240": 0.047147014234404726
+        },
+        "outerEdgeAbove16": 0
+      }
+    }
+  },
+  "rejectedDrafts": [
+    {
+      "file": "dawnlion-form3-motion-v1.png",
+      "reason": "Claw in frame8 crosses nominal boundary into frame9 and dead tail touches frame15 left edge. Superseded by complete uniformly smaller v2 generation. Keep original archive only."
+    }
+  ],
+  "calibration": "Foot contacts, portrait faceRect and spell sockets manually inspected on original PNG; alpha extents measured numerically. These are integration suggestions requiring actual mirrored/runtime/UI review, not automatic anatomy recognition or user approval."
+}

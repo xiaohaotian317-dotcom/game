@@ -1,0 +1,906 @@
+{
+  "task": "T46 chapter-two19 actual CSS face-portrait review",
+  "startedAt": "2026-11-09T09:06:10.851Z",
+  "formalSavesTouched": false,
+  "sourceFunction": "dist/src/campaign-enemy-ui.mjs enemyPortraitStyle and enemyPortraitRect",
+  "sourceHash": "d625fb2b1294462814c1fba4e8ad73ec7dccb922bc7612b10ff17bc9860be43b",
+  "metaHash": "b2aaeea371bcff115c76cdb610712e867924bfcc13596569e749fca81f57a376",
+  "scope": "All M11-M20 and B12-B20, production CSS background crop function at square and circular masks. QA layout only, no manual crop replacement.",
+  "errors": [],
+  "failedResources": [],
+  "checks": [
+    {
+      "name": "all19 live production crops returned",
+      "passed": true
+    },
+    {
+      "name": "all19 square source rectangles",
+      "passed": true
+    },
+    {
+      "name": "all38 square/circle elements keep1to1 proportion",
+      "passed": true
+    },
+    {
+      "name": "actual CSS positions and sizes identical between masks",
+      "passed": true
+    },
+    {
+      "name": "each source is actual full runtime atlas, no QA crop images",
+      "passed": true
+    },
+    {
+      "name": "zero save writes",
+      "passed": true
+    },
+    {
+      "name": "no script errors",
+      "passed": true
+    },
+    {
+      "name": "no failed resources",
+      "passed": true
+    },
+    {
+      "name": "all19 portraits show clear face in both square and circular mask after manual screenshot review",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "t46-portraits-all.png",
+    "t46-portraits-minions.png",
+    "t46-portraits-bosses.png"
+  ],
+  "portraits": [
+    {
+      "id": "M11",
+      "name": "锚甲蟹卫",
+      "crop": {
+        "file": "chapter2/M11-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          135,
+          130,
+          92,
+          92
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M11-motion-v1.png');background-size:1363.0434782608695% 1363.0434782608695%;background-position:11.61790017211704% 11.187607573149743%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M11-motion-v1.png\")",
+        "backgroundPosition": "11.6179% 11.1876%",
+        "backgroundSize": "1363.04% 1363.04%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M11-motion-v1.png\")",
+        "backgroundPosition": "11.6179% 11.1876%",
+        "backgroundSize": "1363.04% 1363.04%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M12",
+      "name": "赤晶镰蛛",
+      "crop": {
+        "file": "chapter2/M12-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          174,
+          132,
+          108,
+          108
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M12-motion-v1.png');background-size:1161.111111111111% 1161.111111111111%;background-position:15.18324607329843% 11.518324607329843%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M12-motion-v1.png\")",
+        "backgroundPosition": "15.1832% 11.5183%",
+        "backgroundSize": "1161.11% 1161.11%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M12-motion-v1.png\")",
+        "backgroundPosition": "15.1832% 11.5183%",
+        "backgroundSize": "1161.11% 1161.11%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M13",
+      "name": "菌铠尸卫",
+      "crop": {
+        "file": "chapter2/M13-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          207,
+          70,
+          72,
+          72
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M13-motion-v1.png');background-size:1741.6666666666667% 1741.6666666666667%;background-position:17.512690355329948% 5.922165820642978%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M13-motion-v1.png\")",
+        "backgroundPosition": "17.5127% 5.92217%",
+        "backgroundSize": "1741.67% 1741.67%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M13-motion-v1.png\")",
+        "backgroundPosition": "17.5127% 5.92217%",
+        "backgroundSize": "1741.67% 1741.67%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M14",
+      "name": "烬羽刃侍",
+      "crop": {
+        "file": "chapter2/M14-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          166,
+          22,
+          90,
+          90
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M14-motion-v1.png');background-size:1393.3333333333333% 1393.3333333333333%;background-position:14.261168384879724% 1.8900343642611683%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M14-motion-v1.png\")",
+        "backgroundPosition": "14.2612% 1.89003%",
+        "backgroundSize": "1393.33% 1393.33%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M14-motion-v1.png\")",
+        "backgroundPosition": "14.2612% 1.89003%",
+        "backgroundSize": "1393.33% 1393.33%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M15",
+      "name": "镜壳双刀卫",
+      "crop": {
+        "file": "chapter2/M15-motion-v3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          176,
+          78,
+          58,
+          58
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M15-motion-v3.png');background-size:2162.0689655172414% 2162.0689655172414%;background-position:14.715719063545151% 6.521739130434782%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M15-motion-v3.png\")",
+        "backgroundPosition": "14.7157% 6.52174%",
+        "backgroundSize": "2162.07% 2162.07%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M15-motion-v3.png\")",
+        "backgroundPosition": "14.7157% 6.52174%",
+        "backgroundSize": "2162.07% 2162.07%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M16",
+      "name": "时砂戟卫",
+      "crop": {
+        "file": "chapter2/M16-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          158,
+          108,
+          64,
+          64
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M16-motion-v1.png');background-size:1959.375% 1959.375%;background-position:13.277310924369749% 9.07563025210084%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M16-motion-v1.png\")",
+        "backgroundPosition": "13.2773% 9.07563%",
+        "backgroundSize": "1959.38% 1959.38%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M16-motion-v1.png\")",
+        "backgroundPosition": "13.2773% 9.07563%",
+        "backgroundSize": "1959.38% 1959.38%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M17",
+      "name": "契印咒师",
+      "crop": {
+        "file": "chapter2/M17-motion-v2.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          162,
+          35,
+          70,
+          70
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M17-motion-v2.png');background-size:1791.4285714285716% 1791.4285714285716%;background-position:13.682432432432432% 2.956081081081081%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M17-motion-v2.png\")",
+        "backgroundPosition": "13.6824% 2.95608%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M17-motion-v2.png\")",
+        "backgroundPosition": "13.6824% 2.95608%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M18",
+      "name": "棱镜晶巫",
+      "crop": {
+        "file": "chapter2/M18-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          139,
+          41,
+          70,
+          70
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M18-motion-v1.png');background-size:1791.4285714285716% 1791.4285714285716%;background-position:11.739864864864865% 3.4628378378378377%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M18-motion-v1.png\")",
+        "backgroundPosition": "11.7399% 3.46284%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M18-motion-v1.png\")",
+        "backgroundPosition": "11.7399% 3.46284%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M19",
+      "name": "孢囊浮灯",
+      "crop": {
+        "file": "chapter2/M19-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          185,
+          117,
+          88,
+          88
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M19-motion-v1.png');background-size:1425% 1425%;background-position:15.866209262435676% 10.034305317324185%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M19-motion-v1.png\")",
+        "backgroundPosition": "15.8662% 10.0343%",
+        "backgroundSize": "1425% 1425%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M19-motion-v1.png\")",
+        "backgroundPosition": "15.8662% 10.0343%",
+        "backgroundSize": "1425% 1425%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "M20",
+      "name": "雷铸钩卫",
+      "crop": {
+        "file": "chapter2/M20-motion-v1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 0,
+        "rect": [
+          182,
+          110,
+          70,
+          70
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/M20-motion-v1.png');background-size:1791.4285714285716% 1791.4285714285716%;background-position:15.371621621621623% 9.29054054054054%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M20-motion-v1.png\")",
+        "backgroundPosition": "15.3716% 9.29054%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/M20-motion-v1.png\")",
+        "backgroundPosition": "15.3716% 9.29054%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B12",
+      "name": "深潮锚王",
+      "crop": {
+        "file": "chapter2/B12-motion-v2.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          774,
+          349,
+          90,
+          90
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B12-motion-v2.png');background-size:1393.3333333333333% 1393.3333333333333%;background-position:66.49484536082474% 29.982817869415808%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B12-motion-v2.png\")",
+        "backgroundPosition": "66.4948% 29.9828%",
+        "backgroundSize": "1393.33% 1393.33%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B12-motion-v2.png\")",
+        "backgroundPosition": "66.4948% 29.9828%",
+        "backgroundSize": "1393.33% 1393.33%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B13",
+      "name": "裂晶巨蜥",
+      "crop": {
+        "file": "chapter2/B13-motion-v4.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          839,
+          424,
+          76,
+          76
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B13-motion-v4.png');background-size:1650% 1650%;background-position:71.22241086587437% 35.993208828522924%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B13-motion-v4.png\")",
+        "backgroundPosition": "71.2224% 35.9932%",
+        "backgroundSize": "1650% 1650%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B13-motion-v4.png\")",
+        "backgroundPosition": "71.2224% 35.9932%",
+        "backgroundSize": "1650% 1650%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B14",
+      "name": "孢冠沼母",
+      "crop": {
+        "file": "chapter2/B14-motion-v4.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          766,
+          375,
+          86,
+          86
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B14-motion-v4.png');background-size:1458.139534883721% 1458.139534883721%;background-position:65.58219178082192% 32.10616438356164%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B14-motion-v4.png\")",
+        "backgroundPosition": "65.5822% 32.1062%",
+        "backgroundSize": "1458.14% 1458.14%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B14-motion-v4.png\")",
+        "backgroundPosition": "65.5822% 32.1062%",
+        "backgroundSize": "1458.14% 1458.14%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B15",
+      "name": "烬翼审判官",
+      "crop": {
+        "file": "chapter2/B15-motion-v4.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          788,
+          370,
+          64,
+          64
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B15-motion-v4.png');background-size:1959.375% 1959.375%;background-position:66.21848739495798% 31.092436974789916%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B15-motion-v4.png\")",
+        "backgroundPosition": "66.2185% 31.0924%",
+        "backgroundSize": "1959.38% 1959.38%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B15-motion-v4.png\")",
+        "backgroundPosition": "66.2185% 31.0924%",
+        "backgroundSize": "1959.38% 1959.38%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B16",
+      "name": "千面镜姬",
+      "crop": {
+        "file": "chapter2/B16-motion-v3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          771,
+          375,
+          70,
+          70
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B16-motion-v3.png');background-size:1791.4285714285716% 1791.4285714285716%;background-position:65.11824324324324% 31.6722972972973%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v3.png\")",
+        "backgroundPosition": "65.1182% 31.6723%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v3.png\")",
+        "backgroundPosition": "65.1182% 31.6723%",
+        "backgroundSize": "1791.43% 1791.43%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B17",
+      "name": "时砂圣甲",
+      "crop": {
+        "file": "chapter2/B17-motion-v3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          815,
+          435,
+          92,
+          92
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B17-motion-v3.png');background-size:1363.0434782608695% 1363.0434782608695%;background-position:70.13769363166953% 37.43545611015491%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B17-motion-v3.png\")",
+        "backgroundPosition": "70.1377% 37.4355%",
+        "backgroundSize": "1363.04% 1363.04%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B17-motion-v3.png\")",
+        "backgroundPosition": "70.1377% 37.4355%",
+        "backgroundSize": "1363.04% 1363.04%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B18",
+      "name": "噬月螳皇",
+      "crop": {
+        "file": "chapter2/B18-motion-v2.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          825,
+          422,
+          78,
+          78
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B18-motion-v2.png');background-size:1607.6923076923076% 1607.6923076923076%;background-position:70.1530612244898% 35.8843537414966%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B18-motion-v2.png\")",
+        "backgroundPosition": "70.1531% 35.8844%",
+        "backgroundSize": "1607.69% 1607.69%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B18-motion-v2.png\")",
+        "backgroundPosition": "70.1531% 35.8844%",
+        "backgroundSize": "1607.69% 1607.69%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B19",
+      "name": "雷铸巨像",
+      "crop": {
+        "file": "chapter2/B19-motion-v3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          773,
+          391,
+          76,
+          76
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B19-motion-v3.png');background-size:1650% 1650%;background-position:65.61969439728354% 33.1918505942275%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B19-motion-v3.png\")",
+        "backgroundPosition": "65.6197% 33.1918%",
+        "backgroundSize": "1650% 1650%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B19-motion-v3.png\")",
+        "backgroundPosition": "65.6197% 33.1918%",
+        "backgroundSize": "1650% 1650%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    },
+    {
+      "id": "B20",
+      "name": "蚀日双相王",
+      "crop": {
+        "file": "chapter2/B20-motion-v3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "frame": 6,
+        "rect": [
+          755,
+          369,
+          76,
+          76
+        ]
+      },
+      "style": "background-image:url('assets/enemies/chapter2/B20-motion-v3.png');background-size:1650% 1650%;background-position:64.09168081494057% 31.32427843803056%",
+      "imageSize": [
+        1254,
+        1254
+      ],
+      "squareCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B20-motion-v3.png\")",
+        "backgroundPosition": "64.0917% 31.3243%",
+        "backgroundSize": "1650% 1650%",
+        "width": 112,
+        "height": 112
+      },
+      "circleCSS": {
+        "backgroundImage": "url(\"http://127.0.0.1:4223/assets/enemies/chapter2/B20-motion-v3.png\")",
+        "backgroundPosition": "64.0917% 31.3243%",
+        "backgroundSize": "1650% 1650%",
+        "borderRadius": "50%",
+        "width": 112,
+        "height": 112
+      }
+    }
+  ],
+  "passed": true,
+  "uniqueResources": 27,
+  "sourceHashAfter": "d625fb2b1294462814c1fba4e8ad73ec7dccb922bc7612b10ff17bc9860be43b",
+  "metaHashAfter": "b2aaeea371bcff115c76cdb610712e867924bfcc13596569e749fca81f57a376",
+  "sourceChangedDuringRun": false,
+  "metaChangedDuringRun": false,
+  "technicalPassed": true,
+  "visualReview": [
+    {
+      "id": "M11",
+      "name": "锚甲蟹卫",
+      "status": "pass",
+      "observation": "完整头脸、双眼和牙口清楚，方/圆均可辨。"
+    },
+    {
+      "id": "M12",
+      "name": "赤晶镰蛛",
+      "status": "pass",
+      "observation": "晶蛛主眼、口器与镰状颚部清楚。"
+    },
+    {
+      "id": "M13",
+      "name": "菌铠尸卫",
+      "status": "pass",
+      "observation": "骷髅面孔和张口牙列可辨，略偏左但不是背部。"
+    },
+    {
+      "id": "M14",
+      "name": "烬羽刃侍",
+      "status": "pass",
+      "observation": "鸟首红眼与长喙清楚，取景是头部。"
+    },
+    {
+      "id": "M15",
+      "name": "镜壳双刀卫",
+      "status": "pass",
+      "observation": "紫色面甲和眼部发光清楚。"
+    },
+    {
+      "id": "M16",
+      "name": "时砂戟卫",
+      "status": "pass",
+      "observation": "角盔下眼睛与虫面可辨，头部偏左但仍完整可认。"
+    },
+    {
+      "id": "M17",
+      "name": "契印咒师",
+      "status": "pass",
+      "observation": "兜帽内发光双眼与骷面清楚。"
+    },
+    {
+      "id": "M18",
+      "name": "棱镜晶巫",
+      "status": "pass",
+      "observation": "棱晶头面和紫眼清楚。"
+    },
+    {
+      "id": "M19",
+      "name": "孢囊浮灯",
+      "status": "pass",
+      "observation": "绿色双眼、鼻口器官清楚，是浮灯本体头面。"
+    },
+    {
+      "id": "M20",
+      "name": "雷铸钩卫",
+      "status": "pass",
+      "observation": "机械头盔、蓝色目镜和下颚清楚。"
+    },
+    {
+      "id": "B12",
+      "name": "深潮锚王",
+      "status": "pass",
+      "observation": "已居中复核：冠、眼、露齿头面清楚，方形/圆形均可辨，肩部不是主内容。"
+    },
+    {
+      "id": "B13",
+      "name": "裂晶巨蜥",
+      "status": "pass",
+      "observation": "最新[839,424,76,76]已实际CSS复核：巨蜥目光、脸颊、口颚清楚，方/圆均无翅背替脸。"
+    },
+    {
+      "id": "B14",
+      "name": "孢冠沼母",
+      "status": "pass",
+      "observation": "已居中复核：女王眼神与脸部在中部，保留菌冠语境，不再是左上小脸加胸部。"
+    },
+    {
+      "id": "B15",
+      "name": "烬翼审判官",
+      "status": "pass",
+      "observation": "已收紧复核：王冠、鸟首目光与喙部清楚，胸肋占比已降低。"
+    },
+    {
+      "id": "B16",
+      "name": "千面镜姬",
+      "status": "pass",
+      "observation": "严重偏右已修：新版[771,375,70,70]在方/圆中均显示居中清楚的冠脸和眼神，不再空白。"
+    },
+    {
+      "id": "B17",
+      "name": "时砂圣甲",
+      "status": "pass",
+      "observation": "金色虫王头盔、发光眼、颚部清楚。"
+    },
+    {
+      "id": "B18",
+      "name": "噬月螳皇",
+      "status": "pass",
+      "observation": "螳皇头面、眼和口部可辨，非翅膀/背部。"
+    },
+    {
+      "id": "B19",
+      "name": "雷铸巨像",
+      "status": "pass",
+      "observation": "机械骷面、目镜和牙颌清楚。"
+    },
+    {
+      "id": "B20",
+      "name": "蚀日双相王",
+      "status": "pass",
+      "observation": "蚀日王冠、侧脸与头颅清楚。"
+    }
+  ],
+  "visualExceptions": [],
+  "blockingVisualIssues": [],
+  "visualPassed": true,
+  "reviewBoundary": "Final manual review of all19 actual production enemyPortraitStyle CSS backgrounds, each in112px square and round masks. Portrait definitions came directly from final runtime metadata, including B13[839,424,76,76]. No raster crop images were substituted. All19 show face/eyes/head, no empty avatar or wing/back substitution observed. This is a crop/composition review, not user art acceptance, every in-game UI size, or natural progression.",
+  "priorFailureEvidence": "t46-portraits-before-report.json and t46-portraits-before-bosses.png preserve the earlier B16 failure and B12/B14/B15 composition warnings. Current final report supersedes that old state only after main-Agent runtime correction."
+}

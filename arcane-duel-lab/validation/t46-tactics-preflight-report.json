@@ -1,0 +1,1468 @@
+{
+  "task": "T46 isolated actual boss tactics renderer",
+  "preflight": true,
+  "startedAt": "2026-11-09T08:27:48.619Z",
+  "viewport": [
+    1366,
+    768
+  ],
+  "headless": true,
+  "formalSavesTouched": false,
+  "naturalProgression": false,
+  "userArtAcceptance": false,
+  "boundary": "Production createCampaign/spawnEnemy/stepCampaign (which calls actual enemy simulation), Renderer/EnemyPainter and source atlases. Durable player, isolated flat combat clearing, one selected real AI pattern per scene. No injected formal saves, no human FPS/balance claim. Screenshots show whichever runtime body atlas is recorded here, not an assertion of final user approval.",
+  "errors": [],
+  "failedResources": [],
+  "checks": [
+    {
+      "name": "B12 wave stays on actual standing floor",
+      "passed": true,
+      "data": {
+        "released": {
+          "time": 1.3999999999999975,
+          "enemy": {
+            "x": 1579.2951326844359,
+            "y": 760,
+            "hp": 4950,
+            "visibility": 1
+          },
+          "playerHp": 50000,
+          "step": "wave",
+          "wave": {
+            "x": 1488.349808500672,
+            "y": 760,
+            "travel": 2.8333333333333335,
+            "damage": 14,
+            "face": -1
+          }
+        },
+        "near": {
+          "time": 1.9999999999999953,
+          "enemy": {
+            "x": 1579.2949001449333,
+            "y": 760,
+            "hp": 4950,
+            "visibility": 1
+          },
+          "playerHp": 50000,
+          "step": "wave",
+          "wave": {
+            "x": 1284.3498085006775,
+            "y": 760,
+            "travel": 206.8333333333335,
+            "damage": 14,
+            "face": -1
+          }
+        }
+      }
+    },
+    {
+      "name": "B12 actual warning image drawn",
+      "passed": true
+    },
+    {
+      "name": "B12 releases a real wave actor",
+      "passed": true
+    },
+    {
+      "name": "B13 veil visible alpha and real damage",
+      "passed": true,
+      "data": {
+        "before": 4950,
+        "after": 4921,
+        "delta": 29,
+        "visibility": 0.16
+      }
+    },
+    {
+      "name": "B13 reveals before offensive hit",
+      "passed": true,
+      "data": {
+        "time": 2.1083333333333285,
+        "enemy": {
+          "x": 1240,
+          "y": 760,
+          "hp": 4921,
+          "visibility": 1
+        },
+        "playerHp": 50000,
+        "step": "melee"
+      }
+    },
+    {
+      "name": "B13 teleport uses actual textured warning",
+      "passed": true
+    },
+    {
+      "name": "B14 real channel heals while original material FX draws",
+      "passed": true,
+      "data": {
+        "before": 2723,
+        "after": 2871,
+        "healed": [
+          {
+            "type": "bossHealed",
+            "time": 1.5833333333333302,
+            "id": "enemy-1",
+            "amount": 74
+          },
+          {
+            "type": "bossHealed",
+            "time": 2.041666666666662,
+            "id": "enemy-1",
+            "amount": 74
+          }
+        ]
+      }
+    },
+    {
+      "name": "B14 actual warning image drawn",
+      "passed": true
+    },
+    {
+      "name": "B16 promised anchor does not track moved player",
+      "passed": true,
+      "data": {
+        "warning": {
+          "x": 1240,
+          "y": 760,
+          "platformId": "ground",
+          "offsetX": 1240,
+          "clickY": 758
+        },
+        "moved": {
+          "x": 1340,
+          "anchor": {
+            "x": 1240,
+            "y": 760,
+            "platformId": "ground",
+            "offsetX": 1240,
+            "clickY": 758
+          }
+        }
+      }
+    },
+    {
+      "name": "B16 two real clone actors and boss atlas drawings",
+      "passed": true,
+      "data": {
+        "clones": [
+          {
+            "id": "enemy-5",
+            "enemyKind": "M15",
+            "appearanceKind": "B16",
+            "hp": 272,
+            "expires": 10.683333333333326
+          },
+          {
+            "id": "enemy-7",
+            "enemyKind": "M15",
+            "appearanceKind": "B16",
+            "hp": 272,
+            "expires": 10.683333333333326
+          }
+        ],
+        "sources": [
+          "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v1.png",
+          "http://127.0.0.1:4223/assets/minion-fx/chapter2/minion-melee-fx-v2.png"
+        ],
+        "bossImage": "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v1.png"
+      }
+    },
+    {
+      "name": "B16 actual warning image drawn",
+      "passed": true
+    },
+    {
+      "name": "all actual renderer calls finite",
+      "passed": true,
+      "data": {
+        "draws": 1312,
+        "finiteCalls": 329092,
+        "nonFinite": [],
+        "localStorageItems": 0
+      }
+    },
+    {
+      "name": "no formal or temporary save writes",
+      "passed": true
+    },
+    {
+      "name": "no browser errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "no failed resources",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": 12,
+      "kind": "B12",
+      "pattern": "undertow",
+      "drawStart": 0,
+      "warningStart": 0,
+      "sourcesStart": 0,
+      "time": 2.7999999999999927,
+      "draws": 337,
+      "warningDraws": 90,
+      "bossImage": "http://127.0.0.1:4223/assets/enemies/chapter2/B12-motion-v4.png",
+      "bossFile": "chapter2/B12-motion-v4.png",
+      "clones": [],
+      "cloneDrawSources": [],
+      "healed": [],
+      "revealed": [],
+      "enemyEvents": [
+        {
+          "type": "groundWaveReleased",
+          "time": 1.3999999999999975,
+          "id": "enemy-1",
+          "x": 1491.1831418340053,
+          "y": 760
+        }
+      ],
+      "loaded": {
+        "file": "chapter2/B12-motion-v4.png",
+        "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B12-motion-v4.png",
+        "scale": 0.792,
+        "hp": 4950,
+        "stage": 12
+      }
+    },
+    {
+      "id": 13,
+      "kind": "B13",
+      "pattern": "burrow",
+      "drawStart": 337,
+      "warningStart": 90,
+      "sourcesStart": 628,
+      "time": 2.1083333333333285,
+      "draws": 255,
+      "warningDraws": 130,
+      "bossImage": "http://127.0.0.1:4223/assets/enemies/chapter2/B13-motion-v4.png",
+      "bossFile": "chapter2/B13-motion-v4.png",
+      "clones": [],
+      "cloneDrawSources": [],
+      "healed": [],
+      "revealed": [
+        {
+          "type": "enemyRevealed",
+          "time": 2.1083333333333285,
+          "id": "enemy-1"
+        }
+      ],
+      "enemyEvents": [
+        {
+          "type": "enemyVeiled",
+          "time": 1.1499999999999984,
+          "id": "enemy-1",
+          "until": 2.8499999999999983
+        },
+        {
+          "type": "enemyTeleported",
+          "time": 1.799999999999996,
+          "id": "enemy-1",
+          "x": 1240,
+          "y": 760
+        }
+      ],
+      "loaded": {
+        "file": "chapter2/B13-motion-v4.png",
+        "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B13-motion-v4.png",
+        "scale": 0.792,
+        "hp": 4950,
+        "stage": 13
+      }
+    },
+    {
+      "id": 14,
+      "kind": "B14",
+      "pattern": "renewal",
+      "drawStart": 592,
+      "warningStart": 220,
+      "sourcesStart": 1299,
+      "time": 2.041666666666662,
+      "draws": 246,
+      "warningDraws": 90,
+      "bossImage": "http://127.0.0.1:4223/assets/enemies/chapter2/B14-motion-v1.png",
+      "bossFile": "chapter2/B14-motion-v1.png",
+      "clones": [],
+      "cloneDrawSources": [],
+      "healed": [
+        {
+          "type": "bossHealed",
+          "time": 1.5833333333333302,
+          "id": "enemy-1",
+          "amount": 74
+        },
+        {
+          "type": "bossHealed",
+          "time": 2.041666666666662,
+          "id": "enemy-1",
+          "amount": 74
+        }
+      ],
+      "revealed": [],
+      "enemyEvents": [
+        {
+          "type": "enemyHealing",
+          "time": 1.3999999999999975,
+          "id": "enemy-1"
+        }
+      ],
+      "loaded": {
+        "file": "chapter2/B14-motion-v1.png",
+        "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B14-motion-v1.png",
+        "scale": 0.792,
+        "hp": 4950,
+        "stage": 14
+      }
+    },
+    {
+      "id": 16,
+      "kind": "B16",
+      "pattern": "reflections",
+      "drawStart": 838,
+      "warningStart": 310,
+      "sourcesStart": 1821,
+      "time": 3.9416666666666553,
+      "draws": 474,
+      "warningDraws": 342,
+      "bossImage": "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v1.png",
+      "bossFile": "chapter2/B16-motion-v1.png",
+      "clones": [
+        {
+          "id": "enemy-5",
+          "enemyKind": "M15",
+          "appearanceKind": "B16",
+          "hp": 272,
+          "expires": 10.683333333333326
+        },
+        {
+          "id": "enemy-7",
+          "enemyKind": "M15",
+          "appearanceKind": "B16",
+          "hp": 272,
+          "expires": 10.683333333333326
+        }
+      ],
+      "cloneDrawSources": [
+        "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v1.png",
+        "http://127.0.0.1:4223/assets/minion-fx/chapter2/minion-melee-fx-v2.png"
+      ],
+      "healed": [],
+      "revealed": [
+        {
+          "type": "enemyRevealed",
+          "time": 3.033333333333325,
+          "id": "enemy-1"
+        }
+      ],
+      "enemyEvents": [
+        {
+          "type": "enemyVeiled",
+          "time": 1.1499999999999984,
+          "id": "enemy-1",
+          "until": 3.1499999999999986
+        },
+        {
+          "type": "enemyTeleported",
+          "time": 1.799999999999996,
+          "id": "enemy-1",
+          "x": 1240,
+          "y": 760
+        },
+        {
+          "type": "mirrorCloneSpawned",
+          "time": 2.6833333333333265,
+          "id": "enemy-5",
+          "owner": "enemy-1",
+          "expires": 10.683333333333326
+        },
+        {
+          "type": "mirrorCloneSpawned",
+          "time": 2.6833333333333265,
+          "id": "enemy-7",
+          "owner": "enemy-1",
+          "expires": 10.683333333333326
+        }
+      ],
+      "loaded": {
+        "file": "chapter2/B16-motion-v1.png",
+        "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v1.png",
+        "scale": 0.792,
+        "hp": 4950,
+        "stage": 16
+      }
+    }
+  ],
+  "screenshots": [
+    "t46-tactics-preflight-B12-wave-warning.png",
+    "t46-tactics-preflight-B12-wave.png",
+    "t46-tactics-preflight-B13-veiled.png",
+    "t46-tactics-preflight-B13-teleport-warning.png",
+    "t46-tactics-preflight-B13-revealed.png",
+    "t46-tactics-preflight-B14-heal-warning.png",
+    "t46-tactics-preflight-B14-healing.png",
+    "t46-tactics-preflight-B16-teleport-warning.png",
+    "t46-tactics-preflight-B16-mirror-clones.png"
+  ],
+  "sourceHashesAtStart": {
+    "boss-tactics.mjs": "a253c7c484ce89f46898500bf336fbdd4a465f6de71d37cf00766075569b4242",
+    "enemy-simulation.mjs": "eb060b8097b936270ffa631c1bb6778f028f9e33521c4c9732b276cddd816e61",
+    "enemy-painter.mjs": "8b593b4409320049507c5d14fc4590639b3a731fffbc688504b8af42a506e7e4",
+    "boss-fx-painter.mjs": "88821611385622270d8e0403e955187f4efb29c9bb2b88801c6303cb6738420d",
+    "realm-hud-art.mjs": "778e06f1495ae815ea54abd42385d09131d36b97a26b9fe3aa410817d55d4826"
+  },
+  "loading": {
+    "progress": {
+      "base": [
+        [
+          1,
+          24
+        ],
+        [
+          2,
+          24
+        ],
+        [
+          3,
+          24
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          6,
+          24
+        ],
+        [
+          7,
+          24
+        ],
+        [
+          8,
+          24
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          12,
+          24
+        ],
+        [
+          13,
+          24
+        ],
+        [
+          14,
+          24
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          17,
+          24
+        ],
+        [
+          18,
+          24
+        ],
+        [
+          19,
+          24
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          21,
+          24
+        ],
+        [
+          22,
+          24
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          24
+        ]
+      ],
+      "enemies": [
+        [
+          1,
+          16
+        ],
+        [
+          2,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "stages": {
+        "12": [
+          [
+            1,
+            53
+          ],
+          [
+            2,
+            53
+          ],
+          [
+            3,
+            53
+          ],
+          [
+            4,
+            53
+          ],
+          [
+            5,
+            53
+          ],
+          [
+            6,
+            53
+          ],
+          [
+            7,
+            53
+          ],
+          [
+            8,
+            53
+          ],
+          [
+            9,
+            53
+          ],
+          [
+            10,
+            53
+          ],
+          [
+            11,
+            53
+          ],
+          [
+            12,
+            53
+          ],
+          [
+            13,
+            53
+          ],
+          [
+            14,
+            53
+          ],
+          [
+            15,
+            53
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            17,
+            53
+          ],
+          [
+            18,
+            53
+          ],
+          [
+            19,
+            53
+          ],
+          [
+            20,
+            53
+          ],
+          [
+            21,
+            53
+          ],
+          [
+            22,
+            53
+          ],
+          [
+            23,
+            53
+          ],
+          [
+            24,
+            53
+          ],
+          [
+            25,
+            53
+          ],
+          [
+            26,
+            53
+          ],
+          [
+            27,
+            53
+          ],
+          [
+            28,
+            53
+          ],
+          [
+            29,
+            53
+          ],
+          [
+            30,
+            53
+          ],
+          [
+            31,
+            53
+          ],
+          [
+            32,
+            53
+          ],
+          [
+            33,
+            53
+          ],
+          [
+            34,
+            53
+          ],
+          [
+            35,
+            53
+          ],
+          [
+            36,
+            53
+          ],
+          [
+            37,
+            53
+          ],
+          [
+            38,
+            53
+          ],
+          [
+            39,
+            53
+          ],
+          [
+            40,
+            53
+          ],
+          [
+            41,
+            53
+          ],
+          [
+            42,
+            53
+          ],
+          [
+            43,
+            53
+          ],
+          [
+            44,
+            53
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            46,
+            53
+          ],
+          [
+            47,
+            53
+          ],
+          [
+            48,
+            53
+          ],
+          [
+            49,
+            53
+          ],
+          [
+            50,
+            53
+          ],
+          [
+            51,
+            53
+          ],
+          [
+            52,
+            53
+          ],
+          [
+            53,
+            53
+          ]
+        ],
+        "13": [
+          [
+            1,
+            53
+          ],
+          [
+            2,
+            53
+          ],
+          [
+            3,
+            53
+          ],
+          [
+            4,
+            53
+          ],
+          [
+            5,
+            53
+          ],
+          [
+            6,
+            53
+          ],
+          [
+            7,
+            53
+          ],
+          [
+            8,
+            53
+          ],
+          [
+            9,
+            53
+          ],
+          [
+            10,
+            53
+          ],
+          [
+            11,
+            53
+          ],
+          [
+            12,
+            53
+          ],
+          [
+            13,
+            53
+          ],
+          [
+            14,
+            53
+          ],
+          [
+            15,
+            53
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            17,
+            53
+          ],
+          [
+            18,
+            53
+          ],
+          [
+            19,
+            53
+          ],
+          [
+            20,
+            53
+          ],
+          [
+            21,
+            53
+          ],
+          [
+            22,
+            53
+          ],
+          [
+            23,
+            53
+          ],
+          [
+            24,
+            53
+          ],
+          [
+            25,
+            53
+          ],
+          [
+            26,
+            53
+          ],
+          [
+            27,
+            53
+          ],
+          [
+            28,
+            53
+          ],
+          [
+            29,
+            53
+          ],
+          [
+            30,
+            53
+          ],
+          [
+            31,
+            53
+          ],
+          [
+            32,
+            53
+          ],
+          [
+            33,
+            53
+          ],
+          [
+            34,
+            53
+          ],
+          [
+            35,
+            53
+          ],
+          [
+            36,
+            53
+          ],
+          [
+            37,
+            53
+          ],
+          [
+            38,
+            53
+          ],
+          [
+            39,
+            53
+          ],
+          [
+            40,
+            53
+          ],
+          [
+            41,
+            53
+          ],
+          [
+            42,
+            53
+          ],
+          [
+            43,
+            53
+          ],
+          [
+            44,
+            53
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            46,
+            53
+          ],
+          [
+            47,
+            53
+          ],
+          [
+            48,
+            53
+          ],
+          [
+            49,
+            53
+          ],
+          [
+            50,
+            53
+          ],
+          [
+            51,
+            53
+          ],
+          [
+            52,
+            53
+          ],
+          [
+            53,
+            53
+          ]
+        ],
+        "14": [
+          [
+            1,
+            53
+          ],
+          [
+            2,
+            53
+          ],
+          [
+            3,
+            53
+          ],
+          [
+            4,
+            53
+          ],
+          [
+            5,
+            53
+          ],
+          [
+            6,
+            53
+          ],
+          [
+            7,
+            53
+          ],
+          [
+            8,
+            53
+          ],
+          [
+            9,
+            53
+          ],
+          [
+            10,
+            53
+          ],
+          [
+            11,
+            53
+          ],
+          [
+            12,
+            53
+          ],
+          [
+            13,
+            53
+          ],
+          [
+            14,
+            53
+          ],
+          [
+            15,
+            53
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            17,
+            53
+          ],
+          [
+            18,
+            53
+          ],
+          [
+            19,
+            53
+          ],
+          [
+            20,
+            53
+          ],
+          [
+            21,
+            53
+          ],
+          [
+            22,
+            53
+          ],
+          [
+            23,
+            53
+          ],
+          [
+            24,
+            53
+          ],
+          [
+            25,
+            53
+          ],
+          [
+            26,
+            53
+          ],
+          [
+            27,
+            53
+          ],
+          [
+            28,
+            53
+          ],
+          [
+            29,
+            53
+          ],
+          [
+            30,
+            53
+          ],
+          [
+            31,
+            53
+          ],
+          [
+            32,
+            53
+          ],
+          [
+            33,
+            53
+          ],
+          [
+            34,
+            53
+          ],
+          [
+            35,
+            53
+          ],
+          [
+            36,
+            53
+          ],
+          [
+            37,
+            53
+          ],
+          [
+            38,
+            53
+          ],
+          [
+            39,
+            53
+          ],
+          [
+            40,
+            53
+          ],
+          [
+            41,
+            53
+          ],
+          [
+            42,
+            53
+          ],
+          [
+            43,
+            53
+          ],
+          [
+            44,
+            53
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            46,
+            53
+          ],
+          [
+            47,
+            53
+          ],
+          [
+            48,
+            53
+          ],
+          [
+            49,
+            53
+          ],
+          [
+            50,
+            53
+          ],
+          [
+            51,
+            53
+          ],
+          [
+            52,
+            53
+          ],
+          [
+            53,
+            53
+          ]
+        ],
+        "16": [
+          [
+            1,
+            53
+          ],
+          [
+            2,
+            53
+          ],
+          [
+            3,
+            53
+          ],
+          [
+            4,
+            53
+          ],
+          [
+            5,
+            53
+          ],
+          [
+            6,
+            53
+          ],
+          [
+            7,
+            53
+          ],
+          [
+            8,
+            53
+          ],
+          [
+            9,
+            53
+          ],
+          [
+            10,
+            53
+          ],
+          [
+            11,
+            53
+          ],
+          [
+            12,
+            53
+          ],
+          [
+            13,
+            53
+          ],
+          [
+            14,
+            53
+          ],
+          [
+            15,
+            53
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            17,
+            53
+          ],
+          [
+            18,
+            53
+          ],
+          [
+            19,
+            53
+          ],
+          [
+            20,
+            53
+          ],
+          [
+            21,
+            53
+          ],
+          [
+            22,
+            53
+          ],
+          [
+            23,
+            53
+          ],
+          [
+            24,
+            53
+          ],
+          [
+            25,
+            53
+          ],
+          [
+            26,
+            53
+          ],
+          [
+            27,
+            53
+          ],
+          [
+            28,
+            53
+          ],
+          [
+            29,
+            53
+          ],
+          [
+            30,
+            53
+          ],
+          [
+            31,
+            53
+          ],
+          [
+            32,
+            53
+          ],
+          [
+            33,
+            53
+          ],
+          [
+            34,
+            53
+          ],
+          [
+            35,
+            53
+          ],
+          [
+            36,
+            53
+          ],
+          [
+            37,
+            53
+          ],
+          [
+            38,
+            53
+          ],
+          [
+            39,
+            53
+          ],
+          [
+            40,
+            53
+          ],
+          [
+            41,
+            53
+          ],
+          [
+            42,
+            53
+          ],
+          [
+            43,
+            53
+          ],
+          [
+            44,
+            53
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            46,
+            53
+          ],
+          [
+            47,
+            53
+          ],
+          [
+            48,
+            53
+          ],
+          [
+            49,
+            53
+          ],
+          [
+            50,
+            53
+          ],
+          [
+            51,
+            53
+          ],
+          [
+            52,
+            53
+          ],
+          [
+            53,
+            53
+          ]
+        ]
+      }
+    },
+    "bodyFiles": {
+      "B12": "chapter2/B12-motion-v4.png",
+      "B13": "chapter2/B13-motion-v4.png",
+      "B14": "chapter2/B14-motion-v1.png",
+      "B16": "chapter2/B16-motion-v1.png"
+    }
+  },
+  "canvas": {
+    "draws": 1312,
+    "finiteCalls": 329092,
+    "nonFinite": [],
+    "localStorageItems": 0
+  },
+  "passed": true,
+  "uniqueResources": 183,
+  "sourceHashesAtEnd": {
+    "boss-tactics.mjs": "a253c7c484ce89f46898500bf336fbdd4a465f6de71d37cf00766075569b4242",
+    "enemy-simulation.mjs": "eb060b8097b936270ffa631c1bb6778f028f9e33521c4c9732b276cddd816e61",
+    "enemy-painter.mjs": "8b593b4409320049507c5d14fc4590639b3a731fffbc688504b8af42a506e7e4",
+    "boss-fx-painter.mjs": "88821611385622270d8e0403e955187f4efb29c9bb2b88801c6303cb6738420d",
+    "realm-hud-art.mjs": "778e06f1495ae815ea54abd42385d09131d36b97a26b9fe3aa410817d55d4826"
+  },
+  "sourceChangedDuringRun": false
+}

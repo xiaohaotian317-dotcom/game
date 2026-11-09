@@ -1,0 +1,8 @@
+import META from '../assets/artifacts/t45/artifact-meta-v1.json' with {type:'json'};
+const ids={ward:'voidTimeTalisman',spring:'springRadianceChalice'},folder='assets/artifacts/t45/';
+export function relicFrame(id){return META.icons.find(f=>f.id===ids[id]);}
+export function relicIconStyle(id){return relicFrame(id)?'background:none;display:inline-grid;place-items:center':'';}
+export function relicIconMarkup(id){const f=relicFrame(id);return f?`<svg viewBox="${f.rect.join(' ')}" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%" aria-hidden="true"><image href="${folder+f.file}" width="${f.size[0]}" height="${f.size[1]}"/></svg>`:'';}
+export async function loadRelicArt(art,progress=()=>{}){art.relics={meta:META,images:{}};await Promise.all(['artifact-icons-v1.png','artifact-active-fx-v2.png'].map(file=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{art.relics.images[file]=img;progress();resolve();};img.onerror=()=>reject(Error('法宝素材载入失败'));img.src=folder+file;})));}
+export function drawRelicBurst(c,w,art){const burst=w.campaign?.artifactState?.burst,a=art.relics;if(!burst||!a)return;const age=w.time-burst.born,t=age/burst.duration;if(t<0||t>=1)return;const frames=META.activeFx.filter(f=>f.artifactId===ids[burst.kind]),phase=t*3,index=Math.floor(phase),blend=phase-index,x=burst.kind==='ward'?w.player.x:burst.x,y=burst.kind==='ward'?w.player.y:burst.y,scale=190/440;
+ for(const [i,opacity]of [[index,1-blend],[Math.min(3,index+1),blend]]){if(opacity<=0)continue;const f=frames[i],r=f.rect,p=f.pivotLocal;c.save();c.globalAlpha*=opacity*Math.min(1,t*10,(1-t)*8);c.drawImage(a.images[f.file],...r,x-p[0]*scale,y-p[1]*scale,r[2]*scale,r[3]*scale);c.restore();}}

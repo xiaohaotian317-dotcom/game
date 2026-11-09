@@ -19,8 +19,8 @@ test('frost F slows with low damage, never creates support and recasts once with
 test('frost shield absorbs actual damage, recharges every eight seconds and never stacks',()=>{
   const w=flat('frost');hitPlayer(w,25,0);assert.equal(w.player.shield,0);assert.equal(w.player.hp,w.player.maxHp-7);advance(w,8.1);assert.equal(w.player.shield,18);advance(w,8.1);assert.equal(w.player.shield,18);
 });
-test('ice mirror reflects hostile projectiles back into enemies',()=>{
-  const w=flat('frost');requestCast(w,'e',420,650);advance(w,.6);const m=w.iceMirrors[0];assert.ok(m);w.projectiles.push({id:999,kind:'enemy',x:m.x+50,y:m.y,px:m.x+50,py:m.y,vx:-1000,vy:0,r:5,damage:10,age:0,life:2,owner:'enemy'});advance(w,.06);const s=w.projectiles[0];assert.equal(s.owner,'player');assert.ok(s.vx>0);advance(w,.2);assert.ok(w.targets[0].hp<240);assert.equal(w.player.hp,w.player.maxHp);
+test('frost E grants one active shield that absorbs a real hostile projectile without reflecting it',()=>{
+  const w=flat('frost');requestCast(w,'e',420,650);advance(w,.6);const shield=w.player.shield;assert.ok(shield>18);assert.equal(w.iceMirrors.length,0);w.projectiles.push({id:999,kind:'enemy',x:w.player.x+50,y:w.player.y-55,px:w.player.x+50,py:w.player.y-55,vx:-1000,vy:0,r:5,damage:10,age:0,life:2,owner:'enemy'});advance(w,.1);assert.equal(w.player.shield,shield-10);assert.equal(w.player.hp,w.player.maxHp);assert.equal(w.targets[0].hp,240);assert.equal(w.projectiles.length,0);advance(w,8);assert.equal(w.player.shield,shield-10,'passive recharge must not stack onto the active shield');
 });
 test('frost slow reduces actual moving-target speed by 55 percent after the freeze ends',()=>{
   const normal=flat('frost'),slow=flat('frost');normal.moving=slow.moving=true;normal.time=slow.time=1;slow.targets[0].slowUntil=3;step(normal,STEP);step(slow,STEP);assert.ok(Math.abs(slow.targets[0].vx/normal.targets[0].vx-.45)<.001);

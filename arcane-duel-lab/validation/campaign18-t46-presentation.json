@@ -1,0 +1,28 @@
+{
+  "scope": "Isolated original-asset framing and actual production pet drawing; not user art approval or natural progression.",
+  "errors": [],
+  "failed": [],
+  "checks": [
+    {
+      "name": "12 pet skills / 60 equipment / 5 selected original PNGs",
+      "passed": true,
+      "data": {
+        "skills": 12,
+        "gear": 60,
+        "petDrawCalls": 80,
+        "originalFiles": [
+          "mossdeer-juvenile-ui-v1.png",
+          "mossdeer-juvenile-motion-v2.png",
+          "pet-skills-nature-ember-v3.png",
+          "pet-skills-frost-dawn-v3.png",
+          "pet-skill-icons-v2.png"
+        ]
+      }
+    },
+    {
+      "name": "No resource or script failures",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

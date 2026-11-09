@@ -1,3 +1,4 @@
+import {renderDuelWorld} from './duel-visual-clock.mjs';
 import {loadAlternateArt} from './alternate-skill-art.mjs';
 import {createDuelSelectionQueue} from './duel-selection-queue.mjs';
 import {DUEL_RULESET,duelLoadout,duelChosenSkill,duelSnapshotMatches} from './duel-skill-data.mjs';
@@ -17,7 +18,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],can
 const battleLoading=new LoadingScreen();let baseDone=0,baseTotal=0;
 const sceneNames={moon:'月光遗迹 · 断桥与月镜',lava:'熔岩祭坛 · 导流与摆锤',garden:'浮空花园 · 风道与藤桥'};
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let prefs;try{prefs=localStorage;}catch{}const profile=loadProfile(prefs),sound=new Sound({scene:'journey'});
+let prefs;try{prefs=localStorage;}catch{}const profile=loadProfile(prefs),sound=new Sound({scene:'battle'});
 let selectionStage='hero',selectionContext='',selectionRenderKey='',heroRenderKey='',selectionBusy=false;
 let room=null,renderer=null,assets=null,assetPromise=null,loadedKey='',loadingKey='',match=null,prediction=null,worker=null,workerKey='',lastSeq=-1,lastEvent=0,history=[],pending=[],predictionActions=[],actionId=Date.now()*1000,inputSeq=Date.now()*1000,noticeTimer,reporting=false,pausedForConnection=false;
 let keys=new Set(),pointerDown=false,aim={x:1200,y:520},lastFrame=performance.now(),accumulator=0,lastInput=0,lastUI=0,latestSnapshot=null,currentView='',snapshotAt=performance.now(),smoothEnemy=null;
@@ -105,7 +106,7 @@ function updateBattle(){
   if(!match||!room||$('#battle').hidden)return;const side=room.seat,p=prediction?.player||match.worlds[side].player,other=match.worlds[1-side].player;
   $('#score-us').textContent=room.score[side];$('#score-them').textContent=room.score[1-side];$('#round-name').textContent='第 '+room.round+' 局';
   $('#name-us').textContent=room.slots[side].name+' · '+HEROES[room.slots[side].hero].name;$('#name-them').textContent=room.slots[1-side].name+' · '+HEROES[room.slots[1-side].hero].name;
-  for(const [key,a] of [['us',p],['them',other]]){$('#health-'+key).textContent=Math.ceil(Math.max(0,a.hp))+' / '+a.maxHp+((a.shield||0)>0?' +'+Math.ceil(a.shield)+'盾':'');$('#hp-'+key).style.width=Math.max(0,a.hp/a.maxHp)*100+'%';}
+  for(const [key,a] of [['us',p],['them',other]]){$('#health-'+key).textContent=Math.ceil(Math.max(0,a.hp))+' / '+a.maxHp+((a.shield||0)>0?' +'+Math.ceil(a.shield)+'盾':'');const pct=Math.max(0,a.hp/a.maxHp)*100,shield=Math.min(35,(a.shield||0)/a.maxHp*100);$('#hp-'+key).style.width=pct+'%';$('#shield-'+key).style.width=shield+'%';$('#shield-'+key).style.left=Math.min(100-shield,pct)+'%';$('#shield-'+key).hidden=!a.shield;}
   if(room.phase==='finished'){$('#opponent-indicator').hidden=true;showResult();return;}
   const remaining=Math.ceil((room.startAt-Date.now()-link.clockOffset)/1000);$('#countdown').hidden=remaining<=0;$('#countdown-number').textContent=Math.max(1,remaining);$('#countdown-caption').textContent=room.roundSerial>1?(room.lastWinner===null?'平局 · 再战一局':room.lastWinner===side?'上一局获胜':'上一局落败'):'准备迎战';
   const missing=Date.now()+link.clockOffset-(room.seen[1-side]||0),stale=side===0?performance.now()-link.lastPacketAt>2500:link.lastStateAt>0&&performance.now()-link.lastStateAt>2500;
@@ -119,12 +120,12 @@ function frame(time){
       if(playable()&&room.seat===1&&prediction){step(prediction,STEP,input);history.push({seq:inputSeq,input});history=history.slice(-60);}accumulator-=STEP;}
     if(time-lastInput>=33){lastInput=time;const packet=packetOf();if(room.seat===0)worker?.postMessage({kind:'input',side:0,packet});else link.setInput(packet);}
   }
-  if(renderer&&match&&room&&!$('#battle').hidden){const side=room.seat,own=match.worlds[side],enemy=match.worlds[1-side];let renderOwn=own;
-    if(prediction&&side===1){const offset=prediction.renderOffset;if(offset){const decay=Math.exp(-18*dt);offset.x*=decay;offset.y*=decay;}const p={...prediction.player};p.x+=(offset?.x||0);p.y+=(offset?.y||0);p.prevX=p.x;p.prevY=p.y;renderOwn={...own,player:p};}
-    if(side===0){const elapsed=Math.min(.05,(time-snapshotAt)/1000),p={...own.player};p.x+=p.vx*elapsed;p.y+=p.grounded?0:p.vy*elapsed;p.prevX=p.x;p.prevY=p.y;renderOwn={...own,player:p};}
+  if(renderer&&match&&room&&!$('#battle').hidden){const side=room.seat,own=match.worlds[side],enemy=match.worlds[1-side],elapsed=playable()?Math.min(.05,Math.max(0,(time-snapshotAt)/1000)):0;let renderOwn=renderDuelWorld(own,elapsed);
+    if(prediction&&side===1){const offset=prediction.renderOffset;if(offset){const decay=Math.exp(-18*dt);offset.x*=decay;offset.y*=decay;}const p={...prediction.player,cast:renderOwn.player.cast,burst:renderOwn.player.burst};p.x+=(offset?.x||0);p.y+=(offset?.y||0);p.prevX=p.x;p.prevY=p.y;renderOwn={...renderOwn,player:p};}
+    if(side===0){const p={...renderOwn.player};p.x+=p.vx*elapsed;p.y+=p.grounded?0:p.vy*elapsed;p.prevX=p.x;p.prevY=p.y;renderOwn={...renderOwn,player:p};}
     if(!smoothEnemy||Math.hypot(smoothEnemy.x-enemy.player.x,smoothEnemy.y-enemy.player.y)>220)smoothEnemy={x:enemy.player.x,y:enemy.player.y};
     const follow=1-Math.exp(-25*dt);smoothEnemy.x+=(enemy.player.x-smoothEnemy.x)*follow;smoothEnemy.y+=(enemy.player.y-smoothEnemy.y)*follow;
-    const renderEnemy={...enemy,player:{...enemy.player,x:smoothEnemy.x,prevX:smoothEnemy.x,y:smoothEnemy.y,prevY:smoothEnemy.y}};
+    const renderEnemyBase=renderDuelWorld(enemy,elapsed),renderEnemy={...renderEnemyBase,player:{...renderEnemyBase.player,x:smoothEnemy.x,prevX:smoothEnemy.x,y:smoothEnemy.y,prevY:smoothEnemy.y}};
     renderer.draw(renderOwn,1,dt,{opponent:renderEnemy});
     const rect=canvas.getBoundingClientRect(),edge=opponentEdge(cameraView(renderOwn),renderEnemy.player,rect.width,rect.height),indicator=$('#opponent-indicator');indicator.hidden=!edge||room.phase==='finished';if(edge){indicator.style.left=edge.x+'px';indicator.style.top=edge.y+'px';indicator.style.setProperty('--bearing',edge.angle+'deg');indicator.setAttribute('aria-label','对手在视野外，位于'+(Math.abs(edge.angle)>90?'左':'右')+'侧');}
   }

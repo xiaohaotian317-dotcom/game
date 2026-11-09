@@ -1,0 +1,42 @@
+✔ all nineteen chapter-two enemies naturally pursue and damage at close and far range, including both boss phases (1256.2734ms)
+✔ chapter-two melee minions execute their distinct combo, dash and on-hit control mechanics (29.7923ms)
+✔ contract seal tracks a moving target only during its initial seeking window (1.8528ms)
+✔ prism bolts actually ricochet once from solid cover and cannot bounce forever (2.4542ms)
+✔ spore lantern lobs a gravity-driven projectile that creates a grounded poisonous pool (4.8667ms)
+✔ anchor king emits opposing pushing tide fields with safe warnings and real damage (1.8948ms)
+✔ crystal armor reduces real damage by twenty percent and burrow teleports before its uppercut (5.1964ms)
+✔ swamp mother summons real attacking fungus minions with a living cap and no reward ownership loss (43.8828ms)
+✔ ash judge leaves damaging five-second cinders after its charge and during half-health pursuit (2.684ms)
+✔ mirror queen and sand sovereign teleport through their own special plans and produce real follow-up mechanics (6.2998ms)
+✔ moon emperor leaps before landing damage and its ranged crescents really turn back (3.3923ms)
+✔ machine colossus emits three separately warned thunder pillars and its third landed hit causes overload (6.7338ms)
+✔ eclipse king pulls with a real domain, teleports, and summons owned sand guards in its special sequence (1.9279ms)
+✔ spider and moon leaps land at their displayed warning and share the same real normal/solo danger radius (11.1481ms)
+✔ captured afterimages reuse flattened poses across projected age updates, with bounded residency and only one filtered image (2.061ms)
+✔ missing offscreen support leaves the fallback available without invoking or caching a failed paint (0.1665ms)
+✔ all six ultimate cast ages advance continuously between snapshots without mutating or releasing authoritative gameplay (4.1302ms)
+✔ a real lightning burst, nature tree and authored construct age advance while lifetime deadlines and game state remain fixed (7.7536ms)
+✔ visual projection advances effect and projectile presentation but clamps elapsed time and never applies hits or spends resources (0.6681ms)
+✔ chapter two and both independent gates open only after chapter-one finale (1.0446ms)
+✔ equipment price grows by rarity and rank; insufficient currency is atomic (2.696ms)
+✔ twenty-stage previews match actual gear sets, including intentional gear-free stages (0.8099ms)
+✔ A/B/C gain is ordered, while legacy orange roll and level survive save normalization (1.1951ms)
+✔ level 70 is attainable without changing early-level thresholds (0.6417ms)
+✔ endless entry cooldown is persisted and cannot be consumed twice (0.6763ms)
+✔ an older open profile cannot erase a newer endless cooldown, run count or best result on save (0.5924ms)
+✔ endless completes three waves then a boss and repeats with only XP and gold (55.1809ms)
+✔ twin boss cannot finish when one lives and pays one item bundle (1.4251ms)
+✔ pet relocation, stronger later species, and paid skills survive save (0.7013ms)
+✔ later artifact upgrades cost more and improve their real durations and recovery ratios (0.3398ms)
+✔ ward blocks real direct hits, existing DoT ticks, hostile projectiles, environmental impact and control throughout its window (6.1585ms)
+✔ ward cooldown and expiry survive hero switching, repeated equipment changes and held input; haste changes actual attacks (1.2996ms)
+✔ spring restores capped real HP and MP once per cooldown and cannot revive a fallen hero (1.6066ms)
+✔ frost E rank increases its active shield, keeps passive shields nonstacking and carries spent shield state through switching (36.4471ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2032.3616

@@ -1,0 +1,12 @@
+✔ all nine redesigned bosses preserve original source pixels, safe crops, square faces and sixteen anchored poses (26.0495ms)
+✔ new boss bodies and cast sockets use one source scale, preserving crouch/death height instead of stretching every pose (2.7615ms)
+✔ dash warnings include real travel and contact range, including behind-body overlap (0.731ms)
+✔ every hero emits a themed second-jump and dash burst and the lightweight renderer samples original frames (7.6954ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.6415

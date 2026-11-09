@@ -1,3 +1,6 @@
+import {STAGE_GOLD} from './campaign-economy-data.mjs';
+import {CHAPTER_TWO_STAGES,CHALLENGE_STAGES,CHAPTERS} from './chapter-two-data.mjs';
+export {CHAPTER_TWO_STAGES,CHALLENGE_STAGES,CHAPTERS};
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 // Numbers are tuning defaults, not a character progression/economy system.
 const rows=[
@@ -15,7 +18,10 @@ const rows=[
 ];
 const buildingPositions=[[7,51],[20,30],[30,56],[37,24],[48,48],[56,29],[68,66],[73,17],[81,40],[89,20],[94,65]];
 export const STAGES=rows.map((r,i)=>({id:i+1,name:r[0],boss:r[1],melee:r[2],ranged:r[3],theme:r[4],color:r[5],mapX:buildingPositions[i][0],mapY:buildingPositions[i][1],requires:r[8],building:r[9],drops:r[10],tip:r[11],art:`stage${String(i+1).padStart(2,'0')}-v1.png`,minionHp:24+i*9,bossHp:Math.round((380+i*110)*BOSS_TUNING.health),damageFactor:.24+i*.07,attackBudget:Math.min(5,2+Math.floor(i/3)),perSide:Math.min(10,6+Math.floor(i/2)),hazardDamage:6+i*2}));
-export const STAGE_BY_ID=Object.fromEntries(STAGES.map(s=>[s.id,s]));
+for(const [i,s] of STAGES.entries()){s.chapter=1;s.chapterIndex=i+1;}
+export const CAMPAIGN_STAGES=[...STAGES,...CHAPTER_TWO_STAGES];
+export const ALL_STAGES=[...CAMPAIGN_STAGES,...CHALLENGE_STAGES];
+export const STAGE_BY_ID=Object.fromEntries(ALL_STAGES.map(s=>[s.id,s]));
 // Preserve readable tutorial damage after increasing boss reach and frequency.
 for(const [i,s] of STAGES.entries()){s.bossDamageFactor=s.damageFactor*(s.id<=2?.85:1);if(i>=3){s.minionHp=[62,84,105,136,178,222,280,340][i-3];s.bossHp=[990,1350,1700,2180,2800,3550,4500,5600][i-3];s.damageFactor=[.46,.54,.63,.73,.85,.99,1.14,1.3][i-3];s.bossDamageFactor=s.damageFactor;} }
 export const SAVE_KEY='arcane-campaign-progress-v1';
@@ -36,3 +42,9 @@ for(const [i,s]of STAGES.entries())s.killCoins=[8,10,12,14,18,20,25,30,36,44,54]
 // T41: wider late-stage threat steps; minion HP remains unchanged by explicit request.
 export const STAGE_THREAT=[1,1.08,1.18,1.32,1.48,1.67,1.90,2.16,2.46,2.80,3.18];
 for(const [i,s]of STAGES.entries()){s.damageFactor*=STAGE_THREAT[i];s.bossDamageFactor*=STAGE_THREAT[i];}
+
+for(const stage of CAMPAIGN_STAGES)stage.killCoins=STAGE_GOLD[stage.id-1];
+
+// T45 final twenty-stage curve supersedes the older cumulative threat defaults above.
+const finalMinionHp=[30,41,53,65,82,97,113,132,154,176,198],finalBossHp=[418,600,820,1100,1450,1850,2350,3000,3800,4700,5800],finalMinionDamage=[.8,.97,1.12,1.3,1.5,1.7,1.95,2.2,2.5,2.8,3.05],finalBossDamage=[.98,1.1,1.26,1.5,1.8,2.15,2.6,3.1,3.7,4.5,5.4],finalKillXp=[9,9,10,12,15,18,22,28,35,45,60],finalBossXp=[0,0,20,40,70,100,150,220,320,450,650];
+for(const [i,s]of STAGES.entries())Object.assign(s,{minionHp:finalMinionHp[i],bossHp:finalBossHp[i],damageFactor:finalMinionDamage[i],bossDamageFactor:finalBossDamage[i],killXp:finalKillXp[i],bossXp:finalBossXp[i]});

@@ -3,6 +3,7 @@ import {BOSS_TUNING,bossReachScale,enemyDamageFactor} from './enemy-tuning.mjs';
 import {clearLine,firstTerrainHit,resolveSolidSides} from './collision.mjs?v=20261030-duel12';
 import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
 import {blinkProtected} from './blink-guard.mjs';
+import {prepareBossTactic,fireBossTactic,tickBossTactic,revealBeforeStrike,updateBossTactics} from './boss-tactics.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const alive=a=>a.hp>0&&!(a.dead>0);
@@ -30,7 +31,7 @@ export function spawnEnemy(w,kind,{x=w.player.x+400,y=w.player.y,scale,owner=nul
 }
 export function clearEnemies(w){
  w.targets=w.targets.filter(e=>!e.enemyKind&&!e.egg);w.projectiles=w.projectiles.filter(p=>!p.enemySource);
- w.enemyZones=[];w.enemyEggs=[];w.player.enemyStatus=null;w.player.enemyControl=null;w.enemyEvents=[];
+ w.enemyZones=[];w.enemyWaves=[];w.enemyEggs=[];w.player.enemyStatus=null;w.player.enemyControl=null;w.enemyEvents=[];
 }
 export function placeEncounter(w,kinds,opts={}){
  clearEnemies(w);w.targets=[];w.enemyMode=true;
@@ -43,7 +44,7 @@ export function enemyOnDamage(w,e,amount,{impact=true}={}){
  if(e.egg)return;
  const d=ENEMIES[e.enemyKind];
  if(impact){
-  if(d.boss){e.ai.poise+=amount;if(e.ai.poise>=110){e.ai.poise=0;e.ai.stagger=.65;e.ai.attack=null;e.ai.state='stagger';e.ai.readyAt=w.time+.75;e.ai.passiveUntil=0;}}
+  if(d.boss){e.ai.poise+=amount;if(e.ai.poise>=110){e.ai.poise=0;e.ai.stagger=.65;e.ai.attack=null;e.ai.veilUntil=0;e.ai.state='stagger';e.ai.readyAt=w.time+.75;e.ai.passiveUntil=0;}}
   else{if(w.campaign&&amount<20){const attack=e.ai.attack,step=attack?.plan.steps[attack.index];if(attack&&step&&(attack.age>=step.windup*.65||w.time<(e.ai.interruptImmuneUntil||0)))return;if(w.time<(e.ai.interruptImmuneUntil||0))return;e.ai.interruptImmuneUntil=w.time+1.3;}e.ai.stagger=.2;e.ai.attack=null;e.ai.state='hurt';e.ai.readyAt=Math.max(e.ai.readyAt,w.time+.4);}
  }
 }
@@ -52,7 +53,7 @@ function notice(w,type,data={}){(w.enemyEvents||=[]).push({type,time:w.time,...d
 const statusSpec={poison:{duration:3.6,interval:.75,damage:3,color:'#b5d45d'},burn:{duration:3,interval:.75,damage:3,color:'#ffb16f'}};
 export function applyEnemyStatus(w,kind,source,hooks){
  const p=w.player;if(!alive(p)||blinkProtected(w,p))return;
- if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=actor?enemyDamageFactor(actor):(w.campaign?.stage.damageFactor??1)*enemyDamageFactor({enemyKind:'M01'});p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:Math.max(1,Math.round(spec.damage*factor))};return;}
+ if(statusSpec[kind]){const spec=statusSpec[kind];p.enemyStatus||={};const prior=p.enemyStatus[kind],actor=w.targets.find(e=>e.id===source),factor=actor?enemyDamageFactor(actor):(w.campaign?.stage.damageFactor??1)*enemyDamageFactor({enemyKind:'M01'});p.enemyStatus[kind]={until:w.time+spec.duration,next:prior?.next>w.time?prior.next:w.time+spec.interval,source,damage:w.campaign?Math.max(1,Math.min(Math.round(p.maxHp*.02),Math.round(spec.damage*factor*.3))):Math.max(1,Math.round(spec.damage*factor))};return;}
  if(kind==='snare'){p.enemySnareUntil=Math.max(p.enemySnareUntil||0,w.time+1.4);return;}
  if(kind==='freeze'||kind==='petrify'){
   const key=kind+'ImmuneUntil';if((p[key]||0)>w.time||p.enemyControl?.until>w.time)return;
@@ -74,18 +75,18 @@ function traitOnHit(w,e,step,hooks){
    if(p.frostStacks>=3){p.frostStacks=0;applyEnemyStatus(w,'freeze',e.id,hooks);}}
  }
  if(e.enemyKind==='B03'&&w.time>e.ai.passiveAt){e.ai.passiveAt=w.time+1.5;e.hp=Math.min(e.maxHp,e.hp+8);fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.55,duration:.7,enemyKind:e.enemyKind});}
- if(e.enemyKind==='B09'){e.ai.charges=(e.ai.charges||0)+1;if(e.ai.charges%3===0)hooks.hitPlayer(w,Math.round(5*enemyDamageFactor(e)),e.x,{dot:true});}
+ if(e.enemyKind==='B09'||ENEMIES[e.enemyKind]?.mechanic==='overload'){e.ai.charges=(e.ai.charges||0)+1;if(e.ai.charges%3===0)hooks.hitPlayer(w,Math.round(5*enemyDamageFactor(e)),e.x,{dot:true});}
 }
 export function enemyProjectileContact(w,s,actor,hooks,accepted){
  const source=w.targets.find(e=>e.id===s.enemySource);
- if(accepted&&actor===w.player&&source?.hp>0)traitOnHit(w,source,{status:s.enemyStatus},hooks);
- if(s.enemyPool){const support=groundTarget(w,s.x,s.y),style=source?.themeStyle||'venom';if(support&&Math.abs(support.y-s.y)<140)addZone(w,source||{id:s.enemySource},style,support,{radius:48,life:style==='lava'?5:3,damage:Math.max(1,Math.round(4*enemyDamageFactor(source))),status:style==='lava'?'burn':style==='venom'?'poison':null,delay:.2});}
+ if(accepted&&actor===w.player&&source?.hp>0){traitOnHit(w,source,{status:s.enemyStatus},hooks);if(s.enemyPush)actor.vx=Math.sign(s.vx||actor.x-s.px||1)*(200+Math.abs(s.enemyPush));}
+ if(s.enemyPool){const support=groundTarget(w,s.x,s.y),style=source?.themeStyle||s.enemyStyle||'venom';if(support&&Math.abs(support.y-s.y)<140)addZone(w,source||{id:s.enemySource},style,support,{radius:48,life:style==='lava'?5:3,damage:Math.max(1,Math.round(4*enemyDamageFactor(source))),status:style==='lava'?'burn':['venom','spore'].includes(style)?'poison':null,delay:.2});}
  fx(w,hooks,s.enemyStyle,{x:s.x,y:s.y,radius:36,duration:.5,enemyKind:s.enemyKind||source?.enemyKind});
 }
 function addZone(w,e,style,anchor,opts={}){
  const z={id:serial(w),owner:e.id,enemyKind:e.enemyKind,style,anchor:{...anchor},x:anchor.x,y:anchor.y,created:w.time,
   delay:opts.delay??.65,warning:opts.warning,fall:opts.fall,radius:opts.radius??80,life:opts.life??3,damage:opts.damage??9,status:opts.status,
-  gravity:opts.gravity||false,next:0,hits:0};(w.enemyZones||=[]).push(z);return z;
+  gravity:opts.gravity||false,push:opts.push||0,next:0,hits:0};(w.enemyZones||=[]).push(z);return z;
 }
 function statusTick(w,dt,hooks){
  const p=w.player;
@@ -125,7 +126,7 @@ function updateZones(w,dt,hooks){
   if(age>z.delay+z.life)continue;
   if(alive(p)&&Math.abs(p.x-z.x)<z.radius+p.w&&Math.abs(p.y-z.y)<(z.style==='lightning'?210:95)&&w.time>=z.next){
    z.next=w.time+.75;const accepted=hooks.hitPlayer(w,z.damage,z.x);
-   if(accepted){z.hits++;const source=w.targets.find(e=>e.id===z.owner);if(source?.hp>0)traitOnHit(w,source,{status:z.status},hooks);else if(z.status)applyEnemyStatus(w,z.status,z.owner,hooks);}
+   if(accepted){z.hits++;if(z.push)p.vx=z.push;const source=w.targets.find(e=>e.id===z.owner);if(source?.hp>0)traitOnHit(w,source,{status:z.status},hooks);else if(z.status)applyEnemyStatus(w,z.status,z.owner,hooks);}
   }
   const f=w.fox;if(f&&Math.abs(f.x-z.x)<z.radius+f.w&&Math.abs(f.y-z.y)<90&&w.time>=(z.summonAt||0)){z.summonAt=w.time+.8;hooks.hitSummon(w,z.damage,z.x);}
   const companion=w.companion;if(companion?.hp>0&&Math.abs(companion.x-z.x)<z.radius+companion.w&&Math.abs(companion.y-z.y)<90&&w.time>=(z.companionAt||0)){z.companionAt=w.time+.8;hooks.hitCompanion?.(w,z.damage,z.x);}
@@ -134,7 +135,8 @@ function updateZones(w,dt,hooks){
 }
 function stepPlan(e){return e.ai.attack?.plan.steps[e.ai.attack.index];}
 export function enemyCastOrigin(w,e){
- const metadata=w.enemyArt?.[e.enemyKind],socket=metadata?.socket;
+ const metadata=w.enemyArt?.[e.appearanceKind||e.enemyKind],socket=metadata?.socket;
+ if(metadata?.referenceSourceHeight>0&&(metadata.castSocket||socket)){const f=metadata.frames[10],scale=e.visual/metadata.referenceSourceHeight,s=metadata.castSocket||{x:socket.x*f.rect[2],y:socket.y*f.rect[3]};return {x:e.x+e.face*(s.x-f.pivot[0])*scale,y:e.y+(s.y-f.groundContactY)*scale};}
  if(socket){const size=e.visual/.76;return {x:e.x+e.face*(socket.x-.5)*size,y:e.y+(socket.y-socket.ground)*size};}
  const d=ENEMIES[e.enemyKind],mouth=['serpent','bat','wolf','dragon'].includes(d?.form);
  return {x:e.x+e.face*(mouth?e.visual*.22:e.w*.7),y:e.y-(mouth?e.visual*.66:e.h*.72)};
@@ -151,51 +153,60 @@ function choosePlan(w,e,d){
  if(e.ai.descent)return null;const ai=e.ai,distance=Math.abs(w.player.x-e.x),available=d.patterns.filter(p=>(!e.meleeOnly||p.kind==='melee')&&(ai.cooldowns[p.id]||0)<=w.time&&meleeReady(w,e,p));
  if(d.boss){const close=available.filter(p=>p.kind==='melee'),streak=ai.rangeStreak||0,threshold=1;if(close.length&&streak>0)return close[ai.sequence%close.length];if(streak>=threshold&&w.time>=(ai.nextPursuitAt||0)&&Math.abs(w.player.y-e.y)<190){const chase=clamp((distance-140)/Math.max(45,d.speed)+.4,1.8,4.5);ai.pursuitUntil=w.time+chase;ai.nextPursuitAt=w.time+chase+1.2;}if(ai.pursuitUntil>w.time&&!close.length)return null;}
  if(w.campaign&&!d.boss&&w.targets.filter(t=>t!==e&&t.hp>0&&t.ai?.attack).length>=w.campaign.attackBudget)return null;
- const specials=available.filter(p=>p.kind==='special');if(specials.length&&ai.sequence%3===2)return specials[Math.floor(ai.sequence/3)%specials.length];
+ const specials=available.filter(p=>p.kind==='special'&&(!p.healthBelow||e.hp/e.maxHp<p.healthBelow));if(specials.length&&ai.sequence%3===2)return specials[Math.floor(ai.sequence/3)%specials.length];
  const preferred=available.filter(p=>p.kind===(distance<(d.boss?230:145)?'melee':'range'));
  if(preferred.length)return preferred[ai.sequence%preferred.length];
  const other=available.filter(p=>p.kind==='range'||(p.kind==='melee'&&distance<240));return other[0]||null;
 }
 function startPlan(w,e,plan){
+ const speed=(e.ai.phase===2?1.1:1)*(e.attackTempo||1)*(e.frequency||1);
  if(ENEMIES[e.enemyKind].boss&&plan.steps.length>1)plan={...plan,steps:plan.steps.map((s,i)=>({...s,windup:i?Math.max(.2,s.windup*.55):s.windup,recover:i<plan.steps.length-1?Math.max(.12,s.recover*.55):s.recover}))};
- if(e.damageFactor!==undefined||e.themeStyle){plan={...plan,steps:plan.steps.map(s=>({...s,damage:s.damage===undefined?undefined:Math.max(1,Math.round(s.damage*enemyDamageFactor(e))),radius:s.radius===undefined?undefined:s.radius*(ENEMIES[e.enemyKind].boss?(e.attackScale??e.scale):1),style:!ENEMIES[e.enemyKind].boss&&e.themeStyle?e.themeStyle:s.style,status:!ENEMIES[e.enemyKind].boss&&e.themeStyle?(e.themeStyle==='ice'?'snare':e.themeStyle==='venom'?'poison':e.themeStyle==='lava'?'burn':null):s.status}))};}
- e.ai.attack={plan,index:0,age:0,fired:false,victims:[],speed:(e.ai.phase===2?1.1:1)*(e.attackTempo||1)*(e.frequency||1)};
+ if(plan.steps.some(s=>s.warningTime))plan={...plan,steps:plan.steps.map(s=>({...s,windup:Math.max(s.windup,(s.warningTime||0)*speed)}))};
+ if(e.damageFactor!==undefined||e.themeStyle){plan={...plan,steps:plan.steps.map(s=>({...s,damage:s.damage===undefined?undefined:s.damage===0?0:Math.max(1,Math.round(s.damage*enemyDamageFactor(e))),radius:s.radius===undefined?undefined:s.radius*(ENEMIES[e.enemyKind].boss?(e.attackScale??e.scale):1),style:!ENEMIES[e.enemyKind].boss&&e.themeStyle?e.themeStyle:s.style,status:!ENEMIES[e.enemyKind].boss&&e.themeStyle?(e.themeStyle==='ice'?'snare':e.themeStyle==='venom'?'poison':e.themeStyle==='lava'?'burn':null):s.status}))};}
+ e.ai.attack={plan,index:0,age:0,fired:false,victims:[],speed};
  e.ai.state='windup';e.face=Math.sign(w.player.x-e.x||e.face);e.ai.cooldowns[plan.id]=w.time+plan.cd/(e.frequency||1);e.ai.sequence++;
  if(ENEMIES[e.enemyKind].boss&&!plan.passive){if(plan.kind==='melee'||['melee','dash','leap'].includes(plan.steps[0]?.type)){e.ai.rangeStreak=0;e.ai.pursuitUntil=0;}else e.ai.rangeStreak=(e.ai.rangeStreak||0)+1;}
- e.ai.attack.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
+ e.ai.attack.aim={x:w.player.x,y:w.player.y-w.player.h*.5};prepareLeap(w,e);
  notice(w,'attackStarted',{id:e.id,enemyKind:e.enemyKind,pattern:plan.id,source:plan.passive?'passive':'active'});
 }
 function fireStep(w,e,s,hooks){
  const a=e.ai.attack;
+ if(fireBossTactic(w,e,s,hooks,spawnEnemy)){hooks.emit(w,'enemyAttack',{enemyStyle:s.style,heavy:true});return;}
  if(s.type==='projectile'){
   const {x:sx,y:sy}=enemyCastOrigin(w,e),dx=a.aim.x-sx,dy=a.aim.y-sy;
   const angle=Math.atan2(dy,dx),count=s.shots||1;
   for(let i=0;i<count;i++){const ang=angle+(i-(count-1)/2)*(s.spread||.18),speed=s.speed||360;
-   const extra={owner:'enemy',enemySource:e.id,enemyKind:e.enemyKind,enemyStyle:s.style,enemyStatus:s.status,enemyPool:s.pool,life:4*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1),r:(s.style==='sonic'?14:9)*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1)};
+   const extra={owner:'enemy',enemySource:e.id,enemyKind:e.enemyKind,enemyStyle:s.style,enemyStatus:s.status,enemyPool:s.pool,enemySeeking:!!s.seeking,enemyRicochet:s.ricochet?1:0,enemyReturning:!!s.returning,enemyCruiseSpeed:speed,enemyPush:s.push||0,life:4*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1),r:(s.style==='sonic'?14:9)*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1)};
    hooks.projectile(w,'enemyAbility',sx,sy,Math.cos(ang),Math.sin(ang),speed,s.damage,extra);
    if(s.lob){const p=w.projectiles.at(-1),speedup=ENEMIES[e.enemyKind].boss?BOSS_TUNING.fallSpeed:1,travel=clamp(Math.abs(dx)/300,.55,1.2)/speedup;p.vx=dx/travel;p.vy=(dy-.5*700*speedup*speedup*travel*travel)/travel;p.enemyGravity=700*speedup*speedup;}
   }
   fx(w,hooks,s.style,{x:sx,y:sy,face:e.face,radius:38,duration:.42,enemyKind:e.enemyKind});
  }else if(s.type==='zone'){
-  const anchor=groundTarget(w,clamp(a.aim.x,45,w.width-45),a.aim.y+12);
-  if(anchor){const fall=s.falling?.45/BOSS_TUNING.fallSpeed:0;addZone(w,e,s.style,anchor,{radius:s.radius,life:s.life,damage:s.damage,status:s.status,gravity:s.gravity,delay:.55+fall,warning:s.falling?.55:undefined,fall:fall||undefined});}
+  const anchor=resolveGroundTarget(w,a.groundAnchor);
+  if(anchor){const fall=s.falling?.45/BOSS_TUNING.fallSpeed:0,warning=s.delay??.55;addZone(w,e,s.style,anchor,{radius:s.radius,life:s.life,damage:s.damage,status:s.status,gravity:s.gravity,push:s.push,delay:warning+fall,warning:s.falling?warning:undefined,fall:fall||undefined});}
+ }else if(s.type==='teleport'){
+  const anchor=resolveGroundTarget(w,a.teleportAnchor);
+  if(anchor){fx(w,hooks,s.style,{x:e.x,y:e.y,radius:70,duration:.45,enemyKind:e.enemyKind,ground:true});e.x=e.prevX=anchor.x;e.y=e.prevY=anchor.y;e.vx=e.vy=0;e.grounded=true;e.platformId=anchor.platformId;e.face=Math.sign(w.player.x-e.x||e.face);fx(w,hooks,s.style,{x:e.x,y:e.y,radius:85,duration:.55,enemyKind:e.enemyKind,ground:true});notice(w,'enemyTeleported',{id:e.id,x:e.x,y:e.y});}
  }else if(s.type==='leap'){
   const range=380*BOSS_TUNING.range*(e.soloRange||1),landing=groundTarget(w,clamp(a.aim.x,e.x-range,e.x+range),a.aim.y+10);
-  if(landing){e.vx=(landing.x-e.x)/.69;e.vy=-650;e.grounded=false;a.leaping=true;a.landed=false;fx(w,hooks,'web',{x:e.x,y:e.y,radius:70,duration:.5,enemyKind:e.enemyKind});}
+  a.landing=resolveGroundTarget(w,a.landing)||landing;
+  if(a.landing){a.leapFrom={x:e.x,y:e.y};a.flightAge=0;e.vx=(a.landing.x-e.x)/.69;e.vy=-650;e.grounded=false;a.leaping=true;a.landed=false;fx(w,hooks,'web',{x:e.x,y:e.y,radius:70,duration:.5,enemyKind:e.enemyKind});}
  }else if(s.type==='egg')spawnEgg(w,e,hooks);
  else if(s.type==='summon'){
   let count=w.targets.filter(t=>t.owner===e.id&&t.hp>0).length;
-  for(const dx of [-100,100])if(count<4){const t=spawnEnemy(w,'M06',{x:e.x+dx,y:e.y,scale:.8,owner:e.id});if(t){t.ai.readyAt=w.time+.75;t.bornAt=w.time;t.flankOffset=Math.sign(dx)*65;count++;fx(w,hooks,'bone',{x:t.x,y:t.y,radius:65,duration:.9,enemyKind:e.enemyKind,ground:true});}}
+  for(const promised of a.summonAnchors||[])if(count<4){const anchor=resolveGroundTarget(w,promised);if(!anchor)continue;const t=spawnEnemy(w,s.spawnKind||'M06',{x:anchor.x,y:anchor.y,scale:.8,owner:e.id});if(t){if(w.campaign){t.hp=t.maxHp=Math.round(w.campaign.stage.minionHp*.65);t.damageFactor=w.campaign.stage.damageFactor*.8;}t.ai.readyAt=w.time+.75;t.bornAt=w.time;t.flankOffset=Math.sign(t.x-e.x)*65;count++;fx(w,hooks,s.style||'bone',{x:t.x,y:t.y,radius:65,duration:.9,enemyKind:e.enemyKind,ground:true});}}
  }else if(s.type==='melee'||s.type==='dash'){
-  fx(w,hooks,s.style,{x:e.x+e.face*(e.w+35),y:e.y-e.h*.4,face:e.face,radius:enemyMeleeReach(w,e,s),duration:.42,melee:true,enemyKind:e.enemyKind});
+  fx(w,hooks,s.style,{x:e.x+e.face*(e.w+35),y:['M11','M13'].includes(e.enemyKind)?e.y:e.y-e.h*.4,ground:['M11','M13'].includes(e.enemyKind),face:e.face,radius:enemyMeleeReach(w,e,s),duration:.42,melee:true,enemyKind:e.enemyKind});
  }
  if(s.lava){a.lastLava=e.x;const anchor=groundTarget(w,e.x+e.face*65,e.y-2);if(anchor)addZone(w,e,'lava',anchor,{radius:86*(e.attackScale??e.scale),life:5,damage:Math.max(2,Math.round(7*enemyDamageFactor(e))),status:'burn',delay:.25});}
  hooks.emit(w,'enemyAttack',{enemyStyle:s.style,heavy:s.damage>=18||s.type==='summon'||s.type==='egg'});
 }
+function prepareLeap(w,e){const a=e.ai.attack,s=a?.plan.steps[a.index];if(!a)return;prepareBossTactic(w,e,s);a.landing=null;if(s?.type==='leap'){const range=380*BOSS_TUNING.range*(e.soloRange||1);a.landing=groundTarget(w,clamp(a.aim.x,e.x-range,e.x+range),a.aim.y+10);}}
 function updateAttack(w,e,d,dt,hooks){
  const a=e.ai.attack,s=stepPlan(e);if(!s){e.ai.attack=null;return;}
  if(a.waitingLink){navigate(w,e,d,dt,hooks);if(enemyMeleeReady(w,e,s)){a.waitingLink=false;e.vx*=.3;e.face=Math.sign(w.player.x-e.x||e.face);notice(w,'comboStep',{id:e.id,index:a.index});}else if(w.time>=a.linkUntil){e.ai.attack=null;e.ai.readyAt=w.time+.16;}return;}
  const previous=a.age;a.age+=dt*a.speed;
+ revealBeforeStrike(w,e,s);
  if(a.age<s.windup){e.ai.state='windup';e.vx*=Math.exp(-12*dt);return;}
  if(!a.fired){a.fired=true;fireStep(w,e,s,hooks);}
  if(s.type==='leap'&&a.leaping&&!a.landed){
@@ -203,7 +214,8 @@ function updateAttack(w,e,d,dt,hooks){
   else{const reach=130*BOSS_TUNING.range*(e.soloRange||1);a.landed=true;e.vx=0;fx(w,hooks,'web',{x:e.x,y:e.y,radius:reach,duration:.85,enemyKind:e.enemyKind,ground:true});w.shake=Math.max(w.shake,8);if(Math.abs(w.player.x-e.x)<reach+w.player.w&&Math.abs(w.player.y-e.y)<100)hooks.hitPlayer(w,s.damage,e.x);if(w.fox&&Math.abs(w.fox.x-e.x)<reach+15&&Math.abs(w.fox.y-e.y)<100)hooks.hitSummon(w,s.damage,e.x);if(w.companion?.hp>0&&Math.abs(w.companion.x-e.x)<reach+23&&Math.abs(w.companion.y-e.y)<100)hooks.hitCompanion?.(w,s.damage,e.x);notice(w,'leapLanded',{id:e.id});}
  }
  if(a.age<s.windup+s.active){
-  e.ai.state=s.type==='projectile'||s.type==='zone'?'cast':s.type==='egg'||s.type==='summon'?'summon':'attack';
+  e.ai.state=['projectile','zone','wave'].includes(s.type)?'cast':['egg','summon','clone','heal','veil'].includes(s.type)?'summon':'attack';
+  tickBossTactic(w,e,s,hooks);
   if(s.type==='dash'){
    e.vx=e.face*(s.speed||350)*(d.boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1);if(d.flying)e.vy=clamp((w.player.y-20-e.y)*4,-300,300);
    if(s.lava&&Math.abs(e.x-(a.lastLava??e.x))>75){a.lastLava=e.x;const p=groundTarget(w,e.x,e.y);if(p)addZone(w,e,'lava',p,{radius:50*(e.attackScale??e.scale),life:5,damage:Math.max(1,Math.round(6*enemyDamageFactor(e))),status:'burn',delay:.35});}
@@ -215,7 +227,7 @@ function updateAttack(w,e,d,dt,hooks){
   }
  }else{e.ai.state='recover';e.vx*=Math.exp(-10*dt);}
  if(a.age>=s.windup+s.active+s.recover){
-  a.index++;a.age=0;a.fired=false;a.victims=[];a.aim={x:w.player.x,y:w.player.y-w.player.h*.5};
+  a.index++;a.age=0;a.fired=false;a.victims=[];a.aim={x:w.player.x,y:w.player.y-w.player.h*.5};prepareLeap(w,e);
   if(a.index>=a.plan.steps.length){e.ai.attack=null;e.ai.state='idle';e.ai.readyAt=w.time+(d.boss?.28:.65)/(e.frequency||1);}
   else if(!enemyMeleeReady(w,e,a.plan.steps[a.index])){if(d.boss&&Math.abs(w.player.y-e.y)<90&&Math.abs(w.player.x-e.x)<enemyMeleeReach(w,e,a.plan.steps[a.index])+w.player.w+120){a.waitingLink=true;a.linkUntil=w.time+.45;e.ai.state='walk';}else{e.ai.attack=null;e.ai.state='walk';e.ai.readyAt=w.time+.16;}}else{e.face=Math.sign(w.player.x-e.x||e.face);e.ai.state='windup';notice(w,'comboStep',{id:e.id,index:a.index});}
  }
@@ -255,7 +267,7 @@ function navigate(w,e,d,dt,hooks){
   // forever at their preferred spacing behind a short ledge or cover.
   const origin=enemyCastOrigin(w,e);
   if(!e.ai.descent&&d.ranged&&!clearLine(w,origin.x,origin.y,p.x,p.y-p.h*.5))dir=Math.sign(dx);
-  if(!e.ai.descent&&!d.ranged&&!clearLine(w,e.x,e.y-Math.min(e.h*.42,75),p.x,p.y-45)&&abs>e.w+p.w)dir=Math.sign(dx);
+  if(!e.ai.descent&&!d.ranged&&!clearLine(w,e.x,e.y-Math.min(e.h*.42,75),p.x,p.y-45))dir=Math.sign(dx);
   if(ty<e.y-50)dir=Math.abs(travel)>25?Math.sign(travel):0;
   e.vx=lerp(e.vx,root?0:dir*d.speed*slow,1-Math.exp(-10*dt));
   const wall=(w.obstacles||[]).some(b=>b.actor!==false&&b.active!==false&&b.y<e.y&&b.y+b.h>e.y-10&&Math.abs(b.x+b.w/2-e.x)<e.w+85&&Math.sign(b.x+b.w/2-e.x)===Math.sign(travel));
@@ -277,7 +289,9 @@ export function updateEnemies(w,dt,hooks){
   if(e.burnUntil>w.time&&w.time>=e.nextBurn){e.nextBurn+=.75;hooks.damage(w,e,4,{impact:false});if(e.hp<=0)continue;}
   if(d.boss&&e.hp/e.maxHp<=.5&&ai.phase===1){ai.phase=2;notice(w,'phase',{id:e.id,phase:2});fx(w,hooks,d.form==='wolf'?'ice':'star',{x:e.x,y:e.y-e.h*.4,radius:85,duration:.8,enemyKind:e.enemyKind});}
   if(ai.passiveUntil>w.time&&e.hp>0&&ai.stagger<=0&&w.time>=ai.healTick){ai.healTick+=.4;const heal=Math.min(16,e.maxHp-e.hp);e.hp+=heal;if(heal){fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.6,radius:65,duration:.65,enemyKind:e.enemyKind,ground:false});notice(w,'healed',{id:e.id,amount:heal});}}
-  if(d.id==='B10'&&alive(w.player)&&Math.abs(w.player.x-e.x)<260&&!w.player.enemyControl)w.player.vx+=(e.x-w.player.x)*dt*.25;
+  if((d.id==='B10'||d.mechanic==='gravity')&&alive(w.player)&&!blinkProtected(w)&&Math.abs(w.player.x-e.x)<260&&!w.player.enemyControl)w.player.vx+=(e.x-w.player.x)*dt*.25;
+  if(d.mechanic==='crystalArmor'&&w.time>=ai.nextPassive){ai.nextPassive=w.time+9;ai.crystalUntil=w.time+3;fx(w,hooks,'crystal',{x:e.x,y:e.y-e.h*.4,radius:85,duration:3,enemyKind:e.enemyKind});}
+  if(d.mechanic==='cinders'&&ai.phase===2&&Math.abs(e.vx)>25&&w.time>=(ai.nextCinder||0)){ai.nextCinder=w.time+.8;const anchor=groundTarget(w,e.x,e.y-2);if(anchor)addZone(w,e,'ash',anchor,{radius:55,life:2.4,damage:Math.round(4*enemyDamageFactor(e)),status:'burn',delay:.4});}
   if(!alive(w.player)){ai.attack=null;e.vx*=Math.exp(-8*dt);ai.state='idle';}
   else if(ai.stagger>0){e.vx*=Math.exp(-8*dt);ai.state='stagger';}
   else if(ai.state==='hatch'&&w.time<ai.readyAt){e.vx=e.emergeDir*85;}
@@ -295,10 +309,11 @@ export function updateEnemies(w,dt,hooks){
   }
   if(e.rootUntil>w.time)e.vx=0;else e.vx+=(e.fieldForce||0)*dt;
   if(d.flying){e.prevX=e.x;e.prevY=e.y;e.x=clamp(e.x+e.vx*dt,e.w+12,w.width-e.w-12);e.y=clamp(e.y+e.vy*dt,e.h+18,w.floor-15);resolveSolidSides(w,e,e.prevX,e.prevY);e.grounded=false;}
-  else{hooks.physics(w,e,dt);if(e.grounded)e.jumps=0;}
+  else{const a=ai.attack;if(a?.leaping&&!a.landed&&a.landing){const support=resolveGroundTarget(w,a.landing);if(support){a.landing=support;a.flightAge+=dt;const t=Math.min(1,a.flightAge/.69);e.prevX=e.x;e.prevY=e.y;e.x=a.leapFrom.x+(support.x-a.leapFrom.x)*t;e.y=a.leapFrom.y+(support.y-a.leapFrom.y)*t-4*Math.max(160,(a.leapFrom.y-support.y)*.6+110)*t*(1-t);e.grounded=t>=1;if(e.grounded){e.platformId=support.platformId;e.vy=0;}}else{a.leaping=false;hooks.physics(w,e,dt);}}else hooks.physics(w,e,dt);if(e.grounded)e.jumps=0;}
   e.cycle+=Math.abs(e.vx)*dt/Math.max(14,e.visual*.16);
  }
  updateZones(w,dt,hooks);
+ updateBossTactics(w,dt,hooks,applyEnemyStatus);
  w.targets=w.targets.filter(e=>!(e.enemyKind||e.egg)||e.hp>0||w.time-(e.diedAt??w.time)<2.2);
 }
 export function enemyAnimationFrame(e,time){
@@ -309,14 +324,14 @@ export function enemyAnimationFrame(e,time){
  if(e.ai.state==='hatch')return 11;
  const a=e.ai.attack,s=stepPlan(e);
  if(a?.waitingLink)return Math.floor(e.cycle*1.7)%6;
- if(a&&s){if(a.age<s.windup)return 7;if(a.age<s.windup+s.active)return s.type==='egg'||s.type==='summon'?11:s.type==='projectile'||s.type==='zone'?10:8;return 9;}
+ if(a&&s){if(a.age<s.windup)return 7;if(a.age<s.windup+s.active)return ['egg','summon','clone','heal','veil'].includes(s.type)?11:['projectile','zone','wave'].includes(s.type)?10:8;return 9;}
  if(e.ai.passiveUntil>time&&Math.abs(e.vx)<12)return 11;
  return Math.abs(e.vx)>12||ENEMIES[e.enemyKind]?.flying?Math.floor(e.cycle*1.7+time*(ENEMIES[e.enemyKind]?.flying?9:0))%6:6;
 }
 export function enemyAnimationBlend(e,time){
  const frame=enemyAnimationFrame(e,time),a=e.ai?.attack,s=stepPlan(e);
  if(!ENEMIES[e.enemyKind]?.boss||!s||a.waitingLink||e.hp<=0||e.ai.stagger>0||e.hit>.06)return {a:frame,b:frame,mix:0};
- const active=s.type==='egg'||s.type==='summon'?11:s.type==='projectile'||s.type==='zone'?10:8;
+ const active=['egg','summon','clone','heal','veil'].includes(s.type)?11:['projectile','zone','wave'].includes(s.type)?10:8;
  const blend=(from,to,age,end,span)=>({a:from,b:to,mix:clamp((age-end+Math.min(.1,span*.45))/Math.min(.1,span*.45),0,1)});
  if(a.age<s.windup)return blend(7,active,a.age,s.windup,s.windup);
  if(a.age<s.windup+s.active)return blend(active,9,a.age,s.windup+s.active,s.active);

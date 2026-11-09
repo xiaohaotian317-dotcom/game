@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B15 Ashwing Adjudicator, original BOSS animation atlas for a premium hand-painted dark fantasy 2D side-scrolling action game.
+Create ONE square1536x1536 genuinely TRANSPARENT RGBA PNG, exactly4 columns by4 rows, 16 equal isolated cells. No visible grid. SAME boss in all poses, facing RIGHT in consistent side/three-quarter camera, same anatomy/clothing/equipment and scale. Occupy no more than82 percent tile width/height, leave at least24px clean margin all sides in384px cells. Natural boss proportions like a detailed game enemy, no full-screen splash-art pose. two avian taloned feet contact the same local ground y342; body root center x192. Entire crown, limbs, wings, cloth and weapon tips visible.
+
+DESIGN: A tall RAPTOr-headed armored executioner, hawk beak and fierce pale ember eye, biped digitigrade taloned legs, charred black-brown layered feather wings folded behind shoulders. Heavy weathered black iron and bronze judicial armor, ash-red cloth tabs, a powerful two-handed broad execution SWORD with a wing-shaped crossguard. Sparse ember fissures and singed feather tips. An avian swordsman judge, not an angel, not a red human knight, no bull horns. Keep beak, crest, both talons, sword tip and entire wings inside tile. Material palette: charcoal feathers, weathered dark iron, bronze, narrow ember orange seams. Painterly exquisite real material texture, bold small-scale silhouette, softly modeled volumes, fine sharp edges. No large external VFX hiding boss, those have separate atlas.
+
+EXACT0-based frame sequence, left-to-right then next row:
+0-5 SIX distinct consecutive WALK phases with real alternating legs/feet:0 near front foot reaches forward and rear pushes;1 it plants/body settles;2 opposite foot passes while near rear advances;3 opposite leading foot reaches/body rises slightly;4 it plants/secondary legs advance;5 returns toward initial stance. Keep hips/root stable, natural shoulder/cloth/tail/wing follow-through. No same still repeated, no whole-sprite sliding.
+6 idle guard with clear face and grounded two avian taloned feet.
+7 windup: rear talon braces, sword rises over rear shoulder and wings open slightly for balance.
+8 melee strike: powerful right-forward/downward execution sword slash, torso drives into it and rear wings counterbalance.
+9 recovery: reverse the strike naturally, weight returning to guard, weapons still attached.
+10 ranged cast: one wing and sword point right-up as rigid charred metallic feathers detach for a feather-rain cast; do not hide head.
+11 special active pose: low dash-ready sword stance, wings swept tightly backward, brief small ember trail at talons to suggest scorching rush.
+12 hit recoil: head/chest pulls back a little, body braces, do not dismember.
+13 stagger: fore-body/one support buckles and weapon lowers, alive.
+14 falling: body lowers/collapses sideways, limbs folding and equipment settling.
+15 death: low grounded collapsed body, light extinguished, intact readable identity, no gore.
+
+Hard constraints: transparent alpha0 background and gaps, no colored/black/grey backdrop, mist wash, scene/floor plane, cast-shadow rectangle, checkerboard. No text, labels, digits, UI, borders, logo, watermark, extra characters. No cropped anatomy or weapons, no neighbor overlap, identity drift or limb-count drift. Exactly16 poses in4x4.

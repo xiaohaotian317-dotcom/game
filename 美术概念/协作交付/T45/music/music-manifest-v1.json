@@ -1,0 +1,59 @@
+{
+  "track": {
+    "id": "realm-battle",
+    "title": "裂境行锋",
+    "filename": "realm-battle.wav",
+    "sha256": "3f537b02ce9ce5508b62bb8246ca059ea8ec523532acab003dc7b4af73332af3",
+    "bytes": 10584044,
+    "duration_seconds": 60.0,
+    "frames": 2646000,
+    "sample_rate": 44100,
+    "channels": 2,
+    "bits_per_sample": 16,
+    "format": "PCM WAV, signed little-endian",
+    "bpm": 96,
+    "bars": 24,
+    "meter": "4/4",
+    "note_events": 402,
+    "peak_dbfs": -13.6308,
+    "rms_dbfs": -27.3309,
+    "crest_factor_db": 13.7001,
+    "dc_offset_by_channel": [
+      -6.2857445495559335e-09,
+      9.146046656509826e-09
+    ],
+    "clipped_samples": 0,
+    "stereo_correlation": 0.907075,
+    "spectral_energy_fraction": {
+      "below_50hz": 0.000877,
+      "50_to_250hz": 0.453991,
+      "250_to_2000hz": 0.544828,
+      "2000_to_6000hz": 0.000304,
+      "above_6000hz": 0.0
+    },
+    "loop": {
+      "start_frame": 0,
+      "end_frame_exclusive": 2646000,
+      "implementation": "circular note tails, circular FIR reflections and periodic spectral filter",
+      "no_silence_padding": true,
+      "crossfade_required": false,
+      "first_minus_last_sample_by_channel": [
+        0.000701904296875,
+        -0.000274658203125
+      ],
+      "max_absolute_seam_step": 0.000701904296875,
+      "seam_step_dbfs": -63.0744,
+      "normal_adjacent_step_rms": 0.002245301260856455,
+      "normal_adjacent_step_p99": 0.00732421875,
+      "first_derivative_seam_jump_by_channel": [
+        3.0517578125e-05,
+        0.000152587890625
+      ],
+      "last_100ms_rms_dbfs": -26.8909,
+      "first_100ms_rms_dbfs": -27.1346
+    },
+    "provenance": "Original notes authored for this delivery; generated only by compose_music.py with NumPy and Python wave; no samples, downloads, existing tune or external music model.",
+    "quality_status": "Structural/signal checks performed. No claim of human or subjective listening approval."
+  },
+  "intent": "96 BPM restrained combat ostinato; preparation keeps realm-journey; human listening approval pending"
+}

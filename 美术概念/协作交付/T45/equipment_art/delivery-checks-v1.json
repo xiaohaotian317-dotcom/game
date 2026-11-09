@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "unitCount": 60,
+  "sourceCount": 5,
+  "allExpectedKeysPresent": true,
+  "allRectsWithinOriginalBounds": true,
+  "allOriginalAndPromptHashesMatch": true,
+  "pngsModified": false
+}

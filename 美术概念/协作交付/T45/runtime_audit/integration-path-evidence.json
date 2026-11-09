@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-11-09T07:26:20.504Z",
+  "baselineCommit": "899223480087c898475e4c1630922013a8a1363d",
+  "baseline": {
+    "file": "arcane-duel-lab/dist/src/campaign-painter.mjs",
+    "sha256": "2744226dcc8b8ed517d924c4e10223645f381f02b6f855973b986373de26b9c4",
+    "hasRefinedMetadata": false,
+    "hasRefinedHeroBitmaps": false,
+    "loaderSignature": " const heroes=Array.isArray(hero)?hero:[hero],art={};let count=0;const metadata=[['meta','campaign/scene-meta-v1.json'],['fxMeta','campaign/fx-meta-v1.json'],['newMeta','boss-fx/bounds-v2.json'],['growthMeta','campaign-growth/growth-ui-bounds-v1.json'],['heroMeta','campaign-growth/growth-hero-bounds-v1.json'],['petMeta','pets/pets-meta-v3.json'],['petGrowthMeta','pets/growth-meta-v2.json'],['swordMeta','artifacts/sword-meta-v1.json'],['platformMeta','campaign-platforms/platforms-meta-v1.json'],['dropMeta','world-drops/drop-meta-v1.json']],total=37+heroes.length-1;"
+  },
+  "current": {
+    "file": "arcane-duel-lab/dist/src/campaign-painter.mjs",
+    "sha256": "4986dfc9d9b1d448ee4b267080757a026f0d8739d9e6b79dbf1583a86c3f4036",
+    "hasRefinedMetadata": true,
+    "hasRefinedHeroBitmaps": true
+  },
+  "fallback": {
+    "file": "arcane-duel-lab/dist/src/alternate-skill-art.mjs",
+    "sha256": "c921b9382f8242ce1a5f56680539c74ab897d179b992eb30c59d4f13e5ab3637",
+    "fourFrameExpression": "Math.min(3,Math.floor(p*4))",
+    "sourceContainsExpression": true
+  },
+  "verification": {
+    "report": "render-performance-report.json",
+    "originalAndAlternateCases": 12,
+    "alternateRDrawnSourceRectsEach": 8,
+    "scope": "Original fallback was identified through source inspection. Performance was sampled after the main agent connected refined metadata and bitmaps; no pre-fix FPS claim."
+  }
+}

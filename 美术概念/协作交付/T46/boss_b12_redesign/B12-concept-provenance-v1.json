@@ -1,0 +1,38 @@
+{
+  "task": "T46 B12 redesign",
+  "version": "concept-v1",
+  "status": "single full-body concept awaiting main-Agent selection; not runtime or user accepted",
+  "generator": "built-in image_gen",
+  "transparent_background": true,
+  "pixelsEdited": false,
+  "file": "B12-concept-v1.png",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "95626118f2cf243c44c47b08a99cb64095d98c9951da29b679a2e1447a1b1144",
+  "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3d-ca53-7941-a467-9941a932f3f6/exec-4bbc3f67-60dd-4d4a-90f6-5fff34b8537a.png",
+  "sourceSha256": "95626118f2cf243c44c47b08a99cb64095d98c9951da29b679a2e1447a1b1144",
+  "originalBytesMatch": true,
+  "prompt": "B12-concept-prompt-v1.txt",
+  "alpha": {
+    "extrema": [
+      0,
+      254
+    ],
+    "zeroPixels": 713467,
+    "totalPixels": 1572864,
+    "threshold12BBoxAbsolute": [
+      5,
+      56,
+      1023,
+      1397
+    ]
+  },
+  "notes": [
+    "Full raised head/crown, broad upright shoulders, asymmetric anchor-arm, tidal core and both claw feet are complete.",
+    "Concept alpha-12 silhouette reaches within 5px of left edge and 1px of right edge: do not directly use as a motion cell. Any accepted 16-pose generation must reserve wider transparent gutters.",
+    "No animation atlas generated until main Agent selects concept."
+  ]
+}

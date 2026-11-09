@@ -1,0 +1,66 @@
+{
+  "generator": "built-in image_gen",
+  "transparent_background": true,
+  "assets": [
+    {
+      "file": "B12-concept-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-4bbc3f67-60dd-4d4a-90f6-5fff34b8537a.png",
+      "sha256": "95626118f2cf243c44c47b08a99cb64095d98c9951da29b679a2e1447a1b1144",
+      "sourceSha256": "95626118f2cf243c44c47b08a99cb64095d98c9951da29b679a2e1447a1b1144",
+      "originalBytesMatch": true,
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "prompt": "B12-concept-prompt-v1.txt",
+      "promptSha256": "d8cbb511753943b4e6b23b1fb26d40b53fc27cd35a189305799a9e95e63e9c05",
+      "pixelsEdited": false,
+      "role": "selected identity concept"
+    },
+    {
+      "file": "B12-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-14597139-c459-44fd-8b36-d995ff80fde6.png",
+      "sha256": "2a56d00a5eea8e7c824432c75345727e330a6ab74a326f606ce21c6bcd71dab0",
+      "sourceSha256": "2a56d00a5eea8e7c824432c75345727e330a6ab74a326f606ce21c6bcd71dab0",
+      "originalBytesMatch": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "B12-motion-prompt-v1.txt",
+      "promptSha256": "a4ac78bc416441eff968e94d68bd10169325fe91551f8f79e314ea7457c4fcd8",
+      "pixelsEdited": false,
+      "role": "archive before spacing correction"
+    },
+    {
+      "file": "B12-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-56580cb1-0868-40d8-8307-fc3b305963e4.png",
+      "sha256": "9dbc0658684ccee3506801cb221d6ff57ece1d51d02ab037fc413eced9be8226",
+      "sourceSha256": "9dbc0658684ccee3506801cb221d6ff57ece1d51d02ab037fc413eced9be8226",
+      "originalBytesMatch": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "B12-motion-prompt-v2.txt",
+      "promptSha256": "bae73ef93a132aeca85a6fa4f974a8a485dfb5130447fd1d4599da476d8757be",
+      "pixelsEdited": false,
+      "role": "selected 16-pose atlas"
+    }
+  ]
+}

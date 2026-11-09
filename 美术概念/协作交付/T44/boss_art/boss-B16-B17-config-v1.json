@@ -1,0 +1,267 @@
+{
+  "units": {
+    "B16": {
+      "name": "千面镜姬",
+      "file": "B16-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-69e867fe-61ab-49f6-9d66-3d95b054bf6f.png",
+      "prompt": "B16-motion-prompt-v1.txt",
+      "groundContactY": [
+        273,
+        274,
+        274,
+        274,
+        275,
+        275,
+        276,
+        275,
+        276,
+        276,
+        276,
+        276,
+        271,
+        270,
+        269,
+        271
+      ],
+      "portrait": {
+        "rect": [
+          771,
+          337,
+          84,
+          84
+        ],
+        "frame": 6,
+        "note": "Half-mask queen eye/face/crown closeup."
+      },
+      "socket": {
+        "x": 0.8945686900958466,
+        "y": 0.2939297124600639,
+        "ground": 0.8817891373801917
+      },
+      "socketPixel": {
+        "x": 280,
+        "y": 92,
+        "ground": 276
+      },
+      "socketFrame": 10,
+      "mechanic": "mirror-step-and-returning-wheels"
+    },
+    "B17": {
+      "name": "时砂圣甲",
+      "file": "B17-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-4cd62035-5533-4997-b1d4-376450c6a127.png",
+      "prompt": "B17-motion-prompt-v1.txt",
+      "groundContactY": [
+        263,
+        263,
+        265,
+        263,
+        263,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+        263,
+        264,
+        267
+      ],
+      "portrait": {
+        "rect": [
+          777,
+          376,
+          100,
+          100
+        ],
+        "frame": 6,
+        "note": "Scarab-sphinx pharaonic lion-mask eyes and muzzle."
+      },
+      "socket": {
+        "x": 0.9201277955271565,
+        "y": 0.4952076677316294,
+        "ground": 0.8370607028753994
+      },
+      "socketPixel": {
+        "x": 288,
+        "y": 155,
+        "ground": 262
+      },
+      "socketFrame": 10,
+      "rectOverrides": {
+        "8": [
+          0,
+          627,
+          325,
+          313
+        ],
+        "9": [
+          325,
+          627,
+          302,
+          313
+        ]
+      },
+      "mechanic": "slowing-sand-domain",
+      "note": "Halberd8 extends to x314; next sprite9 starts336. Actual alpha-free columns315..335 allow split x325, so strict independent explicit rects preserve full pike without multi-part clips."
+    }
+  },
+  "fx": {
+    "B16": {
+      "name": "千面镜姬·镜移幻刃",
+      "file": "B16-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-8d62047c-2602-4a30-88d0-d04a2b64dda4.png",
+      "prompt": "B16-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        283,
+        283,
+        283,
+        283,
+        210,
+        210,
+        210,
+        210
+      ],
+      "pivotY": [
+        155,
+        155,
+        155,
+        155,
+        152,
+        152,
+        152,
+        152
+      ],
+      "centerX": [
+        160,
+        160,
+        158,
+        158,
+        190,
+        188,
+        188,
+        188,
+        157,
+        157,
+        157,
+        157,
+        160,
+        160,
+        160,
+        160
+      ],
+      "projectileHeadPivot": [
+        [
+          190,
+          152
+        ],
+        [
+          188,
+          152
+        ],
+        [
+          188,
+          152
+        ],
+        [
+          188,
+          152
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          982,
+          43,
+          231,
+          225
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "mechanic": "returning-mirror-wheel-and-summoning",
+      "note": "Wheel centers calibrated to actual circular blades rather than leftward wake. Silver/lavender material continuously rotates; ground portal support plane independent of ornament bottom."
+    },
+    "B17": {
+      "name": "时砂圣甲·迟滞沙域",
+      "file": "B17-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-5bcf5412-afad-42ef-9816-356f520d1790.png",
+      "prompt": "B17-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        270,
+        270,
+        270,
+        270,
+        222,
+        222,
+        222,
+        222
+      ],
+      "pivotY": [
+        162,
+        162,
+        162,
+        162,
+        156,
+        156,
+        156,
+        156
+      ],
+      "projectileHeadPivot": [
+        [
+          285,
+          156
+        ],
+        [
+          285,
+          156
+        ],
+        [
+          284,
+          156
+        ],
+        [
+          282,
+          156
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          988,
+          64,
+          209,
+          208
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "mechanic": "slowing-sand-and-piercing-lance",
+      "note": "Amber grains swirl around same bronze hourglass ribs; ground sand channel flows in four phases."
+    }
+  }
+}

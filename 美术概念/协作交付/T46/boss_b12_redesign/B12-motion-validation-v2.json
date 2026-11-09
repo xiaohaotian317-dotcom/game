@@ -1,0 +1,391 @@
+{
+  "file": "B12-motion-v2.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "sha256": "9dbc0658684ccee3506801cb221d6ff57ece1d51d02ab037fc413eced9be8226",
+  "pixelsEdited": false,
+  "originalBytesMatch": true,
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha8MinimumCellMargin": 23,
+  "frames": [
+    {
+      "frame": 0,
+      "alpha8BBoxLocal": [
+        46,
+        48,
+        268,
+        277
+      ],
+      "alpha8MarginsLTRB": [
+        46,
+        48,
+        46,
+        37
+      ],
+      "alpha12BBoxLocal": [
+        46,
+        48,
+        267,
+        277
+      ],
+      "sourceClipCount": 564
+    },
+    {
+      "frame": 1,
+      "alpha8BBoxLocal": [
+        46,
+        57,
+        265,
+        275
+      ],
+      "alpha8MarginsLTRB": [
+        46,
+        57,
+        48,
+        39
+      ],
+      "alpha12BBoxLocal": [
+        46,
+        57,
+        263,
+        275
+      ],
+      "sourceClipCount": 450
+    },
+    {
+      "frame": 2,
+      "alpha8BBoxLocal": [
+        54,
+        49,
+        254,
+        273
+      ],
+      "alpha8MarginsLTRB": [
+        54,
+        49,
+        59,
+        41
+      ],
+      "alpha12BBoxLocal": [
+        56,
+        49,
+        254,
+        273
+      ],
+      "sourceClipCount": 471
+    },
+    {
+      "frame": 3,
+      "alpha8BBoxLocal": [
+        54,
+        46,
+        260,
+        271
+      ],
+      "alpha8MarginsLTRB": [
+        54,
+        46,
+        54,
+        43
+      ],
+      "alpha12BBoxLocal": [
+        54,
+        46,
+        258,
+        271
+      ],
+      "sourceClipCount": 532
+    },
+    {
+      "frame": 4,
+      "alpha8BBoxLocal": [
+        50,
+        42,
+        269,
+        269
+      ],
+      "alpha8MarginsLTRB": [
+        50,
+        42,
+        45,
+        44
+      ],
+      "alpha12BBoxLocal": [
+        51,
+        44,
+        269,
+        268
+      ],
+      "sourceClipCount": 536
+    },
+    {
+      "frame": 5,
+      "alpha8BBoxLocal": [
+        55,
+        44,
+        262,
+        267
+      ],
+      "alpha8MarginsLTRB": [
+        55,
+        44,
+        51,
+        46
+      ],
+      "alpha12BBoxLocal": [
+        55,
+        44,
+        261,
+        267
+      ],
+      "sourceClipCount": 524
+    },
+    {
+      "frame": 6,
+      "alpha8BBoxLocal": [
+        42,
+        41,
+        257,
+        269
+      ],
+      "alpha8MarginsLTRB": [
+        42,
+        41,
+        56,
+        44
+      ],
+      "alpha12BBoxLocal": [
+        44,
+        41,
+        257,
+        268
+      ],
+      "sourceClipCount": 543
+    },
+    {
+      "frame": 7,
+      "alpha8BBoxLocal": [
+        40,
+        42,
+        275,
+        268
+      ],
+      "alpha8MarginsLTRB": [
+        40,
+        42,
+        39,
+        45
+      ],
+      "alpha12BBoxLocal": [
+        40,
+        42,
+        273,
+        268
+      ],
+      "sourceClipCount": 570
+    },
+    {
+      "frame": 8,
+      "alpha8BBoxLocal": [
+        45,
+        49,
+        277,
+        258
+      ],
+      "alpha8MarginsLTRB": [
+        45,
+        49,
+        37,
+        55
+      ],
+      "alpha12BBoxLocal": [
+        45,
+        50,
+        276,
+        258
+      ],
+      "sourceClipCount": 415
+    },
+    {
+      "frame": 9,
+      "alpha8BBoxLocal": [
+        44,
+        46,
+        259,
+        258
+      ],
+      "alpha8MarginsLTRB": [
+        44,
+        46,
+        54,
+        55
+      ],
+      "alpha12BBoxLocal": [
+        44,
+        48,
+        258,
+        258
+      ],
+      "sourceClipCount": 466
+    },
+    {
+      "frame": 10,
+      "alpha8BBoxLocal": [
+        25,
+        51,
+        278,
+        259
+      ],
+      "alpha8MarginsLTRB": [
+        25,
+        51,
+        35,
+        54
+      ],
+      "alpha12BBoxLocal": [
+        27,
+        51,
+        277,
+        259
+      ],
+      "sourceClipCount": 524
+    },
+    {
+      "frame": 11,
+      "alpha8BBoxLocal": [
+        34,
+        43,
+        275,
+        262
+      ],
+      "alpha8MarginsLTRB": [
+        34,
+        43,
+        39,
+        51
+      ],
+      "alpha12BBoxLocal": [
+        34,
+        44,
+        274,
+        262
+      ],
+      "sourceClipCount": 583
+    },
+    {
+      "frame": 12,
+      "alpha8BBoxLocal": [
+        43,
+        40,
+        271,
+        259
+      ],
+      "alpha8MarginsLTRB": [
+        43,
+        40,
+        43,
+        55
+      ],
+      "alpha12BBoxLocal": [
+        45,
+        40,
+        271,
+        259
+      ],
+      "sourceClipCount": 562
+    },
+    {
+      "frame": 13,
+      "alpha8BBoxLocal": [
+        40,
+        67,
+        249,
+        261
+      ],
+      "alpha8MarginsLTRB": [
+        40,
+        67,
+        64,
+        53
+      ],
+      "alpha12BBoxLocal": [
+        40,
+        67,
+        249,
+        261
+      ],
+      "sourceClipCount": 381
+    },
+    {
+      "frame": 14,
+      "alpha8BBoxLocal": [
+        23,
+        89,
+        253,
+        262
+      ],
+      "alpha8MarginsLTRB": [
+        23,
+        89,
+        60,
+        52
+      ],
+      "alpha12BBoxLocal": [
+        23,
+        89,
+        253,
+        262
+      ],
+      "sourceClipCount": 374
+    },
+    {
+      "frame": 15,
+      "alpha8BBoxLocal": [
+        24,
+        142,
+        275,
+        263
+      ],
+      "alpha8MarginsLTRB": [
+        24,
+        142,
+        39,
+        51
+      ],
+      "alpha12BBoxLocal": [
+        24,
+        143,
+        275,
+        261
+      ],
+      "sourceClipCount": 247
+    }
+  ],
+  "referenceSourceHeight": 227,
+  "portrait": {
+    "rect": [
+      788,
+      349,
+      90,
+      90
+    ],
+    "frame": 6,
+    "note": "Manually selected square crown/eyes/face crop, atlas-absolute; face raised above shoulders. Body anchor independent."
+  },
+  "castSocket": {
+    "x": 256,
+    "y": 122,
+    "frame": 10,
+    "coordinates": "frame-local pixels at the forward smaller-pincer cyan release aperture"
+  },
+  "limits": [
+    "Read-only alpha measurement and manual anatomy anchors; no production integration or gameplay acceptance is implied.",
+    "Generation v2 is the single authorized spacing correction. v1 remains archived, not selected for integration.",
+    "At alpha1 some extremely faint chromatic residue reaches cell margins; all alpha>=8 anatomy/effects have at least23px safety margins. Source clips isolate the actual material."
+  ]
+}

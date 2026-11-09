@@ -1,0 +1,307 @@
+{
+  "pngCount": 60,
+  "pixelsEdited": false,
+  "allOriginalBytesMatched": true,
+  "files": [
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-boss-hud-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-boss-hud-v1.png",
+      "sha256": "dc1c449d230f0ff2011d75f7fbff63f80ae273eb005b3956678a7263da5dff07"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-ground-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-ground-v1.png",
+      "sha256": "a16dd4a73df705c64c648a27be3cd55e3194d644b8631fa56abb3c7d5cce54bb"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-platforms-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-platforms-v1.png",
+      "sha256": "1b012198d0af365325f708c16b1fccd2a6e40b5ca8a8e87e15945ad0ef88c6b6"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage12-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage12-v1.png",
+      "sha256": "56c3497619a11cffe279cfbae1c8fec95b43c4da4865bd40d434ab7e7a2ea550"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage13-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage13-v1.png",
+      "sha256": "afc5dcd15012249cd1cf9afd00ef705dd44176910ed9c5e350b6a068ef6758d0"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage14-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage14-v1.png",
+      "sha256": "6ad5faa236b2b98f2c334bca6892a6c81711edf1ea5906d95e066f1cd9fd22ae"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage15-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage15-v1.png",
+      "sha256": "4ae33a3e37e9bf6ffba6f575e394817ec429eadb1043078310a4cc7c2115e862"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage16-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage16-v1.png",
+      "sha256": "9b64ddfc3b30b275feb42500be4c16a292559317c2951975e3e34ca8e42b0be5"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage17-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage17-v1.png",
+      "sha256": "a404dc7da51e40e0a9bcff16b1dea791acabf9f187c7334afcedac3e613c846a"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage18-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage18-v1.png",
+      "sha256": "8b3464d9e48758c2b8dcd095b3652f8db648b694a5c8d0e057cb75e2798a7ed8"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage19-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage19-v1.png",
+      "sha256": "4aa8569e513b62f9bba2ee76a230c449ff41dc4009783fc4e1c4aa4c4a5a94c8"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-stage20-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-stage20-v1.png",
+      "sha256": "7ea7d0cb3de1039e0012768421e6c4ea03326278a6abb853705d5bd5789c1c8e"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-title-plates-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-title-plates-v1.png",
+      "sha256": "e168f754354365b59263df64b8ecf5233991f0b2a9566224661f0841a4a4d02f"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-warning-rings-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-warning-rings-v1.png",
+      "sha256": "89cb7a46be3799372df163589d7c8c8d2334e1e3439892894c3ec0e9649fbf93"
+    },
+    {
+      "runtime": "dist\\assets\\campaign\\chapter2\\chapter2-world-v1.png",
+      "source": "美术概念\\协作交付\\T44\\scene_art\\chapter2-world-v1.png",
+      "sha256": "9d5fb2d2b6af6b7581a6299f1634179e3525f2c40b759cd4581976d3fbbb5a98"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B12-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B12-motion-v1.png",
+      "sha256": "a7e96cc4f686ed7fd2b4c7359956eb71fe2c9361fd16a1add1e07db53ea149b9"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B13-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B13-motion-v1.png",
+      "sha256": "fad6813f29c705763ab7c234dad81e99e18f9611ce6b53c0580ab3d3bfe26b80"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B14-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B14-motion-v1.png",
+      "sha256": "12819c1c83f6653b9e8c88e1e93d052d2b7805734b2bb5d9bcced1116d1bd028"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B15-motion-v2.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B15-motion-v2.png",
+      "sha256": "53f1a4736a09c225119333e067ddf2b3d0f7dd9debfa41e3f8fc54b66ee9fb13"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B16-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B16-motion-v1.png",
+      "sha256": "773a36753b87f5017c88d33ef291cfbbf7a2d54229ff32bc568afd4a4a1541d7"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B17-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B17-motion-v1.png",
+      "sha256": "2c093851018a7367d530e7be5e659f9e24358b0d26cf128ad0a9e60b3ea6a5ba"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B18-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B18-motion-v1.png",
+      "sha256": "a33f94264411d9721256874d14290f50fff5250879a39760fddeceb083c6b996"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B19-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B19-motion-v1.png",
+      "sha256": "a74668dbac05b4dacedc4a1899826b22a69d6d57c9b7c7b1625beeaef5beb9c4"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\B20-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B20-motion-v1.png",
+      "sha256": "f6f134f24a4b687e5c875f755c012059cb18475ebf8bc60ad2d52fe679d0eef5"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M11-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M11-motion-v1.png",
+      "sha256": "6995de0703281b593e97e672887abaeaaa43fbe1fcf19b795e87fec613cd5689"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M12-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M12-motion-v1.png",
+      "sha256": "0c67b27380f0aae9f1d089d08cc08b7a9554ce6557c4bbca6c11127adc9463f2"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M13-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M13-motion-v1.png",
+      "sha256": "82d11ff6d1c7fb4345d7ff230c5f503dd18505ff4b085b7d0c1b7179425296c4"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M14-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M14-motion-v1.png",
+      "sha256": "95ce101ec4f997389e3dec70536398fc7c874522d7bcb3eb4cc72e9dce63f36b"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M15-motion-v3.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M15-motion-v3.png",
+      "sha256": "6966c1f100029dd85e4a51ce23e3ae92885960202281fe886e4c7b4196828a37"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M16-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M16-motion-v1.png",
+      "sha256": "8da5d12d3f7965bb5e5ea3fb2c53bbee339c1a3d969cb6ae67629f136bce02eb"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M17-motion-v2.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M17-motion-v2.png",
+      "sha256": "a199d946adb1ba73df712e2231e8eea7c059e5018446610de1751a492f0cbcae"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M18-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M18-motion-v1.png",
+      "sha256": "9ef1ea0eda95f44aad65ed07d21eca7afbf9a83ce498729ab8931eee873645eb"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M19-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M19-motion-v1.png",
+      "sha256": "a74f882293da256544da1d2ca02455f51eada98f6f2203c2b5ed10ad69406191"
+    },
+    {
+      "runtime": "dist\\assets\\enemies\\chapter2\\M20-motion-v1.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\M20-motion-v1.png",
+      "sha256": "31460515af943b2d4d2cc80ddad43c60087c0870d651b11031c2dc0527e1eec3"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B12-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B12-fx-v1.png",
+      "sha256": "a756dabfcbfa1fd9532cb8ae0c39a17b8336d6a804b2e0dc6e54684e9bf8554d"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B13-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B13-fx-v1.png",
+      "sha256": "6cdef3d047b1278efd3dc9be1637a0b675c81ad9be33bafa3f02758a116295fa"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B14-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B14-fx-v1.png",
+      "sha256": "577b025855b12a876a8e70278e32934b982118a4f3a1cf2002383ab1cf427566"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B15-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B15-fx-v1.png",
+      "sha256": "30f36f5a9823f015a0c8dbe7876415df638e4686dd641fbd4b36dc1eb20c1435"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B16-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B16-fx-v1.png",
+      "sha256": "2a34c8c52d266388e2741e43aca11f0819ba47cd91b9e82a72a0230648feff45"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B17-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B17-fx-v1.png",
+      "sha256": "8b666239b520bc74dba35ae3e460ea1c4e8f5ab00af5e06f4ece5acb6e58b583"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B18-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B18-fx-v1.png",
+      "sha256": "1d9a6908baf56952fe6b5a385cfb1861e5abf7ddb38b3168f9fb7011faee4d61"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B19-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B19-fx-v1.png",
+      "sha256": "fdbaf53458984a072f6f84c86352e82610a2dfdaa239192c2287375869173ef5"
+    },
+    {
+      "runtime": "dist\\assets\\boss-fx\\chapter2\\B20-fx-v1.png",
+      "source": "美术概念\\协作交付\\T44\\boss_art\\B20-fx-v1.png",
+      "sha256": "7ad2232b3a57faa483f91a874dd3f2c9bd4ec4794052d65d0a2a34f4b2444116"
+    },
+    {
+      "runtime": "dist\\assets\\minion-fx\\chapter2\\minion-melee-fx-v2.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\minion-melee-fx-v2.png",
+      "sha256": "0795a9dd07cbb3bc7c0bcb0718cefb2c15cd9b962d2f00ed5ae3b40e59e26b1d"
+    },
+    {
+      "runtime": "dist\\assets\\minion-fx\\chapter2\\minion-ranged-fx-v2.png",
+      "source": "美术概念\\协作交付\\T44\\minion_art\\minion-ranged-fx-v2.png",
+      "sha256": "ccc17ef78f6466dab3ca446a66cfbbad6fdecd6c0f598e9f6f94b795748238b1"
+    },
+    {
+      "runtime": "dist\\assets\\equipment-sets\\equipment-q0-v1.png",
+      "source": "美术概念\\协作交付\\T45\\equipment_art\\equipment-q0-v1.png",
+      "sha256": "d61de79f8071eebb37c546c35d0233f698647661a29a19625869efcfedc52d22"
+    },
+    {
+      "runtime": "dist\\assets\\equipment-sets\\equipment-q2-v1.png",
+      "source": "美术概念\\协作交付\\T45\\equipment_art\\equipment-q2-v1.png",
+      "sha256": "9d510e5428df798e85988ba90e5cdf5b36af0fb5ca57a1f0187910e561b58fdd"
+    },
+    {
+      "runtime": "dist\\assets\\equipment-sets\\equipment-q3-v1.png",
+      "source": "美术概念\\协作交付\\T45\\equipment_art\\equipment-q3-v1.png",
+      "sha256": "b8216303a2eb55fb59d2812e290dc8c91cff1ebaea6b1927eb7f70b8a3fa1230"
+    },
+    {
+      "runtime": "dist\\assets\\equipment-sets\\equipment-q4-v1.png",
+      "source": "美术概念\\协作交付\\T45\\equipment_art\\equipment-q4-v1.png",
+      "sha256": "c16fbb39fc59b64e4dcf0466a4c4d51153a9a1ae728a0997213e8d15a6d9c44a"
+    },
+    {
+      "runtime": "dist\\assets\\equipment-sets\\equipment-q5-v1.png",
+      "source": "美术概念\\协作交付\\T45\\equipment_art\\equipment-q5-v1.png",
+      "sha256": "0aba5294d1e22bd713efdaf7b39c30d7cc0a5df3656a346a8564909d8145d4ad"
+    },
+    {
+      "runtime": "dist\\assets\\pets\\dawnlion\\dawnlion-form1-motion-v1.png",
+      "source": "美术概念\\协作交付\\T45\\pet_art\\dawnlion-form1-motion-v1.png",
+      "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+    },
+    {
+      "runtime": "dist\\assets\\pets\\dawnlion\\dawnlion-form2-motion-v1.png",
+      "source": "美术概念\\协作交付\\T45\\pet_art\\dawnlion-form2-motion-v1.png",
+      "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b"
+    },
+    {
+      "runtime": "dist\\assets\\pets\\dawnlion\\dawnlion-form3-motion-v2.png",
+      "source": "美术概念\\协作交付\\T45\\pet_art\\dawnlion-form3-motion-v2.png",
+      "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb"
+    },
+    {
+      "runtime": "dist\\assets\\pets\\dawnlion\\dawnlion-portraits-skills-v1.png",
+      "source": "美术概念\\协作交付\\T45\\pet_art\\dawnlion-portraits-skills-v1.png",
+      "sha256": "8e50c96257205130840ef85f75cadee5b6e8f3dcf77d31f11a38f86a7701eb88"
+    },
+    {
+      "runtime": "dist\\assets\\pets\\dawnlion\\dawnlion-skills-fx-v1.png",
+      "source": "美术概念\\协作交付\\T45\\pet_art\\dawnlion-skills-fx-v1.png",
+      "sha256": "cb9826023d13f86f56ab81ccc7dd715364f848cc88d32ae48897fdd8f2318726"
+    },
+    {
+      "runtime": "dist\\assets\\artifacts\\t45\\artifact-active-fx-v2.png",
+      "source": "美术概念\\协作交付\\T45\\artifact_art\\artifact-active-fx-v2.png",
+      "sha256": "e61a389c4c5a78611f37552a9a7ea5ee195937a81d75334b8b25abca8d49e3ee"
+    },
+    {
+      "runtime": "dist\\assets\\artifacts\\t45\\artifact-hud-entry-v1.png",
+      "source": "美术概念\\协作交付\\T45\\artifact_art\\artifact-hud-entry-v1.png",
+      "sha256": "cb869057a744d6dafd6fcfa85efa405cb1035e32e9c96fe037c03ceffb6dae99"
+    },
+    {
+      "runtime": "dist\\assets\\artifacts\\t45\\artifact-icons-v1.png",
+      "source": "美术概念\\协作交付\\T45\\artifact_art\\artifact-icons-v1.png",
+      "sha256": "50906b433ebcb4cb564bf0e5e31cc56431beed6581955c93a6acc48b4cff863a"
+    },
+    {
+      "runtime": "dist\\assets\\movement-fx\\movement-fire-nature-frost-v1.png",
+      "source": "美术概念\\协作交付\\T45\\motion_art\\movement-fire-nature-frost-v1.png",
+      "sha256": "9b10da68aaec7065dd1a1f19402f422df644280832348c5c3cd4e1c89a87c032"
+    },
+    {
+      "runtime": "dist\\assets\\movement-fx\\movement-lightning-shadow-star-v1.png",
+      "source": "美术概念\\协作交付\\T45\\motion_art\\movement-lightning-shadow-star-v1.png",
+      "sha256": "2167fe01de60524694a2268756a7ca2867d960a5a2ead2f2bdffe127c14e225f"
+    }
+  ]
+}

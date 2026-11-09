@@ -27,7 +27,7 @@ export function equipmentBonuses(item){
  const result={attack:0,healthRatio:0,armor:0,crit:0,lifesteal:0,attackSpeed:0,regen:0};
  if(item?.type!=='equipment'||!['weapon','armor'].includes(item.slot))return result;
  const quality=integer(item.quality,QUALITY.length-1),level=integer(item.level,10),rank=integer(item.rank,3);
- const rolls=normalizeEquipmentRolls(item.rolls),bonus=QUALITY[quality].power+level*.025+RANK_POWER[rank];
+ const rolls=normalizeEquipmentRolls(item.rolls),bonus=QUALITY[quality].power*(item.collection===2?1+.2*Math.max(0,Math.min(2,item.setTier||0)):1)+level*.025+RANK_POWER[rank];
  if(item.slot==='weapon'){
   result.attack=10*bonus*rolls.attack;
   result.crit=quality*.012*rolls.crit;

@@ -1,0 +1,41 @@
+{
+  "task": "T46 independent actual boss tactics regression",
+  "date": "2026-11-09T08:21:23.618422+00:00",
+  "testFile": "tests/campaign18-boss-tactics.test.mjs",
+  "scope": [
+    "Natural plan selection and 120 Hz production step, real damage and actual ownership reward path, no formal saves.",
+    "B12 low grounded wave one-victim guard, timed actual double jump, high-speed swept contact, arena/support/owner/encounter cleanup.",
+    "B13 short veil is damageable, reveal >= 0.3s before real uppercut, heavy stagger reveals.",
+    "B14 four heal ticks <=6% plus integer tolerance, stagger stops remaining ticks, death cannot revive.",
+    "B16 two real M15 combat actors draw B16 atlas; forced second natural release exercises live cap; expires after 8 seconds, owner death kills both; player kills produce no XP/coins/drops.",
+    "B16 destination committed at windup; player moves away without retarget; changed support moves true landing.",
+    "All 20 bosses default body width/height/visual 1.10 relative to root HEAD 8992234 (.72 scale), unchanged reach and real first-melee damage; story1/story12/endless/twin entry covered."
+  ],
+  "testsPassed": 11,
+  "testsFailed": 0,
+  "testLog": "t46-boss-tactics-tests.txt",
+  "combinedLog": "t46-boss-tactics-regression.txt",
+  "sourceSha256": {
+    "boss-tactics.mjs": "a253c7c484ce89f46898500bf336fbdd4a465f6de71d37cf00766075569b4242",
+    "enemy-simulation.mjs": "61c2e7b7a26ce6e51a375fffe375f939fd6a63120d431a2abb06c074ee600d20",
+    "chapter-two-enemies.mjs": "b4f0794ad32dafb9a8492c9d11364506c38d96d495d4217aa61af81b74dd35a8",
+    "enemy-tuning.mjs": "69e57f727ebf57e1ce5eb95701e55eb9cb9e6ba955a1378fed7b3541ee4d6760",
+    "enemy-painter.mjs": "6c0c2f853c8743ac93878626e1ea81385388233c26c810e35d9fa28a097562a1",
+    "campaign-simulation.mjs": "f1925e3a70b311b4ae93245a8eae18fc97b2c60c5d0566a9f7d4e6003ac6553a"
+  },
+  "findings": [
+    {
+      "issue": "Explicit non-damaging veil/teleport damage:0 converted to 1 at startPlan, causing early reveal",
+      "status": "Reported to main Agent; main Agent preserved zero and cleared veil on heavy stagger; regression now passes."
+    },
+    {
+      "issue": "One-jump airtime above low-wave vertical tolerance is shorter than overlap window at default speed",
+      "status": "Real double jump avoids it; single-jump ease and human difficulty remain subjective/balance decision."
+    }
+  ],
+  "implementationModifiedByThisAgent": false,
+  "otherTestsModified": false,
+  "formalSavesTouched": false,
+  "humanArtOrBalanceAcceptance": false,
+  "combinedPassed": true
+}

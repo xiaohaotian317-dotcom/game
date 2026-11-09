@@ -1,0 +1,116 @@
+{
+  "task": "T46 spirit pet skill art",
+  "selected": [
+    "pet-skills-nature-ember-v3.png",
+    "pet-skills-frost-dawn-v3.png",
+    "pet-skill-icons-v2.png"
+  ],
+  "metadata": "pet-skills-meta-v2.json",
+  "pngCountSelected": 3,
+  "skillCount": 12,
+  "effectPhases": 48,
+  "icons": 12,
+  "originalPNGsPreserved": true,
+  "prompts": [
+    {
+      "file": "pet-skills-nature-ember-prompt-v2.txt",
+      "sha256": "db1930a8ad06a914c8e8f9a5f5b28eadf8be6987c86500e9918fc22e0f6e9bd0"
+    },
+    {
+      "file": "pet-skills-nature-ember-prompt-v3.txt",
+      "sha256": "7407d4fa55a37d5e841de54ee2e0d160cb6564349da328c6781584cd04671214"
+    },
+    {
+      "file": "pet-skills-frost-dawn-prompt-v2.txt",
+      "sha256": "01d8394a68a4ca8f1fe0448b5311cf25720d0bcf811f3ba763bc297b96435c22"
+    },
+    {
+      "file": "pet-skill-icons-prompt-v2.txt",
+      "sha256": "9143620a8a1a3d72038c745f138a8df9ad579790e30e55327480c674ebd34fe9"
+    },
+    {
+      "file": "pet-skills-frost-dawn-prompt-v3.txt",
+      "sha256": "0ee1bddca699ba7cd6d301a3416e6b554ecb1de9723b6ac76f4cd299f1c3b517"
+    }
+  ],
+  "originalSources": {
+    "pet-skills-nature-ember-v3.png": {
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "55de902d3adc57a3f76002d6eed4153d35b88a5a0ca305f70200c05b2d87797d",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-5d66a5b6-510c-4d1d-bd39-29063f957ee8.png",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBelow16Ratio": 0.74722,
+      "mode": "RGBA",
+      "pixelsEdited": false,
+      "editReference": "pet-skills-nature-ember-v2.png"
+    },
+    "pet-skills-frost-dawn-v2.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7bbbb5207ceeafd48c090918dc5d19e44d9047fb05acfe47d82a0b1494dfcd12",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-a10f9f9c-f82e-44e7-8b40-5479e91648ed.png",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaBelow16Ratio": 0.81668,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skill-icons-v2.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "f607ecf19a90a4db782f58f9cf05ff1532e844c49015b2b318cda42cb60669bb",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-47992bd6-4a05-4e6c-a7b0-33680e66f377.png",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBelow16Ratio": 0.239149,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skills-nature-ember-v2.png": {
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "e6ea7d0c34523f07a8bb4badb742ff3c76641ba49b07bd9b6fb25081f5432489",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-614de16b-5564-467f-a92a-2193a65e0e33.png",
+      "alphaExtrema": [
+        1,
+        252
+      ],
+      "alphaBelow16Ratio": 0.387984,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skills-frost-dawn-v3.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9cd69a33b17572fa038590e37f5181e4429111da24f3cfe954219e7daf7f4cb1",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-c5f7e723-88e8-4e70-a36a-b3690991c6b3.png",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBelow16Ratio": 0.817648,
+      "mode": "RGBA",
+      "pixelsEdited": false,
+      "editReference": "pet-skills-frost-dawn-v2.png"
+    }
+  },
+  "acceptanceBoundary": "Original art and read-only pixel/anchor metadata only; main Agent must integrate and verify in production renderer. No gameplay/code/doc edits by this asset Agent."
+}

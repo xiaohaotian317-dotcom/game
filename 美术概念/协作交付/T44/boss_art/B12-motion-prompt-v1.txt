@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B12 Deep-Tide Anchor King, original enemy animation atlas for a hand-painted dark fantasy 2D side-scrolling game.
+Create ONE square1536x1536 RGBA PNG with a genuinely TRANSPARENT background, exactly4 columns x4 rows, 16 isolated equal384x384 cells. No drawn grid or labels. All poses depict the SAME boss in a right-facing side/three-quarter view. Same body size, same camera, same shell/legs/weapon design. Full silhouette inside each cell with at least20px clear padding; feet lie on consistent local ground y=346, body center x=192. Keep shell/antennae/anchor points intact. No floor, cast-shadow rectangle or background haze.
+
+Design: an immense squat abyssal CRAB lord wearing a great spiral NAUTILUS shell and ancient anchor armor, anatomically credible six jointed walking legs, two massive claws. The leading RIGHT claw carries a rusted maritime iron ANCHOR fused into its pincers, with short heavy chain links. Deep petrol-blue chitin, aged verdigris bronze bands, barnacles, pearly shell ridges, sparse cyan phosphorescent seams and a readable small crab face/mandibles with paired bright teal eyes at the shell's front right. Broad armored shell over low muscular crab body; original threatening silhouette, not a humanoid knight, not a bull, not a lobster with an invisible face. Painterly weathered texture, crisp game-readable contours, rich material, natural monster proportions and moderate integrated light. No external large spell effects; separate FX atlas will carry them.
+
+Exact frame order, read left-to-right then next row:
+0-5 = SIX real consecutive WALK phases. At0 front-right walking leg reaches forward and rear leg pushes;1 that foot plants, body lowers slightly;2 opposite middle leg swings through;3 opposite front leg reaches, body lifts slightly;4 leg plants while rear advances;5 return toward initial stance. Small natural claw/shell follow-through, no whole-sprite sliding, no repeated still.
+6 = neutral idle, claws guarded, all grounded legs supported, face clear.
+7 = windup: rear legs brace, anchor claw lifts back above shell-front ready for swing; keep anchor tip inside cell.
+8 = melee: anchor claw drives forward/down to RIGHT in a powerful diagonal smash, body low and legs planted.
+9 = recovery: anchor claw drawing back, shell settling.
+10 = ranged: crab head and smaller claw extend right, mandibles open to expel a tight tidal shot; mouth clearly visible at chest/head height, not at feet.
+11 = special: shell vents open a little, claws spread in tidal ritual, cyan lines on shell concentrate, no full-screen mist.
+12 = recoil from a hit, shell tilts back a little, legs brace and face reacts.
+13 = stagger: forelegs buckle, heavy anchor claw hangs low, alive.
+14 = falling: body tips onto side, legs curl halfway inward, anchor drops.
+15 = dead: collapsed low shell on ground with legs tucked, eye glow extinguished and anchor resting beside it, no gore.
+
+Constraints: actual alpha0 empty space, no blue/brown/black opaque backdrop, no gradient wash, no checkerboard drawn into pixels. No text, numbers, icons, borders, UI, logos, watermarks, scene props or extra creatures. Exactly16 distinct intended poses; no cropping, neighbor overlap, identity drift or random limb count.

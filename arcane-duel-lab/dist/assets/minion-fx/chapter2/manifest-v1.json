@@ -1,0 +1,2229 @@
+{
+  "version": 1,
+  "families": {
+    "c2-M11-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 0,
+          "family": "M11",
+          "phase": "windup",
+          "rect": [
+            0,
+            0,
+            222,
+            316
+          ],
+          "spriteRect": [
+            16,
+            164,
+            131,
+            91
+          ],
+          "pivot": [
+            111.0,
+            253
+          ],
+          "pivotAbsolute": [
+            111.0,
+            253
+          ],
+          "centerX": 111.0,
+          "centerY": 253,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 253,
+          "bottomNormalized": 0.8006329113924051,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            0,
+            172,
+            316
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "f76cff817b9a32ad0e486e79a0ee384af420ec75b67249ce47c0d005d358dd06"
+        },
+        {
+          "index": 1,
+          "family": "M11",
+          "phase": "strike",
+          "rect": [
+            222,
+            0,
+            222,
+            316
+          ],
+          "spriteRect": [
+            196,
+            145,
+            244,
+            113
+          ],
+          "pivot": [
+            111.0,
+            256
+          ],
+          "pivotAbsolute": [
+            333.0,
+            256
+          ],
+          "centerX": 111.0,
+          "centerY": 256,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 256,
+          "bottomNormalized": 0.810126582278481,
+          "direction": "right",
+          "isolationRect": [
+            172,
+            0,
+            272,
+            316
+          ],
+          "extendsLogicalRectPx": [
+            26,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "5bbe45072d9b3c8889dc6226b9e854581c6465bede1fa9c9ecebbc522e4e1985"
+        },
+        {
+          "index": 2,
+          "family": "M11",
+          "phase": "impact",
+          "rect": [
+            444,
+            0,
+            221,
+            316
+          ],
+          "spriteRect": [
+            449,
+            134,
+            214,
+            124
+          ],
+          "pivot": [
+            110.5,
+            256
+          ],
+          "pivotAbsolute": [
+            554.5,
+            256
+          ],
+          "centerX": 110.5,
+          "centerY": 256,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 256,
+          "bottomNormalized": 0.810126582278481,
+          "direction": "right",
+          "isolationRect": [
+            444,
+            0,
+            226,
+            316
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "5e3e9a3fe3c0947e9dae2b231277585b218848482274fcec26a9e63b05fbb744"
+        },
+        {
+          "index": 3,
+          "family": "M11",
+          "phase": "fade",
+          "rect": [
+            665,
+            0,
+            222,
+            316
+          ],
+          "spriteRect": [
+            676,
+            170,
+            197,
+            87
+          ],
+          "pivot": [
+            111.0,
+            255
+          ],
+          "pivotAbsolute": [
+            776.0,
+            255
+          ],
+          "centerX": 111.0,
+          "centerY": 255,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 255,
+          "bottomNormalized": 0.8069620253164557,
+          "direction": "right",
+          "isolationRect": [
+            670,
+            0,
+            217,
+            316
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "7ba647dfd5c254715adbfe6754af5a5e45b6a42caf9a1fc1b7e910ae6cb054ab"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": true
+    },
+    "c2-M12-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 4,
+          "family": "M12",
+          "phase": "windup",
+          "rect": [
+            0,
+            316,
+            222,
+            252
+          ],
+          "spriteRect": [
+            20,
+            402,
+            130,
+            94
+          ],
+          "pivot": [
+            111.0,
+            121.0
+          ],
+          "pivotAbsolute": [
+            111.0,
+            437.0
+          ],
+          "centerX": 111.0,
+          "centerY": 121.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7063492063492064,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            316,
+            175,
+            252
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "eb70f84dffa69926aa988c3ffbfc1899f94ba35e2a3e931b5761e32d1bf45e16"
+        },
+        {
+          "index": 5,
+          "family": "M12",
+          "phase": "strike",
+          "rect": [
+            222,
+            316,
+            222,
+            252
+          ],
+          "spriteRect": [
+            200,
+            386,
+            236,
+            115
+          ],
+          "pivot": [
+            111.0,
+            121.0
+          ],
+          "pivotAbsolute": [
+            333.0,
+            437.0
+          ],
+          "centerX": 111.0,
+          "centerY": 121.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7261904761904762,
+          "direction": "right",
+          "isolationRect": [
+            175,
+            316,
+            268,
+            252
+          ],
+          "extendsLogicalRectPx": [
+            22,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "0b2b04b7421adbe43797bcd61b67956a51800f9e04aa719efd16059a70fa897d"
+        },
+        {
+          "index": 6,
+          "family": "M12",
+          "phase": "impact",
+          "rect": [
+            444,
+            316,
+            221,
+            252
+          ],
+          "spriteRect": [
+            450,
+            370,
+            212,
+            135
+          ],
+          "pivot": [
+            110.5,
+            121.0
+          ],
+          "pivotAbsolute": [
+            554.5,
+            437.0
+          ],
+          "centerX": 110.5,
+          "centerY": 121.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7420634920634921,
+          "direction": "right",
+          "isolationRect": [
+            443,
+            316,
+            227,
+            252
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "ba5d122eaa66531b754da2f09d65a3fca4630838b8fa3adde25ad1ffa3d2ed25"
+        },
+        {
+          "index": 7,
+          "family": "M12",
+          "phase": "fade",
+          "rect": [
+            665,
+            316,
+            222,
+            252
+          ],
+          "spriteRect": [
+            679,
+            392,
+            192,
+            103
+          ],
+          "pivot": [
+            111.0,
+            121.0
+          ],
+          "pivotAbsolute": [
+            776.0,
+            437.0
+          ],
+          "centerX": 111.0,
+          "centerY": 121.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7023809523809523,
+          "direction": "right",
+          "isolationRect": [
+            670,
+            316,
+            217,
+            252
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "2417e1942f88a4028b1326e4b42bccccc394a497435f9f1b02b64108cbece0e5"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": false
+    },
+    "c2-M13-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 8,
+          "family": "M13",
+          "phase": "windup",
+          "rect": [
+            0,
+            568,
+            222,
+            254
+          ],
+          "spriteRect": [
+            16,
+            677,
+            132,
+            95
+          ],
+          "pivot": [
+            111.0,
+            202
+          ],
+          "pivotAbsolute": [
+            111.0,
+            770
+          ],
+          "centerX": 111.0,
+          "centerY": 202,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 202,
+          "bottomNormalized": 0.7952755905511811,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            568,
+            174,
+            254
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "6717cd0363cf415f5a8b46a406585c93d43585681edcdfe1396d3be83dfb28f7"
+        },
+        {
+          "index": 9,
+          "family": "M13",
+          "phase": "strike",
+          "rect": [
+            222,
+            568,
+            222,
+            254
+          ],
+          "spriteRect": [
+            200,
+            645,
+            232,
+            127
+          ],
+          "pivot": [
+            111.0,
+            202
+          ],
+          "pivotAbsolute": [
+            333.0,
+            770
+          ],
+          "centerX": 111.0,
+          "centerY": 202,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 202,
+          "bottomNormalized": 0.7952755905511811,
+          "direction": "right",
+          "isolationRect": [
+            174,
+            568,
+            264,
+            254
+          ],
+          "extendsLogicalRectPx": [
+            22,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "813a44b17d687a547726d3d9d522b8709114210003771650f2f41034e2524523"
+        },
+        {
+          "index": 10,
+          "family": "M13",
+          "phase": "impact",
+          "rect": [
+            444,
+            568,
+            221,
+            254
+          ],
+          "spriteRect": [
+            444,
+            632,
+            219,
+            140
+          ],
+          "pivot": [
+            110.5,
+            202
+          ],
+          "pivotAbsolute": [
+            554.5,
+            770
+          ],
+          "centerX": 110.5,
+          "centerY": 202,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 202,
+          "bottomNormalized": 0.7952755905511811,
+          "direction": "right",
+          "isolationRect": [
+            438,
+            568,
+            234,
+            254
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "1265e843947e656d8b44546afe48ed3a9674a318f13d6f1dc0d43463c8b358d4"
+        },
+        {
+          "index": 11,
+          "family": "M13",
+          "phase": "fade",
+          "rect": [
+            665,
+            568,
+            222,
+            254
+          ],
+          "spriteRect": [
+            681,
+            672,
+            191,
+            99
+          ],
+          "pivot": [
+            111.0,
+            201
+          ],
+          "pivotAbsolute": [
+            776.0,
+            769
+          ],
+          "centerX": 111.0,
+          "centerY": 201,
+          "ground": true,
+          "anchorKind": "support-contact",
+          "groundContactY": 201,
+          "bottomNormalized": 0.7913385826771654,
+          "direction": "right",
+          "isolationRect": [
+            672,
+            568,
+            215,
+            254
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "5f81d0161e54aa8561cf9d3f0824c421df65169a9366340bd8a8e74d35e98ec6"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": true
+    },
+    "c2-M14-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 12,
+          "family": "M14",
+          "phase": "windup",
+          "rect": [
+            0,
+            822,
+            222,
+            218
+          ],
+          "spriteRect": [
+            18,
+            878,
+            130,
+            106
+          ],
+          "pivot": [
+            111.0,
+            107.5
+          ],
+          "pivotAbsolute": [
+            111.0,
+            929.5
+          ],
+          "centerX": 111.0,
+          "centerY": 107.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7339449541284404,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            822,
+            172,
+            218
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "42ea89188c66b82bccf251dcb80b0f1751b4970ae61dbed1bfb5cbc0cfa44b53"
+        },
+        {
+          "index": 13,
+          "family": "M14",
+          "phase": "strike",
+          "rect": [
+            222,
+            822,
+            222,
+            218
+          ],
+          "spriteRect": [
+            195,
+            874,
+            246,
+            111
+          ],
+          "pivot": [
+            111.0,
+            107.5
+          ],
+          "pivotAbsolute": [
+            333.0,
+            929.5
+          ],
+          "centerX": 111.0,
+          "centerY": 107.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7385321100917431,
+          "direction": "right",
+          "isolationRect": [
+            172,
+            822,
+            276,
+            218
+          ],
+          "extendsLogicalRectPx": [
+            27,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "18a01933f172c8aaf862b9ce003c057dd128f54a3796ec54104ef22b24c199b0"
+        },
+        {
+          "index": 14,
+          "family": "M14",
+          "phase": "impact",
+          "rect": [
+            444,
+            822,
+            221,
+            218
+          ],
+          "spriteRect": [
+            454,
+            870,
+            208,
+            117
+          ],
+          "pivot": [
+            110.5,
+            107.5
+          ],
+          "pivotAbsolute": [
+            554.5,
+            929.5
+          ],
+          "centerX": 110.5,
+          "centerY": 107.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7477064220183486,
+          "direction": "right",
+          "isolationRect": [
+            448,
+            822,
+            222,
+            218
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "1d74b19600567830289b5d8b80d4f1a2ac18fe75294937aafc15aa6e69682350"
+        },
+        {
+          "index": 15,
+          "family": "M14",
+          "phase": "fade",
+          "rect": [
+            665,
+            822,
+            222,
+            218
+          ],
+          "spriteRect": [
+            679,
+            887,
+            192,
+            97
+          ],
+          "pivot": [
+            111.0,
+            107.5
+          ],
+          "pivotAbsolute": [
+            776.0,
+            929.5
+          ],
+          "centerX": 111.0,
+          "centerY": 107.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7339449541284404,
+          "direction": "right",
+          "isolationRect": [
+            670,
+            822,
+            217,
+            218
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "d9491c9241bea066a44abbaea2fd0af493accdce4644466dcc65e65d50397362"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": false
+    },
+    "c2-M15-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 16,
+          "family": "M15",
+          "phase": "windup",
+          "rect": [
+            0,
+            1040,
+            222,
+            231
+          ],
+          "spriteRect": [
+            18,
+            1110,
+            134,
+            100
+          ],
+          "pivot": [
+            111.0,
+            113.5
+          ],
+          "pivotAbsolute": [
+            111.0,
+            1153.5
+          ],
+          "centerX": 111.0,
+          "centerY": 113.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7272727272727273,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            1040,
+            174,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "a0700a7982140637b0b8fc5181f69225481f1657d2564b75ab64fa7cc402438f"
+        },
+        {
+          "index": 17,
+          "family": "M15",
+          "phase": "strike",
+          "rect": [
+            222,
+            1040,
+            222,
+            231
+          ],
+          "spriteRect": [
+            197,
+            1096,
+            240,
+            119
+          ],
+          "pivot": [
+            111.0,
+            113.5
+          ],
+          "pivotAbsolute": [
+            333.0,
+            1153.5
+          ],
+          "centerX": 111.0,
+          "centerY": 113.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7489177489177489,
+          "direction": "right",
+          "isolationRect": [
+            174,
+            1040,
+            268,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            25,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "823d7c26cd397ad790b99aebfab9968afda1bf97951eea917ec31df5a0179b30"
+        },
+        {
+          "index": 18,
+          "family": "M15",
+          "phase": "impact",
+          "rect": [
+            444,
+            1040,
+            221,
+            231
+          ],
+          "spriteRect": [
+            446,
+            1085,
+            217,
+            130
+          ],
+          "pivot": [
+            110.5,
+            113.5
+          ],
+          "pivotAbsolute": [
+            554.5,
+            1153.5
+          ],
+          "centerX": 110.5,
+          "centerY": 113.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7489177489177489,
+          "direction": "right",
+          "isolationRect": [
+            442,
+            1040,
+            230,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "1a5e2e66bde6f99c33dd2ac56d9c4d22f361a4b352db1214598bb043c3e58db1"
+        },
+        {
+          "index": 19,
+          "family": "M15",
+          "phase": "fade",
+          "rect": [
+            665,
+            1040,
+            222,
+            231
+          ],
+          "spriteRect": [
+            681,
+            1105,
+            188,
+            99
+          ],
+          "pivot": [
+            111.0,
+            113.5
+          ],
+          "pivotAbsolute": [
+            776.0,
+            1153.5
+          ],
+          "centerX": 111.0,
+          "centerY": 113.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7012987012987013,
+          "direction": "right",
+          "isolationRect": [
+            672,
+            1040,
+            215,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "dc84fe1bd0def3b546d1432ac777d072152793dbd0d07b4a74ea0679d1103b5a"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": false
+    },
+    "c2-M16-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 20,
+          "family": "M16",
+          "phase": "windup",
+          "rect": [
+            0,
+            1271,
+            222,
+            231
+          ],
+          "spriteRect": [
+            19,
+            1353,
+            126,
+            74
+          ],
+          "pivot": [
+            111.0,
+            113.0
+          ],
+          "pivotAbsolute": [
+            111.0,
+            1384.0
+          ],
+          "centerX": 111.0,
+          "centerY": 113.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.6666666666666666,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            1271,
+            170,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "8172b43929c0d3b63c6d580a55e7c2e3a1fc96aefd7a4c104b1f5ce6a920f643"
+        },
+        {
+          "index": 21,
+          "family": "M16",
+          "phase": "strike",
+          "rect": [
+            222,
+            1271,
+            222,
+            231
+          ],
+          "spriteRect": [
+            194,
+            1339,
+            243,
+            101
+          ],
+          "pivot": [
+            111.0,
+            113.0
+          ],
+          "pivotAbsolute": [
+            333.0,
+            1384.0
+          ],
+          "centerX": 111.0,
+          "centerY": 113.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7229437229437229,
+          "direction": "right",
+          "isolationRect": [
+            170,
+            1271,
+            274,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            28,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "228a61a618fd1188d65e4c8714afddf4f538a9e0b66f5dd4cfa17887b4742964"
+        },
+        {
+          "index": 22,
+          "family": "M16",
+          "phase": "impact",
+          "rect": [
+            444,
+            1271,
+            221,
+            231
+          ],
+          "spriteRect": [
+            450,
+            1321,
+            210,
+            120
+          ],
+          "pivot": [
+            110.5,
+            113.0
+          ],
+          "pivotAbsolute": [
+            554.5,
+            1384.0
+          ],
+          "centerX": 110.5,
+          "centerY": 113.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7272727272727273,
+          "direction": "right",
+          "isolationRect": [
+            444,
+            1271,
+            228,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "b014d0a488e6345da0bb23e29de78b06a526413214c615d946ef5132bc4e48fa"
+        },
+        {
+          "index": 23,
+          "family": "M16",
+          "phase": "fade",
+          "rect": [
+            665,
+            1271,
+            222,
+            231
+          ],
+          "spriteRect": [
+            684,
+            1350,
+            191,
+            78
+          ],
+          "pivot": [
+            111.0,
+            113.0
+          ],
+          "pivotAbsolute": [
+            776.0,
+            1384.0
+          ],
+          "centerX": 111.0,
+          "centerY": 113.0,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.670995670995671,
+          "direction": "right",
+          "isolationRect": [
+            672,
+            1271,
+            215,
+            231
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "9280e6a987fac19b692912e8eed33ec9068d2ee3a2172e309304803009dacbfd"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": false
+    },
+    "c2-M20-melee": {
+      "file": "minion-melee-fx-v2.png",
+      "frames": [
+        {
+          "index": 24,
+          "family": "M20",
+          "phase": "windup",
+          "rect": [
+            0,
+            1502,
+            222,
+            272
+          ],
+          "spriteRect": [
+            17,
+            1591,
+            125,
+            101
+          ],
+          "pivot": [
+            111.0,
+            129.5
+          ],
+          "pivotAbsolute": [
+            111.0,
+            1631.5
+          ],
+          "centerX": 111.0,
+          "centerY": 129.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.6911764705882353,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            1502,
+            172,
+            272
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "02d2efa77604a2befbd9cdfb0a6cf9c1eebca39d180acc14b3bdd00a6211e2f2"
+        },
+        {
+          "index": 25,
+          "family": "M20",
+          "phase": "strike",
+          "rect": [
+            222,
+            1502,
+            222,
+            272
+          ],
+          "spriteRect": [
+            203,
+            1566,
+            233,
+            131
+          ],
+          "pivot": [
+            111.0,
+            129.5
+          ],
+          "pivotAbsolute": [
+            333.0,
+            1631.5
+          ],
+          "centerX": 111.0,
+          "centerY": 129.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7095588235294118,
+          "direction": "right",
+          "isolationRect": [
+            172,
+            1502,
+            267,
+            272
+          ],
+          "extendsLogicalRectPx": [
+            19,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "0695d9a9d063c73109aa91133db34c2022b2369295184abcf335276f295d6a25"
+        },
+        {
+          "index": 26,
+          "family": "M20",
+          "phase": "impact",
+          "rect": [
+            444,
+            1502,
+            221,
+            272
+          ],
+          "spriteRect": [
+            442,
+            1555,
+            224,
+            150
+          ],
+          "pivot": [
+            110.5,
+            129.5
+          ],
+          "pivotAbsolute": [
+            554.5,
+            1631.5
+          ],
+          "centerX": 110.5,
+          "centerY": 129.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.7389705882352942,
+          "direction": "right",
+          "isolationRect": [
+            439,
+            1502,
+            232,
+            272
+          ],
+          "extendsLogicalRectPx": [
+            2,
+            1
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "305baaa913ecf30ac0ad66dba4f8be957a2b556d6d624172d2d1401b84af3476"
+        },
+        {
+          "index": 27,
+          "family": "M20",
+          "phase": "fade",
+          "rect": [
+            665,
+            1502,
+            222,
+            272
+          ],
+          "spriteRect": [
+            676,
+            1594,
+            195,
+            97
+          ],
+          "pivot": [
+            111.0,
+            129.5
+          ],
+          "pivotAbsolute": [
+            776.0,
+            1631.5
+          ],
+          "centerX": 111.0,
+          "centerY": 129.5,
+          "ground": false,
+          "anchorKind": "actor-weapon",
+          "groundContactY": null,
+          "bottomNormalized": 0.6875,
+          "direction": "right",
+          "isolationRect": [
+            671,
+            1502,
+            216,
+            272
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "39e746d5245d4be4f8b5ce2a0d9fa346a5a6045c1f71fb2bf64892e5ea98ed0d"
+        }
+      ],
+      "referenceSpanPixels": 221.75,
+      "ground": false
+    },
+    "c2-M17-ranged": {
+      "file": "minion-ranged-fx-v2.png",
+      "frames": [
+        {
+          "index": 0,
+          "family": "M17",
+          "phase": "charge",
+          "rect": [
+            0,
+            0,
+            314,
+            332
+          ],
+          "spriteRect": [
+            99,
+            108,
+            145,
+            158
+          ],
+          "pivot": [
+            177,
+            190
+          ],
+          "pivotAbsolute": [
+            177,
+            190
+          ],
+          "centerX": 177,
+          "centerY": 190,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7951807228915663,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            0,
+            301,
+            332
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "d9fa0da2da6499f90a82382ed683727a518b2fc77e18c70032b752fd31aab98f",
+          "projectileHeadPivot": [
+            177,
+            190
+          ],
+          "projectileHeadPivotAbsolute": [
+            177,
+            190
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 1,
+          "family": "M17",
+          "phase": "launch",
+          "rect": [
+            314,
+            0,
+            313,
+            332
+          ],
+          "spriteRect": [
+            358,
+            130,
+            198,
+            118
+          ],
+          "pivot": [
+            196,
+            190
+          ],
+          "pivotAbsolute": [
+            510,
+            190
+          ],
+          "centerX": 196,
+          "centerY": 190,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7409638554216867,
+          "direction": "right",
+          "isolationRect": [
+            301,
+            0,
+            292,
+            332
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "07886b3f46150fb6a7ff2ff58b54044903965282c4eba46a20752c9fe052b333",
+          "projectileHeadPivot": [
+            196,
+            190
+          ],
+          "projectileHeadPivotAbsolute": [
+            510,
+            190
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 2,
+          "family": "M17",
+          "phase": "flight",
+          "rect": [
+            627,
+            0,
+            313,
+            332
+          ],
+          "spriteRect": [
+            630,
+            133,
+            251,
+            115
+          ],
+          "pivot": [
+            203,
+            190
+          ],
+          "pivotAbsolute": [
+            830,
+            190
+          ],
+          "centerX": 203,
+          "centerY": 190,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7409638554216867,
+          "direction": "right",
+          "isolationRect": [
+            593,
+            0,
+            338,
+            332
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "0ea86c88fe06917a88db99387e5e140d910bb849528af5d19378a8352987ccf2",
+          "projectileHeadPivot": [
+            203,
+            190
+          ],
+          "projectileHeadPivotAbsolute": [
+            830,
+            190
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 3,
+          "family": "M17",
+          "phase": "impact",
+          "rect": [
+            940,
+            0,
+            314,
+            332
+          ],
+          "spriteRect": [
+            981,
+            91,
+            209,
+            185
+          ],
+          "pivot": [
+            187,
+            188
+          ],
+          "pivotAbsolute": [
+            1127,
+            188
+          ],
+          "centerX": 187,
+          "centerY": 188,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.8253012048192772,
+          "direction": "right",
+          "isolationRect": [
+            931,
+            0,
+            323,
+            332
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "34c81256378e13437d719d2f38a35c89da3a64cf0a43fe84225d9df27150d348",
+          "projectileHeadPivot": [
+            187,
+            188
+          ],
+          "projectileHeadPivotAbsolute": [
+            1127,
+            188
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        }
+      ],
+      "referenceSpanPixels": 313.5,
+      "ground": false
+    },
+    "c2-M18-ranged": {
+      "file": "minion-ranged-fx-v2.png",
+      "frames": [
+        {
+          "index": 4,
+          "family": "M18",
+          "phase": "charge",
+          "rect": [
+            0,
+            332,
+            314,
+            291
+          ],
+          "spriteRect": [
+            99,
+            418,
+            122,
+            116
+          ],
+          "pivot": [
+            174,
+            147
+          ],
+          "pivotAbsolute": [
+            174,
+            479
+          ],
+          "centerX": 174,
+          "centerY": 147,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6872852233676976,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            332,
+            282,
+            291
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "f9dbbc07401dfbd094d94d4fb3b11a98702d54c46ad0a0a93ccd90931086b256",
+          "projectileHeadPivot": [
+            174,
+            147
+          ],
+          "projectileHeadPivotAbsolute": [
+            174,
+            479
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 5,
+          "family": "M18",
+          "phase": "launch",
+          "rect": [
+            314,
+            332,
+            313,
+            291
+          ],
+          "spriteRect": [
+            344,
+            424,
+            227,
+            111
+          ],
+          "pivot": [
+            192,
+            148
+          ],
+          "pivotAbsolute": [
+            506,
+            480
+          ],
+          "centerX": 192,
+          "centerY": 148,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6907216494845361,
+          "direction": "right",
+          "isolationRect": [
+            282,
+            332,
+            324,
+            291
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "fbfec31c1ecd5fc14ab047d5af2687ee614b6b81ef49894b36aeba1e51c02ee5",
+          "projectileHeadPivot": [
+            192,
+            148
+          ],
+          "projectileHeadPivotAbsolute": [
+            506,
+            480
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 6,
+          "family": "M18",
+          "phase": "flight",
+          "rect": [
+            627,
+            332,
+            313,
+            291
+          ],
+          "spriteRect": [
+            642,
+            435,
+            260,
+            86
+          ],
+          "pivot": [
+            198,
+            148
+          ],
+          "pivotAbsolute": [
+            825,
+            480
+          ],
+          "centerX": 198,
+          "centerY": 148,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6426116838487973,
+          "direction": "right",
+          "isolationRect": [
+            606,
+            332,
+            332,
+            291
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "4df17696f1eb1d617916b715f1d4ff3a0577589da2cb14c79544b23d545549af",
+          "projectileHeadPivot": [
+            198,
+            148
+          ],
+          "projectileHeadPivotAbsolute": [
+            825,
+            480
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 7,
+          "family": "M18",
+          "phase": "impact",
+          "rect": [
+            940,
+            332,
+            314,
+            291
+          ],
+          "spriteRect": [
+            973,
+            383,
+            219,
+            182
+          ],
+          "pivot": [
+            188,
+            148
+          ],
+          "pivotAbsolute": [
+            1128,
+            480
+          ],
+          "centerX": 188,
+          "centerY": 148,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7938144329896907,
+          "direction": "right",
+          "isolationRect": [
+            938,
+            332,
+            316,
+            291
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "835d7392e76b102a6038d49e0305f0919465387fe4821083dc0f72e442953265",
+          "projectileHeadPivot": [
+            188,
+            148
+          ],
+          "projectileHeadPivotAbsolute": [
+            1128,
+            480
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        }
+      ],
+      "referenceSpanPixels": 313.5,
+      "ground": false
+    },
+    "c2-M19-ranged": {
+      "file": "minion-ranged-fx-v2.png",
+      "frames": [
+        {
+          "index": 8,
+          "family": "M19",
+          "phase": "charge",
+          "rect": [
+            0,
+            623,
+            314,
+            304
+          ],
+          "spriteRect": [
+            104,
+            710,
+            114,
+            138
+          ],
+          "pivot": [
+            173,
+            166
+          ],
+          "pivotAbsolute": [
+            173,
+            789
+          ],
+          "centerX": 173,
+          "centerY": 166,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7335526315789473,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            623,
+            281,
+            304
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "7cce38a466f6203b18d0a9e5951b3fef7959be922738720bec2cd5beff076773",
+          "projectileHeadPivot": [
+            173,
+            166
+          ],
+          "projectileHeadPivotAbsolute": [
+            173,
+            789
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 9,
+          "family": "M19",
+          "phase": "launch",
+          "rect": [
+            314,
+            623,
+            313,
+            304
+          ],
+          "spriteRect": [
+            344,
+            719,
+            229,
+            114
+          ],
+          "pivot": [
+            213,
+            162
+          ],
+          "pivotAbsolute": [
+            527,
+            785
+          ],
+          "centerX": 213,
+          "centerY": 162,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6842105263157895,
+          "direction": "right",
+          "isolationRect": [
+            281,
+            623,
+            309,
+            304
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "99da284a721ac9c209b94281ef848894ae888f91e4d659280038c31b28efeb76",
+          "projectileHeadPivot": [
+            213,
+            162
+          ],
+          "projectileHeadPivotAbsolute": [
+            527,
+            785
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 10,
+          "family": "M19",
+          "phase": "flight",
+          "rect": [
+            627,
+            623,
+            313,
+            304
+          ],
+          "spriteRect": [
+            608,
+            717,
+            290,
+            110
+          ],
+          "pivot": [
+            221,
+            162
+          ],
+          "pivotAbsolute": [
+            848,
+            785
+          ],
+          "centerX": 221,
+          "centerY": 162,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6644736842105263,
+          "direction": "right",
+          "isolationRect": [
+            590,
+            623,
+            342,
+            304
+          ],
+          "extendsLogicalRectPx": [
+            19,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "aec37b5622a92de3dc5aa27a02e5a7cb0505c6a61e81eadd2034d357b46a3d7f",
+          "projectileHeadPivot": [
+            221,
+            162
+          ],
+          "projectileHeadPivotAbsolute": [
+            848,
+            785
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 11,
+          "family": "M19",
+          "phase": "impact",
+          "rect": [
+            940,
+            623,
+            314,
+            304
+          ],
+          "spriteRect": [
+            967,
+            676,
+            222,
+            197
+          ],
+          "pivot": [
+            168,
+            151
+          ],
+          "pivotAbsolute": [
+            1108,
+            774
+          ],
+          "centerX": 168,
+          "centerY": 151,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.8157894736842105,
+          "direction": "right",
+          "isolationRect": [
+            932,
+            623,
+            322,
+            304
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "e917d5b573f00765413c51a7ff1a687e64715bc0f175c07377db5f0df95b8521",
+          "projectileHeadPivot": [
+            168,
+            151
+          ],
+          "projectileHeadPivotAbsolute": [
+            1108,
+            774
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        }
+      ],
+      "referenceSpanPixels": 313.5,
+      "ground": false
+    },
+    "c2-M20-ranged": {
+      "file": "minion-ranged-fx-v2.png",
+      "frames": [
+        {
+          "index": 12,
+          "family": "M20",
+          "phase": "charge",
+          "rect": [
+            0,
+            927,
+            314,
+            327
+          ],
+          "spriteRect": [
+            101,
+            1011,
+            131,
+            112
+          ],
+          "pivot": [
+            194,
+            154
+          ],
+          "pivotAbsolute": [
+            194,
+            1081
+          ],
+          "centerX": 194,
+          "centerY": 154,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.5932721712538226,
+          "direction": "right",
+          "isolationRect": [
+            0,
+            927,
+            293,
+            327
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "ae051c3822ae4802a3b9c3156cb6cdf90e5e6daddda5321a936a977ccce7302d",
+          "projectileHeadPivot": [
+            194,
+            154
+          ],
+          "projectileHeadPivotAbsolute": [
+            194,
+            1081
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 13,
+          "family": "M20",
+          "phase": "launch",
+          "rect": [
+            314,
+            927,
+            313,
+            327
+          ],
+          "spriteRect": [
+            354,
+            1024,
+            227,
+            102
+          ],
+          "pivot": [
+            230,
+            156
+          ],
+          "pivotAbsolute": [
+            544,
+            1083
+          ],
+          "centerX": 230,
+          "centerY": 156,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.6024464831804281,
+          "direction": "right",
+          "isolationRect": [
+            293,
+            927,
+            321,
+            327
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "53fc7aed88f234a8f9606fb73cef81f4c86174829eb1e71582d018a51e7f33c2",
+          "projectileHeadPivot": [
+            230,
+            156
+          ],
+          "projectileHeadPivotAbsolute": [
+            544,
+            1083
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 14,
+          "family": "M20",
+          "phase": "flight",
+          "rect": [
+            627,
+            927,
+            313,
+            327
+          ],
+          "spriteRect": [
+            646,
+            1026,
+            251,
+            99
+          ],
+          "pivot": [
+            234,
+            156
+          ],
+          "pivotAbsolute": [
+            861,
+            1083
+          ],
+          "centerX": 234,
+          "centerY": 156,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.599388379204893,
+          "direction": "right",
+          "isolationRect": [
+            614,
+            927,
+            330,
+            327
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "d1e8e2ba9db20acee58d2833fc7778bf134c3d2a4be6114c8cfdb80e83f876e2",
+          "projectileHeadPivot": [
+            234,
+            156
+          ],
+          "projectileHeadPivotAbsolute": [
+            861,
+            1083
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        },
+        {
+          "index": 15,
+          "family": "M20",
+          "phase": "impact",
+          "rect": [
+            940,
+            927,
+            314,
+            327
+          ],
+          "spriteRect": [
+            991,
+            989,
+            199,
+            174
+          ],
+          "pivot": [
+            205,
+            154
+          ],
+          "pivotAbsolute": [
+            1145,
+            1081
+          ],
+          "centerX": 205,
+          "centerY": 154,
+          "ground": false,
+          "anchorKind": "projectile-head",
+          "groundContactY": null,
+          "bottomNormalized": 0.7155963302752294,
+          "direction": "right",
+          "isolationRect": [
+            944,
+            927,
+            310,
+            327
+          ],
+          "extendsLogicalRectPx": [
+            0,
+            0
+          ],
+          "materialTouchesIsolationEdge": false,
+          "phaseMaskSha256": "a5fd0d101c2b9702cd6327f9fb69d8489a570df750b7f5eba448fd19346b078a",
+          "projectileHeadPivot": [
+            205,
+            154
+          ],
+          "projectileHeadPivotAbsolute": [
+            1145,
+            1081
+          ],
+          "headCalibration": "manual visual core/head center, excludes chain/trail; source-local pixels, not automated anatomy"
+        }
+      ],
+      "referenceSpanPixels": 313.5,
+      "ground": false
+    }
+  },
+  "mapping": {
+    "M11": {
+      "melee": "c2-M11-melee",
+      "impact": "c2-M11-melee"
+    },
+    "M12": {
+      "melee": "c2-M12-melee",
+      "impact": "c2-M12-melee"
+    },
+    "M13": {
+      "melee": "c2-M13-melee",
+      "impact": "c2-M13-melee"
+    },
+    "M14": {
+      "melee": "c2-M14-melee",
+      "impact": "c2-M14-melee"
+    },
+    "M15": {
+      "melee": "c2-M15-melee",
+      "impact": "c2-M15-melee"
+    },
+    "M16": {
+      "melee": "c2-M16-melee",
+      "impact": "c2-M16-melee"
+    },
+    "M20": {
+      "melee": "c2-M20-melee",
+      "impact": "c2-M20-ranged",
+      "projectile": "c2-M20-ranged",
+      "flightFrames": [
+        1,
+        2
+      ],
+      "head": true
+    },
+    "M17": {
+      "projectile": "c2-M17-ranged",
+      "impact": "c2-M17-ranged",
+      "flightFrames": [
+        1,
+        2
+      ],
+      "head": true
+    },
+    "M18": {
+      "projectile": "c2-M18-ranged",
+      "impact": "c2-M18-ranged",
+      "flightFrames": [
+        1,
+        2
+      ],
+      "head": true
+    },
+    "M19": {
+      "projectile": "c2-M19-ranged",
+      "impact": "c2-M19-ranged",
+      "flightFrames": [
+        1,
+        2
+      ],
+      "head": true
+    }
+  },
+  "images": [
+    "minion-melee-fx-v2.png",
+    "minion-ranged-fx-v2.png"
+  ]
+}

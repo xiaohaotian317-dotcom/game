@@ -1,0 +1,4250 @@
+{
+  "id": "realm-battle",
+  "title": "裂境行锋",
+  "bpm": 96,
+  "bars": 24,
+  "meter": "4/4",
+  "duration_seconds": 60,
+  "tonal_center": "D minor, modal suspended cadences",
+  "seed": 45091,
+  "events": [
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 1,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 1,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 1,
+      "beat": 2.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 1,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 1,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 1,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 1,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 1,
+      "beat": 4.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 1,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 1,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 1,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 1,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 1,
+      "beat": 3.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 2,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 2,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 2,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 2,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 2,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 2,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 2,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 2,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 2,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 2,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 31,
+      "pitch": "G1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 3,
+      "beat": 1.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 3,
+      "beat": 1.5,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 3,
+      "beat": 2.0,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 3,
+      "beat": 2.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 3,
+      "beat": 3.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 3,
+      "beat": 3.5,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 3,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 3,
+      "beat": 4.5,
+      "midi": 70,
+      "pitch": "A#4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 3,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 3,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 3,
+      "beat": 1.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 3,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 3,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 4,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 4,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 4,
+      "beat": 2.0,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 4,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 4,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 4,
+      "beat": 3.5,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 4,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 4,
+      "beat": 4.5,
+      "midi": 71,
+      "pitch": "B4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 4,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 4,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 4,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 5,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 5,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 5,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 5,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 5,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 5,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 5,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 5,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 5,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 5,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 5,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 5,
+      "beat": 2.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 5,
+      "beat": 3.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 36,
+      "pitch": "C2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 6,
+      "beat": 1.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 6,
+      "beat": 1.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 6,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 6,
+      "beat": 2.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 6,
+      "beat": 3.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 6,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 6,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 6,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 6,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 6,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 7,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 7,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 7,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 7,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 7,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 7,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 7,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 7,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 7,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 7,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 7,
+      "beat": 1.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 7,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 7,
+      "beat": 3.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 8,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 8,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 8,
+      "beat": 2.0,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 8,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 8,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 8,
+      "beat": 3.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 8,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 8,
+      "beat": 4.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 8,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 8,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 8,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 9,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 9,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 9,
+      "beat": 2.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 9,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 9,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 9,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 9,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 9,
+      "beat": 4.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 9,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 9,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 9,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 9,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 9,
+      "beat": 3.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 10,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 10,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 10,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 10,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 10,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 10,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 10,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 10,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 10,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 10,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 31,
+      "pitch": "G1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 11,
+      "beat": 1.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 11,
+      "beat": 1.5,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 11,
+      "beat": 2.0,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 11,
+      "beat": 2.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 11,
+      "beat": 3.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 11,
+      "beat": 3.5,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 11,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 11,
+      "beat": 4.5,
+      "midi": 70,
+      "pitch": "A#4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 11,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 11,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 11,
+      "beat": 1.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 11,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 11,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 12,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 12,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 12,
+      "beat": 2.0,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 12,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 12,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 12,
+      "beat": 3.5,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 12,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 12,
+      "beat": 4.5,
+      "midi": 71,
+      "pitch": "B4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 12,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 12,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 12,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 13,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 13,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 13,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 13,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 13,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 13,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 13,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 13,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 13,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 13,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 13,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 13,
+      "beat": 2.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 13,
+      "beat": 3.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 36,
+      "pitch": "C2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 14,
+      "beat": 1.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 14,
+      "beat": 1.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 14,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 14,
+      "beat": 2.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 14,
+      "beat": 3.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 14,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 14,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 14,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 14,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 14,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 15,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 15,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 15,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 15,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 15,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 15,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 15,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 15,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 15,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 15,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 15,
+      "beat": 1.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 15,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 15,
+      "beat": 3.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 16,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 16,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 16,
+      "beat": 2.0,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 16,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 16,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 16,
+      "beat": 3.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 16,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 16,
+      "beat": 4.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 16,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 16,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 16,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 17,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 17,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 17,
+      "beat": 2.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 17,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 17,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 17,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 17,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 17,
+      "beat": 4.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 17,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 17,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 17,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 17,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 17,
+      "beat": 3.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 18,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 18,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 18,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 18,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 18,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 18,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 18,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 18,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 18,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 18,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 31,
+      "pitch": "G1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 19,
+      "beat": 1.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 19,
+      "beat": 1.5,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 19,
+      "beat": 2.0,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 19,
+      "beat": 2.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 19,
+      "beat": 3.0,
+      "midi": 43,
+      "pitch": "G2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 19,
+      "beat": 3.5,
+      "midi": 58,
+      "pitch": "A#3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 19,
+      "beat": 4.0,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 19,
+      "beat": 4.5,
+      "midi": 70,
+      "pitch": "A#4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 19,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 19,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 19,
+      "beat": 1.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 19,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 19,
+      "beat": 3.5,
+      "midi": 62,
+      "pitch": "D4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 20,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 20,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 20,
+      "beat": 2.0,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 20,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 20,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 20,
+      "beat": 3.5,
+      "midi": 59,
+      "pitch": "B3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 20,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 20,
+      "beat": 4.5,
+      "midi": 71,
+      "pitch": "B4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 20,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 20,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 20,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 21,
+      "beat": 1.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 21,
+      "beat": 1.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 21,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 21,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 21,
+      "beat": 3.0,
+      "midi": 50,
+      "pitch": "D3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 21,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 21,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 21,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 21,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 21,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 21,
+      "beat": 1.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 21,
+      "beat": 2.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 21,
+      "beat": 3.5,
+      "midi": 74,
+      "pitch": "D5",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 36,
+      "pitch": "C2",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 22,
+      "beat": 1.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 22,
+      "beat": 1.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 22,
+      "beat": 2.0,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 22,
+      "beat": 2.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 22,
+      "beat": 3.0,
+      "midi": 48,
+      "pitch": "C3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 22,
+      "beat": 3.5,
+      "midi": 60,
+      "pitch": "C4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 22,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 22,
+      "beat": 4.5,
+      "midi": 72,
+      "pitch": "C5",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 22,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 22,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 34,
+      "pitch": "A#1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 23,
+      "beat": 1.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 23,
+      "beat": 1.5,
+      "midi": 53,
+      "pitch": "F3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 23,
+      "beat": 2.0,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 23,
+      "beat": 2.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 23,
+      "beat": 3.0,
+      "midi": 46,
+      "pitch": "A#2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 23,
+      "beat": 3.5,
+      "midi": 57,
+      "pitch": "A3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 23,
+      "beat": 4.0,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 23,
+      "beat": 4.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 23,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 23,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 23,
+      "beat": 1.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 23,
+      "beat": 2.5,
+      "midi": 69,
+      "pitch": "A4",
+      "duration_beats": 0.7,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 23,
+      "beat": 3.5,
+      "midi": 65,
+      "pitch": "F4",
+      "duration_beats": 1.1,
+      "instrument": "dusky_reed",
+      "gain": 0.052,
+      "pan": -0.06
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.05,
+      "pan": -0.36
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": -0.12
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.12
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 3.45,
+      "instrument": "silk_strings",
+      "gain": 0.04,
+      "pan": 0.36
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 33,
+      "pitch": "A1",
+      "duration_beats": 1.7,
+      "instrument": "low_bow",
+      "gain": 0.04,
+      "pan": -0.1
+    },
+    {
+      "bar": 24,
+      "beat": 1.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 24,
+      "beat": 1.5,
+      "midi": 52,
+      "pitch": "E3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 24,
+      "beat": 2.0,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 24,
+      "beat": 2.5,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 24,
+      "beat": 3.0,
+      "midi": 45,
+      "pitch": "A2",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 24,
+      "beat": 3.5,
+      "midi": 55,
+      "pitch": "G3",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 24,
+      "beat": 4.0,
+      "midi": 64,
+      "pitch": "E4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.035,
+      "pan": 0.23
+    },
+    {
+      "bar": 24,
+      "beat": 4.5,
+      "midi": 67,
+      "pitch": "G4",
+      "duration_beats": 0.23,
+      "instrument": "pizzicato",
+      "gain": 0.024,
+      "pan": -0.23
+    },
+    {
+      "bar": 24,
+      "beat": 1,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 24,
+      "beat": 3,
+      "midi": 38,
+      "pitch": "D2",
+      "duration_beats": 0.12,
+      "instrument": "wood_pulse",
+      "gain": 0.021,
+      "pan": 0
+    },
+    {
+      "bar": 24,
+      "beat": 4,
+      "midi": 76,
+      "pitch": "E5",
+      "duration_beats": 0.24,
+      "instrument": "harp",
+      "gain": 0.045,
+      "pan": 0.3
+    }
+  ],
+  "chords": [
+    {
+      "bar": 1,
+      "voicing": [
+        50,
+        57,
+        62,
+        65
+      ]
+    },
+    {
+      "bar": 2,
+      "voicing": [
+        46,
+        53,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 3,
+      "voicing": [
+        43,
+        50,
+        58,
+        62
+      ]
+    },
+    {
+      "bar": 4,
+      "voicing": [
+        45,
+        52,
+        59,
+        64
+      ]
+    },
+    {
+      "bar": 5,
+      "voicing": [
+        50,
+        57,
+        60,
+        65
+      ]
+    },
+    {
+      "bar": 6,
+      "voicing": [
+        48,
+        55,
+        60,
+        64
+      ]
+    },
+    {
+      "bar": 7,
+      "voicing": [
+        46,
+        53,
+        57,
+        65
+      ]
+    },
+    {
+      "bar": 8,
+      "voicing": [
+        45,
+        52,
+        55,
+        64
+      ]
+    },
+    {
+      "bar": 9,
+      "voicing": [
+        50,
+        57,
+        62,
+        65
+      ]
+    },
+    {
+      "bar": 10,
+      "voicing": [
+        46,
+        53,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 11,
+      "voicing": [
+        43,
+        50,
+        58,
+        62
+      ]
+    },
+    {
+      "bar": 12,
+      "voicing": [
+        45,
+        52,
+        59,
+        64
+      ]
+    },
+    {
+      "bar": 13,
+      "voicing": [
+        50,
+        57,
+        60,
+        65
+      ]
+    },
+    {
+      "bar": 14,
+      "voicing": [
+        48,
+        55,
+        60,
+        64
+      ]
+    },
+    {
+      "bar": 15,
+      "voicing": [
+        46,
+        53,
+        57,
+        65
+      ]
+    },
+    {
+      "bar": 16,
+      "voicing": [
+        45,
+        52,
+        55,
+        64
+      ]
+    },
+    {
+      "bar": 17,
+      "voicing": [
+        50,
+        57,
+        62,
+        65
+      ]
+    },
+    {
+      "bar": 18,
+      "voicing": [
+        46,
+        53,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 19,
+      "voicing": [
+        43,
+        50,
+        58,
+        62
+      ]
+    },
+    {
+      "bar": 20,
+      "voicing": [
+        45,
+        52,
+        59,
+        64
+      ]
+    },
+    {
+      "bar": 21,
+      "voicing": [
+        50,
+        57,
+        60,
+        65
+      ]
+    },
+    {
+      "bar": 22,
+      "voicing": [
+        48,
+        55,
+        60,
+        64
+      ]
+    },
+    {
+      "bar": 23,
+      "voicing": [
+        46,
+        53,
+        57,
+        65
+      ]
+    },
+    {
+      "bar": 24,
+      "voicing": [
+        45,
+        52,
+        55,
+        64
+      ]
+    }
+  ]
+}

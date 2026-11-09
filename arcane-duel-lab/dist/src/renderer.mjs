@@ -1,8 +1,11 @@
+import {drawPetProjectile} from './pet-presentation.mjs';
 import {drawAlternateSkills} from './alternate-skill-art.mjs';
+import {loadMovementFx,drawMovementFx} from './movement-fx.mjs';
 import {drawDamageText,drawHeroAim} from './combat-presentation.mjs';
 import {drawSentinel} from './training-sentinel.mjs';
 import {drawPunchCharge} from './combat-feedback.mjs';
 import {drawCoreSkin} from './character-skin.mjs';
+import {GhostSpriteCache} from './ghost-sprite-cache.mjs';
 import {characterMotionVersion} from './character-rig.mjs?v=20261030-duel12';
 import {squarePortraitRect} from './portrait-framing.mjs';
 import {RosterPainter} from './roster-painter-v2.mjs?v=20261030-duel12';
@@ -32,7 +35,7 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
   const entries=[['cursorImage','assets/aim-cursors/hero-cursors-v1.png'],['hybridAttacks','assets/hybrid-attacks/hybrid-projectiles-v2.png'],['lightningPunch','assets/combat-feedback/lightning-punch-v1.png'],['landingRings','assets/combat-feedback/landing-warning-rings-v2.png'],['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
   for(const key of ['fire-vfx-v2','nature-vfx-v2','wood-stag-v2','stone-covers-v2'])entries.push([key,'assets/combat/'+key+'.png']);
   if(scenes)for(const scene of ['moon','lava','garden'])entries.push([scene+'Field','assets/scenes/'+scene+'-field-v1.png'],[scene+'Props','assets/scenes/'+scene+'-props-v1.png']);
-  let count=0;const images={},total=entries.length+8+(scenes?1:0),completed=()=>progress(++count,total);
+  let count=0;const images={},total=entries.length+10+(scenes?1:0),completed=()=>progress(++count,total);
   const json=async url=>{const response=await fetch(url);if(!response.ok)throw new Error('素材信息加载失败：'+url);const value=await response.json();completed();return value;};
   const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds,feedbackMeta,hybridMeta]=await Promise.all([
     json('assets/rig-bounds.json'),json('assets/core-bounds-v2.json'),scenes?json('assets/scenes/prop-bounds-v1.json'):null,json('assets/combat/bounds-v2.json'),json('assets/heroes/bounds-v1.json'),json('assets/heroes/refinement-bounds-v2.json'),json('assets/combat-feedback/feedback-meta-v1.json'),json('assets/hybrid-attacks/projectile-meta-v2.json'),
@@ -40,7 +43,7 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
   ]);
   for(const [hero,data] of Object.entries(refinementBounds)){rosterBounds[hero].fx=data.fx;if(data.core)rosterBounds[hero].coreV2=data.core;}
   const cursorMeta=await json('assets/aim-cursors/cursor-meta-v1.json'),heroCursors={image:images.cursorImage,frames:Object.fromEntries(cursorMeta.frames.map(f=>[f.hero,f]))};
-  return {...images,heroCursors,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds,feedbackMeta,hybridMeta};
+  const result={...images,heroCursors,rosterBounds,bounds,coreBounds,sceneBounds,combatBounds,feedbackMeta,hybridMeta};await loadMovementFx(result,completed);return result;
 }
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
@@ -48,7 +51,7 @@ export async function ensureHeroAssets(hero,assets){
   return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):hero==='shadow'?artImage('assets/heroes/shadow-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
-  constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);this.enemies=new EnemyPainter(this.ctx,assets);}
+  constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.ghostSprites=new GhostSpriteCache();this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);this.enemies=new EnemyPainter(this.ctx,assets);}
   resize(){const rect=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,this.assets.campaignPainter?1.5:2);if(this.canvas.width!==Math.round(rect.width*d)||this.canvas.height!==Math.round(rect.height*d)){this.canvas.width=Math.round(rect.width*d);this.canvas.height=Math.round(rect.height*d);}}
   cape(c,hero,o,time,speed,frame){
     const b=this.assets.bounds[hero].cape,r=RIGS[hero].cape,s=r.height/b.h,anchor=r.attach==='waist'?{x:-3,y:0}:frame.local(RIGS[hero].nearShoulder);
@@ -74,7 +77,7 @@ export class Renderer {
     c.translate(start.x,start.y);c.rotate(a.angle);c.scale(a.scale,a.scale);
     c.drawImage(this.assets[hero],b.x,b.y,b.w,b.h,-a.anchor.x,-a.anchor.y,b.w,b.h);c.restore();
   }
-  hero(w,alpha,dt,{poseOverride=null}={}){
+  hero(w,alpha,dt,{poseOverride=null,cacheSkin=true}={}){
     const c=this.ctx,p=w.player,hero=w.hero;
     const poseKey=w.poseKey||hero;this.poses[poseKey]||=coherentBase();
     const desired=poseOverride||coherentPose(w),o=poseOverride||blendPose(this.poses[poseKey],desired,dt,p.cast?.key==='r',hero==='lightning'&&p.cast?.key==='attack');
@@ -96,7 +99,7 @@ export class Renderer {
     if(hero==='lightning'&&!poseOverride){const scale=w.characterScale||1;this.roster.punchSocket={x:x+near.hand.x*p.face*scale*o.sx,y:y+near.hand.y*scale*o.sy,face:p.face};}
     c.save();c.globalAlpha*=.80;this.bone(c,hero,'upperArm',far.shoulder,far.elbow);this.bone(c,hero,'forearm',far.elbow,far.hand);c.restore();
     // The original connected paint gains neck-weighted head and loose-hair motion.
-    if(characterMotionVersion()!=='legacy')drawCoreSkin(c,this.assets[hero+'Core'],core,hero,o,frame,!!poseOverride);
+    if(characterMotionVersion()!=='legacy')drawCoreSkin(c,this.assets[hero+'Core'],core,hero,o,frame,!!poseOverride&&cacheSkin);
     else {
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.scale(frame.scale,frame.scale);
     c.drawImage(this.assets[hero+'Core'],core.x,core.y,core.w,core.h,-r.hip[0]*core.w,-r.hip[1]*core.h,core.w,core.h);c.restore();
@@ -183,6 +186,8 @@ export class Renderer {
     c.font='12px "Microsoft YaHei", sans-serif';c.textAlign='center';c.fillStyle='#ddd0a6';c.fillText('月镜 · F 转向',m.x,m.y+57);c.fillText('弹跳花',s.x,s.y+31);
   }
   particles(w,e){
+    e={...e,age:Math.min(e.duration,Math.max(0,e.age+(e.visualOffset||0)))};
+    if(drawMovementFx(this.ctx,w,e,this.assets))return;
     if(this.roster.effect(w,e))return;
     if(this.combat.effect(w,e))return;
     const c=this.ctx,t=e.age/e.duration;
@@ -254,10 +259,20 @@ export class Renderer {
     if(!w.duel)for(const t of w.targets){if(t.enemyKind||t.egg)this.enemies.unit(w,t,alpha);else if(!t.petKind)this.dummy(w,t);}
     for(const e of w.effects)if(['roots','fireZone','treeBirth'].includes(e.kind))this.particles(w,e);
     this.fox(w);
-    for(const g of w.ghosts||[]){c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);c.filter=w.hero==='shadow'?'brightness(1.7) sepia(.8) hue-rotate(215deg) saturate(2.1)':'brightness(1.5) saturate(.8)';c.shadowColor=w.hero==='shadow'?'#c9a6ff':'#fff0ba';c.shadowBlur=4;this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});c.restore();}
+    for(const g of w.ghosts||[]){
+      const sprite=this.ghostSprites.get(w,g,ctx=>{
+        const previous=this.ctx;this.ctx=ctx;
+        try{this.hero({...w,player:{...w.player,x:0,prevX:0,y:0,prevY:0,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose,cacheSkin:false});}finally{this.ctx=previous;}
+      });
+      c.save();c.globalAlpha=Math.pow(Math.max(0,1-g.age/(g.duration||.8)),1.1)*(w.hero==='shadow'?.62:.32);
+      if(sprite)c.drawImage(sprite.canvas,g.x+sprite.x,g.y+sprite.y,sprite.w,sprite.h);
+      else this.hero({...w,player:{...w.player,x:g.x,prevX:g.x,y:g.y,prevY:g.y,face:g.face,cycle:g.cycle,grounded:g.grounded,invuln:0,passiveGlow:0}},1,0,{poseOverride:g.pose});
+      c.restore();
+    }
     this.hero(w,alpha,dt);this.roster.passive(w);if(w.enemyMode)this.enemies.player(w);
     for(const s of w.projectiles){
       if((campaign||w.duelSkills)&&s.kind==='soloBolt')continue;
+      if(s.petProjectile&&campaign&&drawPetProjectile(c,w,{petKind:s.petProjectile},s,campaign.art))continue;
       if(this.enemies.projectile(w,s)||this.roster.projectile(w,s)||this.combat.projectile(w,s))continue;
       const color=s.kind==='fireball'?'#ffb35d':s.kind==='seed'?'#c4df85':'#c4a8f2';
       glow(c,s.x,s.y,25,color,.5);

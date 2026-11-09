@@ -1,0 +1,1745 @@
+{
+  "version": 1,
+  "units": {
+    "q0-A-melee-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        42,
+        20,
+        315,
+        322
+      ],
+      "visibleAlphaBBox": [
+        44,
+        22,
+        311,
+        318
+      ],
+      "alphaVisiblePixels": 89786,
+      "quality": 0,
+      "set": "A",
+      "setTier": 0,
+      "setName": "旅灯",
+      "name": "旅灯拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 0,
+      "column": 0
+    },
+    "q0-A-melee-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        392,
+        20,
+        315,
+        322
+      ],
+      "visibleAlphaBBox": [
+        394,
+        22,
+        311,
+        318
+      ],
+      "alphaVisiblePixels": 89570,
+      "quality": 0,
+      "set": "A",
+      "setTier": 0,
+      "setName": "旅灯",
+      "name": "旅灯战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 0,
+      "column": 1
+    },
+    "q0-A-staff-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        743,
+        20,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        745,
+        22,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 89562,
+      "quality": 0,
+      "set": "A",
+      "setTier": 0,
+      "setName": "旅灯",
+      "name": "旅灯法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 0,
+      "column": 2
+    },
+    "q0-A-staff-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1092,
+        20,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        1094,
+        22,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 89441,
+      "quality": 0,
+      "set": "A",
+      "setTier": 0,
+      "setName": "旅灯",
+      "name": "旅灯法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 0,
+      "column": 3
+    },
+    "q0-B-melee-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        42,
+        374,
+        315,
+        322
+      ],
+      "visibleAlphaBBox": [
+        44,
+        376,
+        311,
+        318
+      ],
+      "alphaVisiblePixels": 89909,
+      "quality": 0,
+      "set": "B",
+      "setTier": 1,
+      "setName": "寒铁",
+      "name": "寒铁拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 1,
+      "column": 0
+    },
+    "q0-B-melee-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        392,
+        374,
+        315,
+        323
+      ],
+      "visibleAlphaBBox": [
+        394,
+        376,
+        311,
+        319
+      ],
+      "alphaVisiblePixels": 89643,
+      "quality": 0,
+      "set": "B",
+      "setTier": 1,
+      "setName": "寒铁",
+      "name": "寒铁战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 1,
+      "column": 1
+    },
+    "q0-B-staff-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        742,
+        374,
+        315,
+        322
+      ],
+      "visibleAlphaBBox": [
+        744,
+        376,
+        311,
+        318
+      ],
+      "alphaVisiblePixels": 89671,
+      "quality": 0,
+      "set": "B",
+      "setTier": 1,
+      "setName": "寒铁",
+      "name": "寒铁法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 1,
+      "column": 2
+    },
+    "q0-B-staff-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1092,
+        374,
+        315,
+        322
+      ],
+      "visibleAlphaBBox": [
+        1094,
+        376,
+        311,
+        318
+      ],
+      "alphaVisiblePixels": 89701,
+      "quality": 0,
+      "set": "B",
+      "setTier": 1,
+      "setName": "寒铁",
+      "name": "寒铁法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 1,
+      "column": 3
+    },
+    "q0-C-melee-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        42,
+        730,
+        315,
+        324
+      ],
+      "visibleAlphaBBox": [
+        44,
+        732,
+        311,
+        320
+      ],
+      "alphaVisiblePixels": 90600,
+      "quality": 0,
+      "set": "C",
+      "setTier": 2,
+      "setName": "暮铜",
+      "name": "暮铜拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 2,
+      "column": 0
+    },
+    "q0-C-melee-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        392,
+        729,
+        315,
+        325
+      ],
+      "visibleAlphaBBox": [
+        394,
+        731,
+        311,
+        321
+      ],
+      "alphaVisiblePixels": 90392,
+      "quality": 0,
+      "set": "C",
+      "setTier": 2,
+      "setName": "暮铜",
+      "name": "暮铜战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 2,
+      "column": 1
+    },
+    "q0-C-staff-weapon": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        742,
+        729,
+        315,
+        325
+      ],
+      "visibleAlphaBBox": [
+        744,
+        731,
+        311,
+        321
+      ],
+      "alphaVisiblePixels": 90363,
+      "quality": 0,
+      "set": "C",
+      "setTier": 2,
+      "setName": "暮铜",
+      "name": "暮铜法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 2,
+      "column": 2
+    },
+    "q0-C-staff-armor": {
+      "file": "equipment-q0-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1092,
+        730,
+        314,
+        324
+      ],
+      "visibleAlphaBBox": [
+        1094,
+        732,
+        310,
+        320
+      ],
+      "alphaVisiblePixels": 90306,
+      "quality": 0,
+      "set": "C",
+      "setTier": 2,
+      "setName": "暮铜",
+      "name": "暮铜法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 2,
+      "column": 3
+    },
+    "q2-A-melee-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        28,
+        5,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        30,
+        7,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 91333,
+      "quality": 2,
+      "set": "A",
+      "setTier": 0,
+      "setName": "霜晶",
+      "name": "霜晶拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 0,
+      "column": 0
+    },
+    "q2-A-melee-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        388,
+        5,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        390,
+        7,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 91373,
+      "quality": 2,
+      "set": "A",
+      "setTier": 0,
+      "setName": "霜晶",
+      "name": "霜晶战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 0,
+      "column": 1
+    },
+    "q2-A-staff-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        748,
+        5,
+        313,
+        322
+      ],
+      "visibleAlphaBBox": [
+        750,
+        7,
+        309,
+        318
+      ],
+      "alphaVisiblePixels": 90698,
+      "quality": 2,
+      "set": "A",
+      "setTier": 0,
+      "setName": "霜晶",
+      "name": "霜晶法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 0,
+      "column": 2
+    },
+    "q2-A-staff-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1107,
+        5,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        1109,
+        7,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 90946,
+      "quality": 2,
+      "set": "A",
+      "setTier": 0,
+      "setName": "霜晶",
+      "name": "霜晶法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 0,
+      "column": 3
+    },
+    "q2-B-melee-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        28,
+        350,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        30,
+        352,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 91336,
+      "quality": 2,
+      "set": "B",
+      "setTier": 1,
+      "setName": "潮纹",
+      "name": "潮纹拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 1,
+      "column": 0
+    },
+    "q2-B-melee-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        388,
+        351,
+        315,
+        321
+      ],
+      "visibleAlphaBBox": [
+        390,
+        353,
+        311,
+        317
+      ],
+      "alphaVisiblePixels": 91523,
+      "quality": 2,
+      "set": "B",
+      "setTier": 1,
+      "setName": "潮纹",
+      "name": "潮纹战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 1,
+      "column": 1
+    },
+    "q2-B-staff-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        747,
+        350,
+        313,
+        322
+      ],
+      "visibleAlphaBBox": [
+        749,
+        352,
+        309,
+        318
+      ],
+      "alphaVisiblePixels": 90844,
+      "quality": 2,
+      "set": "B",
+      "setTier": 1,
+      "setName": "潮纹",
+      "name": "潮纹法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 1,
+      "column": 2
+    },
+    "q2-B-staff-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1107,
+        350,
+        314,
+        322
+      ],
+      "visibleAlphaBBox": [
+        1109,
+        352,
+        310,
+        318
+      ],
+      "alphaVisiblePixels": 91198,
+      "quality": 2,
+      "set": "B",
+      "setTier": 1,
+      "setName": "潮纹",
+      "name": "潮纹法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 1,
+      "column": 3
+    },
+    "q2-C-melee-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        28,
+        697,
+        314,
+        332
+      ],
+      "visibleAlphaBBox": [
+        30,
+        699,
+        310,
+        328
+      ],
+      "alphaVisiblePixels": 93910,
+      "quality": 2,
+      "set": "C",
+      "setTier": 2,
+      "setName": "铭雷",
+      "name": "铭雷拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 2,
+      "column": 0
+    },
+    "q2-C-melee-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        388,
+        698,
+        314,
+        331
+      ],
+      "visibleAlphaBBox": [
+        390,
+        700,
+        310,
+        327
+      ],
+      "alphaVisiblePixels": 93977,
+      "quality": 2,
+      "set": "C",
+      "setTier": 2,
+      "setName": "铭雷",
+      "name": "铭雷战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 2,
+      "column": 1
+    },
+    "q2-C-staff-weapon": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        748,
+        698,
+        313,
+        331
+      ],
+      "visibleAlphaBBox": [
+        750,
+        700,
+        309,
+        327
+      ],
+      "alphaVisiblePixels": 93284,
+      "quality": 2,
+      "set": "C",
+      "setTier": 2,
+      "setName": "铭雷",
+      "name": "铭雷法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 2,
+      "column": 2
+    },
+    "q2-C-staff-armor": {
+      "file": "equipment-q2-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1107,
+        698,
+        314,
+        331
+      ],
+      "visibleAlphaBBox": [
+        1109,
+        700,
+        310,
+        327
+      ],
+      "alphaVisiblePixels": 93803,
+      "quality": 2,
+      "set": "C",
+      "setTier": 2,
+      "setName": "铭雷",
+      "name": "铭雷法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 2,
+      "column": 3
+    },
+    "q3-A-melee-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        30,
+        11,
+        318,
+        318
+      ],
+      "visibleAlphaBBox": [
+        32,
+        13,
+        314,
+        314
+      ],
+      "alphaVisiblePixels": 90358,
+      "quality": 3,
+      "set": "A",
+      "setTier": 0,
+      "setName": "枯月",
+      "name": "枯月拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 0,
+      "column": 0
+    },
+    "q3-A-melee-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        386,
+        11,
+        320,
+        318
+      ],
+      "visibleAlphaBBox": [
+        388,
+        13,
+        316,
+        314
+      ],
+      "alphaVisiblePixels": 90868,
+      "quality": 3,
+      "set": "A",
+      "setTier": 0,
+      "setName": "枯月",
+      "name": "枯月战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 0,
+      "column": 1
+    },
+    "q3-A-staff-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        746,
+        11,
+        318,
+        318
+      ],
+      "visibleAlphaBBox": [
+        748,
+        13,
+        314,
+        314
+      ],
+      "alphaVisiblePixels": 90507,
+      "quality": 3,
+      "set": "A",
+      "setTier": 0,
+      "setName": "枯月",
+      "name": "枯月法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 0,
+      "column": 2
+    },
+    "q3-A-staff-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1102,
+        11,
+        317,
+        318
+      ],
+      "visibleAlphaBBox": [
+        1104,
+        13,
+        313,
+        314
+      ],
+      "alphaVisiblePixels": 90344,
+      "quality": 3,
+      "set": "A",
+      "setTier": 0,
+      "setName": "枯月",
+      "name": "枯月法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 0,
+      "column": 3
+    },
+    "q3-B-melee-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        28,
+        362,
+        323,
+        323
+      ],
+      "visibleAlphaBBox": [
+        30,
+        364,
+        319,
+        319
+      ],
+      "alphaVisiblePixels": 92887,
+      "quality": 3,
+      "set": "B",
+      "setTier": 1,
+      "setName": "镜渊",
+      "name": "镜渊拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 1,
+      "column": 0
+    },
+    "q3-B-melee-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        386,
+        363,
+        323,
+        322
+      ],
+      "visibleAlphaBBox": [
+        388,
+        365,
+        319,
+        318
+      ],
+      "alphaVisiblePixels": 93253,
+      "quality": 3,
+      "set": "B",
+      "setTier": 1,
+      "setName": "镜渊",
+      "name": "镜渊战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 1,
+      "column": 1
+    },
+    "q3-B-staff-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        743,
+        362,
+        322,
+        324
+      ],
+      "visibleAlphaBBox": [
+        745,
+        364,
+        318,
+        320
+      ],
+      "alphaVisiblePixels": 92781,
+      "quality": 3,
+      "set": "B",
+      "setTier": 1,
+      "setName": "镜渊",
+      "name": "镜渊法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 1,
+      "column": 2
+    },
+    "q3-B-staff-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1100,
+        362,
+        322,
+        324
+      ],
+      "visibleAlphaBBox": [
+        1102,
+        364,
+        318,
+        320
+      ],
+      "alphaVisiblePixels": 92655,
+      "quality": 3,
+      "set": "B",
+      "setTier": 1,
+      "setName": "镜渊",
+      "name": "镜渊法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 1,
+      "column": 3
+    },
+    "q3-C-melee-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        27,
+        722,
+        324,
+        333
+      ],
+      "visibleAlphaBBox": [
+        29,
+        724,
+        320,
+        329
+      ],
+      "alphaVisiblePixels": 95869,
+      "quality": 3,
+      "set": "C",
+      "setTier": 2,
+      "setName": "星棘",
+      "name": "星棘拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 2,
+      "column": 0
+    },
+    "q3-C-melee-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        383,
+        722,
+        327,
+        333
+      ],
+      "visibleAlphaBBox": [
+        385,
+        724,
+        323,
+        329
+      ],
+      "alphaVisiblePixels": 96781,
+      "quality": 3,
+      "set": "C",
+      "setTier": 2,
+      "setName": "星棘",
+      "name": "星棘战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 2,
+      "column": 1
+    },
+    "q3-C-staff-weapon": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        742,
+        722,
+        324,
+        333
+      ],
+      "visibleAlphaBBox": [
+        744,
+        724,
+        320,
+        329
+      ],
+      "alphaVisiblePixels": 96165,
+      "quality": 3,
+      "set": "C",
+      "setTier": 2,
+      "setName": "星棘",
+      "name": "星棘法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 2,
+      "column": 2
+    },
+    "q3-C-staff-armor": {
+      "file": "equipment-q3-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1098,
+        722,
+        325,
+        333
+      ],
+      "visibleAlphaBBox": [
+        1100,
+        724,
+        321,
+        329
+      ],
+      "alphaVisiblePixels": 96007,
+      "quality": 3,
+      "set": "C",
+      "setTier": 2,
+      "setName": "星棘",
+      "name": "星棘法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 2,
+      "column": 3
+    },
+    "q4-A-melee-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        22,
+        8,
+        328,
+        320
+      ],
+      "visibleAlphaBBox": [
+        24,
+        10,
+        324,
+        316
+      ],
+      "alphaVisiblePixels": 92171,
+      "quality": 4,
+      "set": "A",
+      "setTier": 0,
+      "setName": "烬曜",
+      "name": "烬曜拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 0,
+      "column": 0
+    },
+    "q4-A-melee-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        381,
+        8,
+        327,
+        320
+      ],
+      "visibleAlphaBBox": [
+        383,
+        10,
+        323,
+        316
+      ],
+      "alphaVisiblePixels": 92178,
+      "quality": 4,
+      "set": "A",
+      "setTier": 0,
+      "setName": "烬曜",
+      "name": "烬曜战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 0,
+      "column": 1
+    },
+    "q4-A-staff-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        740,
+        8,
+        328,
+        320
+      ],
+      "visibleAlphaBBox": [
+        742,
+        10,
+        324,
+        316
+      ],
+      "alphaVisiblePixels": 92269,
+      "quality": 4,
+      "set": "A",
+      "setTier": 0,
+      "setName": "烬曜",
+      "name": "烬曜法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 0,
+      "column": 2
+    },
+    "q4-A-staff-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1100,
+        8,
+        329,
+        320
+      ],
+      "visibleAlphaBBox": [
+        1102,
+        10,
+        325,
+        316
+      ],
+      "alphaVisiblePixels": 92040,
+      "quality": 4,
+      "set": "A",
+      "setTier": 0,
+      "setName": "烬曜",
+      "name": "烬曜法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 0,
+      "column": 3
+    },
+    "q4-B-melee-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        21,
+        354,
+        329,
+        323
+      ],
+      "visibleAlphaBBox": [
+        23,
+        356,
+        325,
+        319
+      ],
+      "alphaVisiblePixels": 92823,
+      "quality": 4,
+      "set": "B",
+      "setTier": 1,
+      "setName": "断时",
+      "name": "断时拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 1,
+      "column": 0
+    },
+    "q4-B-melee-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        381,
+        354,
+        328,
+        323
+      ],
+      "visibleAlphaBBox": [
+        383,
+        356,
+        324,
+        319
+      ],
+      "alphaVisiblePixels": 92819,
+      "quality": 4,
+      "set": "B",
+      "setTier": 1,
+      "setName": "断时",
+      "name": "断时战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 1,
+      "column": 1
+    },
+    "q4-B-staff-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        740,
+        354,
+        328,
+        323
+      ],
+      "visibleAlphaBBox": [
+        742,
+        356,
+        324,
+        319
+      ],
+      "alphaVisiblePixels": 92971,
+      "quality": 4,
+      "set": "B",
+      "setTier": 1,
+      "setName": "断时",
+      "name": "断时法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 1,
+      "column": 2
+    },
+    "q4-B-staff-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1101,
+        354,
+        328,
+        323
+      ],
+      "visibleAlphaBBox": [
+        1103,
+        356,
+        324,
+        319
+      ],
+      "alphaVisiblePixels": 92708,
+      "quality": 4,
+      "set": "B",
+      "setTier": 1,
+      "setName": "断时",
+      "name": "断时法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 1,
+      "column": 3
+    },
+    "q4-C-melee-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        21,
+        711,
+        329,
+        324
+      ],
+      "visibleAlphaBBox": [
+        23,
+        713,
+        325,
+        320
+      ],
+      "alphaVisiblePixels": 93285,
+      "quality": 4,
+      "set": "C",
+      "setTier": 2,
+      "setName": "苍辰",
+      "name": "苍辰拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 2,
+      "column": 0
+    },
+    "q4-C-melee-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        381,
+        710,
+        328,
+        324
+      ],
+      "visibleAlphaBBox": [
+        383,
+        712,
+        324,
+        320
+      ],
+      "alphaVisiblePixels": 93266,
+      "quality": 4,
+      "set": "C",
+      "setTier": 2,
+      "setName": "苍辰",
+      "name": "苍辰战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 2,
+      "column": 1
+    },
+    "q4-C-staff-weapon": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        739,
+        711,
+        329,
+        323
+      ],
+      "visibleAlphaBBox": [
+        741,
+        713,
+        325,
+        319
+      ],
+      "alphaVisiblePixels": 93370,
+      "quality": 4,
+      "set": "C",
+      "setTier": 2,
+      "setName": "苍辰",
+      "name": "苍辰法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 2,
+      "column": 2
+    },
+    "q4-C-staff-armor": {
+      "file": "equipment-q4-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1100,
+        711,
+        329,
+        324
+      ],
+      "visibleAlphaBBox": [
+        1102,
+        713,
+        325,
+        320
+      ],
+      "alphaVisiblePixels": 93144,
+      "quality": 4,
+      "set": "C",
+      "setTier": 2,
+      "setName": "苍辰",
+      "name": "苍辰法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 2,
+      "column": 3
+    },
+    "q5-A-melee-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        25,
+        2,
+        322,
+        321
+      ],
+      "visibleAlphaBBox": [
+        27,
+        4,
+        318,
+        317
+      ],
+      "alphaVisiblePixels": 91585,
+      "quality": 5,
+      "set": "A",
+      "setTier": 0,
+      "setName": "日冕",
+      "name": "日冕拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 0,
+      "column": 0
+    },
+    "q5-A-melee-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        384,
+        2,
+        323,
+        321
+      ],
+      "visibleAlphaBBox": [
+        386,
+        4,
+        319,
+        317
+      ],
+      "alphaVisiblePixels": 91645,
+      "quality": 5,
+      "set": "A",
+      "setTier": 0,
+      "setName": "日冕",
+      "name": "日冕战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 0,
+      "column": 1
+    },
+    "q5-A-staff-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        744,
+        2,
+        321,
+        320
+      ],
+      "visibleAlphaBBox": [
+        746,
+        4,
+        317,
+        316
+      ],
+      "alphaVisiblePixels": 91358,
+      "quality": 5,
+      "set": "A",
+      "setTier": 0,
+      "setName": "日冕",
+      "name": "日冕法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 0,
+      "column": 2
+    },
+    "q5-A-staff-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1105,
+        2,
+        322,
+        321
+      ],
+      "visibleAlphaBBox": [
+        1107,
+        4,
+        318,
+        317
+      ],
+      "alphaVisiblePixels": 91546,
+      "quality": 5,
+      "set": "A",
+      "setTier": 0,
+      "setName": "日冕",
+      "name": "日冕法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 0,
+      "column": 3
+    },
+    "q5-B-melee-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        25,
+        352,
+        323,
+        321
+      ],
+      "visibleAlphaBBox": [
+        27,
+        354,
+        319,
+        317
+      ],
+      "alphaVisiblePixels": 92285,
+      "quality": 5,
+      "set": "B",
+      "setTier": 1,
+      "setName": "恒曦",
+      "name": "恒曦拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 1,
+      "column": 0
+    },
+    "q5-B-melee-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        384,
+        352,
+        325,
+        321
+      ],
+      "visibleAlphaBBox": [
+        386,
+        354,
+        321,
+        317
+      ],
+      "alphaVisiblePixels": 92825,
+      "quality": 5,
+      "set": "B",
+      "setTier": 1,
+      "setName": "恒曦",
+      "name": "恒曦战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 1,
+      "column": 1
+    },
+    "q5-B-staff-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        744,
+        351,
+        323,
+        322
+      ],
+      "visibleAlphaBBox": [
+        746,
+        353,
+        319,
+        318
+      ],
+      "alphaVisiblePixels": 92581,
+      "quality": 5,
+      "set": "B",
+      "setTier": 1,
+      "setName": "恒曦",
+      "name": "恒曦法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 1,
+      "column": 2
+    },
+    "q5-B-staff-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1104,
+        352,
+        323,
+        322
+      ],
+      "visibleAlphaBBox": [
+        1106,
+        354,
+        319,
+        318
+      ],
+      "alphaVisiblePixels": 92555,
+      "quality": 5,
+      "set": "B",
+      "setTier": 1,
+      "setName": "恒曦",
+      "name": "恒曦法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 1,
+      "column": 3
+    },
+    "q5-C-melee-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        24,
+        705,
+        326,
+        335
+      ],
+      "visibleAlphaBBox": [
+        26,
+        707,
+        322,
+        331
+      ],
+      "alphaVisiblePixels": 97342,
+      "quality": 5,
+      "set": "C",
+      "setTier": 2,
+      "setName": "蚀日",
+      "name": "蚀日拳套",
+      "role": "melee",
+      "slot": "weapon",
+      "row": 2,
+      "column": 0
+    },
+    "q5-C-melee-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        383,
+        705,
+        326,
+        335
+      ],
+      "visibleAlphaBBox": [
+        385,
+        707,
+        322,
+        331
+      ],
+      "alphaVisiblePixels": 97570,
+      "quality": 5,
+      "set": "C",
+      "setTier": 2,
+      "setName": "蚀日",
+      "name": "蚀日战甲",
+      "role": "melee",
+      "slot": "armor",
+      "row": 2,
+      "column": 1
+    },
+    "q5-C-staff-weapon": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        744,
+        706,
+        325,
+        334
+      ],
+      "visibleAlphaBBox": [
+        746,
+        708,
+        321,
+        330
+      ],
+      "alphaVisiblePixels": 97220,
+      "quality": 5,
+      "set": "C",
+      "setTier": 2,
+      "setName": "蚀日",
+      "name": "蚀日法杖",
+      "role": "staff",
+      "slot": "weapon",
+      "row": 2,
+      "column": 2
+    },
+    "q5-C-staff-armor": {
+      "file": "equipment-q5-v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "rect": [
+        1101,
+        704,
+        327,
+        336
+      ],
+      "visibleAlphaBBox": [
+        1103,
+        706,
+        323,
+        332
+      ],
+      "alphaVisiblePixels": 97647,
+      "quality": 5,
+      "set": "C",
+      "setTier": 2,
+      "setName": "蚀日",
+      "name": "蚀日法袍",
+      "role": "staff",
+      "slot": "armor",
+      "row": 2,
+      "column": 3
+    }
+  }
+}

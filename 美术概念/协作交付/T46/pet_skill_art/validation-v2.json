@@ -1,0 +1,303 @@
+{
+  "allSourceHashesMatch": true,
+  "skills": 12,
+  "phases": 48,
+  "icons": 12,
+  "rectsInBounds": true,
+  "fixedPivots": true,
+  "phaseEdges": [
+    {
+      "pet": "mossdeer",
+      "index": 0,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 0,
+      "phase": "release",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "mossdeer",
+      "index": 0,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 0,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 1,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 1,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 1,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 1,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "mossdeer",
+      "index": 2,
+      "phase": "gather",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "mossdeer",
+      "index": 2,
+      "phase": "release",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "mossdeer",
+      "index": 2,
+      "phase": "impact",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "mossdeer",
+      "index": 2,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "emberwing",
+      "index": 0,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 0,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 0,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 0,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 1,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 1,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 1,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 1,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 2,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 2,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "emberwing",
+      "index": 2,
+      "phase": "impact",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "emberwing",
+      "index": 2,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 0,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 0,
+      "phase": "release",
+      "maxEdgeAlpha": 37
+    },
+    {
+      "pet": "frostfox",
+      "index": 0,
+      "phase": "impact",
+      "maxEdgeAlpha": 85
+    },
+    {
+      "pet": "frostfox",
+      "index": 0,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 1,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 1,
+      "phase": "release",
+      "maxEdgeAlpha": 3
+    },
+    {
+      "pet": "frostfox",
+      "index": 1,
+      "phase": "impact",
+      "maxEdgeAlpha": 3
+    },
+    {
+      "pet": "frostfox",
+      "index": 1,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "frostfox",
+      "index": 2,
+      "phase": "gather",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "frostfox",
+      "index": 2,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 2,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "frostfox",
+      "index": 2,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 0,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 0,
+      "phase": "release",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "dawnlion",
+      "index": 0,
+      "phase": "impact",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "dawnlion",
+      "index": 0,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 1,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 1,
+      "phase": "release",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 1,
+      "phase": "impact",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 1,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 2,
+      "phase": "gather",
+      "maxEdgeAlpha": 1
+    },
+    {
+      "pet": "dawnlion",
+      "index": 2,
+      "phase": "release",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "dawnlion",
+      "index": 2,
+      "phase": "impact",
+      "maxEdgeAlpha": 2
+    },
+    {
+      "pet": "dawnlion",
+      "index": 2,
+      "phase": "dissipate",
+      "maxEdgeAlpha": 1
+    }
+  ],
+  "notes": [
+    "No original pixels modified. B atlas uses explicit measured row rectangles, not an even six-row split. Every skill has a fixed pivot and reference width across its four phases."
+  ],
+  "opaqueEdgesAllInside": true,
+  "passed": true
+}

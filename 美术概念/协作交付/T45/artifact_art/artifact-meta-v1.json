@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "task": "T45",
+  "role": "artifact_art",
+  "date": "2026-11-09",
+  "status": "Measured source delivery; pending primary-agent integration/runtime QA and user visual acceptance",
+  "generator": {
+    "mode": "built-in image_gen",
+    "noPixelEdits": true,
+    "sourcePngBytesPreserved": true,
+    "analysisScript": "measure-artifacts-v1.py",
+    "scriptPolicy": "Only inspect PNGs/provenance and write JSON/text. No derived/cropped/repaired PNGs are created."
+  },
+  "coordinateConvention": {
+    "rect": "[x,y,width,height] absolute original PNG pixels unless Local suffix",
+    "points": "absolute original PNG pixels unless Local suffix",
+    "groundContactY": "center of the floor ellipse for FX; optional physical bottom for item drops; null for UI-only shells",
+    "safeRect": "UI painted text or button interior is clear of ornament, not necessarily alpha-transparent; avatar opening transparency audited separately"
+  },
+  "assets": {
+    "artifact-icons-v1.png": {
+      "file": "artifact-icons-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2349689,
+      "sha256": "50906b433ebcb4cb564bf0e5e31cc56431beed6581955c93a6acc48b4cff863a",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-34bb-73a3-9245-25f82b743efe\\exec-e45b1c0d-e11d-4a27-94ab-c21dec1e4c41.png",
+      "sourceSha256": "50906b433ebcb4cb564bf0e5e31cc56431beed6581955c93a6acc48b4cff863a",
+      "originalPngBytesPreserved": true,
+      "generationId": "exec-e45b1c0d-e11d-4a27-94ab-c21dec1e4c41",
+      "promptPath": "prompt-artifact-icons-v1.txt",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZero": 934184,
+      "alphaAtMost8": 1013414,
+      "alphaOver16": 547252,
+      "status": "selected for primary-agent integration"
+    },
+    "artifact-active-fx-v1.png": {
+      "file": "artifact-active-fx-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2414128,
+      "sha256": "c40f7b6cc6cb8ff885940be4953daca9dd0ad4d78a9f767349e4788ca1a63aa8",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-34bb-73a3-9245-25f82b743efe\\exec-ae1d4f98-4b4a-441b-b1c9-be623f10f382.png",
+      "sourceSha256": "c40f7b6cc6cb8ff885940be4953daca9dd0ad4d78a9f767349e4788ca1a63aa8",
+      "originalPngBytesPreserved": true,
+      "generationId": "exec-ae1d4f98-4b4a-441b-b1c9-be623f10f382",
+      "promptPath": "prompt-artifact-active-fx-v1.txt",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaZero": 11856,
+      "alphaAtMost8": 458536,
+      "alphaOver16": 959510,
+      "status": "rejected source archive"
+    },
+    "artifact-active-fx-v2.png": {
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2496001,
+      "sha256": "e61a389c4c5a78611f37552a9a7ea5ee195937a81d75334b8b25abca8d49e3ee",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-34bb-73a3-9245-25f82b743efe\\exec-0f1eb0c2-5ba7-42b9-9d00-be0a9e9f0fdc.png",
+      "sourceSha256": "e61a389c4c5a78611f37552a9a7ea5ee195937a81d75334b8b25abca8d49e3ee",
+      "originalPngBytesPreserved": true,
+      "generationId": "exec-0f1eb0c2-5ba7-42b9-9d00-be0a9e9f0fdc",
+      "promptPath": "prompt-artifact-active-fx-v2.txt",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZero": 684342,
+      "alphaAtMost8": 1117090,
+      "alphaOver16": 396001,
+      "status": "selected for primary-agent integration"
+    },
+    "artifact-hud-entry-v1.png": {
+      "file": "artifact-hud-entry-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2477708,
+      "sha256": "cb869057a744d6dafd6fcfa85efa405cb1035e32e9c96fe037c03ceffb6dae99",
+      "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-34bb-73a3-9245-25f82b743efe\\exec-e40493fa-23be-4c56-867f-5587e6fbde96.png",
+      "sourceSha256": "cb869057a744d6dafd6fcfa85efa405cb1035e32e9c96fe037c03ceffb6dae99",
+      "originalPngBytesPreserved": true,
+      "generationId": "exec-e40493fa-23be-4c56-867f-5587e6fbde96",
+      "promptPath": "prompt-artifact-hud-entry-v1.txt",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaZero": 682432,
+      "alphaAtMost8": 766846,
+      "alphaOver16": 802576,
+      "status": "selected for primary-agent integration"
+    }
+  },
+  "selectedAssets": [
+    "artifact-icons-v1.png",
+    "artifact-active-fx-v2.png",
+    "artifact-hud-entry-v1.png"
+  ],
+  "rejectedAssets": [
+    {
+      "file": "artifact-active-fx-v1.png",
+      "reason": "Broad diffuse white/gray haze reaches row boundaries and would show a cloudy crop edge; retained unchanged for provenance. Superseded by built-in edit v2."
+    }
+  ],
+  "icons": [
+    {
+      "id": "voidTimeTalisman",
+      "name": "虚时护符",
+      "file": "artifact-icons-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sourceRect": [
+        89,
+        4,
+        622,
+        955
+      ],
+      "rect": [
+        89,
+        4,
+        622,
+        955
+      ],
+      "materialBounds16": [
+        99,
+        14,
+        602,
+        935
+      ],
+      "pivot": [
+        400.0,
+        481.5
+      ],
+      "pivotLocal": [
+        311.0,
+        477.5
+      ],
+      "groundContactY": 949,
+      "groundContactYLocal": 945,
+      "dropPivot": [
+        399,
+        949
+      ],
+      "dropPivotLocal": [
+        310,
+        945
+      ],
+      "safeRect": [
+        89,
+        4,
+        622,
+        955
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        622,
+        955
+      ],
+      "sourceAspectRatio": 0.6513089005235602,
+      "usage": "Use contain scaling preserving original object proportions. This is a standalone transparent relic object, not a badge tile. groundContactY/dropPivot are optional inventory-drop alignment anchors; UI icon pivot is the visual source center."
+    },
+    {
+      "id": "springRadianceChalice",
+      "name": "春晖玉盏",
+      "file": "artifact-icons-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sourceRect": [
+        791,
+        114,
+        705,
+        828
+      ],
+      "rect": [
+        791,
+        114,
+        705,
+        828
+      ],
+      "materialBounds16": [
+        801,
+        124,
+        685,
+        808
+      ],
+      "pivot": [
+        1143.5,
+        528.0
+      ],
+      "pivotLocal": [
+        352.5,
+        414.0
+      ],
+      "groundContactY": 932,
+      "groundContactYLocal": 818,
+      "dropPivot": [
+        1143,
+        932
+      ],
+      "dropPivotLocal": [
+        352,
+        818
+      ],
+      "safeRect": [
+        791,
+        114,
+        705,
+        828
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        705,
+        828
+      ],
+      "sourceAspectRatio": 0.8514492753623188,
+      "usage": "Use contain scaling preserving original object proportions. This is a standalone transparent relic object, not a badge tile. groundContactY/dropPivot are optional inventory-drop alignment anchors; UI icon pivot is the visual source center."
+    }
+  ],
+  "activeFx": [
+    {
+      "id": "voidTimeTalisman-1",
+      "artifactId": "voidTimeTalisman",
+      "phase": 0,
+      "phaseName": "ignite",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "sourceRect": [
+        45,
+        147,
+        289,
+        342
+      ],
+      "rect": [
+        45,
+        147,
+        289,
+        342
+      ],
+      "materialBounds16": [
+        57,
+        159,
+        265,
+        318
+      ],
+      "pivot": [
+        193,
+        446
+      ],
+      "pivotLocal": [
+        148,
+        299
+      ],
+      "groundContactY": 446,
+      "groundContactYLocal": 299,
+      "safeRect": [
+        45,
+        147,
+        289,
+        342
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        289,
+        342
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "voidTimeTalisman-2",
+      "artifactId": "voidTimeTalisman",
+      "phase": 1,
+      "phaseName": "build",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "sourceRect": [
+        404,
+        26,
+        336,
+        463
+      ],
+      "rect": [
+        404,
+        26,
+        336,
+        463
+      ],
+      "materialBounds16": [
+        416,
+        38,
+        312,
+        439
+      ],
+      "pivot": [
+        577,
+        446
+      ],
+      "pivotLocal": [
+        173,
+        420
+      ],
+      "groundContactY": 446,
+      "groundContactYLocal": 420,
+      "safeRect": [
+        404,
+        26,
+        336,
+        463
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        336,
+        463
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "voidTimeTalisman-3",
+      "artifactId": "voidTimeTalisman",
+      "phase": 2,
+      "phaseName": "hold-or-bloom",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "sourceRect": [
+        788,
+        11,
+        337,
+        478
+      ],
+      "rect": [
+        788,
+        11,
+        337,
+        478
+      ],
+      "materialBounds16": [
+        800,
+        23,
+        313,
+        454
+      ],
+      "pivot": [
+        961,
+        446
+      ],
+      "pivotLocal": [
+        173,
+        435
+      ],
+      "groundContactY": 446,
+      "groundContactYLocal": 435,
+      "safeRect": [
+        788,
+        11,
+        337,
+        478
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        337,
+        478
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "voidTimeTalisman-4",
+      "artifactId": "voidTimeTalisman",
+      "phase": 3,
+      "phaseName": "dissolve",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "sourceRect": [
+        1175,
+        12,
+        333,
+        478
+      ],
+      "rect": [
+        1175,
+        12,
+        333,
+        478
+      ],
+      "materialBounds16": [
+        1187,
+        24,
+        309,
+        454
+      ],
+      "pivot": [
+        1345,
+        446
+      ],
+      "pivotLocal": [
+        170,
+        434
+      ],
+      "groundContactY": 446,
+      "groundContactYLocal": 434,
+      "safeRect": [
+        1175,
+        12,
+        333,
+        478
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        333,
+        478
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "springRadianceChalice-1",
+      "artifactId": "springRadianceChalice",
+      "phase": 0,
+      "phaseName": "ignite",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "sourceRect": [
+        55,
+        725,
+        270,
+        272
+      ],
+      "rect": [
+        55,
+        725,
+        270,
+        272
+      ],
+      "materialBounds16": [
+        67,
+        737,
+        246,
+        248
+      ],
+      "pivot": [
+        193,
+        953
+      ],
+      "pivotLocal": [
+        138,
+        228
+      ],
+      "groundContactY": 953,
+      "groundContactYLocal": 228,
+      "safeRect": [
+        55,
+        725,
+        270,
+        272
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        270,
+        272
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "springRadianceChalice-2",
+      "artifactId": "springRadianceChalice",
+      "phase": 1,
+      "phaseName": "build",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "sourceRect": [
+        409,
+        560,
+        318,
+        438
+      ],
+      "rect": [
+        409,
+        560,
+        318,
+        438
+      ],
+      "materialBounds16": [
+        421,
+        572,
+        294,
+        414
+      ],
+      "pivot": [
+        578,
+        953
+      ],
+      "pivotLocal": [
+        169,
+        393
+      ],
+      "groundContactY": 953,
+      "groundContactYLocal": 393,
+      "safeRect": [
+        409,
+        560,
+        318,
+        438
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        318,
+        438
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "springRadianceChalice-3",
+      "artifactId": "springRadianceChalice",
+      "phase": 2,
+      "phaseName": "hold-or-bloom",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "sourceRect": [
+        777,
+        525,
+        356,
+        474
+      ],
+      "rect": [
+        777,
+        525,
+        356,
+        474
+      ],
+      "materialBounds16": [
+        789,
+        537,
+        332,
+        450
+      ],
+      "pivot": [
+        963,
+        953
+      ],
+      "pivotLocal": [
+        186,
+        428
+      ],
+      "groundContactY": 953,
+      "groundContactYLocal": 428,
+      "safeRect": [
+        777,
+        525,
+        356,
+        474
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        356,
+        474
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    },
+    {
+      "id": "springRadianceChalice-4",
+      "artifactId": "springRadianceChalice",
+      "phase": 3,
+      "phaseName": "dissolve",
+      "file": "artifact-active-fx-v2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "cellRect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "sourceRect": [
+        1196,
+        531,
+        297,
+        468
+      ],
+      "rect": [
+        1196,
+        531,
+        297,
+        468
+      ],
+      "materialBounds16": [
+        1208,
+        543,
+        273,
+        444
+      ],
+      "pivot": [
+        1346,
+        953
+      ],
+      "pivotLocal": [
+        150,
+        422
+      ],
+      "groundContactY": 953,
+      "groundContactYLocal": 422,
+      "safeRect": [
+        1196,
+        531,
+        297,
+        468
+      ],
+      "safeRectLocal": [
+        0,
+        0,
+        297,
+        468
+      ],
+      "referenceHeightPx": 440,
+      "cellBoundaryAlphaMax": 1,
+      "cellBoundaryAlphaOver16": 0,
+      "groundNote": "Pivot is the projected ellipse center on the actual support, not the lowest gold point. The release layer can follow the bearer; no collision or immunity is encoded in the art.",
+      "scaleNote": "One shared scale = desired world FX height / 440 for every phase. Never normalize the crop heights separately. Keep pivots anchored while continuously mixing adjacent phases."
+    }
+  ],
+  "hudAndEntry": [
+    {
+      "id": "voidTimeTalisman",
+      "name": "虚时护符",
+      "file": "artifact-hud-entry-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sourceRect": [
+        35,
+        7,
+        1466,
+        315
+      ],
+      "rect": [
+        35,
+        7,
+        1466,
+        315
+      ],
+      "materialBounds16": [
+        39,
+        11,
+        1458,
+        307
+      ],
+      "conservativeNoNeighborRect": [
+        35,
+        7,
+        1466,
+        315
+      ],
+      "pivot": [
+        768.0,
+        164.5
+      ],
+      "groundContactY": null,
+      "avatarCircle": [
+        234,
+        179,
+        89
+      ],
+      "avatarCircleLocal": [
+        199,
+        172,
+        89
+      ],
+      "avatarSafeRect": [
+        179,
+        124,
+        110,
+        110
+      ],
+      "safeRect": [
+        505,
+        132,
+        701,
+        80
+      ],
+      "textSafeRect": [
+        505,
+        132,
+        701,
+        80
+      ],
+      "textSafeRectLocal": [
+        470,
+        125,
+        701,
+        80
+      ],
+      "safeRectLocal": [
+        470,
+        125,
+        701,
+        80
+      ],
+      "avatarCircleAlpha": {
+        "min": 0,
+        "max": 2,
+        "alphaOver16": 0,
+        "pixels": 24845
+      },
+      "textSafeRectAlpha": {
+        "min": 252,
+        "max": 254,
+        "alphaOver16": 56080,
+        "pixels": 56080
+      },
+      "textAreaMode": "quiet painted dark-teal enamel, intentionally opaque; place live DOM text above it. The circular avatar opening is transparent.",
+      "noNeighborNote": "Measured row separation is y318..331 and y636..649 with no alpha>16, so sourceRect is an ordinary non-overlapping rectangle, no source mask needed.",
+      "pivotLocal": [
+        733.0,
+        157.5
+      ],
+      "avatarSafeRectLocal": [
+        144,
+        117,
+        110,
+        110
+      ],
+      "avatarSafeRectAlpha": {
+        "min": 0,
+        "max": 1,
+        "alphaOver16": 0,
+        "pixels": 12100
+      },
+      "cooldownSafeRect": [
+        1317,
+        137,
+        63,
+        63
+      ],
+      "cooldownSafeRectLocal": [
+        1282,
+        130,
+        63,
+        63
+      ],
+      "cooldownSafeRectAlpha": {
+        "min": 252,
+        "max": 253,
+        "alphaOver16": 3969,
+        "pixels": 3969
+      }
+    },
+    {
+      "id": "springRadianceChalice",
+      "name": "春晖玉盏",
+      "file": "artifact-hud-entry-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sourceRect": [
+        39,
+        328,
+        1450,
+        312
+      ],
+      "rect": [
+        39,
+        328,
+        1450,
+        312
+      ],
+      "materialBounds16": [
+        43,
+        332,
+        1442,
+        304
+      ],
+      "conservativeNoNeighborRect": [
+        39,
+        328,
+        1450,
+        312
+      ],
+      "pivot": [
+        764.0,
+        484.0
+      ],
+      "groundContactY": null,
+      "avatarCircle": [
+        233,
+        502,
+        89
+      ],
+      "avatarCircleLocal": [
+        194,
+        174,
+        89
+      ],
+      "avatarSafeRect": [
+        178,
+        447,
+        110,
+        110
+      ],
+      "safeRect": [
+        510,
+        463,
+        697,
+        72
+      ],
+      "textSafeRect": [
+        510,
+        463,
+        697,
+        72
+      ],
+      "textSafeRectLocal": [
+        471,
+        135,
+        697,
+        72
+      ],
+      "safeRectLocal": [
+        471,
+        135,
+        697,
+        72
+      ],
+      "avatarCircleAlpha": {
+        "min": 0,
+        "max": 2,
+        "alphaOver16": 0,
+        "pixels": 24845
+      },
+      "textSafeRectAlpha": {
+        "min": 252,
+        "max": 254,
+        "alphaOver16": 50184,
+        "pixels": 50184
+      },
+      "textAreaMode": "quiet painted dark-teal enamel, intentionally opaque; place live DOM text above it. The circular avatar opening is transparent.",
+      "noNeighborNote": "Measured row separation is y318..331 and y636..649 with no alpha>16, so sourceRect is an ordinary non-overlapping rectangle, no source mask needed.",
+      "pivotLocal": [
+        725.0,
+        156.0
+      ],
+      "avatarSafeRectLocal": [
+        139,
+        119,
+        110,
+        110
+      ],
+      "avatarSafeRectAlpha": {
+        "min": 0,
+        "max": 1,
+        "alphaOver16": 0,
+        "pixels": 12100
+      },
+      "cooldownSafeRect": [
+        1321,
+        469,
+        64,
+        64
+      ],
+      "cooldownSafeRectLocal": [
+        1282,
+        141,
+        64,
+        64
+      ],
+      "cooldownSafeRectAlpha": {
+        "min": 252,
+        "max": 253,
+        "alphaOver16": 4096,
+        "pixels": 4096
+      }
+    },
+    {
+      "id": "sunSuanniDungeon",
+      "name": "镇曜灵猊",
+      "file": "artifact-hud-entry-v1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sourceRect": [
+        19,
+        646,
+        1492,
+        356
+      ],
+      "rect": [
+        19,
+        646,
+        1492,
+        356
+      ],
+      "materialBounds16": [
+        23,
+        650,
+        1484,
+        348
+      ],
+      "conservativeNoNeighborRect": [
+        19,
+        646,
+        1492,
+        356
+      ],
+      "pivot": [
+        765.0,
+        824.0
+      ],
+      "groundContactY": null,
+      "avatarCircle": [
+        231,
+        854,
+        83
+      ],
+      "avatarCircleLocal": [
+        212,
+        208,
+        83
+      ],
+      "avatarSafeRect": [
+        176,
+        799,
+        110,
+        110
+      ],
+      "safeRect": [
+        540,
+        814,
+        467,
+        69
+      ],
+      "textSafeRect": [
+        540,
+        814,
+        467,
+        69
+      ],
+      "textSafeRectLocal": [
+        521,
+        168,
+        467,
+        69
+      ],
+      "safeRectLocal": [
+        521,
+        168,
+        467,
+        69
+      ],
+      "avatarCircleAlpha": {
+        "min": 0,
+        "max": 1,
+        "alphaOver16": 0,
+        "pixels": 21629
+      },
+      "textSafeRectAlpha": {
+        "min": 252,
+        "max": 254,
+        "alphaOver16": 32223,
+        "pixels": 32223
+      },
+      "textAreaMode": "quiet painted dark-teal enamel, intentionally opaque; place live DOM text above it. The circular avatar opening is transparent.",
+      "noNeighborNote": "Measured row separation is y318..331 and y636..649 with no alpha>16, so sourceRect is an ordinary non-overlapping rectangle, no source mask needed.",
+      "pivotLocal": [
+        746.0,
+        178.0
+      ],
+      "avatarSafeRectLocal": [
+        157,
+        153,
+        110,
+        110
+      ],
+      "avatarSafeRectAlpha": {
+        "min": 0,
+        "max": 1,
+        "alphaOver16": 0,
+        "pixels": 12100
+      },
+      "buttonRect": [
+        1084,
+        791,
+        386,
+        134
+      ],
+      "buttonRectLocal": [
+        1065,
+        145,
+        386,
+        134
+      ],
+      "buttonSafeRect": [
+        1150,
+        831,
+        251,
+        58
+      ],
+      "buttonSafeRectLocal": [
+        1131,
+        185,
+        251,
+        58
+      ],
+      "buttonSafeRectAlpha": {
+        "min": 252,
+        "max": 254,
+        "alphaOver16": 14558,
+        "pixels": 14558
+      },
+      "unlockRuleNote": "Keep the real stage/pet unlock state and live button label in DOM; art alone does not unlock the dungeon."
+    }
+  ],
+  "timingRecommendation": {
+    "voidTimeTalisman": {
+      "animationSegmentsNormalized": [
+        0,
+        0.2,
+        0.72,
+        1
+      ],
+      "note": "Four phases only describe art. Primary agent must bind full-immunity active time and attack-speed duration to real gameplay timers; do not silently derive gameplay duration from this suggested animation split."
+    },
+    "springRadianceChalice": {
+      "animationSegmentsNormalized": [
+        0,
+        0.24,
+        0.6,
+        1
+      ],
+      "note": "Healing applies to real living HP/MP values once; animation must not revive or double-apply healing."
+    }
+  },
+  "integrationNotes": [
+    "Use raw original PNG bytes unchanged. Final source sizes are 1536x1024 for all four stored PNGs.",
+    "Runtime uses only three selected PNGs; the fourth is an archived rejected first FX version.",
+    "Do not normalize per-phase crop sizes: draw the shared 440px reference scale and the measured pivots.",
+    "No baked words/numbers, gameplay state or fake cooldown are included. Overlay real name/cooldown/state in DOM.",
+    "Preserve the current one-artifact slot and prevention of switch/equip/cooldown reset; no logic is implemented by this art delivery.",
+    "Chapter challenges unlock after chapter1 stage11, while this fourth-pet entrance must use the actual chapter2-stage6 pet unlock rule.",
+    "No runtime source, official asset, memory, save, commit, release or deployment was modified."
+  ]
+}

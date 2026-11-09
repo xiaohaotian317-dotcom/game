@@ -1,0 +1,19 @@
+✔ anchor shockwave is grounded and damages a victim only once even after invulnerability ends (18.4328ms)
+✔ a timed real double jump avoids the low shockwave, while a fast swept crossing still connects on the floor (9.6079ms)
+✔ waves stop at arena bounds, lost support or dead owners, and clearEnemies removes pending waves (8.0957ms)
+✔ crystal burrow remains briefly veiled and damageable, then reveals before the offensive uppercut (4.1132ms)
+✔ heavy hits interrupt a veil without making the boss immune or leaving it hidden while staggered (1.5757ms)
+✔ fungal renewal restores no more than six percent during one channel and never revives a dead boss (8.9199ms)
+✔ renewal stops after a real stagger and does not continue its remaining healing ticks (6.6614ms)
+✔ mirror clones fight as real minions but draw the queen body and never exceed two living reflections (19.9924ms)
+✔ mirror summons disappear when their owner dies and player kills award no coins, XP or loot (11.7221ms)
+✔ mirror teleport commits its warning before the player moves and follows only the selected support (4.2514ms)
+✔ all twenty boss bodies grow ten percent relative to campaign17 without increasing attack range or damage again (34.197ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 330.1122

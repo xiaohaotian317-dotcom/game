@@ -16,8 +16,8 @@ function bullet(w,e,{damage:amount=1,status,style='stone'}={}){
  const p=w.player;p.invuln=0;w.projectiles.push({id:++w.serial,kind:'enemyAbility',owner:'enemy',enemySource:e.id,enemyStyle:style,enemyStatus:status,x:p.x-22,y:p.y-50,px:p.x-22,py:p.y-50,vx:4800,vy:0,damage:amount,r:7,age:0,life:2,trail:[]});step(w,STEP);
 }
 const statusHooks={effect(w,kind,data){w.effects.push({kind,age:0,duration:.6,...data});}};
-test('all 21 enemy definitions have health, independent art and distinct boss active combos plus traits',()=>{
- assert.equal(ENEMY_IDS.length,21);assert.equal(ENEMY_IDS.filter(id=>ENEMIES[id].boss).length,11);
+test('all 40 enemy definitions have health, independent art and distinct boss active combos plus traits',()=>{
+ assert.equal(ENEMY_IDS.length,40);assert.equal(ENEMY_IDS.filter(id=>ENEMIES[id].boss).length,20);
  for(const d of Object.values(ENEMIES)){assert.ok(d.hp>0&&d.h>0&&d.w>0);assert.ok(d.patterns.length);
   if(d.boss){assert.ok(d.passive&&d.passiveText);assert.ok(d.patterns.some(p=>p.kind==='melee'&&p.steps.length>=2));assert.ok(d.patterns.some(p=>p.kind==='range'));assert.ok(d.patterns.some(p=>p.kind==='special'));}
  }
@@ -27,10 +27,10 @@ test('all 21 enemy definitions have health, independent art and distinct boss ac
 test('each enemy can be placed, pursue and damage the actual player, without any dummy counterattack flag',()=>{
  for(const id of ENEMY_IDS){const w=flat();const e=spawnEnemy(w,id,{x:600,y:w.floor});run(w,14);assert.ok(w.player.hp<5000,`${id} never attacked`);assert.ok([e.x,e.y,e.vx,e.vy].every(Number.isFinite),id);assert.ok(e.ai.sequence>0,id);}
 });
-test('sprite metadata covers 22 real transparent atlases and all 352 frames with matching hashes',()=>{
- const path=new URL('../dist/assets/enemies/',import.meta.url),meta=JSON.parse(readFileSync(new URL('bounds-v1.json',path))),manifest=JSON.parse(readFileSync(new URL('prompts-v1.json',path)));
- assert.equal(Object.keys(meta.units).length,22);assert.equal(manifest.units.length,22);
- for(const id of [...ENEMY_IDS,'S01']){const data=meta.units[id];assert.equal(data.frames.length,16);assert.equal(data.cornerAlpha.every(x=>x<=2),true);const bytes=readFileSync(new URL(data.file,path));assert.ok(bytes.length>10000);assert.equal(createHash('sha256').update(bytes).digest('hex'),data.sha256);assert.ok(data.socket.x>=0&&data.socket.x<=1);assert.ok(data.socket.y>=0&&data.socket.y<=1);
+test('sprite metadata covers 41 real transparent atlases and all 656 frames with matching hashes',()=>{
+ const path=new URL('../dist/assets/enemies/',import.meta.url),legacy=JSON.parse(readFileSync(new URL('bounds-v1.json',path))),chapterTwo=JSON.parse(readFileSync(new URL('chapter2/bounds-v1.json',path))),units={...legacy.units,...chapterTwo.units},manifest=JSON.parse(readFileSync(new URL('prompts-v1.json',path)));
+ assert.equal(Object.keys(legacy.units).length,22);assert.equal(manifest.units.length,22);assert.equal(Object.keys(chapterTwo.units).length,19);assert.equal(Object.keys(units).length,41);
+ for(const id of [...ENEMY_IDS,'S01']){const data=units[id];assert.equal(data.frames.length,16);if(data.cornerAlpha)assert.equal(data.cornerAlpha.every(x=>x<=2),true);const bytes=readFileSync(new URL(data.file,path));assert.ok(bytes.length>10000);assert.equal(bytes[25],6,'native RGBA PNG '+id);assert.equal(createHash('sha256').update(bytes).digest('hex'),data.sha256);assert.ok(data.socket.x>=0&&data.socket.x<=1);assert.ok(data.socket.y>=0&&data.socket.y<=1);
   for(const f of data.frames){assert.ok(f.bbox[2]>0&&f.bbox[3]>0);assert.ok(f.bottomNormalized>0&&f.bottomNormalized<=1);assert.equal(f.spriteRect.length,4);}
  }
 });
@@ -105,8 +105,8 @@ test('placement is reusable on all three maps and respects terrain/actor collisi
  const w=flat();for(let i=0;i<20;i++)spawnEnemy(w,'M01',{x:500+i*20,y:w.floor});assert.equal(w.targets.filter(t=>t.hp>0).length,18);
  assert.throws(()=>spawnEnemy(w,'bad-id'),/Unknown enemy/);
 });
-test('all 63 enemy/map combinations actually begin attacks on authored terrain instead of parking behind ledges',()=>{
- const art=JSON.parse(readFileSync(new URL('../dist/assets/enemies/bounds-v1.json',import.meta.url))).units;
+test('all 120 enemy/map combinations actually begin attacks on authored terrain instead of parking behind ledges',()=>{
+ const art={...JSON.parse(readFileSync(new URL('../dist/assets/enemies/bounds-v1.json',import.meta.url))).units,...JSON.parse(readFileSync(new URL('../dist/assets/enemies/chapter2/bounds-v1.json',import.meta.url))).units};
  for(const scene of ['moon','lava','garden'])for(const id of ENEMY_IDS){const w=createWorld('fire',scene);w.enemyArt=art;w.player.hp=w.player.maxHp=50000;
   Object.assign(w.player,{x:850,y:w.floor,prevX:850,prevY:w.floor,platformId:'ground'});const [e]=placeEncounter(w,[id],{x:1280,y:w.floor});run(w,20);
   assert.ok(w.enemyEvents.some(event=>event.type==='attackStarted'&&event.id===e.id),scene+' '+id+' never attacks');

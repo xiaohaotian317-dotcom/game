@@ -1,0 +1,308 @@
+{
+  "assets": 15,
+  "allOriginalHashesMatch": true,
+  "allFullPromptsRecovered": true,
+  "platforms": 18,
+  "ground": 9,
+  "allStandingSpansFullyMaterial": true,
+  "nameplates": 12,
+  "bossHuds": 9,
+  "warnings": 9,
+  "safeAlpha": {
+    "titles": [
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 15204
+      },
+      {
+        "min": 0,
+        "max": 2,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 14280
+      },
+      {
+        "min": 0,
+        "max": 9,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 11585
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 12839
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 13110
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 12996
+      },
+      {
+        "min": 0,
+        "max": 3,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 12420
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 13338
+      },
+      {
+        "min": 0,
+        "max": 2,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 13452
+      },
+      {
+        "min": 0,
+        "max": 15,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 11934
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 10744
+      },
+      {
+        "min": 0,
+        "max": 1,
+        "over16": 0,
+        "over128": 0,
+        "pixels": 12784
+      }
+    ],
+    "bossHuds": [
+      {
+        "nameSafeRect": {
+          "min": 0,
+          "max": 16,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 2808
+        },
+        "hpSafeRect": {
+          "min": 1,
+          "max": 15,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 10983
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 0,
+          "max": 11,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 5525
+        },
+        "hpSafeRect": {
+          "min": 1,
+          "max": 5,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 3,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 1,
+          "max": 9,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 2079
+        },
+        "hpSafeRect": {
+          "min": 0,
+          "max": 4,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 3,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 1,
+          "max": 16,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4922
+        },
+        "hpSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 1,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 0,
+          "max": 15,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4752
+        },
+        "hpSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 1,
+          "max": 13,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4158
+        },
+        "hpSafeRect": {
+          "min": 1,
+          "max": 11,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 1,
+          "max": 15,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4536
+        },
+        "hpSafeRect": {
+          "min": 1,
+          "max": 7,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 4,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 0,
+          "max": 14,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 3456
+        },
+        "hpSafeRect": {
+          "min": 0,
+          "max": 13,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 9414
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 3,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      },
+      {
+        "nameSafeRect": {
+          "min": 1,
+          "max": 15,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 5304
+        },
+        "hpSafeRect": {
+          "min": 0,
+          "max": 10,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 11506
+        },
+        "avatarSafeRect": {
+          "min": 0,
+          "max": 2,
+          "over16": 0,
+          "over128": 0,
+          "pixels": 4900
+        }
+      }
+    ]
+  }
+}

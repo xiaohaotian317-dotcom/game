@@ -1,0 +1,47 @@
+{
+  "0": {
+    "generatedPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-e2b4c953-d49d-4865-9799-e7b1189bbe0e.png",
+    "workspacePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T46\\equipment_art\\equipment-q0-v2.png",
+    "sha256": "e0f6c71683639cea155ebce1cf9779339fb2003b470e0eac623da423f37bfcbb",
+    "pixelsEdited": false,
+    "byteExactCopy": true,
+    "method": "built-in image_gen",
+    "promptFile": "equipment-q0-v2.prompt.txt"
+  },
+  "2": {
+    "generatedPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-1ec8fd4f-e784-4827-a92e-16a25beef215.png",
+    "workspacePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T46\\equipment_art\\equipment-q2-v2.png",
+    "sha256": "2198cd28d65397287d570cc786731c6d781475ecf336ee503a01117d6aea2570",
+    "pixelsEdited": false,
+    "byteExactCopy": true,
+    "method": "built-in image_gen",
+    "promptFile": "equipment-q2-v2.prompt.txt"
+  },
+  "3": {
+    "generatedPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-ec9c7aeb-0c54-4169-b338-ba8d75137a07.png",
+    "workspacePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T46\\equipment_art\\equipment-q3-v2.png",
+    "sha256": "f7af331becf6c60978ee9aa818de17198b851b150d5405abead5d8396ca5f954",
+    "pixelsEdited": false,
+    "byteExactCopy": true,
+    "method": "built-in image_gen",
+    "promptFile": "equipment-q3-v2.prompt.txt"
+  },
+  "4": {
+    "generatedPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-64045690-8c40-4dad-acba-a9322dc39c17.png",
+    "workspacePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T46\\equipment_art\\equipment-q4-v2.png",
+    "sha256": "acb2c425494de1b4fab2b5850da8950e533dca34aaa249f52901a34fb6c9c690",
+    "pixelsEdited": false,
+    "byteExactCopy": true,
+    "method": "built-in image_gen",
+    "promptFile": "equipment-q4-v2.prompt.txt"
+  },
+  "5": {
+    "generatedPath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-ab2c611d-7022-4e2e-9402-29ba364e4bc7.png",
+    "workspacePath": "C:\\Users\\xiaohaotian\\Desktop\\双人\\美术概念\\协作交付\\T46\\equipment_art\\equipment-q5-v2.png",
+    "sha256": "8cd23b110e9d89c4fcf2411107738d39d4a2afa4621f50bc28cac5ad2923a17c",
+    "pixelsEdited": false,
+    "byteExactCopy": true,
+    "method": "built-in image_gen",
+    "promptFile": "equipment-q5-v2.prompt.txt"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "task": "T46 CSS-only portrait candidate comparison",
+  "runtimeModified": false,
+  "pixelsEdited": false,
+  "formalSavesTouched": false,
+  "errors": [],
+  "failedResources": [],
+  "comparisons": [
+    {
+      "id": "B12",
+      "name": "深潮锚王",
+      "current": [
+        788,
+        349,
+        90,
+        90
+      ],
+      "candidate": [
+        774,
+        349,
+        90,
+        90
+      ],
+      "file": "chapter2/B12-motion-v2.png"
+    },
+    {
+      "id": "B14",
+      "name": "孢冠沼母",
+      "current": [
+        786,
+        398,
+        86,
+        86
+      ],
+      "candidate": [
+        766,
+        375,
+        86,
+        86
+      ],
+      "file": "chapter2/B14-motion-v4.png"
+    },
+    {
+      "id": "B16",
+      "name": "千面镜姬",
+      "current": [
+        798,
+        393,
+        76,
+        76
+      ],
+      "candidate": [
+        748,
+        382,
+        82,
+        82
+      ],
+      "file": "chapter2/B16-motion-v3.png"
+    }
+  ],
+  "saveWrites": 0,
+  "passed": true
+}

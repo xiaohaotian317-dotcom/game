@@ -1,0 +1,231 @@
+{
+  "version": "T45-pet-provenance-v1",
+  "sources": {
+    "dawnlion-form1-motion-v1.png": {
+      "file": "dawnlion-form1-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-ce7a2342-063e-4ebe-8d87-34bb9de51e41.png",
+      "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "sourceSha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form1-motion-prompt-v1.txt",
+      "promptSha256": "0e562f038d14a09452cc24176e7cf05bca1ef9ed7f23f09f4c74190c05d46edc",
+      "references": [],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.43891699671100326,
+          "1": 0.283646080548624,
+          "8": 0.2543923241480532,
+          "16": 0.25085976867643955,
+          "32": 0.24742196581783588,
+          "64": 0.2431275739006789,
+          "128": 0.23652350755095655,
+          "192": 0.2298997275703395,
+          "240": 0.2191557987327315
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form2-motion-v1.png": {
+      "file": "dawnlion-form2-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-a12e6c39-b4aa-4979-809b-7850c5c72ca8.png",
+      "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "sourceSha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form2-motion-prompt-v1.txt",
+      "promptSha256": "882cc4a054cc8f4f2064feb8165359001e69997d784d398acdf3d5193b0faef1",
+      "references": [
+        {
+          "file": "dawnlion-form1-motion-v1.png",
+          "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.3838256653668389,
+          "1": 0.33087866832515533,
+          "8": 0.3023632191977697,
+          "16": 0.29841604155379026,
+          "32": 0.2946908012382704,
+          "64": 0.28990420447232335,
+          "128": 0.28270300588356495,
+          "192": 0.27522454461512635,
+          "240": 0.2623152959969883
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form3-motion-v1.png": {
+      "file": "dawnlion-form3-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-930bf0e1-2bc1-4dbc-a108-139b7072b238.png",
+      "sha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b",
+      "sourceSha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form3-motion-prompt-v1.txt",
+      "promptSha256": "02944cf6a36274d1b26825190ec1117bcaed01bb5cff2fd42a39e85d8c6467d3",
+      "references": [
+        {
+          "file": "dawnlion-form2-motion-v1.png",
+          "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.4684747245814987,
+          "1": 0.41080472313159294,
+          "8": 0.37323753780565666,
+          "16": 0.36755810433725317,
+          "32": 0.3623645164818673,
+          "64": 0.3561280139597944,
+          "128": 0.34672715571733453,
+          "192": 0.33734982664723284,
+          "240": 0.3197976999916058
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-form3-motion-v2.png": {
+      "file": "dawnlion-form3-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-64e79db2-1356-4335-9d3f-fc325a978814.png",
+      "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "sourceSha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-form3-motion-prompt-v2.txt",
+      "promptSha256": "ae8f13ef791c9ba3a62d2b223284432d1fd9fcbac8f537a05325482aaffe3d75",
+      "references": [
+        {
+          "file": "dawnlion-form3-motion-v1.png",
+          "sha256": "7ce0b50ba155b79cf6964d367aff629ab7912864d047bd9152aafe8115c6ff4b"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.31024231231987465,
+          "1": 0.27075527371422614,
+          "8": 0.2464521823625324,
+          "16": 0.24244713567302337,
+          "32": 0.23856418631034595,
+          "64": 0.23365231259968103,
+          "128": 0.2260708317117282,
+          "192": 0.2186330695522335,
+          "240": 0.20661474986582012
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-portraits-skills-v1.png": {
+      "file": "dawnlion-portraits-skills-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-53c89617-f3ae-40c8-b9fb-cc652431ad67.png",
+      "sha256": "8e50c96257205130840ef85f75cadee5b6e8f3dcf77d31f11a38f86a7701eb88",
+      "sourceSha256": "8e50c96257205130840ef85f75cadee5b6e8f3dcf77d31f11a38f86a7701eb88",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-portraits-skills-prompt-v1.txt",
+      "promptSha256": "83ef6b82e521f7c9365a7e1ef10a4252902ba03231c41724f242fd037b6f2f26",
+      "references": [
+        {
+          "file": "dawnlion-form1-motion-v1.png",
+          "sha256": "f3c4012b09b82b57460dade58618d137ef0fe151f227c5bb6d500efff50aa514"
+        },
+        {
+          "file": "dawnlion-form2-motion-v1.png",
+          "sha256": "f8e8ac19950d7e6a6f3e881b47bf78659d0dc7e756d5c5ea4c1327ae28e7a06b"
+        },
+        {
+          "file": "dawnlion-form3-motion-v2.png",
+          "sha256": "2cbb6a18933daff80ab87f1fe2912b809742b22dbc0ddec9247134c8400accfb"
+        }
+      ],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "coverage": {
+          "0": 0.627736985061689,
+          "1": 0.520798353773471,
+          "8": 0.4796096439997,
+          "16": 0.47610670984749015,
+          "32": 0.4729081852487833,
+          "64": 0.4692037942521884,
+          "128": 0.46370281493043064,
+          "192": 0.45835880671455026,
+          "240": 0.4466876554617683
+        },
+        "outerEdgeAbove16": 0
+      }
+    },
+    "dawnlion-skills-fx-v1.png": {
+      "file": "dawnlion-skills-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1be36-7e16-7273-b38b-146e7157889f\\exec-ba4b16df-61c1-4d84-83ae-a3b80853f31a.png",
+      "sha256": "cb9826023d13f86f56ab81ccc7dd715364f848cc88d32ae48897fdd8f2318726",
+      "sourceSha256": "cb9826023d13f86f56ab81ccc7dd715364f848cc88d32ae48897fdd8f2318726",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "prompt": "dawnlion-skills-fx-prompt-v1.txt",
+      "promptSha256": "80e84f1b7cd29cb52ab70e5cf03c0ee815ac97913fadccfd1f92f31916ae3c8d",
+      "references": [],
+      "generator": "built-in image_gen; transparent_background=true; original generated PNG byte-for-byte copy",
+      "alpha": {
+        "extrema": [
+          0,
+          253
+        ],
+        "coverage": {
+          "0": 0.9740462490969954,
+          "1": 0.5461956798225532,
+          "8": 0.19842571960562863,
+          "16": 0.16779542240265355,
+          "32": 0.14635860219977004,
+          "64": 0.1275945483959586,
+          "128": 0.10497809895912823,
+          "192": 0.08014356501124305,
+          "240": 0.047147014234404726
+        },
+        "outerEdgeAbove16": 0
+      }
+    }
+  }
+}

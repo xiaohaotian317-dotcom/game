@@ -1,11 +1,16 @@
+import {bossBreathing} from './boss-presence.mjs';
+import {bossVisibility} from './boss-tactics.mjs';
+import {resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
+import {drawOriginalRegion} from './source-clips.mjs';
 import {drawBossWarning} from './realm-hud-art.mjs';
+import {BOSS_TUNING} from './enemy-tuning.mjs';
 import {ENEMIES} from './enemy-roster.mjs';
 import {loadMinionFx,minionWindup,minionEffect,minionProjectile,minionPoisonPool} from './minion-fx-painter.mjs';
 import {drawEnemyGroundWarning,drawEnemyLava} from './enemy-ground-art.mjs';
-import {enemyAnimationFrame,enemyAnimationBlend,enemyCastOrigin} from './enemy-simulation.mjs';
+import {enemyAnimationFrame,enemyAnimationBlend,enemyCastOrigin,enemyMeleeReach} from './enemy-simulation.mjs';
 import {BossFxPainter,loadBossEffects} from './boss-fx-painter.mjs';
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-const COLORS={venom:'#b9e66d',web:'#d2b7f5',claw:'#fa9c86',slash:'#d1edbc',sonic:'#e7a4d5',rock:'#c9bda4',stone:'#c8d2b7',lava:'#ffae59',ice:'#b6ecff',lightning:'#ffe4a1',star:'#cbb5ff',bone:'#e6dabc',root:'#badc84',heal:'#bffb98',feather:'#c8a6ef',chain:'#b4d5de',eggHatch:'#d4b3eb'};
+const COLORS={venom:'#b9e66d',web:'#d2b7f5',claw:'#fa9c86',slash:'#d1edbc',sonic:'#e7a4d5',rock:'#c9bda4',stone:'#c8d2b7',lava:'#ffae59',ice:'#b6ecff',lightning:'#ffe4a1',star:'#cbb5ff',bone:'#e6dabc',root:'#badc84',heal:'#bffb98',feather:'#c8a6ef',chain:'#b4d5de',eggHatch:'#d4b3eb',tide:'#92d8e5',crystal:'#ef9eb6',spore:'#cbda91',ash:'#f1ad78',mirror:'#d6b9f2',chrono:'#e9ce8b',moon:'#c9c7ff',machine:'#a7d8f3',eclipse:'#d2a5ed'};
 const rgba=(hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16},${n>>8&255},${n&255},${a})`;};
 function line(c,points,color,width=2){c.beginPath();for(let i=0;i<points.length;i++)i?c.lineTo(...points[i]):c.moveTo(...points[i]);c.strokeStyle=color;c.lineWidth=width;c.stroke();}
 function ellipse(c,x,y,rx,ry,color,stroke=false,width=2){c.beginPath();c.ellipse(x,y,Math.max(.1,rx),Math.max(.1,ry),0,0,TAU);if(stroke){c.strokeStyle=color;c.lineWidth=width;c.stroke();}else{c.fillStyle=color;c.fill();}}
@@ -13,17 +18,17 @@ function glow(c,x,y,r,color,strength=.5){const g=c.createRadialGradient(x,y,0,x,
 function shard(c,x,y,size,color,angle=0){c.save();c.translate(x,y);c.rotate(angle);c.fillStyle=color;c.beginPath();c.moveTo(0,-size);c.lineTo(size*.3,0);c.lineTo(0,size*.45);c.lineTo(-size*.3,0);c.closePath();c.fill();line(c,[[0,-size],[0,size*.4]],'#effaff',1);c.restore();}
 function lightning(c,x,y,x2,y2,time,color,width=2){const points=[];for(let i=0;i<=9;i++){const t=i/9,wiggle=i===0||i===9?0:Math.sin(i*41.3+time*24)*9;points.push([x+(x2-x)*t+wiggle,y+(y2-y)*t]);}line(c,points,rgba(color,.45),width*4);line(c,points,color,width);line(c,points,'#fffaf0',Math.max(.6,width*.4));}
 export async function loadEnemyAssets(ids,assets,progress=()=>{}){
- assets.enemies||={};assets.enemyPending||={};let done=0;const bosses=[...new Set(ids)].filter(id=>ENEMIES[id]?.boss),total=ids.length+bosses.length+(bosses.length?1:0);
+ assets.enemies||={};assets.enemyPending||={};let done=0;const bosses=[...new Set(ids)].filter(id=>ENEMIES[id]?.boss),total=ids.length+bosses.length+6+(bosses.length?1:0);
  if(!assets.enemyArt){
-  await (assets.enemyMetaPending||=(async()=>{try{const response=await fetch('assets/enemies/bounds-v1.json');if(!response.ok)throw new Error('敌人动作信息载入失败，请重试');const data=await response.json();assets.enemyArt=data.units;}catch(error){delete assets.enemyMetaPending;throw error;}})());
+  await (assets.enemyMetaPending||=(async()=>{try{const files=['assets/enemies/bounds-v1.json','assets/enemies/chapter2/bounds-v2.json'],data=await Promise.all(files.map(async file=>{const r=await fetch(file);if(!r.ok)throw new Error('敌人动作信息载入失败，请重试');return r.json();}));assets.enemyArt=Object.assign({},...data.map(m=>m.units));}catch(error){delete assets.enemyMetaPending;throw error;}})());
  }
  await Promise.all([...new Set(ids)].map(async id=>{
   if(!ENEMIES[id])throw new Error('Unknown enemy '+id);
-  if(!assets.enemies[id])await (assets.enemyPending[id]||=(async()=>{try{const img=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('无法加载'+ENEMIES[id].name+'动作，请重试'));i.src='assets/enemies/'+id+'-motion-v1.png';});if(img.width<512||img.height<512)throw new Error('敌人图集尺寸不匹配');assets.enemies[id]=img;}catch(error){delete assets.enemyPending[id];throw error;}})());
+  if(!assets.enemies[id])await (assets.enemyPending[id]||=(async()=>{try{const file=assets.enemyArt[id]?.file;if(!file)throw Error(ENEMIES[id].name+'动作尚未就绪');const img=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('无法加载'+ENEMIES[id].name+'动作，请重试'));i.src='assets/enemies/'+file;});if(img.width<512||img.height<512)throw new Error('敌人图集尺寸不匹配');assets.enemies[id]=img;}catch(error){delete assets.enemyPending[id];throw error;}})());
   progress(++done,total);
  }));
  await loadBossEffects(bosses,assets,()=>progress(++done,total));
- await loadMinionFx(assets);
+ await loadMinionFx(assets,()=>progress(++done,total));
 }
 export class EnemyPainter{
  constructor(ctx,assets){this.c=ctx;this.assets=assets;this.bossEffects=new BossFxPainter(ctx,assets);}
@@ -37,17 +42,33 @@ export class EnemyPainter{
  }
  unit(w,e,alpha){
   const c=this.c;if(e.egg){this.egg(w,e);this.health(w,e);return;}
-  const d=ENEMIES[e.enemyKind],img=this.assets.enemies?.[e.enemyKind];if(!d||!img)return;
+  const appearance=e.appearanceKind||e.enemyKind,d=ENEMIES[appearance],img=this.assets.enemies?.[appearance];if(!d||!img)return;
   const dead=e.hp<=0,age=dead?w.time-(e.diedAt??w.time):0;if(age>2.1)return;
   const x=e.prevX+(e.x-e.prevX)*alpha,y=e.prevY+(e.y-e.prevY)*alpha;
-  const meta=this.assets.enemyArt?.[e.enemyKind],blend=enemyAnimationBlend(e,w.time),cw=img.width/4,ch=img.height/4;
+  const meta=this.assets.enemyArt?.[appearance],blend=enemyAnimationBlend(e,w.time),cw=img.width/4,ch=img.height/4;
   let size=e.visual/.76,bob=d.flying?Math.sin(w.fxTime*3+e.id.length)*3:Math.abs(e.vx)<12?Math.sin(w.fxTime*2)*.7:0;
-  c.save();c.globalAlpha=dead?clamp(1-(age-.65)/1.45,0,1):1;
+  c.save();c.globalAlpha=(dead?clamp(1-(age-.65)/1.45,0,1):1)*bossVisibility(e,w.time);
   if(!d.flying)ellipse(c,x,y+1,e.w*1.15,5,'#02070c66');
-  c.translate(x,y+bob);c.scale(e.face,1);
+  c.translate(x,y+bob);c.scale(e.face,1);const breath=bossBreathing(e,w.fxTime??w.time);c.scale(breath.x,breath.y);
   if(e.bornAt){const birth=clamp((w.time-e.bornAt)/.45,0,1);c.globalAlpha*=birth;c.translate(0,(1-birth)*12);c.scale(.7+.3*birth,.7+.3*birth);}
   if(!dead&&e.hit>.04)c.filter='brightness(1.65) saturate(.5)';
-  for(const [raw,opacity]of [[blend.a,1-blend.mix],[blend.b,blend.mix]]){if(opacity<=.001)continue;let frame=raw;const semantic=['walk','walk','walk','walk','walk','walk','idle','windup','melee','recover','ranged','summon','hurt','stagger','dying','dead'][frame],override=meta?.frameOverrides?.[semantic==='recover'?'recovery':semantic]??meta?.frameOverrides?.[frame];if(Array.isArray(override))frame=override[frame<6?frame%override.length:0];else if(Number.isInteger(override))frame=override;const rect=meta?.frames?.[frame]?.rect||[(frame%4)*cw,Math.floor(frame/4)*ch,cw,ch],footFrame=d.flying&&frame<7?6:frame,foot=meta?.frames?.[footFrame]?.bottomNormalized??.96,source=meta?.frames?.[frame]?.spriteRect||rect;c.save();c.globalAlpha*=opacity;c.drawImage(img,...source,-size/2+(source[0]-rect[0])/rect[2]*size,-size*foot+(source[1]-rect[1])/rect[3]*size,source[2]/rect[2]*size,source[3]/rect[3]*size);c.restore();}
+  for(const [raw,opacity]of [[blend.a,1-blend.mix],[blend.b,blend.mix]]){
+   if(opacity<=.001)continue;let frame=raw;
+   const semantic=['walk','walk','walk','walk','walk','walk','idle','windup','melee','recover','ranged','summon','hurt','stagger','dying','dead'][frame],override=meta?.frameOverrides?.[semantic==='recover'?'recovery':semantic]??meta?.frameOverrides?.[frame];
+   if(Array.isArray(override))frame=override[frame<6?frame%override.length:0];else if(Number.isInteger(override))frame=override;
+   const f=meta?.frames?.[frame]||{},rect=f.rect||[(frame%4)*cw,Math.floor(frame/4)*ch,cw,ch],source=f.spriteRect||rect;
+   c.save();c.globalAlpha*=opacity;
+   if(meta?.referenceSourceHeight>0&&f.pivot&&Number.isFinite(f.groundContactY)){
+    // One scale for the whole creature: safe atlas padding and crouching poses
+    // must not make the body shrink or grow between animation frames.
+    const scale=e.visual/meta.referenceSourceHeight;
+    drawOriginalRegion(c,img,f,source,(source[0]-rect[0]-f.pivot[0])*scale,(source[1]-rect[1]-f.groundContactY)*scale,source[2]*scale,source[3]*scale);
+   }else{
+    const footFrame=d.flying&&frame<7?6:frame,foot=meta?.frames?.[footFrame]?.bottomNormalized??.96;
+    drawOriginalRegion(c,img,f,source,-size/2+(source[0]-rect[0])/rect[2]*size,-size*foot+(source[1]-rect[1])/rect[3]*size,source[2]/rect[2]*size,source[3]/rect[3]*size);
+   }
+   c.restore();
+  }
   c.restore();
   if(!dead&&e.ai?.passiveUntil>w.time){glow(c,x,y-e.h*.6,60,COLORS.heal,.2);for(let i=0;i<7;i++){const t=(w.time*.6+i/7)%1;ellipse(c,x+Math.sin(i*2.4)*30*(1-t),y-e.h*.5-t*65,2.5,4,COLORS.heal);}}
   this.health(w,e);this.telegraph(w,e);
@@ -57,13 +78,20 @@ export class EnemyPainter{
   const c=this.c,p=a.age/s.windup,color=COLORS[s.style]||'#f7ca88';
   c.save();c.lineWidth=2;c.setLineDash([5,6]);
   if(s.type==='melee'||s.type==='dash'){
-   const reach=s.reach*(e.attackScale??e.scale),xx=e.x+e.face*(reach*.5);if(!ENEMIES[e.enemyKind]?.boss||!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:xx,y:e.y,radius:reach*.58,progress:p,color})){ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.18));ellipse(c,xx,e.y-5,reach*.58,13,rgba(color,.7),true);}
+   const boss=ENEMIES[e.enemyKind]?.boss,reach=enemyMeleeReach(w,e,s),travel=s.type==='dash'?(s.speed||350)*(boss?BOSS_TUNING.range*BOSS_TUNING.frequency:1)*s.active/(a.speed||1):0,radius=(reach+travel+e.w)*.5,xx=e.x+e.face*(reach+travel-e.w)*.5;
+   if(!boss||!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:xx,y:e.y,radius,progress:p,color})){ellipse(c,xx,e.y-5,radius,13,rgba(color,.18));ellipse(c,xx,e.y-5,radius,13,rgba(color,.7),true);}
    c.setLineDash([]);const y=e.y-e.h*.58;glow(c,e.x+e.face*e.w,y,25+p*12,color,.25+p*.2);
    line(c,[[e.x+e.face*e.w,y],[e.x+e.face*(e.w+24+p*12),y-3]],color,2);
   }else if(s.type==='projectile'){
    const {x:sx,y:sy}=enemyCastOrigin(w,e);line(c,[[sx,sy],[a.aim.x,a.aim.y]],rgba(color,.35),1.5);glow(c,sx,sy,22+p*18,color,.3+p*.2);
-  }else if(s.type==='egg'||s.type==='summon')ellipse(c,e.x,e.y,60,18,rgba(color,.5),true);
-  else{ellipse(c,a.aim.x,w.player.y,s.radius||(s.type==='leap'?156:72),15,rgba(color,.6),true);}
+  }else if(['egg','summon','clone','heal','veil'].includes(s.type)){
+   const anchors=a.summonAnchors?.length?a.summonAnchors:[{x:e.x,y:e.y}];for(const anchor of anchors){const point=resolveGroundTarget(w,anchor)||anchor;if(!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:point.x,y:point.y,radius:s.type==='heal'?e.w+35:60,progress:p,color}))ellipse(c,point.x,point.y,60,18,rgba(color,.5),true);}
+  }
+  else if(s.type==='teleport'&&a.teleportAnchor){const point=resolveGroundTarget(w,a.teleportAnchor);if(point)drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:point.x,y:point.y,radius:e.w+35,progress:p,color});}
+  else if(s.type==='wave'){const distance=s.distance||600,radius=s.waveRadius||52;drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:e.x+e.face*(e.w+20+distance*.5),y:e.y,radius:distance*.5+radius,progress:p,color});}
+  else if(s.type==='zone'&&a.groundAnchor){const point=resolveGroundTarget(w,a.groundAnchor);if(point&&!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:point.x,y:point.y,radius:s.radius,progress:p,color}))ellipse(c,point.x,point.y,s.radius,15,rgba(color,.6),true);}
+  else if(s.type==='leap'&&a.landing){const radius=130*BOSS_TUNING.range*(e.soloRange||1);if(!drawBossWarning(c,this.assets,{bossId:e.enemyKind,x:a.landing.x,y:a.landing.y,radius,progress:p,color}))ellipse(c,a.landing.x,a.landing.y,radius,radius*.2,rgba(color,.6),true);}
+  else{ellipse(c,a.aim.x,w.player.y,s.radius||72,15,rgba(color,.6),true);}
   c.setLineDash([]);c.restore();this.bossEffects.windup(w,e);minionWindup(c,this.assets,w,e);
  }
  egg(w,e){
@@ -80,7 +108,7 @@ export class EnemyPainter{
   c.restore();
  }
  zones(w){
-  const c=this.c;for(const z of w.enemyZones||[]){const age=w.time-z.created,p=clamp(age/z.delay,0,1),active=age>=z.delay,color=COLORS[z.style]||COLORS.star;
+  const c=this.c;for(const wave of w.enemyWaves||[])this.bossEffects.wave(w,wave);for(const z of w.enemyZones||[]){const age=w.time-z.created,p=clamp(age/z.delay,0,1),active=age>=z.delay,color=COLORS[z.style]||COLORS.star;
    c.save();const fade=clamp((z.delay+z.life-age)*2,0,1);c.globalAlpha=fade;
    if(minionPoisonPool(c,this.assets,w,z)){c.restore();continue;}
    if(!active){if(ENEMIES[z.enemyKind]?.boss&&drawBossWarning(c,this.assets,{bossId:z.enemyKind,x:z.x,y:z.y,radius:z.radius,progress:p,color})){}else if(!drawEnemyGroundWarning(c,this.assets,{style:z.style,x:z.x,y:z.y,radius:z.radius,progress:p,clock:w.fxTime})){ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.08+.13*p));c.setLineDash([6,5]);ellipse(c,z.x,z.y-2,z.radius,16,rgba(color,.65),true);c.setLineDash([]);ellipse(c,z.x,z.y-2,z.radius*p,12*p,rgba(color,.3),true);}this.bossEffects.falling(w,z);}

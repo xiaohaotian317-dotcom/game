@@ -38,7 +38,7 @@ test('pet experience potions require a real selected pet, grant only its XP and 
  const p=freshSolo();p.pets=[{id:'pet-3',kind:'mossdeer',form:0,exp:0,traits:{hp:1,mp:1,attack:1},vitals:{hp:17,mp:12,epoch:0}},{id:'pet-4',kind:'frostfox',form:0,exp:0}];
  const small=addItem(p,{type:'petXpSmall',count:1});assert.throws(()=>usePetExperienceItem(p,small.id,'missing'));assert.equal(small.count,1);usePetExperienceItem(p,small.id,'pet-3');assert.equal(p.pets[0].exp,40);assert.equal(p.pets[1].exp,0);
  const big=addItem(p,{type:'petXpLarge',count:1});usePetExperienceItem(p,big.id,'pet-3');assert.equal(p.pets[0].exp,340);assert.ok(petExperience(p.pets[0].exp).level>=5);assert.equal(p.pets[0].form,0);assert.equal(p.pets[0].vitals.hp,17);assert.equal(p.heroes.fire.exp,0);assert.equal(normalizeSolo(p).pets[0].exp,340);assert.ok(!p.bag.some(i=>i.id===big.id));
- for(const [id,type]of [[5,'petXpSmall'],[7,'petXpMedium'],[9,'petXpLarge']]){assert.ok(stageLoot(id).some(i=>i.type===type));assert.ok(lootPreview(id).guaranteed.some(i=>i.type===type));}
+ for(const [id,type]of [[5,'petXpSmall'],[9,'petXpMedium'],[14,'petXpLarge'],[17,'petXpLarge']]){assert.ok(stageLoot(id).some(i=>i.type===type));assert.ok(lootPreview(id).guaranteed.some(i=>i.type===type));}
 });
 test('all 36 hero skills use integer mana while pets and artifacts keep their own mana rules',()=>{
  for(const list of Object.values(SOLO_SKILLS))for(const s of list)assert.equal(s.mana,[9,15,28][s.row]);
@@ -57,9 +57,9 @@ test('ground-contact metadata maps the lava plane to the true platform and leave
  const boss=JSON.parse(readFileSync(new URL('../dist/assets/boss-fx/bounds-v2.json',import.meta.url))).units.B05,fire=JSON.parse(readFileSync(new URL('../dist/assets/campaign/fx-meta-v1.json',import.meta.url))).fire;
  for(const [meta,indices]of [[boss,[12,13,14,15]],[fire,[8,9,10,11,12,13,14,15]]])for(const i of indices){let call;const c={globalAlpha:1,save(){},translate(){},restore(){},drawImage(...args){call=args;}};const f=meta.frames[i],scale=200/f.rect[2];drawFxFrame(c,{},meta,i,200,700,200,{ground:true});assert.ok(Number.isFinite(f.groundContactY));assert.ok(Math.abs(call[6]+(f.rect[1]+f.groundContactY-f.spriteRect[1])*scale)<1e-8);}
 });
-test('eleven original boss shells and daily/potion assets keep native hashes and bounded measured regions',()=>{
- assert.equal(Object.keys(BOSS_HUD_META.units).length,11);for(const sheet of Object.values(BOSS_HUD_META.sheets)){const bytes=readFileSync(new URL('../dist/assets/boss-hud/'+sheet.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),sheet.sha256);}
- for(const [id,m]of Object.entries(BOSS_HUD_META.units)){assert.ok(m.rect[1]+m.rect[3]<=1254);assert.ok(m.hpRect[0]+m.hpRect[2]<m.rect[2]);assert.ok(!/NaN|Infinity/.test(bossHudStyle(id)));}
+test('all twenty boss shells and daily/potion assets keep native hashes and bounded measured regions',()=>{
+ assert.equal(Object.keys(BOSS_HUD_META.units).length,20);for(const sheet of Object.values(BOSS_HUD_META.sheets)){const bytes=readFileSync(new URL('../dist/assets/boss-hud/'+sheet.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),sheet.sha256);}
+ for(const [id,m]of Object.entries(BOSS_HUD_META.units)){const sheet=BOSS_HUD_META.sheets[m.sheet];assert.ok(m.rect[0]>=0&&m.rect[1]>=0&&m.rect[0]+m.rect[2]<=sheet.size[0]&&m.rect[1]+m.rect[3]<=sheet.size[1],id);assert.ok(m.hpRect[0]+m.hpRect[2]<m.rect[2]);assert.ok(!/NaN|Infinity/.test(bossHudStyle(id)));}
  for(const img of Object.values(DAILY_UI_META.images)){const bytes=readFileSync(new URL('../dist/assets/daily-ui/'+img.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),img.sha256);for(const f of Object.values(img.sprites)){assert.ok(f.rect[0]>=0&&f.rect[1]>=0&&f.rect[0]+f.rect[2]<=img.size[0]&&f.rect[1]+f.rect[3]<=img.size[1]);}}
  for(const key of ['entry','track','chest0Closed','chest0Open','chest1Closed','chest1Open','chest2Closed','chest2Open'])assert.ok(!/NaN|Infinity/.test(dailyArtStyle(key)));for(let i=0;i<3;i++)assert.ok(!/NaN|Infinity/.test(petPotionStyle(i)));
 });

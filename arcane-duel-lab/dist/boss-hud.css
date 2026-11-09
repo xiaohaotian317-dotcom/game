@@ -14,3 +14,5 @@
 #boss-hud .boss-ornament{display:none}
 @media(max-width:1150px) and (min-width:651px){#boss-hud{top:218px;width:min(640px,68vw)}}
 @media(max-width:650px){#boss-hud{top:205px;width:94vw;max-width:560px}}
+
+#boss-hud>.boss-hud-shell,#second-boss-hud>.boss-hud-shell{mask-image:var(--boss-mask,none);mask-size:100% 100%;mask-repeat:no-repeat}

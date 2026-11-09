@@ -1,0 +1,19 @@
+Use case: stylized-concept.
+Asset type: production transparent animation sprite atlas for original dark-fantasy 2D action game, pet dawnlion form1, 金鬃灵猊.
+Input image: first-form sprite sheet is identity/style reference only. Draw a NEW complete second-form sheet, preserve the beast lineage and material quality; do not copy juvenile unchanged.
+Primary request: ONE square1536x1536 TRUE TRANSPARENT RGBA PNG with exactly4 columns by4 rows,16 separate complete poses of ONE identical eastern mythic SUANNI LION second-evolution beast, facing RIGHT in a consistent side/three-quarter view. Hand-painted exquisite game illustration, restrained dark fantasy, tactile fur/blackened armor/ancient gold. This is a fierce mystical evolved BEAST, not cute, not chibi, not a puppy, not a kitten or mouse.
+Identity: compact muscular quadruped leonine anatomy, short stern blunt lion muzzle, narrow amber eyes under a broad gold sun-marked brow, small feline ears, very short curved backward obsidian-gold horns, a fuller swept-back layered golden mane wrapping the neck and upper chest, charcoal-black coarse fur, broad engraved obsidian-black shoulder and flank armor scales and gold-edged ankle guards with restrained golden solar grooves, heavy feline paws with ivory claws, a long curved dark tail with one small gold tuft. No wings, no clothing, no rider, no human hands. Strong regal second-form silhouette and clear face; noticeably larger mane and more armor than reference juvenile, still restrained detail.
+Layout: equal cells, generous fully transparent gaps; whole beast including mane/horns/tail/claws stays within its own cell. At least8% empty left/right and10% top margin. Consistent original-pixel scale in ALL16 poses; beast body about72% of cell width and55% of cell height. Fixed body root at50% tile width and feet support at82% tile height, except a naturally folding death pose on that same support. No per-pose zoom. Ground is implicit, no painted floor or shadow patch. All bodies face RIGHT.
+Exact row-major 0-based animation order:
+0-5 SIX consecutive feline WALK phases, real four-paw alternating locomotion: near forepaw reaches, plants, passes; far forepaw reaches, plants, passes, coordinated rear legs. Subtle shoulder/hip weight transfer and mane/tail follow through; visible paw differences in all6, same ground and body root. No six repeated stills.
+6 IDLE vigilant grounded guard, face fully readable.
+7 WINDUP crouch, rear paws brace, right foreleg draws back for a forceful claw strike.
+8 CLAW ATTACK right forepaw swipes forward toward RIGHT, claws extended, spine and shoulder drive the weight, all limbs remain attached; no external spell obscuring paw.
+9 RECOVERY forepaw lowers and weight returns to guard.
+10 ROAR CAST low brace, head angles slightly upward/right and jaws open, throat and solar brow gather restrained gold light; face visible.
+11 SKYFIRE CAST broad grounded four-paw stance, one forepaw presses down and chin lifts toward right, sun marks awaken in mane and shoulder; no detached fire field.
+12 HURT short backward recoil, paws brace, intact.
+13 STAGGER bent foreleg, lowered head, still alive.
+14 DYING controlled collapse downward/right, paws folding beneath.
+15 DEAD low grounded body on side, eyes shut, mane and tail settled, intact no gore.
+Constraints: gorgeous painterly detailed fur and engraved solar materials, sharp readable small silhouette, natural beast proportions, no outlines like stickers. TRUE alpha0 background and gaps, no checkerboard, black/gray/colored backdrop, haze wash, terrain, cast-shadow rectangle, text, numbers, labels, grid, borders, UI, logo, watermark. No cropped tail, claws or ears; no overlap between frames; exactly16 complete poses.

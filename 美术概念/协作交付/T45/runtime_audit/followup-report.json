@@ -1,0 +1,97 @@
+{
+  "measuredAt": "2026-11-09T07:10:33.313Z",
+  "campaignLoads": [
+    {
+      "id": 1,
+      "team": [
+        "fire"
+      ],
+      "lastProgress": [
+        37,
+        37
+      ],
+      "progressCalls": 37,
+      "imageRequests": 34,
+      "knownUnreportedImages": 7
+    },
+    {
+      "id": 1,
+      "team": [
+        "fire",
+        "star"
+      ],
+      "lastProgress": [
+        38,
+        38
+      ],
+      "progressCalls": 38,
+      "imageRequests": 35,
+      "knownUnreportedImages": 7
+    },
+    {
+      "id": 12,
+      "team": [
+        "fire"
+      ],
+      "lastProgress": [
+        39,
+        37
+      ],
+      "progressCalls": 39,
+      "imageRequests": 36,
+      "knownUnreportedImages": 7
+    },
+    {
+      "id": 12,
+      "team": [
+        "fire",
+        "star"
+      ],
+      "lastProgress": [
+        40,
+        38
+      ],
+      "progressCalls": 40,
+      "imageRequests": 37,
+      "knownUnreportedImages": 7
+    }
+  ],
+  "endlessBossHudRequests": [
+    "assets/boss-hud/boss-hud-b-v1.png"
+  ],
+  "opponentPortal": {
+    "beforeX": 1652,
+    "afterX": 1420,
+    "playerHero": null,
+    "duelHero": null,
+    "effects": [
+      {
+        "hero": "star",
+        "arrival": false,
+        "x": 1652,
+        "y": 495
+      },
+      {
+        "hero": "star",
+        "arrival": true,
+        "x": 1420,
+        "y": 493
+      }
+    ]
+  },
+  "dawnlionRecovery": {
+    "attackPoseUntil": 5.2,
+    "readyAt": 5.45,
+    "recoverUntil": null,
+    "draws": [
+      6
+    ]
+  },
+  "dawnlionWalkingHurt": {
+    "hit": 0.2,
+    "draws": [
+      1,
+      2
+    ]
+  }
+}

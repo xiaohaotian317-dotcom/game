@@ -1,0 +1,24 @@
+Use case: stylized-concept.
+Asset type: original production enemy animation sprite atlas for an ornate hand-painted dark fantasy 2D action game.
+Primary request: ONE new M12 Red-crystal Scythe Spider (赤晶镰蛛), on ONE square transparent PNG, exactly 4 columns x 4 rows = 16 isolated full-body animation sprites. Target 2048 x 2048 if possible. No printed grid or labels.
+
+Subject: a predatory low-crawling CRYSTAL ARACHNID, entirely nonhuman, NOT a spider-woman, NOT a scorpion, no human torso or face. A compact faceted black-charcoal abdomen encrusted with jagged dark scarlet and carmine mineral crystals, a small angular armored spider cephalothorax facing RIGHT with six tiny amber-red eyes and curved mandibles, six sturdy bent walking legs plus two dangerous front limbs ending in long ruby crystal scythes, for eight limbs total. Its two scythe forelimbs fold alongside its head when walking and extend forward only during attacks. Broken crystal ridges and gritty mineral texture catch warm peach highlights, narrow dark steel joints, restrained internal ruby light, readable edges, nothing overly glossy. Predator proportions and narrow small eyes, sinister and feral, no cute round eyes, no plush features. Distinct new shape from a humanoid spider, mantis warrior or existing skeleton. Same identifiable spider in all cells, no extra detached bodies.
+
+Style: detailed 2D painterly hand-drawn dark fantasy creature sprites, selective fine contour drawing, textured brushwork, polished worn materials and clearly separated facets. Similar finish to traditional ornate hand-painted fantasy action-game enemies. No pixel art, no low-poly style, no plastic 3D render. Soft cool shadow planes retain details instead of becoming a dark blob. Consistent side-view with slight three-quarter depth, always facing RIGHT, consistent body scale, palette and lighting, no camera rotation.
+
+Layout: equal 4x4 spaces, read row-major left to right.
+Frames 0,1,2,3,4,5: SIX ordered phases of one continuous forward crawling walk cycle. Alternate tripod groups of legs in meaningful contact / compression / passing / opposite contact / opposite compression / opposite passing. The legs visibly lift and fold rather than duplicating a pose. Maintain a low abdomen, subtle weight shift, and restrained fore-scythe counter motion.
+Frame 6: tense neutral idle, scythes folded, face visible.
+Frame 7: clearly gather and lift the two forward crystal scythes for windup.
+Frame 8: aggressive RIGHTWARD scythe slash with a complete extended foreground blade and opposing rear blade, body lunged slightly forward; no detached slash effect.
+Frame 9: scythes folding back during recovery, weight settles.
+Frame 10: head and forward crystal lifted to discharge a small attached sharp red crystal glint toward the RIGHT; this is the ranged/shard animation, no detached projectile.
+Frame 11: special crystalline defensive brace, low legs and slightly flared intact crystal ridges, tiny local ruby glimmer only.
+Frame 12: struck reaction, head jerks back, forelegs raised a little.
+Frame 13: off-balance stagger, one side lowered and limbs folding.
+Frame 14: falling on its side toward the RIGHT, visible intact legs.
+Frame 15: fully dead on ground, crystals dulled, all limbs collapsed inward; distinct corpse silhouette with no gore.
+
+Technical composition: fit the widest extended slash and the corpse INSIDE their own cells first, then use exactly the same body scale for the other frames. At least 10% horizontal padding and 8% vertical padding in each cell, genuinely empty transparent gaps around every pose. Do not let leg tips, crystal spikes, scythes or glints touch or cross any logical cell boundary or atlas edge. Local root and abdomen center remain stable at 50% cell width; ground contact is about 86% cell height in each row, including corpse. The six walk phases are in-place root motion rather than the spider translating across its cell. Do not change body size or magically add/remove legs.
+
+Background: transparent RGBA, alpha 0 in all negative space, cleanly isolated painted edges. No black/gray/white fill, no gray fog bed, no ground plane or cast-shadow puddle, no decorative panels, checkerboard, UI, numbers, captions, text, border, watermark, unrelated creatures, scenery, or a large VFX layer. Exactly 16 whole spiders.

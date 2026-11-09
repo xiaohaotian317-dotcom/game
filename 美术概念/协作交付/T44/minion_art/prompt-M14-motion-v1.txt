@@ -1,0 +1,20 @@
+Use case: stylized-concept. Asset type: ORIGINAL 2D enemy animation atlas for an ornate hand-painted DARK FANTASY side-scrolling action game.
+Create ONE new monster on ONE genuinely transparent RGBA PNG. Exactly FOUR columns by FOUR rows, 16 isolated complete-body sprites, row-major left-to-right order. Target square 2048x2048 if possible. No drawn grid.
+STYLE: detailed painterly hand-drawn creature sprites, selective ink contour, textured painted surfaces, sophisticated weathering and clear material edges, cool shadows with warm edge highlights. Side view with slight three-quarter depth. Menacing non-cute proportions. No pixel art, plastic 3D, flat vector, chibi, or black unreadable silhouette.
+LOCK across all frames: same character identity, anatomy, weapons, body size, lighting, side perspective, and palette. Every pose faces RIGHT. Body root stays in place. Keep the face readable.
+FRAME ORDER:
+0 walking contact A, 1 walking compression A, 2 passing A, 3 opposite contact B, 4 compression B, 5 passing B: six genuinely continuous walk phases with alternating visible limbs, lift/pass/plant/push, small weight shift and counter-swing. Do not repeat one pose or only change brightness.
+6 separate alert idle.
+7 clear melee anticipation, drawing weapon back toward the LEFT while looking RIGHT.
+8 forceful melee attack extending the weapon toward the RIGHT, with clear body weight transfer.
+9 visible return/recovery from that same attack.
+10 ranged discharge gesture aimed RIGHT, a tiny attached local glint only; no separate flying projectile.
+11 characteristic special action.
+12 hit reaction, recoiling while retaining anatomy.
+13 off-balance stagger, lowered or buckled legs.
+14 falling down toward the RIGHT.
+15 fully fallen dead on the ground, an intact clear corpse silhouette, no gore.
+TECHNICAL: fit the WIDEST attack pose and corpse inside their own cells first, then retain that same body scale throughout. Generous 10% transparent horizontal margin and 8% vertical margin around EVERY pose. All weapons, horns, feathers and effects remain inside their own cell; do not cross boundaries or touch atlas edges. Center root at 50% cell width. Ground baseline about 86% of each cell height, including corpse; keep source foot anchors stable. All 16 subjects isolated by transparent gaps.
+BACKGROUND: real alpha 0 negative space, clean edges, no floor, ground strip, shadow puddle, ambient fog, gray/white/black background, paper, checkerboard, panel, border, labels, captions, UI, watermark, extra creatures. No huge detached VFX.
+
+SUBJECT: M14 Cinderfeather Blade Servant (烬羽刃侍). A sinister lean anthropomorphic raven swordsman, a sharp elongated BLACK RAVEN BEAK and small predatory ember eyes, charcoal feathered neck and arms, two digitigrade talon legs. Ash-black burnt feather mantle forms ragged narrow swept-back shoulder wings and a short trailing cape, but no giant outstretched flight wings. Worn blackened bronze lamellar chest guard, ember-red seam accents, dusty soot, ONE curved dark red metal blade in EACH hand. Distinct sleek beaked bird-warrior silhouette, not human, not a bat, not a plague-doctor hat, not the player shadow hero. Warm ember edge flecks are few and small; mostly rich charcoal feather texture and dull rusty gold. Frame11 special: wings/mantle curl protectively, two knives cross low, a tiny ember glow. Frame10: flick a blade toward RIGHT in a throwing gesture with the hand/blade still visibly attached. Frame8 close two-blade slash forcefully RIGHT, frame7 draw blades behind to LEFT. Death collapses onto feather cloak, beak and both blades still visible.

@@ -1,0 +1,2109 @@
+{
+  "version": "T46-pet-skills-v2",
+  "status": "art-delivered-awaiting-main-integration-and-user-acceptance",
+  "generator": "built-in image_gen, transparent_background=true; all original PNG bytes unchanged",
+  "coordinateNotes": "rect/spriteRect use atlas absolute [x,y,w,h]. pivot and groundContactY use frame-rect LOCAL pixels. B atlas rows measured explicitly: generated row spacing is not uniform. Every skill uses fixed reference width and a consistent pivot/support plane across its four phases; never normalize every frame to its opaque bbox. measuredDenseBottom records actual painted contact; early falling fire/wing anticipation can intentionally remain ABOVE the common plane until impact. Alpha bounds are read-only measurement; original soft edges and low-alpha colors preserved.",
+  "petOrder": [
+    "mossdeer",
+    "emberwing",
+    "frostfox",
+    "dawnlion"
+  ],
+  "phases": [
+    "gather",
+    "release",
+    "impact",
+    "dissipate"
+  ],
+  "files": {
+    "pet-skills-nature-ember-v3.png": {
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "55de902d3adc57a3f76002d6eed4153d35b88a5a0ca305f70200c05b2d87797d",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-5d66a5b6-510c-4d1d-bd39-29063f957ee8.png",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBelow16Ratio": 0.74722,
+      "mode": "RGBA",
+      "pixelsEdited": false,
+      "editReference": "pet-skills-nature-ember-v2.png"
+    },
+    "pet-skills-frost-dawn-v2.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "7bbbb5207ceeafd48c090918dc5d19e44d9047fb05acfe47d82a0b1494dfcd12",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-a10f9f9c-f82e-44e7-8b40-5479e91648ed.png",
+      "alphaExtrema": [
+        0,
+        253
+      ],
+      "alphaBelow16Ratio": 0.81668,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skill-icons-v2.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "f607ecf19a90a4db782f58f9cf05ff1532e844c49015b2b318cda42cb60669bb",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-47992bd6-4a05-4e6c-a7b0-33680e66f377.png",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBelow16Ratio": 0.239149,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skills-nature-ember-v2.png": {
+      "size": [
+        1086,
+        1448
+      ],
+      "sha256": "e6ea7d0c34523f07a8bb4badb742ff3c76641ba49b07bd9b6fb25081f5432489",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-614de16b-5564-467f-a92a-2193a65e0e33.png",
+      "alphaExtrema": [
+        1,
+        252
+      ],
+      "alphaBelow16Ratio": 0.387984,
+      "mode": "RGBA",
+      "pixelsEdited": false
+    },
+    "pet-skills-frost-dawn-v3.png": {
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9cd69a33b17572fa038590e37f5181e4429111da24f3cfe954219e7daf7f4cb1",
+      "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1bf3b-cb4b-7021-b499-f7c16019fce1/exec-c5f7e723-88e8-4e70-a36a-b3690991c6b3.png",
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBelow16Ratio": 0.817648,
+      "mode": "RGBA",
+      "pixelsEdited": false,
+      "editReference": "pet-skills-frost-dawn-v2.png"
+    }
+  },
+  "skills": {
+    "mossdeer": [
+      {
+        "name": "荆棘灵籽",
+        "kind": "seed",
+        "index": 0,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 0,
+        "grounded": false,
+        "direction": "right",
+        "referenceSourceSize": [
+          271.5,
+          241
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              0,
+              272,
+              241
+            ],
+            "spriteRect": [
+              0,
+              0,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              54,
+              59,
+              211,
+              195
+            ],
+            "alpha16Bounds": [
+              51,
+              57,
+              213,
+              196
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              0,
+              271,
+              241
+            ],
+            "spriteRect": [
+              272,
+              0,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              37,
+              32,
+              233,
+              206
+            ],
+            "alpha16Bounds": [
+              20,
+              31,
+              235,
+              207
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              0,
+              271,
+              241
+            ],
+            "spriteRect": [
+              543,
+              0,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              9,
+              62,
+              259,
+              213
+            ],
+            "alpha16Bounds": [
+              5,
+              57,
+              260,
+              215
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              0,
+              272,
+              241
+            ],
+            "spriteRect": [
+              814,
+              0,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              24,
+              49,
+              247,
+              197
+            ],
+            "alpha16Bounds": [
+              14,
+              48,
+              248,
+              198
+            ]
+          }
+        ],
+        "projectileFrame": 2,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            27,
+            28,
+            332,
+            316
+          ],
+          "atlasColumn": 0,
+          "atlasRow": 0,
+          "preserveAspectRatio": "meet",
+          "name": "荆棘灵籽"
+        }
+      },
+      {
+        "name": "花息回复",
+        "kind": "heal",
+        "index": 1,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 1,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          271.5,
+          242
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              241,
+              272,
+              242
+            ],
+            "spriteRect": [
+              0,
+              241,
+              272,
+              242
+            ],
+            "pivot": [
+              135.75,
+              223
+            ],
+            "groundContactY": 223,
+            "opaqueBounds": [
+              46,
+              82,
+              223,
+              230
+            ],
+            "alpha16Bounds": [
+              45,
+              80,
+              224,
+              231
+            ],
+            "measuredDenseBottom": 223
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              241,
+              271,
+              242
+            ],
+            "spriteRect": [
+              272,
+              241,
+              271,
+              242
+            ],
+            "pivot": [
+              135.75,
+              223
+            ],
+            "groundContactY": 223,
+            "opaqueBounds": [
+              35,
+              33,
+              235,
+              227
+            ],
+            "alpha16Bounds": [
+              33,
+              30,
+              236,
+              230
+            ],
+            "measuredDenseBottom": 220
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              241,
+              271,
+              242
+            ],
+            "spriteRect": [
+              543,
+              241,
+              271,
+              242
+            ],
+            "pivot": [
+              135.75,
+              223
+            ],
+            "groundContactY": 223,
+            "opaqueBounds": [
+              28,
+              21,
+              235,
+              229
+            ],
+            "alpha16Bounds": [
+              26,
+              19,
+              236,
+              232
+            ],
+            "measuredDenseBottom": 218
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              241,
+              272,
+              242
+            ],
+            "spriteRect": [
+              814,
+              241,
+              272,
+              242
+            ],
+            "pivot": [
+              135.75,
+              223
+            ],
+            "groundContactY": 223,
+            "opaqueBounds": [
+              42,
+              30,
+              222,
+              231
+            ],
+            "alpha16Bounds": [
+              41,
+              24,
+              228,
+              233
+            ],
+            "measuredDenseBottom": 221
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            27,
+            381,
+            332,
+            314
+          ],
+          "atlasColumn": 0,
+          "atlasRow": 1,
+          "preserveAspectRatio": "meet",
+          "name": "花息回复"
+        },
+        "groundContactY": 223
+      },
+      {
+        "name": "古林缚根",
+        "kind": "roots",
+        "index": 2,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 2,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          271.5,
+          241
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              483,
+              272,
+              241
+            ],
+            "spriteRect": [
+              0,
+              483,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              219
+            ],
+            "groundContactY": 219,
+            "opaqueBounds": [
+              17,
+              146,
+              260,
+              216
+            ],
+            "alpha16Bounds": [
+              16,
+              144,
+              261,
+              217
+            ],
+            "measuredDenseBottom": 215
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              483,
+              271,
+              241
+            ],
+            "spriteRect": [
+              272,
+              483,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              219
+            ],
+            "groundContactY": 219,
+            "opaqueBounds": [
+              8,
+              73,
+              258,
+              218
+            ],
+            "alpha16Bounds": [
+              7,
+              69,
+              260,
+              220
+            ],
+            "measuredDenseBottom": 217
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              483,
+              271,
+              241
+            ],
+            "spriteRect": [
+              543,
+              483,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              219
+            ],
+            "groundContactY": 219,
+            "opaqueBounds": [
+              7,
+              16,
+              264,
+              220
+            ],
+            "alpha16Bounds": [
+              5,
+              13,
+              265,
+              221
+            ],
+            "measuredDenseBottom": 219
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              483,
+              272,
+              241
+            ],
+            "spriteRect": [
+              814,
+              483,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              219
+            ],
+            "groundContactY": 219,
+            "opaqueBounds": [
+              13,
+              56,
+              255,
+              217
+            ],
+            "alpha16Bounds": [
+              11,
+              55,
+              256,
+              219
+            ],
+            "measuredDenseBottom": 216
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            27,
+            733,
+            332,
+            320
+          ],
+          "atlasColumn": 0,
+          "atlasRow": 2,
+          "preserveAspectRatio": "meet",
+          "name": "古林缚根"
+        },
+        "groundContactY": 219
+      }
+    ],
+    "emberwing": [
+      {
+        "name": "扑爪",
+        "kind": "claw",
+        "index": 0,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 3,
+        "grounded": false,
+        "direction": "right",
+        "referenceSourceSize": [
+          271.5,
+          241
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              724,
+              272,
+              241
+            ],
+            "spriteRect": [
+              0,
+              724,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              71,
+              60,
+              199,
+              173
+            ],
+            "alpha16Bounds": [
+              64,
+              59,
+              201,
+              190
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              724,
+              271,
+              241
+            ],
+            "spriteRect": [
+              272,
+              724,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              36,
+              43,
+              237,
+              182
+            ],
+            "alpha16Bounds": [
+              30,
+              41,
+              238,
+              197
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              724,
+              271,
+              241
+            ],
+            "spriteRect": [
+              543,
+              724,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              18,
+              18,
+              251,
+              210
+            ],
+            "alpha16Bounds": [
+              10,
+              17,
+              252,
+              215
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              724,
+              272,
+              241
+            ],
+            "spriteRect": [
+              814,
+              724,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              120.5
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              27,
+              27,
+              254,
+              208
+            ],
+            "alpha16Bounds": [
+              22,
+              24,
+              256,
+              212
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            381,
+            28,
+            331,
+            316
+          ],
+          "atlasColumn": 1,
+          "atlasRow": 0,
+          "preserveAspectRatio": "meet",
+          "name": "扑爪"
+        }
+      },
+      {
+        "name": "炎羽扇射",
+        "kind": "fan",
+        "index": 1,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 4,
+        "grounded": false,
+        "direction": "right",
+        "referenceSourceSize": [
+          271.5,
+          242
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              965,
+              272,
+              242
+            ],
+            "spriteRect": [
+              0,
+              965,
+              272,
+              242
+            ],
+            "pivot": [
+              135.75,
+              121.0
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              50,
+              63,
+              210,
+              167
+            ],
+            "alpha16Bounds": [
+              49,
+              62,
+              212,
+              173
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              965,
+              271,
+              242
+            ],
+            "spriteRect": [
+              272,
+              965,
+              271,
+              242
+            ],
+            "pivot": [
+              135.75,
+              121.0
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              29,
+              32,
+              235,
+              200
+            ],
+            "alpha16Bounds": [
+              20,
+              30,
+              238,
+              204
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              965,
+              271,
+              242
+            ],
+            "spriteRect": [
+              543,
+              965,
+              271,
+              242
+            ],
+            "pivot": [
+              135.75,
+              121.0
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              18,
+              17,
+              257,
+              219
+            ],
+            "alpha16Bounds": [
+              11,
+              15,
+              259,
+              222
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              965,
+              272,
+              242
+            ],
+            "spriteRect": [
+              814,
+              965,
+              272,
+              242
+            ],
+            "pivot": [
+              135.75,
+              121.0
+            ],
+            "groundContactY": null,
+            "opaqueBounds": [
+              32,
+              27,
+              249,
+              199
+            ],
+            "alpha16Bounds": [
+              23,
+              26,
+              251,
+              200
+            ]
+          }
+        ],
+        "projectileFrame": 2,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            381,
+            381,
+            331,
+            315
+          ],
+          "atlasColumn": 1,
+          "atlasRow": 1,
+          "preserveAspectRatio": "meet",
+          "name": "炎羽扇射"
+        }
+      },
+      {
+        "name": "烬翼坠焰",
+        "kind": "flame",
+        "index": 2,
+        "file": "pet-skills-nature-ember-v3.png",
+        "atlasRow": 5,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          271.5,
+          241
+        ],
+        "referenceSourceWidth": 271.5,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              1207,
+              272,
+              241
+            ],
+            "spriteRect": [
+              0,
+              1207,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              208
+            ],
+            "groundContactY": 208,
+            "opaqueBounds": [
+              27,
+              19,
+              245,
+              198
+            ],
+            "alpha16Bounds": [
+              26,
+              16,
+              246,
+              200
+            ],
+            "measuredDenseBottom": 193
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              272,
+              1207,
+              271,
+              241
+            ],
+            "spriteRect": [
+              272,
+              1207,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              208
+            ],
+            "groundContactY": 208,
+            "opaqueBounds": [
+              20,
+              7,
+              240,
+              210
+            ],
+            "alpha16Bounds": [
+              18,
+              3,
+              242,
+              211
+            ],
+            "measuredDenseBottom": 207
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              543,
+              1207,
+              271,
+              241
+            ],
+            "spriteRect": [
+              543,
+              1207,
+              271,
+              241
+            ],
+            "pivot": [
+              135.75,
+              208
+            ],
+            "groundContactY": 208,
+            "opaqueBounds": [
+              8,
+              9,
+              260,
+              211
+            ],
+            "alpha16Bounds": [
+              7,
+              8,
+              261,
+              212
+            ],
+            "measuredDenseBottom": 208
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              814,
+              1207,
+              272,
+              241
+            ],
+            "spriteRect": [
+              814,
+              1207,
+              272,
+              241
+            ],
+            "pivot": [
+              135.75,
+              208
+            ],
+            "groundContactY": 208,
+            "opaqueBounds": [
+              16,
+              66,
+              245,
+              207
+            ],
+            "alpha16Bounds": [
+              15,
+              64,
+              253,
+              208
+            ],
+            "measuredDenseBottom": 205
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            381,
+            733,
+            331,
+            320
+          ],
+          "atlasColumn": 1,
+          "atlasRow": 2,
+          "preserveAspectRatio": "meet",
+          "name": "烬翼坠焰"
+        },
+        "groundContactY": 208
+      }
+    ],
+    "frostfox": [
+      {
+        "name": "冰晶弹",
+        "kind": "bolt",
+        "index": 0,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 0,
+        "grounded": false,
+        "direction": "right",
+        "referenceSourceSize": [
+          256,
+          190
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              40,
+              256,
+              190
+            ],
+            "spriteRect": [
+              0,
+              40,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              95.0
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              64,
+              76,
+              196,
+              126
+            ],
+            "alpha16Bounds": [
+              61,
+              73,
+              199,
+              128
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              40,
+              256,
+              190
+            ],
+            "spriteRect": [
+              256,
+              40,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              95.0
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              26,
+              43,
+              206,
+              150
+            ],
+            "alpha16Bounds": [
+              20,
+              42,
+              256,
+              151
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              40,
+              256,
+              190
+            ],
+            "spriteRect": [
+              512,
+              40,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              95.0
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              3,
+              39,
+              238,
+              154
+            ],
+            "alpha16Bounds": [
+              0,
+              37,
+              239,
+              156
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              40,
+              256,
+              190
+            ],
+            "spriteRect": [
+              768,
+              40,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              95.0
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              23,
+              56,
+              206,
+              150
+            ],
+            "alpha16Bounds": [
+              18,
+              54,
+              208,
+              151
+            ]
+          }
+        ],
+        "projectileFrame": 2,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            736,
+            27,
+            331,
+            317
+          ],
+          "atlasColumn": 2,
+          "atlasRow": 0,
+          "preserveAspectRatio": "meet",
+          "name": "冰晶弹"
+        }
+      },
+      {
+        "name": "霜环",
+        "kind": "ring",
+        "index": 1,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 1,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          256,
+          190
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              300,
+              256,
+              190
+            ],
+            "spriteRect": [
+              0,
+              300,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              155
+            ],
+            "groundContactY": 155,
+            "measuredDenseBottom": 149,
+            "opaqueBounds": [
+              39,
+              90,
+              224,
+              150
+            ],
+            "alpha16Bounds": [
+              37,
+              87,
+              226,
+              151
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              300,
+              256,
+              190
+            ],
+            "spriteRect": [
+              256,
+              300,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              155
+            ],
+            "groundContactY": 155,
+            "measuredDenseBottom": 154,
+            "opaqueBounds": [
+              24,
+              61,
+              229,
+              155
+            ],
+            "alpha16Bounds": [
+              20,
+              57,
+              233,
+              156
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              300,
+              256,
+              190
+            ],
+            "spriteRect": [
+              512,
+              300,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              155
+            ],
+            "groundContactY": 155,
+            "measuredDenseBottom": 155,
+            "opaqueBounds": [
+              8,
+              33,
+              242,
+              155
+            ],
+            "alpha16Bounds": [
+              6,
+              30,
+              244,
+              161
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              300,
+              256,
+              190
+            ],
+            "spriteRect": [
+              768,
+              300,
+              256,
+              190
+            ],
+            "pivot": [
+              128.0,
+              155
+            ],
+            "groundContactY": 155,
+            "measuredDenseBottom": 150,
+            "opaqueBounds": [
+              18,
+              71,
+              227,
+              154
+            ],
+            "alpha16Bounds": [
+              16,
+              70,
+              229,
+              156
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            736,
+            380,
+            331,
+            316
+          ],
+          "atlasColumn": 2,
+          "atlasRow": 1,
+          "preserveAspectRatio": "meet",
+          "name": "霜环"
+        },
+        "groundContactY": 155
+      },
+      {
+        "name": "霜月晶暴",
+        "kind": "storm",
+        "index": 2,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 2,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          256,
+          265
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              490,
+              256,
+              265
+            ],
+            "spriteRect": [
+              0,
+              490,
+              256,
+              265
+            ],
+            "pivot": [
+              128.0,
+              244
+            ],
+            "groundContactY": 244,
+            "measuredDenseBottom": 241,
+            "opaqueBounds": [
+              66,
+              30,
+              199,
+              242
+            ],
+            "alpha16Bounds": [
+              65,
+              29,
+              200,
+              243
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              490,
+              256,
+              265
+            ],
+            "spriteRect": [
+              256,
+              490,
+              256,
+              265
+            ],
+            "pivot": [
+              128.0,
+              244
+            ],
+            "groundContactY": 244,
+            "measuredDenseBottom": 242,
+            "opaqueBounds": [
+              48,
+              27,
+              205,
+              242
+            ],
+            "alpha16Bounds": [
+              48,
+              26,
+              206,
+              244
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              490,
+              256,
+              265
+            ],
+            "spriteRect": [
+              512,
+              490,
+              256,
+              265
+            ],
+            "pivot": [
+              128.0,
+              244
+            ],
+            "groundContactY": 244,
+            "measuredDenseBottom": 244,
+            "opaqueBounds": [
+              33,
+              23,
+              221,
+              244
+            ],
+            "alpha16Bounds": [
+              32,
+              22,
+              224,
+              245
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              490,
+              256,
+              265
+            ],
+            "spriteRect": [
+              768,
+              490,
+              256,
+              265
+            ],
+            "pivot": [
+              128.0,
+              244
+            ],
+            "groundContactY": 244,
+            "measuredDenseBottom": 242,
+            "opaqueBounds": [
+              36,
+              29,
+              208,
+              245
+            ],
+            "alpha16Bounds": [
+              33,
+              28,
+              213,
+              246
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            736,
+            733,
+            331,
+            320
+          ],
+          "atlasColumn": 2,
+          "atlasRow": 2,
+          "preserveAspectRatio": "meet",
+          "name": "霜月晶暴"
+        },
+        "groundContactY": 244
+      }
+    ],
+    "dawnlion": [
+      {
+        "name": "曜爪",
+        "kind": "claw",
+        "index": 0,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 3,
+        "grounded": false,
+        "direction": "right",
+        "referenceSourceSize": [
+          256,
+          205
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              775,
+              256,
+              205
+            ],
+            "spriteRect": [
+              0,
+              775,
+              256,
+              205
+            ],
+            "pivot": [
+              128.0,
+              102.5
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              53,
+              49,
+              187,
+              159
+            ],
+            "alpha16Bounds": [
+              51,
+              48,
+              189,
+              160
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              775,
+              256,
+              205
+            ],
+            "spriteRect": [
+              256,
+              775,
+              256,
+              205
+            ],
+            "pivot": [
+              128.0,
+              102.5
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              17,
+              35,
+              221,
+              172
+            ],
+            "alpha16Bounds": [
+              15,
+              34,
+              224,
+              174
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              775,
+              256,
+              205
+            ],
+            "spriteRect": [
+              512,
+              775,
+              256,
+              205
+            ],
+            "pivot": [
+              128.0,
+              102.5
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              5,
+              21,
+              235,
+              177
+            ],
+            "alpha16Bounds": [
+              2,
+              17,
+              241,
+              180
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              775,
+              256,
+              205
+            ],
+            "spriteRect": [
+              768,
+              775,
+              256,
+              205
+            ],
+            "pivot": [
+              128.0,
+              102.5
+            ],
+            "groundContactY": null,
+            "measuredDenseBottom": null,
+            "opaqueBounds": [
+              26,
+              41,
+              218,
+              171
+            ],
+            "alpha16Bounds": [
+              23,
+              39,
+              221,
+              172
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            1091,
+            28,
+            331,
+            316
+          ],
+          "atlasColumn": 3,
+          "atlasRow": 0,
+          "preserveAspectRatio": "meet",
+          "name": "曜爪"
+        }
+      },
+      {
+        "name": "日轮啸",
+        "kind": "ring",
+        "index": 1,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 4,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          256,
+          250
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              975,
+              256,
+              250
+            ],
+            "spriteRect": [
+              0,
+              975,
+              256,
+              250
+            ],
+            "pivot": [
+              128.0,
+              229
+            ],
+            "groundContactY": 229,
+            "measuredDenseBottom": 224,
+            "opaqueBounds": [
+              43,
+              63,
+              197,
+              224
+            ],
+            "alpha16Bounds": [
+              40,
+              61,
+              199,
+              226
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              975,
+              256,
+              250
+            ],
+            "spriteRect": [
+              256,
+              975,
+              256,
+              250
+            ],
+            "pivot": [
+              128.0,
+              229
+            ],
+            "groundContactY": 229,
+            "measuredDenseBottom": 228,
+            "opaqueBounds": [
+              16,
+              40,
+              214,
+              229
+            ],
+            "alpha16Bounds": [
+              12,
+              37,
+              216,
+              230
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              975,
+              256,
+              250
+            ],
+            "spriteRect": [
+              512,
+              975,
+              256,
+              250
+            ],
+            "pivot": [
+              128.0,
+              229
+            ],
+            "groundContactY": 229,
+            "measuredDenseBottom": 229,
+            "opaqueBounds": [
+              9,
+              20,
+              237,
+              230
+            ],
+            "alpha16Bounds": [
+              7,
+              18,
+              239,
+              232
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              975,
+              256,
+              250
+            ],
+            "spriteRect": [
+              768,
+              975,
+              256,
+              250
+            ],
+            "pivot": [
+              128.0,
+              229
+            ],
+            "groundContactY": 229,
+            "measuredDenseBottom": 226,
+            "opaqueBounds": [
+              42,
+              49,
+              210,
+              228
+            ],
+            "alpha16Bounds": [
+              38,
+              46,
+              213,
+              229
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            1091,
+            381,
+            331,
+            315
+          ],
+          "atlasColumn": 3,
+          "atlasRow": 1,
+          "preserveAspectRatio": "meet",
+          "name": "日轮啸"
+        },
+        "groundContactY": 229
+      },
+      {
+        "name": "镇曜天火",
+        "kind": "flame",
+        "index": 2,
+        "file": "pet-skills-frost-dawn-v3.png",
+        "atlasRow": 5,
+        "grounded": true,
+        "direction": "support-centered",
+        "referenceSourceSize": [
+          256,
+          285
+        ],
+        "referenceSourceWidth": 256.0,
+        "frames": [
+          {
+            "index": 0,
+            "phase": "gather",
+            "rect": [
+              0,
+              1230,
+              256,
+              285
+            ],
+            "spriteRect": [
+              0,
+              1230,
+              256,
+              285
+            ],
+            "pivot": [
+              128.0,
+              232
+            ],
+            "groundContactY": 232,
+            "measuredDenseBottom": 196,
+            "opaqueBounds": [
+              87,
+              44,
+              166,
+              228
+            ],
+            "alpha16Bounds": [
+              86,
+              34,
+              167,
+              233
+            ]
+          },
+          {
+            "index": 1,
+            "phase": "release",
+            "rect": [
+              256,
+              1230,
+              256,
+              285
+            ],
+            "spriteRect": [
+              256,
+              1230,
+              256,
+              285
+            ],
+            "pivot": [
+              128.0,
+              232
+            ],
+            "groundContactY": 232,
+            "measuredDenseBottom": 232,
+            "opaqueBounds": [
+              44,
+              19,
+              183,
+              233
+            ],
+            "alpha16Bounds": [
+              41,
+              12,
+              185,
+              234
+            ]
+          },
+          {
+            "index": 2,
+            "phase": "impact",
+            "rect": [
+              512,
+              1230,
+              256,
+              285
+            ],
+            "spriteRect": [
+              512,
+              1230,
+              256,
+              285
+            ],
+            "pivot": [
+              128.0,
+              232
+            ],
+            "groundContactY": 232,
+            "measuredDenseBottom": 232,
+            "opaqueBounds": [
+              7,
+              28,
+              219,
+              234
+            ],
+            "alpha16Bounds": [
+              6,
+              23,
+              222,
+              235
+            ]
+          },
+          {
+            "index": 3,
+            "phase": "dissipate",
+            "rect": [
+              768,
+              1230,
+              256,
+              285
+            ],
+            "spriteRect": [
+              768,
+              1230,
+              256,
+              285
+            ],
+            "pivot": [
+              128.0,
+              232
+            ],
+            "groundContactY": 232,
+            "measuredDenseBottom": 230,
+            "opaqueBounds": [
+              31,
+              39,
+              211,
+              231
+            ],
+            "alpha16Bounds": [
+              27,
+              35,
+              213,
+              232
+            ]
+          }
+        ],
+        "projectileFrame": null,
+        "icon": {
+          "file": "pet-skill-icons-v2.png",
+          "rect": [
+            1091,
+            733,
+            331,
+            320
+          ],
+          "atlasColumn": 3,
+          "atlasRow": 2,
+          "preserveAspectRatio": "meet",
+          "name": "镇曜天火"
+        },
+        "groundContactY": 232
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "file": "pet-skills-nature-ember-v2.png",
+      "reason": "broad low-alpha ambient haze around frames; v3 built-in edit selected instead"
+    },
+    {
+      "file": "pet-skills-frost-dawn-v2.png",
+      "reason": "some bottom-row ground streaks connected adjacent cells; v3 has complete isolated edges"
+    }
+  ],
+  "selectedFiles": [
+    "pet-skills-nature-ember-v3.png",
+    "pet-skills-frost-dawn-v3.png",
+    "pet-skill-icons-v2.png"
+  ]
+}

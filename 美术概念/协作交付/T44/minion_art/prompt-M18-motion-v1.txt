@@ -1,0 +1,20 @@
+Use case: stylized-concept. Asset type: ORIGINAL 2D enemy animation atlas for an ornate hand-painted DARK FANTASY side-scrolling action game.
+Create ONE new monster on ONE genuinely transparent RGBA PNG. Exactly FOUR columns by FOUR rows, 16 isolated complete-body sprites, row-major left-to-right order. Target square 2048x2048 if possible. No drawn grid.
+STYLE: detailed painterly hand-drawn creature sprites, selective ink contour, textured painted surfaces, sophisticated weathering and clear material edges, cool shadows with warm edge highlights. Side view with slight three-quarter depth. Menacing non-cute proportions. No pixel art, plastic 3D, flat vector, chibi, or black unreadable silhouette.
+LOCK across all frames: same character identity, anatomy, weapons, body size, lighting, side perspective, and palette. Every pose faces RIGHT. Body root stays in place. Keep the face readable.
+FRAME ORDER:
+0 walking contact A, 1 walking compression A, 2 passing A, 3 opposite contact B, 4 compression B, 5 passing B: six genuinely continuous walk phases with alternating visible limbs, lift/pass/plant/push, small weight shift and counter-swing. Do not repeat one pose or only change brightness.
+6 separate alert idle.
+7 clear melee anticipation, drawing weapon back toward the LEFT while looking RIGHT.
+8 forceful melee attack extending the weapon toward the RIGHT, with clear body weight transfer.
+9 visible return/recovery from that same attack.
+10 ranged discharge gesture aimed RIGHT, a tiny attached local glint only; no separate flying projectile.
+11 characteristic special action.
+12 hit reaction, recoiling while retaining anatomy.
+13 off-balance stagger, lowered or buckled legs.
+14 falling down toward the RIGHT.
+15 fully fallen dead on the ground, an intact clear corpse silhouette, no gore.
+TECHNICAL: fit the WIDEST attack pose and corpse inside their own cells first, then retain that same body scale throughout. Generous 10% transparent horizontal margin and 8% vertical margin around EVERY pose. All weapons, horns, feathers and effects remain inside their own cell; do not cross boundaries or touch atlas edges. Center root at 50% cell width. Ground baseline about 86% of each cell height, including corpse; keep source foot anchors stable. All 16 subjects isolated by transparent gaps.
+BACKGROUND: real alpha 0 negative space, clean edges, no floor, ground strip, shadow puddle, ambient fog, gray/white/black background, paper, checkerboard, panel, border, labels, captions, UI, watermark, extra creatures. No huge detached VFX.
+
+SUBJECT: M18 Facet-prism Crystal Witch (棱镜晶巫). A sinister non-cute mineral sorceress with a narrow faceted cobalt-violet crystal face, tiny pale pink eye facets, a jagged low crystalline crown and swept-back crystal ridges instead of hair. Slender upright body clad in asymmetrical layered mineral robes: deep blue-violet shale folds, pointed angular side panels, silver-blue edges, two small crystal shoulder clusters. She holds ONE multifaceted prism staff with a dark shaft and a triangular cluster of translucent pale violet/cyan quartz at its head, the full staff visible. Feet are narrow jagged crystal points that WALK on the ground; do not levitate the whole character. Different from a silver-haired frost heroine or mirror-armored melee guard: angular mineral skin and a large many-faced staff define the silhouette, no human hair, no ice snowflakes, no huge wings. Painterly rough mineral texture, controlled small refraction glints, not glossy 3D or flat white. Frame10 MAIN ranged action: staff and palm aim RIGHT, tiny tightly attached prism flash at staff head, no flying crystal. Frame11 special: turn the upper staff facets outward as a small protective crystal refraction folds close to the shoulders, no broad shield rectangle. Frame8 short rightward staff strike. Keep all crystal tips and staff head fully inside cell, use body at 62% cell height if needed.

@@ -1,0 +1,98 @@
+{
+  "task": "T46 juvenile spirit deer and supplemental boss signature cores",
+  "owner": "/root/t46_spirit_juvenile_art",
+  "writesOnly": "美术概念/协作交付/T46/juvenile_art",
+  "generator": "built-in image_gen only",
+  "pixelsEdited": false,
+  "allOriginalBytesMatch": true,
+  "runtimeIntegrated": false,
+  "userAccepted": false,
+  "files": [
+    {
+      "file": "mossdeer-juvenile-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-66d0f9c8-cbf9-4055-982e-10dbfa043a23.png",
+      "sha256": "b02b3645387f0544c3b92342fdb90dd2ebb161a89bc6623b8a4c00e0626d8d92",
+      "sourceSha256": "b02b3645387f0544c3b92342fdb90dd2ebb161a89bc6623b8a4c00e0626d8d92",
+      "originalBytesMatch": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "mossdeer-juvenile-motion-prompt-v1.txt",
+      "promptSha256": "d6d3a890cdbac39e413784b9e850bdf81e0133852c9a11056af6c3c0e36cc5cb",
+      "status": "archived: detached spell glow crosses two grid cells"
+    },
+    {
+      "file": "mossdeer-juvenile-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-168db518-4495-4737-b4c4-a0dcad91ca54.png",
+      "sha256": "4dcad10993d0aa8de4af9805e0709ed764bc474308ce1cd56306322aafd6d1a9",
+      "sourceSha256": "4dcad10993d0aa8de4af9805e0709ed764bc474308ce1cd56306322aafd6d1a9",
+      "originalBytesMatch": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "mossdeer-juvenile-motion-prompt-v2.txt",
+      "promptSha256": "cf3ee064cc0976c8adc3ae249d251ce63d267b9ba9e0c2129a183c54b7254b39",
+      "status": "selected: independent body, no large external spell bloom"
+    },
+    {
+      "file": "mossdeer-juvenile-ui-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-f24480ce-5d53-4cbf-9b62-f8a10c4f74fe.png",
+      "sha256": "1a9cb87efcd6fcfcb06a7c2710aa3d9635f11385ad6b169e4096cc111a3de709",
+      "sourceSha256": "1a9cb87efcd6fcfcb06a7c2710aa3d9635f11385ad6b169e4096cc111a3de709",
+      "originalBytesMatch": true,
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "mossdeer-juvenile-ui-prompt-v1.txt",
+      "promptSha256": "bf52c83d088eb7097f5b00b213832e19cf134c2c4e00c501d94d0baf0094cc8d",
+      "status": "selected: portrait, full-body, emblem"
+    },
+    {
+      "file": "boss-signature-cores-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-66c310c8-9547-483e-8f9c-0811d8e608cc.png",
+      "sha256": "1b90b5b200e8500d39b1b36c5e2319f97471266765d9506ef3e6e8c251a7cd51",
+      "sourceSha256": "1b90b5b200e8500d39b1b36c5e2319f97471266765d9506ef3e6e8c251a7cd51",
+      "originalBytesMatch": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "prompt": "boss-signature-cores-prompt-v1.txt",
+      "promptSha256": "714ce866ae443afbd3b3ae1150aa442b4e16af035e0fd230fbbbd846ae54535c",
+      "status": "selected: nine boss body emissive components"
+    }
+  ],
+  "metadata": [
+    "juvenile-meta-v1.json",
+    "boss-signature-meta-v1.json"
+  ],
+  "otherJuvenilesReviewed": [
+    "frostfox",
+    "emberwing",
+    "dawnlion"
+  ],
+  "boundary": "Original atlas and measured draw-time crops only. Main agent owns source integration, playback, shaders, tests and release. No image pixels were edited by scripts. Read-only Pillow analysis scripts included."
+}

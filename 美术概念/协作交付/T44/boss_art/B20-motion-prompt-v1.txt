@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B20 Eclipse Dual-Aspect King, original BOSS animation atlas for a premium hand-painted dark fantasy 2D side-scrolling action game.
+Create ONE square1536x1536 genuinely TRANSPARENT RGBA PNG, exactly4 columns by4 rows, 16 equal isolated cells. No visible grid. SAME boss in all poses, facing RIGHT in consistent side/three-quarter camera, same anatomy/clothing/equipment and scale. STRICT independent-frame layout: occupy no more than70 percent tile width and80 percent tile height, leave at least40px clean LEFT/RIGHT margin and32px TOP margin within each tile. Draw entire poses smaller uniformly, never shorten or clip weapons. Every single sword/wing/crown tip stays within its own cell, with wide alpha0 gaps between ALL16 poses. Natural boss proportions like a detailed game enemy, no full-screen splash-art pose. two armored royal feet contact the same local ground at 86% of tile height; body root at 50% of tile width. Entire crown, limbs, wings, cloth and weapon tips visible.
+
+DESIGN: A regal towering DUAL-ASPECT ECLIPSE MONARCH, ONE humanoid armored body and one clearly readable split-faced king mask: right half warm pale gold sun-metal, left half black obsidian with a cool ivory moon eye, stern facial planes beneath a complex black-gold eclipse crown. One large hollow eclipse corona behind shoulders with asymmetrical dark-gold rays, layered black and ancient-gold plate armor, split royal charcoal cloak. Right hand carries a curved SUN BLADE, other hand an ivory-dark MOON SCEPTER. Two feet grounded, royal restrained menace. One king with two aspects, not two separate people, no angel wings, no generic star wizard. Full crown/corona/sword/cloak inside tile. Material palette: obsidian black, ancient gold, ivory moon-metal, restrained burnt-gold and violet corona. Painterly exquisite real material texture, bold small-scale silhouette, softly modeled volumes, fine sharp edges. No large external VFX hiding boss, those have separate atlas.
+
+EXACT0-based frame sequence, left-to-right then next row:
+0-5 SIX distinct consecutive WALK phases with real alternating legs/feet:0 near front foot reaches forward and rear pushes;1 it plants/body settles;2 opposite foot passes while near rear advances;3 opposite leading foot reaches/body rises slightly;4 it plants/secondary legs advance;5 returns toward initial stance. Keep hips/root stable, natural shoulder/cloth/tail/wing follow-through. No same still repeated, no whole-sprite sliding.
+6 idle guard with clear face and grounded two armored royal feet.
+7 windup: rear foot braces, sun blade raises behind shoulder and moon scepter crosses before the chest, corona tilts slightly.
+8 melee strike: sun blade cuts forcefully RIGHT while moon scepter sweeps a counter-arc, body weight forward.
+9 recovery: reverse the strike naturally, weight returning to guard, weapons still attached.
+10 ranged cast: sun blade points right and moon scepter opens an orbital casting gesture for paired returning eclipse wheels.
+11 special active pose: scepter plants downward and free blade rises, corona gathers into a narrow split-aspect portal/summoning ritual; keep face unobscured.
+12 hit recoil: head/chest pulls back a little, body braces, do not dismember.
+13 stagger: fore-body/one support buckles and weapon lowers, alive.
+14 falling: body lowers/collapses sideways, limbs folding and equipment settling.
+15 death: low grounded collapsed body, light extinguished, intact readable identity, no gore.
+
+Hard constraints: transparent alpha0 background and gaps, no colored/black/grey backdrop, mist wash, scene/floor plane, cast-shadow rectangle, checkerboard. No text, labels, digits, UI, borders, logo, watermark, extra characters. No cropped anatomy or weapons, no neighbor overlap, identity drift or limb-count drift. Exactly16 poses in4x4.

@@ -1,0 +1,256 @@
+{
+  "version": "T44-boss-art-v1",
+  "alphaThreshold": 16,
+  "units": {
+    "B12": {
+      "name": "深潮锚王",
+      "file": "B12-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-ce285a26-fc0c-4125-8460-c7fadfb4f349.png",
+      "prompt": "B12-motion-prompt-v1.txt",
+      "groundContactY": [
+        257,
+        260,
+        258,
+        259,
+        255,
+        260,
+        258,
+        258,
+        261,
+        265,
+        267,
+        269,
+        268,
+        263,
+        274,
+        274
+      ],
+      "portrait": {
+        "rect": [
+          785,
+          408,
+          112,
+          112
+        ],
+        "frame": 6,
+        "note": "Crab eyes/mandibles, face closeup; atlas absolute pixels."
+      },
+      "socket": {
+        "x": 0.7667731629392971,
+        "y": 0.5239616613418531,
+        "ground": 0.853035143769968
+      },
+      "socketPixel": {
+        "x": 240,
+        "y": 164,
+        "ground": 267
+      },
+      "socketFrame": 10,
+      "rectOverrides": {
+        "7": [
+          940,
+          298,
+          314,
+          329
+        ]
+      },
+      "note": "Frame7 includes16px upper gutter to retain raised anchor-claw safely. Foot anchors measure planted legs, not lower hanging pincer."
+    },
+    "B13": {
+      "name": "裂晶巨蜥",
+      "file": "B13-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-816d8578-ace2-49af-b851-d3ef6833b3e2.png",
+      "prompt": "B13-motion-prompt-v1.txt",
+      "groundContactY": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        249,
+        250,
+        248,
+        244,
+        245,
+        244,
+        242,
+        248,
+        246,
+        244,
+        242
+      ],
+      "portrait": {
+        "rect": [
+          854,
+          410,
+          86,
+          86
+        ],
+        "frame": 6,
+        "note": "Reptilian eye/jaw and crystal brow, atlas absolute pixels."
+      },
+      "socket": {
+        "x": 0.8849840255591054,
+        "y": 0.3961661341853035,
+        "ground": 0.7795527156549521
+      },
+      "socketPixel": {
+        "x": 277,
+        "y": 124,
+        "ground": 244
+      },
+      "socketFrame": 10,
+      "rectOverrides": {
+        "13": [
+          314,
+          940,
+          290,
+          314
+        ],
+        "14": [
+          604,
+          940,
+          336,
+          314
+        ]
+      },
+      "note": "Last-row actual tail crosses nominal x627 split; measured transparent gap x584..624 sets explicit split x604. Frame13 excludes neighbor tail, frame14 includes its complete tail. Do not infer equal cuts."
+    }
+  },
+  "fx": {
+    "B12": {
+      "name": "深潮锚王·潮汐锚击",
+      "file": "B12-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-e0578be4-d6c7-412d-8b80-8b3084ed40b4.png",
+      "prompt": "B12-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        281,
+        280,
+        280,
+        282,
+        218,
+        219,
+        222,
+        219
+      ],
+      "pivotY": [
+        176,
+        176,
+        176,
+        176,
+        150,
+        150,
+        150,
+        150
+      ],
+      "projectileHeadPivot": [
+        [
+          258,
+          150
+        ],
+        [
+          258,
+          150
+        ],
+        [
+          258,
+          150
+        ],
+        [
+          258,
+          150
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          949,
+          24,
+          290,
+          280
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "note": "Rows0/1 airborne center; row2 anchor slam support plane; row3 tidepool contact plane, not glow bottom."
+    },
+    "B13": {
+      "name": "裂晶巨蜥·折晶地袭",
+      "file": "B13-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-08f5f6e4-f72c-41ad-8b83-4cf92e488206.png",
+      "prompt": "B13-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        269,
+        270,
+        270,
+        268,
+        213,
+        214,
+        215,
+        213
+      ],
+      "pivotY": [
+        173,
+        173,
+        173,
+        173,
+        158,
+        158,
+        158,
+        158
+      ],
+      "projectileHeadPivot": [
+        [
+          263,
+          158
+        ],
+        [
+          280,
+          158
+        ],
+        [
+          285,
+          158
+        ],
+        [
+          288,
+          158
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          972,
+          58,
+          241,
+          230
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "note": "Red quartz/basalt, no fire. Ground planes at upper surface centers; low stone thickness below contact is decorative."
+    }
+  }
+}

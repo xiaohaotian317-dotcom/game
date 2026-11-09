@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B14 Spore-Crowned Marsh Matron, original BOSS animation atlas for a premium hand-painted dark fantasy 2D side-scrolling action game.
+Create ONE square1536x1536 genuinely TRANSPARENT RGBA PNG, exactly4 columns by4 rows, 16 equal isolated cells. No visible grid. SAME boss in all poses, facing RIGHT in consistent side/three-quarter camera, same anatomy/clothing/equipment and scale. Occupy no more than82 percent tile width/height, leave at least24px clean margin all sides in384px cells. Natural boss proportions like a detailed game enemy, no full-screen splash-art pose. four short root-claw supports contact the same local ground y342; body root center x192. Entire crown, limbs, wings, cloth and weapon tips visible.
+
+DESIGN: A sinister regal long-bodied swamp MATRON, an elongated salamander/naga lower body with four short root-claw supports and a thick curling tail, upright feminine torso with a readable pale jade face, amber eyes, heavy mushroom crown with layered oyster-fungus gills. Two long flexible woody tendril arms, moss-armored shoulders, olive bark skin, ivory-green fungal plates, ochre spore sacs, sparse amber-green mycelium veins. Mature terrifying fungal queen, not a cute mushroom, not a spider queen, no sexualized costume, no gore. Clear face beneath fungal crown, entire long tail and tendrils visible. Material palette: olive jade, ivory gills, ochre amber spore cores, dark wet moss bark. Painterly exquisite real material texture, bold small-scale silhouette, softly modeled volumes, fine sharp edges. No large external VFX hiding boss, those have separate atlas.
+
+EXACT0-based frame sequence, left-to-right then next row:
+0-5 SIX distinct consecutive WALK phases with real alternating legs/feet:0 near front foot reaches forward and rear pushes;1 it plants/body settles;2 opposite foot passes while near rear advances;3 opposite leading foot reaches/body rises slightly;4 it plants/secondary legs advance;5 returns toward initial stance. Keep hips/root stable, natural shoulder/cloth/tail/wing follow-through. No same still repeated, no whole-sprite sliding.
+6 idle guard with clear face and grounded four short root-claw supports.
+7 windup: root legs brace, torso coils left and both fungal whip tendrils draw back.
+8 melee strike: torso leans right, a long tendril whips forward in a low curved strike, opposite tendril braced.
+9 recovery: reverse the strike naturally, weight returning to guard, weapons still attached.
+10 ranged cast: one tendril and gill crown open toward right to release a compact cluster of spore pods from hand/crown height.
+11 special active pose: crown gills spread, both tendrils touch down as small fungal buds and mycelial roots awaken around base; keep body readable.
+12 hit recoil: head/chest pulls back a little, body braces, do not dismember.
+13 stagger: fore-body/one support buckles and weapon lowers, alive.
+14 falling: body lowers/collapses sideways, limbs folding and equipment settling.
+15 death: low grounded collapsed body, light extinguished, intact readable identity, no gore.
+
+Hard constraints: transparent alpha0 background and gaps, no colored/black/grey backdrop, mist wash, scene/floor plane, cast-shadow rectangle, checkerboard. No text, labels, digits, UI, borders, logo, watermark, extra characters. No cropped anatomy or weapons, no neighbor overlap, identity drift or limb-count drift. Exactly16 poses in4x4.

@@ -1,0 +1,245 @@
+{
+  "units": {
+    "B14": {
+      "name": "孢冠沼母",
+      "file": "B14-motion-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-85e26e9a-f341-4281-b86f-15d2c2639251.png",
+      "prompt": "B14-motion-prompt-v1.txt",
+      "groundContactY": [
+        268,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        269,
+        266,
+        266,
+        264,
+        264
+      ],
+      "portrait": {
+        "rect": [
+          789,
+          374,
+          92,
+          92
+        ],
+        "frame": 6,
+        "note": "Pale jade face and amber eyes below mushroom crown; atlas absolute."
+      },
+      "socket": {
+        "x": 0.939297124600639,
+        "y": 0.36421725239616615,
+        "ground": 0.8594249201277955
+      },
+      "socketPixel": {
+        "x": 294,
+        "y": 114,
+        "ground": 269
+      },
+      "socketFrame": 10,
+      "mechanic": "spore-summon",
+      "note": "Ground anchors from root feet/body base; spore release at extended hand/crown."
+    },
+    "B15": {
+      "name": "烬翼审判官",
+      "file": "B15-motion-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-cdf4a6ce-9b43-42e5-81a7-c30b56f080c3.png",
+      "prompt": "B15-motion-prompt-v2.txt",
+      "referenceImage": "B15-motion-v1.png",
+      "rejectedDrafts": [
+        {
+          "file": "B15-motion-v1.png",
+          "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-dfaadb15-536f-43f4-a416-3abdf2e39033.png",
+          "reason": "Melee sword8 and recovery wing9 overlap nominal columns; strict independent-cell re-layout requested by main Agent."
+        }
+      ],
+      "groundContactY": [
+        259,
+        258,
+        258,
+        257,
+        249,
+        248,
+        250,
+        250,
+        234,
+        235,
+        237,
+        234,
+        220,
+        220,
+        221,
+        221
+      ],
+      "portrait": {
+        "rect": [
+          777,
+          373,
+          79,
+          79
+        ],
+        "frame": 6,
+        "note": "Hawk eye/beak/crest closeup; atlas absolute."
+      },
+      "socket": {
+        "x": 0.8274760383386581,
+        "y": 0.19169329073482427,
+        "ground": 0.7571884984025559
+      },
+      "socketPixel": {
+        "x": 259,
+        "y": 60,
+        "ground": 237
+      },
+      "socketFrame": 10,
+      "mechanic": "cinders",
+      "note": "v2 selected after built-in image_gen re-layout. All16 complete poses isolated; no clipRects needed. Source-pixel scale from idle height182."
+    }
+  },
+  "fx": {
+    "B14": {
+      "name": "孢冠沼母·菌群苏醒",
+      "file": "B14-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-b08d089a-4551-4e25-8526-2621aa4cb5ea.png",
+      "prompt": "B14-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        261,
+        262,
+        263,
+        261,
+        229,
+        229,
+        229,
+        228
+      ],
+      "pivotY": [
+        181,
+        181,
+        181,
+        181,
+        155,
+        155,
+        155,
+        155
+      ],
+      "projectileHeadPivot": [
+        [
+          269,
+          155
+        ],
+        [
+          272,
+          155
+        ],
+        [
+          279,
+          155
+        ],
+        [
+          279,
+          155
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          959,
+          23,
+          275,
+          270
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "mechanic": "poison-field-and-summoning",
+      "note": "Four smooth gill/spore/tendril phases per row; airborne sac center differs from ground mycelium contact."
+    },
+    "B15": {
+      "name": "烬翼审判官·审判羽雨与焚痕",
+      "file": "B15-fx-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1b189-ccf7-7d62-b2e2-15f0e98afd7f\\exec-7e93d21e-699e-40cb-9d03-99c27f16bcc6.png",
+      "prompt": "B15-fx-prompt-v1.txt",
+      "groundContactY": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        282,
+        282,
+        282,
+        282,
+        203,
+        203,
+        203,
+        203
+      ],
+      "pivotY": [
+        168,
+        168,
+        168,
+        168,
+        156,
+        156,
+        156,
+        156
+      ],
+      "projectileHeadPivot": [
+        [
+          217,
+          222
+        ],
+        [
+          232,
+          244
+        ],
+        [
+          245,
+          261
+        ],
+        [
+          260,
+          272
+        ]
+      ],
+      "portrait": {
+        "rect": [
+          657,
+          22,
+          260,
+          265
+        ],
+        "kind": "effect-preview"
+      },
+      "socket": {
+        "x": 0.5,
+        "y": 0.5,
+        "ground": null
+      },
+      "projectileOrientation": "down-right falling feather, not horizontal; head pivot per frame",
+      "mechanic": "feather-rain-and-cinders",
+      "note": "Narrow ember feather fins continuously articulate; ring has subtle flowing ember channels, no hard flash."
+    }
+  }
+}

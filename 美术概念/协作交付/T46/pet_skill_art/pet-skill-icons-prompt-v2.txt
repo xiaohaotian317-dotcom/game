@@ -1,0 +1,16 @@
+Use case: stylized-concept. Asset type: twelve finished spirit-beast skill UI icons for an original illustrated dark-fantasy action game.
+Create ONE atlas on a TRUE TRANSPARENT BACKGROUND, EXACTLY FOUR COLUMNS and THREE ROWS, 12 distinct square icons, landscape 4:3 layout. Equal cells and equal icon sizes, 8% transparent gutters. Every icon is an exquisite compact dark gold forged metal frame with four small corner flourishes, a deep dark teal-black interior and one sharply readable richly painted magical emblem. No text, numbers or letters, no decorative scene outside each icon. No broad glow over the gutters. Not cute/cartoon, not photography, not generic flat vector symbols. All 12 have the same frame craftsmanship. They must be legible at 56 pixels.
+Four columns left to right always represent: 1 forest spirit deer (moss green and ivory-gold), 2 ember griffin (copper and red-orange), 3 moon frost fox (silver and ice blue), 4 solar spirit lion (ancient bronze-gold and ivory).
+ROW 1 COLUMN 1: THORN SPIRIT SEED — a luminous jade acorn seed encased in dark twisting thorn roots, a few broad tiny leaves, pointed to the upper right.
+ROW 1 COLUMN 2: POUNCING TALONS — three thick hooked eagle claw slash marks, dark copper edge and hot ember core, forward attacking force.
+ROW 1 COLUMN 3: ICE CRYSTAL BOLT — a blue-white crystalline spear missile, angular dark icy core, thin silver vapor trailing behind, points to upper right.
+ROW 1 COLUMN 4: SOLAR CLAW — three heavy engraved bronze-gold spirit-lion claws tearing to the right, searing ivory centers, distinctly chunkier than griffin talons.
+ROW 2 COLUMN 1: BLOSSOM BREATH RESTORATION — one sacred open ivory flower above broad jade leaves with a curving warm golden healing wisp, no plus signs.
+ROW 2 COLUMN 2: FIRE FEATHER FAN — three tangible bronze-red flight feathers fanned diagonally, golden fire licking serrated edges.
+ROW 2 COLUMN 3: FROST RING — a wide low crescent of blue freezing crystal ice with several short angular spikes, silver mist only within the frame.
+ROW 2 COLUMN 4: SUN WHEEL ROAR — an intense roaring lion head sculpted out of golden sun rays, a small ancient solar wheel behind its mane.
+ROW 3 COLUMN 1: ANCIENT FOREST BINDING ROOTS — thick dark wood roots curve into a gripping claw cage with luminous jade seams.
+ROW 3 COLUMN 2: ASH WING FALLING FLAME — a pair of sweeping ember griffin wings plunges down to a focused red-gold fiery impact.
+ROW 3 COLUMN 3: FROST MOON CRYSTAL STORM — a small silver crescent moon above several falling blue crystalline shards and a spiky frosty impact.
+ROW 3 COLUMN 4: HEAVENLY SOLAR FLAME — one vertical white-gold sacred flame lance hitting a shallow pool of golden fire and black-gold obsidian chips.
+Constraints: exactly twelve full squares, same elegant frame size, no cropping, complete corner flourishes. Strong material and palette distinction. Compact professional game UI, no extra icons, no text, clean alpha around the framed icons.

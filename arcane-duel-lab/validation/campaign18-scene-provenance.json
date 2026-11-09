@@ -1,0 +1,67 @@
+{
+  "files": [
+    {
+      "file": "chapter2-boss-hud-v1.png",
+      "sha256": "dc1c449d230f0ff2011d75f7fbff63f80ae273eb005b3956678a7263da5dff07"
+    },
+    {
+      "file": "chapter2-ground-v1.png",
+      "sha256": "a16dd4a73df705c64c648a27be3cd55e3194d644b8631fa56abb3c7d5cce54bb"
+    },
+    {
+      "file": "chapter2-platforms-v1.png",
+      "sha256": "1b012198d0af365325f708c16b1fccd2a6e40b5ca8a8e87e15945ad0ef88c6b6"
+    },
+    {
+      "file": "chapter2-stage12-v1.png",
+      "sha256": "56c3497619a11cffe279cfbae1c8fec95b43c4da4865bd40d434ab7e7a2ea550"
+    },
+    {
+      "file": "chapter2-stage13-v1.png",
+      "sha256": "afc5dcd15012249cd1cf9afd00ef705dd44176910ed9c5e350b6a068ef6758d0"
+    },
+    {
+      "file": "chapter2-stage14-v1.png",
+      "sha256": "6ad5faa236b2b98f2c334bca6892a6c81711edf1ea5906d95e066f1cd9fd22ae"
+    },
+    {
+      "file": "chapter2-stage15-v1.png",
+      "sha256": "4ae33a3e37e9bf6ffba6f575e394817ec429eadb1043078310a4cc7c2115e862"
+    },
+    {
+      "file": "chapter2-stage16-v1.png",
+      "sha256": "9b64ddfc3b30b275feb42500be4c16a292559317c2951975e3e34ca8e42b0be5"
+    },
+    {
+      "file": "chapter2-stage17-v1.png",
+      "sha256": "a404dc7da51e40e0a9bcff16b1dea791acabf9f187c7334afcedac3e613c846a"
+    },
+    {
+      "file": "chapter2-stage18-v1.png",
+      "sha256": "8b3464d9e48758c2b8dcd095b3652f8db648b694a5c8d0e057cb75e2798a7ed8"
+    },
+    {
+      "file": "chapter2-stage19-v1.png",
+      "sha256": "4aa8569e513b62f9bba2ee76a230c449ff41dc4009783fc4e1c4aa4c4a5a94c8"
+    },
+    {
+      "file": "chapter2-stage20-v1.png",
+      "sha256": "7ea7d0cb3de1039e0012768421e6c4ea03326278a6abb853705d5bd5789c1c8e"
+    },
+    {
+      "file": "chapter2-title-plates-v1.png",
+      "sha256": "e168f754354365b59263df64b8ecf5233991f0b2a9566224661f0841a4a4d02f"
+    },
+    {
+      "file": "chapter2-warning-rings-v1.png",
+      "sha256": "89cb7a46be3799372df163589d7c8c8d2334e1e3439892894c3ec0e9649fbf93"
+    },
+    {
+      "file": "chapter2-world-v1.png",
+      "sha256": "9d5fb2d2b6af6b7581a6299f1634179e3525f2c40b759cd4581976d3fbbb5a98"
+    }
+  ],
+  "pixelsEdited": false,
+  "status": "copied-pending-runtime-QA",
+  "runtimeQA": "integrated; 415 regression tests passed; isolated chapter-two entry and actual enemy mechanics checked; final render/native reports separate"
+}

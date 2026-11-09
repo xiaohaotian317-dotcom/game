@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign17',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12','campaign13','campaign14','campaign15','campaign16','campaign17'])
+parser.add_argument('--version',default='campaign18',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12','campaign13','campaign14','campaign15','campaign16','campaign17','campaign18'])
 version=parser.parse_args().version
 
 root=Path(__file__).resolve().parents[1]
@@ -33,7 +33,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Painted archive, avatar hero selection, themed stage/artifact/pet HUD and boss warning rings, close-knee double jumps, integer damage/mana, stronger staged enemies and pursuit, solo basic splash and real critical labels, subtle cursors and flowing portal; original Sites/saves/releases and full motion rollback preserved','nativeWindowVisualQA':False,'browserVisualQA':True}
+report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Chapter 2 nine stages and original full-body sixteen-pose boss redesigns; real ground waves, brief veil, interruptible healing and attackable mirror clones; independent endless and twin-boss challenges; sixty distinct equipment icons and twenty-stage economy; four pets with twelve skill presentations, spiritual juvenile deer and four relics; smooth effect clocks, subtle profession movement FX and distinct combat music. Old saves, Sites and full motion rollback preserved. No claim of user art approval or natural progression balance.','nativeWindowVisualQA':False,'browserVisualQA':True}
 (root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 

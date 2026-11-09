@@ -1,0 +1,58 @@
+{
+  "pngCount": 4,
+  "selectedPngCount": 3,
+  "allOriginalHashesMatch": true,
+  "effects": 8,
+  "allEffectCellBoundariesOver16Zero": true,
+  "effectBoundaryAlphaMax": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "avatarCircleAlpha": [
+    {
+      "min": 0,
+      "max": 2,
+      "alphaOver16": 0,
+      "pixels": 24845
+    },
+    {
+      "min": 0,
+      "max": 2,
+      "alphaOver16": 0,
+      "pixels": 24845
+    },
+    {
+      "min": 0,
+      "max": 1,
+      "alphaOver16": 0,
+      "pixels": 21629
+    }
+  ],
+  "allAvatarSafeRectsOver16Zero": true,
+  "shellRects": [
+    [
+      35,
+      7,
+      1466,
+      315
+    ],
+    [
+      39,
+      328,
+      1450,
+      312
+    ],
+    [
+      19,
+      646,
+      1492,
+      356
+    ]
+  ]
+}

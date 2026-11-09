@@ -1,0 +1,24 @@
+Use case: stylized-concept / production boss animation.
+Input image 1 is the CURRENT 16-pose sprite-sheet layout and species reference. Input image 2 is ONLY the approved first-chapter boss painting/style/majesty reference, NOT a layout to copy.
+Primary request: COMPLETELY REDESIGN THE FULL BODY of B12 深潮锚王, the abyssal NAUTILUS ANCHOR KING, at the same high-rank boss art quality and physical menace as the approved red scorpion king. This is not an added glow sticker, a recolor, or a larger ordinary crab soldier. Replace every pose's entire creature design while keeping a usable 16-pose 4x4 animation layout.
+NEW INTEGRATED BODY DESIGN: A colossal many-legged abyssal hermit-crab monarch bearing an enormous heavy spiral nautilus shell fused with the wreck of a sunken Gothic cathedral. The shell has broken dark-bronze flying buttresses, jagged regal spires and an asymmetric sea-crown; real deep shell apertures show a luminous blue-cyan abyssal whirlpool INSIDE its body. Fine radiant cyan cracks run through old shell layers and dark armored carapace, illuminating nearby opaque surfaces. Face: a clearly visible fierce crustacean face with deep-sea glowing eyes, a crown-like brow and thick armored mandibles; short purposeful feelers rather than long delicate spaghetti. Two GIANT asymmetric anchor-blade crusher claws, one broad excavated anchor head and one long hooked iron edge, heavy royal bronze trims, barnacled armored joints. Thick substantial limbs with bladed feet and a low stable siege-monster stance. The entire creature has unique monumental silhouette and royal undersea character. Cyan self-emission is painted INTO the shell/core/cracks/eye sockets, concentrated and beautiful, never a detached circular light ball.
+Style and material: richly hand-painted dark fantasy action RPG, sharp refined ink contours, dimensional thick shell and carved black-bronze armor, aged pale blue shell ridges contrasting dark teal plates, restrained antique gold, intense localized turquoise light. Equivalent complexity, finish and boss presence to approved first-chapter reference. Opaque physical body and leg structure remain readable. No cartoon or cute proportions, no realistic small crab.
+ATLAS: square 2048x2048 preferred, EXACTLY FOUR COLUMNS by FOUR ROWS of equal invisible square cells, exactly 16 FULL-BODY side-view poses. Every creature faces RIGHT. Same identity, camera, body scale and lighting in all cells. Keep generous 9% transparent margins within each cell; entire crown/shell/claws/legs must stay inside the corresponding cell. No overlapping cells, no clipped tips. Feet use common 86%-cell baseline. Creature's idle height around 74% of cell; do not enlarge individual attack poses.
+Exact row-major pose order, left-to-right then next row:
+0 walk contact A: leading armored legs reach forward;
+1 walk compression A: shell weight lowers subtly;
+2 walk passing A: different leg positions as weight passes;
+3 walk contact B: opposite lead legs forward;
+4 walk compression B;
+5 walk passing B, closing back to 0;
+6 imposing combat IDLE, both anchor claws guarded below face, shell crown high;
+7 WINDUP: one massive anchor claw lifts over the shell, body braces;
+8 MELEE RELEASE: anchor claw sweeps/slams toward the right, strong changed limb pose but NO external impact blast;
+9 RECOVERY: claw pulls back toward the torso, weight settles;
+10 RANGED CAST: both claw tips open, mandibles project forward, shell core brightens, NO detached projectile;
+11 SPECIAL/SUMMON: shell aperture spreads and internal tide core flares, both claws spread commandingly, NO separate giant circle;
+12 HURT: body jolts back and guarded claw bends, legs still support it;
+13 STAGGER: shell lowered, claws pull inward but face visible;
+14 DYING: legs collapse under heavy shell, claw slack;
+15 DEAD: full shell and claws resting collapsed at the same ground baseline, not a standing idle and not a vanished sprite.
+Transparent background: real transparent alpha outside the creature, no black/colored rectangle, no backdrop, no floor, no shadow plate, no fog layer, no checkerboard pixels. Absolutely no text, numbers, UI borders or concept-page decorations. Leave all body-internal luminous paint intact.

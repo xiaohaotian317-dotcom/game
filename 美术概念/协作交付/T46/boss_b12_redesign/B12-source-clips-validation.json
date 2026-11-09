@@ -1,0 +1,27 @@
+{
+  "all16FramesExactAlpha8Coverage": true,
+  "sub8AlphaPixelsDrawn": 0,
+  "brightRedResidualPixelsDrawn": 0,
+  "noFrameBoundaryCrossing": true,
+  "framePixels": [
+    28818,
+    28042,
+    25964,
+    27313,
+    27033,
+    24974,
+    28885,
+    27797,
+    26428,
+    25865,
+    27737,
+    30800,
+    27440,
+    25306,
+    23590,
+    19280
+  ],
+  "totalClipSpans": 7742,
+  "portraitSquare": true,
+  "referenceSourceHeight": 227
+}

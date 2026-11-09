@@ -1,0 +1,16 @@
+{
+  "file": "pet-skills-frost-dawn-v2.png",
+  "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3b-cb4b-7021-b499-f7c16019fce1\\exec-a10f9f9c-f82e-44e7-8b40-5479e91648ed.png",
+  "sha256": "7bbbb5207ceeafd48c090918dc5d19e44d9047fb05acfe47d82a0b1494dfcd12",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "pixelsEdited": false,
+  "tool": "built-in image_gen",
+  "alphaExtrema": [
+    0,
+    253
+  ]
+}

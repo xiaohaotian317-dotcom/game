@@ -4,6 +4,7 @@ import {groundTarget,resolveGroundTarget,lightningLandingTarget} from './targeti
 import {segmentBox,clearLine,forwardMeleeContact,firstTerrainHit} from './collision.mjs?v=20261030-duel12';
 import {targetPose} from './character-rig.mjs?v=20261030-duel12';
 import {blinkProtected,protectBlink} from './blink-guard.mjs';
+import {movementBurst} from './movement-fx.mjs';
 import {RECAST_WINDOWS} from './controls.mjs?v=20261030-duel12';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function initExtra(w,hero){
@@ -15,7 +16,7 @@ function recast(w,key,data={}){const r=EXTRA_HEROES[w.hero].recast;w.player.reca
 function point(w,c){const x=clamp(c.x,w.player.x-520,w.player.x+520);return resolveGroundTarget(w,c.target&&Math.abs(c.target.x-w.player.x)<=520?c.target:null)||groundTarget(w,x,c.y);}
 function field(w,kind,t,data={}){const f={id:++w.serial,kind,x:t.x,y:t.y,anchor:t,age:0,until:w.time+(data.duration||2.5),nextTick:w.time+(data.delay||0),...data};w.fields.push(f);return f;}
 function burst(w,c,data){w.player.burst={id:++w.serial,age:0,until:w.time+data.duration,hitIds:[],source:c.key,variant:c.variant,warningLead:c.releaseAt,...data};}
-function teleport(w,a,x,y){const moved=Math.hypot(a.x-x,a.y-y)>1;a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if((a===w.player||a.duelActor)&&moved)protectBlink(w,a);}
+function teleport(w,a,x,y){const moved=Math.hypot(a.x-x,a.y-y)>1,from={x:a.x,y:a.y};a.x=a.prevX=x;a.y=a.prevY=y;a.vx=0;a.vy=0;a.grounded=false;a.platformId=null;if((a===w.player||a.duelActor)&&moved){protectBlink(w,a);const hero=a===w.player?w.hero:a.hero||a.duelHero||'star';movementBurst(w,{...from,hero});movementBurst(w,{x,y,hero,arrival:true});}}
 function frostPulse(w,t,amount,radius,duration,api,castId,echo=false){
   for(const target of w.targets)if(target.hp>0&&!blinkProtected(w,target)&&Math.hypot(target.x-t.x,target.y-t.y)<radius){api.damage(w,target,amount,{school:'frost',castId});target.frostSnareUntil=Math.max(target.frostSnareUntil||0,w.time+duration);}
   api.effect(w,'frostSnare',{x:t.x,y:t.y,r:radius,echo,duration:1.05});
@@ -55,7 +56,7 @@ export function releaseExtra(w,c,api){
   const target=point(w,c);
   if(h==='frost'){
     if(c.key==='q'&&target){frostPulse(w,target,FROST_SNARE_DAMAGE,150,2.5,api,c.id);recast(w,'q',{data:{anchor:target}});}
-    if(c.key==='e'){w.iceMirrors.push({id:++w.serial,x:clamp(p.x+p.face*90,25,w.width-25),y:p.y-62,until:w.time+2.7});api.effect(w,'frostCast',{x:p.x+p.face*90,y:p.y-62,duration:.45});}
+    if(c.key==='e'){const rank=w.campaign?.progression?.heroes?.frost?.skills?.[c.soloSkill?.id]||w.duelSkills?.ranks?.[c.soloSkill?.id]||0,amount=Math.round(38+p.maxHp*.18+rank*14);p.shield=Math.max(p.shield||0,amount);p.shieldMax=Math.max(p.shieldMax||0,amount);api.effect(w,'frostCast',{x:p.x,y:p.y-62,duration:.65});}
     if(c.key==='r'&&target)field(w,'frostDomain',target,{r:185,duration:3.2,delay:GROUND_EFFECT_DELAYS.frostDomain,warningLead:c.releaseAt,castId:c.id});
     api.emit(w,'frostSkill',{key:c.key});
   }

@@ -1,0 +1,159 @@
+{
+  "scope": "Actual runtime idle sprite crops, display fit only, not relative combat sizes",
+  "bosses": [
+    {
+      "id": "B12",
+      "name": "深潮锚王",
+      "stage": "暮潮沉港",
+      "patterns": [
+        "深潮锚刑",
+        "裂潮推波",
+        "双潮拍岸"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B12-motion-v2.png",
+      "rect": [
+        668,
+        352,
+        219,
+        233
+      ]
+    },
+    {
+      "id": "B13",
+      "name": "裂晶巨蜥",
+      "stage": "赤晶矿窟",
+      "patterns": [
+        "裂晶爪链",
+        "棱晶折雨",
+        "潜晶突袭"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B13-motion-v4.png",
+      "rect": [
+        651,
+        395,
+        252,
+        170
+      ]
+    },
+    {
+      "id": "B14",
+      "name": "孢冠沼母",
+      "stage": "腐钟苔渠",
+      "patterns": [
+        "腐藤双鞭",
+        "游孢毒雾",
+        "菌群苏醒",
+        "菌根汲养"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B14-motion-v4.png",
+      "rect": [
+        682,
+        368,
+        209,
+        220
+      ]
+    },
+    {
+      "id": "B15",
+      "name": "烬翼审判官",
+      "stage": "烬羽焚城",
+      "patterns": [
+        "烬翼三裁",
+        "审判羽雨",
+        "烬途疾刑"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B15-motion-v4.png",
+      "rect": [
+        672,
+        362,
+        205,
+        213
+      ]
+    },
+    {
+      "id": "B16",
+      "name": "千面镜姬",
+      "stage": "镜渊回廊",
+      "patterns": [
+        "千镜刃舞",
+        "对镜飞轮",
+        "镜移幻刃"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B16-motion-v3.png",
+      "rect": [
+        678,
+        376,
+        193,
+        205
+      ]
+    },
+    {
+      "id": "B17",
+      "name": "时砂圣甲",
+      "stage": "沙漏王陵",
+      "patterns": [
+        "王陵贯戟",
+        "流砂四刻",
+        "时砂换步"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B17-motion-v3.png",
+      "rect": [
+        672,
+        376,
+        226,
+        196
+      ]
+    },
+    {
+      "id": "B18",
+      "name": "噬月螳皇",
+      "stage": "噬月巢穴",
+      "patterns": [
+        "断月双镰",
+        "回轮月刃",
+        "月蚀跃杀"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B18-motion-v2.png",
+      "rect": [
+        643,
+        383,
+        283,
+        197
+      ]
+    },
+    {
+      "id": "B19",
+      "name": "雷铸巨像",
+      "stage": "苍雷机城",
+      "patterns": [
+        "三段重压",
+        "雷束连射",
+        "雷柱连锁"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B19-motion-v3.png",
+      "rect": [
+        658,
+        339,
+        249,
+        250
+      ]
+    },
+    {
+      "id": "B20",
+      "name": "蚀日双相王",
+      "stage": "蚀日王座",
+      "patterns": [
+        "双相王裁",
+        "坠日轨轮",
+        "蚀日王庭"
+      ],
+      "source": "http://127.0.0.1:4223/assets/enemies/chapter2/B20-motion-v3.png",
+      "rect": [
+        670,
+        357,
+        212,
+        235
+      ]
+    }
+  ]
+}

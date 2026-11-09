@@ -1,0 +1,14 @@
+T46 B12 深潮锚王完整重设计
+
+最终接入建议：B12-motion-v2.png + boss-body-meta-v3.json 的 units.B12。
+v1为安全留白修正前归档；concept-v1为主Agent已选定的身份概念，不等于用户最终验收。
+
+原图1254×1254 RGBA，4×4共16姿态；0–5走路，6待机，7前摇，8挥锚近战，9收势，10钳端放潮，11双潮召唤，12受伤，13硬直，14濒死，15倒地。
+真透明，alpha≥8每格四周最小安全边23px；最终sourceClipSpans精确测量alpha≥8，无额外扩张，所以工具预览中的极低alpha红色杂点不会画出。PNG未改任何像素。
+所有帧统一按visual/referenceSourceHeight缩放，referenceSourceHeight=227（idle实际冠顶到足底，不是313格高）。pivot/groundContactY为帧内；rect/sourceRect/spriteRect/portrait和sourceClipSpans为全图绝对坐标。
+固定身体轴pivotX185，使巨锚向左伸展时不会把躯干中心误认为整个含武器bbox中心。施法socket为第10帧局部[256,122]，头像为idle全图[788,349,90,90]。
+
+原PNG、完整prompt、builtin默认源路径、SHA256及实际尺寸见provenance-v2.json；三张原字节均核对一致。measure-b12-atlas.py只读PNG并输出JSON元数据，从未重绘/裁切/合成PNG。
+验证：B12-motion-validation-v2.json / B12-source-clips-validation.json。
+
+仅改本独占目录，未改运行素材、代码、测试、记忆、存档、发布或Git。接入、实景比例/头像检查、最终浏览器战术QA由主Agent统筹，用户美术验收仍待。

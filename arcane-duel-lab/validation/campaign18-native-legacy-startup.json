@@ -1,0 +1,1373 @@
+{
+  "motionRequested": "legacy",
+  "processCommandLine": "\"C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign18\\ArcaneDuelCampaign.exe\" --qa-instance=campaign18-smoke --legacy-motion",
+  "hiddenWindowTitle": "",
+  "modeBridgeVerifiedByUnitTest": true,
+  "version": "campaign18",
+  "exe": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign18\\ArcaneDuelCampaign.exe",
+  "qaInstance": "campaign18-smoke",
+  "localhostOnly": true,
+  "checks": [
+    {
+      "path": "settings.css",
+      "status": 200,
+      "bytes": 4825
+    },
+    {
+      "path": "practice.css",
+      "status": 200,
+      "bytes": 3605
+    },
+    {
+      "path": "codex-updates.css",
+      "status": 200,
+      "bytes": 2521
+    },
+    {
+      "path": "skills.html",
+      "status": 200,
+      "bytes": 850
+    },
+    {
+      "path": "src/skill-gallery.mjs",
+      "status": 200,
+      "bytes": 1377
+    },
+    {
+      "path": "src/settings-dialog.mjs",
+      "status": 200,
+      "bytes": 5102
+    },
+    {
+      "path": "src/audio-preferences.mjs",
+      "status": 200,
+      "bytes": 1899
+    },
+    {
+      "path": "src/redeem-codes.mjs",
+      "status": 200,
+      "bytes": 842
+    },
+    {
+      "path": "src/practice-loadout.mjs",
+      "status": 200,
+      "bytes": 716
+    },
+    {
+      "path": "src/practice-dialog.mjs",
+      "status": 200,
+      "bytes": 2426
+    },
+    {
+      "path": "assets/settings/settings-shell-v1.png",
+      "status": 200,
+      "bytes": 2249236
+    },
+    {
+      "path": "assets/settings/settings-controls-v1.png",
+      "status": 200,
+      "bytes": 1842785
+    },
+    {
+      "path": "assets/music/moonlit-hall.wav",
+      "status": 200,
+      "bytes": 11289644
+    },
+    {
+      "path": "assets/music/realm-journey.wav",
+      "status": 200,
+      "bytes": 10584044
+    },
+    {
+      "path": "duel.html",
+      "status": 200,
+      "bytes": 7039
+    },
+    {
+      "path": "duel-loadout.css",
+      "status": 200,
+      "bytes": 7298
+    },
+    {
+      "path": "src/duel-skill-data.mjs",
+      "status": 200,
+      "bytes": 1708
+    },
+    {
+      "path": "src/duel-skill-runtime.mjs",
+      "status": 200,
+      "bytes": 1274
+    },
+    {
+      "path": "src/duel-skill-ui.mjs",
+      "status": 200,
+      "bytes": 2018
+    },
+    {
+      "path": "src/duel-selection-queue.mjs",
+      "status": 200,
+      "bytes": 590
+    },
+    {
+      "path": "src/alternate-skills.mjs",
+      "status": 200,
+      "bytes": 4704
+    },
+    {
+      "path": "src/alternate-skill-art.mjs",
+      "status": 200,
+      "bytes": 3162
+    },
+    {
+      "path": "assets/campaign-growth/growth-hero-bounds-v1.json",
+      "status": 200,
+      "bytes": 32012
+    },
+    {
+      "path": "daily-quests.css",
+      "status": 200,
+      "bytes": 7199
+    },
+    {
+      "path": "boss-hud.css",
+      "status": 200,
+      "bytes": 2555
+    },
+    {
+      "path": "src/daily-quests.mjs",
+      "status": 200,
+      "bytes": 3816
+    },
+    {
+      "path": "src/daily-quests-ui.mjs",
+      "status": 200,
+      "bytes": 4405
+    },
+    {
+      "path": "src/daily-ui-art.mjs",
+      "status": 200,
+      "bytes": 5943
+    },
+    {
+      "path": "src/blink-guard.mjs",
+      "status": 200,
+      "bytes": 500
+    },
+    {
+      "path": "src/enemy-ground-art.mjs",
+      "status": 200,
+      "bytes": 715
+    },
+    {
+      "path": "src/boss-hud-art.mjs",
+      "status": 200,
+      "bytes": 5707
+    },
+    {
+      "path": "src/hybrid-attack-art.mjs",
+      "status": 200,
+      "bytes": 1559
+    },
+    {
+      "path": "src/duel-view.mjs",
+      "status": 200,
+      "bytes": 334
+    },
+    {
+      "path": "src/camera.mjs",
+      "status": 200,
+      "bytes": 2278
+    },
+    {
+      "path": "assets/hybrid-attacks/projectile-meta-v2.json",
+      "status": 200,
+      "bytes": 5114
+    },
+    {
+      "path": "assets/daily-ui/asset-meta-v1.json",
+      "status": 200,
+      "bytes": 7429
+    },
+    {
+      "path": "assets/boss-hud/boss-hud-meta-v1.json",
+      "status": 200,
+      "bytes": 7286
+    },
+    {
+      "path": "src/character-motion-v2.mjs",
+      "status": 200,
+      "bytes": 11867
+    },
+    {
+      "path": "src/character-rig-legacy.mjs",
+      "status": 200,
+      "bytes": 12454
+    },
+    {
+      "path": "src/character-skin.mjs",
+      "status": 200,
+      "bytes": 4322
+    },
+    {
+      "path": "src/character-rig.mjs",
+      "status": 200,
+      "bytes": 44
+    },
+    {
+      "path": "src/combat-feedback.mjs",
+      "status": 200,
+      "bytes": 4308
+    },
+    {
+      "path": "assets/combat-feedback/feedback-meta-v1.json",
+      "status": 200,
+      "bytes": 3088
+    },
+    {
+      "path": "assets/combat-feedback/lightning-punch-v1.png",
+      "status": 200,
+      "bytes": 1545254
+    },
+    {
+      "path": "assets/combat-feedback/landing-warning-rings-v2.png",
+      "status": 200,
+      "bytes": 2438470
+    },
+    {
+      "path": "campaign-map-menu.css",
+      "status": 200,
+      "bytes": 2672
+    },
+    {
+      "path": "src/campaign-map-menu.mjs",
+      "status": 200,
+      "bytes": 1868
+    },
+    {
+      "path": "summon.html",
+      "status": 200,
+      "bytes": 4144
+    },
+    {
+      "path": "summon.css",
+      "status": 200,
+      "bytes": 14475
+    },
+    {
+      "path": "src/summon-app.mjs",
+      "status": 200,
+      "bytes": 8012
+    },
+    {
+      "path": "src/summon-pools.mjs",
+      "status": 200,
+      "bytes": 3361
+    },
+    {
+      "path": "src/summon-motion.mjs",
+      "status": 200,
+      "bytes": 1791
+    },
+    {
+      "path": "assets/summon/scene-meta-v1.json",
+      "status": 200,
+      "bytes": 1621
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 11635
+    },
+    {
+      "path": "lobby.html",
+      "status": 200,
+      "bytes": 9460
+    },
+    {
+      "path": "campaign.html",
+      "status": 200,
+      "bytes": 8468
+    },
+    {
+      "path": "campaign-team.css",
+      "status": 200,
+      "bytes": 38990
+    },
+    {
+      "path": "src/campaign-team.mjs",
+      "status": 200,
+      "bytes": 3587
+    },
+    {
+      "path": "src/campaign-platforms.mjs",
+      "status": 200,
+      "bytes": 2328
+    },
+    {
+      "path": "src/campaign-hero-hud-art.mjs",
+      "status": 200,
+      "bytes": 527
+    },
+    {
+      "path": "assets/hero-hud/hero-hud-meta-v1.json",
+      "status": 200,
+      "bytes": 2784
+    },
+    {
+      "path": "src/campaign-team-ui.mjs",
+      "status": 200,
+      "bytes": 4554
+    },
+    {
+      "path": "src/campaign-enemy-ui.mjs",
+      "status": 200,
+      "bytes": 2415
+    },
+    {
+      "path": "campaign-pause.css",
+      "status": 200,
+      "bytes": 3631
+    },
+    {
+      "path": "campaign-results.css",
+      "status": 200,
+      "bytes": 7307
+    },
+    {
+      "path": "src/campaign-passives.mjs",
+      "status": 200,
+      "bytes": 1619
+    },
+    {
+      "path": "src/campaign-passive-ui.mjs",
+      "status": 200,
+      "bytes": 2007
+    },
+    {
+      "path": "src/campaign-pickups.mjs",
+      "status": 200,
+      "bytes": 730
+    },
+    {
+      "path": "src/campaign-drop-painter.mjs",
+      "status": 200,
+      "bytes": 1495
+    },
+    {
+      "path": "src/campaign-platform-art.mjs",
+      "status": 200,
+      "bytes": 1795
+    },
+    {
+      "path": "src/portrait-framing.mjs",
+      "status": 200,
+      "bytes": 435
+    },
+    {
+      "path": "assets/enemies/portraits-v1.json",
+      "status": 200,
+      "bytes": 2817
+    },
+    {
+      "path": "assets/world-drops/drop-meta-v1.json",
+      "status": 200,
+      "bytes": 8919
+    },
+    {
+      "path": "assets/campaign-platforms/platforms-meta-v1.json",
+      "status": 200,
+      "bytes": 11446
+    },
+    {
+      "path": "assets/pause/pause-meta-v1.json",
+      "status": 200,
+      "bytes": 585
+    },
+    {
+      "path": "assets/passives/passive-meta-v1.json",
+      "status": 200,
+      "bytes": 797
+    },
+    {
+      "path": "src/campaign-rewards.mjs",
+      "status": 200,
+      "bytes": 574
+    },
+    {
+      "path": "src/campaign-result-ui.mjs",
+      "status": 200,
+      "bytes": 1278
+    },
+    {
+      "path": "src/campaign-companion.mjs",
+      "status": 200,
+      "bytes": 11882
+    },
+    {
+      "path": "src/campaign-pet-painter.mjs",
+      "status": 200,
+      "bytes": 7287
+    },
+    {
+      "path": "assets/pets/pets-meta-v3.json",
+      "status": 200,
+      "bytes": 670747
+    },
+    {
+      "path": "assets/pets/growth-meta-v2.json",
+      "status": 200,
+      "bytes": 4351781
+    },
+    {
+      "path": "assets/pets/portrait-meta-v1.json",
+      "status": 200,
+      "bytes": 2500
+    },
+    {
+      "path": "realm-controls.css",
+      "status": 200,
+      "bytes": 4388
+    },
+    {
+      "path": "equipment-ui.css",
+      "status": 200,
+      "bytes": 3619
+    },
+    {
+      "path": "src/realm-controls.mjs",
+      "status": 200,
+      "bytes": 775
+    },
+    {
+      "path": "src/equipment-stats.mjs",
+      "status": 200,
+      "bytes": 2577
+    },
+    {
+      "path": "src/equipment-ui.mjs",
+      "status": 200,
+      "bytes": 3877
+    },
+    {
+      "path": "src/fx-animation.mjs",
+      "status": 200,
+      "bytes": 1495
+    },
+    {
+      "path": "src/training-sentinel.mjs",
+      "status": 200,
+      "bytes": 1721
+    },
+    {
+      "path": "src/minion-fx-painter.mjs",
+      "status": 200,
+      "bytes": 4015
+    },
+    {
+      "path": "assets/refined-skills/atlas-meta-v2.json",
+      "status": 200,
+      "bytes": 60165
+    },
+    {
+      "path": "assets/minion-fx/integration-manifest.json",
+      "status": 200,
+      "bytes": 101463
+    },
+    {
+      "path": "assets/realm-controls/controls-meta-v1.json",
+      "status": 200,
+      "bytes": 4802
+    },
+    {
+      "path": "assets/training/sentinel-meta-v1.json",
+      "status": 200,
+      "bytes": 8872
+    },
+    {
+      "path": "archive-ui.css",
+      "status": 200,
+      "bytes": 17185
+    },
+    {
+      "path": "archive-skills.css",
+      "status": 200,
+      "bytes": 12678
+    },
+    {
+      "path": "realm-hud.css",
+      "status": 200,
+      "bytes": 8329
+    },
+    {
+      "path": "hero-picker.css",
+      "status": 200,
+      "bytes": 4252
+    },
+    {
+      "path": "src/archive-ui-art.mjs",
+      "status": 200,
+      "bytes": 2080
+    },
+    {
+      "path": "src/archive-character-ui.mjs",
+      "status": 200,
+      "bytes": 5578
+    },
+    {
+      "path": "src/archive-skills-ui.mjs",
+      "status": 200,
+      "bytes": 4923
+    },
+    {
+      "path": "src/hero-picker.mjs",
+      "status": 200,
+      "bytes": 4378
+    },
+    {
+      "path": "src/campaign-hud-ui.mjs",
+      "status": 200,
+      "bytes": 1723
+    },
+    {
+      "path": "src/realm-hud-art.mjs",
+      "status": 200,
+      "bytes": 4553
+    },
+    {
+      "path": "src/combat-numbers.mjs",
+      "status": 200,
+      "bytes": 310
+    },
+    {
+      "path": "src/combat-presentation.mjs",
+      "status": 200,
+      "bytes": 7509
+    },
+    {
+      "path": "assets/archive-ui/atlas-meta-v1.json",
+      "status": 200,
+      "bytes": 12324
+    },
+    {
+      "path": "assets/realm-hud/atlas-meta-v1.json",
+      "status": 200,
+      "bytes": 78060
+    },
+    {
+      "path": "assets/aim-cursors/cursor-meta-v1.json",
+      "status": 200,
+      "bytes": 17692
+    },
+    {
+      "path": "assets/archive-ui/archive-controls-v1.png",
+      "status": 200,
+      "bytes": 1922522
+    },
+    {
+      "path": "assets/realm-hud/artifact-pet-controls-v2.png",
+      "status": 200,
+      "bytes": 1180079
+    },
+    {
+      "path": "assets/realm-hud/boss-warning-rings-v1.png",
+      "status": 200,
+      "bytes": 2460672
+    },
+    {
+      "path": "assets/realm-hud/stage-title-plates-v1.png",
+      "status": 200,
+      "bytes": 2615608
+    },
+    {
+      "path": "assets/aim-cursors/hero-cursors-v1.png",
+      "status": 200,
+      "bytes": 1446990
+    },
+    {
+      "path": "assets/refined-skills/hero-fire-fx-v2.png",
+      "status": 200,
+      "bytes": 2174335
+    },
+    {
+      "path": "assets/refined-skills/hero-frost-fx-v3.png",
+      "status": 200,
+      "bytes": 2091270
+    },
+    {
+      "path": "assets/refined-skills/hero-lightning-fx-v2.png",
+      "status": 200,
+      "bytes": 2198999
+    },
+    {
+      "path": "assets/refined-skills/hero-nature-fx-v2.png",
+      "status": 200,
+      "bytes": 2181156
+    },
+    {
+      "path": "assets/refined-skills/hero-shadow-fx-v2.png",
+      "status": 200,
+      "bytes": 2132433
+    },
+    {
+      "path": "assets/refined-skills/hero-star-fx-v2.png",
+      "status": 200,
+      "bytes": 2293631
+    },
+    {
+      "path": "assets/refined-skills/hero-star-fx-v3.png",
+      "status": 200,
+      "bytes": 2162180
+    },
+    {
+      "path": "assets/minion-fx/melee-v1.png",
+      "status": 200,
+      "bytes": 2255797
+    },
+    {
+      "path": "assets/minion-fx/ranged-v1.png",
+      "status": 200,
+      "bytes": 1917727
+    },
+    {
+      "path": "assets/realm-controls/ornate-controls-v1.png",
+      "status": 200,
+      "bytes": 2367833
+    },
+    {
+      "path": "assets/training/training-sentinel-v1.png",
+      "status": 200,
+      "bytes": 2363832
+    },
+    {
+      "path": "assets/campaign-growth/armors-v1.png",
+      "status": 200,
+      "bytes": 3113275
+    },
+    {
+      "path": "assets/campaign-growth/equipment-v1.png",
+      "status": 200,
+      "bytes": 2607384
+    },
+    {
+      "path": "assets/campaign-growth/ground-v1.png",
+      "status": 200,
+      "bytes": 2385231
+    },
+    {
+      "path": "assets/campaign-growth/hero-fire-fx-v1.png",
+      "status": 200,
+      "bytes": 2763482
+    },
+    {
+      "path": "assets/campaign-growth/hero-fire-icons-v1.png",
+      "status": 200,
+      "bytes": 2834037
+    },
+    {
+      "path": "assets/campaign-growth/hero-frost-fx-v1.png",
+      "status": 200,
+      "bytes": 2547133
+    },
+    {
+      "path": "assets/campaign-growth/hero-frost-icons-v1.png",
+      "status": 200,
+      "bytes": 3380397
+    },
+    {
+      "path": "assets/campaign-growth/hero-lightning-fx-v1.png",
+      "status": 200,
+      "bytes": 2795995
+    },
+    {
+      "path": "assets/campaign-growth/hero-lightning-icons-v1.png",
+      "status": 200,
+      "bytes": 3191875
+    },
+    {
+      "path": "assets/campaign-growth/hero-nature-fx-v1.png",
+      "status": 200,
+      "bytes": 2697682
+    },
+    {
+      "path": "assets/campaign-growth/hero-nature-icons-v1.png",
+      "status": 200,
+      "bytes": 2959104
+    },
+    {
+      "path": "assets/campaign-growth/hero-shadow-fx-v1.png",
+      "status": 200,
+      "bytes": 2666789
+    },
+    {
+      "path": "assets/campaign-growth/hero-shadow-icons-v1.png",
+      "status": 200,
+      "bytes": 2841822
+    },
+    {
+      "path": "assets/campaign-growth/hero-star-fx-v1.png",
+      "status": 200,
+      "bytes": 2946049
+    },
+    {
+      "path": "assets/campaign-growth/hero-star-icons-v1.png",
+      "status": 200,
+      "bytes": 3284565
+    },
+    {
+      "path": "assets/campaign-growth/items-v1.png",
+      "status": 200,
+      "bytes": 2543314
+    },
+    {
+      "path": "assets/campaign-growth/platform-shapes-v1.png",
+      "status": 200,
+      "bytes": 2253971
+    },
+    {
+      "path": "assets/campaign-growth/ui-icons-v1.png",
+      "status": 200,
+      "bytes": 2967065
+    },
+    {
+      "path": "assets/daily-ui/daily-ui-v2.png",
+      "status": 200,
+      "bytes": 2425266
+    },
+    {
+      "path": "assets/daily-ui/pet-xp-potions-v1.png",
+      "status": 200,
+      "bytes": 1875040
+    },
+    {
+      "path": "assets/boss-hud/boss-hud-a-v1.png",
+      "status": 200,
+      "bytes": 3091807
+    },
+    {
+      "path": "assets/boss-hud/boss-hud-b-v1.png",
+      "status": 200,
+      "bytes": 2598471
+    },
+    {
+      "path": "assets/hybrid-attacks/hybrid-projectiles-v2.png",
+      "status": 200,
+      "bytes": 1901290
+    },
+    {
+      "path": "assets/campaign-results/defeat-shell-v2.png",
+      "status": 200,
+      "bytes": 1802337
+    },
+    {
+      "path": "assets/campaign-results/treasure-coins-v1.png",
+      "status": 200,
+      "bytes": 2255267
+    },
+    {
+      "path": "assets/campaign-results/victory-crest-v1.png",
+      "status": 200,
+      "bytes": 2478270
+    },
+    {
+      "path": "assets/campaign-results/victory-shell-v2.png",
+      "status": 200,
+      "bytes": 1947581
+    },
+    {
+      "path": "assets/pets/pet-portraits-v2.png",
+      "status": 200,
+      "bytes": 1891775
+    },
+    {
+      "path": "assets/pets/pets-v4.png",
+      "status": 200,
+      "bytes": 2617403
+    },
+    {
+      "path": "assets/pets/walk-form1-v2.png",
+      "status": 200,
+      "bytes": 2461970
+    },
+    {
+      "path": "assets/hero-hud/hero-hud-shells-v1.png",
+      "status": 200,
+      "bytes": 2449871
+    },
+    {
+      "path": "assets/pause/pause-controls-v1.png",
+      "status": 200,
+      "bytes": 2714859
+    },
+    {
+      "path": "assets/pause/pause-shell-v1.png",
+      "status": 200,
+      "bytes": 1184924
+    },
+    {
+      "path": "assets/passives/passive-icons-v1.png",
+      "status": 200,
+      "bytes": 1703882
+    },
+    {
+      "path": "assets/world-drops/drop-armors-v1.png",
+      "status": 200,
+      "bytes": 1642519
+    },
+    {
+      "path": "assets/world-drops/drop-items-v1.png",
+      "status": 200,
+      "bytes": 1365223
+    },
+    {
+      "path": "assets/world-drops/drop-weapons-v1.png",
+      "status": 200,
+      "bytes": 1101030
+    },
+    {
+      "path": "assets/campaign-platforms/original-platforms-v4.png",
+      "status": 200,
+      "bytes": 1061154
+    },
+    {
+      "path": "assets/campaign-platforms/platform-variants-v2.png",
+      "status": 200,
+      "bytes": 1878310
+    },
+    {
+      "path": "assets/summon/fire-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2120653
+    },
+    {
+      "path": "assets/summon/frost-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2465919
+    },
+    {
+      "path": "assets/summon/lightning-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2436595
+    },
+    {
+      "path": "assets/summon/nature-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2578109
+    },
+    {
+      "path": "assets/summon/shadow-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2001078
+    },
+    {
+      "path": "assets/summon/star-sanctum-v1.png",
+      "status": 200,
+      "bytes": 2503411
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-boss-hud-v1.png",
+      "status": 200,
+      "bytes": 3320743
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-ground-v1.png",
+      "status": 200,
+      "bytes": 2426787
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-platforms-v1.png",
+      "status": 200,
+      "bytes": 1939595
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage12-v1.png",
+      "status": 200,
+      "bytes": 2117108
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage13-v1.png",
+      "status": 200,
+      "bytes": 2091418
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage14-v1.png",
+      "status": 200,
+      "bytes": 2363070
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage15-v1.png",
+      "status": 200,
+      "bytes": 2210476
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage16-v1.png",
+      "status": 200,
+      "bytes": 2207197
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage17-v1.png",
+      "status": 200,
+      "bytes": 2167788
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage18-v1.png",
+      "status": 200,
+      "bytes": 2161798
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage19-v1.png",
+      "status": 200,
+      "bytes": 2181730
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-stage20-v1.png",
+      "status": 200,
+      "bytes": 2179515
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-title-plates-v1.png",
+      "status": 200,
+      "bytes": 2457827
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-warning-rings-v1.png",
+      "status": 200,
+      "bytes": 1743002
+    },
+    {
+      "path": "assets/campaign/chapter2/chapter2-world-v1.png",
+      "status": 200,
+      "bytes": 3222987
+    },
+    {
+      "path": "assets/campaign/chapter2/scene-meta-v1.json",
+      "status": 200,
+      "bytes": 830329
+    },
+    {
+      "path": "assets/enemies/chapter2/B12-motion-v1.png",
+      "status": 200,
+      "bytes": 2225916
+    },
+    {
+      "path": "assets/enemies/chapter2/B12-motion-v2.png",
+      "status": 200,
+      "bytes": 1700265
+    },
+    {
+      "path": "assets/enemies/chapter2/B12-motion-v4.png",
+      "status": 200,
+      "bytes": 1462542
+    },
+    {
+      "path": "assets/enemies/chapter2/B13-motion-v1.png",
+      "status": 200,
+      "bytes": 1966876
+    },
+    {
+      "path": "assets/enemies/chapter2/B13-motion-v4.png",
+      "status": 200,
+      "bytes": 1436388
+    },
+    {
+      "path": "assets/enemies/chapter2/B14-motion-v1.png",
+      "status": 200,
+      "bytes": 1933309
+    },
+    {
+      "path": "assets/enemies/chapter2/B14-motion-v4.png",
+      "status": 200,
+      "bytes": 1624075
+    },
+    {
+      "path": "assets/enemies/chapter2/B15-motion-v2.png",
+      "status": 200,
+      "bytes": 1244037
+    },
+    {
+      "path": "assets/enemies/chapter2/B15-motion-v4.png",
+      "status": 200,
+      "bytes": 1580391
+    },
+    {
+      "path": "assets/enemies/chapter2/B16-motion-v1.png",
+      "status": 200,
+      "bytes": 1651574
+    },
+    {
+      "path": "assets/enemies/chapter2/B16-motion-v3.png",
+      "status": 200,
+      "bytes": 3021469
+    },
+    {
+      "path": "assets/enemies/chapter2/B17-motion-v1.png",
+      "status": 200,
+      "bytes": 1948587
+    },
+    {
+      "path": "assets/enemies/chapter2/B17-motion-v3.png",
+      "status": 200,
+      "bytes": 1746033
+    },
+    {
+      "path": "assets/enemies/chapter2/B18-motion-v1.png",
+      "status": 200,
+      "bytes": 1478244
+    },
+    {
+      "path": "assets/enemies/chapter2/B18-motion-v2.png",
+      "status": 200,
+      "bytes": 2714087
+    },
+    {
+      "path": "assets/enemies/chapter2/B19-motion-v1.png",
+      "status": 200,
+      "bytes": 1939922
+    },
+    {
+      "path": "assets/enemies/chapter2/B19-motion-v3.png",
+      "status": 200,
+      "bytes": 2233635
+    },
+    {
+      "path": "assets/enemies/chapter2/B20-motion-v1.png",
+      "status": 200,
+      "bytes": 1843582
+    },
+    {
+      "path": "assets/enemies/chapter2/B20-motion-v3.png",
+      "status": 200,
+      "bytes": 1889729
+    },
+    {
+      "path": "assets/enemies/chapter2/bounds-v1.json",
+      "status": 200,
+      "bytes": 294795
+    },
+    {
+      "path": "assets/enemies/chapter2/bounds-v2.json",
+      "status": 200,
+      "bytes": 3110020
+    },
+    {
+      "path": "assets/enemies/chapter2/M11-motion-v1.png",
+      "status": 200,
+      "bytes": 1918460
+    },
+    {
+      "path": "assets/enemies/chapter2/M12-motion-v1.png",
+      "status": 200,
+      "bytes": 1659928
+    },
+    {
+      "path": "assets/enemies/chapter2/M13-motion-v1.png",
+      "status": 200,
+      "bytes": 2454755
+    },
+    {
+      "path": "assets/enemies/chapter2/M14-motion-v1.png",
+      "status": 200,
+      "bytes": 1688436
+    },
+    {
+      "path": "assets/enemies/chapter2/M15-motion-v3.png",
+      "status": 200,
+      "bytes": 1400463
+    },
+    {
+      "path": "assets/enemies/chapter2/M16-motion-v1.png",
+      "status": 200,
+      "bytes": 1612311
+    },
+    {
+      "path": "assets/enemies/chapter2/M17-motion-v2.png",
+      "status": 200,
+      "bytes": 1815547
+    },
+    {
+      "path": "assets/enemies/chapter2/M18-motion-v1.png",
+      "status": 200,
+      "bytes": 1592001
+    },
+    {
+      "path": "assets/enemies/chapter2/M19-motion-v1.png",
+      "status": 200,
+      "bytes": 1728255
+    },
+    {
+      "path": "assets/enemies/chapter2/M20-motion-v1.png",
+      "status": 200,
+      "bytes": 1801701
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B12-fx-v1.png",
+      "status": 200,
+      "bytes": 2141195
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B13-fx-v1.png",
+      "status": 200,
+      "bytes": 1458819
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B14-fx-v1.png",
+      "status": 200,
+      "bytes": 2380078
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B15-fx-v1.png",
+      "status": 200,
+      "bytes": 1874711
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B16-fx-v1.png",
+      "status": 200,
+      "bytes": 2014318
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B17-fx-v1.png",
+      "status": 200,
+      "bytes": 2217250
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B18-fx-v1.png",
+      "status": 200,
+      "bytes": 2793299
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B19-fx-v1.png",
+      "status": 200,
+      "bytes": 2387698
+    },
+    {
+      "path": "assets/boss-fx/chapter2/B20-fx-v1.png",
+      "status": 200,
+      "bytes": 2423248
+    },
+    {
+      "path": "assets/boss-fx/chapter2/bounds-v1.json",
+      "status": 200,
+      "bytes": 116198
+    },
+    {
+      "path": "assets/minion-fx/chapter2/manifest-v1.json",
+      "status": 200,
+      "bytes": 54950
+    },
+    {
+      "path": "assets/minion-fx/chapter2/minion-melee-fx-v2.png",
+      "status": 200,
+      "bytes": 1464535
+    },
+    {
+      "path": "assets/minion-fx/chapter2/minion-ranged-fx-v2.png",
+      "status": 200,
+      "bytes": 961085
+    },
+    {
+      "path": "assets/equipment-sets/atlas-meta-v1.json",
+      "status": 200,
+      "bytes": 32739
+    },
+    {
+      "path": "assets/equipment-sets/atlas-meta-v2.json",
+      "status": 200,
+      "bytes": 45214
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q0-v1.png",
+      "status": 200,
+      "bytes": 2427469
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q0-v2.png",
+      "status": 200,
+      "bytes": 2367354
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q2-v1.png",
+      "status": 200,
+      "bytes": 2553402
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q2-v2.png",
+      "status": 200,
+      "bytes": 2377151
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q3-v1.png",
+      "status": 200,
+      "bytes": 2782841
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q3-v2.png",
+      "status": 200,
+      "bytes": 2546827
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q4-v1.png",
+      "status": 200,
+      "bytes": 2617699
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q4-v2.png",
+      "status": 200,
+      "bytes": 2630849
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q5-v1.png",
+      "status": 200,
+      "bytes": 2798902
+    },
+    {
+      "path": "assets/equipment-sets/equipment-q5-v2.png",
+      "status": 200,
+      "bytes": 2553269
+    },
+    {
+      "path": "assets/pets/dawnlion/dawnlion-form1-motion-v1.png",
+      "status": 200,
+      "bytes": 1558678
+    },
+    {
+      "path": "assets/pets/dawnlion/dawnlion-form2-motion-v1.png",
+      "status": 200,
+      "bytes": 1740050
+    },
+    {
+      "path": "assets/pets/dawnlion/dawnlion-form3-motion-v2.png",
+      "status": 200,
+      "bytes": 1466795
+    },
+    {
+      "path": "assets/pets/dawnlion/dawnlion-portraits-skills-v1.png",
+      "status": 200,
+      "bytes": 2390967
+    },
+    {
+      "path": "assets/pets/dawnlion/dawnlion-skills-fx-v1.png",
+      "status": 200,
+      "bytes": 2281068
+    },
+    {
+      "path": "assets/pets/dawnlion/pet-meta-v1.json",
+      "status": 200,
+      "bytes": 77885
+    },
+    {
+      "path": "assets/artifacts/t45/artifact-active-fx-v2.png",
+      "status": 200,
+      "bytes": 2496001
+    },
+    {
+      "path": "assets/artifacts/t45/artifact-hud-entry-v1.png",
+      "status": 200,
+      "bytes": 2477708
+    },
+    {
+      "path": "assets/artifacts/t45/artifact-icons-v1.png",
+      "status": 200,
+      "bytes": 2349689
+    },
+    {
+      "path": "assets/artifacts/t45/artifact-meta-v1.json",
+      "status": 200,
+      "bytes": 28278
+    },
+    {
+      "path": "assets/movement-fx/motion-meta-v1.json",
+      "status": 200,
+      "bytes": 21462
+    },
+    {
+      "path": "assets/movement-fx/movement-fire-nature-frost-v1.png",
+      "status": 200,
+      "bytes": 2140031
+    },
+    {
+      "path": "assets/movement-fx/movement-lightning-shadow-star-v1.png",
+      "status": 200,
+      "bytes": 3114300
+    },
+    {
+      "path": "assets/pets/presentation/mossdeer-juvenile-motion-v2.png",
+      "status": 200,
+      "bytes": 1687760
+    },
+    {
+      "path": "assets/pets/presentation/mossdeer-juvenile-ui-v1.png",
+      "status": 200,
+      "bytes": 1392967
+    },
+    {
+      "path": "assets/pets/presentation/pet-skill-icons-v2.png",
+      "status": 200,
+      "bytes": 3010635
+    },
+    {
+      "path": "assets/pets/presentation/pet-skills-frost-dawn-v3.png",
+      "status": 200,
+      "bytes": 2165565
+    },
+    {
+      "path": "assets/pets/presentation/pet-skills-nature-ember-v3.png",
+      "status": 200,
+      "bytes": 2134423
+    },
+    {
+      "path": "assets/pets/presentation/presentation-meta-v2.json",
+      "status": 200,
+      "bytes": 340949
+    },
+    {
+      "path": "assets/music/realm-battle.wav",
+      "status": 200,
+      "bytes": 10584044
+    },
+    {
+      "path": "src/ghost-sprite-cache.mjs",
+      "status": 200,
+      "bytes": 1890
+    },
+    {
+      "path": "src/boss-tactics.mjs",
+      "status": 200,
+      "bytes": 5187
+    },
+    {
+      "path": "src/boss-presence.mjs",
+      "status": 200,
+      "bytes": 399
+    },
+    {
+      "path": "src/pet-presentation.mjs",
+      "status": 200,
+      "bytes": 3529
+    },
+    {
+      "path": "src/duel-visual-clock.mjs",
+      "status": 200,
+      "bytes": 956
+    },
+    {
+      "path": "src/campaign-entry.mjs",
+      "status": 200,
+      "bytes": 679
+    },
+    {
+      "path": "src/relic-art.mjs",
+      "status": 200,
+      "bytes": 1738
+    },
+    {
+      "path": "src/dawnlion-art.mjs",
+      "status": 200,
+      "bytes": 2692
+    },
+    {
+      "path": "chapter-two.css",
+      "status": 200,
+      "bytes": 3677
+    }
+  ],
+  "nativeWindowVisualQA": false
+}

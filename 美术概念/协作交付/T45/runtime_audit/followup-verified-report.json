@@ -1,0 +1,133 @@
+{
+  "measuredAt": "2026-11-09T07:21:46.905Z",
+  "campaignLoads": [
+    {
+      "id": 1,
+      "team": [
+        "fire"
+      ],
+      "lastProgress": [
+        46,
+        46
+      ],
+      "progressCalls": 46,
+      "imageRequests": 35,
+      "allResourcesReported": true,
+      "refinedHeroes": [
+        "fire"
+      ],
+      "refinedMetadata": true
+    },
+    {
+      "id": 1,
+      "team": [
+        "fire",
+        "star"
+      ],
+      "lastProgress": [
+        48,
+        48
+      ],
+      "progressCalls": 48,
+      "imageRequests": 37,
+      "allResourcesReported": true,
+      "refinedHeroes": [
+        "fire",
+        "star"
+      ],
+      "refinedMetadata": true
+    },
+    {
+      "id": 12,
+      "team": [
+        "fire"
+      ],
+      "lastProgress": [
+        48,
+        48
+      ],
+      "progressCalls": 48,
+      "imageRequests": 37,
+      "allResourcesReported": true,
+      "refinedHeroes": [
+        "fire"
+      ],
+      "refinedMetadata": true
+    },
+    {
+      "id": 12,
+      "team": [
+        "fire",
+        "star"
+      ],
+      "lastProgress": [
+        50,
+        50
+      ],
+      "progressCalls": 50,
+      "imageRequests": 39,
+      "allResourcesReported": true,
+      "refinedHeroes": [
+        "fire",
+        "star"
+      ],
+      "refinedMetadata": true
+    }
+  ],
+  "endlessBossHudRequests": [
+    "assets/boss-hud/boss-hud-a-v1.png",
+    "assets/boss-hud/boss-hud-b-v1.png",
+    "assets/boss-hud/../campaign/chapter2/chapter2-boss-hud-v1.png"
+  ],
+  "enemyLoadProgress": [
+    68,
+    68
+  ],
+  "opponentPortal": {
+    "beforeX": 1652,
+    "afterX": 1420,
+    "playerHero": null,
+    "duelHero": "fire",
+    "effects": [
+      {
+        "hero": "fire",
+        "arrival": false,
+        "x": 1652,
+        "y": 495
+      },
+      {
+        "hero": "fire",
+        "arrival": true,
+        "x": 1420,
+        "y": 493
+      }
+    ]
+  },
+  "dawnlionRecovery": {
+    "attackPoseUntil": 5.24,
+    "readyAt": 5.45,
+    "recoverUntil": 5.48,
+    "draws": [
+      9
+    ]
+  },
+  "dawnlionWalkingHurt": {
+    "hit": 0.2,
+    "draws": [
+      12
+    ]
+  },
+  "visualClock": {
+    "cast": 0.13,
+    "burst": 0.23,
+    "effect": 0.32999999999999996,
+    "construct": 0.43000000000000005,
+    "sourceCastUnchanged": true
+  },
+  "m11": {
+    "sequence": 1,
+    "attacks": 1,
+    "x": 794.4992441752945,
+    "hpTaken": 15
+  }
+}

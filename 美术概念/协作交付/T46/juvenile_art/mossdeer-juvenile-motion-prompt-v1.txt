@@ -1,0 +1,24 @@
+Use case: stylized-concept.
+Asset type: production transparent 2D side-scroller character sprite sheet, 4 columns by 4 rows, EXACTLY 16 separate cells, square canvas.
+Primary request: redesign a juvenile woodland SPIRIT BEAST named 苔芽灵鹿 for an ornate dark fantasy hand-painted action RPG. It must instantly read as a magical ancient-forest creature at a tiny 70-pixel game height, NOT a realistic brown spotted deer, NOT a Disney baby, NOT a plush pet. Small juvenile proportions but alert, proud and mysterious.
+Character identity: a deer-like quadruped with smoky blue-gray to jade-green short fur, an ivory muzzle and small chest tuft, a simple dark living-wood mane along the upper neck, two SHORT branch antlers with only two or three tips, a clearly legible softly glowing jade leaf rune in the center of the forehead, narrow intelligent amber eyes, pale jade cloven hooves, one or two large curved natural jade markings on the shoulders. The neck and torso stay solid and opaque. A short leaf-shaped tail. Elegant simple silhouette, no jewelry, no collar, no metal armor, no flowers, no huge antler forest, no realistic white spots. Slightly angular, weight-bearing anatomy; beastlike rather than cute.
+Style: fine dark ink contours and restrained painterly material shading matching mature fantasy RPG heroes, warm ivory and muted emerald, tiny restrained cyan-green accents. Crisp edges, not photoreal, not 3D, no flat cartoon.
+Layout rules: exactly 4x4 invisible equal square grid, with generous genuine transparent margin in every cell, ALL art contained inside its own cell, NO visible grid/borders/text/numbers. Same creature identity, same scale, same orthographic side camera, facing RIGHT in every cell. Center of torso at 50% cell width; common planted hoof baseline at 84% of each cell; full antler/ears/tail/hooves included. Typical standing creature height 66% of cell; don't enlarge any individual pose. Never crop at the canvas edge.
+Sixteen row-major poses, read left to right then next row:
+0 walking contact, left foreleg reaching forward and opposite hindleg back;
+1 walking compress, weight transfers, legs clearly change;
+2 walking passing, left foreleg sweeps under chest;
+3 walking opposite contact, right foreleg reaches forward;
+4 walking opposite compress;
+5 walking opposite passing, closes smoothly back to pose 0.
+6 quiet ready idle with subtle neck lift;
+7 spell windup, lowered haunches and horns tilted forward, forehead rune gathering;
+8 spell release, firm forward step with head projecting a tiny seed spark toward right (no large projectile);
+9 recovery, shoulders ease back to neutral;
+10 gentle healing spell gesture, one forehoof lightly raised and three small leaf motes;
+11 strong root-command spell stance, stable planted rear legs and a short jade antler glimmer, no huge VFX;
+12 hit reaction, brace and lean back slightly but keep all four limbs attached;
+13 recall stance, alert and calm, small pale magical motes only;
+14 knocked down, legs fold beneath body;
+15 resting down, head lowered but recognizable full silhouette.
+Background: truly transparent alpha everywhere outside the painted character and tiny effect motes. NO scenery, NO fog sheet, NO floor, NO ground shadow plate, NO colored matte, NO checkerboard pattern painted into the pixels. Keep the creature opaque and intact. Preserve dark shadows and painterly style without extra detail. This is an animation atlas, not a concept-page collage.

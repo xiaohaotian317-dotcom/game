@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B13 Riftcrystal Great Lizard, a new boss animation sprite atlas for a premium hand-painted dark fantasy 2D side-scrolling action game.
+ONE square1536x1536 TRUE TRANSPARENT RGBA atlas, exactly4 columns by4 rows, sixteen isolated equal384x384 cells with no visible grid or labels. Same boss, same anatomy/material and scale in every cell; side-three-quarter view FACING RIGHT. Full head, paws, crystal spines and tail comfortably inside cell; leave24px transparent margin ALL sides. Ground under planted paws at local y=342, body/hips centered x=184. Moderate natural boss proportions, no perspective camera changes.
+
+Design: a powerful low QUADRUPED monitor-lizard beast, dark basalt reptile hide, broad muscular shoulders and short strong legs, thick flexible tail curling back left. Its armored back and cheek plates grow jagged deep RUBY/CRIMSON quartz with silver-cut refractive edges and wine-red glowing fissures; three asymmetrical crystal brow horns frame a clear reptilian head with fierce small amber eyes and toothed jaw. The crystal armor is heavy layered mineral, not decorative red fur or ice; belly charcoal grey, claws darkmetal. Original subterranean predator silhouette, no dragon wings, no fire-bull body, no humanoid armor. Exquisite painterly texture with crisp readable outlines, restrained red refraction and rock grit, no huge effects hiding anatomy.
+
+Exact0-based pose order left-to-right:
+0-5 six continuous grounded WALK phases:0 near front paw reaching right/back paw pushing;1 front paw plants/body dips;2 far front paw passes/near rear advances;3 far front paw reaches right/body rises;4 far paw plants/tail undulates;5 near front begins next step. Alternate real paw positions and subtle shoulder weight transfer, six actual poses, no sliding whole sprite or repeated still.
+6 idle: heavy four-paw guard, face fully readable, tail low.
+7 windup: forequarters crouch, neck coils and near claw rises back, back crystals angle forward.
+8 melee: rightward claw-and-jaw lunge, one front paw sweeps forward, hind paws braced; still wholly inside tile.
+9 recovery: head and paw draw back into guard.
+10 ranged: neck extended right, jaw open to shoot a short crystal dart, crystalline cheek fins flare; unobstructed mouth socket at head height.
+11 special: burrowing eruption pose, front claws dig downward and shoulders rise out of a small broken-rock collar, armor crystal plates bristling, no large terrain patch.
+12 hit recoil: head jerks back a little, front paws brace.
+13 stagger: one foreleg buckles, head dips, armor still attached.
+14 collapsing: body drops sideways, limbs fold toward ground and tail curls.
+15 dead: low prone lizard, jaw closed, crystal glow extinguished, no gore.
+
+Strict clean transparency: background and gaps alpha ZERO, no grey/red/black rectangle, fog, colored wash, checkerboard, floor plane or cast-shadow patch. No text, digits, borders, UI, watermarks, extra enemies. No touching neighboring tiles or clipped crystal tips/tail.

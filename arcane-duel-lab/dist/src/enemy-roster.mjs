@@ -1,3 +1,4 @@
+import {CHAPTER_TWO_ENEMIES} from './chapter-two-enemies.mjs';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 // Enemy definitions are independent of the encounter used to place them.
 const strike=(name,style,damage=12,reach=100,extra={})=>({name,type:'melee',style,damage,reach,windup:.48,active:.16,recover:.32,...extra});
@@ -53,7 +54,8 @@ for(const d of Object.values(ENEMIES))if(d.boss&&!d.passive){
 // turn into a giant invisible hitbox. These values are shared by all encounters.
 const bodyHeights={M01:125,M02:145,M03:95,M04:164,M05:151,M06:140,M07:153,M08:107,M09:154,M10:146,
  B01:215,B02:300,B03:230,B04:295,B05:308,B06:310,B07:315,B08:205,B09:235,B10:295,B11:290,S01:48};
-for(const d of Object.values(ENEMIES)){d.h=bodyHeights[d.id];if(d.form==='wolf')d.w=102;if(d.form==='spider')d.w=d.boss?85:40;}
+Object.assign(ENEMIES,CHAPTER_TWO_ENEMIES);
+for(const d of Object.values(ENEMIES)){d.chapter??=1;d.h=bodyHeights[d.id]??d.h;if(d.form==='wolf')d.w=102;if(d.form==='spider')d.w=d.boss?85:40;}
 export const ENEMY_IDS=Object.keys(ENEMIES).filter(id=>!ENEMIES[id].summonOnly);
 export function enemyDefinition(id){if(!ENEMIES[id])throw new Error('Unknown enemy '+id);return ENEMIES[id];}
 export const ENEMY_ANIMATION={columns:4,rows:4,walk:[0,1,2,3,4,5],idle:6,windup:7,melee:8,recover:9,ranged:10,summon:11,hurt:12,stagger:13,dying:14,dead:15};

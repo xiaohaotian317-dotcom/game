@@ -1,0 +1,20 @@
+Use case: stylized-concept.
+Asset: B19 Thunderforged Colossus, original BOSS animation atlas for a premium hand-painted dark fantasy 2D side-scrolling action game.
+Create ONE square1536x1536 genuinely TRANSPARENT RGBA PNG, exactly4 columns by4 rows, 16 equal isolated cells. No visible grid. SAME boss in all poses, facing RIGHT in consistent side/three-quarter camera, same anatomy/clothing/equipment and scale. STRICT independent-frame layout: occupy no more than70 percent tile width and80 percent tile height, leave at least40px clean LEFT/RIGHT margin and32px TOP margin per approximately314px actual tile. Draw entire poses smaller uniformly, never shorten or clip weapons. Every single sword/wing/crown tip stays within its own cell, with wide alpha0 gaps between ALL16 poses. Natural boss proportions like a detailed game enemy, no full-screen splash-art pose. two broad mechanical feet contact the same local ground y342; body root center x192. Entire crown, limbs, wings, cloth and weapon tips visible.
+
+DESIGN: A huge ancient BRASS MACHINE GOLEM with a broad rectangular armored torso, cylindrical piston thighs, two heavy grounded mechanical feet, tiered angular shoulders and a small clearly readable visor-like mechanical face beneath an iron brow. A round electric-blue THUNDER CORE in chest, layered aged brass plates, dark iron joints, exposed short cables and rivets. Left arm is a massive hydraulic hammer fist, leading RIGHT arm an integrated short conductor CANNON with claw-like muzzle forks. Compact industrial temple automaton, not a modern sci-fi gunman or bull giant. Blue arcs confined tightly to coils; all cannon/shoulder/feet details fit inside tile. Material palette: weathered yellow brass, dark iron, steel rivets, compact cyan-white branching current. Painterly exquisite real material texture, bold small-scale silhouette, softly modeled volumes, fine sharp edges. No large external VFX hiding boss, those have separate atlas.
+
+EXACT0-based frame sequence, left-to-right then next row:
+0-5 SIX distinct consecutive WALK phases with real alternating legs/feet:0 near front foot reaches forward and rear pushes;1 it plants/body settles;2 opposite foot passes while near rear advances;3 opposite leading foot reaches/body rises slightly;4 it plants/secondary legs advance;5 returns toward initial stance. Keep hips/root stable, natural shoulder/cloth/tail/wing follow-through. No same still repeated, no whole-sprite sliding.
+6 idle guard with clear face and grounded two broad mechanical feet.
+7 windup: knees bend, hammer fist rises behind shoulder, chest coil gathers narrow local blue arcs.
+8 melee strike: hammer fist drives right/down in piston smash, other arm braces, heavy feet grounded.
+9 recovery: reverse the strike naturally, weight returning to guard, weapons still attached.
+10 ranged cast: right conductor cannon arm levels to RIGHT at chest height, muzzle forks open and core faces forward, clear unobstructed barrel socket.
+11 special active pose: both feet anchor, arms spread low, conductor rods telescope a little from shoulders with local arcs to imply chained lightning columns.
+12 hit recoil: head/chest pulls back a little, body braces, do not dismember.
+13 stagger: fore-body/one support buckles and weapon lowers, alive.
+14 falling: body lowers/collapses sideways, limbs folding and equipment settling.
+15 death: low grounded collapsed body, light extinguished, intact readable identity, no gore.
+
+Hard constraints: transparent alpha0 background and gaps, no colored/black/grey backdrop, mist wash, scene/floor plane, cast-shadow rectangle, checkerboard. No text, labels, digits, UI, borders, logo, watermark, extra characters. No cropped anatomy or weapons, no neighbor overlap, identity drift or limb-count drift. Exactly16 poses in4x4.

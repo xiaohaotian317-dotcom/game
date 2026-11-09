@@ -1,0 +1,15 @@
+{
+  "scope": "Six heroes, actual original movement FX and hero renderer, three sampled ages. Isolated art QA, no save writes, not human animation acceptance.",
+  "errors": [],
+  "failed": [],
+  "result": {
+    "samples": 36,
+    "heroes": 6,
+    "files": [
+      "movement-fire-nature-frost-v1.png",
+      "movement-lightning-shadow-star-v1.png"
+    ],
+    "saveKeys": 0
+  },
+  "passed": true
+}

@@ -1,0 +1,1023 @@
+{
+  "version": 1,
+  "sheets": {
+    "movement-fire-nature-frost-v1.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a18113-4702-7a33-9e1d-a7e53ad5324e\\exec-b8ffd632-4717-4652-a700-cf1ae3a62bf8.png",
+      "sha256": "9b10da68aaec7065dd1a1f19402f422df644280832348c5c3cd4e1c89a87c032",
+      "frames": 24,
+      "pixelsEdited": false
+    },
+    "movement-lightning-shadow-star-v1.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a18113-4702-7a33-9e1d-a7e53ad5324e\\exec-aa76ebf4-6d73-4bf2-80d7-ed6be7d0be4d.png",
+      "sha256": "2167fe01de60524694a2268756a7ca2867d960a5a2ead2f2bdffe127c14e225f",
+      "frames": 24,
+      "pixelsEdited": false
+    }
+  },
+  "units": {
+    "fire": {
+      "jump": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              314,
+              209
+            ],
+            "spriteRect": [
+              72,
+              72,
+              179,
+              133
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              0,
+              313,
+              209
+            ],
+            "spriteRect": [
+              365,
+              12,
+              229,
+              193
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              0,
+              313,
+              209
+            ],
+            "spriteRect": [
+              672,
+              12,
+              220,
+              190
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              0,
+              314,
+              209
+            ],
+            "spriteRect": [
+              983,
+              12,
+              211,
+              188
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              209,
+              314,
+              209
+            ],
+            "spriteRect": [
+              62,
+              269,
+              195,
+              142
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              209,
+              313,
+              209
+            ],
+            "spriteRect": [
+              368,
+              239,
+              200,
+              171
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              209,
+              313,
+              209
+            ],
+            "spriteRect": [
+              659,
+              223,
+              234,
+              189
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              209,
+              314,
+              209
+            ],
+            "spriteRect": [
+              968,
+              242,
+              240,
+              166
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    },
+    "nature": {
+      "jump": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              418,
+              314,
+              209
+            ],
+            "spriteRect": [
+              73,
+              490,
+              170,
+              132
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              418,
+              313,
+              209
+            ],
+            "spriteRect": [
+              354,
+              436,
+              237,
+              188
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              418,
+              313,
+              209
+            ],
+            "spriteRect": [
+              661,
+              441,
+              232,
+              180
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              418,
+              314,
+              209
+            ],
+            "spriteRect": [
+              979,
+              443,
+              213,
+              175
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              627,
+              314,
+              209
+            ],
+            "spriteRect": [
+              58,
+              693,
+              204,
+              125
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              627,
+              313,
+              209
+            ],
+            "spriteRect": [
+              369,
+              651,
+              201,
+              167
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              627,
+              313,
+              209
+            ],
+            "spriteRect": [
+              642,
+              649,
+              264,
+              169
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              627,
+              314,
+              209
+            ],
+            "spriteRect": [
+              965,
+              664,
+              238,
+              150
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    },
+    "frost": {
+      "jump": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              836,
+              314,
+              209
+            ],
+            "spriteRect": [
+              68,
+              899,
+              183,
+              141
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              836,
+              313,
+              209
+            ],
+            "spriteRect": [
+              361,
+              841,
+              233,
+              200
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              836,
+              313,
+              209
+            ],
+            "spriteRect": [
+              670,
+              851,
+              225,
+              185
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              836,
+              314,
+              209
+            ],
+            "spriteRect": [
+              988,
+              861,
+              202,
+              174
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-fire-nature-frost-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              1045,
+              314,
+              209
+            ],
+            "spriteRect": [
+              57,
+              1081,
+              203,
+              157
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              1045,
+              313,
+              209
+            ],
+            "spriteRect": [
+              372,
+              1071,
+              200,
+              167
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              1045,
+              313,
+              209
+            ],
+            "spriteRect": [
+              648,
+              1061,
+              256,
+              177
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              1045,
+              314,
+              209
+            ],
+            "spriteRect": [
+              974,
+              1067,
+              230,
+              168
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    },
+    "lightning": {
+      "jump": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              0,
+              314,
+              209
+            ],
+            "spriteRect": [
+              42,
+              37,
+              238,
+              172
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              0,
+              313,
+              209
+            ],
+            "spriteRect": [
+              324,
+              0,
+              265,
+              209
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              0,
+              313,
+              209
+            ],
+            "spriteRect": [
+              627,
+              20,
+              309,
+              189
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              0,
+              314,
+              209
+            ],
+            "spriteRect": [
+              972,
+              28,
+              244,
+              180
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              209,
+              314,
+              209
+            ],
+            "spriteRect": [
+              43,
+              230,
+              236,
+              186
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              209,
+              313,
+              209
+            ],
+            "spriteRect": [
+              351,
+              209,
+              243,
+              209
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              209,
+              313,
+              209
+            ],
+            "spriteRect": [
+              653,
+              209,
+              263,
+              208
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              209,
+              314,
+              209
+            ],
+            "spriteRect": [
+              970,
+              236,
+              251,
+              178
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    },
+    "shadow": {
+      "jump": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              418,
+              314,
+              209
+            ],
+            "spriteRect": [
+              41,
+              471,
+              230,
+              149
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              418,
+              313,
+              209
+            ],
+            "spriteRect": [
+              334,
+              418,
+              267,
+              209
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              418,
+              313,
+              209
+            ],
+            "spriteRect": [
+              639,
+              452,
+              289,
+              166
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              418,
+              314,
+              209
+            ],
+            "spriteRect": [
+              979,
+              447,
+              236,
+              170
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              627,
+              314,
+              209
+            ],
+            "spriteRect": [
+              38,
+              661,
+              238,
+              153
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              627,
+              313,
+              209
+            ],
+            "spriteRect": [
+              347,
+              627,
+              235,
+              209
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              627,
+              313,
+              209
+            ],
+            "spriteRect": [
+              632,
+              637,
+              308,
+              175
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              627,
+              314,
+              209
+            ],
+            "spriteRect": [
+              963,
+              652,
+              266,
+              160
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    },
+    "star": {
+      "jump": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              836,
+              314,
+              209
+            ],
+            "spriteRect": [
+              49,
+              882,
+              219,
+              163
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              836,
+              313,
+              209
+            ],
+            "spriteRect": [
+              336,
+              836,
+              257,
+              209
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              836,
+              313,
+              209
+            ],
+            "spriteRect": [
+              627,
+              843,
+              287,
+              202
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              836,
+              314,
+              209
+            ],
+            "spriteRect": [
+              965,
+              855,
+              258,
+              159
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      },
+      "teleport": {
+        "file": "movement-lightning-shadow-star-v1.png",
+        "frames": [
+          {
+            "rect": [
+              0,
+              1045,
+              314,
+              209
+            ],
+            "spriteRect": [
+              28,
+              1045,
+              257,
+              180
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              314,
+              1045,
+              313,
+              209
+            ],
+            "spriteRect": [
+              338,
+              1045,
+              257,
+              189
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              627,
+              1045,
+              313,
+              209
+            ],
+            "spriteRect": [
+              628,
+              1045,
+              299,
+              179
+            ],
+            "pivot": [
+              156.5,
+              163.02
+            ],
+            "groundContactY": 163.02
+          },
+          {
+            "rect": [
+              940,
+              1045,
+              314,
+              209
+            ],
+            "spriteRect": [
+              960,
+              1061,
+              264,
+              159
+            ],
+            "pivot": [
+              157.0,
+              163.02
+            ],
+            "groundContactY": 163.02
+          }
+        ],
+        "reference": 313.5
+      }
+    }
+  }
+}

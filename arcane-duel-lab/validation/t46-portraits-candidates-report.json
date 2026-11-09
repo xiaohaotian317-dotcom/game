@@ -1,0 +1,118 @@
+{
+  "task": "T46 CSS-only portrait candidate comparison",
+  "runtimeModified": false,
+  "pixelsEdited": false,
+  "formalSavesTouched": false,
+  "errors": [],
+  "failedResources": [],
+  "comparisons": [
+    {
+      "id": "B12",
+      "name": "深潮锚王",
+      "current": [
+        788,
+        349,
+        90,
+        90
+      ],
+      "candidate": [
+        774,
+        349,
+        90,
+        90
+      ],
+      "file": "chapter2/B12-motion-v2.png"
+    },
+    {
+      "id": "B14",
+      "name": "孢冠沼母",
+      "current": [
+        786,
+        398,
+        86,
+        86
+      ],
+      "candidate": [
+        766,
+        375,
+        86,
+        86
+      ],
+      "file": "chapter2/B14-motion-v4.png"
+    },
+    {
+      "id": "B15",
+      "name": "烬翼审判官",
+      "current": [
+        786,
+        374,
+        76,
+        76
+      ],
+      "candidate": [
+        788,
+        370,
+        64,
+        64
+      ],
+      "file": "chapter2/B15-motion-v4.png"
+    },
+    {
+      "id": "B16",
+      "name": "千面镜姬",
+      "current": [
+        798,
+        393,
+        76,
+        76
+      ],
+      "candidate": [
+        771,
+        375,
+        70,
+        70
+      ],
+      "file": "chapter2/B16-motion-v3.png"
+    }
+  ],
+  "saveWrites": 0,
+  "passed": true,
+  "visualReview": {
+    "reviewedScreenshot": "t46-portraits-candidates.png",
+    "confirmedCandidates": {
+      "B12": [
+        774,
+        349,
+        90,
+        90
+      ],
+      "B14": [
+        766,
+        375,
+        86,
+        86
+      ],
+      "B15": [
+        788,
+        370,
+        64,
+        64
+      ],
+      "B16": [
+        771,
+        375,
+        70,
+        70
+      ]
+    },
+    "observations": [
+      "B12 forehead/crown/eyes/jaw shift into a clear central composition, giant shoulder no longer dominates.",
+      "B14 head and eye center are now near the middle with crown context retained; no longer an upper-left small face and chest portrait.",
+      "B15 tighter64px crop centers the crowned avian face and beak; most chest-rib decoration is excluded.",
+      "B16 initial parent candidate748,382,82,82 still put the face at upper-right with wing dominant; final771,375,70,70 centers her crowned face and eyes in both square/circle."
+    ],
+    "allFourConfirmed": true,
+    "runtimeMetadataStillUnmodifiedByThisAgent": true,
+    "userArtAcceptance": false
+  }
+}

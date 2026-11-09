@@ -1,3 +1,4 @@
+import {movementBurst} from './movement-fx.mjs';
 import {integerDamage,damageText} from './combat-numbers.mjs';
 import {duelSkillSpec,recordDuelCast,releaseDuelSkill,duelSkillOnHit,stepDuelSkills} from './duel-skill-runtime.mjs';
 import {stepCompanion,hitCompanion} from './campaign-companion.mjs';
@@ -46,7 +47,7 @@ export function createWorld(hero='fire',scene='training') {
   applyScene(world,scene);initExtra(world,HEROES[hero]);return world;
 }
 function emit(w,type,data={}){w.events.push({type,...data});if(type==='jump'||type==='dash')soloActivity(w,type==='jump'?'jumps':'dashes');if(w.events.length>100)w.events.shift();}
-function effect(w,kind,data={}){const e={id:++w.serial,kind,age:0,duration:.6,campaignSkillId:w.player.cast?.soloSkill?.id||w.campaignDamageSkill,...data};w.effects.push(e);return e;}
+function effect(w,kind,data={}){const e={id:++w.serial,kind,age:0,visualOffset:0,duration:.6,campaignSkillId:w.player.cast?.soloSkill?.id||w.campaignDamageSkill,...data};w.effects.push(e);return e;}
 function text(w,x,y,label,color='#fff0c7',size=22,options={}){const lane=options.damage?[0,1,-1,2,-2][w.texts.filter(t=>t.damage&&t.age<.18&&Math.abs(t.x-x)<90).length%5]:0;w.texts.push({x,y,text:String(label),color,size,age:0,duration:1.1,lane,...options});}
 // Runtime-only records unite the melee and projectile halves of one solo attack.
 function basicAttack(w,castId,create=false){
@@ -79,6 +80,7 @@ export function damage(w,t,amount,{fire=false,knock=0,root=0,label,impact=true,s
     if(impact){t.hurt=Math.max(t.hurt,.12);t.invuln=Math.max(t.invuln,.055);t.cast=null;t.burst=null;}
   }
   if(t.deadUntil>w.time||t.hp<=0)return false;
+  if(t.enemyKind==='B13'&&(t.ai?.crystalUntil||0)>w.time)amount*=.8;
   amount=integerDamage(amount);const actual=Math.min(t.hp,amount);t.hp=Math.max(0,t.hp-amount);t.hit=.15;t.lastHitFx=w.fxTime||w.time;t.lastHitDamage=amount;
   if(attack){attack.hitIds.push(t.id);if(!attack.directIds.includes(t.id))attack.directIds.push(t.id);}
   if(knock){const resistance=t.enemyKind?.startsWith('B')?.18:1;t.vx+=knock*resistance;t.vy=Math.min(t.vy,-Math.abs(knock)*.3*resistance);}
@@ -176,7 +178,7 @@ function beginCast(w,key) {
   const target=needsGround?groundTarget(w,EXTRA_HEROES[w.hero]?clamp(w.aim.x,p.x-520,p.x+520):w.aim.x,w.aim.y):null;
   if(needsGround&&!target)return false;
   if(!soloPay(w,key,isRecast,s))return false;
-  const attackRate=key==='attack'?(w.campaign?.stats?.attackSpeed||1)*(p.attackHasteUntil>w.time?2:1):1;
+  const attackRate=key==='attack'?(w.campaign?.stats?.attackSpeed||1)*(p.attackHasteUntil>w.time?2:1)*(p.artifactHasteUntil>w.time?1.5:1):1;
   if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(key==='attack'?1/attackRate:w.campaign?.progression?(key==='r'?1.1:1.15):1);
   p.face=w.aim.x>=p.x?1:-1;
   p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration/attackRate,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release/attackRate,released:false,x:w.aim.x,y:w.aim.y,target};
@@ -190,7 +192,7 @@ export function requestCast(w,key,x=w.aim.x,y=w.aim.y) {
 }
 function jump(w,boost=false) {
   const p=w.player;p.vy=boost?-880:-(HEROES[w.hero].jump)*(w.jumpScale||1)*(p.jumps? .92:1);p.jumps++;p.jumpAt=w.time;p.grounded=false;p.coyote=0;p.jumpBuffer=0;p.land=0;
-  effect(w,p.jumps===1?'dust':'airRing',{x:p.x,y:p.y,duration:.4,color:HEROES[w.hero].color});emit(w,'jump',{double:p.jumps>1});
+  effect(w,p.jumps===1?'dust':'heroMovement',{x:p.x,y:p.y,duration:p.jumps===1?.4:.5,color:HEROES[w.hero].color,hero:w.hero,movementKind:'jump'});emit(w,'jump',{double:p.jumps>1});
 }
 function physics(w,a,dt,{drop=false,phase=false}={}) {
   a.prevX=a.x;a.prevY=a.y;
@@ -236,6 +238,7 @@ function updateEffects(w,dt){
 function updateProjectiles(w,dt){
   for(const s of w.projectiles){
     if(s.age>=s.life)continue;
+    if(s.owner==='enemy'&&(s.enemySeeking&&s.age<.6||s.enemyReturning&&s.age>.65)){const owner=w.targets.find(t=>t.id===s.enemySource&&t.hp>0),goal=s.enemyReturning&&s.age>.65?owner:w.player;if(goal){const dx=goal.x-s.x,dy=goal.y-goal.h*.55-s.y,len=Math.hypot(dx,dy)||1,speed=s.enemyCruiseSpeed||=(Math.hypot(s.vx,s.vy)||360),blend=1-Math.exp(-(s.enemyReturning&&s.age>.65?9:2.6)*dt);s.vx=lerp(s.vx,dx/len*speed,blend);s.vy=lerp(s.vy,dy/len*speed,blend);if(goal===owner&&len<owner.w+12){s.life=0;continue;}}else if(s.enemyReturning){s.life=0;continue;}}
     if(s.homing){const t=w.targets.filter(t=>t.hp>0&&!(s.basic&&s.owner==='player'&&basicAlreadyHit(w,s.castId,t.id))).sort((a,b)=>Math.hypot(a.x-s.x,a.y-45-s.y)-Math.hypot(b.x-s.x,b.y-45-s.y))[0];if(t){const dx=t.x-s.x,dy=t.y-45-s.y,l=Math.hypot(dx,dy)||1,speed=Math.hypot(s.vx,s.vy);s.vx=lerp(s.vx,dx/l*speed,1-Math.exp(-6*dt));s.vy=lerp(s.vy,dy/l*speed,1-Math.exp(-6*dt));}}
     s.px=s.x;s.py=s.y;s.x+=s.vx*dt;s.y+=s.vy*dt;s.age+=dt;
     s.trail||=[];s.trail.push({x:s.px,y:s.py});if(s.trail.length>12)s.trail.shift();
@@ -266,6 +269,7 @@ function updateProjectiles(w,dt){
       s.life=0;
     }
     if(contact?.type==='wall'){
+      if(s.enemyRicochet>0){s.enemyRicochet--;const b=contact.box,vertical=s.py<b.y||s.py>b.y+b.h;if(vertical)s.vy*=-1;else s.vx*=-1;const speed=Math.hypot(s.vx,s.vy)||1;s.x+=s.vx/speed*(s.r+3);s.y+=s.vy/speed*(s.r+3);effect(w,'enemyVfx',{enemyKind:s.enemyKind,style:s.enemyStyle,x:s.x,y:s.y,radius:35,duration:.35});continue;}
       if(s.owner==='enemy'&&s.enemySource)enemyProjectileContact(w,s,null,enemyHooks,false);
       if(contact.box.source?.type==='wood'&&s.owner==='player')damageBridge(w,s.x,s.y,24,s.damage);
       effect(w,s.fire?'fireHit':s.school?s.school+'Hit':s.kind==='seed'?'leafHit':'enemyHit',{x:s.x,y:s.y,duration:.5});
@@ -347,13 +351,18 @@ function updateTrees(w,dt){
 export function step(w,dt,input={}) {
   if(dt<=0)return;
   dt=Math.min(dt,1/30);w.fxTime=(w.fxTime||0)+dt;w.flash=Math.max(0,w.flash-dt);
+  // A multi-target hit gets one short impulse; authored VFX keep their visual clock.
+  const stopRequested=Math.min(w.hitstop||0,.012);w.hitstop=stopRequested;
+  if((w.fxTime-(w.lastHitstopAt??-1))<.1&&w.hitstop>0&&!w.hitstopActive)w.hitstop=0;
+  if(w.hitstop>0&&!w.hitstopActive){w.hitstopActive=true;w.lastHitstopAt=w.fxTime;}
   if(w.hitstop>0){
+    for(const e of w.effects)e.visualOffset=(e.visualOffset||0)+dt;
     if(input.jump)w.player.jumpBuffer=.13;
     if(input.cast)w.player.buffer={key:input.cast,until:w.time+.2,x:w.aim.x,y:w.aim.y};
     if(input.dash)w.player.queuedDash=true;
     w.hitstop=Math.max(0,w.hitstop-dt);w.player.prevX=w.player.x;w.player.prevY=w.player.y;return;
   }
-  w.time+=dt;
+  w.hitstopActive=false;w.time+=dt;
   const p=w.player;
   if(input.view&&w.duel){const width=clamp(input.view.width,400,1680),height=clamp(input.view.height,300,1400);w.fireView={width,height,x:clamp(input.view.x,clamp(p.x-width*.85,0,Math.max(0,w.width-width)),clamp(p.x-width*.15,0,Math.max(0,w.width-width))),y:clamp(input.view.y,-Math.max(0,height-w.height),Math.max(0,w.height-height))};}
   const controlled=w.enemyMode&&p.enemyControl?.until>w.time;
@@ -372,7 +381,7 @@ export function step(w,dt,input={}) {
   if(input.drop&&input.jump&&p.grounded&&p.platformId!=='ground'){p.drop=.25;p.y+=4;p.grounded=false;p.jumpBuffer=0;p.coyote=0;p.jumps=1;}
   else if(p.jumpBuffer>0&&p.hurt<=0&&p.dead<=0&&!(w.duel&&p.rootUntil>w.time)&&(p.coyote>0||p.jumps<2))jump(w);
   const dashInput=input.dash||p.queuedDash;p.queuedDash=false;
-  if(dashInput&&p.dashCooldown<=0&&p.hurt<=0&&p.dead<=0&&!(w.duel&&p.rootUntil>w.time)){p.dash=.17;p.dashCooldown=1.1;p.invuln=.2;p.vx=(input.move||p.face)*900;p.vy=0;effect(w,'dash',{x:p.x,y:p.y-55,face:p.face,color:HEROES[w.hero].color,duration:.35});emit(w,'dash');}
+  if(dashInput&&p.dashCooldown<=0&&p.hurt<=0&&p.dead<=0&&!(w.duel&&p.rootUntil>w.time)){p.dash=.17;p.dashCooldown=1.1;p.invuln=.2;p.vx=(input.move||p.face)*900;p.vy=0;movementBurst(w,{x:p.x,y:p.y});effect(w,'dash',{x:p.x,y:p.y-55,face:p.face,color:HEROES[w.hero].color,duration:.35});emit(w,'dash');}
   if(input.cast)requestCast(w,input.cast);
   if(input.attack&&!p.cast)requestCast(w,'attack');
   if(p.buffer){if(p.buffer.until<w.time)p.buffer=null;else if(beginCast(w,p.buffer.key))p.buffer=null;}

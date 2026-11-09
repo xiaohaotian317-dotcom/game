@@ -1,0 +1,78 @@
+{
+  "status": "integrated-original-bytes-verified",
+  "scope": "Original full-body 16-pose redesigns; chapter-one bodies preserved; user art acceptance tracked separately",
+  "bodies": [
+    {
+      "id": "B15",
+      "file": "B15-motion-v4.png",
+      "sha256": "7b2f201716b891a02698e1ae96293222a6fb13a9b9b510382c92006f3daebf0f",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-eec9fecf-b244-4857-abc5-31ac0e015b1e.png",
+      "referenceSourceHeight": 207,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B16",
+      "file": "B16-motion-v3.png",
+      "sha256": "d864c57092825a95edfede480e9cc1958178b1256092d20aaa84d62d2c2c05f8",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-85c75c3f-a557-43d6-8444-3fe276b09b37.png",
+      "referenceSourceHeight": 199,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B14",
+      "file": "B14-motion-v4.png",
+      "sha256": "1bba15b293219dce82c2ad71cbaeb67c1632de8771f13f78a5888288a7cca988",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-272f57b3-bb00-4dca-a9fd-5ad869144882.png",
+      "referenceSourceHeight": 214,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B13",
+      "file": "B13-motion-v4.png",
+      "sha256": "fc32532ef52e5ae8450edcfa621b5edf4d975c274d2d8883b93946ad9c77b88b",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3c-eb03-7b42-ae58-a20a49fac5fc\\exec-0301d581-4e72-4e15-9d69-697c72542738.png",
+      "referenceSourceHeight": 164,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B17",
+      "file": "B17-motion-v3.png",
+      "sha256": "3bd8475b7658d80098e51f40c818244718dd4a40bfab03be3d64b8b7b66b8ed7",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3b-cb4b-7021-b499-f7c16019fce1\\exec-f39d1e9c-b06f-412f-ace7-83ff7e74184d.png",
+      "referenceSourceHeight": 190,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B18",
+      "file": "B18-motion-v2.png",
+      "sha256": "d2ee6366438bec4d685910466309aed800b055612416038cebb405b2208e03af",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3b-cb4b-7021-b499-f7c16019fce1\\exec-e5a1f521-b59c-494b-af22-107c096c72aa.png",
+      "referenceSourceHeight": 191,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B19",
+      "file": "B19-motion-v3.png",
+      "sha256": "91fc81c9e6e2fc7c2a0bc452f0acdc9d2f47174137b4a100b84fbc944efb6768",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3b-cb4b-7021-b499-f7c16019fce1\\exec-3fa179af-6348-41d9-aafa-ffc5474bb1b7.png",
+      "referenceSourceHeight": 244,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B20",
+      "file": "B20-motion-v3.png",
+      "sha256": "c152f085a2e8a0d4eac74ee029f4e8e93e47a39bf70d4c16a27f8e7c8adcc51b",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3b-cb4b-7021-b499-f7c16019fce1\\exec-af09f72d-bf90-4063-9c6f-77647c72ff43.png",
+      "referenceSourceHeight": 229,
+      "pixelsEdited": false
+    },
+    {
+      "id": "B12",
+      "file": "B12-motion-v2.png",
+      "sha256": "9dbc0658684ccee3506801cb221d6ff57ece1d51d02ab037fc413eced9be8226",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bf3d-ca53-7941-a467-9941a932f3f6\\exec-56580cb1-0868-40d8-8307-fc3b305963e4.png",
+      "referenceSourceHeight": 227,
+      "pixelsEdited": false
+    }
+  ]
+}

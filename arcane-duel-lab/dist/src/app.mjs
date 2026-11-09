@@ -113,7 +113,7 @@ async function choose(hero){
 function notice(t){$('#notice').textContent=t;}
 function start(){
   if(!renderer)return;
-  mode='game';$('#title-screen').hidden=true;$('#game').hidden=false;paused=false;accumulator=0;last=performance.now();sound.setScene('journey');sound.init();canvas.focus({preventScroll:true});renderer.resize();buildHero();
+  mode='game';$('#title-screen').hidden=true;$('#game').hidden=false;paused=false;accumulator=0;last=performance.now();sound.setScene('battle');sound.init();canvas.focus({preventScroll:true});renderer.resize();buildHero();
 }
 function setPause(value){
   paused=value;keys.clear();actions.length=0;pointerDown=false;accumulator=0;$('#pause-overlay').hidden=!paused;$('#pause-button').innerHTML=paused?'继续 <kbd>P</kbd>':'暂停 <kbd>P</kbd>';last=performance.now();
