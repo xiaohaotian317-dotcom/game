@@ -1,8 +1,10 @@
+import {LoadingScreen} from './loading-screen.mjs';
 import {installOnboarding} from './onboarding-guide.mjs';
 import {Sound} from './audio.mjs';
 new Sound();
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
 import {loadSolo,saveSolo,summonSolo} from './campaign-profile.mjs';
+import {summonProbabilityForDraw,summonProbabilityRules} from './summon-probability.mjs';
 import {SOLO_KEY,SOLO_SKILLS,itemInfo} from './campaign-growth-data.mjs';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
 import {POOL_ORDER,POOLS,initialPool,poolURL,poolStatus,portraitPlacement} from './summon-pools.mjs';
@@ -11,10 +13,12 @@ import drops from '../assets/world-drops/drop-meta-v1.json' with {type:'json'};
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=localStorage;}catch{storage=null;}
 let profile=loadSolo(storage),hero=initialPool(new URLSearchParams(location.search).get('hero'),profile),busy=false,toastTimer,sceneSerial=0;
-const portrait=new SummonPortrait($('#hero-canvas'));
+const portrait=new SummonPortrait($('#hero-canvas')),artLoading=new LoadingScreen();
+$('#art-loading').hidden=true;
 function face(id){const [x,y]=POOLS[id].face,r=id==='star'?44:id==='shadow'?50:58;return `<svg viewBox="${x-r} ${y-r} ${r*2} ${r*2}" aria-hidden="true"><image href="assets/lobby/hero-splashes-v1.png" width="1536" height="1024"/></svg>`;}
 function icon(item){const f=drops.items[item.type],s=f&&drops.sheets[f.sheet];if(!f||!s)return '';return `<svg viewBox="${f.rect.join(' ')}" aria-hidden="true"><image href="assets/world-drops/${s.file}" width="${s.size[0]}" height="${s.size[1]}"/></svg>`;}
 $('#wallet-icon').innerHTML=icon({type:'ticket'});
+$('#summon-odds-rules').textContent='每次消耗1张召唤券。'+summonProbabilityRules()+'切换卡池、退出页面会保留每位英雄自己的保底进度。';
 function toast(message){clearTimeout(toastTimer);$('#summon-toast').textContent=message;$('#summon-toast').hidden=false;toastTimer=setTimeout(()=>$('#summon-toast').hidden=true,3800);}
 function renderState(){
  const state=poolStatus(profile,hero);
@@ -23,7 +27,7 @@ function renderState(){
  $('#pity-text').textContent=state.owned?'已拥有':state.pity+' / 20';
  $('#pity-fill').style.width=(state.owned?100:state.pity/20*100)+'%';
  $('#pity-track').setAttribute('aria-valuenow',state.owned?20:state.pity);
- $('#pity-caption').textContent=state.owned?'这位英雄已加入你的旅途，可自由查看专属卡池。':`再召唤 ${state.remaining} 次内必得${HEROES[hero].name}，此进度仅属于当前卡池。`;
+ $('#pity-caption').textContent=state.owned?'这位英雄已加入你的旅途，可自由查看专属卡池。':`下一抽（第${state.pity+1}抽）英雄概率${Math.round(summonProbabilityForDraw(state.pity+1)*100)}% · 再${state.remaining}抽内必得${HEROES[hero].name}。`;
  $('#draw-one').disabled=busy||!state.canSingle;$('#draw-ten').disabled=busy||!state.canTen;
  $('#pool-notice').textContent=state.owned?'已拥有该英雄 · 可切换其他独立卡池':profile.tickets<1?'召唤券不足 · 可从首领战利品中获得':'每位英雄独立保底，切换卡池不清零';
  $('#pool-selectors').innerHTML=POOL_ORDER.map(id=>{const s=poolStatus(profile,id);return `<button class="pool-tab" data-pool="${id}" aria-label="${HEROES[id].name}独立卡池" aria-pressed="${id===hero}" ${busy?'disabled':''}><span class="pool-tab-face">${face(id)}</span><span><strong>${POOLS[id].title}</strong><small>${HEROES[id].name} · ${s.owned?'已拥有':s.pity+' / 20'}</small></span><b aria-hidden="true">›</b></button>`;}).join('');
@@ -35,8 +39,8 @@ function alignScene(el,id){
  el.style.transform=`translateY(${Math.round(foot-plane)}px)`;
 }
 async function showScene(id){
- const serial=++sceneSerial,im=new Image();im.src=`assets/summon/${id}-sanctum-v1.png`;
- try{await im.decode();if(serial!==sceneSerial)return;const el=im;el.alt='';el.className='pool-scene-image';el.dataset.pool=id;$('#pool-scenery').append(el);alignScene(el,id);el.classList.add('visible');for(const other of [...$('#pool-scenery').children])if(other!==el)other.remove();}catch{if(serial===sceneSerial)toast('卡池场景暂未载入，重新打开页面可重试。');}
+ const serial=++sceneSerial,loadToken=artLoading.start(id==='fire'?'lava':id==='nature'?'garden':'moon','正在准备英雄卡池'),im=new Image();im.src=`assets/summon/${id}-sanctum-v1.png`;
+ try{await Promise.all([im.decode(),portrait.ready]);if(serial!==sceneSerial)return;const el=im;el.alt='';el.className='pool-scene-image';el.dataset.pool=id;$('#pool-scenery').append(el);alignScene(el,id);el.classList.add('visible');for(const other of [...$('#pool-scenery').children])if(other!==el)other.remove();artLoading.finish(loadToken);}catch{if(serial===sceneSerial){artLoading.fail('英雄素材暂未载入',()=>showScene(id),loadToken);toast('卡池场景暂未载入，可重新加载。');}}
 }
 function selectPool(id,push=true){
  if(busy||!POOLS[id])return;

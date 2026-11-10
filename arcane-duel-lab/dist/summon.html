@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09131b"><title>英雄召唤 · 秘境决斗</title><link rel="stylesheet" href="summon.css?v=20261104-summon2"><link rel="preload" as="image" href="assets/lobby/hero-splashes-v1.png"><link rel="stylesheet" href="realm-controls.css"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09131b"><title>英雄召唤 · 秘境决斗</title><link rel="stylesheet" href="summon.css?v=20261104-summon2"><link rel="preload" as="image" href="assets/lobby/hero-splashes-v1.png"><link rel="stylesheet" href="realm-controls.css"><link rel="stylesheet" href="loading.css"></head>
 <body>
 <div class="pool-scenery" id="pool-scenery" aria-hidden="true"></div><div class="pool-shade" aria-hidden="true"></div>
 <main class="summon-shell" id="summon-shell">
@@ -13,7 +13,7 @@
 </main>
 <p class="summon-toast" id="summon-toast" hidden role="status"></p>
 
-<dialog id="rules-dialog" class="wish-dialog" aria-labelledby="rules-title"><div class="wish-frame" aria-hidden="true"></div><div class="wish-content"><h2 id="rules-title">召唤契约</h2><div class="wish-scroll"><p>每位英雄拥有独立卡池。当前卡池只会唤醒对应英雄，或获得小灵石、小经验药水、小金币宝箱。</p><p>每次消耗1张召唤券，英雄基础概率10%；第20次内必得当前目标。切换卡池、退出页面会保留每位英雄自己的保底进度。</p><p>十连最多消耗10张券，途中获得目标英雄便停止，保留未使用的券。已拥有的英雄可预览，不再重复消耗召唤券。</p><p>召唤不消耗金币。召唤券来自首领战利品；首次通关必掉，已通关重刷有50%概率掉落，靠近按C拾取。</p></div><button class="metal-button" data-close-dialog><i></i>明白了</button></div></dialog>
+<dialog id="rules-dialog" class="wish-dialog" aria-labelledby="rules-title"><div class="wish-frame" aria-hidden="true"></div><div class="wish-content"><h2 id="rules-title">召唤契约</h2><div class="wish-scroll"><p>每位英雄拥有独立卡池。当前卡池只会唤醒对应英雄，或获得小灵石、小经验药水、小金币宝箱。</p><p id="summon-odds-rules"></p><p>十连最多消耗10张券，途中获得目标英雄便停止，保留未使用的券。已拥有的英雄可预览，不再重复消耗召唤券。</p><p>召唤不消耗金币。召唤券来自首领战利品；首次通关必掉，已通关重刷有50%概率掉落，靠近按C拾取。</p></div><button class="metal-button" data-close-dialog><i></i>明白了</button></div></dialog>
 <dialog id="draw-result" class="wish-dialog" aria-labelledby="draw-result-title"><div class="wish-frame" aria-hidden="true"></div><div class="wish-content"><small id="draw-result-eyebrow"></small><h2 id="draw-result-title"></h2><div id="draw-rewards" class="wish-scroll draw-rewards"></div><p id="draw-result-copy"></p><button class="metal-button" data-close-dialog><i></i>收下馈赠</button></div></dialog>
 <script type="module" src="src/summon-app.mjs?v=20261104-summon2"></script>
 <script type="module" src="src/realm-controls.mjs"></script></body></html>

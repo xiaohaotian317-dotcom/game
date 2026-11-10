@@ -39,6 +39,9 @@ public final class TapBattlePlugin extends Plugin implements TapOnlineBattleCall
     private volatile int frameCreditGeneration;
     private TapInitCallback initCallback;
 
+    /** Shared login state for optional Tap modules; never initializes or exports a token. */
+    public boolean isAuthenticated(){return initialized&&!destroyed&&TapTapLogin.getCurrentTapAccount()!=null;}
+
     @PluginMethod public void status(PluginCall call){main.post(()->{
         TapTapAccount account=initialized?TapTapLogin.getCurrentTapAccount():null;
         call.resolve(js(LanRoomService.obj("configured",configured(),"privacyAccepted",consented(),"initialized",initialized,

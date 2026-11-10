@@ -1,6 +1,6 @@
 # 秘境决斗 Android
 
-T47～49 / android1-crossplay-v2，包名 `com.xiaohaotian.arcaneduel`，当前0.1.2（versionCode3）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
+T47～56 / android1-crossplay-v2，包名 `com.xiaohaotian.arcaneduel`，当前源码0.1.7（versionCode8，实际发行与安装见validation）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
 
 ## 构建
 
@@ -17,7 +17,8 @@ T47～49 / android1-crossplay-v2，包名 `com.xiaohaotian.arcaneduel`，当前0
 - `native/src/` 是原生规范源；Android app同名文件为构建复制。MainActivity单独维护，先注册ArcaneBridge、TapBattle及ArcaneAds再super.onCreate。
 - `ArcaneBridge` 在明确创建时开启44174局域网房间服务；Java房间协议与Node一致，手机版HTTP通过原生桥接请求，HTTPS本地资源不放开任意混合内容。
 - `TapBattle` 使用真实TapSDK4.11.0 core/login/battle，未配置和未同意隐私时不初始化。`TapDuelLink`映射相同公平对局流程；战斗走有界帧输入/压缩状态分包，房间控制限频。后台应用草稿和本机配置已准备，实际双账号异网仍未验收，不能宣称异地已可玩。
-- Tap配置文件 `.private/taptap.properties`：`clientId=...`、`clientToken=...`。后台APK包名与正式签名需一致；空配置包保留离线及LAN。
+- Tap配置文件 `.private/taptap.properties`：`clientId=...`、`clientToken=...`、`towerLeaderboardId=...`。后台APK包名与正式签名需一致；空配置包保留离线及LAN。
+- `ArcaneTower` 使用TapSDK4.11.0排行榜与云存档模块：真正结束的挑战按服务当前periodToken提交最高层；历史排名查询与小型周奖领取账本分别处理，完整单机存档不上传。默认测试白名单保持开启，当前周期不可领周奖。跨设备账本为客户端校验与冲突回读，不是自建权威防作弊服务器；真实已结束周期与双设备并发仍待实测。
 - `ArcaneAds` 使用官方TapADN5.3.2.0 AAR；`.private/dirichlet.properties`包含mediaId/mediaName/mediaKey/rewardedPlacement/interstitialPlacement/testMode。当前仅测试媒体、testMode=true，不开放正式变现。status只读，玩家主动确认广告隐私后才初始化。可选标识/应用列表/传感器采集关闭；真验证回调与正常关闭后才给完成收据，游戏再防重保存奖励。结算插屏/复活等完整玩家入口仍须单独验收，不能因原生接口存在就算完成。
 
 手机设置可调触控透明度、画质及9种战斗按键位置，编辑时清输入/暂停战斗。首次新档提供跨页面教学，旧档不强制重做；教程23独立于20主线和2挑战，500金币首结仅一次。

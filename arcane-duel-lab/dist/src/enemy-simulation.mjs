@@ -288,6 +288,7 @@ export function updateEnemies(w,dt,hooks){
   if(e.fallingSpawn){e.ai.state='spawn';e.vx=0;hooks.physics(w,e,dt);if(e.grounded){e.fallingSpawn=false;e.ai.readyAt=w.time+.7;notice(w,'spawnLanded',{id:e.id});fx(w,hooks,e.themeStyle||'rock',{x:e.x,y:e.y,radius:30,duration:.35});}continue;}
   if(w.time>e.expires){e.hp=0;e.diedAt=w.time;e.deadUntil=Infinity;ai.attack=null;continue;}
   if(e.burnUntil>w.time&&w.time>=e.nextBurn){e.nextBurn+=.75;hooks.damage(w,e,4,{impact:false});if(e.hp<=0)continue;}
+  if(w.campaign?.mode==='tutorial'&&w.campaign.training?.step!=='complete'){ai.attack=null;ai.state=ai.stagger>0?'hurt':'idle';e.vx=0;e.face=Math.sign(w.player.x-e.x||e.face);hooks.physics(w,e,dt);continue;}
   if(d.boss&&e.hp/e.maxHp<=.5&&ai.phase===1){ai.phase=2;notice(w,'phase',{id:e.id,phase:2});fx(w,hooks,d.form==='wolf'?'ice':'star',{x:e.x,y:e.y-e.h*.4,radius:85,duration:.8,enemyKind:e.enemyKind});}
   if(ai.passiveUntil>w.time&&e.hp>0&&ai.stagger<=0&&w.time>=ai.healTick){ai.healTick+=.4;const heal=Math.min(16,e.maxHp-e.hp);e.hp+=heal;if(heal){fx(w,hooks,'heal',{x:e.x,y:e.y-e.h*.6,radius:65,duration:.65,enemyKind:e.enemyKind,ground:false});notice(w,'healed',{id:e.id,amount:heal});}}
   if((d.id==='B10'||d.mechanic==='gravity')&&alive(w.player)&&!blinkProtected(w)&&Math.abs(w.player.x-e.x)<260&&!w.player.enemyControl)w.player.vx+=(e.x-w.player.x)*dt*.25;

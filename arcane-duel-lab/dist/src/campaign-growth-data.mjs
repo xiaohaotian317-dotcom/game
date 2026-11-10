@@ -6,6 +6,7 @@ export const BASE_STATS={fire:[120,65],nature:[125,70],frost:[112,75],lightning:
 export const SOLO_SKILL_MANA=[9,15,28];
 export const SOLO_BASIC_SPLASH=Object.freeze({radius:65,ratio:.35,maxTargets:3});
 export const SOLO_KILL_XP=9;
+export const REPEAT_TICKET_CHANCE=.2;
 export const SOLO_BALANCE={health:1.15*.9,mana:1.05,attack:1.2,recoveryDropChance:.035*1.15};
 export const LEVEL_GROWTH={health:.05,mana:.04,attack:.02};
 export const XP_STEPS=[80,100,140,180,240,320,420,550,700,900,1150,1450];
@@ -42,7 +43,7 @@ export const ITEMS={
  mana:{name:'湛蓝灵露',description:'使用回复最大法力的22%，不超过当前上限。',kind:'mana',value:.22,sell:3,icon:11},
  heroChoice:{name:'启程·英雄自选宝箱',description:'首通第一关仅此一次，选择一位尚未拥有的英雄。',kind:'heroChoice',sell:0,icon:12},
 };
-export function stageLoot(id,random=Math.random){if(id===21)return [];const tier=id<=3?'Small':id<=8?'Medium':'Large',stone=id<=3?'Small':id<=8?'Medium':'High',items=[{type:'xp'+tier,count:id>=12?2:1},{type:'chest'+tier,count:id>=12?2:1},{type:'stone'+stone,count:id>=12?6:id>=9?3:2}];const pet=PET_XP_DROP_STAGES[id];if(pet)items.push({type:'petXp'+pet,count:1});if(ARTIFACT_DROP_STAGES[id])items.push({type:ARTIFACT_DROP_STAGES[id],count:1});items.push(...stageEquipment(id,random()<.5?'melee':'staff'));return items;}
+export function stageLoot(id,random=Math.random){if(id===21)return [];const tier=id<=3?'Small':id<=8?'Medium':'Large',stone=id<=3?'Small':id<=8?'Medium':'High',items=[{type:'xp'+tier,count:id>=12?2:1},{type:'chest'+tier,count:id>=12?2:1},{type:'stone'+stone,count:id>=12?3:id>=9?2:1}];const pet=PET_XP_DROP_STAGES[id];if(pet)items.push({type:'petXp'+pet,count:1});if(ARTIFACT_DROP_STAGES[id])items.push({type:ARTIFACT_DROP_STAGES[id],count:1});items.push(...stageEquipment(id,random()<.5?'melee':'staff'));return items;}
 export function lootPreview(id){const entry=EQUIPMENT_DROPS[id];return {guaranteed:stageLoot(id,()=>.6).filter(i=>i.type!=='equipment'),equipment:id===21?'只获得金币与角色经验':entry?`${QUALITY[entry[0]].name} ${'ABC'[entry[1]]}套：50%拳套与战甲 / 50%法杖与法袍`:'本关不掉装备'};}
 export function itemInfo(item){if(item.type!=='equipment')return ITEMS[item.type];const q=QUALITY[item.quality]||QUALITY[0],names=['','霜牙','熔炉','千鳞','织梦','荆冠','断钟','赤尾','血月','白骨','雷骨','星渊'],name=newEquipmentName(item)||((names[item.stage]||'秘境')+(item.slot==='weapon'?(item.role==='melee'?'拳套':'法杖'):(item.role==='melee'?'战甲':'法袍')));return {name,kind:'equipment',description:`${q.name}品质 · ${item.role==='melee'?'近战职业':'法杖职业'}专用 · ${item.rank||0}品 / 强化${item.level||0}级。可装备、金币升级或灵石升品，颜色品质不会因升品改变。`,sell:Math.round(12*(1+(item.quality||0)*1.5)),quality:item.quality,color:q.color,icon:(item.role==='melee'?0:6)+(item.quality||0),sheet:item.slot==='weapon'?'equipment':'armors'};}
 

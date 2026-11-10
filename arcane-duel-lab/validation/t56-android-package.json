@@ -1,0 +1,114 @@
+{
+  "package": "com.xiaohaotian.arcaneduel",
+  "versionName": "0.1.7",
+  "versionCode": 8,
+  "build": "android1-crossplay-v2",
+  "apk": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-安卓试玩-0.1.7.apk",
+  "bytes": 708564494,
+  "sha256": "dde6a479b9df46b08fac35328508ebc090ffd6eacb95ffb64db3cdd17f00f148",
+  "signingCertificateSha256": "50197c82d598e52d6866a7d6855c45906f70d12612c4ee280b229cce5fed517a",
+  "sameOriginalSigningKey": true,
+  "debuggable": false,
+  "minSdk": 28,
+  "targetSdk": 36,
+  "webAssetsMatched": 474,
+  "zip16KAligned": true,
+  "nativeLibraries": [
+    {
+      "file": "lib/arm64-v8a/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libdirichlet.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libdirichlet.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libthemis.so",
+      "minLoadAlignment": 16384
+    }
+  ],
+  "nativeElf16KAligned": true,
+  "nativeLaunchOriginalPixelsMatched": [
+    "res/Bf.png"
+  ],
+  "tapConfigured": true,
+  "towerLeaderboard": {
+    "configured": true,
+    "testWhitelistOnly": true,
+    "realEndedPeriodRewardVerified": false
+  },
+  "ads": {
+    "sdk": "TapADN5.3.2.0",
+    "environment": "test",
+    "supportedPrimaryAbis": [
+      "arm64-v8a",
+      "armeabi-v7a"
+    ],
+    "unsupportedAbiBlockedBeforeInit": true,
+    "realRevenueVerified": false
+  },
+  "physicalPhoneInstalledThisVersion": true,
+  "realInternetMatchVerified": false,
+  "publishedToTapTap": false,
+  "scope": "Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim."
+}

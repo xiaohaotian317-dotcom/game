@@ -1,0 +1,24 @@
+{
+  "task": "T55 daily chest manual claim, optional double reward and harder objective pool",
+  "status": "implemented, verified in isolated browser, frozen; ownership returned to root",
+  "sourceFiles": ["dist/src/daily-quests.mjs", "dist/src/daily-quests-ui.mjs", "dist/daily-quests.css", "dist/src/daily-quest-rewards.mjs"],
+  "tests": ["tests/t54-daily-rewards.test.mjs", "validation/t54-daily-browser.mjs"],
+  "validation": {"nodeTestsPassed":24,"browserChecksPassed":13,"pageErrors":0,"missingResources":0,"viewports":["800x360","736x414","1280x720"]},
+  "interaction": [
+    "Only the upper chest is a claim entry. Task rows show completion status with no duplicate claim button or automatic popup.",
+    "Opening the chest does not award coins or mark it opened. The popup offers ordinary claim and voluntary rewarded-ad double claim.",
+    "Ad privacy checkbox defaults unchecked every opening; status is read-only; only an explicit double action requests AD_PLACEMENTS.coins.",
+    "A successful draft is passed once through the original onSave callback so campaign/lobby live memory is updated with the formal save.",
+    "The chest opens only after successful save; failure, cancel, duplicate receipt, closing before callback or date rollover preserve the ordinary claim opportunity."
+  ],
+  "rewardRules": {"base":[100,100,300],"maximumBasePerDay":500,"doublePerSelectedChest":[200,200,600],"maximumWithAllAdsPerDay":1000,"normalizationFields":["taskGoals","adBonuses","adReceipts","adBlocked"],"receiptCapacity":4096,"receiptRetention":"Persists across day resets; refuses new double reward at capacity instead of expiring deduplication receipts.","crossShopReceiptCheck":true},
+  "newObjectiveDefaults": {"minions":35,"bosses":2,"skills":12,"jumps":15,"dashes":10,"pickups":4,"attacks":25,"clears":2,"shopCoins":1,"shopStone":1,"shopExperience":1,"shopTicket":1},
+  "selectionAndCompatibility": [
+    "Daily remains five choices with three rewarded chests; every new selection contains one or two shop objectives and at least three objectives unrelated to ads, verified for 400 dates.",
+    "Same-day valid task lists are preserved. Legacy lists without taskGoals retain former 20/1/5/10/5/3/15/1 thresholds and already completed/claimed tasks.",
+    "On the next local day, new selection uses the harder defaults. Shop event metrics are consumed from root-owned shop successful-save integration. This daily change exposes shopTicket and requires the shop integration to emit it only when a ticket is actually awarded after the required two completed ads, not after the first ad."
+  ],
+  "evidence": ["t54-daily-browser-report.json","t54-daily-board-800.png","t54-daily-choice-800.png","t54-daily-choice-736.png","t54-daily-mixed-claimed-800.png"],
+  "artReview": "Viewed the original ornate-controls-v1.png: button interiors contain only material and decoration, no baked text. Claim labels are live DOM. Existing daily chest art preserves its common reference scale.",
+  "limits": ["Browser ad responses are explicit mocks, not real SDK playback or monetization evidence.","No phone, ad account, real advertisement, publishing action, version, memory document or file outside assigned daily ownership was changed.","Final package, real-device display and any newly authorized actual ad test remain root responsibilities."]
+}

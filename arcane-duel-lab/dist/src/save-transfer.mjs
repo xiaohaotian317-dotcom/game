@@ -1,4 +1,5 @@
 import {normalizeSolo} from './campaign-profile.mjs';
+import {mergeTowerWeeklyForImport} from './tower-weekly-state.mjs';
 export const SAVE_KEYS=['arcane-solo-growth-v1','arcane-campaign-progress-v1','arcane-duel-profile-v1','arcane-audio-settings-v1'];
 export const SAVE_FORMAT='arcane-duel-save';
 const limit=4*1024*1024;
@@ -26,6 +27,8 @@ export async function inspectSave(text){
 export async function importSave(storage,text,{backup=()=>{}}={}){
  const checked=await inspectSave(text),old=values(storage);
  await backup(JSON.stringify({format:'arcane-duel-automatic-backup',version:1,createdAt:new Date().toISOString(),entries:old}));
+ const imported=JSON.parse(checked.entries[SAVE_KEYS[0]]);let previous;try{previous=JSON.parse(old[SAVE_KEYS[0]]||'null');}catch{}
+ imported.towerWeekly=mergeTowerWeeklyForImport(imported.towerWeekly,previous?.towerWeekly);checked.entries[SAVE_KEYS[0]]=JSON.stringify(imported);
  try{storage.setItem('arcane-save-before-import',JSON.stringify(old));for(const k of SAVE_KEYS){const v=checked.entries[k];if(v==null)storage.removeItem(k);else storage.setItem(k,v);}for(const k of SAVE_KEYS)if(storage.getItem(k)!==(checked.entries[k]??null))throw Error('存档写入校验失败');}
  catch(error){for(const k of SAVE_KEYS)try{old[k]==null?storage.removeItem(k):storage.setItem(k,old[k]);}catch{}throw Error('导入失败，已尝试恢复原存档：'+error.message);}
  return checked;

@@ -25,4 +25,11 @@
 .twin-battle #boss-hud,.twin-battle #second-boss-hud{width:min(560px,44vw)}
 .twin-battle #boss-hud{top:108px}.twin-battle #second-boss-hud{top:215px}
 .twin-battle #battle-notice{top:325px}
+/* Phone chapter choices stay between the two challenge positions, not in a wide corner panel. */
+html[data-mobile] #world-screen .chapter-select{left:50%;right:auto;bottom:calc(var(--safe-bottom) + 3px);transform:translateX(-50%);max-width:calc(100vw - var(--safe-left) - var(--safe-right) - 130px);gap:5px;filter:drop-shadow(0 2px 4px #0008)}
+html[data-mobile] #world-screen .chapter-select button{min-width:104px;min-height:44px;padding:5px 13px;display:flex;align-items:center;justify-content:center;gap:6px;letter-spacing:.04em;font-size:10px;background:linear-gradient(115deg,#283a3c,#0a1924 38%,#26373a);box-shadow:inset 0 0 0 1px #ac945a88;clip-path:polygon(6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px),0 6px)}
+html[data-mobile] #world-screen .chapter-select button small{font-size:9px;color:#b4c0b8;white-space:nowrap}
+html[data-mobile] #world-screen .chapter-select button.active{background:linear-gradient(115deg,#705a32,#26302b 46%,#665333);box-shadow:inset 0 0 0 1px #dec482;color:#fff0c6}
+html[data-mobile] #world-screen .chapter-select button.active small{color:#e3d5ad}
+html[data-mobile] #world-screen .chapter-select button:disabled{opacity:.65}
 @media(max-width:1150px){.twin-battle #boss-hud,.twin-battle #second-boss-hud{width:60vw}.twin-battle #boss-hud{top:215px}.twin-battle #second-boss-hud{top:320px}.twin-battle #battle-notice{top:420px}}

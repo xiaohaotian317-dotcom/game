@@ -28,10 +28,11 @@ android {
         applicationId "com.xiaohaotian.arcaneduel"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "0.1.2"
+        versionCode 8
+        versionName "0.1.7"
         buildConfigField "String", "TAP_CLIENT_ID", quoted(tapProperties.getProperty("clientId"))
         buildConfigField "String", "TAP_CLIENT_TOKEN", quoted(tapProperties.getProperty("clientToken"))
+        buildConfigField "String", "TOWER_LEADERBOARD_ID", quoted(tapProperties.getProperty("towerLeaderboardId"))
         buildConfigField "String", "ADN_MEDIA_ID", quoted(adsProperties.getProperty("mediaId", adsProperties.getProperty("appId")))
         buildConfigField "String", "ADN_MEDIA_KEY", quoted(adsProperties.getProperty("mediaKey"))
         buildConfigField "String", "ADN_MEDIA_NAME", quoted(adsProperties.getProperty("mediaName", "秘境决斗"))
@@ -68,6 +69,8 @@ dependencies {
     implementation 'com.taptap.sdk:tap-core:4.11.0'
     implementation 'com.taptap.sdk:tap-login:4.11.0'
     implementation 'com.taptap.sdk:tap-battle:4.11.0'
+    implementation 'com.taptap.sdk:tap-leaderboard-androidx:4.11.0'
+    implementation 'com.taptap.sdk:tap-cloudsave:4.11.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"

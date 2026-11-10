@@ -31,6 +31,7 @@ public final class AdsPlugin extends Plugin {
     private boolean initialized,destroyed;
     private TapAdNative adNative;
     private Attempt active;
+    private AdReceiptGate.FailureDiagnostic lastFailure;
 
     private static final class Attempt {
         final PluginCall call;
@@ -39,6 +40,7 @@ public final class AdsPlugin extends Plugin {
         boolean showRequested;
         TapRewardVideoAd reward;
         TapInterstitialAd interstitial;
+        AdReceiptGate.FailureDiagnostic failure;
         Attempt(PluginCall call,String placement,boolean rewarded){this.call=call;gate=new AdReceiptGate(placement,rewarded);}
     }
     private long positiveId(String value){try{long id=Long.parseLong(value);return id>0?id:0;}catch(Exception ignored){return 0;}}
@@ -46,7 +48,7 @@ public final class AdsPlugin extends Plugin {
     private boolean configured(){return BuildConfig.ADN_TEST_MODE&&positiveId(BuildConfig.ADN_MEDIA_ID)>0&&!BuildConfig.ADN_MEDIA_KEY.trim().isEmpty();}
     private boolean consented(){return getContext().getSharedPreferences("arcane-privacy",0).getBoolean("ads-dirichlet",false);}
     private JSObject statusJson(){
-        JSObject value=new JSObject();value.put("provider","dirichlet");value.put("sdkVersion","5.3.2.0");value.put("testMode",true);value.put("environment","test");value.put("monetization",false);value.put("configured",configured());value.put("supportedAbi",supportedAbi());if(!supportedAbi())value.put("reason","unsupportedAbi");value.put("privacyAccepted",consented());value.put("initialized",initialized);value.put("rewarded",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_REWARDED_PLACEMENT)>0);value.put("interstitial",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_INTERSTITIAL_PLACEMENT)>0);value.put("busy",active!=null);return value;
+        JSObject value=new JSObject();value.put("provider","dirichlet");value.put("sdkVersion","5.3.2.0");value.put("testMode",true);value.put("environment","test");value.put("monetization",false);value.put("configured",configured());value.put("supportedAbi",supportedAbi());if(!supportedAbi())value.put("reason","unsupportedAbi");value.put("privacyAccepted",consented());value.put("initialized",initialized);value.put("rewarded",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_REWARDED_PLACEMENT)>0);value.put("interstitial",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_INTERSTITIAL_PLACEMENT)>0);value.put("busy",active!=null);if(lastFailure!=null)value.put("lastFailure",diagnosticJson(lastFailure));return value;
     }
     @PluginMethod public void status(PluginCall call){main.post(()->call.resolve(statusJson()));}
     @PluginMethod public void consent(PluginCall call){main.post(()->{
@@ -54,6 +56,7 @@ public final class AdsPlugin extends Plugin {
         if(!supportedAbi()){call.reject("此设备架构暂不支持广告服务，单机游玩不受影响","unsupportedAbi");return;}
         if(!configured()){call.reject("测试广告尚未配置完成，单机游玩不受影响","notConfigured");return;}
         if(destroyed){call.reject("广告页面已关闭","closed");return;}
+        if(!initialized&&!usableActivity()){remember(null,"lifecycle",null,"Initialization requires a foreground focused Activity");call.reject("请回到游戏页面后再主动观看广告","background",errorJson(lastFailure));return;}
         try{
             if(!initialized){
                 // No optional identifiers, installed-app list, sensors or runtime permissions.
@@ -77,16 +80,16 @@ public final class AdsPlugin extends Plugin {
                 initialized=true;
             }
             getContext().getSharedPreferences("arcane-privacy",0).edit().putBoolean("ads-dirichlet",true).apply();call.resolve(statusJson());
-        }catch(Exception|LinkageError error){call.reject("广告SDK初始化失败，请稍后重试","adInitFailed");}
+        }catch(Exception|LinkageError error){remember(null,"init",null,errorText(error));call.reject("广告SDK初始化失败，请稍后重试","adInitFailed",errorJson(lastFailure));}
     });}
     @PluginMethod public void showRewarded(PluginCall call){main.post(()->{
         String placement=call.getString("placement","");if(!REWARDED.contains(placement)){call.reject("广告位不可用","invalidPlacement");return;}
         Attempt a=begin(call,placement,true,positiveId(BuildConfig.ADN_REWARDED_PLACEMENT));if(a==null)return;
         try{adNative.loadRewardVideoAd(request(BuildConfig.ADN_REWARDED_PLACEMENT,a),new TapAdNative.RewardVideoAdListener(){
-            @Override public void onError(int code,String message){main.post(()->fail(a,"loadFailed",code));}
+            @Override public void onError(int code,String message){main.post(()->fail(a,"loadFailed",code,message));}
             @Override public void onRewardVideoAdLoad(TapRewardVideoAd ad){main.post(()->{if(current(a)&&ad!=null){a.reward=ad;a.gate.loaded(requestId(ad.getMediaExtraInfo()));}});}
             @Override public void onRewardVideoCached(TapRewardVideoAd ad){main.post(()->showReward(a,ad));}
-        });}catch(Exception|LinkageError error){fail(a,"loadFailed",0);}
+        });}catch(Exception|LinkageError error){fail(a,"loadFailed",null,errorText(error));}
     });}
     private void showReward(Attempt a,TapRewardVideoAd ad){
         if(!current(a)||a.showRequested)return;
@@ -97,18 +100,18 @@ public final class AdsPlugin extends Plugin {
             @Override public void onAdClose(TapRewardVideoAd source){main.post(()->finish(a,true,"closedBeforeReward",0));}
             @Override public void onVideoComplete(TapRewardVideoAd source){/* Completion alone is never a reward. */}
             @Override public void onVideoError(TapRewardVideoAd source){main.post(()->fail(a,"videoFailed",0));}
-            @Override public void onRewardVerify(TapRewardVideoAd source,boolean valid,int amount,String name,int code,String message){main.post(()->{if(current(a))a.gate.verify(valid);});}
+            @Override public void onRewardVerify(TapRewardVideoAd source,boolean valid,int amount,String name,int code,String message){main.post(()->{if(current(a)){a.gate.verify(valid);if(!valid)remember(a,"verify",code,message);}});}
             @Override public void onSkippedVideo(TapRewardVideoAd source){main.post(()->{if(current(a))a.gate.skip();});}
             @Override public void onAdClick(TapRewardVideoAd source){}
             @Override public void onAdValidShow(TapRewardVideoAd source){}
         });
-        try{ad.showRewardVideoAd(getActivity());}catch(Exception|LinkageError error){fail(a,"showFailed",0);}
+        try{ad.showRewardVideoAd(getActivity());}catch(Exception|LinkageError error){fail(a,"showFailed",null,errorText(error));}
     }
     @PluginMethod public void showInterstitial(PluginCall call){main.post(()->{
         String placement=call.getString("placement","");if(!placement.equals("interstitial-result")){call.reject("广告位不可用","invalidPlacement");return;}
         Attempt a=begin(call,placement,false,positiveId(BuildConfig.ADN_INTERSTITIAL_PLACEMENT));if(a==null)return;
         try{adNative.loadInterstitialAd(request(BuildConfig.ADN_INTERSTITIAL_PLACEMENT,a),new TapAdNative.InterstitialAdListener(){
-            @Override public void onError(int code,String message){main.post(()->fail(a,"loadFailed",code));}
+            @Override public void onError(int code,String message){main.post(()->fail(a,"loadFailed",code,message));}
             @Override public void onInterstitialAdLoad(TapInterstitialAd ad){main.post(()->{
                 if(!current(a))return;if(!usableActivity()||ad==null||!ad.isValid()){fail(a,"notAvailable",0);return;}
                 a.interstitial=ad;a.gate.loaded(requestId(ad.getMediaExtraInfo()));a.showRequested=true;
@@ -119,9 +122,9 @@ public final class AdsPlugin extends Plugin {
                     @Override public void onAdValidShow(){}
                     @Override public void onAdClick(){}
                 });
-                try{ad.show(getActivity());}catch(Exception|LinkageError error){fail(a,"showFailed",0);}
+                try{ad.show(getActivity());}catch(Exception|LinkageError error){fail(a,"showFailed",null,errorText(error));}
             });}
-        });}catch(Exception|LinkageError error){fail(a,"loadFailed",0);}
+        });}catch(Exception|LinkageError error){fail(a,"loadFailed",null,errorText(error));}
     });}
     private AdRequest request(String spaceId,Attempt a){return new AdRequest.Builder().withSpaceId(positiveId(spaceId)).withRewardName("秘境补给").withRewardAmount(1).withExtra1(a.gate.attemptId).build();}
     private Attempt begin(PluginCall call,String placement,boolean reward,long spaceId){
@@ -131,7 +134,7 @@ public final class AdsPlugin extends Plugin {
         if(active!=null){call.reject("广告正在处理中","busy");return null;}
         if(destroyed||!usableActivity()){call.resolve(unavailable(reward,"background"));return null;}
         try{if(adNative==null)adNative=TapAdManager.get().createAdNative(getActivity());}
-        catch(Exception|LinkageError error){call.resolve(unavailable(reward,"notAvailable"));return null;}
+        catch(Exception|LinkageError error){remember(null,"load",null,errorText(error));JSObject out=unavailable(reward,"notAvailable");appendError(out,lastFailure);call.resolve(out);return null;}
         Attempt a=new Attempt(call,placement,reward);active=a;timeout(a,30000,"loadTimeout");return a;
     }
     private boolean usableActivity(){Activity activity=getActivity();return activity!=null&&!activity.isFinishing()&&!activity.isDestroyed()&&activity.hasWindowFocus();}
@@ -139,10 +142,23 @@ public final class AdsPlugin extends Plugin {
     private String requestId(Map<String,Object> info){if(info==null)return "";for(String key:new String[]{"request_id","requestId","ad_request_id"}){Object value=info.get(key);if(value instanceof String)return ((String)value).substring(0,Math.min(512,((String)value).length()));}return "";}
     private JSObject unavailable(boolean reward,String reason){JSObject out=new JSObject();out.put(reward?"available":"shown",false);out.put("completed",false);out.put("testMode",true);out.put("environment","test");out.put("reason",reason);return out;}
     private void timeout(Attempt a,long ms,String reason){if(a.timeout!=null)main.removeCallbacks(a.timeout);a.timeout=()->fail(a,reason,0);main.postDelayed(a.timeout,ms);}
-    private void fail(Attempt a,String reason,int code){if(active!=a)return;a.gate.fail();finish(a,false,reason,code);}
+    private String errorText(Throwable error){return error.getClass().getSimpleName()+": "+(error.getMessage()==null?"":error.getMessage());}
+    private String failurePhase(String reason){if(reason.endsWith("Timeout"))return "timeout";if(reason.startsWith("load"))return "load";if(reason.startsWith("show"))return "show";if(reason.startsWith("video"))return "video";if(reason.equals("closedBeforeReward"))return "verify";if(reason.equals("background")||reason.equals("destroyed"))return "lifecycle";return "show";}
+    private void remember(Attempt a,String phase,Integer code,String message){
+        if(a!=null&&active!=a)return;
+        AdReceiptGate.FailureDiagnostic diagnostic=new AdReceiptGate.FailureDiagnostic(phase,code,message,BuildConfig.ADN_MEDIA_KEY,BuildConfig.ADN_MEDIA_ID,BuildConfig.ADN_REWARDED_PLACEMENT,BuildConfig.ADN_INTERSTITIAL_PLACEMENT);
+        lastFailure=diagnostic;if(a!=null)a.failure=diagnostic;
+    }
+    private JSObject diagnosticJson(AdReceiptGate.FailureDiagnostic diagnostic){JSObject out=new JSObject();out.put("phase",diagnostic.phase);if(diagnostic.code!=null)out.put("code",diagnostic.code.intValue());out.put("message",diagnostic.message);return out;}
+    private void appendError(JSObject out,AdReceiptGate.FailureDiagnostic diagnostic){if(diagnostic==null)return;out.put("errorPhase",diagnostic.phase);if(diagnostic.code!=null)out.put("errorCode",diagnostic.code.intValue());out.put("errorMessage",diagnostic.message);}
+    private JSObject errorJson(AdReceiptGate.FailureDiagnostic diagnostic){JSObject out=new JSObject();appendError(out,diagnostic);return out;}
+    private void fail(Attempt a,String reason,int code){fail(a,reason,code==0?null:Integer.valueOf(code),"");}
+    private void fail(Attempt a,String reason,Integer code,String message){if(active!=a)return;remember(a,failurePhase(reason),code,message);a.gate.fail();finish(a,false,reason,0);}
     private void finish(Attempt a,boolean normalClose,String reason,int code){
-        if(active!=a)return;AdReceiptGate.Result result=a.gate.finish(normalClose,reason);if(result==null)return;active=null;if(a.timeout!=null)main.removeCallbacks(a.timeout);
-        JSObject out=new JSObject();out.put("available",result.available);out.put("shown",result.shown);out.put("completed",result.completed);out.put("placement",a.gate.placement);out.put("testMode",true);out.put("environment","test");if(result.completed)out.put("receipt",result.receipt);if(!result.reason.isEmpty())out.put("reason",result.reason);if(code!=0)out.put("errorCode",code);a.call.resolve(out);dispose(a);
+        if(active!=a)return;AdReceiptGate.Result result=a.gate.finish(normalClose,reason);if(result==null)return;if(a.timeout!=null)main.removeCallbacks(a.timeout);
+        if(!result.completed&&a.gate.rewarded&&a.failure==null)remember(a,"verify",null,"Reward not verified before normal close");
+        active=null;
+        JSObject out=new JSObject();out.put("available",result.available);out.put("shown",result.shown);out.put("completed",result.completed);out.put("placement",a.gate.placement);out.put("testMode",true);out.put("environment","test");if(result.completed)out.put("receipt",result.receipt);if(!result.reason.isEmpty())out.put("reason",result.reason);appendError(out,a.failure);a.call.resolve(out);dispose(a);
     }
     private void dispose(Attempt a){try{if(a.reward!=null)a.reward.dispose();}catch(Exception ignored){}try{if(a.interstitial!=null)a.interstitial.dispose();}catch(Exception ignored){}}
     @Override protected void handleOnPause(){main.post(()->{if(active!=null&&!active.showRequested)fail(active,"background",0);});}

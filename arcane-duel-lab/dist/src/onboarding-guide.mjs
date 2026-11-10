@@ -1,6 +1,5 @@
 import {loadSolo,saveSolo} from './campaign-profile.mjs';
 import {normalizeOnboarding} from './onboarding-state.mjs';
-const menus=[['character','角色','查看等级、属性和装备；点击头像可切换查看的英雄。'],['bag','背包','战利品、经验药水和金币宝箱都在这里，点击物品查看用途。'],['skills','技能','花金币学习与强化技能，每行选择一招搭配；共享被动对所有英雄生效。'],['artifact','法器','第4关起获得法器，可装备、升级并使用独立能力。'],['pet','灵宠','第5关起挑战灵宠副本，使用收妖镜捕捉；一次出战一只。'],['forge','锻造炉','选择装备与灵石升级品质，旁边三格炉子可以合成灵石。'],['daily','每日任务','每日完成任意三项任务，依次领取三份金币奖励。']];
 const visible=el=>el&&!el.hidden&&!el.closest('[inert]')&&el.getClientRects().length&&getComputedStyle(el).visibility!=='hidden';
 export function installOnboarding(page,{storage=globalThis.localStorage,getProfile=()=>loadSolo(storage),persist=p=>saveSolo(storage,p),getWorld=()=>null,closeSystem=()=>{},openMenu=()=>{}}={}){
  if(typeof document==='undefined')return;
@@ -37,24 +36,24 @@ export function installOnboarding(page,{storage=globalThis.localStorage,getProfi
    return;
   }
   if(page==='shop'){
-   if(!['return-shop','explore','map','battle','reward','menu','menus'].includes(s))show('#shop-rewards','自愿领取补给','可以选择金币、经验药水、金币宝箱或基础灵石。只有完整看完广告才领取；广告没开放时也不影响正常闯关。',()=>set({step:'return-shop'}),'了解商店');
+   if(!['return-shop','explore','map','battle','reward','menu','menus'].includes(s))show('#shop-rewards','自愿领取补给','可以选择金币、经验药水、基础灵石或抽奖券。只有完整看完广告才领取；广告没开放时也不影响正常闯关。',()=>set({step:'return-shop'}),'了解商店');
    else show('.shop-back','出发探索','回到大厅，进入探索地图。',null);
    return;
   }
   if(page!=='campaign')return;
   if(s==='battle'){
-   const world=getWorld();if(world){if(world.campaign.state==='portal')show('#campaign-arena','试炼完成','靠近传送门，点击“结算”或按X完成教学。',null,null,true);else show('#campaign-arena','启程试炼','向右移动，使用普攻和第一个技能击败小兵。跳跃能越过平台，两波清完后前往传送门。',null,null,true);return;}
+   const world=getWorld();if(world?.campaign?.training){hide();return;}if(world){if(world.campaign.state==='portal')show('#campaign-arena','试炼完成','靠近传送门，点击“结算”或按X完成教学。',null,null,true);else show('#campaign-arena','启程试炼','向右移动，使用普攻和第一个技能击败小兵。跳跃能越过平台，两波清完后前往传送门。',null,null,true);return;}
    if(visible(document.querySelector('#loading'))||visible(document.querySelector('#team-screen'))){hide();return;}set({step:'map'});return;
   }
   if(s==='reward'){if(!getWorld()&&!document.querySelector('#result-dialog[open]')){set({step:'menu'});return;}show('#result-primary','启程礼已到账','首次完成教学获得500金币。现在返回地图，认识行囊与修行菜单。',null);return;}
   if(s==='menu'){show('.map-menu-toggle','行囊与修行','点击这里展开菜单，角色成长、装备与技能都在其中。',null);return;}
   if(s==='menus'){
-   const [key,title,copy]=menus[current.menuIndex];
    const system=document.querySelector('#solo-system[open]'),daily=document.querySelector('.daily-dialog[open]');
-   if(system||daily){show(system||daily,title,copy,()=>{closeSystem();if(current.menuIndex===menus.length-1)set({step:'done'});else set({menuIndex:current.menuIndex+1});},current.menuIndex===menus.length-1?'开始自由探索':'返回菜单');return;}
-   const selector=`[data-map-system="${key}"]`;if(!visible(document.querySelector(selector))){openMenu();hide();return;}show(selector,title,copy,null);return;
+   if(system||daily){closeSystem();return;}
+   const menu=document.querySelector('#map-system-links');if(!visible(menu)){openMenu();hide();return;}
+   show(menu,'行囊与修行','角色查看属性和装备，背包使用道具；技能学习招式，法器与灵宠助战；锻造提升装备，每日任务领取金币。',()=>set({step:'done'}),'开始自由探索');return;
   }
-  if(visible(document.querySelector('#stage-detail[open]')))show('#enter-stage','进入启程试炼','这里没有首领，只有少量小兵。首次完成后可获得500金币。',null);
+  if(visible(document.querySelector('#stage-detail[open]')))show('#enter-stage','进入启程试炼','这里有少量小兵。首次完成后可获得500金币。',null);
   else if(visible(document.querySelector('#team-screen'))){const ready=document.querySelector('[data-team-confirm]');if(ready?.disabled)show('[data-team-hero=fire]','选择焰术师','点击焰术师头像，加入第一个出战位置。',null);else show('[data-team-confirm]','准备出发','英雄已就位。点击开始挑战，进入启程试炼。',null);}
   else show('[data-stage="23"]','第一场试炼','点击启程试炼。先熟悉移动、跳跃和攻击，再探索正式秘境。',null);
  }

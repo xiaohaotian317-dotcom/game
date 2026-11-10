@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign21',choices=[f'campaign{i}' for i in range(1,22)])
+parser.add_argument('--version',default='campaign25',choices=[f'campaign{i}' for i in range(1,26)])
 parser.add_argument('--report',help='JSON report filename inside validation/; defaults to <version>-package.json')
 args=parser.parse_args()
 version=args.version
@@ -29,7 +29,7 @@ def file_digest(file):
 metadata=json.loads((source/'版本信息.json').read_text(encoding='utf-8'))
 if metadata.get('build')!=version:
     raise SystemExit('Built version does not match requested release; build the correct version first')
-if version=='campaign21' and metadata.get('lanBuild')!='android1-crossplay-v2':
+if version in ('campaign21','campaign22','campaign23','campaign24','campaign25') and metadata.get('lanBuild')!='android1-crossplay-v2':
     raise SystemExit('This release requires the Android/Windows crossplay build')
 expected={p.relative_to(root/'dist').as_posix():file_digest(p) for p in (root/'dist').rglob('*') if p.is_file() and p.relative_to(root/'dist').parts[0] not in ('client','server','.openai')}
 built={p.relative_to(source/'resources/app/dist').as_posix():file_digest(p) for p in (source/'resources/app/dist').rglob('*') if p.is_file()}

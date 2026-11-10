@@ -1,0 +1,11 @@
+{
+  "scope": "Isolated browser and explicit fake advertisements only; no phone or real ad requests.",
+  "checks": [
+    "real shop UI: first fake ad saves progress; reload keeps it; cancelled fake ad adds nothing; second distinct completion grants ticket and task progress; four completed ads cap two tickets",
+    "four separate shop offers and 44px buttons fit 800x360; status read does not start an ad",
+    "four separate shop offers and 44px buttons fit 736x414; status read does not start an ad",
+    "four separate shop offers and 44px buttons fit 1280x720; status read does not start an ad"
+  ],
+  "errors": [],
+  "passed": true
+}

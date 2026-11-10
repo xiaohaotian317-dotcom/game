@@ -1,3 +1,4 @@
+import {loadingArt} from './loading-art.mjs';
 export const LOADING_SCENES={moon:{name:'月光遗迹',subtitle:'断桥与月镜',tip:'击碎木桥可打开下落路线，月镜能改变投射物方向。'},lava:{name:'熔岩祭坛',subtitle:'导流与摆锤',tip:'观察地火预警，用导流阀和摆锤改变对手的落点。'},garden:{name:'浮空花园',subtitle:'风道与藤桥',tip:'顺着风道调整跳跃，利用藤桥与弹跳花抢占高处。'}};
 export class LoadingScreen{
   constructor(){
@@ -9,7 +10,7 @@ export class LoadingScreen{
     const token=++this.token,s=LOADING_SCENES[scene]||LOADING_SCENES.moon;
     clearTimeout(this.timer);this.node.hidden=true;this.node.classList.remove('loading-error');this.node.querySelector('h2').textContent=s.name;
     this.node.querySelector('.loading-subtitle').textContent=s.subtitle;this.node.querySelector('.loading-tip').textContent=s.tip;
-    this.node.querySelector('.loading-landscape').style.backgroundImage='url("assets/loading/'+(LOADING_SCENES[scene]?scene:'moon')+'-loading-v1.png")';
+    this.node.querySelector('.loading-landscape').style.backgroundImage=`url("${loadingArt(scene)}")`;
     this.node.querySelector('.loading-caption span').textContent=label;this.node.querySelector('.loading-retry').hidden=true;this.progress(0,0,token);
     this.timer=setTimeout(()=>{if(this.token===token){this.node.hidden=false;this.node.querySelector('h2').focus?.({preventScroll:true});}},140);return token;
   }

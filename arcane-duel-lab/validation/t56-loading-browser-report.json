@@ -1,0 +1,46 @@
+{
+  "scope": "Isolated desktop touch browser, deliberately held local assets to inspect real loading screens. No phone or live ad request.",
+  "checks": [
+    {
+      "name": "Actual campaign entry uses approved art, proportional full viewport, visible 44px return and real resource completion",
+      "stage": 23,
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "scene": "moon"
+    },
+    {
+      "name": "Actual campaign entry uses approved art, proportional full viewport, visible 44px return and real resource completion",
+      "stage": 2,
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "scene": "lava"
+    },
+    {
+      "name": "Actual campaign entry uses approved art, proportional full viewport, visible 44px return and real resource completion",
+      "stage": 5,
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "scene": "garden"
+    },
+    {
+      "name": "Start footer removed while live status remains accessible"
+    },
+    {
+      "name": "Card-pool loading failure keeps original illustration and retry recovers actual art"
+    },
+    {
+      "name": "Six-hero studio finishes shared illustrated resource loading"
+    },
+    {
+      "name": "Bestiary creature and boss asset loads finish shared illustrated overlay"
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

@@ -16,3 +16,4 @@
 @media(max-width:850px){.archive-transfer.power-transfer{padding-left:91px;grid-template-columns:1fr 1fr}.archive-transfer .transfer-copy{grid-column:1/-1}}
 @media(max-width:650px){.archive-transfer.power-transfer{grid-template-columns:1fr 1.1fr 112px;padding-left:70px}.archive-transfer .transfer-copy{grid-column:auto}}
 @media(prefers-reduced-motion:no-preference){.archive-primary,.archive-summon{transition:filter .15s,color .15s,text-shadow .15s}}
+.archive-transfer.power-transfer>.archive-primary{min-height:44px}

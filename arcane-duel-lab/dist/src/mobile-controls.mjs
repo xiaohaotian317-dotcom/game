@@ -41,7 +41,7 @@ export class TouchInputState {
     const s=neutral(),p=this.pointerFor('joystick');
     if(p){const dx=p.point.x-p.start.x,dy=p.point.y-p.start.y;s.move=Math.abs(dx)>this.deadZone?Math.sign(dx):0;s.down=dy>this.downThreshold;}
     s.attack=this.owners.has('attack');s.artifact=this.owners.has('artifact');
-    s.aim=this.activeSkill?.aim||aim;return s;
+    s.aim=this.activeSkill?.aim||this.pointerFor('artifact')?.aim||this.pointerFor('attack')?.aim||aim;return s;
   }
   reset(){this.pointers.clear();this.owners.clear();}
 }
@@ -114,7 +114,7 @@ export function createMobileControlPreview({document=globalThis.document,model={
  const root=live?live.root.cloneNode(true):document.createElement('div');
  if(!live){root.className='mobile-controls';root.innerHTML=mobileControlsMarkup();root.dataset.hero=model.hero||'fire';for(const key of ['attack','dash','q','e','r']){const b=root.querySelector('[data-mobile-role="'+key+'"]'),s=model.skills?.[key];if(s){b.querySelector('.mobile-control-name').textContent=s.name||names[key];MobileControls.prototype.setIcon(b,s.style);}}}
  root.hidden=false;root.classList.add('mobile-editor-controls');root.querySelectorAll('.mobile-pause,.mobile-cancel,.mobile-aim-line,.mobile-aim-reticle,.mobile-layout-safe-area').forEach(e=>e.remove());
- for(const e of root.querySelectorAll('[data-mobile-role]')){e.disabled=false;e.classList.remove('is-held','is-cooling','is-locked');e.querySelector('.mobile-control-cooldown')?.replaceChildren();}
+    for(const e of root.querySelectorAll('[data-mobile-role]')){e.disabled=false;e.classList.remove('is-held','is-cooling','is-locked','training-control-blocked');e.querySelector('.mobile-control-cooldown')?.replaceChildren();}
  root.querySelector('.mobile-artifact').hidden=false;const context=root.querySelector('.mobile-context');context.hidden=false;context.dataset.mobileRole='context';context.querySelector('.mobile-control-name').textContent='交互';return root;
 }
 
@@ -157,8 +157,8 @@ export class MobileControls {
   emit(record){if(record)this.onAction(record.action,{aim:record.aim||null,source:'touch'});}
   aimFor(p){
     const w=this.getWorld();if(!w)return null;
-    const kind=p.role==='artifact'?'ground':skillAimKind(this.model.hero,p.role,this.model.skills[p.role]);
-    return p.dragged?dragAim(w,p.start,p.point,{kind}):assistAim(w,{kind,terrain:false});
+    const kind=p.role==='artifact'?'ground':p.role==='attack'?'direction':skillAimKind(this.model.hero,p.role,this.model.skills[p.role]);
+    return p.dragged?dragAim(w,p.start,p.point,{kind}):assistAim(w,{kind,terrain:p.role==='attack',frontOnly:false});
   }
   pointerDown(event){
     const button=event.target.closest?.('[data-mobile-role]');if(!button||!this.root.contains(button))return;
@@ -169,7 +169,7 @@ export class MobileControls {
     const result=this.input.press(event.pointerId,role,this.point(event));
     const p=this.input.pointers.get(event.pointerId);if(!p)return;
     p.element=button;try{button.setPointerCapture(event.pointerId);}catch{}
-    if(skillKeys.has(role)||role==='artifact'){p.aim=this.aimFor(p);if(role!=='artifact')this.cancel.hidden=false;}
+    if(skillKeys.has(role)||role==='artifact'||role==='attack'){p.aim=this.aimFor(p);if(skillKeys.has(role))this.cancel.hidden=false;}
     this.emit(result);button.classList.add('is-held');this.refreshVisuals();
   }
   pointerMove(event){
@@ -180,7 +180,7 @@ export class MobileControls {
       canceled||=point.x<0||point.y<0||point.x>this.window.innerWidth||point.y>this.window.innerHeight;
     }
     this.input.move(event.pointerId,point,{canceled});
-    if(skillKeys.has(p.role)||p.role==='artifact')p.aim=this.aimFor(p);
+    if(skillKeys.has(p.role)||p.role==='artifact'||p.role==='attack')p.aim=this.aimFor(p);
     this.refreshVisuals();
   }
   pointerUp(event,cancel=false){
@@ -194,8 +194,8 @@ export class MobileControls {
   read(){
     if(!this.enabled)return neutral();
     const w=this.getWorld();if(!w?.player)return neutral();
-    const skill=this.input.activeSkill,artifact=this.input.pointerFor('artifact');if(skill)skill.aim=this.aimFor(skill);if(artifact)artifact.aim=this.aimFor(artifact);
-    const aim=artifact?.aim||(this.input.pointerFor('attack')?assistAim(w,{terrain:true,frontOnly:false}):null);
+    const skill=this.input.activeSkill,artifact=this.input.pointerFor('artifact'),attack=this.input.pointerFor('attack');if(skill)skill.aim=this.aimFor(skill);if(artifact)artifact.aim=this.aimFor(artifact);if(attack)attack.aim=this.aimFor(attack);
+    const aim=artifact?.aim||attack?.aim||null;
     this.refreshVisuals();return this.input.read(aim);
   }
   update(patch={}){
@@ -222,6 +222,7 @@ export class MobileControls {
     if(context.artifact&&typeof context.artifact==='object'){
       artifact.querySelector('.mobile-control-name').textContent=context.artifact.name||'法器';this.setIcon(artifact,context.artifact.style);
     }
+    for(const [key,button] of this.buttons){const role=button===this.contextButton?contextRole:key,blocked=role!=='pause'&&Array.isArray(this.model.allowedRoles)&&!this.model.allowedRoles.includes(role);button.classList.toggle('training-control-blocked',blocked);button.disabled=blocked||Boolean(this.model.skills[key]?.locked);if(blocked){const held=this.input.pointerFor(role);if(held)this.cancelPointer(held);}}
     for(const p of [...this.input.pointers.values()]){
       if((['pickup','capture','interact','settle'].includes(p.role)&&p.role!==contextRole)||(p.role==='artifact'&&!context.artifact))this.cancelPointer(p);
     }
@@ -240,7 +241,7 @@ export class MobileControls {
     const p=this.input.pointerFor('joystick');let x=0,y=0;
     if(p){x=p.point.x-p.start.x;y=p.point.y-p.start.y;const d=Math.hypot(x,y),scale=Math.min(1,this.input.joystickRadius/Math.max(1,d));x*=scale;y*=scale;}
     this.knob.style.transform=`translate(${x}px, ${y}px)`;
-    const skill=this.input.activeSkill||(this.input.pointerFor('artifact')?.dragged?this.input.pointerFor('artifact'):null);this.cancel.hidden=!this.input.activeSkill;this.cancel.classList.toggle('is-canceling',Boolean(skill?.canceled));
+    const skill=this.input.activeSkill||(this.input.pointerFor('artifact')?.dragged?this.input.pointerFor('artifact'):null)||(this.input.pointerFor('attack')?.dragged?this.input.pointerFor('attack'):null);this.cancel.hidden=!this.input.activeSkill;this.cancel.classList.toggle('is-canceling',Boolean(skill?.canceled));
     const w=this.getWorld(),aim=skill?.aim;
     this.reticle.hidden=!aim||Boolean(skill?.canceled);this.line.hidden=this.reticle.hidden;
     if(!aim||!w||!w.player)return;
@@ -248,7 +249,7 @@ export class MobileControls {
     const px=rect.left+(aim.x-v.x)/v.width*rect.width,py=rect.top+(aim.y-v.y)/v.height*rect.height;
     const ox=rect.left+(origin.x-v.x)/v.width*rect.width,oy=rect.top+(origin.y-v.y)/v.height*rect.height;
     this.reticle.style.left=`${px}px`;this.reticle.style.top=`${py}px`;
-    this.reticle.dataset.kind=skill.role==='artifact'?'ground':skillAimKind(this.model.hero,skill.role,this.model.skills[skill.role]);
+    this.reticle.dataset.kind=skill.role==='artifact'?'ground':skill.role==='attack'?'direction':skillAimKind(this.model.hero,skill.role,this.model.skills[skill.role]);this.reticle.dataset.role=skill.role;
     this.line.style.left=`${ox}px`;this.line.style.top=`${oy}px`;this.line.style.width=`${Math.hypot(px-ox,py-oy)}px`;this.line.style.transform=`rotate(${Math.atan2(py-oy,px-ox)}rad)`;
   }
   reset(){

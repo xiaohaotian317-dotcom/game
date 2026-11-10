@@ -53,3 +53,7 @@ arcane-duel-lab/validation/*original-storage.json
 arcane-duel-lab/validation/android1-native-inspect.json
 arcane-duel-lab/validation/t47-tap-status.json
 arcane-duel-lab/validation/android1-tap-*.png
+arcane-duel-lab/validation/t49-vivo-*.json
+arcane-duel-lab/validation/t49-vivo-*.png
+arcane-duel-lab/validation/t49-vivo-*.txt
+arcane-duel-lab/validation/t49-vivo-*.xml

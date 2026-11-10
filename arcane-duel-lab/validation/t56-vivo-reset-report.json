@@ -1,0 +1,13 @@
+{
+  "scope": "User-authorized second fresh-start reset of this phone game only, after version 0.1.7 installation. No other app, computer or cloud data touched. No ads requested.",
+  "checks": [
+    "Fresh private backup checked; Android confirmed clearing only this game data",
+    "Installed release restarted successfully; private cold-start frames captured for visual review"
+  ],
+  "passed": true,
+  "backupSha256": "7ee697f41566c874994e5133c07c309710ec1de969cfc9501f0889e430fe54da",
+  "installedVersion": "0.1.7",
+  "initialProfileInspected": false,
+  "reason": "Release WebView debugging is disabled; reset is confirmed by the OS, not by injecting or reading a test profile.",
+  "finishedAt": "2026-11-10T10:37:24.064Z"
+}

@@ -1,0 +1,32 @@
+✔ released touch aim survives authority input queue independently of later held aim (0.9126ms)
+✔ touch aimed actions are clamped at the same authority boundary as held inputs (0.1329ms)
+✔ advertising boundary never grants a reward when unconfigured, interrupted or replayed (0.2174ms)
+✔ a failed ad preserves actual zero or HTTP codes without exposing provider messages or granting rewards (0.165ms)
+✔ new players begin the guide while pre-guide saves keep all wealth and bypass forced onboarding (2.0746ms)
+✔ tutorial completion prepares exactly 500 coins once and never mutates the uncommitted profile (0.3755ms)
+✔ real completed ad receipts grant the chosen reward once and persist daily quota across reloads (1.3146ms)
+✔ unavailable, cancelled, replayed, failed saves and exceeded quota never add rewards (0.6977ms)
+✔ combat income is moderately reduced while fixed gifts and saved balances are unchanged (0.1487ms)
+✔ one gold chest starts at 300 coins and legacy gold quotas migrate once (0.4606ms)
+✔ training is separate from the first-run guide and never resets legacy ownership, economy or rewards (3.5477ms)
+✔ movement teaching requires real left and right travel, blocks early combat and cannot be bypassed by waiting or moving to a trigger (14.5637ms)
+✔ jump and double-jump lessons permit only jumping; dash permits only one successful dodge (3.8624ms)
+✔ walking approach spawns the first wave ahead; attack and skill lessons filter unrelated real inputs (16.5335ms)
+✔ failed or unavailable actions do not satisfy a lesson and successful action observations survive reload (6.1487ms)
+✔ saved combat lessons re-enter via a walking approach without repeating learned jumps or dash (3.893ms)
+✔ an already-cleared wave cannot settle until the skill lesson is really complete; the existing 500 reward remains once-only (3.8243ms)
+✔ after all actual lessons the original two weak waves clear normally without a boss, and a saved completion resumes freely (6.4143ms)
+✔ tutorial 23 is independent from the twenty story stages and both challenges (2.4067ms)
+✔ two small tutorial waves must fully clear before the portal, and cannot generate a boss or extra wave (18.2689ms)
+✔ tutorial uses real weak melee attacks and never creates environmental hazards (15.0796ms)
+✔ tutorial kills grant only one coin and five hero XP each, without first-clear loot or main-story progress (6.3137ms)
+✔ short tutorial preserves walk/jump physics for all heroes and leaves story geometry untouched (23.8658ms)
+✔ all tutorial stepping platforms are reachable from their declared support with ordinary double jumps (11.3398ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 407.9555

@@ -14,7 +14,9 @@ import {HERO_ORDER,loadProfile,saveProfile} from './player-profile.mjs?v=2026103
 import {splashStyle} from './lobby-art.mjs?v=20261030-duel12';
 import {loadSolo,saveSolo} from './campaign-profile.mjs';
 import {SOLO_KEY} from './campaign-growth-data.mjs';
+import {summonProbabilityRules} from './summon-probability.mjs';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$('#legacy-summon-odds').textContent='每位英雄各有独立卡池，只唤醒指定目标。'+summonProbabilityRules();
 let storage;try{storage=window.localStorage;}catch{storage=null;}
 const solo=loadSolo(storage);let profile={...loadProfile(storage),coins:solo.coins,owned:solo.owned,selected:solo.selected},preview=Object.hasOwn(HEROES,new URLSearchParams(location.search).get('hero'))?new URLSearchParams(location.search).get('hero'):'fire',stage='moon',busy=false,toastTimer;
 const roles={fire:'烈焰爆发 · 陨火降临',nature:'植物造物 · 召唤协同'};
@@ -68,7 +70,7 @@ $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.data
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
 $('#settings-open').addEventListener('click',()=>settings.open());$('#hero-practice').addEventListener('click',()=>practice.open(preview));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
 
-$('#duel-open').addEventListener('click',()=>location.href=window.arcaneMobile?'mobile-network.html':window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');
+$('#duel-open').addEventListener('click',()=>location.href=window.arcaneMobile?'mobile-network.html':window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');$('#tower-open')?.addEventListener('click',e=>{if(new URLSearchParams(location.search).get('touch')==='1'){e.preventDefault();location.href='tower.html?touch=1';}});
 $$('[data-room-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room-tab]').forEach(a=>a.setAttribute('aria-selected',String(a===b)));$('#create-room-panel').hidden=b.dataset.roomTab!=='create';$('#join-room-panel').hidden=b.dataset.roomTab!=='join';}));
 $('#room-code').addEventListener('input',e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,''));
 $('#duel-practice').addEventListener('click',()=>location.href=practiceURL($('#duel-scene').value));
