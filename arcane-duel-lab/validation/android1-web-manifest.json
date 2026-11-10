@@ -1,7 +1,7 @@
 {
-  "build": "android1-crossplay-v2",
-  "createdAt": "2026-11-10T10:32:01.072Z",
-  "bytes": 648026587,
+  "build": "android1-crossplay-v3",
+  "createdAt": "2026-11-10T11:37:43.423Z",
+  "bytes": 648027758,
   "files": [
     {
       "path": "archive-skills.css",
@@ -1924,14 +1924,19 @@
       "sha256": "8fb2a4e5acbbd4faf721a34c0623b06979de1f1979297b7ab8becf88d4a89e72"
     },
     {
+      "path": "chunks/chunk-2XQK4OKY.mjs",
+      "bytes": 104328,
+      "sha256": "688d3e14813404fdb2a98621b6636b9ffe2463a5074434862c1af56e17b4f3f8"
+    },
+    {
       "path": "chunks/chunk-4LRRQSCQ.mjs",
       "bytes": 515,
       "sha256": "eb839902fe6a01d093f381d042a6da15d316cd83172c0c23f70b96e6e23aa60f"
     },
     {
-      "path": "chunks/chunk-5HJXBIET.mjs",
-      "bytes": 3587,
-      "sha256": "e90806c2a440ad83153020a3090e186f35e479954322d3fe833ec985be378321"
+      "path": "chunks/chunk-6S6CIQJX.mjs",
+      "bytes": 16012,
+      "sha256": "f2f305747191609a094c8470a944973fbc29ab3fe93e0d856776502551bc4cf7"
     },
     {
       "path": "chunks/chunk-7DOYPGML.mjs",
@@ -1939,9 +1944,9 @@
       "sha256": "ecca494de3cd1755240facf5ee67f48e3f829817f41df2f6da42bc206fa8723f"
     },
     {
-      "path": "chunks/chunk-7I6VRGQG.mjs",
-      "bytes": 31068,
-      "sha256": "41d8e780aef7b42601011218d9aa7e89db80f4a33e14da52b100333bc9130a89"
+      "path": "chunks/chunk-7WT5JDYW.mjs",
+      "bytes": 3587,
+      "sha256": "2eed3a07b7aabc7688ae45890c6ab66721e5dc09c06e95a394a1cbe73af0f60e"
     },
     {
       "path": "chunks/chunk-7XZA6K3M.mjs",
@@ -1954,29 +1959,24 @@
       "sha256": "59d0346fbc7b88afb23ae2bf5cde0432452a5b9a3c8268eb669fc7b921541c50"
     },
     {
-      "path": "chunks/chunk-B3GN64VL.mjs",
-      "bytes": 104328,
-      "sha256": "ba5ab51b993176744a50d8ed4e842ac7c15b81f8ae076081a86bb27d75f45ff0"
-    },
-    {
-      "path": "chunks/chunk-EP7L3C6N.mjs",
-      "bytes": 8929,
-      "sha256": "3be70198f126b02b87980937f4ae864e00d9a8c4b43f398979d90f9830775785"
-    },
-    {
-      "path": "chunks/chunk-FD76FHKT.mjs",
+      "path": "chunks/chunk-AY7QWLGA.mjs",
       "bytes": 11882,
-      "sha256": "5839487c789e93c6c69de029ee2d84f3fdb630a1426bfebfc6cfcd4ca20673df"
+      "sha256": "2128fe2209d4db2e16b1cf5583df621cb63dfe1a1652a33555f5b2afbc1e7eb5"
+    },
+    {
+      "path": "chunks/chunk-BY5QHC5H.mjs",
+      "bytes": 22806,
+      "sha256": "da70c1ae15ff5dc2764b0cae44261cd86abf219ea00a59371a64149d1a093f40"
+    },
+    {
+      "path": "chunks/chunk-CQEQTAMP.mjs",
+      "bytes": 6721,
+      "sha256": "b4f27d6da47a849a917051bf0e167e823b3797d3576065685c3d64ac509d98db"
     },
     {
       "path": "chunks/chunk-FLG32T5M.mjs",
       "bytes": 4538,
       "sha256": "e256c76d94cb321c548ccd59654a16976b63a61dc623ad7aeaf9e88f995003f1"
-    },
-    {
-      "path": "chunks/chunk-FQVJJCJM.mjs",
-      "bytes": 16012,
-      "sha256": "1c702d69a32dc1cdacf48ba3e1aaecbf77c19e2b0f6ca0e4a79f684c55f8667d"
     },
     {
       "path": "chunks/chunk-GSYGB2FH.mjs",
@@ -1994,14 +1994,14 @@
       "sha256": "070218497af0e2318dddedebbe01cca19d16590511336f74496b26a1f5e920b9"
     },
     {
-      "path": "chunks/chunk-LGDWZ3QC.mjs",
-      "bytes": 14236,
-      "sha256": "8b900f1be200758d274650cf75c30ec01efcb5919f8d1a035ef13e2f8dcc37b9"
-    },
-    {
       "path": "chunks/chunk-LKZJP6YI.mjs",
       "bytes": 16298,
       "sha256": "c23986058c03906d4111598a4a8db8529194ea9a76b5b7815195c75621b673d9"
+    },
+    {
+      "path": "chunks/chunk-MOIJL6I2.mjs",
+      "bytes": 31068,
+      "sha256": "efa4cfb092277172b1ca54a6d8bfe9019f644e80b04005c7820985b044533b87"
     },
     {
       "path": "chunks/chunk-MSDPIDW4.mjs",
@@ -2014,19 +2014,29 @@
       "sha256": "31a11c08f019bb75c7b71148cbd8cd93ad2c6c1cc71cdef9d48c272e9c19d2f2"
     },
     {
+      "path": "chunks/chunk-O65UKU7Q.mjs",
+      "bytes": 82239,
+      "sha256": "14b975b2b81a8bda410b4d84546af8c612a73e37303ae95282748339a00e43aa"
+    },
+    {
+      "path": "chunks/chunk-OBICR3E6.mjs",
+      "bytes": 8929,
+      "sha256": "6268e92ba86b7d3e590d8193c53f13cd75d237fb76232c7b3572a0945ab43d8d"
+    },
+    {
       "path": "chunks/chunk-PPW5QXZB.mjs",
       "bytes": 11856,
       "sha256": "2706e5899fbf89398bac215f336be47f8e8e4fd9bbdd3a39c1b18225f89c902c"
     },
     {
-      "path": "chunks/chunk-PRFQLCRK.mjs",
+      "path": "chunks/chunk-PS6TS4IA.mjs",
       "bytes": 4327320,
-      "sha256": "083e74f4121e23809c56cd0ec65f40e2eae3c2206fc9ba07a35f9ae0261e02eb"
+      "sha256": "c55865563559857cce89f8603888cfadb002b8104ad1f54a555059e381683065"
     },
     {
-      "path": "chunks/chunk-Q7SPSQJM.mjs",
-      "bytes": 82239,
-      "sha256": "df669f98969ea774ff681cf4e273c0b2473ef4abbe3c93d9017ab35ef352958f"
+      "path": "chunks/chunk-PT2UMNLH.mjs",
+      "bytes": 14236,
+      "sha256": "cdead61adf0f8173281497417d347012c5114092cc31e6aa7d4240d6f3e9541b"
     },
     {
       "path": "chunks/chunk-QIOR456O.mjs",
@@ -2034,19 +2044,9 @@
       "sha256": "827c52b5c6c59a74275cdd6318428e44f2a6ef7accaa42de254897eebe41e8ac"
     },
     {
-      "path": "chunks/chunk-SFT76WQL.mjs",
-      "bytes": 165703,
-      "sha256": "055d50a840e6ecc7f0196624231ee60f3d920fe0181e0514f74ca93b5f1b2139"
-    },
-    {
       "path": "chunks/chunk-TD5S3HXL.mjs",
       "bytes": 3820,
       "sha256": "ba0039b9dc1bb654998701620e4172a594753aadcee907d7751c1b7843456f68"
-    },
-    {
-      "path": "chunks/chunk-THNGQ5QM.mjs",
-      "bytes": 22806,
-      "sha256": "ea77447fd9868b4719a5f610820e194d2d7a9f6c90dd58a496bb196e7620d252"
     },
     {
       "path": "chunks/chunk-VIHIR2BE.mjs",
@@ -2054,9 +2054,9 @@
       "sha256": "30c77128186890ab8043f3a2502ab91c7d9dec358dd35ee0d89835189b1caa03"
     },
     {
-      "path": "chunks/chunk-WGZBLV2S.mjs",
-      "bytes": 6721,
-      "sha256": "5a8dc1beef0996d2ef14352ea37cc3d549fd1c6085db9c7a03d39dbc33395c65"
+      "path": "chunks/chunk-WL2DF3SR.mjs",
+      "bytes": 165700,
+      "sha256": "53a0ad245e4a8e51d133d8abc0a51621343a28f209be13e0737b368f0f9198ba"
     },
     {
       "path": "chunks/chunk-Y3FH5NRY.mjs",
@@ -2074,14 +2074,14 @@
       "sha256": "0fa7476676ac7157ab9e5c219e758fded6d72c39594a22e9f2c26a37055c1b92"
     },
     {
-      "path": "chunks/mobile-panel-layout-6HHBGRXV.mjs",
+      "path": "chunks/mobile-panel-layout-3P7JTN6N.mjs",
       "bytes": 5899,
-      "sha256": "b82b54212237ef8d0240051f562f54230f9023a3c83de276d918a0d2073dddbb"
+      "sha256": "3afbf527bfd510e3a4a672534f25ffbcff95d3914ccb6c7b1d78308904a9f055"
     },
     {
-      "path": "chunks/platform-WPYXHBHE.mjs",
+      "path": "chunks/platform-R3R6SB4N.mjs",
       "bytes": 350,
-      "sha256": "1bdcbf9cd653f3519b0c4d4a13e26508f947e2ca08b7d1632efb11f22343b2b0"
+      "sha256": "0f807e007b06d4cf99ff71fdb0fe8c9cb7377cdae8dad8c0ace694c021677a63"
     },
     {
       "path": "chunks/web-MLFWBOPF.mjs",
@@ -2145,8 +2145,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 11815,
-      "sha256": "175b08e3246341efe565f1ff8bfefdc1bfd848ef66b462a2ddd42b8ca35b754b"
+      "bytes": 11962,
+      "sha256": "a6a8f3d6d279e11801e388d3b4b1429d4d10d98914eadc36b6dd3978455a8b8b"
     },
     {
       "path": "loading.css",
@@ -2260,8 +2260,8 @@
     },
     {
       "path": "src/app.mjs",
-      "bytes": 28202,
-      "sha256": "4397b7887ccf529bebcc024271a04c1931c65dd11f4cfe4cc6a788824032fcf2"
+      "bytes": 29094,
+      "sha256": "ea2c6cd0c749b651d343ded49496eb75995d3e695a5a3a945f0fa2651b6f931f"
     },
     {
       "path": "src/bestiary.mjs",
@@ -2271,12 +2271,12 @@
     {
       "path": "src/campaign.mjs",
       "bytes": 133627,
-      "sha256": "8e8fc879a12c2f13d590d7e56a7b14809620b28778357264020120ada63940c5"
+      "sha256": "2dbb309e3922a11fe731e5e2b72cd9ad2f8557e6d37766beea049d4bd3eff760"
     },
     {
       "path": "src/character-studio.mjs",
       "bytes": 6591,
-      "sha256": "477eeb2a01b76069a2cc7f4b6a6d578c566533e1fe15b54a8affbd7beb83edab"
+      "sha256": "4ab3d7f74ac6ce9cbd052dea5568ac64d18fce54893aeb3f2f91a42eb090b9d2"
     },
     {
       "path": "src/desktop-launcher.mjs",
@@ -2286,57 +2286,57 @@
     {
       "path": "src/duel-app.mjs",
       "bytes": 95445,
-      "sha256": "3111366dc9afd0ff8d8cc3018332bf73cf51506bb3e18a737219b99862aa40bc"
+      "sha256": "138c88e5a8c211337a16b744d63a493fc156428a9a1e6a8960e55fe6c4175e69"
     },
     {
       "path": "src/duel-worker.mjs",
       "bytes": 2600,
-      "sha256": "5603b06e8e6d28e8d512e2a16a6dba1ff9ebef9b1038bc1ec90632f115b6ef87"
+      "sha256": "4403f25a5d1de227b0d0b41f92e048866835c78897d5d2114a7631eb739a9a24"
     },
     {
       "path": "src/enemy-lab.mjs",
       "bytes": 13967,
-      "sha256": "dbd956f10bb0bd4613d640281beafbdf6abca8279993220c99ad8f4366af7506"
+      "sha256": "e3cf21c90c1813e030a1c2fc5f9e91b0101dc40e2a607a544b8f83342418e610"
     },
     {
       "path": "src/lobby.mjs",
       "bytes": 12368,
-      "sha256": "c4d204dc1cb1f466ab7d4641e5b13615a9f5bbb01ecee28c1d5d2bad84c2fce0"
+      "sha256": "4237163abb7b74d9d4baf9c4aa1953c1ae655a42890571dfdcff9af141cd9233"
     },
     {
       "path": "src/mobile-bootstrap.mjs",
       "bytes": 5992,
-      "sha256": "5f8133a1c4deba6b78eb15e8f7f0a6a827735eacd2c69675f8e7b646cac3706b"
+      "sha256": "b0af194c6e9bec4b6dd9da3e40a2f1ba2fe88d7b33b320f59b8a5b94523d0733"
     },
     {
       "path": "src/mobile-network.mjs",
       "bytes": 2938,
-      "sha256": "3606e6b67d1773b2facbe691f2915cb4900a83aa6e83cf53081333e1756b7d12"
+      "sha256": "ed7643462208183d97537baa620ddcf06d2ace6a1c970785095609323a5adffb"
     },
     {
       "path": "src/realm-controls.mjs",
       "bytes": 1155,
-      "sha256": "ba17043d29f1e2ac2f6101ed792a8a1724fca5ee14e668395ab40f6c59b5f6ca"
+      "sha256": "5b844c120cdc2e664d8a349877b7caad6d2d4c113c503e154895ac2d2634fb2c"
     },
     {
       "path": "src/shop-app.mjs",
       "bytes": 6064,
-      "sha256": "0a7146bcb39b9b1d24d9bf9903865a79b56f422cf296002b4f14229b9eb27329"
+      "sha256": "83ac5d15ecd99ab3f9e01c78dd6b4d8da95b7c70f7c633c21142c0ff3de733da"
     },
     {
       "path": "src/skill-gallery.mjs",
       "bytes": 1783,
-      "sha256": "dfa77e81fc8a91ecc5c015bb8a41d84bf90909ac0fff81712a4a945dca500184"
+      "sha256": "b4141f5f62b7b323a845c09c725027deef4aeb884d42f3cd4969b20e0c8110c0"
     },
     {
       "path": "src/summon-app.mjs",
       "bytes": 20982,
-      "sha256": "64cf836e4f9fa09274a94912757d6853f7c12bb49ee5108f7d0ef2a10f25f4cb"
+      "sha256": "5ae68ea84d1e28929294fe1eddf46dbc169dcb5341f43cfdea048855f28a47be"
     },
     {
       "path": "src/tower-app.mjs",
       "bytes": 28403,
-      "sha256": "71dbb817cae799ac2e3e365df79bed32533678fa3e24e2520921010c922be61e"
+      "sha256": "9dd6cd793b95cdfb0906dc6ac00c0db0cb48ae4f87ed9e77782e9883ad652570"
     },
     {
       "path": "styles.css",
@@ -2355,8 +2355,8 @@
     },
     {
       "path": "title-controls.css",
-      "bytes": 800,
-      "sha256": "1a300ef8b00e74a6741b771430132f3ead465c5b74f30cf184abd7d3dd3d4a7d"
+      "bytes": 935,
+      "sha256": "a192baac2591333d01a008b3caa3aa5dea56ce3756348e2402eb22620500d6da"
     },
     {
       "path": "tower.css",

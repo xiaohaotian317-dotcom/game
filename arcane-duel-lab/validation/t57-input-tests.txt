@@ -1,0 +1,18 @@
+✔ six mobile heroes turn before attacking and keep the accepted aim until release (19.0044ms)
+✔ mobile directional skill cannot change into a backwards shot during its windup (1.467ms)
+✔ authority input preserves mobile mode while desktop remains opt-out (0.5835ms)
+✔ touch opacity persists, clamps and tolerates unavailable storage (0.3444ms)
+✔ attack press retains continuous automatic targeting until the drag threshold is crossed (3.4392ms)
+✔ dragged attack does not steal joystick or spell pointers and releasing each finger only stops its own action (0.3989ms)
+✔ the next real held basic faces and fires along the dragged direction, and release stops future attacks (13.665ms)
+✔ six touch heroes keep the same continuous forward walking speed while repeatedly firing in either direction (77.2652ms)
+✔ forward directional casting remains mobile while an opposite shot plants briefly and leaves the facing hand (2.5367ms)
+✔ turn recovery uses the live stick direction, and the same cast survives an authority snapshot (4.1188ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 212.5387

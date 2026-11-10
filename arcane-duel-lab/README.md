@@ -1,10 +1,10 @@
 # 秘境决斗 · 六职业试炼与双人联机
 
-当前源码版本 **Windows campaign25 / 安卓0.1.7（code8）**：保留六英雄、两章20关及独立挑战，新增首次旅程引导、分步操作教学、原比例手机地图、商店和爬塔。每日宝箱改为手动选择普通领取或自愿广告双倍；新每日任务提高要求并加入商店领取目标，关卡灵石减量、重复通关抽奖券改20%。实际打包、安装及验证状态以根AGENTS.md三份记忆与validation报告为准。
+当前源码版本 **Windows campaign26 / 安卓0.1.8（code9）**：保留六英雄、两章20关及独立挑战，新增首次旅程引导、分步操作教学、原比例手机地图、商店和爬塔。每日宝箱改为手动选择普通领取或自愿广告双倍；新每日任务提高要求并加入商店领取目标，关卡灵石减量、重复通关抽奖券改20%。实际打包、安装及验证状态以根AGENTS.md三份记忆与validation报告为准。
 
 第一章最后一关通关后解锁第二章及独立挑战。旧网站、旧发行包与电脑正式存档保留。安卓共用游戏核心，离线单机无需GPT或插件；同Wi-Fi跨端对战、TapTap异网和云榜均须分别按真实设备验证，不把本机测试当成全服验收。广告仍是测试配置，只有真实完成才发奖励；失败可普通领取每日宝箱。当前不提交TapTap审核或公开发布。
 
-Windows构建：在desktop运行 `node build.mjs --campaign-preview`，项目目录执行 `python scripts/package-campaign.py --version campaign25`。安卓构建与签名说明见mobile/README.md。禁止删除手写源码dist或覆盖旧发行包。
+Windows构建：在desktop运行 `node build.mjs --campaign-preview`，项目目录执行 `python scripts/package-campaign.py --version campaign26`。安卓构建与签名说明见mobile/README.md。禁止删除手写源码dist或覆盖旧发行包。
 
 以下为早期历史记录，现行实现以根AGENTS.md三份文档为准。
 

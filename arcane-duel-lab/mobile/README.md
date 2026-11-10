@@ -1,6 +1,6 @@
 # 秘境决斗 Android
 
-T47～56 / android1-crossplay-v2，包名 `com.xiaohaotian.arcaneduel`，当前源码0.1.7（versionCode8，实际发行与安装见validation）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
+T47～57 / android1-crossplay-v3，包名 `com.xiaohaotian.arcaneduel`，当前源码0.1.8（versionCode9，实际发行与安装见validation）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
 
 ## 构建
 

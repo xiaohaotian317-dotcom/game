@@ -6,8 +6,7 @@ export function beforeMobileCastStep(w,input){
   if(!c?.touchAim||input.cast)return input;
   w.player.face=c.face;
   w.aim={x:c.x,y:c.y};
-  const stopUntil=Math.min(c.duration,c.releaseAt+.08,.5);
-  return {...input,aim:{...w.aim},move:c.age<stopUntil?0:input.move};
+  return {...input,aim:{...w.aim}};
 }
 
 export function lockMobileCastFacing(w){
@@ -24,5 +23,9 @@ export function prepareMobileCastRelease(w,c){
 
 export function mobileCastMovement(w,input){
   const c=w.player.cast;
-  return c?.touchAim&&c.age<Math.min(c.duration,c.releaseAt+.08,.5)?0:(input.move||0);
+  const move=input.move||0;
+  // Keep forward fire at walking speed. Only a shot opposite the stick needs
+  // the short turn-and-release plant; do not overwrite the held stick input.
+  const turning=c?.touchAim&&move&&Math.sign(move)!==c.face;
+  return turning&&c.age<Math.min(c.duration,c.releaseAt+.08,.5)?0:move;
 }

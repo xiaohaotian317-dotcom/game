@@ -1,5 +1,5 @@
 import {applyControlOpacity} from './mobile-preferences.mjs';
-export const MOBILE_BUILD='android1-crossplay-v2';
+export const MOBILE_BUILD='android1-crossplay-v3';
 export const mobile=()=>globalThis.arcaneMobile||null;
 export const nativeBridge=()=>mobile()?.bridge||globalThis.arcaneDesktop||null;
 export const touchEnabled=()=>!!mobile()||(typeof location!=='undefined'&&new URLSearchParams(location.search).get('touch')==='1');

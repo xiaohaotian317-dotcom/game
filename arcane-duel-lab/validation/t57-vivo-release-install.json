@@ -1,0 +1,8 @@
+{
+  "scope": "Same-key install of this game only. Does not clear app data or request ads.",
+  "variant": "release",
+  "expectedVersion": "0.1.8",
+  "passed": false,
+  "failure": "Game-only USB get-state operation failed or timed out",
+  "finishedAt": "2026-11-10T11:39:42.130Z"
+}

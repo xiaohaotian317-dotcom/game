@@ -15,7 +15,7 @@ function validateEntries(entries){
  for(const k of SAVE_KEYS)if(entries[k]!==null&&entries[k]!==undefined){if(typeof entries[k]!=='string')throw Error('存档字段损坏');JSON.parse(entries[k]);}
  return {...entries,[SAVE_KEYS[0]]:JSON.stringify(normalizeSolo(raw))};
 }
-export async function exportSave(storage){const entries=values(storage);if(!entries[SAVE_KEYS[0]])entries[SAVE_KEYS[0]]=JSON.stringify(normalizeSolo(null));validateEntries(entries);const payload={format:SAVE_FORMAT,version:1,build:'android1-crossplay-v2',createdAt:new Date().toISOString(),entries};return JSON.stringify({...payload,checksum:await digest(canonical(payload))},null,2);}
+export async function exportSave(storage){const entries=values(storage);if(!entries[SAVE_KEYS[0]])entries[SAVE_KEYS[0]]=JSON.stringify(normalizeSolo(null));validateEntries(entries);const payload={format:SAVE_FORMAT,version:1,build:'android1-crossplay-v3',createdAt:new Date().toISOString(),entries};return JSON.stringify({...payload,checksum:await digest(canonical(payload))},null,2);}
 export async function inspectSave(text){
  if(typeof text!=='string'||new TextEncoder().encode(text).length>limit)throw Error('存档文件过大或无效');
  let envelope;try{envelope=JSON.parse(text);}catch{throw Error('存档文件无法读取');}

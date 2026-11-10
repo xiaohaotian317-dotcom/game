@@ -1,0 +1,119 @@
+{
+  "scope": "Isolated browser checks of full-width proportional mobile title, safe 44px buttons and actual navigation. Desktop keeps its original layout. No phone or ad request.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "rects": {
+        "screen": {
+          "x": 0,
+          "y": 0,
+          "w": 800,
+          "h": 360
+        },
+        "start": {
+          "x": 258.390625,
+          "y": 297.953125,
+          "w": 284,
+          "h": 54.03125
+        },
+        "settings": {
+          "x": 739.15625,
+          "y": 304,
+          "w": 48,
+          "h": 48
+        },
+        "art": "800px 450.239px"
+      },
+      "realSettingsAndStartClicks": true
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "rects": {
+        "screen": {
+          "x": 0,
+          "y": 0,
+          "w": 736,
+          "h": 414
+        },
+        "start": {
+          "x": 237.71875,
+          "y": 315.515625,
+          "w": 261.265625,
+          "h": 53.84375
+        },
+        "settings": {
+          "x": 678.09375,
+          "y": 355.765625,
+          "w": 48,
+          "h": 48
+        },
+        "art": "736px 414.22px"
+      },
+      "realSettingsAndStartClicks": true
+    },
+    {
+      "size": {
+        "width": 960,
+        "height": 432
+      },
+      "rects": {
+        "screen": {
+          "x": 0,
+          "y": 0,
+          "w": 960,
+          "h": 432
+        },
+        "start": {
+          "x": 310.078125,
+          "y": 357.546875,
+          "w": 340.796875,
+          "h": 66.4375
+        },
+        "settings": {
+          "x": 891.78125,
+          "y": 376,
+          "w": 48,
+          "h": 48
+        },
+        "art": "960px 540.287px"
+      },
+      "realSettingsAndStartClicks": true
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "rects": {
+        "screen": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 720
+        },
+        "start": {
+          "x": 413.4375,
+          "y": 548.734375,
+          "w": 454.390625,
+          "h": 93.640625
+        },
+        "settings": {
+          "x": 1191.609375,
+          "y": 631.03125,
+          "w": 58.875,
+          "h": 58.875
+        },
+        "art": "1280px 720.383px"
+      },
+      "realSettingsAndStartClicks": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

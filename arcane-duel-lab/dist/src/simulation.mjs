@@ -401,7 +401,7 @@ export function step(w,dt,input={}) {
   if(b){p.vx=b.vx;p.vy=b.vy;}
   if(p.dead<=0){
     if(!b&&p.dash<=0&&p.hurt<=0&&!p.stomp){
-      const move=mobileCastMovement(w,input),slow=p.cast?(w.hero==='nature'?.55:.68):1;
+      const move=mobileCastMovement(w,input),slow=p.cast&&!p.cast.touchAim?(w.hero==='nature'?.55:.68):1;
       const statusSlow=w.duel||w.enemyMode?Math.min(p.slowUntil>w.time?.45:1,p.frostSnareUntil>w.time?.65:1,p.enemySnareUntil>w.time?.55:1):1;
       const target=controlled||(w.duel&&p.rootUntil>w.time)?0:move*HEROES[w.hero].speed*slow*statusSlow+(w.windForce||0);
       p.vx=lerp(p.vx,target,1-Math.exp(-(move?15:21)*dt));

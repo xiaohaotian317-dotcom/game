@@ -43,7 +43,7 @@ check('native Socket client interoperates with actual NanoHTTPD host and LAN bui
  const reserve=net.createServer(),target=await listen(reserve),port=new URL(target).port;await stop(reserve);
  const child=spawn(java,['-cp',[classes,...deps].join(path.delimiter),'com.xiaohaotian.arcaneduel.NativeRoomHarness','--server',port],{stdio:['pipe','pipe','pipe'],windowsHide:true});allProcesses.add(child);child.on('exit',()=>allProcesses.delete(child));
  const lines=createInterface({input:child.stdout});await once(lines,'line');try{
-  const info=await normal.call({target,path:'/lan-info'});assert.equal(info.response.data.build,'android1-crossplay-v2');await playRoom(target,'SOC472');
+  const info=await normal.call({target,path:'/lan-info'});assert.equal(info.response.data.build,'android1-crossplay-v3');await playRoom(target,'SOC472');
  }finally{child.stdin.end();await once(child,'exit');}
 });
 check('native Socket client rejects public/ambiguous addresses, unsafe paths, methods, tokens and oversized requests before connecting',async()=>{

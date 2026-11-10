@@ -12,8 +12,8 @@ import java.util.function.LongSupplier;
 /** In-memory LAN equivalent of server/rooms.mjs. No simulation or solo save data. */
 public final class LanRoomService {
     public static final String PROTOCOL = "arcane-duel-lan-v1";
-    public static final String BUILD = "android1-crossplay-v2";
-    public static final String RULESET = "duel-skill6-v5";
+    public static final String BUILD = "android1-crossplay-v3";
+    public static final String RULESET = "duel-skill6-v6";
     public static final int WIN_SCORE = 3;
     private static final String[] HEROES = {"fire", "nature", "frost", "lightning", "shadow", "star"};
     private static final String[] SCENES = {"moon", "lava", "garden"};

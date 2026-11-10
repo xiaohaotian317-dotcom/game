@@ -21,7 +21,7 @@ function validRoom(r,build){
 export class TapDuelLink{
   constructor(hooks={},options={}){
     Object.assign(this,hooks);this.tap=options.bridge||hooks.tapBridge||globalThis.window?.arcaneMobile?.tap;
-    this.build=options.build||hooks.build||'android1-crossplay-v2';try{this.storage=options.storage||globalThis.sessionStorage;}catch{this.storage=null;}this.wall=options.clock||(()=>Date.now());this.now=options.now||(()=>performance.now());this.random=options.random||Math.random;this.manualTick=options.manualTick===true;
+    this.build=options.build||hooks.build||'android1-crossplay-v3';try{this.storage=options.storage||globalThis.sessionStorage;}catch{this.storage=null;}this.wall=options.clock||(()=>Date.now());this.now=options.now||(()=>performance.now());this.random=options.random||Math.random;this.manualTick=options.manualTick===true;
     this.session=null;this.room=null;this.hostRoom=null;this.running=false;this.connected=false;this.frameReady=false;this.transport='tap';this.rtt=0;this.clockOffset=0;this.seq=0;this.latestState=null;this.input=null;this.lastPacketAt=this.now();this.lastStateAt=0;
     this.assembler=new TapSnapshotAssembler({now:this.now});this.snapshots=new LatestTapSnapshots();this.pending=new Map();this.requestAcks=new Map();this.receivedControls=new Map();this.controlQueue=[];this.sentControls=[];this.lastHeartbeat=-Infinity;this.lastSnapshot=-Infinity;this.lastFrame=-Infinity;this.generation=0;this.frameBusy=false;this.controlBusy=false;this.encodeBusy=false;this.mutations=Promise.resolve();this.listener=null;this.disconnectAt=null;
     this.sdkFrameId=-1;this.claimedFrameId=-1;this.frameSyncId=null;this.frameInFlight=0;this.frameGeneration=0;

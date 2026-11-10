@@ -48,14 +48,24 @@ const descriptions={
 for(const [h,data] of Object.entries(EXTRA_HEROES))descriptions[h]=data.descriptions;
 const slotKeys=['attack','q','e','dash','r'],keyLabels=KEY_LABELS;
 function positionTitleButton(){
-  const r=$('#title-screen').getBoundingClientRect();if(!r.width||!r.height)return;
-  const width=Math.min(r.width,r.height*1672/941),height=width*941/1672,b=$('#start-button');
+  const screen=$('#title-screen'),r=screen.getBoundingClientRect();if(!r.width||!r.height)return;
+  const wideTouch=!!mobile&&r.width/r.height>=1672/941;
+  const width=wideTouch?Math.max(r.width,r.height*1672/941):Math.min(r.width,r.height*1672/941),height=width*941/1672,b=$('#start-button');
+  screen.style.backgroundSize=width+'px '+height+'px';
   b.style.left=((r.width-width)/2+width*.323)+'px';b.style.top=((r.height-height)/2+height*.762)+'px';
   b.style.width=(width*.355)+'px';b.style.height=(height*.13)+'px';
   const settings=$('#title-settings-open'),size=Math.max(48,width*.046);
   settings.style.left=((r.width-width)/2+width*(1595/1672)-size/2)+'px';
   settings.style.top=((r.height-height)/2+height*(863/941)-size/2)+'px';
   settings.style.width=size+'px';settings.style.height=size+'px';
+  if(wideTouch){
+    const css=getComputedStyle(document.documentElement),safe=key=>Math.max(8,parseFloat(css.getPropertyValue('--native-safe-'+key))||0);
+    const bottom=r.height-safe('bottom'),right=r.width-safe('right');
+    b.style.height=Math.max(44,Math.min(height*.13,bottom-parseFloat(b.style.top)))+'px';
+    settings.style.left=Math.max(safe('left'),Math.min(parseFloat(settings.style.left),right-size))+'px';
+    settings.style.top=Math.max(safe('top'),Math.min(parseFloat(settings.style.top),bottom-size))+'px';
+    settings.classList.add('mobile-title-settings');
+  }else settings.classList.remove('mobile-title-settings');
 }
 window.addEventListener('resize',positionTitleButton);
 function buildHero(){

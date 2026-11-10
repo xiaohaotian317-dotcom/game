@@ -6,14 +6,14 @@ from PIL import Image, ImageChops
 
 root = Path(__file__).resolve().parents[1]
 apk = root / 'mobile/android/app/build/outputs/apk/release/app-release.apk'
-version, code = '0.1.7', 8
+version, code = '0.1.8', 9
 delivery = root.parent / f'发行/秘境决斗-安卓试玩-{version}.apk'
 validation = root / 'validation'
 manifest = json.loads((validation / 'android1-web-manifest.json').read_text(encoding='utf-8-sig'))
-badging = (validation / 't56-release-badging.txt').read_text(encoding='utf-8-sig')
-permissions = (validation / 't56-release-permissions.txt').read_text(encoding='utf-8-sig')
-signature = (validation / 't56-release-signature.txt').read_text(encoding='utf-8-sig')
-alignment = (validation / 't56-release-alignment.txt').read_text(encoding='utf-8-sig')
+badging = (validation / 't57-release-badging.txt').read_text(encoding='utf-8-sig')
+permissions = (validation / 't57-release-permissions.txt').read_text(encoding='utf-8-sig')
+signature = (validation / 't57-release-signature.txt').read_text(encoding='utf-8-sig')
+alignment = (validation / 't57-release-alignment.txt').read_text(encoding='utf-8-sig')
 cert = '50197c82d598e52d6866a7d6855c45906f70d12612c4ee280b229cce5fed517a'
 assert "name='com.xiaohaotian.arcaneduel'" in badging
 assert f"versionCode='{code}'" in badging and f"versionName='{version}'" in badging
@@ -84,9 +84,9 @@ report = {
     'realInternetMatchVerified': False, 'publishedToTapTap': False,
     'scope': 'Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim.'
 }
-install_file = validation / 't56-vivo-release-install.json'
+install_file = validation / 't57-vivo-release-install.json'
 if install_file.exists():
     installed = json.loads(install_file.read_text(encoding='utf-8-sig'))
     report['physicalPhoneInstalledThisVersion'] = installed.get('passed') is True and installed.get('installedVersion') == version
-(validation / 't56-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+(validation / 't57-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({k: v for k, v in report.items() if k != 'nativeLibraries'}, ensure_ascii=False, indent=2))
