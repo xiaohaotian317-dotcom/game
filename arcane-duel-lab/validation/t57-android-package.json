@@ -107,7 +107,7 @@
     "unsupportedAbiBlockedBeforeInit": true,
     "realRevenueVerified": false
   },
-  "physicalPhoneInstalledThisVersion": false,
+  "physicalPhoneInstalledThisVersion": true,
   "realInternetMatchVerified": false,
   "publishedToTapTap": false,
   "scope": "Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim."
