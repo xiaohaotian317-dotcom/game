@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "timingTargetMet": true,
+  "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+  "durationMs": 3510.5999999940395,
+  "inputTrigger": "native SDK frame.id credit (RAF-emulated30Hz in this QA)",
+  "inputTargetIntervalMs": 33.333333333333336,
+  "receivedServiceFrames": 102,
+  "inputCount": 102,
+  "inputHz": 29.054862416730238,
+  "inputPerReceivedServiceFrame": 1,
+  "inputIntervalsMs": {
+    "min": 15.700000002980232,
+    "median": 33.3999999910593,
+    "p95": 33.80000001192093
+  },
+  "completeStates": 34,
+  "effectiveStateHz": 9.68495413891008,
+  "stateIntervalP95Ms": 133.79999999701977,
+  "maxMessagesPerServiceFrame": 5,
+  "maxFrameBytes": 994,
+  "maxCustomBytes": 814,
+  "maxPropertiesBytes": 705,
+  "errors": [],
+  "realSDK": false,
+  "realDevice": false,
+  "formalStorageTouched": false,
+  "pageErrors": [],
+  "supersedes": {
+    "oldTimerDrivenInputHz": 21.95,
+    "reason": "SDK frame.id now drives input, independent of coarse maintenance timers"
+  },
+  "limitations": [
+    "Isolated fresh headless Edge profile, independent RAF-emulated30Hz native service callbacks, fake immediate bridge callbacks and genuine shared-engine worst measured snapshot.",
+    "Proves scheduling no longer depends on a JS34ms timer; not an Android phone or real TapSDK arrival cadence.",
+    "Real SDK delivery, Wi-Fi/mobile-data connection, packet loss and thermal/performance acceptance remain separate."
+  ]
+}

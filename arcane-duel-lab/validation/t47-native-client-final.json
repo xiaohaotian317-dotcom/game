@@ -1,0 +1,27 @@
+{
+  "task": "T47 Android native LAN cleartext policy compatibility",
+  "implementation": "Private IPv4-only bounded native Socket HTTP client",
+  "sourceSha256": {
+    "ArcaneBridgePlugin": "220f6dac6b4c140dfcbed14d30cb4906b0a8729b0070dba9ae8bedb9e92d4512",
+    "LanHttpClient": "93ec599eecaa9a8f2eadabb892d8a4e412fa0d409d50043526c536a1dd3e1bf6"
+  },
+  "requestBytes": 220000,
+  "responseBytes": 1000000,
+  "connectTimeoutMs": 4000,
+  "totalIoDeadlineMs": 5000,
+  "maxInFlight": 4,
+  "dnsUsed": false,
+  "redirectsAllowed": false,
+  "globalCleartextPolicyChanged": false,
+  "webViewMixedContentPolicyChanged": false,
+  "resetClosesSockets": true,
+  "jvmTestCases": 7,
+  "repeatRuns": 3,
+  "allPassed": true,
+  "realNodeHttp": true,
+  "realNanoHttpd": true,
+  "androidDeviceRetest": "Owned by root; not claimed by JVM checks",
+  "windowsCampaign20Changed": false,
+  "emptyCredentialOmitsHeader": true,
+  "explicitEmptyTokenNodeAndNanoRoomFlowsPassed": true
+}

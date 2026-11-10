@@ -1,0 +1,592 @@
+{
+  "scope": "Installed signed Debug 0.1.2/versionCode3 on emulator-5554 only. Serial-scoped ADB forward attaches directly to the actual Android WebView CDP without enumerating physical devices. GPU screenshots from ADB, actual touch events, one real SDK ad attempt on configured test media. QA-owned seeded profile, not natural progression or physical phone results.",
+  "createdAt": "2026-11-10T05:10:17.780Z",
+  "checks": [
+    {
+      "name": "actual Android WebView attached without any physical device enumeration",
+      "width": 851,
+      "height": 393,
+      "dpr": 2.75
+    },
+    {
+      "name": "actual DOM/CSS asset URLs fetched and decoded, before/after native GPU captures preserved"
+    },
+    {
+      "name": "QA local/session restored and emulator-only native ad consent preferences restored; app process reset"
+    }
+  ],
+  "errors": [],
+  "screens": [
+    {
+      "file": "t49-emulator-detail-before-decode.png",
+      "bytes": 3523598
+    },
+    {
+      "file": "t49-emulator-detail-after-decode.png",
+      "bytes": 2056680
+    },
+    {
+      "file": "t49-emulator-skills-before-decode.png",
+      "bytes": 1296479
+    },
+    {
+      "file": "t49-emulator-skills-after-decode.png",
+      "bytes": 1394413
+    }
+  ],
+  "failures": [],
+  "restored": true,
+  "mode": "images-only",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Linux; Android 15; sdk_gphone64_x86_64 Build/AE3A.240806.043; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.6367.219 Mobile Safari/537.36",
+    "viewport": {
+      "width": 851,
+      "height": 393,
+      "dpr": 2.75
+    }
+  },
+  "package": [
+    "versionCode=3 minSdk=28 targetSdk=36",
+    "versionName=0.1.2"
+  ],
+  "imageDiagnostics": [
+    {
+      "label": "stage-detail",
+      "slots": [
+        {
+          "tag": "IMG",
+          "id": "detail-art",
+          "classes": "",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 229.625,
+          "height": 383.6363830566406,
+          "complete": true,
+          "naturalWidth": 1536
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "enemy-portrait",
+          "background": "url(\"https://localhost/assets/enemies/B08-motion-v1.png\")",
+          "size": "1119.64% 1119.64%",
+          "position": "72.2417% 38.704%",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "enemy-portrait",
+          "background": "url(\"https://localhost/assets/enemies/M06-motion-v1.png\")",
+          "size": "995.238% 995.238%",
+          "position": "13.2979% 2.65957%",
+          "width": 42,
+          "height": 42
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "enemy-portrait",
+          "background": "url(\"https://localhost/assets/enemies/M09-motion-v1.png\")",
+          "size": "1027.87% 1027.87%",
+          "position": "14.7527% 3.53357%",
+          "width": 42,
+          "height": 42
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "url(\"https://localhost/assets/campaign-growth/items-v1.png\")",
+          "size": "400% 409.6%",
+          "position": "100% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "url(\"https://localhost/assets/campaign-growth/items-v1.png\")",
+          "size": "400% 409.6%",
+          "position": "0% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "url(\"https://localhost/assets/campaign-growth/items-v1.png\")",
+          "size": "400% 409.6%",
+          "position": "100% 32.2997%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "url(\"https://localhost/assets/campaign-growth/items-v1.png\")",
+          "size": "400% 409.6%",
+          "position": "66.6667% 32.2997%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "item-art ",
+          "background": "url(\"https://localhost/assets/campaign-growth/items-v1.png\")",
+          "size": "400% 373.723%",
+          "position": "0% 100%",
+          "width": 34.54545593261719,
+          "height": 34.54545593261719
+        }
+      ],
+      "resources": [
+        {
+          "path": "/assets/campaign/stage01-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 3003691,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/assets/enemies/B08-motion-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 1966920,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/assets/enemies/M06-motion-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2020262,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/assets/enemies/M09-motion-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2511737,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "path": "/assets/campaign-growth/items-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2543314,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/assets/equipment-sets/equipment-q0-v2.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2367354,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "dom": [
+        {
+          "id": "",
+          "path": "assets/campaign/world-map-v1.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 589.6363525390625,
+            "height": 393.0909118652344
+          }
+        },
+        {
+          "id": "detail-art",
+          "path": "assets/campaign/stage01-v1.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 229.625,
+            "height": 383.6363830566406
+          }
+        },
+        {
+          "id": "loading-art",
+          "path": null,
+          "complete": true,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "id": "",
+          "path": "assets/pause/pause-shell-v1.png",
+          "complete": true,
+          "naturalWidth": 1133,
+          "naturalHeight": 1388,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "id": "result-frame",
+          "path": "assets/campaign-results/victory-shell-v2.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "label": "skills",
+      "slots": [
+        {
+          "tag": "SPAN",
+          "id": "",
+          "classes": "hero-choice-portrait",
+          "background": "none",
+          "size": "auto",
+          "position": "0% 0%",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/icons/fire-skills-v1.png\")",
+          "size": "300% 200%",
+          "position": "50% 0%",
+          "width": 34,
+          "height": 34
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/campaign-growth/hero-fire-icons-v1.png\")",
+          "size": "300% 100%",
+          "position": "0% 0%",
+          "width": 34,
+          "height": 34
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/boss-fx/fire-e-icons-v2.png\")",
+          "size": "200% 100%",
+          "position": "0% 0%",
+          "width": 34,
+          "height": 34
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/campaign-growth/hero-fire-icons-v1.png\")",
+          "size": "300% 100%",
+          "position": "50% 0%",
+          "width": 34,
+          "height": 34
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/icons/fire-skills-v1.png\")",
+          "size": "300% 200%",
+          "position": "50% 100%",
+          "width": 34,
+          "height": 34
+        },
+        {
+          "tag": "I",
+          "id": "",
+          "classes": "system-skill-art",
+          "background": "url(\"https://localhost/assets/campaign-growth/hero-fire-icons-v1.png\")",
+          "size": "300% 100%",
+          "position": "100% 0%",
+          "width": 34,
+          "height": 34
+        }
+      ],
+      "resources": [
+        {
+          "path": "/assets/lobby/hero-splashes-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 3501807,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/assets/icons/fire-skills-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2933053,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "path": "/assets/campaign-growth/hero-fire-icons-v1.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2834037,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "path": "/assets/boss-fx/fire-e-icons-v2.png",
+          "status": 200,
+          "type": "image/png",
+          "bytes": 2503380,
+          "signature": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "decoded": true,
+          "width": 1774,
+          "height": 887
+        }
+      ],
+      "dom": [
+        {
+          "id": "",
+          "path": "assets/campaign/world-map-v1.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 589.6363525390625,
+            "height": 393.0909118652344
+          }
+        },
+        {
+          "id": "detail-art",
+          "path": "assets/campaign/stage01-v1.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "id": "loading-art",
+          "path": null,
+          "complete": true,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "id": "",
+          "path": "assets/pause/pause-shell-v1.png",
+          "complete": true,
+          "naturalWidth": 1133,
+          "naturalHeight": 1388,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "id": "result-frame",
+          "path": "assets/campaign-results/victory-shell-v2.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024,
+          "box": {
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    }
+  ],
+  "nativePrivacyRestored": true,
+  "adAfterProcessReset": {
+    "provider": "dirichlet",
+    "sdkVersion": "5.3.2.0",
+    "testMode": true,
+    "environment": "test",
+    "monetization": false,
+    "configured": true,
+    "supportedAbi": false,
+    "reason": "unsupportedAbi",
+    "privacyAccepted": false,
+    "initialized": false,
+    "rewarded": false,
+    "interstitial": false,
+    "busy": false
+  },
+  "passed": true,
+  "finishedAt": "2026-11-10T05:10:40.310Z"
+}

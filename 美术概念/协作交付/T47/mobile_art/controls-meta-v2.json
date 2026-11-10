@@ -1,0 +1,533 @@
+{
+  "schema": 1,
+  "file": "mobile-controls-v2.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "order": [
+    "joystickOuter",
+    "joystickThumb",
+    "attackFrame",
+    "skillFrame",
+    "jump",
+    "dash",
+    "interact",
+    "cancel",
+    "pressedAttack",
+    "pressedSkill",
+    "pressedJump",
+    "pressedDash"
+  ],
+  "coordinateSystem": "source image pixels; rect=[x,y,width,height], center is absolute; use explicit rect rather than equal-grid slicing",
+  "alphaThresholdForBounds": 8,
+  "sprites": {
+    "joystickOuter": {
+      "cellRect": [
+        0,
+        0,
+        333,
+        418
+      ],
+      "rect": [
+        63,
+        113,
+        247,
+        257
+      ],
+      "alphaBounds8": [
+        69,
+        119,
+        235,
+        245
+      ],
+      "center": [
+        186.5,
+        242
+      ],
+      "centerInRect": [
+        123.5,
+        129
+      ],
+      "centerAlpha": 0,
+      "cellSafetyMargins": [
+        69,
+        119,
+        29,
+        54
+      ],
+      "holeBoundsAlphaBelow8": [
+        111,
+        166,
+        151,
+        152
+      ],
+      "iconSafeRect": [
+        138.5,
+        194.0,
+        96,
+        96
+      ],
+      "hollow": true
+    },
+    "joystickThumb": {
+      "cellRect": [
+        333,
+        0,
+        284,
+        418
+      ],
+      "rect": [
+        383,
+        153,
+        177,
+        181
+      ],
+      "alphaBounds8": [
+        389,
+        159,
+        165,
+        169
+      ],
+      "center": [
+        471.5,
+        243.5
+      ],
+      "centerInRect": [
+        88.5,
+        90.5
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        56,
+        159,
+        63,
+        90
+      ],
+      "hollow": false
+    },
+    "attackFrame": {
+      "cellRect": [
+        617,
+        0,
+        311,
+        418
+      ],
+      "rect": [
+        641,
+        109,
+        250,
+        253
+      ],
+      "alphaBounds8": [
+        647,
+        115,
+        238,
+        241
+      ],
+      "center": [
+        760.5,
+        243
+      ],
+      "centerInRect": [
+        119.5,
+        134
+      ],
+      "centerAlpha": 0,
+      "cellSafetyMargins": [
+        30,
+        115,
+        43,
+        62
+      ],
+      "holeBoundsAlphaBelow8": [
+        678,
+        162,
+        165,
+        162
+      ],
+      "iconSafeRect": [
+        708.5,
+        191.0,
+        104,
+        104
+      ],
+      "hollow": true
+    },
+    "skillFrame": {
+      "cellRect": [
+        928,
+        0,
+        326,
+        418
+      ],
+      "rect": [
+        966,
+        138,
+        209,
+        213
+      ],
+      "alphaBounds8": [
+        972,
+        144,
+        197,
+        201
+      ],
+      "center": [
+        1071,
+        244
+      ],
+      "centerInRect": [
+        105,
+        106
+      ],
+      "centerAlpha": 0,
+      "cellSafetyMargins": [
+        44,
+        144,
+        85,
+        73
+      ],
+      "holeBoundsAlphaBelow8": [
+        1009,
+        182,
+        124,
+        124
+      ],
+      "iconSafeRect": [
+        1032.0,
+        205.0,
+        78,
+        78
+      ],
+      "hollow": true
+    },
+    "jump": {
+      "cellRect": [
+        0,
+        418,
+        333,
+        418
+      ],
+      "rect": [
+        79,
+        507,
+        209,
+        210
+      ],
+      "alphaBounds8": [
+        85,
+        513,
+        197,
+        198
+      ],
+      "center": [
+        183.5,
+        612
+      ],
+      "centerInRect": [
+        104.5,
+        105
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        85,
+        95,
+        51,
+        125
+      ],
+      "hollow": false
+    },
+    "dash": {
+      "cellRect": [
+        333,
+        418,
+        284,
+        418
+      ],
+      "rect": [
+        368,
+        507,
+        207,
+        210
+      ],
+      "alphaBounds8": [
+        374,
+        513,
+        195,
+        198
+      ],
+      "center": [
+        471.5,
+        612
+      ],
+      "centerInRect": [
+        103.5,
+        105
+      ],
+      "centerAlpha": 254,
+      "cellSafetyMargins": [
+        41,
+        95,
+        48,
+        125
+      ],
+      "hollow": false
+    },
+    "interact": {
+      "cellRect": [
+        617,
+        418,
+        311,
+        418
+      ],
+      "rect": [
+        655,
+        507,
+        208,
+        210
+      ],
+      "alphaBounds8": [
+        661,
+        513,
+        196,
+        198
+      ],
+      "center": [
+        759,
+        612
+      ],
+      "centerInRect": [
+        104,
+        105
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        44,
+        95,
+        71,
+        125
+      ],
+      "hollow": false
+    },
+    "cancel": {
+      "cellRect": [
+        928,
+        418,
+        326,
+        418
+      ],
+      "rect": [
+        968,
+        507,
+        209,
+        210
+      ],
+      "alphaBounds8": [
+        974,
+        513,
+        197,
+        198
+      ],
+      "center": [
+        1072.5,
+        612
+      ],
+      "centerInRect": [
+        104.5,
+        105
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        46,
+        95,
+        83,
+        125
+      ],
+      "hollow": false
+    },
+    "pressedAttack": {
+      "cellRect": [
+        0,
+        836,
+        333,
+        418
+      ],
+      "rect": [
+        73,
+        853,
+        234,
+        245
+      ],
+      "alphaBounds8": [
+        79,
+        859,
+        222,
+        233
+      ],
+      "center": [
+        184.5,
+        984.5
+      ],
+      "centerInRect": [
+        111.5,
+        131.5
+      ],
+      "centerAlpha": 0,
+      "cellSafetyMargins": [
+        79,
+        23,
+        32,
+        162
+      ],
+      "holeBoundsAlphaBelow8": [
+        108,
+        908,
+        153,
+        153
+      ],
+      "iconSafeRect": [
+        136.5,
+        936.5,
+        96,
+        96
+      ],
+      "hollow": true
+    },
+    "pressedSkill": {
+      "cellRect": [
+        333,
+        836,
+        284,
+        418
+      ],
+      "rect": [
+        382,
+        881,
+        200,
+        203
+      ],
+      "alphaBounds8": [
+        388,
+        887,
+        188,
+        191
+      ],
+      "center": [
+        481.5,
+        982.5
+      ],
+      "centerInRect": [
+        99.5,
+        101.5
+      ],
+      "centerAlpha": 0,
+      "cellSafetyMargins": [
+        55,
+        51,
+        41,
+        176
+      ],
+      "holeBoundsAlphaBelow8": [
+        424,
+        925,
+        115,
+        115
+      ],
+      "iconSafeRect": [
+        445.5,
+        946.5,
+        72,
+        72
+      ],
+      "hollow": true
+    },
+    "pressedJump": {
+      "cellRect": [
+        617,
+        836,
+        311,
+        418
+      ],
+      "rect": [
+        655,
+        873,
+        208,
+        210
+      ],
+      "alphaBounds8": [
+        661,
+        879,
+        196,
+        198
+      ],
+      "center": [
+        759,
+        978
+      ],
+      "centerInRect": [
+        104,
+        105
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        44,
+        43,
+        71,
+        177
+      ],
+      "hollow": false
+    },
+    "pressedDash": {
+      "cellRect": [
+        928,
+        836,
+        326,
+        418
+      ],
+      "rect": [
+        966,
+        872,
+        210,
+        211
+      ],
+      "alphaBounds8": [
+        972,
+        878,
+        198,
+        199
+      ],
+      "center": [
+        1071,
+        977.5
+      ],
+      "centerInRect": [
+        105,
+        105.5
+      ],
+      "centerAlpha": 253,
+      "cellSafetyMargins": [
+        44,
+        42,
+        84,
+        177
+      ],
+      "hollow": false
+    }
+  },
+  "transparency": {
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1192949,
+    "fullyOpaquePixels": 784
+  },
+  "integrationNotes": [
+    "Generated PNG pixels are unchanged. Render source crops directly; do not use a rectangular background behind controls.",
+    "All hollow centers sample alpha=0; generous transparent gutters isolate every sprite.",
+    "Normal/pressed artwork has small geometry differences: keep runtime button hitbox and visual center fixed using centerInRect, with a short opacity transition or ring brightness animation.",
+    "Joystick base and thumb are separate assets. Attack and skill images overlay within iconSafeRect.",
+    "The supplied rect includes 6px transparent bleed; global cell boundaries are deliberately nonuniform measurements, not a claim of perfect generator grid."
+  ]
+}

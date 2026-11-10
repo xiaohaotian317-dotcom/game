@@ -34,7 +34,7 @@ export class CampaignPainter{
   c.save();c.fillStyle=stage.color;c.globalAlpha=.23;for(let i=0;i<26;i++){const x=view.x+((i*149-w.fxTime*(stage.theme==='ice'?20:7))%view.width+view.width)%view.width,y=(i*67+w.fxTime*(stage.theme==='ice'?27:-9))%w.height;c.beginPath();c.arc(x,y,i%3?1:2,0,TAU);c.fill();}c.restore();
  }
  ground(c,w,view){
-  const s=w.campaign.stage,color=s.color;
+  const original=w.campaign.stage,s=original.artStageId?{...original,id:original.artStageId,mode:null}:original,color=s.color;
   const chapterStage=s.mode?20:s.id,chapterGround=this.art.chapterMeta?.ground.find(f=>f.stage===chapterStage);
   if(chapterGround&&this.art['chapter-ground']){const f=chapterGround,r=f.sourceRect,scale=368/(f.standingSpan[1]-f.standingSpan[0]);c.save();c.beginPath();c.rect(view.x-30,w.floor-12,view.width+60,w.height-w.floor+24);c.clip();for(let i=Math.floor(view.x/360)-1;i<=Math.ceil((view.x+view.width)/360);i++)drawOriginalRegion(c,this.art['chapter-ground'],f,r,i*360-f.standingSpanLocal[0]*scale,w.floor-f.groundContactYLocal*scale,r[2]*scale,r[3]*scale);c.restore();}
   else if(this.art.groundImage){c.save();c.beginPath();c.rect(view.x-20,w.floor-12,view.width+40,w.height-w.floor+24);c.clip();for(let i=Math.floor(view.x/360)-1;i<=Math.ceil((view.x+view.width)/360);i++)drawSurface(c,this.art.groundImage,this.art.growthMeta?.ground,s.id-1,{x:i*360,y:w.floor,w:368},{flip:Math.abs(i)%3===1});c.restore();}

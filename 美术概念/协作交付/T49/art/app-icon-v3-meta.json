@@ -1,0 +1,69 @@
+{
+  "task": "T49",
+  "type": "new Android launcher icon source",
+  "active": "app-icon-v3.png",
+  "tool": "built-in image_gen",
+  "intent": "new generation, no input images passed; previous portal/weapon design rejected and not reused",
+  "sourcePath": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1bfcc-4852-7f90-9300-0397c43e4c6d\\exec-4419d093-adca-47f7-a297-7fa202386e85.png",
+  "promptFile": "app-icon-v3-prompt.txt",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "opaque": true,
+  "square": true,
+  "precutRoundedCorners": false,
+  "byteLength": 2294570,
+  "sha256": "92f55db57d1d8702206a6192e228dd1c16af13741522f5e9d1160aed06c1697f",
+  "originalBytesUnchanged": true,
+  "referencesViewed": [
+    {
+      "path": "美术概念/协作交付/T47/mobile_art/app-icon-v2.png",
+      "role": "viewed only as rejected previous design; NOT supplied to generation",
+      "sha256": "55724f7ebfedc196aee2aceb9302704d1749a1a493772ad8d4b9452f0951040e"
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/title-screen.png",
+      "role": "viewed to match game palette and flame heroine role",
+      "sha256": "01d98aeaf4f09a12fd32bb43f553fc9878e6a5e423fc75bc4195762e992ba326"
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/lobby/hero-splashes-v1.png",
+      "role": "viewed to match chestnut hair/red-black antique-gold flame-mage outfit",
+      "sha256": "0a0292f965f1cd0614c3b98ae8f4c903c5ccd2f09259169dd9ebe0577917170b"
+    }
+  ],
+  "composition": {
+    "subject": "single flame-sorceress heroine head-and-shoulders portrait",
+    "palette": "chestnut hair, red-black/antique-gold collar, warm flame on left, slight cool blue rim on right, dark teal background",
+    "rejectedElementsAbsent": [
+      "portal arch",
+      "crossed weapons",
+      "multiple-object collage",
+      "text",
+      "rounded outer border"
+    ],
+    "faceCoreApproxRect": [
+      470,
+      285,
+      535,
+      510
+    ],
+    "central70PercentSafeRect": [
+      188.1,
+      188.1,
+      877.8,
+      877.8
+    ]
+  },
+  "inspection": {
+    "actualOriginalViewed": true,
+    "faceEyesAndCollarClear": true,
+    "singleCohesiveSilhouette": true,
+    "fullSquareBackground": true,
+    "newUserArtApproval": false,
+    "androidDensityResourcesGeneratedByThisAgent": false
+  },
+  "handoff": "Parent owns Android density/adaptive derivatives and runtime integration. Hair/flame edges fill the canvas intentionally; keep the face core clear when applying adaptive masks. Source remains untouched. No code/native/runtime asset or memory documents were changed."
+}

@@ -20,7 +20,9 @@ const buildingPositions=[[7,51],[20,30],[30,56],[37,24],[48,48],[56,29],[68,66],
 export const STAGES=rows.map((r,i)=>({id:i+1,name:r[0],boss:r[1],melee:r[2],ranged:r[3],theme:r[4],color:r[5],mapX:buildingPositions[i][0],mapY:buildingPositions[i][1],requires:r[8],building:r[9],drops:r[10],tip:r[11],art:`stage${String(i+1).padStart(2,'0')}-v1.png`,minionHp:24+i*9,bossHp:Math.round((380+i*110)*BOSS_TUNING.health),damageFactor:.24+i*.07,attackBudget:Math.min(5,2+Math.floor(i/3)),perSide:Math.min(10,6+Math.floor(i/2)),hazardDamage:6+i*2}));
 for(const [i,s] of STAGES.entries()){s.chapter=1;s.chapterIndex=i+1;}
 export const CAMPAIGN_STAGES=[...STAGES,...CHAPTER_TWO_STAGES];
-export const ALL_STAGES=[...CAMPAIGN_STAGES,...CHALLENGE_STAGES];
+// The optional tutorial is a separate entrance, never a numbered story prerequisite.
+export const TUTORIAL_STAGE={id:23,mode:'tutorial',chapter:1,chapterIndex:0,name:'启程试炼',building:'启程试炼',boss:null,melee:'M06',ranged:null,theme:'ice',color:'#a7d7eb',mapX:18,mapY:70,requires:[],art:'stage01-v1.png',artStageId:1,tip:'先熟悉移动、普攻和技能，清理两小波妖兽后靠近传送门结算。',recommendedLevel:1,minionHp:12,bossHp:0,damageFactor:.08,bossDamageFactor:0,attackBudget:1,perSide:2,killCoins:1,killXp:5,bossCoins:0,bossXp:0,hazardDamage:0,environmentHazards:false,waveCount:2,mapWidth:3000,triggers:[500,1900]};
+export const ALL_STAGES=[...CAMPAIGN_STAGES,...CHALLENGE_STAGES,TUTORIAL_STAGE];
 export const STAGE_BY_ID=Object.fromEntries(ALL_STAGES.map(s=>[s.id,s]));
 // Preserve readable tutorial damage after increasing boss reach and frequency.
 for(const [i,s] of STAGES.entries()){s.bossDamageFactor=s.damageFactor*(s.id<=2?.85:1);if(i>=3){s.minionHp=[62,84,105,136,178,222,280,340][i-3];s.bossHp=[990,1350,1700,2180,2800,3550,4500,5600][i-3];s.damageFactor=[.46,.54,.63,.73,.85,.99,1.14,1.3][i-3];s.bossDamageFactor=s.damageFactor;} }
@@ -28,7 +30,7 @@ export const SAVE_KEY='arcane-campaign-progress-v1';
 export function normalizeProgress(data){return {version:1,cleared:[...new Set((Array.isArray(data?.cleared)?data.cleared:[]).filter(id=>Number.isInteger(id)&&STAGE_BY_ID[id]))]};}
 export function stageUnlocked(stage,progress){const p=normalizeProgress(progress);return stage.requires.every(id=>p.cleared.includes(id));}
 export function completeStage(progress,id){if(!STAGE_BY_ID[id])throw new Error('未知关卡');const p=normalizeProgress(progress);if(!stageUnlocked(STAGE_BY_ID[id],p))throw new Error('前置关卡未完成');return normalizeProgress({cleared:[...p.cleared,id]});}
-export function waveComposition(stage,wave=1){const perSide=Math.min(10,stage.perSide+(wave===3?1:0)),ranged=Math.max(1,Math.round(perSide*.3));return {perSide,melee:perSide-ranged,ranged,total:perSide*2};}
+export function waveComposition(stage,wave=1){if(stage.mode==='tutorial')return {perSide:2,melee:2,ranged:0,total:3,sides:[1,2]};const perSide=Math.min(10,stage.perSide+(wave===3?1:0)),ranged=Math.max(1,Math.round(perSide*.3));return {perSide,melee:perSide-ranged,ranged,total:perSide*2};}
 
 
 

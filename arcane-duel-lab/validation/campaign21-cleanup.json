@@ -1,0 +1,18 @@
+{
+  "releasePreserved": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign21",
+  "archivePreserved": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-秘境征途-campaign21.zip",
+  "removed": [
+    {
+      "path": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\desktop\\.build\\campaign-app",
+      "bytes": 641585956.0,
+      "files": 596
+    },
+    {
+      "path": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\desktop\\.build\\campaign-out",
+      "bytes": 1015568353.0,
+      "files": 671
+    }
+  ],
+  "freeAfter": 4440965120,
+  "nativePassed": true
+}

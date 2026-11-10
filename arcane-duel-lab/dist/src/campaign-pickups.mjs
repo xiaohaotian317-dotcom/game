@@ -1,3 +1,3 @@
 import {ITEMS} from './campaign-growth-data.mjs';
-export function canPickupDrop(w,d){return !d.picked&&w.player.hp>0&&Math.abs(d.x-w.player.x)<=85&&Math.abs(d.y-w.player.y)<=75;}
+export function canPickupDrop(w,d){const p=w.player,type=d.item?.type;if(type==='health'&&p.hp>=p.maxHp||type==='mana'&&p.mp>=p.maxMp)return false;return !d.picked&&p.hp>0&&Math.abs(d.x-p.x)<=85&&Math.abs(d.y-p.y)<=75;}
 export function useRecoveryDrop(w,item){if(!['health','mana'].includes(item.type))return null;const p=w.player,key=item.type==='health'?'hp':'mp',max=item.type==='health'?'maxHp':'maxMp',amount=Math.min(p[max]-p[key],Math.round(p[max]*ITEMS[item.type].value));if(amount<=0)return {amount:0};p[key]+=amount;if(key==='hp'&&w.stats)w.stats.healed=(w.stats.healed||0)+amount;w.texts.push({x:p.x,y:p.y-p.h-18,text:(key==='hp'?'生命 +':'法力 +')+Math.round(amount),color:key==='hp'?'#b7f1a1':'#9adaff',size:19,age:0,duration:1.3});return {amount,key};}

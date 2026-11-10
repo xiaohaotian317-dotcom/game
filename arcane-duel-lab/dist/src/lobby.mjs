@@ -1,3 +1,4 @@
+import {installOnboarding} from './onboarding-guide.mjs';
 import {Sound} from './audio.mjs';
 import {SettingsDialog} from './settings-dialog.mjs';
 import {PracticeDialog} from './practice-dialog.mjs';
@@ -67,7 +68,7 @@ $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.data
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
 $('#settings-open').addEventListener('click',()=>settings.open());$('#hero-practice').addEventListener('click',()=>practice.open(preview));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
 
-$('#duel-open').addEventListener('click',()=>location.href=window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');
+$('#duel-open').addEventListener('click',()=>location.href=window.arcaneMobile?'mobile-network.html':window.arcaneDesktop?'desktop.html':'duel.html');$('#stages-open').addEventListener('click',()=>location.href='campaign.html');
 $$('[data-room-tab]').forEach(b=>b.addEventListener('click',()=>{$$('[data-room-tab]').forEach(a=>a.setAttribute('aria-selected',String(a===b)));$('#create-room-panel').hidden=b.dataset.roomTab!=='create';$('#join-room-panel').hidden=b.dataset.roomTab!=='join';}));
 $('#room-code').addEventListener('input',e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,''));
 $('#duel-practice').addEventListener('click',()=>location.href=practiceURL($('#duel-scene').value));
@@ -84,3 +85,5 @@ async function loadLobbyArt(){
 
 
 const daily=new DailyQuestDialog({getProfile:()=>loadSolo(storage),onSave:next=>{if(!saveSolo(storage,next))return false;Object.assign(solo,next);profile.coins=next.coins;renderHeader();return true;}});$('#daily-open .daily-entry-art').style.cssText=dailyArtStyle('entry');$('#daily-open').addEventListener('click',()=>daily.open());
+
+installOnboarding('lobby');

@@ -1,0 +1,201 @@
+{
+  "scope": "Isolated Edge touch browser, actual settings/editor/controls modules and pointer events; not Android native or physical vivo",
+  "checks": [
+    {
+      "name": "all nine control roles respond to real pointer dragging",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "cancel leaves original layout and current skill artwork intact",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "save commits safe-area percentages without altering quality, opacity or solo save",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "default preview can be cancelled and overlapping buttons cannot be saved",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "actual practice controls load the saved position after page transition",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "same saved layout stays anchored inside the safe area after aspect-ratio resize",
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "resized": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "opening editor clears two held battle fingers and cancels without a stuck attack or walk",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "Escape cancels a default preview and rapid duplicate open is harmless",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "restore default saves only layout while preserving the existing preferences",
+      "size": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "all nine control roles respond to real pointer dragging",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "cancel leaves original layout and current skill artwork intact",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "save commits safe-area percentages without altering quality, opacity or solo save",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "default preview can be cancelled and overlapping buttons cannot be saved",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "actual practice controls load the saved position after page transition",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "same saved layout stays anchored inside the safe area after aspect-ratio resize",
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "resized": {
+        "width": 800,
+        "height": 360
+      }
+    },
+    {
+      "name": "opening editor clears two held battle fingers and cancels without a stuck attack or walk",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "Escape cancels a default preview and rapid duplicate open is harmless",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    },
+    {
+      "name": "restore default saves only layout while preserving the existing preferences",
+      "size": {
+        "width": 736,
+        "height": 414
+      }
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "t49-controls-800-settings.png",
+    "t49-controls-800-default.png",
+    "t49-controls-800-dragged.png",
+    "t49-controls-736-settings.png",
+    "t49-controls-736-default.png",
+    "t49-controls-736-dragged.png"
+  ],
+  "missing": [],
+  "resizeGeometry": {
+    "rb": {
+      "x": 353.40625,
+      "y": 164.59375,
+      "width": 74,
+      "height": 74
+    },
+    "expected": 390.41916128305286,
+    "runtime": {
+      "width": 800,
+      "calls": [
+        {
+          "kind": "apply",
+          "enabled": true,
+          "width": 800,
+          "probe": 766
+        },
+        {
+          "kind": "resize",
+          "width": 800
+        },
+        {
+          "kind": "apply",
+          "enabled": true,
+          "width": 800,
+          "probe": 766
+        },
+        {
+          "kind": "apply",
+          "enabled": true,
+          "width": 800,
+          "probe": 766
+        },
+        {
+          "kind": "extra-ro",
+          "width": 800
+        }
+      ],
+      "paused": false,
+      "native": "34px",
+      "probe": [
+        {
+          "x": 34,
+          "width": 766
+        }
+      ],
+      "styles": [
+        "--mobile-layout-left: 353.41916128305286px; --mobile-layout-top: 164.59999681555706px;"
+      ]
+    }
+  },
+  "passed": true
+}

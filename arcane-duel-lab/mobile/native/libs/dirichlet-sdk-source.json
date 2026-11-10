@@ -1,0 +1,14 @@
+{
+  "name": "TapADN SDK Android (non-aggregated)",
+  "version": "5.3.2.0",
+  "file": "dirichlet_ad_5.3.2.0.aar",
+  "url": "https://tapad-platform.tapimg.com/sdk/dirichlet_ad/dirichlet_ad_5.3.2.0.aar",
+  "officialDownloadPage": "https://ssp.dirichlet.cn/docs/resource-download/",
+  "officialAndroidDocumentation": "https://ssp.dirichlet.cn/docs/dirichlet-sdk/sdk-guide/",
+  "releaseDate": "2026-11-02",
+  "checkedAt": "2026-11-10",
+  "md5": "CA0EBBE249FB08FDE4D836E7D79DDD39",
+  "sha256": "f6d73ac229b89ddef21a4a674abd39ccfa213656b424ed14c941c5b58291f574",
+  "dependency": "com.squareup.okhttp3:okhttp:3.10.0",
+  "scope": "Test-media integration only; no store submission, production monetization, or observed real ad completion has been claimed."
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-09T10:33:50.887Z",
+  "type": "Edge browser touch emulation, isolated HTTP origin and incognito storage; not a physical Android test",
+  "checks": [
+    "three trusted touch contacts independently hold move/down, basic attack and skill",
+    "releasing only joystick preserves the other held attack finger",
+    "skill release emits one cast with frozen world target while attack remains held",
+    "cooldown artwork does not disable recast taps",
+    "dragging into cancel area suppresses release cast",
+    "OS touch cancellation clears held input",
+    "focus loss clears every held finger",
+    "nearby context switches actions; control pointers never reach the canvas",
+    "all visible controls meet 48 px targets and screen bounds at 736×414",
+    "all visible controls meet 48 px targets and screen bounds at 915×412",
+    "all visible controls meet 48 px targets and screen bounds at 1280×800",
+    "pause callback clears input and hides combat controls",
+    "destroy removes the mounted controls",
+    "production practice entry: trusted touch joystick moves shared player; drag release cast preserves exact world target after finger release",
+    "production practice background event pauses and clears input",
+    "production campaign entry: controls appear only in battle, starter F works, unlearned E/R remain locked",
+    "production campaign background event pauses and persists the isolated test profile",
+    "production duel entrance mounts neutral hidden touch controls before a room starts"
+  ],
+  "errors": [],
+  "passed": true
+}

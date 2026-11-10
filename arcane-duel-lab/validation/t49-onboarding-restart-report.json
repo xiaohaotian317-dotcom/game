@@ -1,0 +1,68 @@
+{
+  "scope": "Isolated mobile-enabled browser restart checkpoints only; seeded saved guide state, no claim of natural progression.",
+  "cases": [
+    {
+      "seed": {
+        "step": "reward",
+        "menuIndex": 0,
+        "tutorialRewardClaimed": true
+      },
+      "actual": {
+        "state": {
+          "version": 1,
+          "step": "menu",
+          "menuIndex": 0,
+          "tutorialRewardClaimed": true
+        },
+        "coins": 806,
+        "guideVisible": true,
+        "guide": "行囊与修行",
+        "menuExpanded": "false"
+      }
+    },
+    {
+      "seed": {
+        "step": "menus",
+        "menuIndex": 3,
+        "tutorialRewardClaimed": true
+      },
+      "actual": {
+        "state": {
+          "version": 1,
+          "step": "menus",
+          "menuIndex": 3,
+          "tutorialRewardClaimed": true
+        },
+        "coins": 806,
+        "guideVisible": true,
+        "guide": "法器",
+        "menuExpanded": "true",
+        "menuClickable": true,
+        "guideAboveModal": true,
+        "nextMenuIndex": 4
+      }
+    },
+    {
+      "seed": {
+        "step": "battle",
+        "menuIndex": 0,
+        "tutorialRewardClaimed": false
+      },
+      "actual": {
+        "state": {
+          "version": 1,
+          "step": "map",
+          "menuIndex": 0,
+          "tutorialRewardClaimed": false
+        },
+        "coins": 300,
+        "guideVisible": true,
+        "guide": "第一场试炼",
+        "menuExpanded": "false"
+      }
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "passed": true
+}

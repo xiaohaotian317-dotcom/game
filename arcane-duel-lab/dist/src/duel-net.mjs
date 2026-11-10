@@ -1,8 +1,9 @@
+import {roomRequest} from './platform.mjs';
 export class DuelLink{
   constructor(hooks={}){Object.assign(this,hooks);this.session=null;this.room=null;this.running=false;this.seq=0;this.latestState=null;this.input=null;this.signal=null;this.pc=null;this.channels={};this.transport='relay';this.rtt=0;this.clockOffset=0;this.signalBusy=false;this.generation=null;this.lastStateAt=0;this.lastPacketAt=performance.now();this.retryAt=0;this.syncSoon=false;}
   async request(path,body,token=this.session?.token){
     const begin=performance.now(),wall=Date.now(),controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),6500);
-    try{const response=await fetch('/api/duel/'+path,{method:'POST',headers:{'Content-Type':'application/json',...(token?{'X-Duel-Token':token}:{})},body:JSON.stringify(body),signal:controller.signal});const data=await response.json();if(!response.ok)throw new Error(data.error||'连接房间失败');const elapsed=performance.now()-begin;if(data.room){const offset=data.room.serverTime-(wall+elapsed/2);this.clockOffset=this.room?this.clockOffset*.8+offset*.2:offset;}if(this.transport!=='direct'){this.rtt=elapsed;this.onStatus?.();}return data;}catch(e){if(e.name==='AbortError')throw new Error('网络响应超时，正在尝试恢复连接');throw e;}finally{clearTimeout(timeout);}
+    try{const native=await roomRequest(path,body,token);const response=native?{status:native.status,ok:native.status>=200&&native.status<300,json:async()=>typeof native.data==='string'?JSON.parse(native.data):native.data}:await fetch('/api/duel/'+path,{method:'POST',headers:{'Content-Type':'application/json',...(token?{'X-Duel-Token':token}:{})},body:JSON.stringify(body),signal:controller.signal});const data=await response.json();if(!response.ok){const error=new Error(data.error||'连接房间失败');error.status=response.status;error.data=data;throw error;}const elapsed=performance.now()-begin;if(data.room){const offset=data.room.serverTime-(wall+elapsed/2);this.clockOffset=this.room?this.clockOffset*.8+offset*.2:offset;}if(this.transport!=='direct'){this.rtt=elapsed;this.onStatus?.();}return data;}catch(e){if(e.name==='AbortError')throw new Error('网络响应超时，正在尝试恢复连接');throw e;}finally{clearTimeout(timeout);}
   }
   accept(room){
     if(this.room&&room.revision<this.room.revision)return;
@@ -17,7 +18,17 @@ export class DuelLink{
   async poll(){
     if(!this.running||!this.session)return;const started=performance.now();
     try{const body={epoch:this.room?.epoch,seq:++this.seq};if(this.signal)body.signal=this.signal;if(this.room?.seat===0&&this.latestState)body.snapshot=this.latestState;if(this.room?.seat===1&&this.input)body.input=this.input;
-      const data=await this.request('rooms/'+this.session.code+'/sync',body);this.accept(data.room);this.lastServerAt=performance.now();
+      let data;
+      try{data=await this.request('rooms/'+this.session.code+'/sync',body);}
+      catch(error){
+        // A round may advance while a host snapshot is in flight (or during reconnect).
+        // Recover once without the rejected snapshot; never hide an incompatible-ruleset 409.
+        if(!body.snapshot||error.status!==409||error.data?.error!=='已进入新的回合')throw error;
+        if(this.latestState===body.snapshot||(this.latestState?.epoch===body.snapshot.epoch&&this.latestState?.roundSerial===body.snapshot.roundSerial))this.latestState=null;
+        this.input=null;
+        data=await this.request('rooms/'+this.session.code+'/sync',{epoch:this.room?.epoch,seq:++this.seq,resume:true});
+      }
+      this.accept(data.room);this.lastServerAt=performance.now();
       if(data.input)this.receive({kind:'input',packet:data.input},false);if(data.snapshot)this.receive({kind:'state',snapshot:data.snapshot},false);
       if(data.signal)await this.receiveSignal(data.signal);this.onError?.(null);
     }catch(e){this.onError?.(e.message);}

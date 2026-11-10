@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+def releaseProperties = new Properties()
+def releaseFile = rootProject.file('../.private/signing.properties')
+if (releaseFile.exists()) releaseProperties.load(new FileInputStream(releaseFile))
+def tapProperties = new Properties()
+def tapFile = rootProject.file('../.private/taptap.properties')
+if (tapFile.exists()) tapProperties.load(new FileInputStream(tapFile))
+def adsProperties = new Properties()
+def adsFile = rootProject.file('../.private/dirichlet.properties')
+if (adsFile.exists()) adsProperties.load(new InputStreamReader(new FileInputStream(adsFile), 'UTF-8'))
+def quoted = { value -> '"' + (value ?: '').replace('\\','\\\\').replace('"','\\"') + '"' }
+android {
+    buildFeatures { buildConfig true }
+    signingConfigs {
+        release {
+            if (releaseFile.exists()) {
+                storeFile rootProject.file('../.private/arcane-duel-release.jks')
+                storePassword releaseProperties.getProperty('storePassword')
+                keyAlias releaseProperties.getProperty('keyAlias')
+                keyPassword releaseProperties.getProperty('keyPassword')
+            }
+        }
+    }
+    namespace = "com.xiaohaotian.arcaneduel"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.xiaohaotian.arcaneduel"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 3
+        versionName "0.1.2"
+        buildConfigField "String", "TAP_CLIENT_ID", quoted(tapProperties.getProperty("clientId"))
+        buildConfigField "String", "TAP_CLIENT_TOKEN", quoted(tapProperties.getProperty("clientToken"))
+        buildConfigField "String", "ADN_MEDIA_ID", quoted(adsProperties.getProperty("mediaId", adsProperties.getProperty("appId")))
+        buildConfigField "String", "ADN_MEDIA_KEY", quoted(adsProperties.getProperty("mediaKey"))
+        buildConfigField "String", "ADN_MEDIA_NAME", quoted(adsProperties.getProperty("mediaName", "秘境决斗"))
+        buildConfigField "String", "ADN_REWARDED_PLACEMENT", quoted(adsProperties.getProperty("rewardedPlacement"))
+        buildConfigField "String", "ADN_INTERSTITIAL_PLACEMENT", quoted(adsProperties.getProperty("interstitialPlacement"))
+        buildConfigField "boolean", "ADN_TEST_MODE", adsProperties.getProperty("testMode", "true") == "true" ? "true" : "false"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.release }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation files('../../native/libs/dirichlet_ad_5.3.2.0.aar')
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation 'com.taptap.sdk:tap-core:4.11.0'
+    implementation 'com.taptap.sdk:tap-login:4.11.0'
+    implementation 'com.taptap.sdk:tap-battle:4.11.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

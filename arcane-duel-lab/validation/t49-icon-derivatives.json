@@ -1,0 +1,67 @@
+{
+  "original": "dist\\assets\\mobile\\app-icon-v3.png",
+  "sha256": "92f55db57d1d8702206a6192e228dd1c16af13741522f5e9d1160aed06c1697f",
+  "operation": "Android icon size variants only; no painting or rounded corner added; original retained",
+  "outputs": [
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png",
+      "sha256": "381d5493de22a5b60c351ad2e6f4238c7d50f833efa8001f4fa08fb81023bc2c"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png",
+      "sha256": "381d5493de22a5b60c351ad2e6f4238c7d50f833efa8001f4fa08fb81023bc2c"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png",
+      "sha256": "d527a50bddae74e220fbf61be511a99394d2718c42e4cf98dcb43a10bb375bbb"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png",
+      "sha256": "1ee475405b6e30024b7aea215f32470a82093451829b3a6dfe12d4f850523f4a"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png",
+      "sha256": "1ee475405b6e30024b7aea215f32470a82093451829b3a6dfe12d4f850523f4a"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png",
+      "sha256": "2cfa75dca0fc72df993fd85ececd9336fa069c1e781a46cb161723f79984ef8b"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png",
+      "sha256": "138c2aace762fce4e46f9c4bca90d57cfe6124075a6b0d467a04c7ef0ae01a1e"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png",
+      "sha256": "138c2aace762fce4e46f9c4bca90d57cfe6124075a6b0d467a04c7ef0ae01a1e"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png",
+      "sha256": "a5d3028c411a49cf7ce50fba3441d3462cdb683255370e2dce8c66683a8208fa"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png",
+      "sha256": "2e0d741ae890e839f2820583bac2f8e1bf70c8bb1b5b8e8748c4bf8d6a152c38"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png",
+      "sha256": "2e0d741ae890e839f2820583bac2f8e1bf70c8bb1b5b8e8748c4bf8d6a152c38"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png",
+      "sha256": "7741abbe17a75e6b8bb8b115377c199cd59c80aad935b0cf0273e1918ec88b93"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
+      "sha256": "59bffac2c06fe76701b1688a720667c63519564d53c5329dff656a273ac55ad4"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png",
+      "sha256": "59bffac2c06fe76701b1688a720667c63519564d53c5329dff656a273ac55ad4"
+    },
+    {
+      "file": "mobile\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png",
+      "sha256": "a535c3daaff71a8dee2050c712f13b3a376736ff3f993b7f7c21f181e988d0ad"
+    }
+  ]
+}

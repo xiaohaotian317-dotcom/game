@@ -1,4 +1,6 @@
 import {movementBurst} from './movement-fx.mjs';
+import {ensureProjectileRange,projectileMotion,spendProjectileDistance,expireProjectileRange} from './projectile-range.mjs';
+import {beforeMobileCastStep,lockMobileCastFacing,prepareMobileCastRelease,mobileCastMovement} from './mobile-cast-input.mjs';
 import {integerDamage,damageText} from './combat-numbers.mjs';
 import {duelSkillSpec,recordDuelCast,releaseDuelSkill,duelSkillOnHit,stepDuelSkills} from './duel-skill-runtime.mjs';
 import {stepCompanion,hitCompanion} from './campaign-companion.mjs';
@@ -111,7 +113,7 @@ function area(w,x,y,r,amount,opts={}) {
   damageBridge(w,x,y,r,amount);
 }
 function projectile(w,kind,x,y,dx,dy,speed,amount,extra={}){
-  w.projectiles.push({id:++w.serial,kind,x,y,px:x,py:y,vx:dx*speed,vy:dy*speed,age:0,life:3.5,damage:amount,r:kind==='seed'?6:8,trail:[],castId:w.player.cast?.id,...extra});
+  const shot={id:++w.serial,kind,x,y,px:x,py:y,vx:dx*speed,vy:dy*speed,age:0,life:3.5,damage:amount,r:kind==='seed'?6:8,trail:[],castId:w.player.cast?.id,...extra};ensureProjectileRange(shot);w.projectiles.push(shot);
 }
 export function fireOrbVisible(w,s){
  if(!s||s.age>=s.life)return false;let v;
@@ -182,6 +184,7 @@ function beginCast(w,key) {
   if(isRecast)p.recast=null;else p.cooldowns[key]=s.cd*(key==='attack'?1/attackRate:w.campaign?.progression?(key==='r'?1.1:1.15):1);
   p.face=w.aim.x>=p.x?1:-1;
   p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration/attackRate,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release/attackRate,released:false,x:w.aim.x,y:w.aim.y,target};
+  lockMobileCastFacing(w);
   if(w.campaign?.progression)w.campaign.castSkills[p.cast.id]=s.soloSkill?.id;
   recordDuelCast(w,p.cast);
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
@@ -238,9 +241,10 @@ function updateEffects(w,dt){
 function updateProjectiles(w,dt){
   for(const s of w.projectiles){
     if(s.age>=s.life)continue;
+    if(ensureProjectileRange(s)&&s.distanceTravelled>=s.rangeLimit-1e-7){expireProjectileRange(w,s);continue;}
     if(s.owner==='enemy'&&(s.enemySeeking&&s.age<.6||s.enemyReturning&&s.age>.65)){const owner=w.targets.find(t=>t.id===s.enemySource&&t.hp>0),goal=s.enemyReturning&&s.age>.65?owner:w.player;if(goal){const dx=goal.x-s.x,dy=goal.y-goal.h*.55-s.y,len=Math.hypot(dx,dy)||1,speed=s.enemyCruiseSpeed||=(Math.hypot(s.vx,s.vy)||360),blend=1-Math.exp(-(s.enemyReturning&&s.age>.65?9:2.6)*dt);s.vx=lerp(s.vx,dx/len*speed,blend);s.vy=lerp(s.vy,dy/len*speed,blend);if(goal===owner&&len<owner.w+12){s.life=0;continue;}}else if(s.enemyReturning){s.life=0;continue;}}
     if(s.homing){const t=w.targets.filter(t=>t.hp>0&&!(s.basic&&s.owner==='player'&&basicAlreadyHit(w,s.castId,t.id))).sort((a,b)=>Math.hypot(a.x-s.x,a.y-45-s.y)-Math.hypot(b.x-s.x,b.y-45-s.y))[0];if(t){const dx=t.x-s.x,dy=t.y-45-s.y,l=Math.hypot(dx,dy)||1,speed=Math.hypot(s.vx,s.vy);s.vx=lerp(s.vx,dx/l*speed,1-Math.exp(-6*dt));s.vy=lerp(s.vy,dy/l*speed,1-Math.exp(-6*dt));}}
-    s.px=s.x;s.py=s.y;s.x+=s.vx*dt;s.y+=s.vy*dt;s.age+=dt;
+    s.px=s.x;s.py=s.y;const motion=projectileMotion(s,dt);s.x=motion.x;s.y=motion.y;s.age+=dt;
     s.trail||=[];s.trail.push({x:s.px,y:s.py});if(s.trail.length>12)s.trail.shift();
     if(s.kind==='seed')s.vy+=dt*55;
     if(s.enemyGravity)s.vy+=dt*s.enemyGravity;
@@ -255,8 +259,9 @@ function updateProjectiles(w,dt){
     if(w.duel&&s.kind!=='emberOrb'){ice=null;const mirrors=s.owner==='enemy'?w.iceMirrors:w.duelRivalMirrors||[],side=s.owner==='enemy'?w.duelSide:1-w.duelSide;for(const mirror of mirrors){const key=side+':'+mirror.id;if(s.duelMirrorKey===key)continue;const t=segmentBox(s.px,s.py,s.x,s.y,{x:mirror.x-8,y:mirror.y-58,w:16,h:116},s.r);if(t!==null&&(!ice||t<ice.t))ice={t,type:'iceMirror',mirror,key};}}
     if(ice&&(!contact||ice.t<contact.t))contact=ice;
     if(contact){s.x=lerp(s.px,s.x,contact.t);s.y=lerp(s.py,s.y,contact.t);}
+    spendProjectileDistance(s,s.px,s.py);
     if(hitSceneMechanism(w,s,sceneHooks))continue;
-    if(contact?.type==='iceMirror'){if(w.duel){s.vx*=-1;s.x+=Math.sign(s.vx)*12;s.owner=s.owner==='enemy'?'player':'enemy';s.school='frost';s.fire=false;s.damage=Math.round(s.damage*1.15);s.duelMirrorKey=contact.key;s.life=Math.max(s.life,s.age+2);effect(w,'frostHit',{x:s.x,y:s.y,duration:.5});emit(w,'iceReflect');}else reflectExtra(w,s,contact.mirror,extraHooks);}
+    if(contact?.type==='iceMirror'){const x=s.x,y=s.y;if(w.duel){s.vx*=-1;s.x+=Math.sign(s.vx)*12;s.owner=s.owner==='enemy'?'player':'enemy';s.school='frost';s.fire=false;s.damage=Math.round(s.damage*1.15);s.duelMirrorKey=contact.key;s.life=Math.max(s.life,s.age+2);effect(w,'frostHit',{x:s.x,y:s.y,duration:.5});emit(w,'iceReflect');}else reflectExtra(w,s,contact.mirror,extraHooks);spendProjectileDistance(s,x,y);}
     if(contact?.type==='mirror'){
       const nx=-Math.sin(m.angle),ny=Math.cos(m.angle),dot=s.vx*nx+s.vy*ny;
       s.vx-=2*dot*nx;s.vy-=2*dot*ny;s.mirrorAt=m.angle;
@@ -269,7 +274,7 @@ function updateProjectiles(w,dt){
       s.life=0;
     }
     if(contact?.type==='wall'){
-      if(s.enemyRicochet>0){s.enemyRicochet--;const b=contact.box,vertical=s.py<b.y||s.py>b.y+b.h;if(vertical)s.vy*=-1;else s.vx*=-1;const speed=Math.hypot(s.vx,s.vy)||1;s.x+=s.vx/speed*(s.r+3);s.y+=s.vy/speed*(s.r+3);effect(w,'enemyVfx',{enemyKind:s.enemyKind,style:s.enemyStyle,x:s.x,y:s.y,radius:35,duration:.35});continue;}
+      if(s.enemyRicochet>0){s.enemyRicochet--;const b=contact.box,vertical=s.py<b.y||s.py>b.y+b.h;if(vertical)s.vy*=-1;else s.vx*=-1;const speed=Math.hypot(s.vx,s.vy)||1,x=s.x,y=s.y;s.x+=s.vx/speed*(s.r+3);s.y+=s.vy/speed*(s.r+3);spendProjectileDistance(s,x,y);effect(w,'enemyVfx',{enemyKind:s.enemyKind,style:s.enemyStyle,x:s.x,y:s.y,radius:35,duration:.35});if(s.rangeLimit&&s.distanceTravelled>=s.rangeLimit-1e-7)expireProjectileRange(w,s);continue;}
       if(s.owner==='enemy'&&s.enemySource)enemyProjectileContact(w,s,null,enemyHooks,false);
       if(contact.box.source?.type==='wood'&&s.owner==='player')damageBridge(w,s.x,s.y,24,s.damage);
       effect(w,s.fire?'fireHit':s.school?s.school+'Hit':s.kind==='seed'?'leafHit':'enemyHit',{x:s.x,y:s.y,duration:.5});
@@ -278,6 +283,7 @@ function updateProjectiles(w,dt){
     }
     if(s.x<-100||s.x>(w.width||WIDTH)+100||s.y<-200||s.y>(w.height||HEIGHT)+100)s.life=0;
     if(s.kind==='emberOrb'&&!fireOrbVisible(w,s)){s.life=0;if(w.player.recast?.data?.projectileId===s.id)w.player.recast=null;}
+    if(s.life>0&&s.rangeLimit&&(s.distanceTravelled>=s.rangeLimit-1e-7||s.age>=s.life))expireProjectileRange(w,s);
   }
   w.projectiles=w.projectiles.filter(s=>s.age<s.life);
 }
@@ -370,6 +376,7 @@ export function step(w,dt,input={}) {
   if(!w.duelSecondary)updateScene(w,dt,sceneHooks);
   else{w.windForce=0;const wind=w.mechanisms?.wind;if(wind){const b=wind.bounds;if(!p.grounded&&p.x>b.x&&p.x<b.x+b.w&&p.y>b.y&&p.y-p.h<b.y+b.h){w.windForce=wind.direction*190;p.vy=Math.max(-640,p.vy-470*dt);}}}
   if(input.aim)w.aim={...input.aim};
+  input=beforeMobileCastStep(w,input);
   extraBefore(w,dt,extraHooks);
   for(const k of Object.keys(p.cooldowns))p.cooldowns[k]=Math.max(0,p.cooldowns[k]-dt);
   for(const k of ['drop','dash','dashCooldown','hurt','invuln','land','passiveGlow'])p[k]=Math.max(0,p[k]-dt);
@@ -387,14 +394,14 @@ export function step(w,dt,input={}) {
   if(p.buffer){if(p.buffer.until<w.time)p.buffer=null;else if(beginCast(w,p.buffer.key))p.buffer=null;}
   if(p.cast){
     const c=p.cast;c.age+=dt;
-    if(!c.released&&c.age>=c.releaseAt){c.released=true;release(w,c);}
+    if(!c.released&&c.age>=c.releaseAt){c.released=true;prepareMobileCastRelease(w,c);release(w,c);}
     if(c.age>=c.duration)p.cast=null;
   }
   const wasGrounded=p.grounded,oldVy=p.vy,b=p.burst;
   if(b){p.vx=b.vx;p.vy=b.vy;}
   if(p.dead<=0){
     if(!b&&p.dash<=0&&p.hurt<=0&&!p.stomp){
-      const move=input.move||0,slow=p.cast?(w.hero==='nature'?.55:.68):1;
+      const move=mobileCastMovement(w,input),slow=p.cast?(w.hero==='nature'?.55:.68):1;
       const statusSlow=w.duel||w.enemyMode?Math.min(p.slowUntil>w.time?.45:1,p.frostSnareUntil>w.time?.65:1,p.enemySnareUntil>w.time?.55:1):1;
       const target=controlled||(w.duel&&p.rootUntil>w.time)?0:move*HEROES[w.hero].speed*slow*statusSlow+(w.windForce||0);
       p.vx=lerp(p.vx,target,1-Math.exp(-(move?15:21)*dt));

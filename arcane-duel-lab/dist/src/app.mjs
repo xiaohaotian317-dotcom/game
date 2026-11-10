@@ -1,3 +1,4 @@
+import {installOnboarding} from './onboarding-guide.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
 import {KEY_LABELS,skillForCode,INTERACT_CODE} from './controls.mjs?v=20261030-duel12';
@@ -15,10 +16,13 @@ import {duelChosenSkill} from './duel-skill-data.mjs';
 import {duelHotbarStyle} from './duel-skill-ui.mjs';
 import {loadSentinel} from './training-sentinel.mjs';
 import {loadAlternateArt} from './alternate-skill-art.mjs';
+import {MobileControls,hasNearbyInteraction} from './mobile-controls.mjs';
+import {SettingsDialog} from './settings-dialog.mjs';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sound=new Sound(),canvas=$('#arena'),keys=new Set(),actions=[],heroOrder=['fire','nature','frost','lightning','shadow','star'],completed=Object.fromEntries(heroOrder.map(h=>[h,new Set()]));
 const initialParams=new URLSearchParams(location.search);
 let profileStorage;try{profileStorage=window.localStorage;}catch{}
+const titleSettings=new SettingsDialog({storage:profileStorage});
 
 $('#sound-button').textContent='声音 '+(sound.enabled?'开':'关');$('#sound-button').setAttribute('aria-pressed',String(sound.enabled));
 const enterLobby=()=>{location.href='lobby.html';};
@@ -28,6 +32,15 @@ const practiceLoads={};practiceLoads[world.hero]=practiceLoadout(world.hero,init
 let wasPausedBeforePicker=false;
 const practice=new PracticeDialog({onConfirm:async({hero,loadout,scene})=>{practiceLoads[hero]=loadout;selectedScene=scene;await choose(hero);},onClose:()=>{paused=wasPausedBeforePicker;last=performance.now();}});
 const chosenSkill=key=>duelChosenSkill(world.hero,key,world.duelSkills.loadout)||HEROES[world.hero].skills[key]||{name:'冲刺',cd:1.1};
+const mobile=window.arcaneMobile||initialParams.get('touch')==='1'?new MobileControls({canvas,getWorld:()=>world,mode:'practice',onPause:()=>setPause(true),onAction:(type,detail)=>{
+  if(mode!=='game'||paused||world.freezeFrame||practice.isOpen)return;
+  sound.init();if(type==='interact'){interactNearest(world);consumeEvents();return;}actions.push({type,aim:detail.aim});
+}}):null;
+function updateMobile(){
+  if(!mobile)return;const p=world.player,skills={};
+  for(const key of ['attack','dash','q','e','r']){const s=chosenSkill(key),rc=p.recast?.key===key&&p.recast.until>world.time;skills[key]={id:s.id,name:rc?p.recast.name:key==='attack'?'普攻':s.name,style:duelHotbarStyle(world.hero,key,world.duelSkills.loadout,rc),cooldown:rc?0:key==='dash'?p.dashCooldown:p.cooldowns[key]};}
+  mobile.update({visible:mode==='game',paused:paused||world.freezeFrame||practice.isOpen,hero:world.hero,skills,context:{interact:hasNearbyInteraction(world)}});
+}
 const descriptions={
   fire:{attack:'向瞄准方向发射焰矢，碰墙停止。按住鼠标可连续攻击，命中附加灼烧。',q:'在鼠标下方第一个可站立台面引爆，可穿过上层平台，也可炸断木桥。',e:'朝指定方向快速投出火球；飞出视口前，再按 E 在火球当前位置引爆。',r:'在鼠标下方第一个台面标记落点，约 0.86 秒后陨石命中；可穿过上层平台。'},
   nature:{attack:'向瞄准方向弹出荆棘种子，碰墙停止，命中迸发枝叶。',q:'沿脚下台面催生根须，可穿过障碍束缚敌人，适合接木灵鹿角跃冲撞。',e:'播种召唤木灵鹿。3.5 秒内再按 E 指定角跃冲撞方向，命中触发共生恢复。',r:'在鼠标下方第一个可站立台面长出古树，形成两处枝台。树根附近周期恢复生命。'}
@@ -39,6 +52,10 @@ function positionTitleButton(){
   const width=Math.min(r.width,r.height*1672/941),height=width*941/1672,b=$('#start-button');
   b.style.left=((r.width-width)/2+width*.323)+'px';b.style.top=((r.height-height)/2+height*.762)+'px';
   b.style.width=(width*.355)+'px';b.style.height=(height*.13)+'px';
+  const settings=$('#title-settings-open'),size=Math.max(48,width*.046);
+  settings.style.left=((r.width-width)/2+width*(1595/1672)-size/2)+'px';
+  settings.style.top=((r.height-height)/2+height*(863/941)-size/2)+'px';
+  settings.style.width=size+'px';settings.style.height=size+'px';
 }
 window.addEventListener('resize',positionTitleButton);
 function buildHero(){
@@ -70,6 +87,7 @@ function buildScene(){
   world.debugGeometry=initialParams.get('geometry')==='1';
 }
 function updateUI(){
+  updateMobile();
   const p=world.player,h=HEROES[world.hero];
   const meter=roleMeter(world);$('#role-meter').hidden=!meter;$('#role-meter').textContent=meter;
   $('#action-state').textContent=actionState(world);$('#damage').textContent=Math.round(world.stats.damage);
@@ -98,6 +116,7 @@ function updateUI(){
 }
 let selectionId=0;
 async function choose(hero){
+  mobile?.reset();
   const id=++selectionId;keys.clear();actions.length=0;pointerDown=false;
   if(renderer&&!renderer.assets[hero]){notice('正在加载'+HEROES[hero].name+'…');try{await ensureHeroAssets(hero,renderer.assets);}catch(e){notice(e.message+'，可再次选择重试。');console.error(e);return;}if(id!==selectionId)return;}
   if(renderer){try{await loadAlternateArt([hero],renderer.assets);}catch(e){notice(e.message+'，请重新选择重试。');return;}if(id!==selectionId)return;}
@@ -116,12 +135,13 @@ function start(){
   mode='game';$('#title-screen').hidden=true;$('#game').hidden=false;paused=false;accumulator=0;last=performance.now();sound.setScene('battle');sound.init();canvas.focus({preventScroll:true});renderer.resize();buildHero();
 }
 function setPause(value){
+  mobile?.reset();mobile?.update({paused:value});
   paused=value;keys.clear();actions.length=0;pointerDown=false;accumulator=0;$('#pause-overlay').hidden=!paused;$('#pause-button').innerHTML=paused?'继续 <kbd>P</kbd>':'暂停 <kbd>P</kbd>';last=performance.now();
   if(!paused){sound.init();canvas.focus({preventScroll:true});}
 }
-function freezeFrame(){world.freezeFrame=!world.freezeFrame;keys.clear();pointerDown=false;actions.length=0;accumulator=0;$('#freeze-button').setAttribute('aria-pressed',String(!!world.freezeFrame));$('#frame-badge').hidden=!world.freezeFrame;canvas.focus({preventScroll:true});}
-function point(event){const r=canvas.getBoundingClientRect();pointerUV={u:(event.clientX-r.left)/r.width,v:(event.clientY-r.top)/r.height};aim=worldPoint(world,pointerUV.u,pointerUV.v);}
-canvas.addEventListener('pointermove',point);canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();point(e);pointerDown=true;canvas.setPointerCapture(e.pointerId);sound.init();canvas.focus({preventScroll:true});});
+function freezeFrame(){world.freezeFrame=!world.freezeFrame;mobile?.reset();updateMobile();keys.clear();pointerDown=false;actions.length=0;accumulator=0;$('#freeze-button').setAttribute('aria-pressed',String(!!world.freezeFrame));$('#frame-badge').hidden=!world.freezeFrame;canvas.focus({preventScroll:true});}
+function point(event){if(mobile&&event.pointerType==='touch')return;const r=canvas.getBoundingClientRect();pointerUV={u:(event.clientX-r.left)/r.width,v:(event.clientY-r.top)/r.height};aim=worldPoint(world,pointerUV.u,pointerUV.v);}
+canvas.addEventListener('pointermove',point);canvas.addEventListener('pointerdown',e=>{if(e.button!==0||mobile&&e.pointerType==='touch')return;e.preventDefault();point(e);pointerDown=true;canvas.setPointerCapture(e.pointerId);sound.init();canvas.focus({preventScroll:true});});
 window.addEventListener('pointerup',()=>pointerDown=false);canvas.addEventListener('pointercancel',()=>pointerDown=false);canvas.addEventListener('contextmenu',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
   if(practice.isOpen||e.target.closest('input,select,textarea,dialog'))return;
@@ -140,16 +160,19 @@ window.addEventListener('keydown',e=>{
   if(e.code==='KeyN')choose(world.hero);
 });
 window.addEventListener('keyup',e=>keys.delete(e.code));
-window.addEventListener('blur',()=>{keys.clear();pointerDown=false;if(mode==='game'&&!paused)setPause(true);});
+window.addEventListener('blur',()=>{keys.clear();pointerDown=false;mobile?.reset();if(mode==='game'&&!paused)setPause(true);});
+window.addEventListener('arcane:background',()=>{mobile?.reset();if(mode==='game'&&!paused)setPause(true);});
+window.addEventListener('arcane:input-reset',()=>{mobile?.reset();keys.clear();pointerDown=false;actions.length=0;});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&mode==='game'&&!paused)setPause(true);});
 $('#start-button').addEventListener('click',enterLobby);
+$('#title-settings-open').addEventListener('click',()=>titleSettings.open());
 const leaveTrial=()=>{location.href='lobby.html?view=codex&hero='+world.hero;};$('#back-button').addEventListener('click',leaveTrial);$('#trial-leave').addEventListener('click',leaveTrial);$('#trial-back').addEventListener('click',leaveTrial);
 $('#pause-button').addEventListener('click',()=>setPause(!paused));$('#resume-button').addEventListener('click',()=>setPause(false));
 $('#freeze-button').addEventListener('click',freezeFrame);
 $$('.hero-button').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.hero)));
 $$('.scene-picker button[data-scene]').forEach(b=>b.addEventListener('click',()=>{selectedScene=b.dataset.scene;choose(world.hero);const url=new URL(location.href);url.searchParams.set('scene',selectedScene);url.searchParams.set('play','1');history.replaceState(null,'',url);notice('已进入'+SCENES[selectedScene].name+'。射击机关或靠近后按 G。');}));
 $('#reset-button').addEventListener('click',()=>choose(world.hero));
-$('#practice-loadout-open').addEventListener('click',()=>{wasPausedBeforePicker=paused;paused=true;keys.clear();actions.length=0;pointerDown=false;accumulator=0;practice.open(world.hero,world.duelSkills.loadout,selectedScene,true);});
+$('#practice-loadout-open').addEventListener('click',()=>{wasPausedBeforePicker=paused;paused=true;mobile?.reset();keys.clear();actions.length=0;pointerDown=false;accumulator=0;practice.open(world.hero,world.duelSkills.loadout,selectedScene,true);updateMobile();});
 $('#repair-button').addEventListener('click',()=>{if(selectedScene==='moon')repair(world);else choose(world.hero);notice('地图机关已复原。');canvas.focus({preventScroll:true});});
 for(const [id,field] of [['moving','moving'],['counter','counterattack'],['slow','slow']]){
   $('#'+id+'-button').addEventListener('click',e=>{world[field]=!world[field];e.currentTarget.setAttribute('aria-pressed',String(world[field]));canvas.focus({preventScroll:true});});
@@ -186,9 +209,9 @@ function loop(now){
       accumulator+=realDt*(world.slow?.5:1);
       while(accumulator>=STEP){
         if(pointerUV)aim=worldPoint(world,pointerUV.u,pointerUV.v);
-        const action=actions.shift(),move=(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0);
-        step(world,STEP,{move,aim,jump:action==='jump',drop:keys.has('KeyS')||keys.has('ArrowDown'),down:keys.has('KeyS')||keys.has('ArrowDown'),
-          dash:action==='dash',cast:['q','e','r'].includes(action)?action:null,attack:pointerDown||keys.has('KeyJ')||action==='attack'});
+        const record=actions.shift(),action=typeof record==='string'?record:record?.type,touch=mobile?.read(),move=touch?.move||((keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0));
+        step(world,STEP,{touchAim:!!mobile,move,aim:record?.aim||touch?.aim||aim,jump:action==='jump',drop:touch?.down||keys.has('KeyS')||keys.has('ArrowDown'),down:touch?.down||keys.has('KeyS')||keys.has('ArrowDown'),
+          dash:action==='dash',cast:['q','e','r'].includes(action)?action:null,attack:touch?.attack||pointerDown||keys.has('KeyJ')||action==='attack'});
         accumulator-=STEP;
       }consumeEvents();
     }
@@ -214,3 +237,5 @@ async function init(){
 
 
 
+
+installOnboarding('title');

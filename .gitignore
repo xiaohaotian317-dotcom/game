@@ -31,3 +31,25 @@ Thumbs.db
 *.key
 *.pem
 /发行/
+
+# Android build outputs, local toolchains and signing material.
+**/mobile/web/
+**/mobile/android/.gradle/
+**/mobile/android/**/build/
+**/mobile/android/local.properties
+**/mobile/node_modules/
+**/mobile/android/app/src/main/assets/public/
+**/mobile/android/app/src/main/assets/capacitor.config.json
+**/mobile/android/app/src/main/assets/capacitor.plugins.json
+**/mobile/android/app/src/main/java/**/generated/
+**/mobile/.private/
+*.jks
+*.keystore
+
+**/mobile/native/.cache/
+
+# Private device/storage captures and developer-account screenshots.
+arcane-duel-lab/validation/*original-storage.json
+arcane-duel-lab/validation/android1-native-inspect.json
+arcane-duel-lab/validation/t47-tap-status.json
+arcane-duel-lab/validation/android1-tap-*.png

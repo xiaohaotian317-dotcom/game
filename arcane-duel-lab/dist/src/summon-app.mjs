@@ -1,3 +1,4 @@
+import {installOnboarding} from './onboarding-guide.mjs';
 import {Sound} from './audio.mjs';
 new Sound();
 import {HEROES} from './simulation.mjs?v=20261030-duel12';
@@ -70,3 +71,5 @@ window.addEventListener('storage',e=>{if(e.key===SOLO_KEY&&!busy){profile=loadSo
 window.addEventListener('resize',()=>{portrait.request();for(const el of $('#pool-scenery').children)alignScene(el,el.dataset.pool);});document.addEventListener('visibilitychange',()=>{if(!document.hidden)portrait.request();});
 portrait.ready.then(()=>$('#art-loading').hidden=true).catch(e=>{ $('#art-loading').textContent=e.message+'，请重新打开页面。'; });
 selectPool(hero,false);
+
+installOnboarding('summon');

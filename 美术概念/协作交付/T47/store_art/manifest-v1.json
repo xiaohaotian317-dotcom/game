@@ -1,0 +1,91 @@
+{
+  "task": "T47 store_art",
+  "tool": "built-in image_gen",
+  "status": "promotional concept prepared; no store submission/publication; parent packaging required",
+  "active": "taptap-promo-v2.png",
+  "onlyText": "秘境决斗",
+  "promptFiles": [
+    "prompt-v1.txt",
+    "prompt-v2.txt"
+  ],
+  "editHistory": "v1 edited actual title-screen using original hero sheet and moon-stage references; v2 was the single allowed targeted size retry preserving composition",
+  "files": [
+    {
+      "file": "taptap-promo-v1.png",
+      "generatedOriginal": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-76c9de00-592b-441b-8e2e-ec189ad9e108.png",
+      "originalBytesUnchanged": true,
+      "selected": false,
+      "actualAspect": 1.7768331562167907,
+      "aspectErrorRelativeTo16by9": 0.0005313496280551222,
+      "requestedSizeMet": false,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "byteLength": 3013663,
+      "sha256": "8663997626fd5fab04059b4a50657d64d377cb8cc4dcf0bdececbd5f485ef9f6"
+    },
+    {
+      "file": "taptap-promo-v2.png",
+      "generatedOriginal": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-5edf2587-2f5f-4db9-9ca2-47de222258f2.png",
+      "originalBytesUnchanged": true,
+      "selected": true,
+      "actualAspect": 1.7768331562167907,
+      "aspectErrorRelativeTo16by9": 0.0005313496280551222,
+      "requestedSizeMet": false,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "byteLength": 2994989,
+      "sha256": "8753c9eb9af96f909a4498180d11510ab44247c1c116fd00707203ce54349440"
+    }
+  ],
+  "references": [
+    {
+      "path": "arcane-duel-lab/dist/assets/title-screen.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "byteLength": 3269363,
+      "sha256": "01d98aeaf4f09a12fd32bb43f553fc9878e6a5e423fc75bc4195762e992ba326"
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/lobby/hero-splashes-v1.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "byteLength": 3501807,
+      "sha256": "0a0292f965f1cd0614c3b98ae8f4c903c5ccd2f09259169dd9ebe0577917170b"
+    },
+    {
+      "path": "arcane-duel-lab/dist/assets/scenes/moon-field-v1.png",
+      "dimensions": [
+        1825,
+        862
+      ],
+      "mode": "RGB",
+      "byteLength": 3091686,
+      "sha256": "b934135d2bb5c1a6451b0c8a000dcafc718620df1865d71380e56dcf0c63defb"
+    }
+  ],
+  "visualInspection": {
+    "heroIdentities": "焰术师·烬绯 red-black/gold flame-cage staff; 雷行者·霆隼 gold gauntlets navy-white ribbons",
+    "setting": "moonlit ruin arches, side-view layered bridges, celestial banners, vines, moon, fire and gold-white lightning",
+    "extraTextButtonsIconsObserved": false,
+    "fullHeadsFeetWeaponsObserved": true,
+    "generatedPixelsModified": false
+  },
+  "deliveryLimitations": [
+    "Both tool generations returned1672x941 RGB; the targeted2048x1152 retry did not alter output dimensions.",
+    "Aspect ratio is approximately16:9 with0.0531% error; source does not meet requested1920x1080 minimum.",
+    "Parent owns any exact-size/format derivatives, store screenshot grouping and submission preparation. Do not describe this raw source as meeting the store pixel specification.",
+    "Art approval remains pending with the user."
+  ]
+}

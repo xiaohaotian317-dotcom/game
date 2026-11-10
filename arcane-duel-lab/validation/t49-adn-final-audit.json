@@ -1,0 +1,47 @@
+{
+  "task": "T49 read-only final native advertising audit, followed by explicitly authorized skip/link correction",
+  "date": "2026-11-10",
+  "sdk": "TapADN non-aggregated Android 5.3.2.0; actual AAR signatures checked",
+  "sources": {
+    "android": "https://ssp.dirichlet.cn/docs/dirichlet-sdk/sdk-guide/",
+    "workflow": "https://ssp.dirichlet.cn/docs/ssp-guide/",
+    "faq": "https://ssp.dirichlet.cn/docs/faq/",
+    "compliance": "https://ssp.dirichlet.cn/docs/compliance/",
+    "privacy": "https://ssp.dirichlet.cn/docs/agreement/"
+  },
+  "correctedFindings": [
+    {
+      "issue": "SDK-permitted skip after onRewardVerify(true) incorrectly invalidated earned eligibility",
+      "basis": "Official viewing quota can verify before the full video ends; a later SDK skip button is permitted",
+      "fix": "AdReceiptGate.skip() rejects only a skip that precedes successful verification. Normal close remains mandatory. False verification/error/timeout still invalidate",
+      "tests": "Explicit verified-skip-close success; early-skip-verify-close failure; verified-skip-error/timeout/denied failure"
+    },
+    {
+      "issue": "In-app SDK compliance URL pointed at a nonexistent nested path",
+      "fix": "Linked the official /docs/compliance/ and direct /docs/agreement/ pages"
+    }
+  ],
+  "acceptedChecks": {
+    "receiptType": "Java JSON boolean completed, strict ===true at AdvertisingPlatform and commitShopReward; nonempty per-attempt receipt and persistent replay guard",
+    "receiptMeaning": "Client SDK eligibility callback only, not a server-verified transaction or revenue proof",
+    "initialization": "No initialization in status/bootstrap/load or shop entry. Current explicit reward action grants consent; automatic interstitial needs prior consent",
+    "optionalCollection": "All 11 documented privacy switches false before SDK initialization; shake disabled; personalized advertising limited; no permission request helper called",
+    "mergedManifest": "Debug merged manifest checked after root tools removal: no QUERY_ALL_PACKAGES, REQUEST_INSTALL_PACKAGES, phone state, location, external storage or cleartext opt-in. Network permissions and SDK normal vendor permissions remain",
+    "testWorkflow": "Official public workflow permits test media and test placements before store launch, with Traffic Management > Test Tools for preview/debug; no production conversion performed",
+    "testDeviceWhitelist": "No mandatory device whitelist requirement found in the public non-aggregated Android guide/FAQ/workflow. This is not proof that the account-specific test tool never requires device registration; use actual backend instructions/errors. Aggregation business whitelist is a different feature",
+    "localTestFlag": "ADN_TEST_MODE is a local guard/label, not a remote SDK test-device setting. Backend media/placements must remain test as configured by root"
+  },
+  "nonBlockingFollowUps": [
+    "Before production, complete operator/privacy rights/contact disclosures and recheck final release manifest and SDK terms",
+    "If fill fails, preserve native callback code and suitably redacted bounded message. Current bridge exposes code/reason but intentionally drops the raw SDK message",
+    "For extra lifecycle hardening, consent() may reject a background/nonfocused Activity before first initialization; current show begin already checks foreground and loading attempts cancel on pause"
+  ],
+  "verification": {
+    "command": "node --test tests/t49-native-ads.test.mjs tests/t47-platform.test.mjs tests/t49-onboarding-shop.test.mjs",
+    "passed": 15,
+    "finalTypedCompileLog": "t49-adn-final-java-build.txt",
+    "realAdPlaybackObservedByThisAgent": false,
+    "realDeviceOrExternalAccountMutatedByThisAgent": false,
+    "productionFilesOutsideExplicitFixOwnershipModified": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Shared hero and ordinary-minion projectile flight budgets; mobile cast hooks integrated per root API",
+  "sourceFiles": [
+    "projectile-range.mjs",
+    "simulation.mjs",
+    "enemy-simulation.mjs",
+    "duel-visual-clock.mjs",
+    "renderer.mjs"
+  ],
+  "defaults": {
+    "ordinaryMinion": 640,
+    "heroDirectional": 960,
+    "heroBasic": 720
+  },
+  "shortHybridLifetimePreserved": true,
+  "explicitPositiveRangePreserved": true,
+  "pathDistanceNotOriginDistance": true,
+  "collisionSegmentClippedBeforeQueries": true,
+  "reflectionDoesNotRefreshBudget": true,
+  "rangeExpiryDoesNotCreatePoolOrDamage": true,
+  "snapshotBudgetPersisted": true,
+  "visualProjectionDoesNotMutateAuthority": true,
+  "groundedSkillsPetsAndBossChanges": false,
+  "focusedTestCases": 50,
+  "allPassed": true,
+  "windowsPackBuilt": false,
+  "userVisualAcceptance": false
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "run": 1,
+    "exitCode": 0,
+    "output": "✔ native build discriminator, hero health and skill choices stay aligned with shared core (1.6902ms)\r\n✔ native private IPv4 address normalization agrees with desktop (123.6074ms)\r\n✔ native room lifecycle matches Node authority, two seats, readiness, loadouts and first-to-three (70.5394ms)\r\n✔ native relay ignores stale/foreign authority and validates epochs, payload size and disconnect claim (9.0773ms)\r\n✔ native real HTTP host handles desktop clients, origin restrictions, payload cap and concurrent joins (414.2635ms)\r\nℹ tests 5\r\nℹ suites 0\r\nℹ pass 5\r\nℹ fail 0\r\nℹ cancelled 0\r\nℹ skipped 0\r\nℹ todo 0\r\nℹ duration_ms 1760.8661\r\n"
+  },
+  {
+    "run": 2,
+    "exitCode": 0,
+    "output": "✔ native build discriminator, hero health and skill choices stay aligned with shared core (2.4911ms)\r\n✔ native private IPv4 address normalization agrees with desktop (160.413ms)\r\n✔ native room lifecycle matches Node authority, two seats, readiness, loadouts and first-to-three (83.4058ms)\r\n✔ native relay ignores stale/foreign authority and validates epochs, payload size and disconnect claim (9.2747ms)\r\n✔ native real HTTP host handles desktop clients, origin restrictions, payload cap and concurrent joins (395.3255ms)\r\nℹ tests 5\r\nℹ suites 0\r\nℹ pass 5\r\nℹ fail 0\r\nℹ cancelled 0\r\nℹ skipped 0\r\nℹ todo 0\r\nℹ duration_ms 1806.8092\r\n"
+  },
+  {
+    "run": 3,
+    "exitCode": 0,
+    "output": "✔ native build discriminator, hero health and skill choices stay aligned with shared core (2.349ms)\r\n✔ native private IPv4 address normalization agrees with desktop (141.2325ms)\r\n✔ native room lifecycle matches Node authority, two seats, readiness, loadouts and first-to-three (75.2257ms)\r\n✔ native relay ignores stale/foreign authority and validates epochs, payload size and disconnect claim (9.3341ms)\r\n✔ native real HTTP host handles desktop clients, origin restrictions, payload cap and concurrent joins (422.0642ms)\r\nℹ tests 5\r\nℹ suites 0\r\nℹ pass 5\r\nℹ fail 0\r\nℹ cancelled 0\r\nℹ skipped 0\r\nℹ todo 0\r\nℹ duration_ms 1750.149\r\n"
+  },
+  {
+    "run": 4,
+    "exitCode": 0,
+    "output": "✔ native build discriminator, hero health and skill choices stay aligned with shared core (1.6711ms)\r\n✔ native private IPv4 address normalization agrees with desktop (141.1624ms)\r\n✔ native room lifecycle matches Node authority, two seats, readiness, loadouts and first-to-three (92.1211ms)\r\n✔ native relay ignores stale/foreign authority and validates epochs, payload size and disconnect claim (9.3875ms)\r\n✔ native real HTTP host handles desktop clients, origin restrictions, payload cap and concurrent joins (397.6611ms)\r\nℹ tests 5\r\nℹ suites 0\r\nℹ pass 5\r\nℹ fail 0\r\nℹ cancelled 0\r\nℹ skipped 0\r\nℹ todo 0\r\nℹ duration_ms 1779.7379\r\n"
+  },
+  {
+    "run": 5,
+    "exitCode": 0,
+    "output": "✔ native build discriminator, hero health and skill choices stay aligned with shared core (1.6455ms)\r\n✔ native private IPv4 address normalization agrees with desktop (141.7919ms)\r\n✔ native room lifecycle matches Node authority, two seats, readiness, loadouts and first-to-three (73.8988ms)\r\n✔ native relay ignores stale/foreign authority and validates epochs, payload size and disconnect claim (10.0426ms)\r\n✔ native real HTTP host handles desktop clients, origin restrictions, payload cap and concurrent joins (371.9883ms)\r\nℹ tests 5\r\nℹ suites 0\r\nℹ pass 5\r\nℹ fail 0\r\nℹ cancelled 0\r\nℹ skipped 0\r\nℹ todo 0\r\nℹ duration_ms 1853.3203\r\n"
+  }
+]

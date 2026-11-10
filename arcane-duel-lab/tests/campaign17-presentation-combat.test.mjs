@@ -85,7 +85,7 @@ test('real minion deaths caused by collateral enter enemy death state and reward
  for(const t of targets){t.hp=t.maxHp=3;t.rootUntil=1e9;t.ai.readyAt=1e9;}
  attack(w);for(let i=0;i<150;i++)stepCampaign(w,STEP);
  assert.equal(targets.filter(t=>t.hp===0).length,4);assert.ok(targets.slice(0,4).every(t=>t.killedByPlayer&&t.rewarded&&t.ai.state==='dead'));
- assert.equal(p.coins,300+4*8);assert.equal(p.heroes.nature.exp,4*9);assert.equal(w.campaign.rewards.coins,4*8);assert.equal(w.stats.hits,1);
+ assert.equal(p.coins,300+4*7);assert.equal(p.heroes.nature.exp,4*9);assert.equal(w.campaign.rewards.coins,4*7);assert.equal(w.stats.hits,1);
  const coins=p.coins;for(let i=0;i<60;i++)stepCampaign(w,STEP);assert.equal(p.coins,coins);
 });
 

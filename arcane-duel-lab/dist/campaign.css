@@ -14,3 +14,4 @@
 .stage-node:hover small,.stage-node:focus-visible small{opacity:1;visibility:visible}
 .stage-node.locked b{background:#0c1823aa;color:#9b9b93;border-color:#8b805f77;box-shadow:none}
 @media(prefers-reduced-motion:reduce){.node-zoom,.stage-node .node-name{transition:none}}
+.stage-node.tutorial{--accent:#d8bd7a}.stage-node.tutorial b{background:radial-gradient(circle,#414c3c,#101f2b);color:#ffe7a1}.tutorial-enemies{display:flex;align-items:center;gap:14px;padding:8px}.tutorial-enemies i{display:block;flex:none;width:62px;height:62px;border:1px solid #c5a865;border-radius:7px;background-repeat:no-repeat}.tutorial-enemies strong{font-size:14px}.tutorial-enemies span{font-size:11px;color:#b7bbae}.tutorial-reward{background:linear-gradient(90deg,#5c4a272b,transparent);padding:12px;border-left:2px solid #c0a159;color:#ddc99e}.tutorial-reward strong{color:#ffe09a;margin-left:12px}

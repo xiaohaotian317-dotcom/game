@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "file": "app-icon-v2.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "opaque": true,
+  "adaptiveSafeRect": [
+    213,
+    213,
+    828,
+    828
+  ],
+  "centralEmblemObservedBoundsApprox": [
+    268,
+    245,
+    733,
+    706
+  ],
+  "sourceArtUnchanged": true,
+  "note": "Parent may generate required 1024x1024 store icon and Android density resources from this source. Adaptive background should remain opaque dark indigo; source already contains centered dark padding. View actual circular crop after derivation."
+}

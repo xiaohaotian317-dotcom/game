@@ -3,8 +3,10 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign18',choices=['campaign1','campaign2','campaign3','campaign4','campaign5','campaign6','campaign7','campaign8','campaign9','campaign10','campaign11','campaign12','campaign13','campaign14','campaign15','campaign16','campaign17','campaign18'])
-version=parser.parse_args().version
+parser.add_argument('--version',default='campaign21',choices=[f'campaign{i}' for i in range(1,22)])
+parser.add_argument('--report',help='JSON report filename inside validation/; defaults to <version>-package.json')
+args=parser.parse_args()
+version=args.version
 
 root=Path(__file__).resolve().parents[1]
 workspace=root.parent
@@ -15,6 +17,24 @@ if not (source/'ArcaneDuelCampaign.exe').is_file():
     raise SystemExit('Build missing')
 if output.exists() or archive.exists():
     raise SystemExit('Release already exists; choose a new version instead of overwriting')
+report_name=args.report or f'{version}-package.json'
+if Path(report_name).name!=report_name or not report_name.endswith('.json'):
+    raise SystemExit('Report must be a JSON filename inside validation/')
+def file_digest(file):
+    digest=hashlib.sha256()
+    with file.open('rb') as handle:
+        for block in iter(lambda:handle.read(1024*1024),b''):
+            digest.update(block)
+    return digest.hexdigest()
+metadata=json.loads((source/'版本信息.json').read_text(encoding='utf-8'))
+if metadata.get('build')!=version:
+    raise SystemExit('Built version does not match requested release; build the correct version first')
+if version=='campaign21' and metadata.get('lanBuild')!='android1-crossplay-v2':
+    raise SystemExit('This release requires the Android/Windows crossplay build')
+expected={p.relative_to(root/'dist').as_posix():file_digest(p) for p in (root/'dist').rglob('*') if p.is_file() and p.relative_to(root/'dist').parts[0] not in ('client','server','.openai')}
+built={p.relative_to(source/'resources/app/dist').as_posix():file_digest(p) for p in (source/'resources/app/dist').rglob('*') if p.is_file()}
+if expected!=built:
+    raise SystemExit('Built web files differ from current source; freeze the web code and rebuild before packaging')
 output.parent.mkdir(exist_ok=True)
 shutil.copytree(source,output)
 digest=lambda data:hashlib.sha256(data).hexdigest()
@@ -33,7 +53,7 @@ for p in runtime.rglob('*'):
         original=root/'dist'/p.relative_to(runtime)
         assert original.is_file() and digest(original.read_bytes())==digest(p.read_bytes()),str(p)
         checked+=1
-report={'version':version,'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':digest(archive.read_bytes()),'originalSitesUnchanged':True,'scope':'Chapter 2 nine stages and original full-body sixteen-pose boss redesigns; real ground waves, brief veil, interruptible healing and attackable mirror clones; independent endless and twin-boss challenges; sixty distinct equipment icons and twenty-stage economy; four pets with twelve skill presentations, spiritual juvenile deer and four relics; smooth effect clocks, subtle profession movement FX and distinct combat music. Old saves, Sites and full motion rollback preserved. No claim of user art approval or natural progression balance.','nativeWindowVisualQA':False,'browserVisualQA':True}
-(root/f'validation/{version}-package.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps(report,ensure_ascii=False,indent=2))
+report={'version':version,'lanBuild':metadata.get('lanBuild'),'duelRuleset':metadata.get('duelRuleset'),'release':str(output),'exe':str(output/'ArcaneDuelCampaign.exe'),'archive':str(archive),'files':len(files),'runtimeFilesMatched':checked,'bytes':archive.stat().st_size,'sha256':file_digest(archive),'originalSitesUnchanged':True,'scope':'Matched Android/Windows LAN crossplay build; six-hero/two-chapter offline campaign with 20 story stages, 2 challenges and 1 tutorial, persistent first-run onboarding, shop entry and progression retained; manual validated whole-save export/import with pre-import backup; original Sites, campaign18/20 and older packages, real saves and full motion rollback preserved. Ads require a configured provider and confirmed completion; the Windows package has no production ad SDK. Local protocol/startup checks are not real-device crossplay, internet play, natural progression or user art approval.','nativeWindowVisualQA':False,'browserVisualQA':False,'realDeviceCrossplayQA':False,'fileSha256':{p.relative_to(output).as_posix():file_digest(p) for p in files},'sourceRuntimeSha256':expected}
+(root/'validation'/report_name).write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+print(json.dumps({key:value for key,value in report.items() if key not in ('fileSha256','sourceRuntimeSha256')},ensure_ascii=False,indent=2))
 

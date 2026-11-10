@@ -1,0 +1,9 @@
+{
+  "name": "arcane-duel-android",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"web": "node ../scripts/build-android-web.mjs", "sync": "cap sync android"},
+  "dependencies": {"@capacitor/core": "^8.0.0", "@capacitor/android": "^8.0.0", "@capacitor/app": "^8.0.0"},
+  "devDependencies": {"@capacitor/cli": "^8.0.0", "esbuild": "^0.25.0"}
+}

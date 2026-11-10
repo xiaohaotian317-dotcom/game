@@ -1,0 +1,17 @@
+{
+  "scope": "Actual Node RoomService and handleDuelRequest with DuelLink, using a native-bridge-shaped in-memory transport; not Android device verification",
+  "source": "dist/src/duel-net.mjs",
+  "sourceSha256": "51bdb5934e99cc8c46a83049c0e0acff20ab26f700db706268e53535799f7fb0",
+  "focusedRecoveryTests": 4,
+  "relatedRoomAndDuelTests": 25,
+  "allPassed": true,
+  "controlledFinishedRecovered": true,
+  "nextRoundCountdownRecovered": true,
+  "newSnapshotPreserved": true,
+  "ruleset409NeverRecovered": true,
+  "httpErrorRetainsStatusAndData": true,
+  "oneSnapshotFreeRetryMaximum": true,
+  "failedRecoveryPropagatesError": true,
+  "androidDeviceRetest": "Pending root native APK QA",
+  "windowsPackBuilt": false
+}

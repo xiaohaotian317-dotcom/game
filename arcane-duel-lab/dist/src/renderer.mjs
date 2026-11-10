@@ -1,3 +1,5 @@
+import {renderBudget} from './mobile-performance.mjs';
+import {drawProjectileDissipate} from './projectile-range.mjs';
 import {drawPetProjectile} from './pet-presentation.mjs';
 import {drawAlternateSkills} from './alternate-skill-art.mjs';
 import {loadMovementFx,drawMovementFx} from './movement-fx.mjs';
@@ -31,10 +33,11 @@ function leaf(c,x,y,len,angle,color){
   c.save();c.translate(x,y);c.rotate(angle);c.fillStyle=color;c.beginPath();c.moveTo(0,0);c.quadraticCurveTo(len*.7,-len*.6,len,0);c.quadraticCurveTo(len*.6,len*.5,0,0);c.fill();line(c,[[0,0],[len*.9,0]],'rgba(231,229,154,.45)',.6);c.restore();
 }
 function artImage(src){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('素材加载失败：'+src));i.src=src;});}
-export async function loadAssets(progress=()=>{},{scenes=true}={}){
+export async function loadAssets(progress=()=>{},{scenes=true,heroes=null}={}){
   const entries=[['cursorImage','assets/aim-cursors/hero-cursors-v1.png'],['hybridAttacks','assets/hybrid-attacks/hybrid-projectiles-v2.png'],['lightningPunch','assets/combat-feedback/lightning-punch-v1.png'],['landingRings','assets/combat-feedback/landing-warning-rings-v2.png'],['fire','assets/fire-rig.png'],['nature','assets/nature-rig.png'],['fireCore','assets/fire-core-v2.png'],['natureCore','assets/nature-core-v2.png'],['backdrop','assets/moon-backdrop.png'],['title','assets/title-screen.png']];
   for(const key of ['fire-vfx-v2','nature-vfx-v2','wood-stag-v2','stone-covers-v2'])entries.push([key,'assets/combat/'+key+'.png']);
   if(scenes)for(const scene of ['moon','lava','garden'])entries.push([scene+'Field','assets/scenes/'+scene+'-field-v1.png'],[scene+'Props','assets/scenes/'+scene+'-props-v1.png']);
+  if(heroes)for(let i=entries.length-1;i>=0;i--)if(['fire','nature','fireCore','natureCore','title','backdrop'].includes(entries[i][0])&&!heroes.includes(entries[i][0].replace('Core','')))entries.splice(i,1);
   let count=0;const images={},total=entries.length+10+(scenes?1:0),completed=()=>progress(++count,total);
   const json=async url=>{const response=await fetch(url);if(!response.ok)throw new Error('素材信息加载失败：'+url);const value=await response.json();completed();return value;};
   const [bounds,coreBounds,sceneBounds,combatBounds,rosterBounds,refinementBounds,feedbackMeta,hybridMeta]=await Promise.all([
@@ -48,11 +51,11 @@ export async function loadAssets(progress=()=>{},{scenes=true}={}){
 export async function ensureHeroAssets(hero,assets){
   if(assets[hero])return;
   assets.pending||={};
-  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage('assets/heroes/'+hero+'-rig-v1.png'),artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):hero==='shadow'?artImage('assets/heroes/shadow-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}catch(e){delete assets.pending[hero];throw e;}})();
+  return assets.pending[hero]||=(async()=>{try{const [rig,fx,core]=await Promise.all([artImage(['fire','nature'].includes(hero)?'assets/'+hero+'-rig.png':'assets/heroes/'+hero+'-rig-v1.png'),['fire','nature'].includes(hero)?Promise.resolve(null):artImage('assets/heroes/'+hero+'-fx-v2.png'),hero==='lightning'?artImage('assets/heroes/lightning-core-v3.png'):hero==='shadow'?artImage('assets/heroes/shadow-core-v2.png'):['fire','nature'].includes(hero)?artImage('assets/'+hero+'-core-v2.png'):null]);assets[hero]=rig;assets[hero+'Core']=core||rig;assets[hero+'Fx']=fx;if(assets.rosterBounds[hero]){assets.bounds[hero]=assets.rosterBounds[hero];assets.coreBounds[hero]=assets.rosterBounds[hero].coreV2||assets.rosterBounds[hero].core;}}catch(e){delete assets.pending[hero];throw e;}})();
 }
 export class Renderer {
   constructor(canvas,assets){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.assets=assets;this.poses=Object.fromEntries(Object.keys(HEROES).map(h=>[h,coherentBase()]));this.lastTime=0;this.ghostSprites=new GhostSpriteCache();this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;this.scenePainter=new ScenePainter(assets,this.ctx);this.combat=new CombatPainter(this.ctx,assets,this.scenePainter);this.roster=new RosterPainter(this.ctx,assets);this.enemies=new EnemyPainter(this.ctx,assets);}
-  resize(){const rect=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,this.assets.campaignPainter?1.5:2);if(this.canvas.width!==Math.round(rect.width*d)||this.canvas.height!==Math.round(rect.height*d)){this.canvas.width=Math.round(rect.width*d);this.canvas.height=Math.round(rect.height*d);}}
+  resize(){const rect=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,globalThis.arcaneMobile?renderBudget().maxDpr:this.assets.campaignPainter?1.5:2);if(this.canvas.width!==Math.round(rect.width*d)||this.canvas.height!==Math.round(rect.height*d)){this.canvas.width=Math.round(rect.width*d);this.canvas.height=Math.round(rect.height*d);}}
   cape(c,hero,o,time,speed,frame){
     const b=this.assets.bounds[hero].cape,r=RIGS[hero].cape,s=r.height/b.h,anchor=r.attach==='waist'?{x:-3,y:0}:frame.local(RIGS[hero].nearShoulder);
     c.save();c.translate(frame.origin.x,frame.origin.y);c.rotate(o.lean);c.translate(anchor.x+3,anchor.y+6);c.rotate(o.cape*.45);
@@ -187,6 +190,7 @@ export class Renderer {
   }
   particles(w,e){
     e={...e,age:Math.min(e.duration,Math.max(0,e.age+(e.visualOffset||0)))};
+    if(drawProjectileDissipate(this.ctx,e))return;
     if(drawMovementFx(this.ctx,w,e,this.assets))return;
     if(this.roster.effect(w,e))return;
     if(this.combat.effect(w,e))return;
@@ -238,6 +242,7 @@ export class Renderer {
   }
   duelMarker(w,label,color){const c=this.ctx,p=w.player,x=p.x,y=p.y-122;if(p.hp<=0)return;c.save();c.textAlign='center';c.font='600 13px "Microsoft YaHei",sans-serif';c.lineWidth=3;c.strokeStyle='#03101d';c.strokeText(label,x,y-10);c.fillStyle=color;c.fillText(label,x,y-10);c.fillStyle='#07121dcc';c.fillRect(x-33,y,66,5);c.fillStyle=color;c.fillRect(x-33,y,66*Math.max(0,p.hp/p.maxHp),5);c.restore();}
   draw(w,alpha=1,dt=.016,{opponent=null}={}){
+    if(globalThis.arcaneMobile){this.mobileRenderAge=(this.mobileRenderAge||0)+dt;if(this.mobileRenderAge+1e-6<1/renderBudget().fps)return;dt=this.mobileRenderAge;this.mobileRenderAge=0;}
     this.resize();if(w.duel||w.duelSkills)fitDuelCamera(w,this.canvas.width,this.canvas.height);updateCamera(w,dt,{x:lerp(w.player.prevX,w.player.x,alpha),y:lerp(w.player.prevY,w.player.y,alpha)});
     const view=cameraView(w),c=this.ctx,height=w.height||HEIGHT,sx=this.canvas.width/view.width,sy=this.canvas.height/view.height;
     c.setTransform(sx,0,0,sy,0,0);

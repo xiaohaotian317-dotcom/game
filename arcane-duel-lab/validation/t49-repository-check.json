@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "privateSecretKindsChecked": [
+    "clientToken",
+    "keyPassword",
+    "mediaKey",
+    "storePassword"
+  ],
+  "candidateFiles": 2370,
+  "matches": [],
+  "excluded": "private credentials, signing material, generated builds and developer account/device-storage captures ignored"
+}

@@ -1,0 +1,114 @@
+{
+  "scope": "800x360 isolated Edge touch profile. Fake advertisement adapter injected only into this QA context; actual AdvertisingPlatform/shop receipt/storage logic. No SDK or live ad revenue claim.",
+  "checks": [
+    {
+      "name": "legacy valid profile without guide field is not forced or reset"
+    },
+    {
+      "name": "missing provider shows unavailable and grants no coins, items or daily count"
+    },
+    {
+      "name": "privacy unchecked blocks advertisement request and reward"
+    },
+    {
+      "name": "cancelled simulated provider result keeps reward and daily quota unchanged"
+    },
+    {
+      "name": "provider failure releases busy buttons and changes no reward"
+    },
+    {
+      "name": "completed QA receipt passes actual transaction once and persists 100 coins"
+    },
+    {
+      "name": "same completed receipt is refused within the active advertisement platform"
+    },
+    {
+      "name": "receipt replay is refused after full page reload by persistent shop history"
+    },
+    {
+      "name": "three item offers use the actual bag transaction and each record the correct count"
+    },
+    {
+      "name": "daily offer cap disables after three real commits, without changing legacy heroes or clear flags"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "geometry": {
+    "cards": [
+      {
+        "x": 32,
+        "y": 96,
+        "width": 178,
+        "height": 177
+      },
+      {
+        "x": 218,
+        "y": 96,
+        "width": 178,
+        "height": 177
+      },
+      {
+        "x": 404,
+        "y": 96,
+        "width": 178,
+        "height": 177
+      },
+      {
+        "x": 590,
+        "y": 96,
+        "width": 178,
+        "height": 177
+      }
+    ],
+    "buttons": [
+      {
+        "id": "coins",
+        "x": 41,
+        "y": 216,
+        "width": 160,
+        "height": 48
+      },
+      {
+        "id": "experience",
+        "x": 227,
+        "y": 216,
+        "width": 160,
+        "height": 48
+      },
+      {
+        "id": "treasure",
+        "x": 413,
+        "y": 216,
+        "width": 160,
+        "height": 48
+      },
+      {
+        "id": "stone",
+        "x": 599,
+        "y": 216,
+        "width": 160,
+        "height": 48
+      }
+    ],
+    "label": {
+      "x": 282,
+      "y": 279,
+      "width": 236,
+      "height": 48,
+      "top": 279,
+      "right": 518,
+      "bottom": 327,
+      "left": 282
+    },
+    "body": {
+      "width": 800,
+      "height": 360
+    }
+  },
+  "screens": [
+    "t49-shop-unavailable.png",
+    "t49-shop-transactions.png"
+  ],
+  "passed": true
+}

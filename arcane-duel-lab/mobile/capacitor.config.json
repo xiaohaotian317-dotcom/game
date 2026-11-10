@@ -1,0 +1,29 @@
+{
+  "appId": "com.xiaohaotian.arcaneduel",
+  "appName": "秘境决斗",
+  "webDir": "web",
+  "server": {
+    "hostname": "localhost",
+    "androidScheme": "https",
+    "errorPath": "mobile-unsupported.html"
+  },
+  "android": {
+    "backgroundColor": "#07121c",
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false,
+    "minWebViewVersion": 103
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true
+    },
+    "App": {
+      "disableBackButtonHandler": false
+    },
+    "SystemBars": {
+      "insetsHandling": "disable",
+      "hidden": true,
+      "style": "DARK"
+    }
+  }
+}

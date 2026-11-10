@@ -1,0 +1,74 @@
+{
+  "task": "T47",
+  "producer": "t47_mobile_art",
+  "method": "built-in image_gen",
+  "pixelEdits": "none; exact generated PNG bytes copied",
+  "referencesViewed": [
+    "arcane-duel-lab/dist/assets/pause/pause-controls-v1.png",
+    "arcane-duel-lab/dist/assets/settings/settings-controls-v1.png",
+    "arcane-duel-lab/dist/assets/lobby/backdrop-v1.png"
+  ],
+  "promptFiles": [
+    "prompts-v1.json",
+    "prompts-v2.json"
+  ],
+  "files": [
+    {
+      "file": "mobile-controls-v1.png",
+      "originalSource": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-9fe33802-9e0a-42d6-a695-a97e112a0cdd.png",
+      "sha256": "adf46c8eabc351b33ac1fa29729dfd23e3b1c0279793867c6aa3f71893c51efc",
+      "byteLength": 1696252,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "originalBytesUnchanged": true,
+      "selected": false,
+      "status": "retained original first draft; superseded by v2 spacing/safe-area correction"
+    },
+    {
+      "file": "app-icon-v1.png",
+      "originalSource": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-028588d6-1191-4b40-be59-3f6e2887e175.png",
+      "sha256": "dfa5b0380b2767a9d112665bb41c6d121340ec2dfbc0fa19dd4e25fd354687f6",
+      "byteLength": 2319928,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "originalBytesUnchanged": true,
+      "selected": false,
+      "status": "retained original first draft; superseded by v2 spacing/safe-area correction"
+    },
+    {
+      "file": "mobile-controls-v2.png",
+      "originalSource": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-942b2dcd-ff06-4eda-963e-74e26e41d873.png",
+      "sha256": "185c41d062c7f92674981dbd91d535fe6e1f7debfd6c24265f879b60c3fdb2f2",
+      "byteLength": 1004406,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "originalBytesUnchanged": true,
+      "selected": true,
+      "status": "selected for parent integration; user art acceptance pending"
+    },
+    {
+      "file": "app-icon-v2.png",
+      "originalSource": "C:/Users/xiaohaotian/.codex/generated_images/01a1bfcc-4852-7f90-9300-0397c43e4c6d/exec-c0951a3c-8206-4850-92e3-59716a024f7f.png",
+      "sha256": "55724f7ebfedc196aee2aceb9302704d1749a1a493772ad8d4b9452f0951040e",
+      "byteLength": 1972892,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "originalBytesUnchanged": true,
+      "selected": true,
+      "status": "selected for parent integration; user art acceptance pending"
+    }
+  ],
+  "note": "Generator returned 1254x1254 rather than the requested 1024/1536. Preserve originals; parent owns Android 1024 and density derivatives."
+}

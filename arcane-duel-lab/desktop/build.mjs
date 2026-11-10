@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const enemyPreview=process.argv.includes('--enemy-preview');
 const campaignPreview=process.argv.includes('--campaign-preview');
+const campaignVersion='campaign21';
 if(enemyPreview&&campaignPreview)throw new Error('Choose one preview');
 const desktop=import.meta.dirname,root=path.resolve(desktop,'..'),stage=path.join(desktop,'.build',campaignPreview?'campaign-app':enemyPreview?'enemy-app':'app');
 const executable=campaignPreview?'ArcaneDuelCampaign':enemyPreview?'ArcaneDuelEnemies':'ArcaneDuel';
@@ -18,6 +19,9 @@ for(const folder of ['server','drizzle']){
  for(const name of await readdir(path.join(root,folder)))if(name.endsWith(folder==='server'?'.mjs':'.sql'))await cp(path.join(root,folder,name),path.join(stage,folder,name));
 }
 const dist=path.join(root,'dist');
+const lanBuild=(await readFile(path.join(desktop,'lan-runtime.mjs'),'utf8')).match(/\bLAN_BUILD=['"]([^'"]+)['"]/)?.[1];
+const duelRuleset=(await readFile(path.join(dist,'src/duel-skill-data.mjs'),'utf8')).match(/\bDUEL_RULESET=['"]([^'"]+)['"]/)?.[1];
+if(campaignPreview&&(!lanBuild||!duelRuleset))throw new Error('Missing shared LAN build / duel ruleset');
 await cp(dist,path.join(stage,'dist'),{recursive:true,filter:source=>!['client','server','.openai'].includes(path.relative(dist,source).split(path.sep)[0])});
 const output=await packager({dir:stage,out:path.join(buildRoot,campaignPreview?'campaign-out':enemyPreview?'enemy-out':'out'),name:executable,executableName:executable,platform:'win32',arch:'x64',electronVersion:pkg.devDependencies.electron,overwrite:true,asar:false,prune:false,appVersion:pkg.version,buildVersion:pkg.version,appCopyright:'秘境决斗',win32metadata:{CompanyName:'Arcane Duel',FileDescription:campaignPreview?'秘境决斗 · 秘境征途':enemyPreview?'秘境决斗 · 敌人交互试炼':'秘境决斗 · 单机与局域网',ProductName:'秘境决斗'}});
 const notes=`秘境决斗 · Windows 单机与局域网版 v${pkg.version}
@@ -43,7 +47,7 @@ F11切换全屏，Alt显示菜单；菜单中的“局域网连接”可以更�
 await writeFile(path.join(output[0],'使用说明.txt'),enemyPreview?`秘境决斗 · 敌人交互试炼 enemies1\n\n解压整个文件夹后双击 ${executable}.exe，无需GPT、插件或Node。\n这版供你验收10种小怪与11位BOSS（新增骷髅王）的动画、血条、AI、主动连招与被动。\n选择英雄/地图/敌人，点击“与当前敌人交手”。AD移动、空格二段跳、鼠标攻击、FER技能、Shift冲刺。\n本版本启动直接进入敌人试炼，保留返回原大厅与原UI的入口；原网页版和旧Windows包没有覆盖。\n这是交互试炼，不是正式三波闯关；视觉、手感和平衡等待你的体验反馈。\n\nF11切换全屏，Alt显示菜单。完整资源已打包，单机试炼无需联网。\n局域网原流程保留，双设备验收尚未完成。` : notes,'utf8');
 if(campaignPreview)await writeFile(path.join(output[0],'使用说明.txt'),await readFile(path.join(desktop,'campaign-release-notes.txt'),'utf8'),'utf8');
 if(campaignPreview)await writeFile(path.join(output[0],'回退人物动作.cmd'),'@echo off\r\nstart "" "%~dp0ArcaneDuelCampaign.exe" --legacy-motion\r\n','utf8');
-await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?'campaign18':enemyPreview?'enemies1':'desktop1',motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:campaignPreview?40:enemyPreview?21:undefined,stages:campaignPreview?20:undefined,challenges:campaignPreview?2:undefined,bestiary:campaignPreview?{normal:20,boss:20}:undefined},null,2),'utf8');
+await writeFile(path.join(output[0],'版本信息.json'),JSON.stringify({version:pkg.version,build:campaignPreview?campaignVersion:enemyPreview?'enemies1':'desktop1',lanBuild,duelRuleset,motion:'v2',motionRollback:'--legacy-motion',electron:pkg.devDependencies.electron,platform:'win32-x64',includesOfflineAssets:true,requiresSites:false,enemies:campaignPreview?40:enemyPreview?21:undefined,stages:campaignPreview?20:undefined,challenges:campaignPreview?2:undefined,tutorials:campaignPreview?1:undefined,totalStageEntries:campaignPreview?23:undefined,bestiary:campaignPreview?{normal:20,boss:20}:undefined,crossplay:campaignPreview?{lan:['android','win32-x64'],requiresMatchedBuild:true,internetWindows:false,realDeviceQA:false}:undefined,saveTransfer:campaignPreview?{manualWholeSave:true,backupBeforeImport:true,cloudSave:false}:undefined},null,2),'utf8');
 console.log(JSON.stringify({directory:output[0],exe:path.join(output[0],executable+'.exe'),version:pkg.version}));
 
 

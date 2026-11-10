@@ -21,7 +21,7 @@
   <div class="mode-grid">
     <button type="button" class="mode-card frame summon-card" data-view="summon" aria-label="进入英雄召唤"><div class="mode-art" style="--card-x:0%"></div><div class="card-copy"><span class="card-number">01 · SUMMON</span><h2>英雄召唤</h2><p>唤醒星辉 · 邂逅新英雄</p></div></button>
     <button type="button" class="mode-card frame duel-card" id="duel-open" aria-label="进入双人决斗"><div class="mode-art" style="--card-x:50%"></div><div class="card-copy"><span class="card-number">02 · DUEL</span><h2>双人决斗</h2><p>邀请好友 · 先到 3 分获胜</p></div></button>
-    <button type="button" class="mode-card frame adventure-card" id="stages-open" aria-label="进入单机闯关"><div class="mode-art" style="--card-x:100%"></div><div class="card-copy"><span class="card-number">03 · EXPLORE</span><h2>单机闯关</h2><p>挑战秘境 · 探索三境</p></div></button>
+    <button type="button" class="mode-card frame adventure-card" id="stages-open" aria-label="进入探索地图"><div class="mode-art" style="--card-x:100%"></div><div class="card-copy"><span class="card-number">03 · EXPLORE</span><h2>探索地图</h2><p>挑战秘境 · 探索三境</p></div></button>
   </div>
 </section>
 
@@ -32,7 +32,7 @@
   <div class="summon-controls" hidden><a href="summon.html" class="ornate-button amber">前往英雄独立卡池</a><button id="odds-open" hidden>召唤规则</button></div>
 </section>
 
-<footer class="lobby-footer"><button class="codex-button frame" data-view="codex"><svg><use href="#i-book"/></svg><strong>英雄图鉴</strong><span>已解锁 <b id="owned-count">2 / 6</b></span><i>›</i></button><a class="bestiary-button frame" href="bestiary.html"><svg><use href="#i-book"/></svg><strong>妖兽图鉴</strong><span>普通 · 变异</span><i>›</i></a><button id="daily-open" class="daily-entry-button frame"><i class="daily-entry-art" aria-hidden="true"></i><strong>每日任务</strong></button></footer>
+<footer class="lobby-footer"><a id="shop-open" class="shop-entry frame" href="shop.html"><span aria-hidden="true">✦</span><strong>旅人商店</strong></a><button class="codex-button frame" data-view="codex"><svg><use href="#i-book"/></svg><strong>英雄图鉴</strong><span>已解锁 <b id="owned-count">2 / 6</b></span><i>›</i></button><a class="bestiary-button frame" href="bestiary.html"><svg><use href="#i-book"/></svg><strong>妖兽图鉴</strong><span>普通 · 变异</span><i>›</i></a><button id="daily-open" class="daily-entry-button frame"><i class="daily-entry-art" aria-hidden="true"></i><strong>每日任务</strong></button></footer>
 </main>
 
 <dialog id="odds-dialog" class="menu-dialog frame"><form method="dialog"><button class="dialog-close" aria-label="关闭概率详情">×</button></form><span class="eyebrow">THE CALL OF THE STARS</span><h2>召唤详情</h2><p>每位英雄各有独立卡池，只唤醒指定目标，基础概率10%，第20抽内必得。</p><p>独立卡池单抽1张召唤券，十连最多10张；途中获得目标即停止，未用券保留。</p><p class="muted">召唤券来自首领战利品，保底按英雄独立保存；不消耗金币。</p></dialog>

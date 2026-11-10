@@ -177,6 +177,7 @@ function fireStep(w,e,s,hooks){
   const angle=Math.atan2(dy,dx),count=s.shots||1;
   for(let i=0;i<count;i++){const ang=angle+(i-(count-1)/2)*(s.spread||.18),speed=s.speed||360;
    const extra={owner:'enemy',enemySource:e.id,enemyKind:e.enemyKind,enemyStyle:s.style,enemyStatus:s.status,enemyPool:s.pool,enemySeeking:!!s.seeking,enemyRicochet:s.ricochet?1:0,enemyReturning:!!s.returning,enemyCruiseSpeed:speed,enemyPush:s.push||0,life:4*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1),r:(s.style==='sonic'?14:9)*(ENEMIES[e.enemyKind].boss?BOSS_TUNING.range*(e.soloRange||1):1)};
+   if(!ENEMIES[e.enemyKind].boss){extra.enemyRangeLimited=true;if(Number.isFinite(s.range)&&s.range>0)extra.range=s.range;}
    hooks.projectile(w,'enemyAbility',sx,sy,Math.cos(ang),Math.sin(ang),speed,s.damage,extra);
    if(s.lob){const p=w.projectiles.at(-1),speedup=ENEMIES[e.enemyKind].boss?BOSS_TUNING.fallSpeed:1,travel=clamp(Math.abs(dx)/300,.55,1.2)/speedup;p.vx=dx/travel;p.vy=(dy-.5*700*speedup*speedup*travel*travel)/travel;p.enemyGravity=700*speedup*speedup;}
   }
