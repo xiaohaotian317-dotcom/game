@@ -1,0 +1,80 @@
+{
+  "task": "T71",
+  "date": "2026-11-11",
+  "mode": "read-only release readiness audit; no upload, review submission, publication or ad request",
+  "apk": {
+    "version": "0.1.13",
+    "versionCode": 14,
+    "installedOnVivo": true,
+    "published": false
+  },
+  "tapTap": {
+    "appId": "1045045",
+    "developerVerified": true,
+    "draftVersion": "V-20261109",
+    "draftStatus": "unpublished",
+    "androidAvailability": "敬请期待",
+    "qualificationBanner": "游戏资质待补充",
+    "introEmpty": true,
+    "privacyHttpsUrlEmpty": true,
+    "ageRatingUnselected": true,
+    "latestApkAssociated": false,
+    "latestApkAssociationEvidence": "0.1.13 built and installed locally this turn; draft showed upload control without a selected filename",
+    "antiAddictionFormCompleted": false
+  },
+  "dirichlet": {
+    "accountQualification": "已认证",
+    "agreement": "已签署",
+    "mediaId": "1114741",
+    "mediaStatus": "测试中",
+    "mediaAttribute": "测试",
+    "placements": [
+      {
+        "id": "1075576",
+        "kind": "rewarded",
+        "status": "测试中"
+      },
+      {
+        "id": "1075580",
+        "kind": "interstitial",
+        "status": "测试中"
+      }
+    ],
+    "settlementInformationCompleted": false,
+    "realAdRequestedDuringAudit": false
+  },
+  "codeGaps": [
+    "TapTap update invocation not found in current source",
+    "Formal operator/contact/retention/rights/SDK privacy text and public HTTPS URL incomplete",
+    "Real-name/anti-addiction flow not found",
+    "AdsPlugin currently requires ADN_TEST_MODE and reports monetization=false",
+    "Interstitial and revive player flows not completed; placement/interface alone is not completion"
+  ],
+  "verificationGaps": [
+    "Two physical Android accounts over different networks, full match/reconnect/background",
+    "Phone-PC LAN with both devices taking turns as host",
+    "Natural ended weekly leaderboard period and cloud reward ledger, two-device claim concurrency",
+    "Successful real rewarded ad playback and exactly-once grant; previous authorized request failed loading with 400",
+    "Broader device, memory, heat and install-upgrade checks"
+  ],
+  "storeMaterials": {
+    "latestScreenshotsAndGameplayVideoPending": true,
+    "existingPromo": {
+      "width": 1672,
+      "height": 941,
+      "meetsRequired1920x1080": false
+    },
+    "selectedAppIconReady": true
+  },
+  "routeNotes": [
+    "Preheat/reservation page differs from APK trial/download",
+    "TapTap official network/no-IAP route: ICP + anti-addiction + privacy for open trial",
+    "Official formal-download/IAP route requires ISBN; do not infer ISBN mandatory just for preheat",
+    "User has not authorized submission or publication"
+  ],
+  "sources": [
+    "https://developer.taptap.cn/docs/store/standardies-operation/",
+    "https://developer.taptap.cn/docs/store/release/publish/material/"
+  ],
+  "privacy": "No credentials, identity document information, device identifiers, saves, financial account details or private screenshots included"
+}
