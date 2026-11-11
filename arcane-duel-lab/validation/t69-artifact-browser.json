@@ -1,0 +1,7920 @@
+{
+  "scope": "Isolated real campaign artifact UI; seeded browser profiles. No formal save, phone, ads, build, install, or release.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "unowned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 203.25,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "unowned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 82.03125,
+        "y": 147,
+        "right": 193,
+        "bottom": 255.703125,
+        "width": 110.96875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 208.25,
+        "y": 90,
+        "right": 397.5,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "unowned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 88.921875,
+        "y": 147,
+        "right": 186.09375,
+        "bottom": 255.703125,
+        "width": 97.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 402.5,
+        "y": 90,
+        "right": 591.75,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "unowned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 596.75,
+        "y": 90,
+        "right": 786,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "owned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 203.25,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "owned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 82.03125,
+        "y": 147,
+        "right": 193,
+        "bottom": 255.703125,
+        "width": 110.96875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 208.25,
+        "y": 90,
+        "right": 397.5,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "owned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 84.6875,
+        "y": 147,
+        "right": 190.328125,
+        "bottom": 255.703125,
+        "width": 105.640625,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 402.5,
+        "y": 90,
+        "right": 591.75,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "owned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 596.75,
+        "y": 90,
+        "right": 786,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "equipped",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 203.25,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "equipped",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 82.03125,
+        "y": 147,
+        "right": 193,
+        "bottom": 255.703125,
+        "width": 110.96875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 208.25,
+        "y": 90,
+        "right": 397.5,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "equipped",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 84.6875,
+        "y": 147,
+        "right": 190.328125,
+        "bottom": 255.703125,
+        "width": 105.640625,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 402.5,
+        "y": 90,
+        "right": 591.75,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "equipped",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 596.75,
+        "y": 90,
+        "right": 786,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "max",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 83.421875,
+        "y": 147,
+        "right": 191.59375,
+        "bottom": 255.703125,
+        "width": 108.171875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 203.25,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "max",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 82.03125,
+        "y": 147,
+        "right": 193,
+        "bottom": 255.703125,
+        "width": 110.96875,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 208.25,
+        "y": 90,
+        "right": 397.5,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "max",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 79.5,
+        "y": 147,
+        "right": 195.515625,
+        "bottom": 255.703125,
+        "width": 116.015625,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 402.5,
+        "y": 90,
+        "right": 591.75,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "max",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 795,
+        "bottom": 311,
+        "width": 790,
+        "height": 226,
+        "clientHeight": 226,
+        "scrollHeight": 226,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 786,
+        "bottom": 306,
+        "width": 772,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 261.03125,
+        "bottom": 306,
+        "width": 247.03125,
+        "height": 166,
+        "clientHeight": 164,
+        "scrollHeight": 164,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 79.5,
+        "y": 147,
+        "right": 195.515625,
+        "bottom": 255.703125,
+        "width": 116.015625,
+        "height": 108.703125,
+        "clientHeight": 109,
+        "scrollHeight": 109,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 271.03125,
+        "y": 140,
+        "right": 786,
+        "bottom": 252,
+        "width": 514.96875,
+        "height": 112,
+        "clientHeight": 112,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 271.03125,
+        "y": 257,
+        "right": 786,
+        "bottom": 306,
+        "width": 514.96875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 271.03125,
+        "y": 262,
+        "right": 501.921875,
+        "bottom": 306,
+        "width": 230.890625,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 508.921875,
+        "y": 262,
+        "right": 786,
+        "bottom": 306,
+        "width": 277.078125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 596.75,
+        "y": 90,
+        "right": 786,
+        "bottom": 134,
+        "width": 189.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "unowned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 73.1875,
+        "y": 147,
+        "right": 181.359375,
+        "bottom": 309.703125,
+        "width": 108.171875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 187.25,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "unowned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 44.21875,
+        "y": 147,
+        "right": 210.3125,
+        "bottom": 309.703125,
+        "width": 166.09375,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 192.25,
+        "y": 90,
+        "right": 365.5,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "unowned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 74.28125,
+        "y": 147,
+        "right": 180.25,
+        "bottom": 309.703125,
+        "width": 105.96875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 370.5,
+        "y": 90,
+        "right": 543.75,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "unowned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 58,
+        "y": 147,
+        "right": 196.53125,
+        "bottom": 309.703125,
+        "width": 138.53125,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 548.75,
+        "y": 90,
+        "right": 722,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "owned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 73.1875,
+        "y": 147,
+        "right": 181.359375,
+        "bottom": 309.703125,
+        "width": 108.171875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 187.25,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "owned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 44.21875,
+        "y": 147,
+        "right": 210.3125,
+        "bottom": 309.703125,
+        "width": 166.09375,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 192.25,
+        "y": 90,
+        "right": 365.5,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "owned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 74.28125,
+        "y": 147,
+        "right": 180.25,
+        "bottom": 309.703125,
+        "width": 105.96875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 370.5,
+        "y": 90,
+        "right": 543.75,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "owned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 58,
+        "y": 147,
+        "right": 196.53125,
+        "bottom": 309.703125,
+        "width": 138.53125,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 548.75,
+        "y": 90,
+        "right": 722,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "equipped",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 73.1875,
+        "y": 147,
+        "right": 181.359375,
+        "bottom": 309.703125,
+        "width": 108.171875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 187.25,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "equipped",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 44.21875,
+        "y": 147,
+        "right": 210.3125,
+        "bottom": 309.703125,
+        "width": 166.09375,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 192.25,
+        "y": 90,
+        "right": 365.5,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "equipped",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 74.28125,
+        "y": 147,
+        "right": 180.25,
+        "bottom": 309.703125,
+        "width": 105.96875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 370.5,
+        "y": 90,
+        "right": 543.75,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "equipped",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 58,
+        "y": 147,
+        "right": 196.53125,
+        "bottom": 309.703125,
+        "width": 138.53125,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 548.75,
+        "y": 90,
+        "right": 722,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "max",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 73.1875,
+        "y": 147,
+        "right": 181.359375,
+        "bottom": 309.703125,
+        "width": 108.171875,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 187.25,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "max",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 44.21875,
+        "y": 147,
+        "right": 210.3125,
+        "bottom": 309.703125,
+        "width": 166.09375,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 192.25,
+        "y": 90,
+        "right": 365.5,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "max",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 69.265625,
+        "y": 147,
+        "right": 185.28125,
+        "bottom": 309.703125,
+        "width": 116.015625,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 370.5,
+        "y": 90,
+        "right": 543.75,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "max",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 731,
+        "bottom": 365,
+        "width": 726,
+        "height": 280,
+        "clientHeight": 280,
+        "scrollHeight": 280,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 722,
+        "bottom": 360,
+        "width": 708,
+        "height": 220,
+        "clientHeight": 220,
+        "scrollHeight": 220,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 240.546875,
+        "bottom": 360,
+        "width": 226.546875,
+        "height": 220,
+        "clientHeight": 218,
+        "scrollHeight": 218,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 58,
+        "y": 147,
+        "right": 196.53125,
+        "bottom": 309.703125,
+        "width": 138.53125,
+        "height": 162.703125,
+        "clientHeight": 163,
+        "scrollHeight": 163,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 250.546875,
+        "y": 140,
+        "right": 722,
+        "bottom": 306,
+        "width": 471.453125,
+        "height": 166,
+        "clientHeight": 166,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 250.546875,
+        "y": 311,
+        "right": 722,
+        "bottom": 360,
+        "width": 471.453125,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 250.546875,
+        "y": 316,
+        "right": 461.65625,
+        "bottom": 360,
+        "width": 211.109375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 468.65625,
+        "y": 316,
+        "right": 722,
+        "bottom": 360,
+        "width": 253.34375,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 548.75,
+        "y": 90,
+        "right": 722,
+        "bottom": 134,
+        "width": 173.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "unowned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 145.25,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "unowned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 150.25,
+        "y": 90,
+        "right": 281.5,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "unowned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 50.828125,
+        "y": 147,
+        "right": 139.15625,
+        "bottom": 219.8125,
+        "width": 88.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 286.5,
+        "y": 90,
+        "right": 417.75,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "unowned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 422.75,
+        "y": 90,
+        "right": 554,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "owned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 145.25,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "owned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 150.25,
+        "y": 90,
+        "right": 281.5,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "owned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 48.21875,
+        "y": 147,
+        "right": 141.78125,
+        "bottom": 219.8125,
+        "width": 93.5625,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 286.5,
+        "y": 90,
+        "right": 417.75,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "owned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 422.75,
+        "y": 90,
+        "right": 554,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "equipped",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 145.25,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "equipped",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 150.25,
+        "y": 90,
+        "right": 281.5,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "equipped",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 48.21875,
+        "y": 147,
+        "right": 141.78125,
+        "bottom": 219.8125,
+        "width": 93.5625,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 286.5,
+        "y": 90,
+        "right": 417.75,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "equipped",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 422.75,
+        "y": 90,
+        "right": 554,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "max",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 252,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 14,
+        "y": 90,
+        "right": 145.25,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "max",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 45.828125,
+        "y": 147,
+        "right": 144.15625,
+        "bottom": 219.8125,
+        "width": 98.328125,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 150.25,
+        "y": 90,
+        "right": 281.5,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "max",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 43.609375,
+        "y": 147,
+        "right": 146.375,
+        "bottom": 219.8125,
+        "width": 102.765625,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 209,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 286.5,
+        "y": 90,
+        "right": 417.75,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "max",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 85,
+        "right": 563,
+        "bottom": 271,
+        "width": 558,
+        "height": 186,
+        "clientHeight": 186,
+        "scrollHeight": 186,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 14,
+        "y": 140,
+        "right": 554,
+        "bottom": 266,
+        "width": 540,
+        "height": 126,
+        "clientHeight": 126,
+        "scrollHeight": 126,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 14,
+        "y": 140,
+        "right": 176,
+        "bottom": 266,
+        "width": 162,
+        "height": 126,
+        "clientHeight": 124,
+        "scrollHeight": 124,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 43.609375,
+        "y": 147,
+        "right": 146.375,
+        "bottom": 219.8125,
+        "width": 102.765625,
+        "height": 72.8125,
+        "clientHeight": 73,
+        "scrollHeight": 73,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 184,
+        "y": 140,
+        "right": 554,
+        "bottom": 212,
+        "width": 370,
+        "height": 72,
+        "clientHeight": 72,
+        "scrollHeight": 166,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 184,
+        "y": 217,
+        "right": 554,
+        "bottom": 266,
+        "width": 370,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 184,
+        "y": 222,
+        "right": 349,
+        "bottom": 266,
+        "width": 165,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 356,
+        "y": 222,
+        "right": 554,
+        "bottom": 266,
+        "width": 198,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 422.75,
+        "y": 90,
+        "right": 554,
+        "bottom": 134,
+        "width": 131.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "unowned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 75.578125,
+        "y": 176,
+        "right": 358.484375,
+        "bottom": 606.703125,
+        "width": 282.90625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 18,
+        "y": 119,
+        "right": 325.25,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "unowned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 27,
+        "y": 176,
+        "right": 407.078125,
+        "bottom": 606.703125,
+        "width": 380.078125,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 330.25,
+        "y": 119,
+        "right": 637.5,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "unowned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 76.78125,
+        "y": 176,
+        "right": 357.296875,
+        "bottom": 606.703125,
+        "width": 280.515625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 642.5,
+        "y": 119,
+        "right": 949.75,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "unowned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 33.671875,
+        "y": 176,
+        "right": 400.390625,
+        "bottom": 606.703125,
+        "width": 366.71875,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 954.75,
+        "y": 119,
+        "right": 1262,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "owned",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 75.578125,
+        "y": 176,
+        "right": 358.484375,
+        "bottom": 606.703125,
+        "width": 282.90625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 18,
+        "y": 119,
+        "right": 325.25,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "owned",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 27,
+        "y": 176,
+        "right": 407.078125,
+        "bottom": 606.703125,
+        "width": 380.078125,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 330.25,
+        "y": 119,
+        "right": 637.5,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "owned",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 76.78125,
+        "y": 176,
+        "right": 357.296875,
+        "bottom": 606.703125,
+        "width": 280.515625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 642.5,
+        "y": 119,
+        "right": 949.75,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "owned",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 33.671875,
+        "y": 176,
+        "right": 400.390625,
+        "bottom": 606.703125,
+        "width": 366.71875,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 954.75,
+        "y": 119,
+        "right": 1262,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "equipped",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 75.578125,
+        "y": 176,
+        "right": 358.484375,
+        "bottom": 606.703125,
+        "width": 282.90625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 18,
+        "y": 119,
+        "right": 325.25,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "equipped",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 27,
+        "y": 176,
+        "right": 407.078125,
+        "bottom": 606.703125,
+        "width": 380.078125,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 330.25,
+        "y": 119,
+        "right": 637.5,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "equipped",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 76.78125,
+        "y": 176,
+        "right": 357.296875,
+        "bottom": 606.703125,
+        "width": 280.515625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 642.5,
+        "y": 119,
+        "right": 949.75,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "equipped",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 33.671875,
+        "y": 176,
+        "right": 400.390625,
+        "bottom": 606.703125,
+        "width": 366.71875,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 954.75,
+        "y": 119,
+        "right": 1262,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "max",
+      "id": "mirror",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 75.578125,
+        "y": 176,
+        "right": 358.484375,
+        "bottom": 606.703125,
+        "width": 282.90625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 18,
+        "y": 119,
+        "right": 325.25,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "102 14 626 953",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/pets/mirror-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "max",
+      "id": "sword",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 27,
+        "y": 176,
+        "right": 407.078125,
+        "bottom": 606.703125,
+        "width": 380.078125,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 330.25,
+        "y": 119,
+        "right": 637.5,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "79 39 440 431",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/sword-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "max",
+      "id": "ward",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 76.78125,
+        "y": 176,
+        "right": 357.296875,
+        "bottom": 606.703125,
+        "width": 280.515625,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 642.5,
+        "y": 119,
+        "right": 949.75,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "89 4 622 955",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "max",
+      "id": "spring",
+      "body": {
+        "x": 5,
+        "y": 109,
+        "right": 1275,
+        "bottom": 667,
+        "width": 1270,
+        "height": 558,
+        "clientHeight": 558,
+        "scrollHeight": 558,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "layout": {
+        "x": 18,
+        "y": 169,
+        "right": 1262,
+        "bottom": 657,
+        "width": 1244,
+        "height": 488,
+        "clientHeight": 488,
+        "scrollHeight": 488,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "display": {
+        "x": 18,
+        "y": 169,
+        "right": 416.078125,
+        "bottom": 657,
+        "width": 398.078125,
+        "height": 488,
+        "clientHeight": 486,
+        "scrollHeight": 486,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "art": {
+        "x": 33.671875,
+        "y": 176,
+        "right": 400.390625,
+        "bottom": 606.703125,
+        "width": 366.71875,
+        "height": 430.703125,
+        "clientHeight": 431,
+        "scrollHeight": 431,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "x": 426.078125,
+        "y": 169,
+        "right": 1262,
+        "bottom": 603,
+        "width": 835.921875,
+        "height": 434,
+        "clientHeight": 434,
+        "scrollHeight": 434,
+        "scrollTop": 0,
+        "overflowY": "auto"
+      },
+      "actions": {
+        "x": 426.078125,
+        "y": 608,
+        "right": 1262,
+        "bottom": 657,
+        "width": 835.921875,
+        "height": 49,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "equip": {
+        "x": 426.078125,
+        "y": 613,
+        "right": 802.859375,
+        "bottom": 657,
+        "width": 376.78125,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "upgrade": {
+        "x": 809.859375,
+        "y": 613,
+        "right": 1159.859375,
+        "bottom": 657,
+        "width": 350,
+        "height": 44,
+        "clientHeight": 44,
+        "scrollHeight": 44,
+        "scrollTop": 0,
+        "overflowY": "visible"
+      },
+      "selector": {
+        "x": 954.75,
+        "y": 119,
+        "right": 1262,
+        "bottom": 163,
+        "width": 307.25,
+        "height": 44,
+        "clientHeight": 42,
+        "scrollHeight": 42,
+        "scrollTop": 0,
+        "overflowY": "hidden"
+      },
+      "svg": {
+        "viewBox": "791 114 705 828",
+        "preserve": "xMidYMid meet",
+        "natural": "assets/artifacts/t45/artifact-icons-v1.png"
+      }
+    }
+  ],
+  "transactions": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "id": "mirror",
+      "equipUnequip": true,
+      "cost": 150,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "id": "sword",
+      "equipUnequip": true,
+      "cost": 300,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "id": "ward",
+      "equipUnequip": true,
+      "cost": 450,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "id": "spring",
+      "equipUnequip": true,
+      "cost": 600,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "id": "mirror",
+      "equipUnequip": true,
+      "cost": 150,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "id": "sword",
+      "equipUnequip": true,
+      "cost": 300,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "id": "ward",
+      "equipUnequip": true,
+      "cost": 450,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "id": "spring",
+      "equipUnequip": true,
+      "cost": 600,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "id": "mirror",
+      "equipUnequip": true,
+      "cost": 150,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "id": "sword",
+      "equipUnequip": true,
+      "cost": 300,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "id": "ward",
+      "equipUnequip": true,
+      "cost": 450,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "id": "spring",
+      "equipUnequip": true,
+      "cost": 600,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "mirror",
+      "equipUnequip": true,
+      "cost": 150,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "sword",
+      "equipUnequip": true,
+      "cost": 300,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "ward",
+      "equipUnequip": true,
+      "cost": 450,
+      "level": 2
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "spring",
+      "equipUnequip": true,
+      "cost": 600,
+      "level": 2
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "passed": true,
+  "desktop": {
+    "minHeight": "0px",
+    "columns": "476.266px 633.734px",
+    "display": "contents",
+    "originalDomGeometryIdentical": true
+  }
+}

@@ -1,0 +1,14 @@
+✔ gift code persists exact real supplies once, preserves existing growth and rejects repeats after reload (3.9833ms)
+✔ failed gift saving cannot consume a code, grant partial items or overwrite a more recent profile (0.6607ms)
+✔ audio levels normalize safely, respect legacy mute and persist three independently controllable channels (0.3171ms)
+✔ all forty-eight practice combinations are free real casts without solo progress or PvP camera mode (127.9605ms)
+✔ only between-wave travel contracts by thirty percent, keeping battle width, original platform geometry and destination bounds (1.7584ms)
+✔ all thirty-six catalog skills have real descriptions and new settings/music preserve delivered originals (10.1707ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.6617

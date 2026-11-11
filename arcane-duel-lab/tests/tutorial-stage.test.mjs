@@ -49,7 +49,7 @@ test('short tutorial preserves walk/jump physics for all heroes and leaves story
   const w=ready(createCampaign(hero,23,{seed:19}));assert.equal(w.width,3000);assert.ok(w.width<CAMPAIGN_WIDTH);assert.equal(w.platforms[0].w,w.width);assert.equal(w.platforms.filter(p=>p.type==='campaign-upper').length,2);assert.ok(w.platforms.every(p=>p.x>=0&&p.x+p.w<=w.width));assert.ok(w.platforms.filter(p=>p.type==='campaign-upper').every(p=>w.floor-p.y<=200));fitCampaignCamera(w,800,360);assert.ok(w.camera.viewWidth<=w.width);
   w.campaign.triggers=[1e8,2e8];run(w,STEP,{jump:true,move:1});run(w,.12,{move:1});assert.ok(w.player.y<w.floor,hero+' retains the normal first jump');assert.equal(w.player.jumps,1);run(w,STEP,{jump:true,move:1});assert.equal(w.player.jumps,2,hero+' retains the normal second jump');run(w,10,{move:1});assert.ok(w.player.x>w.width-200,hero+' can follow the continuous road without a forced jump');assert.equal(w.player.y,w.floor);
  }
- const story=createCampaign('fire',1,{seed:19});assert.equal(story.width,CAMPAIGN_WIDTH);assert.deepEqual(story.campaign.triggers,[1400,3600,5870,8420]);assert.equal(story.platforms.filter(p=>p.type==='campaign-upper').length,24);assert.equal(waveComposition(STAGE_BY_ID[1]).total,12);
+ const story=createCampaign('fire',1,{seed:19});assert.equal(story.width,CAMPAIGN_WIDTH);assert.deepEqual(story.campaign.triggers,[1400,3600,5870,8420]);assert.equal(story.platforms.filter(p=>p.type==='campaign-upper').length,24);assert.equal(waveComposition(STAGE_BY_ID[1]).total,6);
 });
 
 test('all tutorial stepping platforms are reachable from their declared support with ordinary double jumps',()=>{

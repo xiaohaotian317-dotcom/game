@@ -7,7 +7,9 @@ export const SOLO_SKILL_MANA=[9,15,28];
 export const SOLO_BASIC_SPLASH=Object.freeze({radius:65,ratio:.35,maxTargets:3});
 export const SOLO_KILL_XP=9;
 export const REPEAT_TICKET_CHANCE=.2;
-export const SOLO_BALANCE={health:1.15*.9,mana:1.05,attack:1.2,recoveryDropChance:.035*1.15};
+export const PET_SKILL_STONE_DROP_CHANCE=.08;
+export function petDungeonBonusLoot(petDungeon,random=Math.random){return petDungeon&&random()<PET_SKILL_STONE_DROP_CHANCE?[{type:'petSkillStone',count:1}]:[];}
+export const SOLO_BALANCE={health:1.15*.9,mana:1.05,attack:1.2,recoveryDropChance:.035*1.15*1.15};
 export const LEVEL_GROWTH={health:.05,mana:.04,attack:.02};
 export const XP_STEPS=[80,100,140,180,240,320,420,550,700,900,1150,1450];
 export const xpNeeded=level=>XP_STEPS[level-1]??Math.round(1450+(level-12)*350+(level-12)**2*65);
@@ -22,6 +24,7 @@ export const SOLO_SKILLS=Object.fromEntries(SOLO_HEROES.map(hero=>[hero,[0,1,2].
 export const skillById=id=>SOLO_SKILLS[String(id).split('-')[0]]?.find(s=>s.id===id);
 export const upgradeCosts=[[225,375,600,900,1350],[300,525,825,1200,1650],[450,750,1200,1800,2700]];
 export const ITEMS={
+ petSkillStone:{name:'灵宠技能石',description:'灵宠技能2升3、3升4、4升5分别消耗1、2、5枚。仅宠物副本首领稀有掉落，也可在旅人商店花3000金币购买。',kind:'petSkillStone',sell:60,icon:0,sheet:'petSkillStone',color:'#c7a6f1'},
  petXpSmall:{name:'小型宠物经验药水',description:'选择一只已捕获灵宠，增加40点经验。不会自动进化，不能给英雄使用。',kind:'petXp',value:40,sell:8,icon:0,sheet:'petXp',color:'#88cdb6'},
  petXpMedium:{name:'中型宠物经验药水',description:'选择一只已捕获灵宠，增加100点经验。5级、10级仍需手动进化。',kind:'petXp',value:100,sell:18,icon:1,sheet:'petXp',color:'#a9dfbe'},
  petXpLarge:{name:'大型宠物经验药水',description:'选择一只已捕获灵宠，增加300点经验。不会越过手动进化规则。',kind:'petXp',value:300,sell:40,icon:2,sheet:'petXp',color:'#e0d08b'},

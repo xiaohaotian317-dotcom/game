@@ -1,6 +1,6 @@
 import {SUMMON_RECTS,SUMMON_REGIONS} from './summon-pools.mjs';
 import {touchEnabled} from './platform.mjs';
-let installed=false,portraitImage,scheduled=false;
+let installed=false,portraitImage,scheduled=false,petTab='attributes';
 const loadPortrait=()=>portraitImage||(portraitImage=new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src='assets/lobby/hero-splashes-v1.png';}));
 /** Phone-only presentation enhancement. Never changes gameplay or profile data. */
 export function installMobilePanelLayout(){
@@ -11,6 +11,23 @@ export function installMobilePanelLayout(){
   const toolbar=document.querySelector('#solo-toolbar');
   if(toolbar&&!document.querySelector('.mobile-system-toggle')){const toggle=document.createElement('button');toggle.type='button';toggle.className='mobile-system-toggle';toggle.setAttribute('aria-controls','solo-toolbar');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','展开系统菜单');toggle.innerHTML='<span aria-hidden="true">☷</span><small>菜单</small>';toolbar.before(toggle);collapse();toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'收起系统菜单':'展开系统菜单');toolbar.dataset.mobileExpanded=String(open);toolbar.inert=!open;});toolbar.addEventListener('click',event=>{if(event.target.closest('button'))collapse();});}
   const detail=document.querySelector('#stage-detail .detail-copy');if(detail&&!detail.querySelector('.mobile-stage-scroll')){const scroll=document.createElement('div');scroll.className='mobile-stage-scroll';scroll.setAttribute('aria-label','守关妖兽与本关战利品');for(const id of ['detail-enemies','detail-loot','detail-unlock']){const child=document.getElementById(id);if(child)scroll.append(child);}detail.querySelector('#enter-stage')?.before(scroll);}
+  for(const archive of document.querySelectorAll('.pet-archive:not([data-mobile-pet])')){
+   const collection=archive.querySelector(':scope>section'),description=archive.querySelector(':scope>.pet-description'),portrait=description?.querySelector(':scope>.pet-portrait');
+   if(!collection||!description)continue;
+   archive.dataset.mobilePet=portrait?'ready':'empty';archive.closest('.system-body')?.scrollTo(0,0);
+   if(!portrait)continue;
+   const preview=document.createElement('div');preview.className='mobile-pet-preview';
+   for(const node of [portrait,description.querySelector(':scope>h3'),description.querySelector(':scope>.pet-deploy-button')])if(node)preview.append(node);
+   const bag=collection.querySelector('.pet-bag-grid');collection.replaceChildren(preview,...(bag?[bag]:[]));
+   const tabs=document.createElement('nav');tabs.className='mobile-pet-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','灵宠档案');
+   const attributes=document.createElement('section');attributes.className='mobile-pet-attributes';attributes.dataset.mobilePetPanel='attributes';attributes.id='mobile-pet-attributes';attributes.setAttribute('role','tabpanel');
+   for(const node of [description.querySelector(':scope>dl'),description.querySelector(':scope>.pet-form-line'),description.querySelector(':scope>.pet-evolve-button')])if(node)attributes.append(node);
+   const skills=document.createElement('section');skills.className='mobile-pet-skills';skills.dataset.mobilePetPanel='skills';skills.id='mobile-pet-skills';skills.setAttribute('role','tabpanel');
+   const cards=description.querySelector(':scope>.pet-skill-cards');if(cards)skills.append(cards);
+   const setTab=value=>{petTab=value;for(const button of tabs.querySelectorAll('button')){const active=button.dataset.mobilePetTab===value;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;}attributes.hidden=value!=='attributes';skills.hidden=value!=='skills';};
+   for(const [value,label] of [['attributes','属性'],['skills','技能']]){const button=document.createElement('button');button.type='button';button.dataset.mobilePetTab=value;button.textContent=label;button.setAttribute('role','tab');button.setAttribute('aria-controls','mobile-pet-'+value);button.addEventListener('click',event=>{event.stopPropagation();setTab(value);});tabs.append(button);}
+   description.replaceChildren(tabs,attributes,skills);setTab(petTab);
+  }
   for(const svg of document.querySelectorAll('.archive-hero-art:not([data-mobile-portrait])')){
    const hero=svg.closest('[data-archive-hero]')?.dataset.archiveHero;if(!hero||!SUMMON_RECTS[hero])continue;
    const canvas=document.createElement('canvas');canvas.className='archive-hero-art mobile-archive-portrait';canvas.dataset.mobilePortrait=hero;canvas.role='img';canvas.setAttribute('aria-label',svg.getAttribute('aria-label')||'英雄完整立绘');svg.replaceWith(canvas);

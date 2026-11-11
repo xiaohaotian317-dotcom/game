@@ -5,3 +5,45 @@
 .settings-touch-opacity{grid-template-columns:1fr 1.2fr}.save-transfer-actions button[aria-pressed=true]{border-color:#efd397;background:linear-gradient(#71572c,#37291c);box-shadow:inset 0 0 12px #d4af5c22;color:#fff0c2}.settings-touch-opacity .painted-range{min-width:130px}
 .settings-layout-open{min-width:135px}.realm-settings .save-transfer-actions .settings-layout-open{color:#f4e0ab;border-color:#c4a369;background:linear-gradient(140deg,#344a42,#152c34)}
 @media(max-height:500px){html[data-mobile] [data-pane=performance] .save-transfer-actions{gap:7px}html[data-mobile] [data-pane=performance] .save-transfer-actions .settings-layout-open{min-width:125px;font-size:11px;padding-inline:8px}}
+
+/* T66: use the authored nine-piece bronze controls, preserving the carved ends. */
+.realm-settings .settings-ornate-action{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;min-width:156px;min-height:48px;height:54px;box-sizing:border-box;margin:0;padding:9px 38px;border:1px solid #a58b55;border-radius:8px;background:radial-gradient(ellipse at 50% 20%,#426b5a,#102b32 75%);clip-path:none;box-shadow:inset 0 0 0 3px #d3b87816,0 3px 12px #0005;color:#f4e2b3;font-family:SimSun,serif;font-size:15px;line-height:20px;letter-spacing:.08em;text-shadow:0 1px 3px #000;cursor:pointer}
+.realm-settings .settings-ornate-action[data-action-art=ready]{border-color:transparent;background:transparent;box-shadow:none}
+.realm-settings .settings-action-label{position:relative;z-index:3;display:block;white-space:nowrap;pointer-events:none}
+.realm-settings .settings-ornate-action:hover:enabled{filter:brightness(1.13);text-shadow:0 0 8px #e8cc8d45}
+.realm-settings .settings-ornate-action:active:enabled{filter:brightness(.94)}
+.realm-settings .settings-ornate-action:focus-visible{outline:2px solid #e8cf90;outline-offset:3px}
+.realm-settings .settings-ornate-action:disabled{opacity:.45;cursor:default}
+.realm-settings .settings-ornate-action>.archive-frame{position:absolute;inset:0;display:grid;grid-template-columns:var(--cut-l,37.5px) minmax(0,1fr) var(--cut-r,37.5px);grid-template-rows:var(--cut-t,14.5px) minmax(0,1fr) var(--cut-b,13.5px);pointer-events:none;z-index:1}
+.realm-settings .settings-ornate-action>.archive-frame:empty{display:none}
+.realm-settings .settings-ornate-action .archive-art-piece{display:block;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden}
+.realm-settings .settings-ornate-action .art-0-0{grid-area:1/1}.realm-settings .settings-ornate-action .art-0-1{grid-area:1/2}.realm-settings .settings-ornate-action .art-0-2{grid-area:1/3}
+.realm-settings .settings-ornate-action .art-1-0{grid-area:2/1}.realm-settings .settings-ornate-action .art-1-2{grid-area:2/3}
+.realm-settings .settings-ornate-action .art-2-0{grid-area:3/1}.realm-settings .settings-ornate-action .art-2-1{grid-area:3/2}.realm-settings .settings-ornate-action .art-2-2{grid-area:3/3}
+.realm-settings .settings-ornate-action .archive-edge-segments{display:flex;min-width:0;min-height:0}.realm-settings .settings-ornate-action .archive-edge-segments svg{flex:1}
+.realm-settings .settings-action-cool{color:#d6e0da;background:radial-gradient(ellipse at 50% 20%,#3b4b50,#14242e 75%);border-color:#899b91}
+.realm-settings .settings-action-cool>.archive-frame{filter:saturate(.32) hue-rotate(15deg) brightness(.91)}
+.realm-settings .settings-footer-actions{position:absolute;bottom:5.3%;left:13%;right:13%;display:flex;justify-content:center;align-items:center;gap:18px;min-height:48px}
+.realm-settings .settings-footer-actions>.settings-ornate-action{position:relative;inset:auto;transform:none;flex:0 1 214px;width:214px;max-width:100%;min-height:48px;height:54px;padding:8px 37px;font-size:15px}
+.realm-settings [data-pane=save] .save-transfer-actions{display:grid;grid-template-columns:repeat(2,minmax(0,220px));justify-content:center;gap:14px;margin:16px 0}
+.realm-settings [data-pane=save] .save-transfer-actions>.settings-ornate-action{width:100%;min-width:0;height:54px;min-height:48px;clip-path:none;padding:8px 37px}
+
+/* T68: storage cards read as objects, distinct from the carved navigation bars. */
+.realm-settings [data-pane=save] .save-transfer-actions{grid-template-columns:repeat(2,minmax(0,260px));gap:16px}
+.realm-settings .settings-save-card{position:relative;isolation:isolate;display:grid;grid-template-columns:50px minmax(0,1fr) 12px;align-items:center;gap:10px;min-width:0;min-height:76px;padding:10px 14px;border:1px solid #ad905a9c;border-radius:13px 3px;background:radial-gradient(ellipse at 0 30%,#36584f80,transparent 65%),linear-gradient(125deg,#172e33,#0a1b25);box-shadow:inset 0 1px 0 #e2d0a12b,inset 0 -8px 20px #0003,0 4px 12px #0004;color:#ead2a0;text-align:left;clip-path:none;cursor:pointer}
+.realm-settings .settings-save-card::before{content:'';position:absolute;inset:4px;border:1px solid #c9ad6e29;border-radius:9px 1px;pointer-events:none}
+.realm-settings .settings-save-card.import{border-color:#86a0a27d;background:radial-gradient(ellipse at 0 30%,#3d4a6480,transparent 65%),linear-gradient(125deg,#1b2b3b,#0a1723);color:#d5e0dc}
+.realm-settings .settings-save-emblem{position:relative;display:block;width:48px;height:48px;margin:0;filter:drop-shadow(0 2px 4px #0009)}
+.realm-settings .settings-save-emblem svg{display:block;width:100%;height:100%;overflow:hidden}
+.realm-settings .settings-save-emblem em{position:absolute;right:-3px;bottom:-2px;display:grid;place-items:center;width:20px;height:20px;border:1px solid #b99b5e;border-radius:50%;background:#0c242e;color:#f3d395;font:700 16px Georgia,serif;box-shadow:0 1px 4px #000b}
+.realm-settings .settings-save-card.import .settings-save-emblem em{border-color:#8aa9ae;color:#cce4e9}
+.realm-settings .settings-save-card .settings-action-label{font:600 15px SimSun,serif;line-height:21px;letter-spacing:.08em}
+.realm-settings .settings-save-card small{display:block;margin-top:3px;font:11px SimSun,serif;line-height:16px;color:#aab9b3;white-space:nowrap}
+.realm-settings .settings-save-card>b{font:22px Georgia,serif;color:#ad945e}
+.realm-settings .settings-save-card:hover{filter:brightness(1.13);border-color:#e0c28b}
+.realm-settings .settings-save-card:focus-visible{outline:2px solid #e0c28b;outline-offset:3px}
+.realm-settings .settings-save-card:active{filter:brightness(.94)}
+html[data-mobile] .realm-settings [data-pane=save] .save-transfer-actions>.settings-save-card{min-height:62px;height:62px;padding:6px 10px;grid-template-columns:44px minmax(0,1fr) 10px;gap:9px}
+html[data-mobile] .realm-settings .settings-save-emblem{width:42px;height:42px}
+html[data-mobile] .realm-settings .settings-save-card .settings-action-label{font-size:13px;line-height:18px;letter-spacing:.04em}
+html[data-mobile] .realm-settings .settings-save-card small{font-size:10px;line-height:14px;margin-top:2px}

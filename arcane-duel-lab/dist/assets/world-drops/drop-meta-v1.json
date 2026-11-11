@@ -234,6 +234,19 @@
         231,
         794
       ]
+    },
+    "petSkillStone": {
+      "rect": [
+        188,
+        18,
+        861,
+        1211
+      ],
+      "anchor": [
+        361,
+        1206
+      ],
+      "sheet": "petSkillStone"
     }
   },
   "sheets": {
@@ -559,6 +572,16 @@
       ],
       "sha256": "fb2bc157519c337dfedf3ab8f086900a1200e1305c5511b08df9900d4935906f",
       "frames": []
+    },
+    "petSkillStone": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "e04d45fe36a842423deab3377285caf899d6664974edf478baf62dc0e195cbf5",
+      "frames": [],
+      "file": "pet-skill-stone-v1.png",
+      "folder": "items"
     }
   }
 }

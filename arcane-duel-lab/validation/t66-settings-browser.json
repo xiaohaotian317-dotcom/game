@@ -1,0 +1,612 @@
+{
+  "scope": "Isolated browser settings UI, using the real SettingsDialog, save and redeem modules. Fake native bridge counts only; no phone, real app exit, SDK, ads, formal saves or installation.",
+  "checks": [
+    {
+      "mobile": true,
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "dialog": {
+        "x": 16,
+        "y": 4,
+        "right": 784,
+        "bottom": 356,
+        "width": 768,
+        "height": 352,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 180,
+          "y": 292,
+          "right": 394,
+          "bottom": 336,
+          "width": 214,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 406,
+          "y": 292,
+          "right": 620,
+          "bottom": 336,
+          "width": 214,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 135,
+          "y": 163,
+          "right": 395,
+          "bottom": 225,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        },
+        {
+          "x": 405,
+          "y": 163,
+          "right": 665,
+          "bottom": 225,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": true,
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "dialog": {
+        "x": 14.71875,
+        "y": 4,
+        "right": 721.265625,
+        "bottom": 410,
+        "width": 706.546875,
+        "height": 406,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 147.984375,
+          "y": 346,
+          "right": 361.984375,
+          "bottom": 390,
+          "width": 214,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 373.984375,
+          "y": 346,
+          "right": 587.984375,
+          "bottom": 390,
+          "width": 214,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 102.984375,
+          "y": 163,
+          "right": 362.984375,
+          "bottom": 225,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        },
+        {
+          "x": 372.984375,
+          "y": 163,
+          "right": 632.984375,
+          "bottom": 225,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": true,
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "dialog": {
+        "x": 11.359375,
+        "y": 4,
+        "right": 556.625,
+        "bottom": 316,
+        "width": 545.265625,
+        "height": 312,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 72.3125,
+          "y": 252,
+          "right": 277.984375,
+          "bottom": 296,
+          "width": 205.671875,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 289.984375,
+          "y": 252,
+          "right": 495.65625,
+          "bottom": 296,
+          "width": 205.671875,
+          "height": 44,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 64.421875,
+          "y": 166,
+          "right": 278.984375,
+          "bottom": 228,
+          "width": 214.5625,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        },
+        {
+          "x": 288.984375,
+          "y": 166,
+          "right": 503.5625,
+          "bottom": 228,
+          "width": 214.578125,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": true,
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "dialog": {
+        "x": 190,
+        "y": 50,
+        "right": 1090,
+        "bottom": 670,
+        "width": 900,
+        "height": 620,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 420,
+          "y": 597,
+          "right": 634,
+          "bottom": 645,
+          "width": 214,
+          "height": 48,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 646,
+          "y": 597,
+          "right": 860,
+          "bottom": 645,
+          "width": 214,
+          "height": 48,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 374,
+          "y": 275.59375,
+          "right": 634,
+          "bottom": 337.59375,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        },
+        {
+          "x": 646,
+          "y": 275.59375,
+          "right": 906,
+          "bottom": 337.59375,
+          "width": 260,
+          "height": 62,
+          "clip": "none",
+          "font": "13px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": false,
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "dialog": {
+        "x": 8,
+        "y": 3.59375,
+        "right": 792,
+        "bottom": 356.390625,
+        "width": 784,
+        "height": 352.796875,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 177,
+          "y": 274.5625,
+          "right": 391,
+          "bottom": 328.5625,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        },
+        {
+          "x": 409,
+          "y": 274.5625,
+          "right": 623,
+          "bottom": 328.5625,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 132,
+          "y": 186.625,
+          "right": 392,
+          "bottom": 262.625,
+          "width": 260,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 408,
+          "y": 186.625,
+          "right": 668,
+          "bottom": 262.625,
+          "width": 260,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": false,
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "dialog": {
+        "x": 7.359375,
+        "y": 4.140625,
+        "right": 728.625,
+        "bottom": 409.859375,
+        "width": 721.265625,
+        "height": 405.71875,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 144.984375,
+          "y": 355.5,
+          "right": 358.984375,
+          "bottom": 409.5,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        },
+        {
+          "x": 376.984375,
+          "y": 355.5,
+          "right": 590.984375,
+          "bottom": 409.5,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 101.109375,
+          "y": 250.03125,
+          "right": 359.984375,
+          "bottom": 326.03125,
+          "width": 258.875,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 375.984375,
+          "y": 250.03125,
+          "right": 634.875,
+          "bottom": 326.03125,
+          "width": 258.890625,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": false,
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "dialog": {
+        "x": 5.6875,
+        "y": 3.203125,
+        "right": 562.3125,
+        "bottom": 316.796875,
+        "width": 556.625,
+        "height": 313.59375,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 78.046875,
+          "y": 230.34375,
+          "right": 275,
+          "bottom": 284.34375,
+          "width": 196.953125,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        },
+        {
+          "x": 293,
+          "y": 230.34375,
+          "right": 489.953125,
+          "bottom": 284.34375,
+          "width": 196.953125,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 72.46875,
+          "y": 121.953125,
+          "right": 276,
+          "bottom": 197.953125,
+          "width": 203.53125,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 292,
+          "y": 121.953125,
+          "right": 495.53125,
+          "bottom": 197.953125,
+          "width": 203.53125,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    },
+    {
+      "mobile": false,
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "dialog": {
+        "x": 110,
+        "y": 7.203125,
+        "right": 1170,
+        "bottom": 712.796875,
+        "width": 1060,
+        "height": 705.59375,
+        "clip": "none",
+        "font": "14px"
+      },
+      "footer": [
+        {
+          "x": 417,
+          "y": 622.421875,
+          "right": 631,
+          "bottom": 676.421875,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        },
+        {
+          "x": 649,
+          "y": 622.421875,
+          "right": 863,
+          "bottom": 676.421875,
+          "width": 214,
+          "height": 54,
+          "clip": "none",
+          "font": "15px"
+        }
+      ],
+      "saveActions": [
+        {
+          "x": 372,
+          "y": 379.671875,
+          "right": 632,
+          "bottom": 455.671875,
+          "width": 260,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        },
+        {
+          "x": 648,
+          "y": 379.671875,
+          "right": 908,
+          "bottom": 455.671875,
+          "width": 260,
+          "height": 76,
+          "clip": "none",
+          "font": "14px"
+        }
+      ],
+      "synchronousOpen": true,
+      "sourcePieces": true,
+      "returnClosed": true,
+      "fakeQuitCalls": 1,
+      "exportChecksum": true,
+      "importConsentRequired": true,
+      "cancelPreservesSave": true,
+      "giftPreview": "角色抽奖券 ×3中金币宝箱 ×3中经验药水 ×3",
+      "giftRewards": {
+        "tickets": 3,
+        "mediumChestsAdded": 3,
+        "mediumXpAdded": 3
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "artFailureFallback": true,
+  "artSource": {
+    "file": "dist/assets/archive-ui/archive-controls-v1.png",
+    "element": "upgrade",
+    "slice": [
+      150,
+      58,
+      150,
+      54
+    ],
+    "sha256": "0d3a174f90ca92b42c11fd85a7b810110f639b8d59ae1cf545656faff6b65a3b",
+    "pixelEdits": false
+  }
+}

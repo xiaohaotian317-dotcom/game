@@ -1,0 +1,320 @@
+{
+  "package": "com.xiaohaotian.arcaneduel",
+  "versionName": "0.1.10",
+  "versionCode": 11,
+  "build": "android1-crossplay-v3",
+  "apk": "C:\\Users\\xiaohaotian\\Desktop\\双人\\发行\\秘境决斗-安卓试玩-0.1.10.apk",
+  "bytes": 712240723,
+  "sha256": "91810afc27734d02bcfefc2c69dc422580dad57b98c284e5ce1bae422c00bb07",
+  "signingCertificateSha256": "50197c82d598e52d6866a7d6855c45906f70d12612c4ee280b229cce5fed517a",
+  "sameOriginalSigningKey": true,
+  "debuggable": false,
+  "minSdk": 28,
+  "targetSdk": 36,
+  "webAssetsMatched": 477,
+  "zip16KAligned": true,
+  "nativeLibraries": [
+    {
+      "file": "lib/arm64-v8a/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libdirichlet.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/arm64-v8a/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libdirichlet.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/armeabi-v7a/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86/libthemis.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libcloudsave_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libonlinebattle_sdk.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libtapsdkcore.so",
+      "minLoadAlignment": 16384
+    },
+    {
+      "file": "lib/x86_64/libthemis.so",
+      "minLoadAlignment": 16384
+    }
+  ],
+  "nativeElf16KAligned": true,
+  "nativeLaunchOriginalPixelsMatched": [
+    "res/Bf.png"
+  ],
+  "launcher": {
+    "selectedByUser": "B / 焰术师近脸 v2",
+    "originalSha256": "495e7f3a99817d21d345181aed4b796749dbbdddcbc7e864fc98427df45ede47",
+    "densityAssetsDecodedPixelsMatched": [
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "bundle": "res/8c.png",
+        "size": [
+          72,
+          72
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "bundle": "res/8c.png",
+        "size": [
+          72,
+          72
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "bundle": "res/9w.png",
+        "size": [
+          48,
+          48
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "bundle": "res/9w.png",
+        "size": [
+          48,
+          48
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+        "bundle": "res/Em.png",
+        "size": [
+          216,
+          216
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "bundle": "res/FS.png",
+        "size": [
+          96,
+          96
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "bundle": "res/FS.png",
+        "size": [
+          96,
+          96
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "bundle": "res/Gc.png",
+        "size": [
+          192,
+          192
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+        "bundle": "res/Gc.png",
+        "size": [
+          192,
+          192
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+        "bundle": "res/Lf.png",
+        "size": [
+          324,
+          324
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+        "bundle": "res/QZ.png",
+        "size": [
+          108,
+          108
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "bundle": "res/RJ.png",
+        "size": [
+          144,
+          144
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "bundle": "res/RJ.png",
+        "size": [
+          144,
+          144
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+        "bundle": "res/as.png",
+        "size": [
+          432,
+          432
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "bundle": "res/fO.png",
+        "size": [
+          144,
+          144
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "bundle": "res/fO.png",
+        "size": [
+          144,
+          144
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "bundle": "res/o-.png",
+        "size": [
+          192,
+          192
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+        "bundle": "res/o-.png",
+        "size": [
+          192,
+          192
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "bundle": "res/wb.png",
+        "size": [
+          96,
+          96
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "bundle": "res/wb.png",
+        "size": [
+          96,
+          96
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "bundle": "res/yn.png",
+        "size": [
+          72,
+          72
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "bundle": "res/yn.png",
+        "size": [
+          72,
+          72
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "bundle": "res/zR.png",
+        "size": [
+          48,
+          48
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "bundle": "res/zR.png",
+        "size": [
+          48,
+          48
+        ]
+      },
+      {
+        "source": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+        "bundle": "res/zr.png",
+        "size": [
+          162,
+          162
+        ]
+      }
+    ]
+  },
+  "tapConfigured": true,
+  "towerLeaderboard": {
+    "configured": true,
+    "testWhitelistOnly": true,
+    "realEndedPeriodRewardVerified": false
+  },
+  "ads": {
+    "sdk": "TapADN5.3.2.0",
+    "environment": "test",
+    "supportedPrimaryAbis": [
+      "arm64-v8a",
+      "armeabi-v7a"
+    ],
+    "unsupportedAbiBlockedBeforeInit": true,
+    "realRevenueVerified": false
+  },
+  "physicalPhoneInstalledThisVersion": false,
+  "realInternetMatchVerified": false,
+  "publishedToTapTap": false,
+  "scope": "Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim."
+}

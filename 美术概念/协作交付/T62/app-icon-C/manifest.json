@@ -1,0 +1,46 @@
+{
+  "task": "T62",
+  "variant": "C - 双英雄对决",
+  "created": "2026-11-11",
+  "method": "built-in image_gen; v1 text generation, v2 targeted style/framing edit of v1",
+  "referenceInspected": "arcane-duel-lab/dist/assets/lobby/hero-splashes-v1.png",
+  "files": [
+    {
+      "file": "app-icon-C-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "bytes": 2979258,
+      "sha256": "d218dee6d47fc9c0be520d60011c96d0212582e2c4d321431b86f146efbbc274",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-2f34fb8e-7e20-477e-aaf1-a5091e8477b3.png",
+      "prompt": "prompt-v1.txt",
+      "status": "archived initial rendering; facial treatment too CG-realistic",
+      "originalPixelsPreserved": true
+    },
+    {
+      "file": "app-icon-C-v2.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "bytes": 2511360,
+      "sha256": "fc8a9f8cdbaf000a5cc7711246dde804c09eca135f7023af5219ae57d11ec85d",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-0bc217fd-244b-44ff-af1c-91b4415a7804.png",
+      "prompt": "prompt-v2.txt",
+      "status": "candidate recommended to root for user selection; not installed",
+      "originalPixelsPreserved": true
+    }
+  ],
+  "recommended": "app-icon-C-v2.png",
+  "constraints": {
+    "noPhoneConnectionOrInstall": true,
+    "formalIconUnchanged": true,
+    "codeUnchanged": true,
+    "noText": true,
+    "unroundedSquare": true
+  },
+  "review": "Two complete large female mage faces, clear crimson/blue contrast, single gold dividing fissure, quieter corners, v2 closer to hand-painted anime than v1. Pending root and user art approval; root to inspect 48px/adaptive-mask preview before any app integration."
+}

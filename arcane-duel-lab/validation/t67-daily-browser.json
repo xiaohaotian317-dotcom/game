@@ -1,0 +1,813 @@
+{
+  "scope": "Isolated real DailyQuestDialog and original daily art. Seeded completion for QA; explicit fake unavailable ads provider, no phone, SDK, real ad, formal save, build or install.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "dialog": {
+        "x": 6,
+        "y": 4,
+        "right": 794,
+        "bottom": 356,
+        "width": 788,
+        "height": 352,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 351,
+        "clientHeight": 350
+      },
+      "board": {
+        "x": 17,
+        "y": 9,
+        "right": 783,
+        "bottom": 311,
+        "width": 766,
+        "height": 302,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 302,
+        "clientHeight": 302
+      },
+      "list": {
+        "x": 21,
+        "y": 133,
+        "right": 779,
+        "bottom": 311,
+        "width": 758,
+        "height": 178,
+        "font": 16,
+        "overflowY": "auto",
+        "scrollHeight": 304,
+        "clientHeight": 178
+      },
+      "intro": {
+        "x": 21,
+        "y": 9,
+        "right": 779,
+        "bottom": 33,
+        "width": 758,
+        "height": 24,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 25,
+        "clientHeight": 24
+      },
+      "rewards": {
+        "x": 21,
+        "y": 33,
+        "right": 779,
+        "bottom": 105,
+        "width": 758,
+        "height": 72,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 76,
+        "clientHeight": 72
+      },
+      "footer": {
+        "x": 17,
+        "y": 311,
+        "right": 783,
+        "bottom": 355,
+        "width": 766,
+        "height": 44,
+        "font": 10,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 43
+      },
+      "visibleRows": 3,
+      "tasks": [
+        {
+          "x": 23,
+          "y": 133,
+          "right": 767,
+          "bottom": 187,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 195,
+          "right": 767,
+          "bottom": 249,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 257,
+          "right": 767,
+          "bottom": 311,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 319,
+          "right": 767,
+          "bottom": 373,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 381,
+          "right": 767,
+          "bottom": 435,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        }
+      ],
+      "chests": [
+        {
+          "x": 209.625,
+          "y": 33,
+          "right": 334.625,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 5.07881% 43.6391%; clip-path: polygon(14.9746% 37.069%, 85.2792% 37.069%, 85.2792% 99.7126%, 14.9746% 99.7126%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 357.46875,
+          "y": 33,
+          "right": 482.46875,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 48.1611% 43.3432%; clip-path: polygon(10.4061% 32.1839%, 89.5939% 32.1839%, 89.5939% 100%, 10.4061% 100%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 547.578125,
+          "y": 33,
+          "right": 672.578125,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 93.4326% 43.4911%; clip-path: polygon(2.28426% 21.8391%, 67.7665% 21.8391%, 67.7665% 29.023%, 97.7157% 29.023%, 97.7157% 100%, 2.28426% 100%);",
+            "display": "block"
+          }
+        }
+      ],
+      "close": {
+        "x": 746,
+        "y": 5,
+        "right": 790,
+        "bottom": 49,
+        "width": 44,
+        "height": 44,
+        "font": 0,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 44
+      },
+      "back": {
+        "x": 669,
+        "y": 311.5,
+        "right": 777,
+        "bottom": 355.5,
+        "width": 108,
+        "height": 44,
+        "font": 12,
+        "overflowY": "visible",
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "tailReachable": true,
+      "onlyListScrolls": true,
+      "manualClaimOnly": true,
+      "normalClaimCoins": 100,
+      "adShows": 0,
+      "closeAndReturn": true
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "dialog": {
+        "x": 6,
+        "y": 4,
+        "right": 730,
+        "bottom": 410,
+        "width": 724,
+        "height": 406,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 405,
+        "clientHeight": 404
+      },
+      "board": {
+        "x": 17,
+        "y": 9,
+        "right": 719,
+        "bottom": 365,
+        "width": 702,
+        "height": 356,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 356,
+        "clientHeight": 356
+      },
+      "list": {
+        "x": 21,
+        "y": 133,
+        "right": 715,
+        "bottom": 331,
+        "width": 694,
+        "height": 198,
+        "font": 16,
+        "overflowY": "auto",
+        "scrollHeight": 334,
+        "clientHeight": 198
+      },
+      "intro": {
+        "x": 21,
+        "y": 9,
+        "right": 715,
+        "bottom": 33,
+        "width": 694,
+        "height": 24,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 25,
+        "clientHeight": 24
+      },
+      "rewards": {
+        "x": 21,
+        "y": 33,
+        "right": 715,
+        "bottom": 105,
+        "width": 694,
+        "height": 72,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 76,
+        "clientHeight": 72
+      },
+      "footer": {
+        "x": 17,
+        "y": 365,
+        "right": 719,
+        "bottom": 409,
+        "width": 702,
+        "height": 44,
+        "font": 10,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 43
+      },
+      "visibleRows": 3,
+      "tasks": [
+        {
+          "x": 23,
+          "y": 133,
+          "right": 703,
+          "bottom": 193,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 201,
+          "right": 703,
+          "bottom": 261,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 269,
+          "right": 703,
+          "bottom": 329,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 337,
+          "right": 703,
+          "bottom": 397,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 405,
+          "right": 703,
+          "bottom": 465,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        }
+      ],
+      "chests": [
+        {
+          "x": 177.625,
+          "y": 33,
+          "right": 302.625,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 5.07881% 43.6391%; clip-path: polygon(14.9746% 37.069%, 85.2792% 37.069%, 85.2792% 99.7126%, 14.9746% 99.7126%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 325.46875,
+          "y": 33,
+          "right": 450.46875,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 48.1611% 43.3432%; clip-path: polygon(10.4061% 32.1839%, 89.5939% 32.1839%, 89.5939% 100%, 10.4061% 100%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 515.578125,
+          "y": 33,
+          "right": 640.578125,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 93.4326% 43.4911%; clip-path: polygon(2.28426% 21.8391%, 67.7665% 21.8391%, 67.7665% 29.023%, 97.7157% 29.023%, 97.7157% 100%, 2.28426% 100%);",
+            "display": "block"
+          }
+        }
+      ],
+      "close": {
+        "x": 682,
+        "y": 5,
+        "right": 726,
+        "bottom": 49,
+        "width": 44,
+        "height": 44,
+        "font": 0,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 44
+      },
+      "back": {
+        "x": 605,
+        "y": 365.5,
+        "right": 713,
+        "bottom": 409.5,
+        "width": 108,
+        "height": 44,
+        "font": 12,
+        "overflowY": "visible",
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "tailReachable": true,
+      "onlyListScrolls": true,
+      "manualClaimOnly": true,
+      "normalClaimCoins": 100,
+      "adShows": 0,
+      "closeAndReturn": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "dialog": {
+        "x": 6,
+        "y": 4,
+        "right": 562,
+        "bottom": 316,
+        "width": 556,
+        "height": 312,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 311,
+        "clientHeight": 310
+      },
+      "board": {
+        "x": 17,
+        "y": 9,
+        "right": 551,
+        "bottom": 271,
+        "width": 534,
+        "height": 262,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 262,
+        "clientHeight": 262
+      },
+      "list": {
+        "x": 21,
+        "y": 133,
+        "right": 547,
+        "bottom": 271,
+        "width": 526,
+        "height": 138,
+        "font": 16,
+        "overflowY": "auto",
+        "scrollHeight": 304,
+        "clientHeight": 138
+      },
+      "intro": {
+        "x": 21,
+        "y": 9,
+        "right": 547,
+        "bottom": 33,
+        "width": 526,
+        "height": 24,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 25,
+        "clientHeight": 24
+      },
+      "rewards": {
+        "x": 21,
+        "y": 33,
+        "right": 547,
+        "bottom": 105,
+        "width": 526,
+        "height": 72,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 76,
+        "clientHeight": 72
+      },
+      "footer": {
+        "x": 17,
+        "y": 271,
+        "right": 551,
+        "bottom": 315,
+        "width": 534,
+        "height": 44,
+        "font": 10,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 43
+      },
+      "visibleRows": 2,
+      "tasks": [
+        {
+          "x": 23,
+          "y": 133,
+          "right": 535,
+          "bottom": 187,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 195,
+          "right": 535,
+          "bottom": 249,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 257,
+          "right": 535,
+          "bottom": 311,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 319,
+          "right": 535,
+          "bottom": 373,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 23,
+          "y": 381,
+          "right": 535,
+          "bottom": 435,
+          "height": 54,
+          "nameFont": 14,
+          "descriptionFont": 11
+        }
+      ],
+      "chests": [
+        {
+          "x": 115.21875,
+          "y": 33,
+          "right": 240.21875,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 5.07881% 43.6391%; clip-path: polygon(14.9746% 37.069%, 85.2792% 37.069%, 85.2792% 99.7126%, 14.9746% 99.7126%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 238.09375,
+          "y": 33,
+          "right": 363.09375,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 48.1611% 43.3432%; clip-path: polygon(10.4061% 32.1839%, 89.5939% 32.1839%, 89.5939% 100%, 10.4061% 100%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 396.078125,
+          "y": 33,
+          "right": 521.078125,
+          "bottom": 109,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 93.4326% 43.4911%; clip-path: polygon(2.28426% 21.8391%, 67.7665% 21.8391%, 67.7665% 29.023%, 97.7157% 29.023%, 97.7157% 100%, 2.28426% 100%);",
+            "display": "block"
+          }
+        }
+      ],
+      "close": {
+        "x": 514,
+        "y": 5,
+        "right": 558,
+        "bottom": 49,
+        "width": 44,
+        "height": 44,
+        "font": 0,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 44
+      },
+      "back": {
+        "x": 437,
+        "y": 271.5,
+        "right": 545,
+        "bottom": 315.5,
+        "width": 108,
+        "height": 44,
+        "font": 12,
+        "overflowY": "visible",
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "tailReachable": true,
+      "onlyListScrolls": true,
+      "manualClaimOnly": true,
+      "normalClaimCoins": 100,
+      "adShows": 0,
+      "closeAndReturn": true
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "dialog": {
+        "x": 135,
+        "y": 40,
+        "right": 1145,
+        "bottom": 680,
+        "width": 1010,
+        "height": 640,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 639,
+        "clientHeight": 638
+      },
+      "board": {
+        "x": 146,
+        "y": 45,
+        "right": 1134,
+        "bottom": 635,
+        "width": 988,
+        "height": 590,
+        "font": 16,
+        "overflowY": "hidden",
+        "scrollHeight": 590,
+        "clientHeight": 590
+      },
+      "list": {
+        "x": 150,
+        "y": 169,
+        "right": 1130,
+        "bottom": 635,
+        "width": 980,
+        "height": 466,
+        "font": 16,
+        "overflowY": "auto",
+        "scrollHeight": 466,
+        "clientHeight": 466
+      },
+      "intro": {
+        "x": 150,
+        "y": 45,
+        "right": 1130,
+        "bottom": 69,
+        "width": 980,
+        "height": 24,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 29,
+        "clientHeight": 24
+      },
+      "rewards": {
+        "x": 150,
+        "y": 69,
+        "right": 1130,
+        "bottom": 141,
+        "width": 980,
+        "height": 72,
+        "font": 16,
+        "overflowY": "visible",
+        "scrollHeight": 76,
+        "clientHeight": 72
+      },
+      "footer": {
+        "x": 146,
+        "y": 635,
+        "right": 1134,
+        "bottom": 679,
+        "width": 988,
+        "height": 44,
+        "font": 10,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 43
+      },
+      "visibleRows": 5,
+      "tasks": [
+        {
+          "x": 152,
+          "y": 169,
+          "right": 1118,
+          "bottom": 229,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 152,
+          "y": 237,
+          "right": 1118,
+          "bottom": 297,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 152,
+          "y": 305,
+          "right": 1118,
+          "bottom": 365,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 152,
+          "y": 373,
+          "right": 1118,
+          "bottom": 433,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        },
+        {
+          "x": 152,
+          "y": 441,
+          "right": 1118,
+          "bottom": 501,
+          "height": 60,
+          "nameFont": 14,
+          "descriptionFont": 11
+        }
+      ],
+      "chests": [
+        {
+          "x": 449.625,
+          "y": 69,
+          "right": 574.625,
+          "bottom": 145,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 5.07881% 43.6391%; clip-path: polygon(14.9746% 37.069%, 85.2792% 37.069%, 85.2792% 99.7126%, 14.9746% 99.7126%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 597.46875,
+          "y": 69,
+          "right": 722.46875,
+          "bottom": 145,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 48.1611% 43.3432%; clip-path: polygon(10.4061% 32.1839%, 89.5939% 32.1839%, 89.5939% 100%, 10.4061% 100%);",
+            "display": "block"
+          }
+        },
+        {
+          "x": 787.578125,
+          "y": 69,
+          "right": 912.578125,
+          "bottom": 145,
+          "width": 125,
+          "height": 76,
+          "art": {
+            "width": 68,
+            "height": 60.046875,
+            "css": "background-image: url(\"assets/daily-ui/daily-ui-v2.png\"); background-size: 389.848% 294.253%; background-position: 93.4326% 43.4911%; clip-path: polygon(2.28426% 21.8391%, 67.7665% 21.8391%, 67.7665% 29.023%, 97.7157% 29.023%, 97.7157% 100%, 2.28426% 100%);",
+            "display": "block"
+          }
+        }
+      ],
+      "close": {
+        "x": 1097,
+        "y": 41,
+        "right": 1141,
+        "bottom": 85,
+        "width": 44,
+        "height": 44,
+        "font": 0,
+        "overflowY": "visible",
+        "scrollHeight": 44,
+        "clientHeight": 44
+      },
+      "back": {
+        "x": 1020,
+        "y": 635.5,
+        "right": 1128,
+        "bottom": 679.5,
+        "width": 108,
+        "height": 44,
+        "font": 12,
+        "overflowY": "visible",
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "tailReachable": true,
+      "onlyListScrolls": true,
+      "manualClaimOnly": true,
+      "normalClaimCoins": 100,
+      "adShows": 0,
+      "closeAndReturn": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "desktopOriginalStyles": true,
+  "artSource": {
+    "file": "dist/assets/daily-ui/daily-ui-v2.png",
+    "sha256": "8d5022c5d59989ee057f2609514ddfef8a6d99f4012f3181b25a58f9d258ad1d",
+    "pixelEdits": false
+  }
+}

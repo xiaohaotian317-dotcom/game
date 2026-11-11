@@ -1,0 +1,3915 @@
+{
+  "scope": "Isolated Edge browser QA of the real forge UI. Seeded inventory only; no phone, formal save, SDK, ad request, build or installation.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "empty",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 159,
+          "y": 90,
+          "right": 326,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        },
+        {
+          "x": 330,
+          "y": 90,
+          "right": 497,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        },
+        {
+          "x": 501,
+          "y": 90,
+          "right": 668,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        }
+      ],
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 758,
+          "height": 65,
+          "right": 774,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 732,
+          "height": 20,
+          "right": 761,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 732,
+          "height": 18,
+          "right": 761,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "empty",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 758,
+          "height": 65,
+          "right": 774,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 732,
+          "height": 20,
+          "right": 761,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 732,
+          "height": 18,
+          "right": 761,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "empty",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 758,
+          "height": 65,
+          "right": 774,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 732,
+          "height": 20,
+          "right": 761,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 732,
+          "height": 18,
+          "right": 761,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "empty",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 758,
+          "height": 65,
+          "right": 774,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 732,
+          "height": 20,
+          "right": 761,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 732,
+          "height": 18,
+          "right": 761,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "empty",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 758,
+          "height": 65,
+          "right": 774,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 732,
+          "height": 20,
+          "right": 761,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 732,
+          "height": 18,
+          "right": 761,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "many",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 573,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 159,
+          "y": 90,
+          "right": 326,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        },
+        {
+          "x": 330,
+          "y": 90,
+          "right": 497,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        },
+        {
+          "x": 501,
+          "y": 90,
+          "right": 668,
+          "bottom": 134,
+          "width": 167,
+          "height": 44
+        }
+      ],
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 150.5,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 198.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 149,
+          "width": 108.21875,
+          "height": 17,
+          "right": 187.21875,
+          "bottom": 166,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 168,
+          "width": 108.21875,
+          "height": 15,
+          "right": 187.21875,
+          "bottom": 183,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 533,
+          "y": 257.5,
+          "width": 48,
+          "height": 48,
+          "right": 581,
+          "bottom": 305.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 272,
+          "width": 772,
+          "height": 44,
+          "right": 786,
+          "bottom": 316,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 772,
+          "height": 126,
+          "right": 786,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 573,
+          "clientHeight": 126
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "many",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 533,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 581,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 272,
+          "width": 772,
+          "height": 44,
+          "right": 786,
+          "bottom": 316,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 772,
+          "height": 126,
+          "right": 786,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 126,
+          "clientHeight": 126
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "many",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 278,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 326,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 272,
+          "width": 772,
+          "height": 44,
+          "right": 786,
+          "bottom": 316,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 772,
+          "height": 126,
+          "right": 786,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 126,
+          "clientHeight": 126
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "many",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 278,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 326,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 272,
+          "width": 772,
+          "height": 44,
+          "right": 786,
+          "bottom": 316,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 772,
+          "height": 126,
+          "right": 786,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 126,
+          "clientHeight": 126
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "state": "many",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 772,
+        "height": 226,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 226,
+        "clientHeight": 226
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 772,
+        "height": 176,
+        "right": 786,
+        "bottom": 316,
+        "font": 16,
+        "scrollHeight": 176,
+        "clientHeight": 176
+      },
+      "back": {
+        "x": 678,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 786,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 278,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 326,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 272,
+          "width": 772,
+          "height": 44,
+          "right": 786,
+          "bottom": 316,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 772,
+          "height": 126,
+          "right": 786,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 126,
+          "clientHeight": 126
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "empty",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 159,
+          "y": 90,
+          "right": 304.65625,
+          "bottom": 134,
+          "width": 145.65625,
+          "height": 44
+        },
+        {
+          "x": 308.65625,
+          "y": 90,
+          "right": 454.328125,
+          "bottom": 134,
+          "width": 145.671875,
+          "height": 44
+        },
+        {
+          "x": 458.328125,
+          "y": 90,
+          "right": 604,
+          "bottom": 134,
+          "width": 145.671875,
+          "height": 44
+        }
+      ],
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 694,
+          "height": 65,
+          "right": 710,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 668,
+          "height": 20,
+          "right": 697,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 668,
+          "height": 18,
+          "right": 697,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "empty",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 694,
+          "height": 65,
+          "right": 710,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 668,
+          "height": 20,
+          "right": 697,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 668,
+          "height": 18,
+          "right": 697,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "empty",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 694,
+          "height": 65,
+          "right": 710,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 668,
+          "height": 20,
+          "right": 697,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 668,
+          "height": 18,
+          "right": 697,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "empty",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 694,
+          "height": 65,
+          "right": 710,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 668,
+          "height": 20,
+          "right": 697,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 668,
+          "height": 18,
+          "right": 697,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "empty",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 694,
+          "height": 65,
+          "right": 710,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 668,
+          "height": 20,
+          "right": 697,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 668,
+          "height": 18,
+          "right": 697,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "many",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 573,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 159,
+          "y": 90,
+          "right": 304.65625,
+          "bottom": 134,
+          "width": 145.65625,
+          "height": 44
+        },
+        {
+          "x": 308.65625,
+          "y": 90,
+          "right": 454.328125,
+          "bottom": 134,
+          "width": 145.671875,
+          "height": 44
+        },
+        {
+          "x": 458.328125,
+          "y": 90,
+          "right": 604,
+          "bottom": 134,
+          "width": 145.671875,
+          "height": 44
+        }
+      ],
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 150.5,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 198.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 149,
+          "width": 108.21875,
+          "height": 17,
+          "right": 187.21875,
+          "bottom": 166,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 168,
+          "width": 108.21875,
+          "height": 15,
+          "right": 187.21875,
+          "bottom": 183,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 490.328125,
+          "y": 311.5,
+          "width": 48,
+          "height": 48,
+          "right": 538.328125,
+          "bottom": 359.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 326,
+          "width": 708,
+          "height": 44,
+          "right": 722,
+          "bottom": 370,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 708,
+          "height": 180,
+          "right": 722,
+          "bottom": 320,
+          "font": 16,
+          "scrollHeight": 573,
+          "clientHeight": 180
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "many",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 490.328125,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 538.328125,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 326,
+          "width": 708,
+          "height": 44,
+          "right": 722,
+          "bottom": 370,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 708,
+          "height": 180,
+          "right": 722,
+          "bottom": 320,
+          "font": 16,
+          "scrollHeight": 180,
+          "clientHeight": 180
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "many",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 256.65625,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 304.65625,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 326,
+          "width": 708,
+          "height": 44,
+          "right": 722,
+          "bottom": 370,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 708,
+          "height": 180,
+          "right": 722,
+          "bottom": 320,
+          "font": 16,
+          "scrollHeight": 180,
+          "clientHeight": 180
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "many",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 256.65625,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 304.65625,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 326,
+          "width": 708,
+          "height": 44,
+          "right": 722,
+          "bottom": 370,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 708,
+          "height": 180,
+          "right": 722,
+          "bottom": 320,
+          "font": 16,
+          "scrollHeight": 180,
+          "clientHeight": 180
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "state": "many",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 708,
+        "height": 280,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 280,
+        "clientHeight": 280
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 708,
+        "height": 230,
+        "right": 722,
+        "bottom": 370,
+        "font": 16,
+        "scrollHeight": 230,
+        "clientHeight": 230
+      },
+      "back": {
+        "x": 614,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 722,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 256.65625,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 304.65625,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 326,
+          "width": 708,
+          "height": 44,
+          "right": 722,
+          "bottom": 370,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 708,
+          "height": 180,
+          "right": 722,
+          "bottom": 320,
+          "font": 16,
+          "scrollHeight": 180,
+          "clientHeight": 180
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "empty",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 148,
+          "y": 90,
+          "right": 242,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "x": 246,
+          "y": 90,
+          "right": 340,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "x": 344,
+          "y": 90,
+          "right": 438,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        }
+      ],
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 526,
+          "height": 65,
+          "right": 542,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 500,
+          "height": 20,
+          "right": 529,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 500,
+          "height": 18,
+          "right": 529,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "empty",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 526,
+          "height": 65,
+          "right": 542,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 500,
+          "height": 20,
+          "right": 529,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 500,
+          "height": 18,
+          "right": 529,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "empty",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 526,
+          "height": 65,
+          "right": 542,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 500,
+          "height": 20,
+          "right": 529,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 500,
+          "height": 18,
+          "right": 529,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "empty",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 526,
+          "height": 65,
+          "right": 542,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 500,
+          "height": 20,
+          "right": 529,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 500,
+          "height": 18,
+          "right": 529,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "empty",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 16,
+          "y": 142,
+          "width": 526,
+          "height": 65,
+          "right": 542,
+          "bottom": 207,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 29,
+          "y": 153,
+          "width": 500,
+          "height": 20,
+          "right": 529,
+          "bottom": 173,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 29,
+          "y": 178,
+          "width": 500,
+          "height": 18,
+          "right": 529,
+          "bottom": 196,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "many",
+      "mode": "equipment",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 861,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 148,
+          "y": 90,
+          "right": 242,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "x": 246,
+          "y": 90,
+          "right": 340,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "x": 344,
+          "y": 90,
+          "right": 438,
+          "bottom": 134,
+          "width": 94,
+          "height": 44
+        }
+      ],
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 150.5,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 198.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 149,
+          "width": 108.21875,
+          "height": 17,
+          "right": 187.21875,
+          "bottom": 166,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 168,
+          "width": 108.21875,
+          "height": 15,
+          "right": 187.21875,
+          "bottom": 183,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 289.5,
+          "y": 217.5,
+          "width": 48,
+          "height": 48,
+          "right": 337.5,
+          "bottom": 265.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 232,
+          "width": 540,
+          "height": 44,
+          "right": 554,
+          "bottom": 276,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 540,
+          "height": 86,
+          "right": 554,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 861,
+          "clientHeight": 86
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "many",
+      "mode": "stone",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 23,
+          "y": 218,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 266,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 232,
+          "width": 540,
+          "height": 44,
+          "right": 554,
+          "bottom": 276,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 540,
+          "height": 86,
+          "right": 554,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 135,
+          "clientHeight": 86
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "many",
+      "mode": "material-0",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 289.5,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 337.5,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 232,
+          "width": 540,
+          "height": 44,
+          "right": 554,
+          "bottom": 276,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 540,
+          "height": 86,
+          "right": 554,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 86,
+          "clientHeight": 86
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "many",
+      "mode": "material-1",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 289.5,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 337.5,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 232,
+          "width": 540,
+          "height": 44,
+          "right": 554,
+          "bottom": 276,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 540,
+          "height": 86,
+          "right": 554,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 86,
+          "clientHeight": 86
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "state": "many",
+      "mode": "material-2",
+      "frame": {
+        "x": 14,
+        "y": 90,
+        "width": 540,
+        "height": 186,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 186,
+        "clientHeight": 186
+      },
+      "list": {
+        "x": 14,
+        "y": 140,
+        "width": 540,
+        "height": 136,
+        "right": 554,
+        "bottom": 276,
+        "font": 16,
+        "scrollHeight": 136,
+        "clientHeight": 136
+      },
+      "back": {
+        "x": 446,
+        "y": 89.5,
+        "width": 108,
+        "height": 44,
+        "right": 554,
+        "bottom": 133.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 23,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 71,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 79,
+          "y": 156,
+          "width": 98.53125,
+          "height": 17,
+          "right": 177.53125,
+          "bottom": 173,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 79,
+          "y": 175,
+          "width": 98.53125,
+          "height": 15,
+          "right": 177.53125,
+          "bottom": 190,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 289.5,
+          "y": 149,
+          "width": 48,
+          "height": 48,
+          "right": 337.5,
+          "bottom": 197,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 14,
+          "y": 232,
+          "width": 540,
+          "height": 44,
+          "right": 554,
+          "bottom": 276,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 14,
+          "y": 140,
+          "width": 540,
+          "height": 86,
+          "right": 554,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 86,
+          "clientHeight": 86
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "empty",
+      "mode": "equipment",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 163,
+          "y": 119,
+          "right": 487.328125,
+          "bottom": 163,
+          "width": 324.328125,
+          "height": 44
+        },
+        {
+          "x": 491.328125,
+          "y": 119,
+          "right": 815.671875,
+          "bottom": 163,
+          "width": 324.34375,
+          "height": 44
+        },
+        {
+          "x": 819.671875,
+          "y": 119,
+          "right": 1144,
+          "bottom": 163,
+          "width": 324.328125,
+          "height": 44
+        }
+      ],
+      "empty": {
+        "empty": {
+          "x": 20,
+          "y": 171,
+          "width": 1230,
+          "height": 65,
+          "right": 1250,
+          "bottom": 236,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 33,
+          "y": 182,
+          "width": 1204,
+          "height": 20,
+          "right": 1237,
+          "bottom": 202,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 33,
+          "y": 207,
+          "width": 1204,
+          "height": 18,
+          "right": 1237,
+          "bottom": 225,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "empty",
+      "mode": "stone",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 20,
+          "y": 171,
+          "width": 1230,
+          "height": 65,
+          "right": 1250,
+          "bottom": 236,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 33,
+          "y": 182,
+          "width": 1204,
+          "height": 20,
+          "right": 1237,
+          "bottom": 202,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 33,
+          "y": 207,
+          "width": 1204,
+          "height": 18,
+          "right": 1237,
+          "bottom": 225,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "empty",
+      "mode": "material-0",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 20,
+          "y": 171,
+          "width": 1230,
+          "height": 65,
+          "right": 1250,
+          "bottom": 236,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 33,
+          "y": 182,
+          "width": 1204,
+          "height": 20,
+          "right": 1237,
+          "bottom": 202,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 33,
+          "y": 207,
+          "width": 1204,
+          "height": 18,
+          "right": 1237,
+          "bottom": 225,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "empty",
+      "mode": "material-1",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 20,
+          "y": 171,
+          "width": 1230,
+          "height": 65,
+          "right": 1250,
+          "bottom": 236,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 33,
+          "y": 182,
+          "width": 1204,
+          "height": 20,
+          "right": 1237,
+          "bottom": 202,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 33,
+          "y": 207,
+          "width": 1204,
+          "height": 18,
+          "right": 1237,
+          "bottom": 225,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "empty",
+      "mode": "material-2",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "empty": {
+        "empty": {
+          "x": 20,
+          "y": 171,
+          "width": 1230,
+          "height": 65,
+          "right": 1250,
+          "bottom": 236,
+          "font": 16,
+          "scrollHeight": 63,
+          "clientHeight": 63
+        },
+        "heading": {
+          "x": 33,
+          "y": 182,
+          "width": 1204,
+          "height": 20,
+          "right": 1237,
+          "bottom": 202,
+          "font": 14,
+          "scrollHeight": 20,
+          "clientHeight": 20
+        },
+        "copy": {
+          "x": 33,
+          "y": 207,
+          "width": 1204,
+          "height": 18,
+          "right": 1237,
+          "bottom": 225,
+          "font": 12,
+          "scrollHeight": 18,
+          "clientHeight": 18
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "many",
+      "mode": "equipment",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 573,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "filters": [
+        {
+          "x": 163,
+          "y": 119,
+          "right": 487.328125,
+          "bottom": 163,
+          "width": 324.328125,
+          "height": 44
+        },
+        {
+          "x": 491.328125,
+          "y": 119,
+          "right": 815.671875,
+          "bottom": 163,
+          "width": 324.34375,
+          "height": 44
+        },
+        {
+          "x": 819.671875,
+          "y": 119,
+          "right": 1144,
+          "bottom": 163,
+          "width": 324.328125,
+          "height": 44
+        }
+      ],
+      "item": {
+        "icon": {
+          "x": 27,
+          "y": 179.5,
+          "width": 48,
+          "height": 48,
+          "right": 75,
+          "bottom": 227.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 83,
+          "y": 178,
+          "width": 108.21875,
+          "height": 17,
+          "right": 191.21875,
+          "bottom": 195,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 83,
+          "y": 197,
+          "width": 108.21875,
+          "height": 15,
+          "right": 191.21875,
+          "bottom": 212,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 851.65625,
+          "y": 598.5,
+          "width": 48,
+          "height": 48,
+          "right": 899.65625,
+          "bottom": 646.5,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 18,
+          "y": 613,
+          "width": 1244,
+          "height": 44,
+          "right": 1262,
+          "bottom": 657,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 18,
+          "y": 169,
+          "width": 1244,
+          "height": 438,
+          "right": 1262,
+          "bottom": 607,
+          "font": 16,
+          "scrollHeight": 573,
+          "clientHeight": 438
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "many",
+      "mode": "stone",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 27,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 75,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 83,
+          "y": 185,
+          "width": 98.53125,
+          "height": 17,
+          "right": 181.53125,
+          "bottom": 202,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 83,
+          "y": 204,
+          "width": 98.53125,
+          "height": 15,
+          "right": 181.53125,
+          "bottom": 219,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 851.65625,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 899.65625,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 18,
+          "y": 613,
+          "width": 1244,
+          "height": 44,
+          "right": 1262,
+          "bottom": 657,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 18,
+          "y": 169,
+          "width": 1244,
+          "height": 438,
+          "right": 1262,
+          "bottom": 607,
+          "font": 16,
+          "scrollHeight": 438,
+          "clientHeight": 438
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "many",
+      "mode": "material-0",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 27,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 75,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 83,
+          "y": 185,
+          "width": 98.53125,
+          "height": 17,
+          "right": 181.53125,
+          "bottom": 202,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 83,
+          "y": 204,
+          "width": 98.53125,
+          "height": 15,
+          "right": 181.53125,
+          "bottom": 219,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 439.328125,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 487.328125,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 18,
+          "y": 613,
+          "width": 1244,
+          "height": 44,
+          "right": 1262,
+          "bottom": 657,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 18,
+          "y": 169,
+          "width": 1244,
+          "height": 438,
+          "right": 1262,
+          "bottom": 607,
+          "font": 16,
+          "scrollHeight": 438,
+          "clientHeight": 438
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "many",
+      "mode": "material-1",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 27,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 75,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 83,
+          "y": 185,
+          "width": 98.53125,
+          "height": 17,
+          "right": 181.53125,
+          "bottom": 202,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 83,
+          "y": 204,
+          "width": 98.53125,
+          "height": 15,
+          "right": 181.53125,
+          "bottom": 219,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 439.328125,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 487.328125,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 18,
+          "y": 613,
+          "width": 1244,
+          "height": 44,
+          "right": 1262,
+          "bottom": 657,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 18,
+          "y": 169,
+          "width": 1244,
+          "height": 438,
+          "right": 1262,
+          "bottom": 607,
+          "font": 16,
+          "scrollHeight": 438,
+          "clientHeight": 438
+        }
+      }
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": "many",
+      "mode": "material-2",
+      "frame": {
+        "x": 18,
+        "y": 119,
+        "width": 1244,
+        "height": 538,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 538,
+        "clientHeight": 538
+      },
+      "list": {
+        "x": 18,
+        "y": 169,
+        "width": 1244,
+        "height": 488,
+        "right": 1262,
+        "bottom": 657,
+        "font": 16,
+        "scrollHeight": 488,
+        "clientHeight": 488
+      },
+      "back": {
+        "x": 1154,
+        "y": 118.5,
+        "width": 108,
+        "height": 44,
+        "right": 1262,
+        "bottom": 162.5,
+        "font": 12,
+        "scrollHeight": 42,
+        "clientHeight": 42
+      },
+      "item": {
+        "icon": {
+          "x": 27,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 75,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "name": {
+          "x": 83,
+          "y": 185,
+          "width": 98.53125,
+          "height": 17,
+          "right": 181.53125,
+          "bottom": 202,
+          "font": 12,
+          "scrollHeight": 17,
+          "clientHeight": 17
+        },
+        "quantity": {
+          "x": 83,
+          "y": 204,
+          "width": 98.53125,
+          "height": 15,
+          "right": 181.53125,
+          "bottom": 219,
+          "font": 11,
+          "scrollHeight": 15,
+          "clientHeight": 15
+        },
+        "lastRect": {
+          "x": 439.328125,
+          "y": 178,
+          "width": 48,
+          "height": 48,
+          "right": 487.328125,
+          "bottom": 226,
+          "font": 16,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "remove": {
+          "x": 18,
+          "y": 613,
+          "width": 1244,
+          "height": 44,
+          "right": 1262,
+          "bottom": 657,
+          "font": 12,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "listSelected": {
+          "x": 18,
+          "y": 169,
+          "width": 1244,
+          "height": 438,
+          "right": 1262,
+          "bottom": 607,
+          "font": 16,
+          "scrollHeight": 438,
+          "clientHeight": 438
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

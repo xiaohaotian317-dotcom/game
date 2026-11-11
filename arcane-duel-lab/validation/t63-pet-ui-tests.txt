@@ -1,0 +1,20 @@
+✔ each of the twelve pet skills has five levels and uses coins, then one/two/five skill stones (1.0855ms)
+✔ insufficient coins, insufficient stones, wrong pet, fractional skill and locked form leave the whole inventory unchanged (0.6587ms)
+✔ skill stones can be consumed across stacks without spending unrelated materials (0.0918ms)
+✔ new pets keep original base strength, while purchased skill levels add HP and basic attack and steepen skill effects (0.3118ms)
+✔ old fifth enhancement remains stored and gains new maximum-level strength without changing XP, traits or saved vitals (0.2475ms)
+✔ real claw and projectile hits use the new skill multiplier and pet basic-attack stat, without borrowing hero damage (5.1137ms)
+✔ the healing skill uses the same upgraded effect curve and remains capped at real maximum health (0.4406ms)
+✔ pet panel shows five skill levels, material cost and current upgraded HP/attack (0.6254ms)
+✔ gold shop sells only the specified materials and small/medium pet XP, exact prices and no advert transaction (4.8021ms)
+✔ purchase fails without spending or granting for missing coins, invalid item, full stack or a save failure (0.5867ms)
+✔ skill stone is rare and one per pet-boss kill only, regular story/endless/tower never produce it (9.6211ms)
+✔ new stone is the untouched original with transparent drop rect and foot pivot, not an old generic material icon (3ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 115.9293

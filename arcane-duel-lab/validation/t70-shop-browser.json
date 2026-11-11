@@ -1,0 +1,25 @@
+{
+  "scope": "Isolated browser UI only; existing three claims retained at new limit five. No SDK or ad requests, no phone or real saves.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "basicRewards": "3 / 5",
+      "tickets": "0 / 2",
+      "recordsPreserved": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "basicRewards": "3 / 5",
+      "tickets": "0 / 2",
+      "recordsPreserved": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

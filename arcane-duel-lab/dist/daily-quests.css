@@ -21,3 +21,46 @@
  .daily-claim-dialog{height:fit-content}
 }
 .daily-claim-dialog{position:fixed;inset:0;margin:auto}
+
+/* T67: phone space belongs to the five commissions, with a compact authored rail. */
+html[data-mobile] .daily-dialog .daily-board{display:flex;flex:1;flex-direction:column;min-height:0;overflow:hidden;padding:0 4px}
+html[data-mobile] .daily-dialog .daily-intro{flex:0 0 24px;height:24px;padding:0 46px 0 6px;gap:12px;box-sizing:border-box}
+html[data-mobile] .daily-dialog .daily-intro>div>small,html[data-mobile] .daily-dialog .daily-intro p,html[data-mobile] .daily-dialog .daily-total em{display:none}
+html[data-mobile] .daily-dialog .daily-intro h2{font-size:clamp(20px,2.2vw,26px);line-height:24px;letter-spacing:.12em;margin:0}
+html[data-mobile] .daily-dialog .daily-total{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+html[data-mobile] .daily-dialog .daily-total>span{font-size:10px;line-height:16px}
+html[data-mobile] .daily-dialog .daily-total b{font-size:19px;line-height:24px}
+html[data-mobile] .daily-dialog .daily-total b small{font-size:10px}
+html[data-mobile] .daily-dialog .daily-rewards{display:flex;align-items:center;flex:0 0 72px;height:72px;padding:0 36px;box-sizing:border-box}
+html[data-mobile] .daily-dialog .daily-rail{flex:none;width:100%;max-width:580px;height:auto;aspect-ratio:1524/160;margin:0 auto}
+html[data-mobile] .daily-dialog .daily-chest{top:calc(50% - 36px);width:125px;height:76px;min-height:44px;min-width:44px;padding:0;line-height:14px;white-space:nowrap}
+html[data-mobile] .daily-dialog .daily-chest>i{display:block;width:68px;height:auto;aspect-ratio:394/348;margin:0 auto;pointer-events:none}
+html[data-mobile] .daily-dialog .daily-chest>b{display:inline-block;margin:0;font:13px/14px Georgia,serif}
+html[data-mobile] .daily-dialog .daily-chest>b>span{font:9px/14px "Microsoft YaHei",sans-serif}
+html[data-mobile] .daily-dialog .daily-chest>small{display:inline-block;margin-left:4px;font-size:10px;line-height:14px}
+html[data-mobile] .daily-dialog .daily-list-heading{flex:0 0 22px;height:22px;min-height:22px;margin:0 5px 6px;box-sizing:border-box}
+html[data-mobile] .daily-dialog .daily-list-heading h3{font-size:14px;line-height:22px;margin:0}
+html[data-mobile] .daily-dialog .daily-list-heading h3 small{font-size:10px;margin-left:6px}
+html[data-mobile] .daily-dialog .daily-list-heading>span{font-size:10px;line-height:15px}
+html[data-mobile] .daily-dialog .daily-task-list{display:grid;flex:1;min-height:0;grid-template-columns:minmax(0,1fr);grid-auto-rows:max-content;align-content:start;gap:8px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;scrollbar-width:thin;scrollbar-gutter:stable;padding:0 2px 2px;box-sizing:border-box}
+html[data-mobile] .daily-dialog .daily-task{--task-height:clamp(54px,calc(100dvh - 306px),60px);display:flex;align-items:center;gap:9px;height:var(--task-height);min-height:var(--task-height);padding:7px 26px 7px 14px;box-sizing:border-box}
+html[data-mobile] .daily-dialog .daily-task-seal{flex:0 0 22px;width:22px;margin:0;font-size:16px}
+html[data-mobile] .daily-dialog .daily-task-copy{flex:1;min-width:0;padding-left:4px}
+html[data-mobile] .daily-dialog .daily-task h4{font-size:14px;line-height:17px;font-weight:500;margin:0 0 2px}
+html[data-mobile] .daily-dialog .daily-task p{font-size:11px;line-height:14px;margin:0;white-space:normal}
+html[data-mobile] .daily-dialog .daily-task-count{flex:0 0 auto;font-size:14px;line-height:17px;min-width:62px}
+html[data-mobile] .daily-dialog .daily-task-count small{font-size:11px}
+html[data-mobile] .daily-dialog .daily-task-state{flex:0 0 90px;min-width:90px;font-size:12px;line-height:17px}
+html[data-mobile] .daily-dialog .daily-task-state>small{display:none}
+html[data-mobile] .daily-dialog .daily-bottom-note{display:none}
+html[data-mobile] .daily-dialog .daily-footer{flex:0 0 44px;height:44px;min-height:44px;padding:0 6px;box-sizing:border-box;font-size:10px;line-height:14px}
+html[data-mobile] .daily-dialog .daily-footer>span{max-width:calc(100% - 120px);line-height:14px}
+html[data-mobile] .daily-dialog .daily-footer button{flex:none;height:44px;min-height:44px;min-width:108px;padding:4px 12px;font-size:12px;box-sizing:border-box}
+@media(max-width:650px){
+ html[data-mobile] .daily-dialog .daily-rewards{padding-inline:22px}
+ html[data-mobile] .daily-dialog .daily-list-heading>span{display:block;font-size:10px}
+ html[data-mobile] .daily-dialog .daily-task{padding-right:19px;gap:9px}
+ html[data-mobile] .daily-dialog .daily-task-count{min-width:52px}
+ html[data-mobile] .daily-dialog .daily-task-state{flex-basis:78px;min-width:78px;font-size:12px}
+}
+@media(max-height:550px){html[data-mobile] .daily-dialog .daily-task-list{max-height:calc(3 * clamp(54px,calc(100dvh - 306px),60px) + 18px)}}

@@ -1,0 +1,32 @@
+✔ 36 solo skills refund precisely once when hurt before release; no ghost effects or mana loss (22.2599ms)
+✔ already released skills keep their cost; poison ticks do not interrupt living players (2.6621ms)
+✔ freeze/petrify interrupt a pending solo skill fairly, while practice and basic attacks gain no mana (0.6258ms)
+✔ only first two story stages soften and spawn three on each side; later stages retain the final curve (1.2062ms)
+✔ recovery drop boundary rises another relative fifteen percent, stays capped at two per run (2.5863ms)
+✔ all four wild pets have thirty percent less HP and real melee/projectile damage, without weakening captured pets (3.0494ms)
+✔ each of the twelve pet skills has five levels and uses coins, then one/two/five skill stones (1.4247ms)
+✔ insufficient coins, insufficient stones, wrong pet, fractional skill and locked form leave the whole inventory unchanged (0.9618ms)
+✔ skill stones can be consumed across stacks without spending unrelated materials (0.1091ms)
+✔ new pets keep original base strength, while purchased skill levels add HP and basic attack and steepen skill effects (0.4689ms)
+✔ old fifth enhancement remains stored and gains new maximum-level strength without changing XP, traits or saved vitals (0.3339ms)
+✔ real claw and projectile hits use the new skill multiplier and pet basic-attack stat, without borrowing hero damage (6.7505ms)
+✔ the healing skill uses the same upgraded effect curve and remains capped at real maximum health (0.3824ms)
+✔ pet panel shows five skill levels, material cost and current upgraded HP/attack (0.8263ms)
+✔ gold shop sells only the specified materials and small/medium pet XP, exact prices and no advert transaction (7.0845ms)
+✔ purchase fails without spending or granting for missing coins, invalid item, full stack or a save failure (0.9694ms)
+✔ skill stone is rare and one per pet-boss kill only, regular story/endless/tower never produce it (9.3505ms)
+✔ new stone is the untouched original with transparent drop rect and foot pivot, not an old generic material icon (10.3179ms)
+✔ tutorial 23 is independent from the twenty story stages and both challenges (4.85ms)
+✔ two small tutorial waves must fully clear before the portal, and cannot generate a boss or extra wave (25.113ms)
+✔ tutorial uses real weak melee attacks and never creates environmental hazards (15.4454ms)
+✔ tutorial kills grant only one coin and five hero XP each, without first-clear loot or main-story progress (5.7759ms)
+✔ short tutorial preserves walk/jump physics for all heroes and leaves story geometry untouched (23.8159ms)
+✔ all tutorial stepping platforms are reachable from their declared support with ordinary double jumps (11.1782ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.328

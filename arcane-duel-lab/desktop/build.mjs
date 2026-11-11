@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const enemyPreview=process.argv.includes('--enemy-preview');
 const campaignPreview=process.argv.includes('--campaign-preview');
-const campaignVersion='campaign26';
+const campaignVersion='campaign31';
 if(enemyPreview&&campaignPreview)throw new Error('Choose one preview');
 const desktop=import.meta.dirname,root=path.resolve(desktop,'..'),stage=path.join(desktop,'.build',campaignPreview?'campaign-app':enemyPreview?'enemy-app':'app');
 const executable=campaignPreview?'ArcaneDuelCampaign':enemyPreview?'ArcaneDuelEnemies':'ArcaneDuel';

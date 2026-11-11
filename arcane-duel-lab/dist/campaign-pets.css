@@ -18,3 +18,18 @@
 .artifact-hud{position:absolute;right:22px;bottom:130px;display:flex;gap:8px;align-items:center;border:1px solid #b9a57480;background:#081722d9;padding:8px 12px;pointer-events:none}.artifact-hud[hidden]{display:none}.artifact-hud i{width:32px;height:45px}.artifact-hud strong{display:block;color:#ebd8a9;font-size:11px;font-weight:400}.artifact-hud small{display:block;color:#a8c5ce;font-size:9px;margin-top:6px}.capture-hud:not([hidden])~.artifact-hud{display:none}@media(max-width:650px){.artifact-hud{right:10px;bottom:130px;padding:6px}.artifact-hud small{font-size:8px}}
 
 .artifact-large.sword{width:160px;height:157px;margin:32px 0}.artifact-choices i.sword{width:55px;height:54px}.equipment-artifact.sword{height:49px!important}.item-art.sword-item{inset:8%}.artifact-hud #artifact-icon.sword{height:32px}
+
+.pet-deploy-button{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;border:0!important;background:transparent!important;box-shadow:none!important;color:#fae4ac;font:15px 'SimSun',serif;cursor:pointer}
+.pet-deploy-button>.archive-frame{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.pet-deploy-button>small{font:10px 'Microsoft YaHei',sans-serif;color:#adcdbe;border-left:1px solid #bfa06466;padding-left:8px}
+.pet-deploy-button[aria-pressed=true]{filter:drop-shadow(0 0 5px #8fb89b33)}
+.pet-skill-cost{display:flex;flex-wrap:wrap;gap:5px 10px;margin:8px 0;color:#f5d597;font:14px/20px 'Microsoft YaHei',sans-serif}
+.pet-skill-cost>span{display:flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap}
+.pet-skill-cost b{font:bold 16px/20px Georgia,serif;color:#ffe7a4}.pet-skill-cost svg{width:22px;height:18px;flex:none}.pet-skill-cost img{width:18px;height:23px;object-fit:contain;flex:none}
+.pet-skill-cost em{font-style:normal;font-size:12px;color:#b9cbbd}.pet-skill-cost .missing em{color:#ffb59a}
+
+/* T69: neutral wrappers preserve the desktop archive flow. */
+.artifact-detail-scroll,.artifact-action-bar{display:contents}
+.artifact-mobile-portrait{display:none}
+html:not([data-mobile]) .artifact-detail-scroll>h3{font:20px SimSun,serif;margin:6px 0 10px}
+html:not([data-mobile]) .artifact-action-bar>.archive-primary{min-height:42px;padding:6px 24px!important;font-size:12px;border:0;background:none}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "asset": "app-icon-B-v2.png",
+  "purpose": "User-selected final Android launcher original",
+  "generator": "Built-in image generation",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "sha256": "495e7f3a99817d21d345181aed4b796749dbbdddcbc7e864fc98427df45ede47",
+  "promptFiles": [
+    "prompt-v1.txt",
+    "prompt-v2-refine.txt"
+  ],
+  "selectedByUser": true,
+  "selectedOn": "2026-11-11",
+  "runtimeOriginal": "arcane-duel-lab/dist/assets/mobile/app-icon-v4.png",
+  "nativeExports": "scripts/prepare-selected-icon.py derives density images; original pixels remain unchanged"
+}

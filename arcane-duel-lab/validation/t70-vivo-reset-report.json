@@ -1,0 +1,16 @@
+{
+  "scope": "User explicitly requested this installation to reset progress. Clears this game package only after checking its official exported backup and installed version. No other app, computer or cloud data is reset. No ads requested.",
+  "checks": [
+    "Official private game export passed checksum and structure validation; Android confirmed clearing only this game data",
+    "Installed release restarted successfully; private cold-start frames saved for visual review",
+    "Root visually observed the fresh first-journey guide and highlighted Start Game on the physical phone; left untouched for user."
+  ],
+  "passed": true,
+  "backupSha256": "5f4d457b349d2bad13679d2671ce89c5d9b797d0c76695a6537f63a101325c89",
+  "installedVersion": "0.1.13",
+  "initialProfileInspected": false,
+  "reason": "Release WebView debugging is disabled; reset is confirmed by the OS, without injecting or reading a test profile.",
+  "finishedAt": "2026-11-11T07:43:52.821Z",
+  "visualObservedFirstRunGuide": true,
+  "noInputAfterReset": true
+}

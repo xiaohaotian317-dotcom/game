@@ -1,0 +1,57 @@
+{
+  "task": "T62",
+  "candidate": "B - 焰术师近脸",
+  "created_at": "2026-11-11T05:53:39.598586+00:00",
+  "generation_tool": "built-in image_gen.imagegen",
+  "transparent_background": false,
+  "reference": {
+    "file": "C:\\Users\\xiaohaotian\\Desktop\\双人\\arcane-duel-lab\\dist\\assets\\lobby\\hero-splashes-v1.png",
+    "sha256": "0a0292f965f1cd0614c3b98ae8f4c903c5ccd2f09259169dd9ebe0577917170b",
+    "identity": "TOP LEFT flame sorceress only"
+  },
+  "status": "Concept candidate only. Not selected, not installed, formal icon unchanged.",
+  "recommendation": "v2 provides intact crown with breathing room. v1 retained as original first draft.",
+  "validation": {
+    "square": true,
+    "no_text": true,
+    "no_rounded_corner_clipping": true,
+    "face_full_and_clear": true,
+    "head_safe_clearance_improved_in_v2": true,
+    "phone_connected": false,
+    "runtime_files_changed": false
+  },
+  "files": [
+    {
+      "version": "v1",
+      "file": "app-icon-B-v1.png",
+      "source_generated_png": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c913-dc25-7ed2-b287-759de3f0f629\\exec-ee1da426-2cc0-4421-a971-7d8c5b241137.png",
+      "sha256": "9c57d3c0e90f6afa5676a1e7ccc2551f7f8598bdd47b3ba44b8b3b0fe62e4f3f",
+      "bytes": 2490122,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "format": "PNG",
+      "prompt": "prompt-v1.txt",
+      "original_bytes_preserved": true,
+      "recommended_candidate": false
+    },
+    {
+      "version": "v2",
+      "file": "app-icon-B-v2.png",
+      "source_generated_png": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c913-dc25-7ed2-b287-759de3f0f629\\exec-f97d7b32-daa8-4052-8f21-56915099d563.png",
+      "sha256": "495e7f3a99817d21d345181aed4b796749dbbdddcbc7e864fc98427df45ede47",
+      "bytes": 2334386,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "format": "PNG",
+      "prompt": "prompt-v2-refine.txt",
+      "original_bytes_preserved": true,
+      "recommended_candidate": true
+    }
+  ]
+}

@@ -28,7 +28,7 @@ export function createCampaign(hero='fire',id=1,{seed=(Date.now()^Math.floor(Mat
  // Optional low stepping stones retain the same one-way platform physics; the road is flat.
  const platforms=campaignPlatforms(seed);w.platforms.push(...(tower?[{id:'tower-low-left',x:210,y:610,w:320,type:'campaign-upper',region:'combat',active:true,hp:Infinity,maxHp:Infinity},{id:'tower-high-left',x:540,y:455,w:290,type:'campaign-upper',region:'combat',active:true,hp:Infinity,maxHp:Infinity},{id:'tower-right',x:1180,y:575,w:340,type:'campaign-upper',region:'combat',active:true,hp:Infinity,maxHp:Infinity}]:tutorial?platforms.filter(p=>p.region==='travel'&&p.zone===0).map(p=>({...p,x:p.x+700})):platforms));
  Object.assign(w.player,{x:170,y:w.floor,prevX:170,prevY:w.floor,grounded:true,platformId:'ground'});w.spawn={x:170,y:w.floor};w.camera={x:0,y:0,viewWidth:CAMPAIGN_VIEW,viewHeight:960};w.aim={x:600,y:w.floor-60};
- w.campaign={stage:activeStage,mode:tower?'tower':stage.mode||'story',tower:tower?{id:tower.id,floor:activeStage.towerFloor,completed:false}:null,endless:stage.mode==='endless'?{round:1,completed:0}:null,petDungeon,seed,state:'travel',encounter:0,triggers:tutorial?[...stage.triggers]:[1400,3600,5870,8420],lock:null,queue:[],attackBudget:stage.attackBudget,notice:tutorial?'向右前进 · 熟悉移动与攻击':'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:tutorial?Infinity:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(tower){w.campaign.triggers=[0];w.campaign.attackBudget=activeStage.attackBudget;w.campaign.notice='第'+activeStage.towerFloor+'层 · '+(activeStage.boss?'首领试炼':'清理本层妖兽');}if(stage.mode==='endless')w.campaign.triggers=[450,450,450,450];if(profile){syncSoloStats(w,true);initTeam(w,team||[hero]);beginCompanionRun(w);spawnCompanion(w);if(tower?.vitals)for(const m of w.campaign.team){const v=tower.vitals[m.hero];if(v){m.player.hp=Math.min(m.player.maxHp,Math.max(0,v.hp));m.player.mp=Math.min(m.player.maxMp,Math.max(0,v.mp));}}}initTutorialTraining(w);return w;
+ w.campaign={stage:activeStage,mode:tower?'tower':stage.mode||'story',tower:tower?{id:tower.id,floor:activeStage.towerFloor,completed:false}:null,endless:stage.mode==='endless'?{round:1,completed:0}:null,petDungeon,seed,state:'travel',encounter:0,triggers:tutorial?[...stage.triggers]:[1400,3600,5870,8420],lock:null,queue:[],attackBudget:stage.attackBudget,notice:tutorial?'向右前进 · 熟悉移动与攻击':'向右前进 · 留意前方的动静',noticeUntil:4,hazards:[],nextHazard:tutorial?Infinity:3,portal:null,cleared:false,defeated:false,spawned:[],events:[],progression:profile,random,castSkills:{},soloFields:[],drops:[],rewardCount:0,recoveryDrops:0};if(tower){w.campaign.triggers=[0];w.campaign.attackBudget=activeStage.attackBudget;w.campaign.notice='第'+activeStage.towerFloor+'层 · '+'清理本层妖兽';}if(stage.mode==='endless')w.campaign.triggers=[450,450,450,450];if(profile){syncSoloStats(w,true);initTeam(w,team||[hero]);beginCompanionRun(w);spawnCompanion(w);if(tower?.vitals)for(const m of w.campaign.team){const v=tower.vitals[m.hero];if(v){m.player.hp=Math.min(m.player.maxHp,Math.max(0,v.hp));m.player.mp=Math.min(m.player.maxMp,Math.max(0,v.mp));}}}initTutorialTraining(w);return w;
 }
 function say(w,message){const c=w.campaign;c.notice=message;c.noticeUntil=w.time+3.5;c.events.push({time:w.time,message});}
 export function fitCampaignCamera(w,width,height){const aspect=Math.max(.3,width/Math.max(1,height));w.camera.viewWidth=Math.min(CAMPAIGN_VIEW,CAMPAIGN_HEIGHT*aspect);w.camera.viewHeight=w.camera.viewWidth/aspect;w.camera.y=clamp(w.floor-w.camera.viewHeight*.8,0,Math.max(0,w.height-w.camera.viewHeight));if(w.campaign.lock){const lock=w.campaign.lock;lock.x=clamp(lock.x+(lock.width-w.camera.viewWidth)/2,0,w.width-w.camera.viewWidth);lock.width=w.camera.viewWidth;}}
@@ -43,10 +43,19 @@ export function beginEncounter(w){
 
 function beginTowerEncounter(w){
  const c=w.campaign;if(c.state!=='travel'||c.encounter)return false;
- c.encounter=1;c.lock={x:clamp((w.player.x-380),0,w.width-(w.camera.viewWidth||1664)),width:w.camera.viewWidth||1664};c.state=c.stage.boss?'boss':'wave';c.queue=[];const x=c.lock.x,vw=c.lock.width;
- if(c.stage.boss){const e=spawnEnemy(w,c.stage.boss,{x:x+vw*.75,y:w.floor,scale:BOSS_TUNING.scale*1.1});e.hp=e.maxHp=c.stage.bossHp;e.damageFactor=c.stage.bossDamageFactor;e.attackScale*=1.3;e.soloRange=1.3;e.attackTempo=Math.min(1.3,.9+c.tower.floor*.008);e.ai.readyAt=w.time+1.5;c.bossIds=[e.id];c.bossId=e.id;}
- else for(let i=0;i<c.stage.towerCount;i++){const ranged=i>=Math.ceil(c.stage.towerCount*.7),side=i%2;c.queue.push({kind:ranged?c.stage.ranged:c.stage.melee,role:ranged?'ranged':'melee',side,x:x+vw*(side?.78:.28)+(Math.floor(i/2)-1)*55,y:w.floor,platformId:'ground',at:w.time+.9+Math.floor(i/2)*.42});}
+ c.encounter=1;c.lock={x:clamp((w.player.x-380),0,w.width-(w.camera.viewWidth||1664)),width:w.camera.viewWidth||1664};c.state='wave';c.queue=[];const x=c.lock.x,vw=c.lock.width;
+ for(let i=0;i<c.stage.towerCount;i++){const ranged=i>=Math.ceil(c.stage.towerCount*.7),side=i%2;c.queue.push({kind:ranged?c.stage.ranged:c.stage.melee,role:ranged?'ranged':'melee',side,x:x+vw*(side?.78:.28)+(Math.floor(i/2)-1)*55,y:w.floor,platformId:'ground',at:w.time+.9+Math.floor(i/2)*.42});}
  c.nextHazard=Infinity;return true;
+}
+
+function beginTowerBoss(w){
+ const c=w.campaign,x=c.lock.x,vw=c.lock.width;
+ const e=spawnEnemy(w,c.stage.boss,{x:x+vw*(w.player.x>x+vw*.5?.22:.78),y:w.floor,scale:BOSS_TUNING.scale*1.1});
+ if(!e)throw Error('守层首领生成失败');
+ e.hp=e.maxHp=c.stage.bossHp;e.damageFactor=c.stage.bossDamageFactor;e.attackScale*=1.3;e.soloRange=1.3;
+ e.attackTempo=Math.min(1.3,.9+c.tower.floor*.008);e.ai.readyAt=w.time+1.5;
+ c.bossIds=[e.id];c.bossId=e.id;c.encounter=2;c.state='boss';c.queue=[];
+ say(w,'第'+c.tower.floor+'层 · 守层首领降临');
 }
 
 function spawnWave(w){const c=w.campaign;for(const s of c.queue.filter(s=>!s.done&&s.at<=w.time)){
@@ -81,7 +90,7 @@ export function stepCampaign(w,dt,input={}){
   const remaining=w.targets.filter(e=>(e.enemyKind||e.egg)&&e.hp>0);
   if(c.queue.every(s=>s.done)&&!remaining.length){
    c.hazards=[];w.enemyZones=[];w.enemyWaves=[];w.projectiles=w.projectiles.filter(p=>p.owner!=='enemy');
-   if(c.mode==='tower'){c.state='tower-clear';c.tower.completed=true;c.dirty=true;say(w,'第'+c.tower.floor+'层通过 · 选择继续或结束挑战');}
+   if(c.mode==='tower'){if(c.state==='wave')beginTowerBoss(w);else{c.state='tower-clear';c.tower.completed=true;c.dirty=true;say(w,'第'+c.tower.floor+'层通过 · 选择继续或结束挑战');}}
    else if(c.encounter===4&&c.mode==='endless'){c.endless.completed++;c.endless.round++;c.state='intermission';c.nextRoundAt=w.time+3;const profile=c.progression;if(profile){profile.challenges={...normalizeChallenges(profile.challenges),endlessBest:Math.max(normalizeChallenges(profile.challenges).endlessBest,c.endless.completed)};c.dirty=true;}say(w,'第 '+c.endless.completed+' 轮完成 · 下一轮即将开始');}
    else if(c.mode==='tutorial'&&c.encounter===c.stage.waveCount){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};say(w,'演练完成 · 靠近传送门结算');}
    else if(c.encounter===4&&c.petDungeon){spawnWildPet(w);}

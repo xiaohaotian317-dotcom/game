@@ -1,0 +1,26 @@
+{
+  "task": "T62",
+  "candidate": "A",
+  "name": "火冰对决徽记",
+  "status": "generated-and-visually-inspected; awaiting user selection; not installed or integrated",
+  "generationMode": "built-in image_gen",
+  "file": "app-icon-A-fire-ice-v1.png",
+  "promptFile": "prompt.txt",
+  "sourcePath": "C:/Users/xiaohaotian/.codex/generated_images/01a1c914-7c2f-76a1-8859-4db6d4f35c7d/exec-e7a30de7-b9cb-4eaa-90b6-1cc21167f028.png",
+  "sha256": "8cd52328c3b76eac8deb9be51e5d524a3214ed670c08bec4825c17b98d8dc1d2",
+  "width": 1254,
+  "height": 1254,
+  "colorMode": "RGB",
+  "sourcePixelsEdited": false,
+  "preRoundedCorners": false,
+  "visualInspection": {
+    "squareOpaqueArtwork": true,
+    "darkBackgroundFillsCorners": true,
+    "leftFireRightIce": true,
+    "singleCentralGoldDuelEmblem": true,
+    "noTextOrWatermark": true,
+    "noPhoneMockup": true,
+    "mainArtworkFullyVisible": true,
+    "notes": "Original generated full square with dark safe margins, antique-gold ring/crest and two bold fire/ice swords meeting centrally. No runtime icon replacement, Android density generation, phone connection or installation performed. User selection is still pending."
+  }
+}

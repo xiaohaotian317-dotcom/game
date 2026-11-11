@@ -1,6 +1,6 @@
 import {weeklyTowerRewardItems} from './tower-weekly-state.mjs';
 // Local tower records are personal progress, never an authoritative online rank.
-export const TOWER_RULES=Object.freeze({carryProgression:true,maxFloor:10000,bossEvery:5});
+export const TOWER_RULES=Object.freeze({carryProgression:true,maxFloor:10000,bossEvery:1});
 const heroes=['fire','nature','frost','lightning','shadow','star'];
 const int=(n,max=1e9)=>Number.isSafeInteger(n)&&n>=0?Math.min(n,max):0;
 export function towerWeek(now=Date.now()){

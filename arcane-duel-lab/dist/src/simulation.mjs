@@ -9,6 +9,7 @@ import {MAX_HEALTH,GROUND_EFFECT_DELAYS} from './match-rules.mjs?v=20261030-duel
 import {cameraView} from './camera.mjs?v=20261030-duel12';
 import {BOSS_TUNING} from './enemy-tuning.mjs';
 import {soloSpec,soloPay,soloDamage,soloRelease,soloOnHit,soloActivity} from './campaign-growth-runtime.mjs';
+import {interruptPlayerCast} from './cast-interruption.mjs';
 import {SOLO_BASIC_SPLASH} from './campaign-growth-data.mjs';
 import {updateEnemies,enemyOnDamage,enemyProjectileContact} from './enemy-simulation.mjs';
 import {EXTRA_HEROES,VARIANT_LABELS} from './hero-roster.mjs?v=20261030-duel12';
@@ -185,6 +186,7 @@ function beginCast(w,key) {
   p.face=w.aim.x>=p.x?1:-1;
   p.cast={id:++w.serial,duelSkill:s.duelSkill,soloSkill:s.soloSkill,data:recastData,key,variant,age:0,duration:variant==='detonate'?.22:variant==='command'?.35:variant?.35:s.duration/attackRate,releaseAt:variant==='detonate'?0:variant==='command'?.1:variant?.1:s.release/attackRate,released:false,x:w.aim.x,y:w.aim.y,target};
   lockMobileCastFacing(w);
+  if(w.campaign?.progression&&!isRecast&&key!=='attack')p.cast.manaPaid=s.soloSkill.mana;
   if(w.campaign?.progression)w.campaign.castSkills[p.cast.id]=s.soloSkill?.id;
   recordDuelCast(w,p.cast);
   w.stats.casts++;emit(w,'cast',{key,variant});return true;
@@ -221,9 +223,9 @@ export function hitPlayer(w,amount,fromX,{dot=false,label=''}={}) {
   const p=w.player;if(blinkProtected(w,p)||(!dot&&p.invuln>0)||p.dead>0||p.hp<=0)return false;
   const absorbed=Math.min(p.shield||0,amount);p.shield=Math.max(0,(p.shield||0)-absorbed);if(absorbed)effect(w,'frostHit',{x:p.x,y:p.y-60,duration:.5});
   const taken=integerDamage(amount-absorbed);p.hp=Math.max(0,p.hp-taken);
-  if(!dot){p.hurt=.24;p.invuln=.7;p.vx=Math.sign(p.x-fromX||1)*200;p.cast=null;p.burst=null;p.stomp=false;w.shake=5;effect(w,'enemyHit',{x:p.x,y:p.y-65,duration:.4});emit(w,'hurt');}
+  if(!dot){p.hurt=.24;p.invuln=.7;p.vx=Math.sign(p.x-fromX||1)*200;interruptPlayerCast(w);p.burst=null;p.stomp=false;w.shake=5;effect(w,'enemyHit',{x:p.x,y:p.y-65,duration:.4});emit(w,'hurt');}
   text(w,p.x,p.y-125,'−'+taken+(label?' '+label:''),dot?'#d0ce8b':'#f1a7bb',dot?16:22,{damage:true,critical:false,splash:false,incoming:true});
-  if(!p.hp){p.dead=w.duel||w.campaign?1e9:1.6;p.recast=null;}return true;
+  if(!p.hp){if(w.campaign?.progression)interruptPlayerCast(w);p.dead=w.duel||w.campaign?1e9:1.6;p.recast=null;}return true;
 }
 function updateEffects(w,dt){
   for(const e of w.effects){
@@ -372,7 +374,7 @@ export function step(w,dt,input={}) {
   const p=w.player;
   if(input.view&&w.duel){const width=clamp(input.view.width,400,1680),height=clamp(input.view.height,300,1400);w.fireView={width,height,x:clamp(input.view.x,clamp(p.x-width*.85,0,Math.max(0,w.width-width)),clamp(p.x-width*.15,0,Math.max(0,w.width-width))),y:clamp(input.view.y,-Math.max(0,height-w.height),Math.max(0,w.height-height))};}
   const controlled=w.enemyMode&&p.enemyControl?.until>w.time;
-  if(controlled){input={aim:input.aim};p.queuedDash=false;p.jumpBuffer=0;p.buffer=null;p.cast=null;p.burst=null;p.dash=0;p.stomp=false;}
+  if(controlled){input={aim:input.aim};p.queuedDash=false;p.jumpBuffer=0;p.buffer=null;interruptPlayerCast(w);p.burst=null;p.dash=0;p.stomp=false;}
   if(!w.duelSecondary)updateScene(w,dt,sceneHooks);
   else{w.windForce=0;const wind=w.mechanisms?.wind;if(wind){const b=wind.bounds;if(!p.grounded&&p.x>b.x&&p.x<b.x+b.w&&p.y>b.y&&p.y-p.h<b.y+b.h){w.windForce=wind.direction*190;p.vy=Math.max(-640,p.vy-470*dt);}}}
   if(input.aim)w.aim={...input.aim};

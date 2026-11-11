@@ -1,8 +1,15 @@
 export const SHOP_OFFERS=Object.freeze([
- {id:'coins',name:'金币宝箱',type:'coins',count:300,limit:3,copy:'直接获得金币，用于学习与强化。',icon:'chestMedium'},
- {id:'experience',name:'修行灵药',type:'xpMedium',count:1,limit:3,copy:'中型角色经验药水，使用后获得100经验。',icon:'xpMedium'},
- {id:'stone',name:'基础灵石',type:'stoneSmall',count:1,limit:3,copy:'小灵石，用于装备升品或合成中等灵石。',icon:'stoneSmall'},
+ {id:'coins',name:'金币宝箱',type:'coins',count:300,limit:5,copy:'直接获得金币，用于学习与强化。',icon:'chestMedium'},
+ {id:'experience',name:'修行灵药',type:'xpMedium',count:1,limit:5,copy:'中型角色经验药水，使用后获得100经验。',icon:'xpMedium'},
+ {id:'stone',name:'基础灵石',type:'stoneSmall',count:1,limit:5,copy:'小灵石，用于装备升品或合成中等灵石。',icon:'stoneSmall'},
  {id:'ticket',name:'召唤之约',type:'ticket',count:1,limit:2,adsRequired:2,copy:'完成2次激励广告获得1张抽奖券，每天最多2张。',icon:'ticket'}
+]);
+export const GOLD_SHOP_OFFERS=Object.freeze([
+ {id:'buyStoneSmall',type:'stoneSmall',price:500,count:1,copy:'初阶升品材料，也可三枚合成一枚中等灵石。'},
+ {id:'buyStoneMedium',type:'stoneMedium',price:1200,count:1,copy:'中阶装备升品材料，也可用于合成高阶灵石。'},
+ {id:'buyPetXpSmall',type:'petXpSmall',price:200,count:1,copy:'为指定灵宠增加40经验，保留手动进化规则。'},
+ {id:'buyPetXpMedium',type:'petXpMedium',price:450,count:1,copy:'为指定灵宠增加100经验，适合培养新伙伴。'},
+ {id:'buyPetSkillStone',type:'petSkillStone',price:3000,count:1,copy:'灵宠高阶技能强化材料，宠物副本稀有掉落。'}
 ]);
 // Economy tuning: later milestones make the same single chest more valuable.
 export const AD_GOLD_TIERS=Object.freeze([

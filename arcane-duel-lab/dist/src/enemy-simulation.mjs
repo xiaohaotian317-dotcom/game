@@ -3,6 +3,7 @@ import {BOSS_TUNING,bossReachScale,enemyDamageFactor} from './enemy-tuning.mjs';
 import {clearLine,firstTerrainHit,resolveSolidSides} from './collision.mjs?v=20261030-duel12';
 import {groundTarget,resolveGroundTarget} from './targeting.mjs?v=20261030-duel12';
 import {blinkProtected} from './blink-guard.mjs';
+import {interruptPlayerCast} from './cast-interruption.mjs';
 import {prepareBossTactic,fireBossTactic,tickBossTactic,revealBeforeStrike,updateBossTactics} from './boss-tactics.mjs';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -58,7 +59,7 @@ export function applyEnemyStatus(w,kind,source,hooks){
  if(kind==='freeze'||kind==='petrify'){
   const key=kind+'ImmuneUntil';if((p[key]||0)>w.time||p.enemyControl?.until>w.time)return;
   const duration=kind==='petrify'?2:1.25;p.enemyControl={kind,until:w.time+duration};p[key]=w.time+duration+5;
-  p.cast=null;p.buffer=null;p.recast=null;p.burst=null;p.vx=0;p.vy=Math.max(0,p.vy);p.dash=0;p.stomp=false;p.jumpBuffer=0;p.queuedDash=false;
+  interruptPlayerCast(w);p.buffer=null;p.recast=null;p.burst=null;p.vx=0;p.vy=Math.max(0,p.vy);p.dash=0;p.stomp=false;p.jumpBuffer=0;p.queuedDash=false;
   fx(w,hooks,kind==='freeze'?'ice':'stone',{x:p.x,y:p.y-p.h*.5,radius:55,duration:.7});notice(w,'control',{kind,duration});
  }
 }

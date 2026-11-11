@@ -30,7 +30,7 @@ export const SAVE_KEY='arcane-campaign-progress-v1';
 export function normalizeProgress(data){return {version:1,cleared:[...new Set((Array.isArray(data?.cleared)?data.cleared:[]).filter(id=>Number.isInteger(id)&&STAGE_BY_ID[id]))]};}
 export function stageUnlocked(stage,progress){const p=normalizeProgress(progress);return stage.requires.every(id=>p.cleared.includes(id));}
 export function completeStage(progress,id){if(!STAGE_BY_ID[id])throw new Error('未知关卡');const p=normalizeProgress(progress);if(!stageUnlocked(STAGE_BY_ID[id],p))throw new Error('前置关卡未完成');return normalizeProgress({cleared:[...p.cleared,id]});}
-export function waveComposition(stage,wave=1){if(stage.mode==='tutorial')return {perSide:2,melee:2,ranged:0,total:3,sides:[1,2]};const perSide=Math.min(10,stage.perSide+(wave===3?1:0)),ranged=Math.max(1,Math.round(perSide*.3));return {perSide,melee:perSide-ranged,ranged,total:perSide*2};}
+export function waveComposition(stage,wave=1){if(stage.mode==='tutorial')return {perSide:2,melee:2,ranged:0,total:3,sides:[1,2]};const perSide=stage.chapter===1&&stage.id<=2?3:Math.min(10,stage.perSide+(wave===3?1:0)),ranged=Math.max(1,Math.round(perSide*.3));return {perSide,melee:perSide-ranged,ranged,total:perSide*2};}
 
 
 
@@ -50,3 +50,9 @@ for(const stage of CAMPAIGN_STAGES)stage.killCoins=STAGE_GOLD[stage.id-1];
 // T45 final twenty-stage curve supersedes the older cumulative threat defaults above.
 const finalMinionHp=[30,41,53,65,82,97,113,132,154,176,198],finalBossHp=[418,600,820,1100,1450,1850,2350,3000,3800,4700,5800],finalMinionDamage=[.8,.97,1.12,1.3,1.5,1.7,1.95,2.2,2.5,2.8,3.05],finalBossDamage=[.98,1.1,1.26,1.5,1.8,2.15,2.6,3.1,3.7,4.5,5.4],finalKillXp=[9,9,10,12,15,18,22,28,35,45,60],finalBossXp=[0,0,20,40,70,100,150,220,320,450,650];
 for(const [i,s]of STAGES.entries())Object.assign(s,{minionHp:finalMinionHp[i],bossHp:finalBossHp[i],damageFactor:finalMinionDamage[i],bossDamageFactor:finalBossDamage[i],killXp:finalKillXp[i],bossXp:finalBossXp[i]});
+
+// T60: soften only the first two story stages, after the final main-story curve.
+for(const s of STAGES.slice(0,2)){
+ s.minionHp=Math.round(s.minionHp*.9);s.bossHp=Math.round(s.bossHp*.9);
+ s.damageFactor*=.9;s.bossDamageFactor*=.9;s.hazardDamage=Math.round(s.hazardDamage*.9);
+}

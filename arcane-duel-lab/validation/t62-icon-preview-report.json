@@ -1,0 +1,23 @@
+{
+  "sourcePixelsEdited": false,
+  "formalIconReplaced": false,
+  "phoneTouched": false,
+  "items": [
+    {
+      "letter": "A",
+      "file": "app-icon-A/app-icon-A-fire-ice-v1.png",
+      "sha256": "8cd52328c3b76eac8deb9be51e5d524a3214ed670c08bec4825c17b98d8dc1d2"
+    },
+    {
+      "letter": "B",
+      "file": "app-icon-B/app-icon-B-v2.png",
+      "sha256": "495e7f3a99817d21d345181aed4b796749dbbdddcbc7e864fc98427df45ede47"
+    },
+    {
+      "letter": "C",
+      "file": "app-icon-C/app-icon-C-v2.png",
+      "sha256": "fc8a9f8cdbaf000a5cc7711246dde804c09eca135f7023af5219ae57d11ec85d"
+    }
+  ],
+  "passed": true
+}

@@ -6,14 +6,14 @@ from PIL import Image, ImageChops
 
 root = Path(__file__).resolve().parents[1]
 apk = root / 'mobile/android/app/build/outputs/apk/release/app-release.apk'
-version, code = '0.1.8', 9
+version, code = '0.1.13', 14
 delivery = root.parent / f'发行/秘境决斗-安卓试玩-{version}.apk'
 validation = root / 'validation'
 manifest = json.loads((validation / 'android1-web-manifest.json').read_text(encoding='utf-8-sig'))
-badging = (validation / 't57-release-badging.txt').read_text(encoding='utf-8-sig')
-permissions = (validation / 't57-release-permissions.txt').read_text(encoding='utf-8-sig')
-signature = (validation / 't57-release-signature.txt').read_text(encoding='utf-8-sig')
-alignment = (validation / 't57-release-alignment.txt').read_text(encoding='utf-8-sig')
+badging = (validation / 't70-release-badging.txt').read_text(encoding='utf-8-sig')
+permissions = (validation / 't70-release-permissions.txt').read_text(encoding='utf-8-sig')
+signature = (validation / 't70-release-signature.txt').read_text(encoding='utf-8-sig')
+alignment = (validation / 't70-release-alignment.txt').read_text(encoding='utf-8-sig')
 cert = '50197c82d598e52d6866a7d6855c45906f70d12612c4ee280b229cce5fed517a'
 assert "name='com.xiaohaotian.arcaneduel'" in badging
 assert f"versionCode='{code}'" in badging and f"versionName='{version}'" in badging
@@ -29,7 +29,10 @@ def digest_file(path):
             h.update(block)
     return h.hexdigest()
 
-checked, elf, native_art = 0, [], []
+checked, elf, native_art, launcher_matches = 0, [], [], []
+launcher_exports=json.loads((validation/'t64-icon-exports.json').read_text(encoding='utf-8'))
+assert launcher_exports['originalSha256']==digest_file(root/'dist/assets/mobile/app-icon-v4.png')
+launcher_images=[(item['path'],Image.open(root/item['path']).convert('RGBA')) for item in launcher_exports['files']]
 with zipfile.ZipFile(apk) as bundle:
     names = bundle.namelist()
     private_names = {'signing.properties', 'taptap.properties', 'dirichlet.properties'}
@@ -43,7 +46,11 @@ with zipfile.ZipFile(apk) as bundle:
         image = Image.open(BytesIO(bundle.read(name)))
         if image.size == source_art.size and ImageChops.difference(image.convert('RGBA'), source_art).getbbox() is None:
             native_art.append(name)
+        for source_name,expected in launcher_images:
+            if image.size==expected.size and ImageChops.difference(image.convert('RGBA'),expected).getbbox() is None:
+                launcher_matches.append({'source':source_name,'bundle':name,'size':list(image.size)})
     assert native_art, 'Original loading landscape missing from native launch resources'
+    assert all(any(m['source']==source for m in launcher_matches) for source,_ in launcher_images), 'Selected launcher image missing from APK'
     for item in manifest['files']:
         data = bundle.read('assets/public/' + item['path'])
         assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
@@ -79,14 +86,15 @@ report = {
     'minSdk': 28, 'targetSdk': 36, 'webAssetsMatched': checked, 'zip16KAligned': True,
     'nativeLibraries': elf, 'nativeElf16KAligned': all(e['minLoadAlignment'] and e['minLoadAlignment'] >= 16384 for e in elf),
     'nativeLaunchOriginalPixelsMatched': native_art,
+    'launcher': {'selectedByUser':'B / 焰术师近脸 v2','originalSha256':launcher_exports['originalSha256'],'densityAssetsDecodedPixelsMatched':launcher_matches},
     'tapConfigured': True, 'towerLeaderboard': {'configured': True, 'testWhitelistOnly': True, 'realEndedPeriodRewardVerified': False}, 'ads': {'sdk': 'TapADN5.3.2.0', 'environment': 'test', 'supportedPrimaryAbis': ['arm64-v8a', 'armeabi-v7a'], 'unsupportedAbiBlockedBeforeInit': True, 'realRevenueVerified': False},
     'physicalPhoneInstalledThisVersion': False,
     'realInternetMatchVerified': False, 'publishedToTapTap': False,
     'scope': 'Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim.'
 }
-install_file = validation / 't57-vivo-release-install.json'
+install_file = validation / 't70-vivo-release-install.json'
 if install_file.exists():
     installed = json.loads(install_file.read_text(encoding='utf-8-sig'))
     report['physicalPhoneInstalledThisVersion'] = installed.get('passed') is True and installed.get('installedVersion') == version
-(validation / 't57-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+(validation / 't70-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({k: v for k, v in report.items() if k != 'nativeLibraries'}, ensure_ascii=False, indent=2))

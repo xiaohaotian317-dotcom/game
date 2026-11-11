@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+import {chromium} from 'file:///C:/Users/xiaohaotian/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
+const folder=path.resolve(import.meta.dirname,'../../美术概念/协作交付/T62'),items=[['A','火冰对决徽记','app-icon-A/app-icon-A-fire-ice-v1.png'],['B','焰术师近脸','app-icon-B/app-icon-B-v2.png'],['C','双英雄对决','app-icon-C/app-icon-C-v2.png']],report={sourcePixelsEdited:false,formalIconReplaced:false,phoneTouched:false,items:[],passed:false};
+const browser=await chromium.launch({channel:'msedge',headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:1100,height:520},deviceScaleFactor:1}),cards=[];
+ for(const [letter,title,file] of items){const bytes=await fs.readFile(path.join(folder,file));report.items.push({letter,file,sha256:createHash('sha256').update(bytes).digest('hex')});const src='data:image/png;base64,'+bytes.toString('base64');cards.push(`<article><h2>${letter} · ${title}</h2><img class="large" src="${src}"><div class="sizes"><img class="tiny rounded" src="${src}"><img class="tiny circle" src="${src}"><span>48px 圆角 / 圆形预览</span></div></article>`);}
+ await page.setContent(`<html lang="zh-CN"><meta charset="utf-8"><style>*{box-sizing:border-box}body{margin:0;padding:20px;background:#08131c;color:#eddbb1;font-family:'Microsoft YaHei',sans-serif}main{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}article{padding:15px;border:1px solid #8f7545;background:linear-gradient(#17262c,#0a1721)}h2{font-size:17px;margin:0 0 12px;text-align:center;font-weight:500}.large{display:block;width:100%;aspect-ratio:1;object-fit:contain}.sizes{display:flex;align-items:center;gap:10px;margin:16px 0 0}.tiny{width:48px;height:48px;object-fit:contain}.rounded{border-radius:11px}.circle{border-radius:50%}.sizes span{font-size:10px;color:#aab8b7}footer{text-align:center;font-size:12px;color:#c6bb9f;margin-top:18px}</style><main>${cards.join('')}</main><footer>三款均为候选原图，尚未替换APP图标</footer></html>`);
+ await page.locator('img').evaluateAll(es=>Promise.all(es.map(e=>e.decode())));
+ for(const im of await page.locator('img').evaluateAll(es=>es.map(e=>({w:e.naturalWidth,h:e.naturalHeight,displayWidth:e.width,displayHeight:e.height})))){assert.equal(im.w,1254);assert.equal(im.h,1254);assert.equal(im.displayWidth,im.displayHeight);}
+ await page.screenshot({path:path.join(folder,'app-icon-comparison.png')});report.passed=true;
+}finally{await browser.close();await fs.writeFile(path.join(import.meta.dirname,'t62-icon-preview-report.json'),JSON.stringify(report,null,2));}
+console.log(JSON.stringify({passed:report.passed,originalsUnchanged:true}));

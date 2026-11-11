@@ -1,0 +1,178 @@
+{
+  "scope": "Real shop/pet UI using isolated browser saves. Seeded coins/pets for QA, no formal save, phone, SDK or ad requests.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "layout": [
+        {
+          "text": "购买 · 500金币",
+          "x": 41,
+          "y": 216,
+          "width": 122.796875,
+          "height": 48,
+          "bottom": 264,
+          "right": 163.796875
+        },
+        {
+          "text": "购买 · 1200金币",
+          "x": 189.796875,
+          "y": 216,
+          "width": 122.796875,
+          "height": 48,
+          "bottom": 264,
+          "right": 312.59375
+        },
+        {
+          "text": "购买 · 200金币",
+          "x": 338.59375,
+          "y": 216,
+          "width": 122.796875,
+          "height": 48,
+          "bottom": 264,
+          "right": 461.390625
+        },
+        {
+          "text": "购买 · 450金币",
+          "x": 487.390625,
+          "y": 216,
+          "width": 122.796875,
+          "height": 48,
+          "bottom": 264,
+          "right": 610.1875
+        },
+        {
+          "text": "购买 · 3000金币",
+          "x": 636.1875,
+          "y": 216,
+          "width": 122.8125,
+          "height": 48,
+          "bottom": 264,
+          "right": 759
+        }
+      ],
+      "purchaseCancelNoCharge": true,
+      "fivePurchasesCoins": 4650,
+      "skillStoneConsumedOnce": true,
+      "petSkillLevelAfterUpgrade": 3
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "layout": [
+        {
+          "text": "购买 · 500金币",
+          "x": 39.71875,
+          "y": 270,
+          "width": 110.5,
+          "height": 48,
+          "bottom": 318,
+          "right": 150.21875
+        },
+        {
+          "text": "购买 · 1200金币",
+          "x": 176.21875,
+          "y": 270,
+          "width": 110.515625,
+          "height": 48,
+          "bottom": 318,
+          "right": 286.734375
+        },
+        {
+          "text": "购买 · 200金币",
+          "x": 312.734375,
+          "y": 270,
+          "width": 110.5,
+          "height": 48,
+          "bottom": 318,
+          "right": 423.234375
+        },
+        {
+          "text": "购买 · 450金币",
+          "x": 449.234375,
+          "y": 270,
+          "width": 110.515625,
+          "height": 48,
+          "bottom": 318,
+          "right": 559.75
+        },
+        {
+          "text": "购买 · 3000金币",
+          "x": 585.75,
+          "y": 270,
+          "width": 110.5,
+          "height": 48,
+          "bottom": 318,
+          "right": 696.25
+        }
+      ],
+      "purchaseCancelNoCharge": true,
+      "fivePurchasesCoins": 4650,
+      "skillStoneConsumedOnce": true,
+      "petSkillLevelAfterUpgrade": 3
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "layout": [
+        {
+          "text": "购买 · 500金币",
+          "x": 90,
+          "y": 488,
+          "width": 178.390625,
+          "height": 48,
+          "bottom": 536,
+          "right": 268.390625
+        },
+        {
+          "text": "购买 · 1200金币",
+          "x": 320.390625,
+          "y": 488,
+          "width": 178.40625,
+          "height": 48,
+          "bottom": 536,
+          "right": 498.796875
+        },
+        {
+          "text": "购买 · 200金币",
+          "x": 550.796875,
+          "y": 488,
+          "width": 178.390625,
+          "height": 48,
+          "bottom": 536,
+          "right": 729.1875
+        },
+        {
+          "text": "购买 · 450金币",
+          "x": 781.1875,
+          "y": 488,
+          "width": 178.40625,
+          "height": 48,
+          "bottom": 536,
+          "right": 959.59375
+        },
+        {
+          "text": "购买 · 3000金币",
+          "x": 1011.59375,
+          "y": 488,
+          "width": 178.390625,
+          "height": 48,
+          "bottom": 536,
+          "right": 1189.984375
+        }
+      ],
+      "purchaseCancelNoCharge": true,
+      "fivePurchasesCoins": 4650,
+      "skillStoneConsumedOnce": true,
+      "petSkillLevelAfterUpgrade": 3
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

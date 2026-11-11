@@ -1,0 +1,1374 @@
+{
+  "scope": "Isolated copy of actual campaign.html, real result renderer and CSS/assets; plus two actual campaign battle loads using temporary QA profiles. No formal saves, native phone, ads or leaderboard requests. Geometry/click and battle-load checks only.",
+  "checks": [
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "sample": {
+        "floor": 2,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 139,
+          "y": 6,
+          "width": 522,
+          "height": 348,
+          "right": 661,
+          "bottom": 354
+        },
+        "heading": {
+          "x": 193.796875,
+          "y": 139.484375,
+          "width": 412.40625,
+          "height": 22.203125,
+          "right": 606.203125,
+          "bottom": 161.6875
+        },
+        "scroll": {
+          "x": 193.796875,
+          "y": 168.6875,
+          "width": 412.40625,
+          "height": 93.8125,
+          "right": 606.203125,
+          "bottom": 262.5
+        },
+        "stats": [
+          {
+            "text": "2层",
+            "rect": {
+              "x": 205.796875,
+              "y": 218.484375,
+              "width": 177.765625,
+              "height": 22,
+              "right": 383.5625,
+              "bottom": 240.484375
+            }
+          },
+          {
+            "text": "2层",
+            "rect": {
+              "x": 416.421875,
+              "y": 218.484375,
+              "width": 177.78125,
+              "height": 22,
+              "right": 594.203125,
+              "bottom": 240.484375
+            }
+          }
+        ],
+        "primary": {
+          "x": 232.96875,
+          "y": 266.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 394.78125,
+          "bottom": 310.5
+        },
+        "map": {
+          "x": 405.21875,
+          "y": 266.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 567.03125,
+          "bottom": 310.5
+        },
+        "content": {
+          "x": 193.796875,
+          "y": 128.484375,
+          "width": 412.40625,
+          "height": 182.015625,
+          "right": 606.203125,
+          "bottom": 310.5
+        },
+        "scrollSize": {
+          "client": 94,
+          "full": 94
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "sample": {
+        "floor": 10000,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 139,
+          "y": 6,
+          "width": 522,
+          "height": 348,
+          "right": 661,
+          "bottom": 354
+        },
+        "heading": {
+          "x": 193.796875,
+          "y": 139.484375,
+          "width": 412.40625,
+          "height": 22.203125,
+          "right": 606.203125,
+          "bottom": 161.6875
+        },
+        "scroll": {
+          "x": 193.796875,
+          "y": 168.6875,
+          "width": 412.40625,
+          "height": 93.8125,
+          "right": 606.203125,
+          "bottom": 262.5
+        },
+        "stats": [
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 205.796875,
+              "y": 218.484375,
+              "width": 177.765625,
+              "height": 22,
+              "right": 383.5625,
+              "bottom": 240.484375
+            }
+          },
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 416.421875,
+              "y": 218.484375,
+              "width": 177.78125,
+              "height": 22,
+              "right": 594.203125,
+              "bottom": 240.484375
+            }
+          }
+        ],
+        "primary": {
+          "x": 232.96875,
+          "y": 266.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 394.78125,
+          "bottom": 310.5
+        },
+        "map": {
+          "x": 405.21875,
+          "y": 265.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 567.03125,
+          "bottom": 309.5
+        },
+        "content": {
+          "x": 193.796875,
+          "y": 128.484375,
+          "width": 412.40625,
+          "height": 182.015625,
+          "right": 606.203125,
+          "bottom": 310.5
+        },
+        "scrollSize": {
+          "client": 94,
+          "full": 94
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 800,
+        "height": 360
+      },
+      "sample": {
+        "floor": 70,
+        "win": false
+      },
+      "layout": {
+        "dialog": {
+          "x": 139,
+          "y": 6,
+          "width": 522,
+          "height": 348,
+          "right": 661,
+          "bottom": 354
+        },
+        "heading": {
+          "x": 193.796875,
+          "y": 139.484375,
+          "width": 412.40625,
+          "height": 22.203125,
+          "right": 606.203125,
+          "bottom": 161.6875
+        },
+        "scroll": {
+          "x": 193.796875,
+          "y": 168.6875,
+          "width": 412.40625,
+          "height": 93.8125,
+          "right": 606.203125,
+          "bottom": 262.5
+        },
+        "stats": [
+          {
+            "text": "69层",
+            "rect": {
+              "x": 205.796875,
+              "y": 218.484375,
+              "width": 177.765625,
+              "height": 22,
+              "right": 383.5625,
+              "bottom": 240.484375
+            }
+          },
+          {
+            "text": "70层",
+            "rect": {
+              "x": 416.421875,
+              "y": 218.484375,
+              "width": 177.78125,
+              "height": 22,
+              "right": 594.203125,
+              "bottom": 240.484375
+            }
+          }
+        ],
+        "primary": {
+          "x": 232.96875,
+          "y": 266.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 394.78125,
+          "bottom": 310.5
+        },
+        "map": {
+          "x": 405.21875,
+          "y": 265.5,
+          "width": 161.8125,
+          "height": 44,
+          "right": 567.03125,
+          "bottom": 309.5
+        },
+        "content": {
+          "x": 193.796875,
+          "y": 128.484375,
+          "width": 412.40625,
+          "height": 182.015625,
+          "right": 606.203125,
+          "bottom": 310.5
+        },
+        "scrollSize": {
+          "client": 94,
+          "full": 94
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "sample": {
+        "floor": 2,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 66.5,
+          "y": 6,
+          "width": 603,
+          "height": 402,
+          "right": 669.5,
+          "bottom": 408
+        },
+        "heading": {
+          "x": 129.8125,
+          "y": 158.5,
+          "width": 476.375,
+          "height": 25.65625,
+          "right": 606.1875,
+          "bottom": 184.15625
+        },
+        "scroll": {
+          "x": 129.8125,
+          "y": 191.15625,
+          "width": 476.375,
+          "height": 118.59375,
+          "right": 606.1875,
+          "bottom": 309.75
+        },
+        "stats": [
+          {
+            "text": "2层",
+            "rect": {
+              "x": 141.8125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 350.875,
+              "bottom": 276.953125
+            }
+          },
+          {
+            "text": "2层",
+            "rect": {
+              "x": 385.125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 594.1875,
+              "bottom": 276.953125
+            }
+          }
+        ],
+        "primary": {
+          "x": 175.046875,
+          "y": 313.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 361.96875,
+          "bottom": 357.75
+        },
+        "map": {
+          "x": 374.015625,
+          "y": 313.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 560.9375,
+          "bottom": 357.75
+        },
+        "content": {
+          "x": 129.8125,
+          "y": 147.5,
+          "width": 476.375,
+          "height": 210.25,
+          "right": 606.1875,
+          "bottom": 357.75
+        },
+        "scrollSize": {
+          "client": 119,
+          "full": 119
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "sample": {
+        "floor": 10000,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 66.5,
+          "y": 6,
+          "width": 603,
+          "height": 402,
+          "right": 669.5,
+          "bottom": 408
+        },
+        "heading": {
+          "x": 129.8125,
+          "y": 158.5,
+          "width": 476.375,
+          "height": 25.65625,
+          "right": 606.1875,
+          "bottom": 184.15625
+        },
+        "scroll": {
+          "x": 129.8125,
+          "y": 191.15625,
+          "width": 476.375,
+          "height": 118.59375,
+          "right": 606.1875,
+          "bottom": 309.75
+        },
+        "stats": [
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 141.8125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 350.875,
+              "bottom": 276.953125
+            }
+          },
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 385.125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 594.1875,
+              "bottom": 276.953125
+            }
+          }
+        ],
+        "primary": {
+          "x": 175.046875,
+          "y": 313.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 361.96875,
+          "bottom": 357.75
+        },
+        "map": {
+          "x": 374.015625,
+          "y": 312.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 560.9375,
+          "bottom": 356.75
+        },
+        "content": {
+          "x": 129.8125,
+          "y": 147.5,
+          "width": 476.375,
+          "height": 210.25,
+          "right": 606.1875,
+          "bottom": 357.75
+        },
+        "scrollSize": {
+          "client": 119,
+          "full": 119
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 736,
+        "height": 414
+      },
+      "sample": {
+        "floor": 70,
+        "win": false
+      },
+      "layout": {
+        "dialog": {
+          "x": 66.5,
+          "y": 6,
+          "width": 603,
+          "height": 402,
+          "right": 669.5,
+          "bottom": 408
+        },
+        "heading": {
+          "x": 129.8125,
+          "y": 158.5,
+          "width": 476.375,
+          "height": 25.65625,
+          "right": 606.1875,
+          "bottom": 184.15625
+        },
+        "scroll": {
+          "x": 129.8125,
+          "y": 191.15625,
+          "width": 476.375,
+          "height": 118.59375,
+          "right": 606.1875,
+          "bottom": 309.75
+        },
+        "stats": [
+          {
+            "text": "69层",
+            "rect": {
+              "x": 141.8125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 350.875,
+              "bottom": 276.953125
+            }
+          },
+          {
+            "text": "70层",
+            "rect": {
+              "x": 385.125,
+              "y": 252.421875,
+              "width": 209.0625,
+              "height": 24.53125,
+              "right": 594.1875,
+              "bottom": 276.953125
+            }
+          }
+        ],
+        "primary": {
+          "x": 175.046875,
+          "y": 313.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 361.96875,
+          "bottom": 357.75
+        },
+        "map": {
+          "x": 374.015625,
+          "y": 312.75,
+          "width": 186.921875,
+          "height": 44,
+          "right": 560.9375,
+          "bottom": 356.75
+        },
+        "content": {
+          "x": 129.8125,
+          "y": 147.5,
+          "width": 476.375,
+          "height": 210.25,
+          "right": 606.1875,
+          "bottom": 357.75
+        },
+        "scrollSize": {
+          "client": 119,
+          "full": 119
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 960,
+        "height": 432
+      },
+      "sample": {
+        "floor": 2,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 165,
+          "y": 6,
+          "width": 630,
+          "height": 420,
+          "right": 795,
+          "bottom": 426
+        },
+        "heading": {
+          "x": 231.140625,
+          "y": 164.828125,
+          "width": 497.71875,
+          "height": 26.796875,
+          "right": 728.859375,
+          "bottom": 191.625
+        },
+        "scroll": {
+          "x": 231.140625,
+          "y": 198.625,
+          "width": 497.71875,
+          "height": 126.875,
+          "right": 728.859375,
+          "bottom": 325.5
+        },
+        "stats": [
+          {
+            "text": "2层",
+            "rect": {
+              "x": 243.140625,
+              "y": 263.59375,
+              "width": 219.5,
+              "height": 25.640625,
+              "right": 462.640625,
+              "bottom": 289.234375
+            }
+          },
+          {
+            "text": "2层",
+            "rect": {
+              "x": 497.34375,
+              "y": 263.59375,
+              "width": 219.515625,
+              "height": 25.640625,
+              "right": 716.859375,
+              "bottom": 289.234375
+            }
+          }
+        ],
+        "primary": {
+          "x": 278.40625,
+          "y": 329.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 473.703125,
+          "bottom": 373.5
+        },
+        "map": {
+          "x": 486.296875,
+          "y": 329.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 681.59375,
+          "bottom": 373.5
+        },
+        "content": {
+          "x": 231.140625,
+          "y": 153.828125,
+          "width": 497.71875,
+          "height": 219.671875,
+          "right": 728.859375,
+          "bottom": 373.5
+        },
+        "scrollSize": {
+          "client": 127,
+          "full": 127
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 960,
+        "height": 432
+      },
+      "sample": {
+        "floor": 10000,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 165,
+          "y": 6,
+          "width": 630,
+          "height": 420,
+          "right": 795,
+          "bottom": 426
+        },
+        "heading": {
+          "x": 231.140625,
+          "y": 164.828125,
+          "width": 497.71875,
+          "height": 26.796875,
+          "right": 728.859375,
+          "bottom": 191.625
+        },
+        "scroll": {
+          "x": 231.140625,
+          "y": 198.625,
+          "width": 497.71875,
+          "height": 126.875,
+          "right": 728.859375,
+          "bottom": 325.5
+        },
+        "stats": [
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 243.140625,
+              "y": 263.59375,
+              "width": 219.5,
+              "height": 25.640625,
+              "right": 462.640625,
+              "bottom": 289.234375
+            }
+          },
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 497.34375,
+              "y": 263.59375,
+              "width": 219.515625,
+              "height": 25.640625,
+              "right": 716.859375,
+              "bottom": 289.234375
+            }
+          }
+        ],
+        "primary": {
+          "x": 278.40625,
+          "y": 329.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 473.703125,
+          "bottom": 373.5
+        },
+        "map": {
+          "x": 486.296875,
+          "y": 328.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 681.59375,
+          "bottom": 372.5
+        },
+        "content": {
+          "x": 231.140625,
+          "y": 153.828125,
+          "width": 497.71875,
+          "height": 219.671875,
+          "right": 728.859375,
+          "bottom": 373.5
+        },
+        "scrollSize": {
+          "client": 127,
+          "full": 127
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 960,
+        "height": 432
+      },
+      "sample": {
+        "floor": 70,
+        "win": false
+      },
+      "layout": {
+        "dialog": {
+          "x": 165,
+          "y": 6,
+          "width": 630,
+          "height": 420,
+          "right": 795,
+          "bottom": 426
+        },
+        "heading": {
+          "x": 231.140625,
+          "y": 164.828125,
+          "width": 497.71875,
+          "height": 26.796875,
+          "right": 728.859375,
+          "bottom": 191.625
+        },
+        "scroll": {
+          "x": 231.140625,
+          "y": 198.625,
+          "width": 497.71875,
+          "height": 126.875,
+          "right": 728.859375,
+          "bottom": 325.5
+        },
+        "stats": [
+          {
+            "text": "69层",
+            "rect": {
+              "x": 243.140625,
+              "y": 263.59375,
+              "width": 219.5,
+              "height": 25.640625,
+              "right": 462.640625,
+              "bottom": 289.234375
+            }
+          },
+          {
+            "text": "70层",
+            "rect": {
+              "x": 497.34375,
+              "y": 263.59375,
+              "width": 219.515625,
+              "height": 25.640625,
+              "right": 716.859375,
+              "bottom": 289.234375
+            }
+          }
+        ],
+        "primary": {
+          "x": 278.40625,
+          "y": 329.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 473.703125,
+          "bottom": 373.5
+        },
+        "map": {
+          "x": 486.296875,
+          "y": 328.5,
+          "width": 195.296875,
+          "height": 44,
+          "right": 681.59375,
+          "bottom": 372.5
+        },
+        "content": {
+          "x": 231.140625,
+          "y": 153.828125,
+          "width": 497.71875,
+          "height": 219.671875,
+          "right": 728.859375,
+          "bottom": 373.5
+        },
+        "scrollSize": {
+          "client": 127,
+          "full": 127
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "sample": {
+        "floor": 2,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 53,
+          "y": 12,
+          "width": 462,
+          "height": 296,
+          "right": 515,
+          "bottom": 308
+        },
+        "heading": {
+          "x": 101.5,
+          "y": 127.1875,
+          "width": 365,
+          "height": 20.6875,
+          "right": 466.5,
+          "bottom": 147.875
+        },
+        "scroll": {
+          "x": 101.5,
+          "y": 154.875,
+          "width": 365,
+          "height": 68.125,
+          "right": 466.5,
+          "bottom": 223
+        },
+        "stats": [
+          {
+            "text": "2层",
+            "rect": {
+              "x": 113.5,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 268.078125,
+              "bottom": 213.578125
+            }
+          },
+          {
+            "text": "2层",
+            "rect": {
+              "x": 299.921875,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 454.5,
+              "bottom": 213.578125
+            }
+          }
+        ],
+        "primary": {
+          "x": 136.15625,
+          "y": 227,
+          "width": 143.21875,
+          "height": 44,
+          "right": 279.375,
+          "bottom": 271
+        },
+        "map": {
+          "x": 288.609375,
+          "y": 227,
+          "width": 143.21875,
+          "height": 44,
+          "right": 431.828125,
+          "bottom": 271
+        },
+        "content": {
+          "x": 101.5,
+          "y": 116.1875,
+          "width": 365,
+          "height": 154.8125,
+          "right": 466.5,
+          "bottom": 271
+        },
+        "scrollSize": {
+          "client": 68,
+          "full": 68
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "sample": {
+        "floor": 10000,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 53,
+          "y": 12,
+          "width": 462,
+          "height": 296,
+          "right": 515,
+          "bottom": 308
+        },
+        "heading": {
+          "x": 101.5,
+          "y": 127.1875,
+          "width": 365,
+          "height": 20.6875,
+          "right": 466.5,
+          "bottom": 147.875
+        },
+        "scroll": {
+          "x": 101.5,
+          "y": 154.875,
+          "width": 365,
+          "height": 68.125,
+          "right": 466.5,
+          "bottom": 223
+        },
+        "stats": [
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 113.5,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 268.078125,
+              "bottom": 213.578125
+            }
+          },
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 299.921875,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 454.5,
+              "bottom": 213.578125
+            }
+          }
+        ],
+        "primary": {
+          "x": 136.15625,
+          "y": 227,
+          "width": 143.21875,
+          "height": 44,
+          "right": 279.375,
+          "bottom": 271
+        },
+        "map": {
+          "x": 288.609375,
+          "y": 226,
+          "width": 143.21875,
+          "height": 44,
+          "right": 431.828125,
+          "bottom": 270
+        },
+        "content": {
+          "x": 101.5,
+          "y": 116.1875,
+          "width": 365,
+          "height": 154.8125,
+          "right": 466.5,
+          "bottom": 271
+        },
+        "scrollSize": {
+          "client": 68,
+          "full": 68
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 568,
+        "height": 320
+      },
+      "sample": {
+        "floor": 70,
+        "win": false
+      },
+      "layout": {
+        "dialog": {
+          "x": 53,
+          "y": 12,
+          "width": 462,
+          "height": 296,
+          "right": 515,
+          "bottom": 308
+        },
+        "heading": {
+          "x": 101.5,
+          "y": 127.1875,
+          "width": 365,
+          "height": 20.6875,
+          "right": 466.5,
+          "bottom": 147.875
+        },
+        "scroll": {
+          "x": 101.5,
+          "y": 154.875,
+          "width": 365,
+          "height": 68.125,
+          "right": 466.5,
+          "bottom": 223
+        },
+        "stats": [
+          {
+            "text": "69层",
+            "rect": {
+              "x": 113.5,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 268.078125,
+              "bottom": 213.578125
+            }
+          },
+          {
+            "text": "70层",
+            "rect": {
+              "x": 299.921875,
+              "y": 191.578125,
+              "width": 154.578125,
+              "height": 22,
+              "right": 454.5,
+              "bottom": 213.578125
+            }
+          }
+        ],
+        "primary": {
+          "x": 136.15625,
+          "y": 227,
+          "width": 143.21875,
+          "height": 44,
+          "right": 279.375,
+          "bottom": 271
+        },
+        "map": {
+          "x": 288.609375,
+          "y": 226,
+          "width": 143.21875,
+          "height": 44,
+          "right": 431.828125,
+          "bottom": 270
+        },
+        "content": {
+          "x": 101.5,
+          "y": 116.1875,
+          "width": 365,
+          "height": 154.8125,
+          "right": 466.5,
+          "bottom": 271
+        },
+        "scrollSize": {
+          "client": 68,
+          "full": 68
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "sample": {
+        "floor": 2,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 310,
+          "y": 140,
+          "width": 660,
+          "height": 440,
+          "right": 970,
+          "bottom": 580
+        },
+        "heading": {
+          "x": 379.296875,
+          "y": 305.875,
+          "width": 521.40625,
+          "height": 28.078125,
+          "right": 900.703125,
+          "bottom": 333.953125
+        },
+        "scroll": {
+          "x": 379.296875,
+          "y": 340.953125,
+          "width": 521.40625,
+          "height": 136.046875,
+          "right": 900.703125,
+          "bottom": 477
+        },
+        "stats": [
+          {
+            "text": "2层",
+            "rect": {
+              "x": 391.296875,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 622.390625,
+              "bottom": 436.890625
+            }
+          },
+          {
+            "text": "2层",
+            "rect": {
+              "x": 657.609375,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 888.703125,
+              "bottom": 436.890625
+            }
+          }
+        ],
+        "primary": {
+          "x": 428.8125,
+          "y": 481,
+          "width": 204.59375,
+          "height": 44,
+          "right": 633.40625,
+          "bottom": 525
+        },
+        "map": {
+          "x": 646.59375,
+          "y": 481,
+          "width": 204.59375,
+          "height": 44,
+          "right": 851.1875,
+          "bottom": 525
+        },
+        "content": {
+          "x": 379.296875,
+          "y": 294.875,
+          "width": 521.40625,
+          "height": 230.125,
+          "right": 900.703125,
+          "bottom": 525
+        },
+        "scrollSize": {
+          "client": 136,
+          "full": 136
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "sample": {
+        "floor": 10000,
+        "win": true
+      },
+      "layout": {
+        "dialog": {
+          "x": 310,
+          "y": 140,
+          "width": 660,
+          "height": 440,
+          "right": 970,
+          "bottom": 580
+        },
+        "heading": {
+          "x": 379.296875,
+          "y": 305.875,
+          "width": 521.40625,
+          "height": 28.078125,
+          "right": 900.703125,
+          "bottom": 333.953125
+        },
+        "scroll": {
+          "x": 379.296875,
+          "y": 340.953125,
+          "width": 521.40625,
+          "height": 136.046875,
+          "right": 900.703125,
+          "bottom": 477
+        },
+        "stats": [
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 391.296875,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 622.390625,
+              "bottom": 436.890625
+            }
+          },
+          {
+            "text": "10000层",
+            "rect": {
+              "x": 657.609375,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 888.703125,
+              "bottom": 436.890625
+            }
+          }
+        ],
+        "primary": {
+          "x": 428.8125,
+          "y": 481,
+          "width": 204.59375,
+          "height": 44,
+          "right": 633.40625,
+          "bottom": 525
+        },
+        "map": {
+          "x": 646.59375,
+          "y": 480,
+          "width": 204.59375,
+          "height": 44,
+          "right": 851.1875,
+          "bottom": 524
+        },
+        "content": {
+          "x": 379.296875,
+          "y": 294.875,
+          "width": 521.40625,
+          "height": 230.125,
+          "right": 900.703125,
+          "bottom": 525
+        },
+        "scrollSize": {
+          "client": 136,
+          "full": 136
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "sample": {
+        "floor": 70,
+        "win": false
+      },
+      "layout": {
+        "dialog": {
+          "x": 310,
+          "y": 140,
+          "width": 660,
+          "height": 440,
+          "right": 970,
+          "bottom": 580
+        },
+        "heading": {
+          "x": 379.296875,
+          "y": 305.875,
+          "width": 521.40625,
+          "height": 28.078125,
+          "right": 900.703125,
+          "bottom": 333.953125
+        },
+        "scroll": {
+          "x": 379.296875,
+          "y": 340.953125,
+          "width": 521.40625,
+          "height": 136.046875,
+          "right": 900.703125,
+          "bottom": 477
+        },
+        "stats": [
+          {
+            "text": "69层",
+            "rect": {
+              "x": 391.296875,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 622.390625,
+              "bottom": 436.890625
+            }
+          },
+          {
+            "text": "70层",
+            "rect": {
+              "x": 657.609375,
+              "y": 410.03125,
+              "width": 231.09375,
+              "height": 26.859375,
+              "right": 888.703125,
+              "bottom": 436.890625
+            }
+          }
+        ],
+        "primary": {
+          "x": 428.8125,
+          "y": 481,
+          "width": 204.59375,
+          "height": 44,
+          "right": 633.40625,
+          "bottom": 525
+        },
+        "map": {
+          "x": 646.59375,
+          "y": 480,
+          "width": 204.59375,
+          "height": 44,
+          "right": 851.1875,
+          "bottom": 524
+        },
+        "content": {
+          "x": 379.296875,
+          "y": 294.875,
+          "width": 521.40625,
+          "height": 230.125,
+          "right": 900.703125,
+          "bottom": 525
+        },
+        "scrollSize": {
+          "client": 136,
+          "full": 136
+        }
+      },
+      "actionsClicked": true
+    },
+    {
+      "actualCampaignLoad": true,
+      "floor": 1,
+      "title": {
+        "text": "第 1 层",
+        "label": "无尽之塔 · 第1层",
+        "x": 347.78125,
+        "y": 25.265625,
+        "right": 451.359375,
+        "bottom": 38.03125,
+        "textX": 373.0625,
+        "textY": 25.640625,
+        "textRight": 426.0625,
+        "textBottom": 37.640625
+      }
+    },
+    {
+      "actualCampaignLoad": true,
+      "floor": 10000,
+      "title": {
+        "text": "第 10000 层",
+        "label": "无尽之塔 · 第10000层",
+        "x": 336.921875,
+        "y": 47.34375,
+        "right": 462.703125,
+        "bottom": 60.953125,
+        "textX": 356.90625,
+        "textY": 48.140625,
+        "textRight": 442.71875,
+        "textBottom": 60.140625
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

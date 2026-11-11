@@ -28,8 +28,8 @@ android {
         applicationId "com.xiaohaotian.arcaneduel"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 9
-        versionName "0.1.8"
+        versionCode 14
+        versionName "0.1.13"
         buildConfigField "String", "TAP_CLIENT_ID", quoted(tapProperties.getProperty("clientId"))
         buildConfigField "String", "TAP_CLIENT_TOKEN", quoted(tapProperties.getProperty("clientToken"))
         buildConfigField "String", "TOWER_LEADERBOARD_ID", quoted(tapProperties.getProperty("towerLeaderboardId"))

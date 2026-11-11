@@ -18,12 +18,12 @@ test('real completed ad receipts grant the chosen reward once and persist daily 
 });
 test('unavailable, cancelled, replayed, failed saves and exceeded quota never add rewards',()=>{
  const p=freshSolo();for(const result of [{},{completed:false,receipt:'x'},{completed:true,receipt:''}]){const storage=store();saveSolo(storage,p);assert.throws(()=>commitShopReward(storage,'coins',result));assert.equal(loadSolo(storage).coins,300);}
- const full={...p,shop:{day:'2026-11-10',counts:{coins:3},receipts:['older']}};assert.throws(()=>prepareShopClaim(full,'coins','new',{completed:true,day:'2026-11-10'}),/领完/);assert.equal(shopToday(full,'2026-11-11').counts.coins,undefined);assert.throws(()=>prepareShopClaim(full,'coins','older',{completed:true,day:'2026-11-11'}),/已经领取/);
+ const full={...p,shop:{day:'2026-11-10',counts:{coins:5},receipts:['older']}};assert.throws(()=>prepareShopClaim(full,'coins','new',{completed:true,day:'2026-11-10'}),/领完/);assert.equal(shopToday(full,'2026-11-11').counts.coins,undefined);assert.throws(()=>prepareShopClaim(full,'coins','older',{completed:true,day:'2026-11-11'}),/已经领取/);
  const storage=store();saveSolo(storage,p);const failed={getItem:storage.getItem,setItem:()=>{throw Error('disk');}};assert.throws(()=>commitShopReward(failed,'coins',{completed:true,receipt:'verified'}),/未能保存/);assert.equal(loadSolo(storage).coins,300);
 });
 test('combat income is moderately reduced while fixed gifts and saved balances are unchanged',()=>{assert.equal(earnedGold(8),7);assert.equal(earnedGold(240),204);assert.equal(earnedGold(0),0);assert.equal(freshSolo().coins,300);assert.equal(tutorialRewardDraft(freshSolo()).coins,500);});
 
 test('one gold chest starts at 300 coins and legacy gold quotas migrate once',()=>{
  assert.equal(SHOP_OFFERS.length,4);assert.equal(SHOP_OFFERS.filter(o=>o.type==='coins').length,1);assert.equal(SHOP_OFFERS.find(o=>o.id==='coins').count,300);assert.ok(!SHOP_OFFERS.some(o=>o.id==='treasure'));
- const old={day:'2026-11-10',counts:{coins:1,treasure:1},receipts:['old-receipt']},m=normalizeShop(old);assert.equal(m.counts.coins,2);assert.equal(normalizeShop(m).counts.coins,2);assert.deepEqual(m.receipts,['old-receipt']);assert.equal(normalizeShop({...old,counts:{coins:3,treasure:2}}).counts.coins,3);
+ const old={day:'2026-11-10',counts:{coins:1,treasure:1},receipts:['old-receipt']},m=normalizeShop(old);assert.equal(m.counts.coins,2);assert.equal(normalizeShop(m).counts.coins,2);assert.deepEqual(m.receipts,['old-receipt']);assert.equal(normalizeShop({...old,counts:{coins:3,treasure:2}}).counts.coins,5);
 });

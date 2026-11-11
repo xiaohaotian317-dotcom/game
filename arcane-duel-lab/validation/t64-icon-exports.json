@@ -1,0 +1,143 @@
+{
+  "chosenByUser": "B / 焰术师近脸 v2",
+  "originalSha256": "495e7f3a99817d21d345181aed4b796749dbbdddcbc7e864fc98427df45ede47",
+  "sourcePixelsEdited": false,
+  "nativeExport": "Proportional LANCZOS sizing only; adaptive foreground padded to the Android central 72dp viewport. No painted retouching or generative source edits.",
+  "files": [
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "size": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "size": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+      "size": [
+        108,
+        108
+      ],
+      "contentRect": [
+        18,
+        18,
+        72,
+        72
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+      "size": [
+        162,
+        162
+      ],
+      "contentRect": [
+        27,
+        27,
+        108,
+        108
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+      "size": [
+        216,
+        216
+      ],
+      "contentRect": [
+        36,
+        36,
+        144,
+        144
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "size": [
+        144,
+        144
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "size": [
+        144,
+        144
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "size": [
+        324,
+        324
+      ],
+      "contentRect": [
+        54,
+        54,
+        216,
+        216
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "path": "mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "size": [
+        432,
+        432
+      ],
+      "contentRect": [
+        72,
+        72,
+        288,
+        288
+      ]
+    }
+  ]
+}

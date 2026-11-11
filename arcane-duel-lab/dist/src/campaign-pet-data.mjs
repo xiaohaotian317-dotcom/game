@@ -16,7 +16,14 @@ export const PET_SKILLS={
 };
 const PET_XP=[40,60,80,110,140,180,230,290,360];
 export function petExperience(total=0){let level=1,xp=Math.max(0,Math.floor(total));const needed=n=>PET_XP[n-1]??Math.round(420+(n-10)*90+(n-10)**2*12);while(level<30&&xp>=needed(level))xp-=needed(level++);return {level,xp,next:needed(level)};}
-export function petStats(record){const b=PET_BASE[record.kind],traits=record.traits||{hp:1,mp:1,attack:1},level=petExperience(record.exp||0).level,form=record.form||0;return {...b,level,maxHp:Math.round(b.hp*traits.hp*(1+.05*(level-1))*[1,1.12,1.25][form]),maxMp:Math.round(b.mp*traits.mp*(1+.03*(level-1))*[1,1.1,1.2][form]),damage:Math.round(b.damage*traits.attack*(1+.03*(level-1))*[1,1.12,1.28][form])};}
+export const PET_SKILL_LEVELS=5;
+export const PET_SKILL_POWER=[1,1.25,1.65,2.15,2.8];
+// Old rank 5 is retained in the save, but reads as the new maximum skill level.
+const skillRank=(record,index)=>Math.max(0,Math.min(PET_SKILL_LEVELS-1,Math.floor(Number(record?.skillRanks?.[index])||0)));
+export const petSkillLevel=(record,index)=>skillRank(record,index)+1;
+export const petSkillPower=(record,index)=>PET_SKILL_POWER[skillRank(record,index)];
+export function petSkillBonuses(record){const ranks=[0,1,2].reduce((sum,i)=>sum+(i<=(record.form||0)?skillRank(record,i):0),0);return {healthRatio:ranks*.04,attackRatio:ranks*.025};}
+export function petStats(record){const b=PET_BASE[record.kind],traits=record.traits||{hp:1,mp:1,attack:1},level=petExperience(record.exp||0).level,form=record.form||0,skills=petSkillBonuses(record);return {...b,level,maxHp:Math.round(b.hp*traits.hp*(1+.05*(level-1))*[1,1.12,1.25][form]*(1+skills.healthRatio)),maxMp:Math.round(b.mp*traits.mp*(1+.03*(level-1))*[1,1.1,1.2][form]),damage:Math.round(b.damage*traits.attack*(1+.03*(level-1))*[1,1.12,1.28][form]*(1+skills.attackRatio))};}
 export function rollPetTraits(random=Math.random){return Object.fromEntries(['hp','mp','attack'].map(k=>[k,Math.round((.92+Math.max(0,Math.min(1,random()))*.16)*1000)/1000]));}
 export function markPetRest(p,stage){if(p.cleared.includes(stage)||(p.petRestStages||[]).includes(stage))return false;p.petRestStages??=[];p.petRestStages.push(stage);p.petRestEpoch=(p.petRestEpoch||0)+1;p.petRestAfterStage=stage;return true;}
 export function grantPetXP(p,id,amount){const record=p.pets?.find(v=>v.id===id);if(record)record.exp=Math.min(1e7,(record.exp||0)+Math.max(0,Math.floor(amount)));}
@@ -30,5 +37,18 @@ export function normalizePets(raw){if(!Array.isArray(raw))return [];return raw.f
 export function mirrorUnlocked(p){return artifactLevel(p,'mirror')>0;}
 export function petDungeonUnlocked(p,stage){return !!PET_STAGE[stage]&&mirrorUnlocked(p)&&p.cleared.includes(stage);}
 export const petStageLabel=stage=>stage>11?'第二章第'+(stage-11)+'关':'第一章第'+stage+'关';
-export function petSkillUpgradeCost(record,index){const level=record?.skillRanks?.[index]||0,tier=PET_IDS.indexOf(record?.kind);return tier<0||index<0||index>2||index>(record.form||0)||level>=5?null:Math.round([100,200,350,550][tier]*(index+1)*(1+.5*level+.15*level*level)/10)*10;}
-export function upgradePetSkill(profile,id,index){const record=profile.pets?.find(p=>p.id===id),cost=petSkillUpgradeCost(record,index);if(cost===null)throw Error('技能尚未解锁或已满级');if(profile.coins<cost)throw Error('金币不足');profile.coins-=cost;record.skillRanks??=[0,0,0];record.skillRanks[index]++;return PET_SKILLS[record.kind][index].name+'已强化';}
+export function petSkillUpgradeRecipe(record,index){const rank=skillRank(record,index),tier=PET_IDS.indexOf(record?.kind);if(tier<0||!Number.isInteger(index)||index<0||index>2||index>(record.form||0)||rank>=PET_SKILL_LEVELS-1)return null;return {level:rank+1,nextLevel:rank+2,coins:Math.round([100,200,350,550][tier]*(index+1)*(1+.5*rank+.15*rank*rank)/10)*10,stoneCount:[0,1,2,5][rank]};}
+export const petSkillUpgradeCost=(record,index)=>petSkillUpgradeRecipe(record,index)?.coins??null;
+export function petSkillStoneCount(profile){return (profile.bag||[]).reduce((sum,item)=>sum+(item.type==='petSkillStone'&&Number.isSafeInteger(item.count)&&item.count>0?item.count:0),0);}
+export function upgradePetSkill(profile,id,index){
+ const record=profile.pets?.find(p=>p.id===id),recipe=petSkillUpgradeRecipe(record,index);
+ if(!recipe)throw Error('技能尚未解锁或已满级');
+ if(!Number.isFinite(profile.coins)||profile.coins<recipe.coins)throw Error('金币不足');
+ if(petSkillStoneCount(profile)<recipe.stoneCount)throw Error(`需要${recipe.stoneCount}枚灵宠技能石`);
+ // All requirements pass before any currency, stack or rank changes.
+ profile.coins-=recipe.coins;let remaining=recipe.stoneCount;
+ for(const item of profile.bag||[]){if(item.type!=='petSkillStone'||!Number.isSafeInteger(item.count)||item.count<=0)continue;const used=Math.min(remaining,item.count);item.count-=used;remaining-=used;if(!remaining)break;}
+ if(recipe.stoneCount)profile.bag=profile.bag.filter(item=>item.type!=='petSkillStone'||item.count>0);
+ record.skillRanks??=[0,0,0];record.skillRanks[index]=recipe.nextLevel-1;
+ return PET_SKILLS[record.kind][index].name+'已升至 Lv.'+recipe.nextLevel;
+}

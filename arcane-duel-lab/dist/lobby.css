@@ -37,6 +37,11 @@ button,a,input,select{-webkit-tap-highlight-color:transparent}button,input,selec
 .codex-button>svg:not(.ornate-frame),.bestiary-button>svg:not(.ornate-frame){top:50%;transform:translateY(-50%);pointer-events:none}
 .lobby-footer .frame>.ornate-frame,#settings-open>.ornate-frame{inset:0;width:100%;height:100%;transform:none;fill:none;pointer-events:none}
 
+.mobile-mode-art{display:none;width:100%;height:100%;overflow:hidden;pointer-events:none}
+html[data-mobile] .mode-art{background:none}
+html[data-mobile] .mobile-mode-art{display:block}
+html[data-mobile] .mode-card{transform:none!important;transition:box-shadow .25s}
+
 /* T51: fourth mode as a low horizontal tower gate; preserve the three existing paintings. */
 .mode-grid.has-tower{grid-template-rows:minmax(0,1fr) 70px;gap:14px}.mode-grid.has-tower>.mode-card{grid-row:1}.tower-lobby-entry{grid-column:1/-1;grid-row:2;position:relative;display:flex;align-items:center;gap:17px;min-height:48px;padding:7px 24px;text-decoration:none;color:#f0d598;background:linear-gradient(100deg,#10242ddc,#26333fc9 48%,#091722ed),url('assets/campaign/stage11-v1.png') center 28%/cover;box-shadow:inset 0 0 24px #93a1c20d}.tower-lobby-mark{font:41px Georgia,serif;color:#d8ba75}.tower-lobby-entry>span:nth-child(2){display:flex;align-items:center;gap:17px}.tower-lobby-entry small{font-size:8px;letter-spacing:3px;color:#b0b7ba}.tower-lobby-entry strong{font:24px 'SimSun',serif;letter-spacing:4px}.tower-lobby-entry em{font-style:normal;font-size:11px;color:#b6bcb0;margin-left:auto;letter-spacing:2px}.tower-lobby-entry>i{font-style:normal;font-size:27px;color:#c3a05a}.tower-lobby-entry:hover,.tower-lobby-entry:focus-visible{filter:brightness(1.12)}
 html[data-mobile=true] .mode-grid.has-tower{grid-template-rows:minmax(0,1fr) 48px!important;gap:7px!important}html[data-mobile=true] .tower-lobby-entry{padding:3px 16px;gap:12px}html[data-mobile=true] .tower-lobby-mark{font-size:31px}html[data-mobile=true] .tower-lobby-entry strong{font-size:19px;letter-spacing:3px}html[data-mobile=true] .tower-lobby-entry small{font-size:7px;letter-spacing:2px}html[data-mobile=true] .tower-lobby-entry em{font-size:9px;letter-spacing:1px}

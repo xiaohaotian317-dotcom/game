@@ -1,0 +1,28 @@
+✔ new players begin the guide while pre-guide saves keep all wealth and bypass forced onboarding (4.362ms)
+✔ tutorial completion prepares exactly 500 coins once and never mutates the uncommitted profile (0.6707ms)
+✔ real completed ad receipts grant the chosen reward once and persist daily quota across reloads (2.6178ms)
+✔ unavailable, cancelled, replayed, failed saves and exceeded quota never add rewards (1.5274ms)
+✔ combat income is moderately reduced while fixed gifts and saved balances are unchanged (0.27ms)
+✔ one gold chest starts at 300 coins and legacy gold quotas migrate once (0.7973ms)
+✔ the one gold offer increases only after each specified main-story milestone (3.0021ms)
+✔ the verified receipt grants the same displayed progression tier once, with original quota intact (2.5066ms)
+✔ endless gold is reduced twenty percent at every round while XP and difficulty stay unchanged (0.3572ms)
+✔ reduced story stones use matching preview and real drops without changing other loot or old stock (3.8533ms)
+✔ actual repeat boss tickets use a strict twenty-percent roll while the first ticket is guaranteed (14.2415ms)
+✔ shop objectives increment only with a saved real completion, once per receipt (5.2524ms)
+✔ shop tickets require two separate completed ads per ticket, save partial progress, and cap at two each day (1.8905ms)
+✔ a new local day resets unfinished ticket-ad progress and quota but not past receipts or owned tickets (0.8577ms)
+✔ gold shop sells only the specified materials and small/medium pet XP, exact prices and no advert transaction (8.6916ms)
+✔ purchase fails without spending or granting for missing coins, invalid item, full stack or a save failure (1.0853ms)
+✔ skill stone is rare and one per pet-boss kill only, regular story/endless/tower never produce it (10.7053ms)
+✔ new stone is the untouched original with transparent drop rect and foot pivot, not an old generic material icon (3.5128ms)
+✔ three basic ad rewards allow five verified claims without resetting earlier claims (8.1378ms)
+✔ ticket offer still needs two completed ads and allows only two tickets daily (1.1154ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 232.1576
