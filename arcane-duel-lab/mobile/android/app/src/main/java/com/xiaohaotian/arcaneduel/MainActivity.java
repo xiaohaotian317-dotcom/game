@@ -35,6 +35,7 @@ public class MainActivity extends BridgeActivity {
         registerPlugin(TapBattlePlugin.class);
         registerPlugin(TapLeaderboardPlugin.class);
         registerPlugin(AdsPlugin.class);
+        registerPlugin(TapSafetyPlugin.class);
         super.onCreate(savedInstanceState);
         if (bridge != null && !launchFinished) {
             launchCover = new ImageView(this);

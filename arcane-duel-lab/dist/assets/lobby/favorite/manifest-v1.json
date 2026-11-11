@@ -1,0 +1,143 @@
+{
+  "scope": "Noncreative equal-aspect UI texture downsample; original artwork and alpha preserved",
+  "files": [
+    {
+      "hero": "fire",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-fire-v2.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\fire-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "b130be88fc9afb83a70222a16be53ebf414e4a9bf96d82730071d04498ac459e",
+      "runtimeSha256": "b73a5100076917b458b1648bd1ff688e58c4c6c8cae277b550f0dd45150c5c16",
+      "bytes": 147055,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    },
+    {
+      "hero": "nature",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-nature-v2.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\nature-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "8dc0cc3649b97125c7613abe766dc48b1ac9079a54a2bee989643c51fc1146c7",
+      "runtimeSha256": "f083de4a6ae99285df547baeb2c1436aa2b6684b74a7b204be9931f9b03ad6a5",
+      "bytes": 149450,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    },
+    {
+      "hero": "frost",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-frost-v1.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\frost-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "5cd3956050736aafb8ad1027d5505dda9f61ed9d987b6cb2297e4aac24d914a8",
+      "runtimeSha256": "f9b3f216bbd4a448e2ec7e0391791342fc33ab5a732b173f12bea2194bf12da9",
+      "bytes": 149355,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    },
+    {
+      "hero": "lightning",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-lightning-v1.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\lightning-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "001e4c4131a134695f1000714312ffcef2bfacc1c89bdbef3dbaafd2a4582da6",
+      "runtimeSha256": "6c682f077a416438d250fd7529947a61ec66d8ae181ac0632cfaa5d9fc9c6492",
+      "bytes": 170475,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    },
+    {
+      "hero": "shadow",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-shadow-v1.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\shadow-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "c4d8e83699623d183eb2827dc9eb6b47079f34c36e8ef3a71c617f88e790f9af",
+      "runtimeSha256": "25c0ae8d2d600706b413366d2af31e5d142d6af9012f002536214384d0fb6445",
+      "bytes": 153034,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    },
+    {
+      "hero": "star",
+      "source": "美术概念\\协作交付\\T73\\favorite-hero\\favorite-hero-star-v1.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "runtime": "dist\\assets\\lobby\\favorite\\star-nameplate-v1.png",
+      "runtimeSize": [
+        768,
+        256
+      ],
+      "sourceSha256": "429dc0a901813c815d3bfa828f7643245274b1f23290443029069834efe4103d",
+      "runtimeSha256": "b36694f2602d0fbe23926479e380e20297b11323edb97c27301818d625eff729",
+      "bytes": 150077,
+      "alpha": true,
+      "renderViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ]
+    }
+  ]
+}

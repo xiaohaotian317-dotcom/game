@@ -1,9 +1,10 @@
+import {operationReceiptUsed} from './release-ad-policy.mjs';
 import {loadSolo,saveSolo,addItem} from './campaign-profile.mjs';
 import {prepareShopClaim} from './shop-state.mjs';
 import {advanceDaily} from './daily-quests.mjs';
 export function commitShopReward(storage,id,result,options){
  const profile=loadSolo(storage);
- if(profile.daily?.adReceipts?.includes(result?.receipt))throw Error('这次奖励已经领取');
+ if(operationReceiptUsed(profile,result?.receipt))throw Error('这次奖励已经领取');
  const {offer,state,granted}=prepareShopClaim(profile,id,result?.receipt,{...options,completed:result?.completed===true});
  profile.shop=state;
  if(granted){if(offer.type==='coins')profile.coins+=offer.count;else addItem(profile,{type:offer.type,count:offer.count});}

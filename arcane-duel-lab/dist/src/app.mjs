@@ -1,3 +1,4 @@
+import {safetyAllowsPlay} from './service-settings.mjs';
 import {installOnboarding} from './onboarding-guide.mjs';
 import {LoadingScreen} from './loading-screen.mjs?v=20261030-duel12';
 import {skillArtStyle} from './skill-icons.mjs?v=20261030-duel12';
@@ -215,7 +216,7 @@ function consumeEvents(){
 function loop(now){
   const realDt=clamp((now-last)/1000,0,.25);last=now;
   if(mode==='game'&&renderer){
-    if(!paused&&!world.freezeFrame){
+    if(!paused&&!world.freezeFrame&&safetyAllowsPlay()){
       accumulator+=realDt*(world.slow?.5:1);
       while(accumulator>=STEP){
         if(pointerUV)aim=worldPoint(world,pointerUV.u,pointerUV.v);
@@ -249,3 +250,5 @@ async function init(){
 
 
 installOnboarding('title');
+
+window.addEventListener('arcane:safety-restricted',()=>{keys.clear();actions.length=0;pointerDown=false;mobile?.reset();if(mode==='game'&&!paused)setPause(true);});

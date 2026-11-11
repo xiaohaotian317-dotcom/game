@@ -1,0 +1,45 @@
+{
+  "sourcePixelsModified": false,
+  "renderMethod": "SVG viewBox cropping plus aspect-ratio-preserving meet; 1 device pixel per CSS pixel; no text overlay",
+  "background": "#10202b",
+  "order": [
+    "fire-v2",
+    "nature-v2",
+    "frost-v1",
+    "lightning-v1",
+    "shadow-v1",
+    "star-v1"
+  ],
+  "boxes": [
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    },
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    },
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    },
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    },
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    },
+    {
+      "width": 180,
+      "height": 48,
+      "viewBox": "0 80 2172 564"
+    }
+  ]
+}

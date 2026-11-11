@@ -1,3 +1,4 @@
+import {captureCampaignDefeat} from './campaign-ad-recovery.mjs';
 import {towerFloor} from './tower-data.mjs';
 import {initTutorialTraining,tutorialCombatReady,tutorialTrainingComplete,tutorialTrainingInput,tutorialActionSnapshot,observeTutorialTraining,TUTORIAL_ENEMY_LEAD} from './tutorial-training-state.mjs';
 import {endlessRoster,normalizeChallenges} from './campaign-challenges.mjs';
@@ -77,7 +78,7 @@ export function stepCampaign(w,dt,input={}){
  input=tutorialTrainingInput(w,input);if(Number.isInteger(input.switchSlot))switchTeamHero(w,input.switchSlot);const trainingBefore=c.training?tutorialActionSnapshot(w):null;
  const previousTime=w.time;step(w,dt,input);if(trainingBefore)observeTutorialTraining(w,trainingBefore,input);tickReserve(w,w.time-previousTime);soloTick(w,dt,{damage});stepArtifact(w,dt,input,{damage});if(input.pickup)pickupSolo(w);constrain(w);
  if(w.player.hp<=0&&rescueWithReserve(w))return;
- if(w.player.hp<=0){c.state='defeat';c.defeated=true;c.queue=[];say(w,'挑战失败 · 调整节奏，再试一次');return;}
+ if(w.player.hp<=0){captureCampaignDefeat(w);c.state='defeat';c.defeated=true;c.queue=[];say(w,'挑战失败 · 调整节奏，再试一次');return;}
  if(c.state==='pet'){stepPets(w,dt,{damage,hitPlayer},input);if(c.petOutcome){c.state='portal';c.portal={x:c.lock.x+c.lock.width*.76,y:w.floor,born:w.time};w.projectiles=w.projectiles.filter(p=>p.owner!=='enemy');}return;}
  if(c.state==='intermission'&&w.time>=c.nextRoundAt){c.stage={...STAGE_BY_ID[21],...endlessRoster(c.endless.round,c.random)};c.attackBudget=c.stage.attackBudget;c.encounter=0;c.bossLooted=false;w.targets=[];w.projectiles=[];w.enemyZones=[];w.enemyWaves=[];c.soloFields=[];c.state='travel';c.lock=null;c.triggers=[w.player.x,w.player.x,w.player.x,w.player.x];say(w,'轮回 '+c.endless.round+' · 敌势增强');}
  if(c.state==='travel'&&w.player.x>=c.triggers[c.encounter])beginEncounter(w);

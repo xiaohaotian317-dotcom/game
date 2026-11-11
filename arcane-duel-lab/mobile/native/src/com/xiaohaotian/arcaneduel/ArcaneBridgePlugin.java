@@ -31,6 +31,27 @@ public final class ArcaneBridgePlugin extends Plugin {
     private boolean pickerOpen;
 
     @PluginMethod public void state(PluginCall call){resolve(call,stateData());}
+    @PluginMethod public void privacyStatus(PluginCall call){
+        android.content.SharedPreferences p=getContext().getSharedPreferences("arcane-privacy",0);
+        resolve(call,LanRoomService.obj("tap",p.getBoolean("tap",false),"safety",p.getBoolean("safety",false),"ads",p.getBoolean("ads-dirichlet",false),"version",BuildConfig.VERSION_NAME,"versionCode",BuildConfig.VERSION_CODE));
+    }
+    @PluginMethod public void withdrawServiceConsent(PluginCall call){getActivity().runOnUiThread(()->{
+        if(!Boolean.TRUE.equals(call.getBoolean("confirmed",false))){call.reject("请确认撤回授权并退出游戏","confirmationRequired");return;}
+        // Stop the process after the result reaches JS: initialized third-party
+        // SDKs must not survive a withdrawal in a warm application process.
+        if(!getContext().getSharedPreferences("arcane-privacy",0).edit().clear().commit()){call.reject("授权状态未能保存，请重试","saveFailed");return;}
+        synchronized(modeLock){resetInternal();}
+        resolve(call,LanRoomService.obj("withdrawn",true));
+        new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(()->{getActivity().finishAndRemoveTask();android.os.Process.killProcess(android.os.Process.myPid());},250);
+    });}
+    @PluginMethod public void shareGame(PluginCall call){getActivity().runOnUiThread(()->{
+        String requestId=call.getString("requestId",""),text=call.getString("text","");
+        if(!requestId.matches("[A-Za-z0-9_-]{8,96}")||text.isBlank()||text.length()>1400||text.indexOf('\u0000')>=0){call.reject("分享内容不可用","invalidShare");return;}
+        Activity activity=getActivity();if(activity==null||activity.isFinishing()||!activity.hasWindowFocus()){call.reject("请回到游戏页面后再分享","background");return;}
+        Intent message=new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT,text).putExtra(Intent.EXTRA_SUBJECT,"秘境决斗");
+        try{activity.startActivity(Intent.createChooser(message,"分享秘境决斗"));resolve(call,LanRoomService.obj("opened",true,"requestId",requestId));}
+        catch(Exception ignored){call.reject("此设备暂时无法打开分享面板","shareUnavailable");}
+    });}
     @PluginMethod public void insets(PluginCall call){getActivity().runOnUiThread(()->{
         int top=0,right=0,bottom=0,left=0;
         android.view.WindowInsets safe=getActivity().getWindow().getDecorView().getRootWindowInsets();

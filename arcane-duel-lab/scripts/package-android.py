@@ -1,19 +1,26 @@
 """Verify the signed APK and every bundled web asset before versioned delivery."""
 from pathlib import Path
-import hashlib, json, re, shutil, struct, zipfile
+import hashlib, json, re, shutil, struct, zipfile, argparse
 from io import BytesIO
 from PIL import Image, ImageChops
 
 root = Path(__file__).resolve().parents[1]
 apk = root / 'mobile/android/app/build/outputs/apk/release/app-release.apk'
-version, code = '0.1.13', 14
+parser=argparse.ArgumentParser()
+parser.add_argument('--audit-prefix',default='t72')
+args=parser.parse_args()
+prefix=args.audit_prefix
+assert re.fullmatch(r't\d+',prefix), 'Invalid audit prefix'
+gradle=(root/'mobile/android/app/build.gradle').read_text(encoding='utf-8')
+version=re.search(r'versionName "([0-9.]+)"',gradle).group(1)
+code=int(re.search(r'versionCode (\d+)',gradle).group(1))
 delivery = root.parent / f'发行/秘境决斗-安卓试玩-{version}.apk'
 validation = root / 'validation'
 manifest = json.loads((validation / 'android1-web-manifest.json').read_text(encoding='utf-8-sig'))
-badging = (validation / 't70-release-badging.txt').read_text(encoding='utf-8-sig')
-permissions = (validation / 't70-release-permissions.txt').read_text(encoding='utf-8-sig')
-signature = (validation / 't70-release-signature.txt').read_text(encoding='utf-8-sig')
-alignment = (validation / 't70-release-alignment.txt').read_text(encoding='utf-8-sig')
+badging = (validation / f'{prefix}-release-badging.txt').read_text(encoding='utf-8-sig')
+permissions = (validation / f'{prefix}-release-permissions.txt').read_text(encoding='utf-8-sig')
+signature = (validation / f'{prefix}-release-signature.txt').read_text(encoding='utf-8-sig')
+alignment = (validation / f'{prefix}-release-alignment.txt').read_text(encoding='utf-8-sig')
 cert = '50197c82d598e52d6866a7d6855c45906f70d12612c4ee280b229cce5fed517a'
 assert "name='com.xiaohaotian.arcaneduel'" in badging
 assert f"versionCode='{code}'" in badging and f"versionName='{version}'" in badging
@@ -92,9 +99,9 @@ report = {
     'realInternetMatchVerified': False, 'publishedToTapTap': False,
     'scope': 'Signed local APK with exact bundled asset hashes. Physical-phone installation and UI are recorded separately; no real-internet or ad-playback claim.'
 }
-install_file = validation / 't70-vivo-release-install.json'
+install_file = validation / f'{prefix}-vivo-release-install.json'
 if install_file.exists():
     installed = json.loads(install_file.read_text(encoding='utf-8-sig'))
     report['physicalPhoneInstalledThisVersion'] = installed.get('passed') is True and installed.get('installedVersion') == version
-(validation / 't70-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+(validation / f'{prefix}-android-package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({k: v for k, v in report.items() if k != 'nativeLibraries'}, ensure_ascii=False, indent=2))

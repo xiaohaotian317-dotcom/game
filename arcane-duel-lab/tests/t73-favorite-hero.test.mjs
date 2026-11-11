@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {favoriteHero,favoriteHeroDraft,FAVORITE_THEMES} from '../dist/src/favorite-hero.mjs';
+import {freshSolo,saveSolo,loadSolo,normalizeSolo} from '../dist/src/campaign-profile.mjs';
+import {SOLO_KEY} from '../dist/src/campaign-growth-data.mjs';
+import {exportSave,importSave} from '../dist/src/save-transfer.mjs';
+function storage(){const map=new Map();return{getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};}
+test('favorite artwork selection is independent of battle team, selected hero and growth',()=>{const p=freshSolo();p.owned.push('frost');p.heroes.fire.exp=123;const next=favoriteHeroDraft(p,'frost');assert.equal(next.lobbyHero,'frost');assert.equal(next.selected,'fire');assert.deepEqual(next.lineup,p.lineup);assert.deepEqual(next.heroes,p.heroes);assert.equal(p.lobbyHero,'fire');});
+test('unowned and invalid favorites cannot grant or select a hero',()=>{const p=freshSolo();for(const hero of ['shadow','constructor','unknown',null])assert.throws(()=>favoriteHeroDraft(p,hero),/唤醒/);assert.deepEqual(p.owned,['fire']);assert.equal(favoriteHero({...p,lobbyHero:'shadow'}),'fire');assert.equal(Object.keys(FAVORITE_THEMES).length,6);});
+test('old saves inherit existing display selection without resetting any progress',()=>{const p=freshSolo();delete p.lobbyHero;p.owned.push('star');p.selected='star';p.coins=555;const n=normalizeSolo(p);assert.equal(n.lobbyHero,'star');assert.equal(n.coins,555);assert.deepEqual(n.lineup,['fire']);});
+test('favorite survives normal reload and whole-save transfer without replacing the battle selection',async()=>{const s=storage(),target=storage(),p=freshSolo();p.owned.push('nature');saveSolo(s,favoriteHeroDraft(p,'nature'));assert.equal(loadSolo(s).lobbyHero,'nature');await importSave(target,await exportSave(s),{backup:async()=>{}});const n=JSON.parse(target.getItem(SOLO_KEY));assert.equal(n.lobbyHero,'nature');assert.equal(n.selected,'fire');assert.deepEqual(n.lineup,['fire']);});

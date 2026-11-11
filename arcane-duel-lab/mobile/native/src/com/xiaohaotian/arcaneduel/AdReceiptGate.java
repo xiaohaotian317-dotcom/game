@@ -4,15 +4,17 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.UUID;
 
-/** Only SDK verification plus a normal close can produce a local test receipt. */
+/** Only SDK verification plus a normal close can produce a local receipt. */
 public final class AdReceiptGate {
     public final String placement;
     public final boolean rewarded;
     public final String attemptId=UUID.randomUUID().toString();
     private boolean available,shown,verified,failed,ended;
     private String requestId="";
+    private final String environment;
 
-    public AdReceiptGate(String placement,boolean rewarded){this.placement=placement;this.rewarded=rewarded;}
+    public AdReceiptGate(String placement,boolean rewarded){this(placement,rewarded,true);}
+    public AdReceiptGate(String placement,boolean rewarded,boolean testMode){this.placement=placement;this.rewarded=rewarded;this.environment=testMode?"test":"production";}
     public void loaded(String sdkRequestId){if(!ended){available=true;if(sdkRequestId!=null)requestId=sdkRequestId;}}
     public void shown(){if(!ended){available=true;shown=true;}}
     public void verify(boolean valid){if(!ended){if(valid)verified=true;else failed=true;}}
@@ -24,7 +26,7 @@ public final class AdReceiptGate {
     public Result finish(boolean normalClose,String reason){
         if(ended)return null;ended=true;
         boolean completed=normalClose&&rewarded&&shown&&verified&&!failed;
-        String receipt=completed?"dirichlet-test:"+placement+":"+digest(requestId)+":"+attemptId:"";
+        String receipt=completed?"dirichlet-"+environment+":"+placement+":"+digest(requestId)+":"+attemptId:"";
         return new Result(available,shown,completed,receipt,completed?"":reason);
     }
     private static String digest(String text){

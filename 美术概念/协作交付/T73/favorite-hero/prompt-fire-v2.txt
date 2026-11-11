@@ -1,0 +1,4 @@
+Use case: precise-object-edit
+Edit target: the provided single fire-mage nameplate frame.
+Make ONE targeted cleanup: remove the stray isolated glowing white/yellow orb above the top center entirely, leaving genuine fully transparent alpha there. There must be nothing above the rim at its center. Also ensure the two extreme left/right pointed end tips are fully inside the canvas with a little transparent padding, not cut off.
+Preserve the long horizontal gold and blackened-iron flame frame, the crimson ember corner details, the dark empty center, frontal view, proportions, metal shading and all existing craftsmanship. Do not add any new decoration. Outside the single frame stays genuinely transparent. Keep the central title bed opaque dark, blank, broad and quiet, with no text. No separate orb, symbol, floating particle, second frame, scene, lettering, portrait, watermark or checkerboard.

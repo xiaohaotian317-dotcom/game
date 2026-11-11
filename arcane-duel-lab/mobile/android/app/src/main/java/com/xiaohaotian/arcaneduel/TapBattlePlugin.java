@@ -56,16 +56,10 @@ public final class TapBattlePlugin extends Plugin implements TapOnlineBattleCall
         begin(call,30000);
         if(initialized){loginNow(call);return;}
         initializing=true;
-        initCallback=new TapInitCallback(){
-            @Override public void onInitSuccess(){main.post(()->{
-                initialized=true;initializing=false;TapTapSdk.removeInitCallback(this);initCallback=null;
-                if(destroyed)return;TapTapOnlineBattle.registerOnlineBattleCallback(TapBattlePlugin.this);if(pending.containsKey(call))loginNow(call);
-            });}
-            @Override public void onInitFail(int code,String message){main.post(()->{initializing=false;TapTapSdk.removeInitCallback(this);initCallback=null;fail(call,"TapTap 初始化失败："+message,"tapInit"+code);});}
-        };
-        TapTapSdk.addInitCallback(initCallback);
-        try{TapTapSdkOptions options=new TapTapSdkOptions(BuildConfig.TAP_CLIENT_ID,BuildConfig.TAP_CLIENT_TOKEN,TapTapRegion.CN);options.setScreenOrientation(1);options.setEnableLog(false);TapTapSdk.init(getContext(),options);}
-        catch(Exception e){initializing=false;TapTapSdk.removeInitCallback(initCallback);initCallback=null;fail(call,"TapTap 初始化失败，请检查应用配置","tapInit");}
+        TapSafetyCore.ensureInitialized(getContext(),new TapSafetyCore.Callback(){
+            @Override public void onReady(){initialized=true;initializing=false;if(destroyed)return;TapTapOnlineBattle.registerOnlineBattleCallback(TapBattlePlugin.this);if(pending.containsKey(call))loginNow(call);}
+            @Override public void onFailure(int code){initializing=false;if(!destroyed)fail(call,"TapTap初始化暂未完成，请稍后重试","tapInit");}
+        });
     });}
     private void loginNow(PluginCall call){
         TapTapAccount cached=TapTapLogin.getCurrentTapAccount();if(cached!=null){accountSuccess(call,cached);return;}

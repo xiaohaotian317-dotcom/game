@@ -1,3 +1,4 @@
+import {safetyAllowsPlay} from './service-settings.mjs';
 import {renderDuelWorld} from './duel-visual-clock.mjs';
 import {loadAlternateArt} from './alternate-skill-art.mjs';
 import {createDuelSelectionQueue} from './duel-selection-queue.mjs';
@@ -93,7 +94,7 @@ function beginRound(r){
   const saved=link.resumeState?.epoch===r.epoch&&link.resumeState?.roundSerial===r.roundSerial&&duelSnapshotMatches(link.resumeState,r.slots)?link.resumeState:null;
   match=saved?restoreDuel(saved):createDuel(r.slots.map(s=>s.hero),r.scene,r.slots.map(s=>s.loadout));if(saved){inputSeq=Math.max(inputSeq,saved.ack?.[r.seat]||0);actionId=Math.max(actionId,saved.actionAck?.[r.seat]||0);}link.resumeState=null;prediction=null;match.worlds[r.seat].camera={x:0,y:0,overview:false};buildHotbar();
   for(const [i,id] of [[r.seat,'portrait-us'],[1-r.seat,'portrait-them'],[1-r.seat,'opponent-edge-portrait']])renderer.portrait($('#'+id),r.slots[i].hero);
-  if(r.seat===0){worker?.terminate();worker=new Worker(new URL('./duel-worker.mjs?v=20261030-duel12',import.meta.url),{type:'module'});worker.onmessage=({data})=>{if(data.kind==='state'){latestSnapshot=data.snapshot;acceptSnapshot(data.snapshot,true);link.setState(data.snapshot);}if(data.kind==='round')reportRound(data);};worker.onerror=e=>notice('战斗线程加载失败，请刷新恢复房间。');worker.postMessage({kind:'reset',heroes:r.slots.map(s=>s.hero),loadouts:r.slots.map(s=>s.loadout),scene:r.scene,epoch:r.epoch,roundSerial:r.roundSerial,localStartAt:r.startAt-link.clockOffset,snapshot:saved});}
+  if(r.seat===0){worker?.terminate();worker=new Worker(new URL('./duel-worker.mjs?v=20261030-duel12',import.meta.url),{type:'module'});worker.onmessage=({data})=>{if(data.kind==='state'){latestSnapshot=data.snapshot;acceptSnapshot(data.snapshot,true);link.setState(data.snapshot);}if(data.kind==='round')reportRound(data);};worker.onerror=e=>notice('战斗线程加载失败，请刷新恢复房间。');worker.postMessage({kind:'reset',paused:nativeBackground||!safetyAllowsPlay(),heroes:r.slots.map(s=>s.hero),loadouts:r.slots.map(s=>s.loadout),scene:r.scene,epoch:r.epoch,roundSerial:r.roundSerial,localStartAt:r.startAt-link.clockOffset,snapshot:saved});}
 }
 async function reportRound(data){if(reporting||room?.phase==='finished')return;reporting=true;clearControls();try{await link.action({type:'round',epoch:data.epoch,roundSerial:data.roundSerial,winner:data.winner,hp:data.hp});}catch(e){notice(e.message);setTimeout(()=>{reporting=false;if(room?.epoch===data.epoch&&room?.roundSerial===data.roundSerial)reportRound(data);},1200);}}
 function acceptSnapshot(snapshot,fromWorker=false){
@@ -111,7 +112,7 @@ function acceptSnapshot(snapshot,fromWorker=false){
 function showResult(){const won=room.winner===room.seat;$('#countdown').hidden=true;$('#connection-cover').hidden=true;$('#match-result').hidden=false;$('#match-result').classList.toggle('loss',!won);$('#result-heading').textContent=won?'胜利':'失败';$('#match-result-score').textContent=room.score[room.seat]+' : '+room.score[1-room.seat]+(room.reason==='disconnect'?' · 对手断线':room.reason==='opponentLeft'?' · 对手离开':' · 先到 3 分获胜');}
 function buildHotbar(){const slot=room.slots[room.seat],h=HEROES[slot.hero];$('#duel-hotbar').innerHTML=['attack','q','e','dash','r'].map(k=>'<button class="duel-skill" data-duel-skill="'+k+'" aria-label="'+(k==='dash'?'冲刺':duelChosenSkill(slot.hero,k,slot.loadout)?.name||h.skills[k].name)+'"><i class="skill-art" style="'+duelHotbarStyle(slot.hero,k,slot.loadout)+'"></i><b hidden></b><span>'+(k==='attack'?'LMB':k==='q'?'F':k==='dash'?'SHIFT':k.toUpperCase())+'</span></button>').join('');$$('[data-duel-skill]').forEach(b=>b.addEventListener('click',()=>queue(b.dataset.duelSkill)));}
 
-function playable(){return room&&['countdown','active'].includes(room.phase)&&Date.now()+link.clockOffset>=room.startAt&&match&&!nativeBackground&&!pausedForConnection&&!reporting;}
+function playable(){return safetyAllowsPlay()&&room&&['countdown','active'].includes(room.phase)&&Date.now()+link.clockOffset>=room.startAt&&match&&!nativeBackground&&!pausedForConnection&&!reporting;}
 function clearControls(){keys.clear();pointerDown=false;mobile?.reset();pending=[];predictionActions=[];}
 function queue(type,detail){if(!playable())return;sound.init();canvas.focus({preventScroll:true});const action={id:++actionId,type};if(detail?.aim&&['q','e','r'].includes(type))action.aim=safeInput({aim:detail.aim}).aim;pending.push(action);pending=pending.slice(-24);predictionActions.push(action);const packet=packetOf();link.sendActions(packet);if(room.seat===0)worker?.postMessage({kind:'input',side:0,packet});}
 function held(){const touch=mobile?.read();return safeInput({touchAim:!!mobile,move:touch?.move||((keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0)),attack:touch?.attack||pointerDown||keys.has('KeyJ'),down:touch?.down||keys.has('KeyS')||keys.has('ArrowDown'),drop:touch?.down||keys.has('KeyS')||keys.has('ArrowDown'),aim:touch?.aim||aim,view:match&&room?cameraView(match.worlds[room.seat]):undefined});}
@@ -125,7 +126,7 @@ function updateBattle(){
   if(room.phase==='finished'){$('#opponent-indicator').hidden=true;showResult();return;}
   const remaining=Math.ceil((room.startAt-Date.now()-link.clockOffset)/1000);$('#countdown').hidden=remaining<=0;$('#countdown-number').textContent=Math.max(1,remaining);$('#countdown-caption').textContent=room.roundSerial>1?(room.lastWinner===null?'平局 · 再战一局':room.lastWinner===side?'上一局获胜':'上一局落败'):'准备迎战';
   const missing=Date.now()+link.clockOffset-(room.seen[1-side]||0),stale=side===0?performance.now()-link.lastPacketAt>2500:link.lastStateAt>0&&performance.now()-link.lastStateAt>2500;
-  pausedForConnection=nativeBackground||remaining<=0&&(stale||missing>5000);$('#connection-cover').hidden=!pausedForConnection;$('#connection-message').textContent=missing>5000?'对手暂时失去连接，恢复后可继续；30 秒后可结束本场。':'正在同步战斗状态，请稍候。';$('#claim-disconnect').hidden=missing<30000;worker?.postMessage({kind:'pause',value:pausedForConnection});
+  pausedForConnection=!safetyAllowsPlay()||nativeBackground||remaining<=0&&(stale||missing>5000);$('#connection-cover').hidden=!pausedForConnection;$('#connection-message').textContent=missing>5000?'对手暂时失去连接，恢复后可继续；30 秒后可结束本场。':'正在同步战斗状态，请稍候。';$('#claim-disconnect').hidden=missing<30000;worker?.postMessage({kind:'pause',value:pausedForConnection});
   for(const el of $$('[data-duel-skill]')){const key=el.dataset.duelSkill,cooldown=key==='dash'?p.dashCooldown:p.cooldowns[key],recast=p.recast?.key===key&&p.recast.until>match.worlds[side].time,overlay=el.querySelector('b');overlay.hidden=!(cooldown>0||recast);overlay.textContent=recast?'再按 '+(key==='q'?'F':key.toUpperCase()):cooldown>=1?cooldown.toFixed(1):'0.'+Math.ceil(cooldown*10);el.classList.toggle('recast',!!recast);const h=room.slots[side].hero;el.querySelector('i').style.cssText=duelHotbarStyle(h,key,room.slots[side].loadout,recast);}
 }
 function frame(time){
@@ -178,3 +179,5 @@ if(bridge){
 }
 if(tapMode){$('#create-code').closest('label').hidden=true;$('#join-code').maxLength=128;$('#join-code').inputMode='text';$('#join-code').placeholder='输入好友分享的TapTap房间号';}
 requestAnimationFrame(frame);networkStatus();link.resume();
+
+window.addEventListener('arcane:safety-restricted',()=>{clearControls();worker?.postMessage({kind:'pause',value:true});});

@@ -1,3 +1,4 @@
+import {installPlatformSafety} from './service-settings.mjs';
 import {applyControlOpacity} from './mobile-preferences.mjs';
 export const MOBILE_BUILD='android1-crossplay-v3';
 export const mobile=()=>globalThis.arcaneMobile||null;
@@ -27,4 +28,4 @@ export function installMobileShell(){
  });
  document.addEventListener('pointerup',e=>{if(e.pointerType==='touch'){const el=e.target.closest?.('[title]');if(el&&el.title&&!el.matches('button,a,input,select')){let tip=document.querySelector('.mobile-item-tip');if(!tip){tip=document.createElement('div');tip.className='mobile-item-tip';tip.role='status';document.body.append(tip);}tip.textContent=el.title;tip.hidden=false;clearTimeout(tip.timer);tip.timer=setTimeout(()=>tip.hidden=true,3500);}}});
 }
-if(typeof document!=='undefined')installMobileShell();
+if(typeof document!=='undefined'){installMobileShell();installPlatformSafety();}

@@ -1,0 +1,109 @@
+{
+  "task": "T73 store-art",
+  "date": "2026-11-11",
+  "tool": "built-in image_gen",
+  "assetType": "TapTap 16:9 promotional illustration; not PV, gameplay capture, or app icon",
+  "status": "local material prepared and visually checked; parent review/acceptance pending",
+  "recommendedForParentReview": "taptap-promo-1920x1080-v1.jpg",
+  "published": false,
+  "uploadedToStore": false,
+  "runtimeSourceChanged": false,
+  "promptFile": "prompt-v1.txt",
+  "request": {
+    "nativeSize": [
+      3840,
+      2160
+    ],
+    "minimumRequestedNativeSize": [
+      2560,
+      1440
+    ],
+    "onlyReadableText": "秘境决斗",
+    "characters": [
+      "焰术师·烬绯",
+      "雷行者·霆隼"
+    ],
+    "setting": "moonlit gothic castle ruins, antique gold, bridges, vines, waterfalls"
+  },
+  "references": [
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/美术概念/协作交付/T47/store_art/taptap-promo-v2.png",
+      "role": "existing promotional composition and project art style",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "8753c9eb9af96f909a4498180d11510ab44247c1c116fd00707203ce54349440"
+    },
+    {
+      "path": "C:/Users/xiaohaotian/Desktop/双人/arcane-duel-lab/dist/assets/lobby/hero-splashes-v1.png",
+      "role": "canonical identities/costumes; top-left fire and bottom-left lightning only",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "0a0292f965f1cd0614c3b98ae8f4c903c5ccd2f09259169dd9ebe0577917170b"
+    }
+  ],
+  "generation": {
+    "source": "C:/Users/xiaohaotian/.codex/generated_images/01a1c96f-bc00-7912-8c6c-5e809794ebc2/exec-a75e87e8-7e3b-4586-ad17-d7eb9c69d028.png",
+    "localOriginal": "taptap-promo-generated-v1.png",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "mode": "RGB",
+    "bytes": 3360256,
+    "sha256": "fe86551a6b5bde602f10801b5a2dac4f0d3b1fa6b4b05844769a22e3426d0d14",
+    "originalBytesUnchanged": true,
+    "nativeRequestedSizeMet": false,
+    "native2KOr4KDetailAchieved": false
+  },
+  "productionExport": {
+    "file": "taptap-promo-1920x1080-v1.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "mode": "RGB",
+    "aspect": "16:9",
+    "bytes": 1932908,
+    "sha256": "dd8047993c2e44107fccce3ac81286530f673d31337c64aedbf5ebada03dd8bc",
+    "meetsMinimum1920x1080": true,
+    "below4000000Bytes": true,
+    "scaled": true,
+    "scaleFactor": 1.1483253588516746,
+    "recipe": "Pillow ImageOps.fit(original RGB, (1920,1080), LANCZOS, centering=(0.5,0.5)); JPEG quality=97, subsampling=0, optimize=true, progressive=true",
+    "equivalentSourceCrop": [
+      0,
+      0.25,
+      1672,
+      940.75
+    ],
+    "cropExplanation": "Uniform aspect-preserving enlargement; crop a total 0.5 source pixel from decorative top/bottom (0.25 each), less than one output pixel. No anisotropic stretch.",
+    "otherEdits": "No repaint, added text, icons, sharpening, synthetic super-resolution or screenshot compositing after generation.",
+    "resolutionDisclosure": "1920x1080 is the production export size, not a native 1920x1080/2K/4K generation or proof of new high-frequency detail."
+  },
+  "visualInspection": {
+    "generatedImageSeen": true,
+    "finalJpegViewedAtOriginalResolution": true,
+    "titleExact": "秘境决斗",
+    "otherReadableTextObserved": false,
+    "appIconOrPlatformLogoObserved": false,
+    "marketingCopyOrButtonsObserved": false,
+    "screenshotCollageObserved": false,
+    "characterCount": 2,
+    "canonicalIdentitiesRecognizable": true,
+    "fullHeadsFeetAndWeaponsVisible": true,
+    "naturalCharacterProportions": true,
+    "titleAndFacesInsideCentral4by3Crop": true,
+    "quality": "Crisp title, recognizable faces/staff/gauntlets, coherent castle masonry and material details; moderate 14.83% enlargement remains clear at 1920x1080.",
+    "subjectiveUserAcceptance": false
+  },
+  "limitations": [
+    "The built-in tool returned1672x941 despite a native4K/2K request. Export pixel dimensions and native visual detail are explicitly distinguished.",
+    "This is promotional illustration only. It does not satisfy mandatory real gameplay screenshot or real gameplay recording evidence.",
+    "Parent decides whether to include it in the material pack; no backend upload, review submission or publication was performed."
+  ]
+}

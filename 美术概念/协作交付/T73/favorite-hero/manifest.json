@@ -1,0 +1,555 @@
+{
+  "task": "T73 favorite hero nameplates",
+  "tool": "built-in image_gen",
+  "generatedDate": "2026-11-11",
+  "scope": "Art only. No runtime/code/mobile installation changes. All PNG copies exactly match generated source bytes.",
+  "selectedCount": 6,
+  "artAcceptance": "Pending parent integration and user visual review",
+  "referencesInspected": [
+    "arcane-duel-lab/dist/assets/hero-hud/hero-hud-shells-v1.png",
+    "arcane-duel-lab/dist/assets/pause/pause-controls-v1.png"
+  ],
+  "assets": [
+    {
+      "key": "fire-v1",
+      "recommended": false,
+      "file": "favorite-hero-fire-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-b7e5bfa8-b2b6-4920-9bce-c99217985942.png",
+      "sha256": "35851be7616185ad6d3a53fb55c436be3c5aeb90d411266f406a688e49533b1e",
+      "bytes": 1057004,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        9,
+        2172,
+        724
+      ],
+      "fullyTransparentPercent": 53.3995,
+      "fullyOpaquePercent": 0.0051,
+      "partiallyTransparentPercent": 46.5954,
+      "opaqueCenterAlpha": 254,
+      "pixelsUnmodified": true,
+      "significantAlphaBounds": {
+        "8": [
+          2,
+          73,
+          2170,
+          586
+        ],
+        "32": [
+          3,
+          96,
+          2169,
+          585
+        ],
+        "128": [
+          4,
+          111,
+          2169,
+          584
+        ],
+        "240": [
+          9,
+          112,
+          2168,
+          583
+        ]
+      },
+      "promptFile": "prompt-fire.txt"
+    },
+    {
+      "key": "fire-v2",
+      "recommended": true,
+      "file": "favorite-hero-fire-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-dc29a489-8e08-4752-95c6-748ca57776c5.png",
+      "sha256": "b130be88fc9afb83a70222a16be53ebf414e4a9bf96d82730071d04498ac459e",
+      "bytes": 1112759,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        9,
+        2172,
+        724
+      ],
+      "fullyTransparentPercent": 54.0865,
+      "fullyOpaquePercent": 0.0118,
+      "partiallyTransparentPercent": 45.9018,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          4,
+          107,
+          2171,
+          587
+        ],
+        "32": [
+          5,
+          107,
+          2171,
+          587
+        ],
+        "128": [
+          5,
+          108,
+          2170,
+          586
+        ],
+        "240": [
+          11,
+          108,
+          2169,
+          586
+        ]
+      },
+      "promptFile": "prompt-fire-v2.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    },
+    {
+      "key": "nature-v1",
+      "recommended": false,
+      "file": "favorite-hero-nature-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-15708149-210b-4ceb-a626-dcb6aefc3751.png",
+      "sha256": "322b861a32a2d1b1f9328dcdf75b7b24eb3a3038129d97a235bad5c1e7674ae0",
+      "bytes": 1243671,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        0,
+        2156,
+        724
+      ],
+      "fullyTransparentPercent": 50.6392,
+      "fullyOpaquePercent": 0.0085,
+      "partiallyTransparentPercent": 49.3524,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "significantAlphaBounds": {
+        "8": [
+          37,
+          87,
+          2134,
+          604
+        ],
+        "32": [
+          49,
+          99,
+          2124,
+          593
+        ],
+        "128": [
+          64,
+          112,
+          2108,
+          578
+        ],
+        "240": [
+          67,
+          116,
+          2105,
+          577
+        ]
+      },
+      "promptFile": "prompt-nature.txt"
+    },
+    {
+      "key": "nature-v2",
+      "recommended": true,
+      "file": "favorite-hero-nature-v2.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-7557ec89-c1e3-4618-b705-dd051a70a06c.png",
+      "sha256": "8dc0cc3649b97125c7613abe766dc48b1ac9079a54a2bee989643c51fc1146c7",
+      "bytes": 1159147,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        9,
+        2162,
+        724
+      ],
+      "fullyTransparentPercent": 53.718,
+      "fullyOpaquePercent": 0.0144,
+      "partiallyTransparentPercent": 46.2677,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          67,
+          114,
+          2105,
+          577
+        ],
+        "32": [
+          69,
+          114,
+          2105,
+          577
+        ],
+        "128": [
+          69,
+          115,
+          2104,
+          576
+        ],
+        "240": [
+          70,
+          116,
+          2103,
+          575
+        ]
+      },
+      "promptFile": "prompt-nature-v2.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    },
+    {
+      "key": "frost-v1",
+      "recommended": true,
+      "file": "favorite-hero-frost-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-e2e3eb03-32e4-4b5f-839c-909a68e81c1f.png",
+      "sha256": "5cd3956050736aafb8ad1027d5505dda9f61ed9d987b6cb2297e4aac24d914a8",
+      "bytes": 1229137,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        0,
+        2171,
+        724
+      ],
+      "fullyTransparentPercent": 54.8716,
+      "fullyOpaquePercent": 0.0039,
+      "partiallyTransparentPercent": 45.1245,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          17,
+          155,
+          2156,
+          557
+        ],
+        "32": [
+          17,
+          155,
+          2155,
+          557
+        ],
+        "128": [
+          18,
+          156,
+          2154,
+          556
+        ],
+        "240": [
+          22,
+          160,
+          2151,
+          554
+        ]
+      },
+      "promptFile": "prompt-frost.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    },
+    {
+      "key": "lightning-v1",
+      "recommended": true,
+      "file": "favorite-hero-lightning-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-1e7332f9-46e3-4ee7-af61-f989c75fefc4.png",
+      "sha256": "001e4c4131a134695f1000714312ffcef2bfacc1c89bdbef3dbaafd2a4582da6",
+      "bytes": 1384187,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        0,
+        2162,
+        724
+      ],
+      "fullyTransparentPercent": 54.1669,
+      "fullyOpaquePercent": 0.0025,
+      "partiallyTransparentPercent": 45.8307,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          9,
+          153,
+          2160,
+          568
+        ],
+        "32": [
+          10,
+          153,
+          2159,
+          567
+        ],
+        "128": [
+          10,
+          154,
+          2159,
+          567
+        ],
+        "240": [
+          13,
+          155,
+          2158,
+          566
+        ]
+      },
+      "promptFile": "prompt-lightning.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    },
+    {
+      "key": "shadow-v1",
+      "recommended": true,
+      "file": "favorite-hero-shadow-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-63058178-a15c-4c36-bdf0-7c93530dfb09.png",
+      "sha256": "c4d8e83699623d183eb2827dc9eb6b47079f34c36e8ef3a71c617f88e790f9af",
+      "bytes": 1247954,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        0,
+        8,
+        2152,
+        724
+      ],
+      "fullyTransparentPercent": 51.8009,
+      "fullyOpaquePercent": 0.0143,
+      "partiallyTransparentPercent": 48.1848,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          24,
+          122,
+          2149,
+          570
+        ],
+        "32": [
+          24,
+          123,
+          2149,
+          570
+        ],
+        "128": [
+          25,
+          123,
+          2148,
+          569
+        ],
+        "240": [
+          27,
+          124,
+          2147,
+          568
+        ]
+      },
+      "promptFile": "prompt-shadow.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    },
+    {
+      "key": "star-v1",
+      "recommended": true,
+      "file": "favorite-hero-star-v1.png",
+      "source": "C:\\Users\\xiaohaotian\\.codex\\generated_images\\01a1c90b-0daf-7812-aac3-87fda6c61548\\exec-02c60aa2-fc86-4bc9-9462-6cb402c0a98e.png",
+      "sha256": "429dc0a901813c815d3bfa828f7643245274b1f23290443029069834efe4103d",
+      "bytes": 1260769,
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundingBox": [
+        15,
+        13,
+        2157,
+        724
+      ],
+      "fullyTransparentPercent": 54.9584,
+      "fullyOpaquePercent": 0.0031,
+      "partiallyTransparentPercent": 45.0384,
+      "opaqueCenterAlpha": 253,
+      "pixelsUnmodified": true,
+      "suggestedViewBox": [
+        0,
+        80,
+        2172,
+        564
+      ],
+      "safeTextRect": [
+        470,
+        265,
+        1232,
+        190
+      ],
+      "viewBoxNote": "Rendering crop only. Preserve aspect ratio; never stretch original PNG. 2172x564 has ratio 3.851:1, suitable for a 180x48 contained button. Central title remains blank.",
+      "significantAlphaBounds": {
+        "8": [
+          17,
+          143,
+          2155,
+          548
+        ],
+        "32": [
+          17,
+          144,
+          2155,
+          548
+        ],
+        "128": [
+          17,
+          145,
+          2154,
+          547
+        ],
+        "240": [
+          18,
+          145,
+          2149,
+          547
+        ]
+      },
+      "promptFile": "prompt-star.txt",
+      "alphaNote": "True exterior transparency with antialiasing and very-low-alpha residual pixels; center alpha is near-opaque, not mathematically 255 everywhere. Original bytes preserved."
+    }
+  ],
+  "contactSheet": {
+    "file": "contact-sheet-180x48.png",
+    "sha256": "5d1ef015e003f42e5e38a577e2753e9bb4197fa6e2716803ab4101002d7a023a",
+    "dimensions": [
+      444,
+      248
+    ],
+    "tileCssPixels": [
+      180,
+      48
+    ],
+    "order": "Rows left-to-right: fire/nature, frost/lightning, shadow/star",
+    "background": "#10202b",
+    "textOverlay": false,
+    "originalPNGsModified": false,
+    "audit": "contact-sheet-audit.json"
+  }
+}

@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile, argparse
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--version',default='campaign31',choices=[f'campaign{i}' for i in range(1,32)])
+parser.add_argument('--version',default='campaign33',choices=[f'campaign{i}' for i in range(1,34)])
 parser.add_argument('--report',help='JSON report filename inside validation/; defaults to <version>-package.json')
 args=parser.parse_args()
 version=args.version
@@ -29,8 +29,8 @@ def file_digest(file):
 metadata=json.loads((source/'版本信息.json').read_text(encoding='utf-8'))
 if metadata.get('build')!=version:
     raise SystemExit('Built version does not match requested release; build the correct version first')
-required_build = 'android1-crossplay-v3' if version in ('campaign26','campaign27','campaign28','campaign29','campaign30','campaign31') else 'android1-crossplay-v2'
-if version in ('campaign21','campaign22','campaign23','campaign24','campaign25','campaign26','campaign27','campaign28','campaign29','campaign30','campaign31') and metadata.get('lanBuild')!=required_build:
+required_build = 'android1-crossplay-v3' if version in ('campaign26','campaign27','campaign28','campaign29','campaign30','campaign31','campaign32','campaign33') else 'android1-crossplay-v2'
+if version in ('campaign21','campaign22','campaign23','campaign24','campaign25','campaign26','campaign27','campaign28','campaign29','campaign30','campaign31','campaign32','campaign33') and metadata.get('lanBuild')!=required_build:
     raise SystemExit('This release requires the Android/Windows crossplay build')
 expected={p.relative_to(root/'dist').as_posix():file_digest(p) for p in (root/'dist').rglob('*') if p.is_file() and p.relative_to(root/'dist').parts[0] not in ('client','server','.openai')}
 built={p.relative_to(source/'resources/app/dist').as_posix():file_digest(p) for p in (source/'resources/app/dist').rglob('*') if p.is_file()}

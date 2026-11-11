@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/** Real, non-aggregated TapADN 5.3.2.0; intentionally limited to test media. */
+/** Real, non-aggregated TapADN 5.3.2.0; test media remains the default; production requires explicit approval. */
 @CapacitorPlugin(name="ArcaneAds")
 public final class AdsPlugin extends Plugin {
     private static final Set<String> REWARDED=new HashSet<>(Arrays.asList("reward-coins","reward-ticket","reward-item","reward-revive"));
@@ -41,20 +41,20 @@ public final class AdsPlugin extends Plugin {
         TapRewardVideoAd reward;
         TapInterstitialAd interstitial;
         AdReceiptGate.FailureDiagnostic failure;
-        Attempt(PluginCall call,String placement,boolean rewarded){this.call=call;gate=new AdReceiptGate(placement,rewarded);}
+        Attempt(PluginCall call,String placement,boolean rewarded){this.call=call;gate=new AdReceiptGate(placement,rewarded,BuildConfig.ADN_TEST_MODE);}
     }
     private long positiveId(String value){try{long id=Long.parseLong(value);return id>0?id:0;}catch(Exception ignored){return 0;}}
     private boolean supportedAbi(){String primary=Build.SUPPORTED_ABIS.length>0?Build.SUPPORTED_ABIS[0]:"";return primary.equals("arm64-v8a")||primary.equals("armeabi-v7a");}
-    private boolean configured(){return BuildConfig.ADN_TEST_MODE&&positiveId(BuildConfig.ADN_MEDIA_ID)>0&&!BuildConfig.ADN_MEDIA_KEY.trim().isEmpty();}
+    private boolean configured(){return (BuildConfig.ADN_TEST_MODE||BuildConfig.ADN_PRODUCTION_APPROVED)&&positiveId(BuildConfig.ADN_MEDIA_ID)>0&&!BuildConfig.ADN_MEDIA_KEY.trim().isEmpty();}
     private boolean consented(){return getContext().getSharedPreferences("arcane-privacy",0).getBoolean("ads-dirichlet",false);}
     private JSObject statusJson(){
-        JSObject value=new JSObject();value.put("provider","dirichlet");value.put("sdkVersion","5.3.2.0");value.put("testMode",true);value.put("environment","test");value.put("monetization",false);value.put("configured",configured());value.put("supportedAbi",supportedAbi());if(!supportedAbi())value.put("reason","unsupportedAbi");value.put("privacyAccepted",consented());value.put("initialized",initialized);value.put("rewarded",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_REWARDED_PLACEMENT)>0);value.put("interstitial",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_INTERSTITIAL_PLACEMENT)>0);value.put("busy",active!=null);if(lastFailure!=null)value.put("lastFailure",diagnosticJson(lastFailure));return value;
+        JSObject value=new JSObject();value.put("provider","dirichlet");value.put("sdkVersion","5.3.2.0");value.put("testMode",BuildConfig.ADN_TEST_MODE);value.put("environment",BuildConfig.ADN_TEST_MODE?"test":"production");value.put("monetization",!BuildConfig.ADN_TEST_MODE&&BuildConfig.ADN_PRODUCTION_APPROVED);value.put("configured",configured());value.put("supportedAbi",supportedAbi());if(!supportedAbi())value.put("reason","unsupportedAbi");value.put("privacyAccepted",consented());value.put("initialized",initialized);value.put("rewarded",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_REWARDED_PLACEMENT)>0);value.put("interstitial",configured()&&supportedAbi()&&positiveId(BuildConfig.ADN_INTERSTITIAL_PLACEMENT)>0);value.put("busy",active!=null);if(lastFailure!=null)value.put("lastFailure",diagnosticJson(lastFailure));return value;
     }
     @PluginMethod public void status(PluginCall call){main.post(()->call.resolve(statusJson()));}
     @PluginMethod public void consent(PluginCall call){main.post(()->{
         if(!Boolean.TRUE.equals(call.getBoolean("privacyAccepted",false))){call.reject("请先阅读并确认广告SDK隐私说明","privacyRequired");return;}
         if(!supportedAbi()){call.reject("此设备架构暂不支持广告服务，单机游玩不受影响","unsupportedAbi");return;}
-        if(!configured()){call.reject("测试广告尚未配置完成，单机游玩不受影响","notConfigured");return;}
+        if(!configured()){call.reject("广告服务尚未配置完成，单机游玩不受影响","notConfigured");return;}
         if(destroyed){call.reject("广告页面已关闭","closed");return;}
         if(!initialized&&!usableActivity()){remember(null,"lifecycle",null,"Initialization requires a foreground focused Activity");call.reject("请回到游戏页面后再主动观看广告","background",errorJson(lastFailure));return;}
         try{
@@ -140,7 +140,7 @@ public final class AdsPlugin extends Plugin {
     private boolean usableActivity(){Activity activity=getActivity();return activity!=null&&!activity.isFinishing()&&!activity.isDestroyed()&&activity.hasWindowFocus();}
     private boolean current(Attempt a){return active==a&&!a.gate.isEnded()&&!destroyed;}
     private String requestId(Map<String,Object> info){if(info==null)return "";for(String key:new String[]{"request_id","requestId","ad_request_id"}){Object value=info.get(key);if(value instanceof String)return ((String)value).substring(0,Math.min(512,((String)value).length()));}return "";}
-    private JSObject unavailable(boolean reward,String reason){JSObject out=new JSObject();out.put(reward?"available":"shown",false);out.put("completed",false);out.put("testMode",true);out.put("environment","test");out.put("reason",reason);return out;}
+    private JSObject unavailable(boolean reward,String reason){JSObject out=new JSObject();out.put(reward?"available":"shown",false);out.put("completed",false);out.put("testMode",BuildConfig.ADN_TEST_MODE);out.put("environment",BuildConfig.ADN_TEST_MODE?"test":"production");out.put("reason",reason);return out;}
     private void timeout(Attempt a,long ms,String reason){if(a.timeout!=null)main.removeCallbacks(a.timeout);a.timeout=()->fail(a,reason,0);main.postDelayed(a.timeout,ms);}
     private String errorText(Throwable error){return error.getClass().getSimpleName()+": "+(error.getMessage()==null?"":error.getMessage());}
     private String failurePhase(String reason){if(reason.endsWith("Timeout"))return "timeout";if(reason.startsWith("load"))return "load";if(reason.startsWith("show"))return "show";if(reason.startsWith("video"))return "video";if(reason.equals("closedBeforeReward"))return "verify";if(reason.equals("background")||reason.equals("destroyed"))return "lifecycle";return "show";}
@@ -158,7 +158,7 @@ public final class AdsPlugin extends Plugin {
         if(active!=a)return;AdReceiptGate.Result result=a.gate.finish(normalClose,reason);if(result==null)return;if(a.timeout!=null)main.removeCallbacks(a.timeout);
         if(!result.completed&&a.gate.rewarded&&a.failure==null)remember(a,"verify",null,"Reward not verified before normal close");
         active=null;
-        JSObject out=new JSObject();out.put("available",result.available);out.put("shown",result.shown);out.put("completed",result.completed);out.put("placement",a.gate.placement);out.put("testMode",true);out.put("environment","test");if(result.completed)out.put("receipt",result.receipt);if(!result.reason.isEmpty())out.put("reason",result.reason);appendError(out,a.failure);a.call.resolve(out);dispose(a);
+        JSObject out=new JSObject();out.put("available",result.available);out.put("shown",result.shown);out.put("completed",result.completed);out.put("placement",a.gate.placement);out.put("testMode",BuildConfig.ADN_TEST_MODE);out.put("environment",BuildConfig.ADN_TEST_MODE?"test":"production");if(result.completed)out.put("receipt",result.receipt);if(!result.reason.isEmpty())out.put("reason",result.reason);appendError(out,a.failure);a.call.resolve(out);dispose(a);
     }
     private void dispose(Attempt a){try{if(a.reward!=null)a.reward.dispose();}catch(Exception ignored){}try{if(a.interstitial!=null)a.interstitial.dispose();}catch(Exception ignored){}}
     @Override protected void handleOnPause(){main.post(()->{if(active!=null&&!active.showRequested)fail(active,"background",0);});}

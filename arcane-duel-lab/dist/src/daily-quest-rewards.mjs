@@ -1,3 +1,4 @@
+import {operationReceiptUsed} from './release-ad-policy.mjs';
 import {dailyView,dailyDate,claimDaily,DAILY_REWARDS,DAILY_AD_RECEIPT_LIMIT,validDailyAdReceipt} from './daily-quests.mjs';
 
 /** Capture a chest choice only. No task click, dialog opening or SDK status awards coins. */
@@ -17,7 +18,7 @@ export function dailyRewardDraft(profile,choice,{double=false,adResult=null,now=
  if(double){
   if(adResult?.completed!==true||!validDailyAdReceipt(adResult.receipt)||adResult.placement!==undefined&&adResult.placement!=='reward-coins')throw Error('广告尚未完成，本次未领取奖励，可继续普通领取');
   if(view.adBlocked)throw Error('广告领取记录暂时无法核对，可选择普通领取');
-  if(view.adReceipts.includes(adResult.receipt)||profile.shop?.receipts?.includes(adResult.receipt))throw Error('这次广告奖励已经使用，可重新选择领取方式');
+  if(operationReceiptUsed(profile,adResult.receipt))throw Error('这次广告奖励已经使用，可重新选择领取方式');
   if(view.adReceipts.length>=DAILY_AD_RECEIPT_LIMIT)throw Error('广告领取记录已满，可选择普通领取');
  }
  const base=claimDaily(next,choice.taskId,now).reward;

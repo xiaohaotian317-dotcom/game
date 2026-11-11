@@ -1,0 +1,130 @@
+{
+  "task": "T73",
+  "date": "2026-11-11",
+  "publishReady": false,
+  "gamePublished": false,
+  "reviewSubmitted": false,
+  "installationHeldByUser": true,
+  "deviceObservedVersion": "0.1.13",
+  "localApk": {
+    "version": "0.1.15",
+    "versionCode": 16,
+    "sha256": "8c0a9356610f7de3f368c409a732bf7a3850e03f987df5ca4353a82d3292d007",
+    "originalKey": true,
+    "webAssets": 487,
+    "elf16k": true
+  },
+  "localWindows": {
+    "version": "campaign33",
+    "sha256": "b81bb783d9cc63efdcc2f6b772a19aa9f4e1a6c5341d83967024b0e63b202dc9"
+  },
+  "checks": {
+    "testsPassed": 684,
+    "failed": 0,
+    "skipped": 0,
+    "uiSizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        800,
+        360
+      ],
+      [
+        568,
+        320
+      ]
+    ],
+    "favoriteAllSixVisuallyChecked": true,
+    "shareFirst100ExactlyOnce": true
+  },
+  "implemented": {
+    "privacyTextAndSdkList": true,
+    "privacyPublicHttps": "https://xiaohaotian317-dotcom.github.io/game/privacy.html",
+    "privacyDraftSavedSignal": "17:49:49 已保存",
+    "tapUpdateBridge": true,
+    "complianceBridge": true,
+    "noIsbnComplianceServiceEnabled": true,
+    "shareLobby": true,
+    "favoriteLobbyHero": true,
+    "reviveFlow": true,
+    "resultInterstitialFlow": true
+  },
+  "configuration": {
+    "mandatoryCompliance": false,
+    "adsTestMode": true,
+    "productionAdsApproved": false,
+    "reviveEnabled": false,
+    "resultInterstitialEnabled": false
+  },
+  "tapDraft": {
+    "version": "V-20261109",
+    "status": "未发布",
+    "androidStatus": "敬请期待",
+    "qualificationBanner": "游戏资质待补充",
+    "introEmpty": true,
+    "ageUnselected": true,
+    "latestApkAssociated": false,
+    "cloudServiceManualOpeningNotNeeded": true
+  },
+  "dirichlet": {
+    "media": "测试中/测试",
+    "rewarded": "测试中/测试",
+    "interstitial": "测试中/测试",
+    "newAdRequested": false,
+    "previousRealLoad400StillUnresolved": true
+  },
+  "remaining": [
+    {
+      "kind": "configuration-and-real-test",
+      "item": "正式强制认证开关、官方真实认证/限制/退出/重启及防沉迷证明视频未完成；不把500模拟或SDK编译冒充实测"
+    },
+    {
+      "kind": "qualification",
+      "item": "后台仍提示资质待补；按预约/开放试玩/正式下载路线核ICP、版号或平台辅助证明，需用户真实资料"
+    },
+    {
+      "kind": "real-test",
+      "item": "TapTap已有新版本时更新链路与取消返回；当前未公开商店不能完整演练"
+    },
+    {
+      "kind": "real-test",
+      "item": "实际广告成功播放与准确发奖，后续按用户选择转正式媒体及广告位、审核及结算资料"
+    },
+    {
+      "kind": "devices-and-time",
+      "item": "双安卓不同网络完整对局、手机PC互为房主、自然周榜结束与双设备云领奖防重、跨机型和持续性能"
+    },
+    {
+      "kind": "materials",
+      "item": "至少三张最新真实玩法截图和至少15秒实机玩法录屏未完成；不能用概念或QA界面替代"
+    },
+    {
+      "kind": "user-reserved",
+      "item": "广告类型截图后用户选择、PV、预热/预约勾选和封面简介填写、提交审核与发布由用户操作"
+    }
+  ],
+  "promo": {
+    "path": "美术概念/协作交付/T73/store-art/taptap-promo-1920x1080-v1.jpg",
+    "size": [
+      1920,
+      1080
+    ],
+    "bytes": 1932908,
+    "originSize": [
+      1672,
+      941
+    ],
+    "resampled": true,
+    "uploaded": false
+  },
+  "sources": [
+    "https://developer.taptap.cn/docs/store/standardies-operation/",
+    "https://developer.taptap.cn/docs/store/release/publish/material/",
+    "https://developer.taptap.cn/docs/store/release/policy/policy-guide/",
+    "https://ssp.dirichlet.cn/docs/faq/",
+    "https://ssp.dirichlet.cn/docs/ssp-guide/"
+  ],
+  "privacy": "No credentials, real-name documents, device identifiers, saves or finance details included"
+}

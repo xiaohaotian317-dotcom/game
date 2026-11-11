@@ -1,0 +1,19 @@
+{
+  "scope": "Only privacy policy published; no game files, credentials, saves or review submission",
+  "branch": "codex/privacy-policy-pages",
+  "commit": "d0e6ecbc959eb4ba4486b8ce318ade90a4cc5666",
+  "files": [
+    ".nojekyll",
+    "index.html",
+    "privacy.html"
+  ],
+  "apiStatus": 201,
+  "url": "https://xiaohaotian317-dotcom.github.io/game/",
+  "httpsEnforced": true,
+  "gamePublished": false,
+  "publicPageVisuallyVerified": true,
+  "tapDraftPrivacyUrl": "https://xiaohaotian317-dotcom.github.io/game/privacy.html",
+  "tapDraftSavedSignal": "17:49:49 已保存",
+  "tapReviewSubmitted": false,
+  "tapGamePublished": false
+}

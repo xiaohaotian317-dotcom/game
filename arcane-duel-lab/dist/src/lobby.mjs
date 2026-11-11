@@ -1,3 +1,5 @@
+import {FavoriteHeroDialog,favoriteHero,renderFavoriteEntry,favoriteFigure} from './favorite-hero.mjs';
+import {openGameShare} from './game-share.mjs';
 import {installOnboarding} from './onboarding-guide.mjs';
 import {Sound} from './audio.mjs';
 import {SettingsDialog} from './settings-dialog.mjs';
@@ -28,8 +30,8 @@ function persist(){Object.assign(solo,loadSolo(storage));solo.selected=profile.s
 function decorate(){for(const el of $$('.frame')){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','ornate-frame');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.innerHTML='<use href="#ornate-frame"/>';el.append(svg);}}
 function renderHeader(){
   $$('[data-balance]').forEach(el=>el.textContent=profile.coins.toLocaleString('en-US'));
-  $('#owned-count').textContent=profile.owned.length+' / 6';art($('#profile-art'),profile.selected);art($('#hall-art'),profile.selected);
-  const h=HEROES[profile.selected];$('#hall-hero-label').innerHTML=h.name+' · '+h.given+' <span>›</span>';
+  $('#owned-count').textContent=profile.owned.length+' / 6';const displayHero=favoriteHero(solo);art($('#profile-art'),displayHero);art($('#hall-art'),displayHero);$('#hall-art').classList.add('favorite-hall-figure');$('#hall-art').innerHTML=favoriteFigure(displayHero);
+  renderFavoriteEntry($('#hall-hero-label'),displayHero);
 
   $$('[data-summon]').forEach(b=>b.disabled=busy||profile.coins<(b.dataset.summon==='10'?900:100));
 }
@@ -45,12 +47,13 @@ function renderDetail(){
   $('#detail-skills').innerHTML=duelSkillChoices(preview).map(s=>`<button class="detail-skill" title="${s.description}" aria-label="${['F','E','R'][s.row]} ${s.name}：${s.description}"><span class="skill-icon" style="${duelChoiceStyle(preview,s)}"></span><small><b>${['F','E','R'][s.row]}</b>${s.name}</small></button>`).join('');
   $('#hero-skills').href='skills.html?hero='+preview;$('#hero-motion').href='characters.html?hero='+preview;
   $$('.detail-skill').forEach(b=>b.addEventListener('click',()=>toast(b.getAttribute('title'))));
-  $('#ownership-status').textContent=owned?'✦ 已拥有':'◇ 尚未唤醒';$('#equip-hero').disabled=!owned||profile.selected===preview;$('#equip-hero').textContent=profile.selected===preview?'当前展示英雄':owned?'设为展示英雄':'等待召唤';
+  $('#ownership-status').textContent=owned?'✦ 已拥有':'◇ 尚未唤醒';$('#equip-hero').disabled=!owned||favoriteHero(solo)===preview;$('#equip-hero').textContent=favoriteHero(solo)===preview?'当前展示英雄':owned?'设为展示英雄':'等待召唤';
 }
 function setView(view,push=true){
   if(view==='summon'){location.href='summon.html';return;}
   if(!['hall','summon','codex'].includes(view))view='hall';const hall=view==='hall';$('#shell').dataset.view=view;$('#hall-view').hidden=!hall;$('#summon-view').hidden=hall;$('#page-heading').hidden=hall;$('#page-heading').textContent=view==='codex'?'英雄图鉴':'英雄召唤';$('.summon-controls').hidden=view==='codex';
   $('.brand').innerHTML=hall?'<span class="brand-sigil">✧</span><span>秘境决斗<small>ARCANE DUEL</small></span>':'<span class="brand-sigil">‹</span> 返回大厅';
+  $('#share-open').hidden=!hall;
   document.title=(hall?'主大厅':view==='codex'?'英雄图鉴':'英雄召唤')+' · 秘境决斗';
   if(push){const url=new URL(location.href);if(hall)url.searchParams.delete('view');else url.searchParams.set('view',view);history.pushState({view},'',url);window.scrollTo({top:0,behavior:'instant'});}
 }
@@ -60,12 +63,13 @@ function draw(){location.href='summon.html';}
 
 const sound=new Sound();
 const practice=new PracticeDialog({onConfirm:({hero,loadout,scene})=>location.href=trialURL(hero,loadout,scene)});
+const favorite=new FavoriteHeroDialog({getProfile:()=>loadSolo(storage),onSave:next=>{if(!saveSolo(storage,next))return false;Object.assign(solo,next);renderHeader();return true;},onSummon:id=>location.href='summon.html?hero='+id,notice:toast});
 const settings=new SettingsDialog({storage,onSave:next=>{Object.assign(solo,next);profile.coins=next.coins;profile.owned=next.owned;renderHeader();}});
 decorate();renderHeader();renderHeroes();renderDetail();setView(new URLSearchParams(location.search).get('view')||'hall',false);
 $$('button[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 window.addEventListener('popstate',()=>setView(new URLSearchParams(location.search).get('view')||'hall',false));
-$('#profile-button').addEventListener('click',()=>setView('codex'));$('#hall-hero-label').addEventListener('click',()=>setView('codex'));
-$('#equip-hero').addEventListener('click',()=>{if(!profile.owned.includes(preview))return;profile.selected=preview;persist();renderHeader();renderDetail();toast('已将'+HEROES[preview].name+'设为展示英雄。');});
+$('#profile-button').addEventListener('click',()=>setView('codex'));$('#hall-hero-label').addEventListener('click',()=>favorite.open());
+$('#equip-hero').addEventListener('click',()=>{if(!profile.owned.includes(preview))return;if(!favorite.onSave({...structuredClone(loadSolo(storage)),lobbyHero:preview})){toast('展示英雄未能保存，请重试。');return;}renderDetail();toast('已将'+HEROES[preview].name+'设为本命英雄。');});
 $$('[data-summon]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.summon))));
 $('#result-confirm').addEventListener('click',()=>$('#result-dialog').close());$('#result-dialog').addEventListener('close',()=>{busy=false;renderHeader();});
 $('#settings-open').addEventListener('click',()=>settings.open());$('#hero-practice').addEventListener('click',()=>practice.open(preview));$('#odds-open').addEventListener('click',()=>open('#odds-dialog'));$('#coin-help').addEventListener('click',()=>toast('金币用于学习、强化和锻造；角色召唤只消耗抽奖券。新单机初始300金币、0券，20抽内必得指定未拥有英雄。'));
@@ -89,3 +93,5 @@ async function loadLobbyArt(){
 const daily=new DailyQuestDialog({getProfile:()=>loadSolo(storage),onSave:next=>{if(!saveSolo(storage,next))return false;Object.assign(solo,next);profile.coins=next.coins;renderHeader();return true;}});$('#daily-open .daily-entry-art').style.cssText=dailyArtStyle('entry');$('#daily-open').addEventListener('click',()=>daily.open());
 
 installOnboarding('lobby');
+
+$('#share-open').addEventListener('click',async e=>{const button=e.currentTarget;if(button.disabled)return;button.disabled=true;try{const result=await openGameShare({storage,onSave:next=>{Object.assign(solo,next);profile.coins=next.coins;renderHeader();}});toast(result.rewarded?'首次分享奖励：100金币已到账。':'今日分享奖励已领取，仍可继续分享。');}catch(error){toast(error.name==='AbortError'?'已返回游戏。':error.message||'分享未能打开，请重试。');}finally{button.disabled=false;}});
