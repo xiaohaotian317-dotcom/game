@@ -11,7 +11,8 @@ import {Sound} from './audio.mjs';
 import './platform.mjs';
 const $=s=>document.querySelector(s);let storage;try{storage=localStorage;}catch{}
 const profile=loadSolo(storage),sound=new Sound({scene:'journey'});
-let boardSerial=0,rewardSerial=0,currentPeriodToken=null,endedPeriods=[],claimBusy=false,rewardReady=null;
+let boardSerial=0,rewardSerial=0,currentPeriodToken=null,endedPeriods=[],claimBusy=false,rewardReady=null,weeklyRewardsAvailable=false;
+const weeklyUnavailable='周榜排名可查看，周奖领取暂未开放。';
 function navigate(run){const q=new URLSearchParams({tower:run.id});if(new URLSearchParams(location.search).get('touch')==='1')q.set('touch','1');location.href='campaign.html?'+q;}
 function save(){if(!saveSolo(storage,profile))throw Error('本机存档无法写入，挑战尚未开始');}
 function render(){const p=towerPersonalSummary(profile);$('#tower-week-best').innerHTML=p.weekBest+'<small>层</small>';$('#tower-all-best').innerHTML=p.allTimeBest+'<small>层</small>';const run=p.active,resume=run&&run.week===p.week.id&&['active','intermission'].includes(run.state)&&run.completed>0;$('#tower-resume').hidden=!resume;$('#tower-resume').textContent=resume?`继续第 ${run.floor} 层 · 已通过 ${run.completed} 层`:'';}
@@ -36,6 +37,8 @@ function rewardState({message,button='等待云榜核对',rank='—',rewards=[],
 }
 function updatePeriods(result){
  const select=$('#tower-reward-period'),old=select.value;endedPeriods=towerEndedPeriods(result);select.replaceChildren();
+ weeklyRewardsAvailable=result.status?.weeklyRewards===true&&result.status?.weeklyClaimAtomic===true;
+ if(!weeklyRewardsAvailable){const option=document.createElement('option');option.value='';option.textContent='周奖领取暂未开放';select.append(option);select.disabled=true;rewardState({message:weeklyUnavailable,button:'暂未开放'});return;}
  if(!endedPeriods.length){const option=document.createElement('option');option.value='';option.textContent=result.connected?'暂无已结算周期':'连接云榜后查看';select.append(option);select.disabled=true;rewardState({message:result.connected?'本周仍在进行中。首个周期结算后，这里会显示可领取的周奖。':'登录并连接 TapTap 后，可核对已结算名次与领取记录。',button:result.connected?'等待本周结算':'请先连接云榜'});return;}
  for(const period of endedPeriods){const option=document.createElement('option');option.value=period.token;option.textContent=period.label;select.append(option);}
  select.disabled=claimBusy;if(endedPeriods.some(p=>p.token===old))select.value=old;
@@ -45,6 +48,7 @@ function updatePeriods(result){
 async function previewReward(){
  const serial=++rewardSerial,token=$('#tower-reward-period').value,provider=towerProvider();
  if(claimBusy)return;
+ if(!weeklyRewardsAvailable){rewardState({message:weeklyUnavailable,button:'暂未开放'});return;}
  if(!provider||!token||!endedPeriods.some(p=>p.token===token)||token===currentPeriodToken){rewardState({message:endedPeriods.length?'请选择已结算周期。':'暂无可领取的已结算周期。',button:'等待周期结算'});return;}
  rewardState({message:'正在核对 TapTap 本人名次与领取记录…',button:'核对中…'});
  try{
@@ -65,14 +69,14 @@ $('#tower-reward-period').onchange=previewReward;
 $('#tower-rules-open').onclick=()=>{$('#tower-rules').showModal();if(endedPeriods.length)previewReward();};
 $('#tower-rules-close').onclick=()=>$('#tower-rules').close();
 $('#tower-claim').onclick=async()=>{
- if(claimBusy||!rewardReady)return;const token=rewardReady.periodToken;
+ if(claimBusy||!rewardReady||!weeklyRewardsAvailable)return;const token=rewardReady.periodToken;
  if(token===currentPeriodToken||!endedPeriods.some(p=>p.token===token))return;
  claimBusy=true;$('#tower-claim').disabled=true;$('#tower-reward-period').disabled=true;$('#tower-reward-refresh').disabled=true;$('#tower-claim').textContent='正在保存周奖…';$('#tower-reward-status').textContent='正在核对云端领取记录并保存，请稍候。';
  try{
   const result=await claimTowerWeeklyReward({storage,provider:towerProvider(),periodToken:token});Object.assign(profile,result.profile);render();
   rewardState({message:result.status==='granted'?'周奖已存入背包，可在角色背包中查看。':'这个周期已领取，同一账号不会重复发放。',button:'本期已领取',rank:'第 '+result.claim.rank+' 名',rewards:result.claim.rewards});
  }catch(error){rewardState({message:error.message||'领取尚未完成，请稍后重试。',button:'重新核对后领取'});}
- finally{claimBusy=false;$('#tower-reward-period').disabled=!endedPeriods.length;$('#tower-reward-refresh').disabled=false;$('#tower-refresh').disabled=false;}
+ finally{claimBusy=false;$('#tower-reward-period').disabled=!weeklyRewardsAvailable||!endedPeriods.length;$('#tower-reward-refresh').disabled=false;$('#tower-refresh').disabled=false;}
 };
 function emptyBoard(message){const root=$('#tower-board');root.replaceChildren();const note=document.createElement('p');note.className='tower-result-note tower-empty-note';note.textContent=message;root.append(note);}
 async function board(){

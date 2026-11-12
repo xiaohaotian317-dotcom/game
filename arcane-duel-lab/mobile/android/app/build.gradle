@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: rootProject.file('../release-profile.gradle')
 
 def releaseProperties = new Properties()
 def releaseFile = rootProject.file('../.private/signing.properties')
@@ -6,6 +7,10 @@ if (releaseFile.exists()) releaseProperties.load(new FileInputStream(releaseFile
 def tapProperties = new Properties()
 def tapFile = rootProject.file('../.private/taptap.properties')
 if (tapFile.exists()) tapProperties.load(new FileInputStream(tapFile))
+if (project.ext.arcaneReleaseProfile.complianceRequired &&
+        (!tapProperties.getProperty('clientId')?.trim() || !tapProperties.getProperty('clientToken')?.trim())) {
+    throw new GradleException('TapTap profile requires the configured TapTap client ID/token; restore local configuration before building.')
+}
 def adsProperties = new Properties()
 def adsFile = rootProject.file('../.private/dirichlet.properties')
 if (adsFile.exists()) adsProperties.load(new InputStreamReader(new FileInputStream(adsFile), 'UTF-8'))
@@ -28,12 +33,13 @@ android {
         applicationId "com.xiaohaotian.arcaneduel"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 16
-        versionName "0.1.15"
+        versionCode 20
+        versionName "0.1.19"
         buildConfigField "String", "TAP_CLIENT_ID", quoted(tapProperties.getProperty("clientId"))
         buildConfigField "String", "TAP_CLIENT_TOKEN", quoted(tapProperties.getProperty("clientToken"))
         buildConfigField "String", "TOWER_LEADERBOARD_ID", quoted(tapProperties.getProperty("towerLeaderboardId"))
-        buildConfigField "boolean", "COMPLIANCE_REQUIRED", tapProperties.getProperty("complianceRequired", "false") == "true" ? "true" : "false"
+        buildConfigField "String", "RELEASE_PROFILE", quoted(project.ext.arcaneReleaseProfile.name)
+        buildConfigField "boolean", "COMPLIANCE_REQUIRED", project.ext.arcaneReleaseProfile.complianceRequired ? "true" : "false"
         buildConfigField "boolean", "ADN_PRODUCTION_APPROVED", adsProperties.getProperty("productionApproved", "false") == "true" ? "true" : "false"
         buildConfigField "String", "ADN_MEDIA_ID", quoted(adsProperties.getProperty("mediaId", adsProperties.getProperty("appId")))
         buildConfigField "String", "ADN_MEDIA_KEY", quoted(adsProperties.getProperty("mediaKey"))

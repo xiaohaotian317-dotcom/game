@@ -5,7 +5,7 @@ const codes={500:'allowed',1000:'exited',1001:'switchAccount',1030:'periodRestri
 export function complianceState(raw={}){
  const code=Number.isInteger(raw.complianceCode)?raw.complianceCode:null,revision=Number.isSafeInteger(raw.complianceRevision)&&raw.complianceRevision>=0?raw.complianceRevision:null;
  const allowed=raw.available===true&&raw.initialized===true&&raw.complianceAllowed===true&&code===500;
- const phase=['accountChanged','exited','cancelled'].includes(raw.reason)?raw.reason:allowed?'allowed':raw.compliancePending===true?'checking':code===500?'unknown':codes[code]||(raw.reason?'serviceUnavailable':'unchecked');
+ const phase=['accountChanged','exited','cancelled'].includes(raw.reason)?raw.reason:allowed?'allowed':raw.compliancePending===true?'checking':code===500?'unknown':codes[code]||(raw.reason==='unchecked'?'unchecked':raw.reason?'serviceUnavailable':'unchecked');
  return Object.freeze({allowed:allowed&&phase==='allowed',phase,code,revision,label:labels[phase]||labels.unknown});
 }
 export class TapSafety{
@@ -15,6 +15,18 @@ export class TapSafety{
  consume(raw,{force=false}={}){if(this.disposed)return this.snapshot();const next=complianceState(raw);if(!force&&next.revision!==null&&this.state.revision!==null&&next.revision<this.state.revision)return this.snapshot();this.state=next;for(const listener of this.listeners){try{listener(this.snapshot());}catch{}}return this.snapshot();}
  async observe(){if(this.disposed)throw Error('认证页面已关闭');if(typeof this.provider?.subscribe!=='function')throw Error('认证状态监听未就绪，请重试');if(!this.subscriptionTask)this.subscriptionTask=Promise.resolve(this.provider?.subscribe?.(raw=>this.consume(raw))).then(handle=>{if(this.disposed){handle?.remove?.();return;}this.subscription=handle;}).catch(()=>{this.subscriptionTask=null;throw Error('认证状态监听未就绪，请重试');});await this.subscriptionTask;}
  async status(){if(!this.provider?.status)return {available:false,configured:false,complianceAllowed:false};const raw=await this.provider.status();this.consume(raw);return raw;}
+ async resumeCompliance(){
+  if(this.resumeTask)return this.resumeTask;
+  this.resumeTask=this.restoreSession();
+  try{return await this.resumeTask;}finally{this.resumeTask=null;}
+ }
+ async restoreSession(){
+  const raw=await this.status();
+  if(this.disposed||this.state.allowed||raw.privacyAccepted!==true||raw.reason!=='unchecked'||raw.compliancePending===true||typeof this.provider?.resumeCompliance!=='function')return this.snapshot();
+  await this.observe();if(this.disposed)return this.snapshot();
+  this.consume({compliancePending:true,complianceRevision:this.state.revision},{force:true});
+  try{return this.consume(await this.provider.resumeCompliance());}catch(error){this.consume({reason:'sdkFailed'},{force:true});throw error;}
+ }
  async startCompliance({privacyAccepted=false,identityMode='local'}={}){
   if(privacyAccepted!==true)throw Error('请先阅读并同意隐私与SDK说明');if(!this.provider?.startCompliance)return this.consume({reason:'unavailable'},{force:true});
   await this.observe();this.consume({compliancePending:true,complianceRevision:this.state.revision},{force:true});

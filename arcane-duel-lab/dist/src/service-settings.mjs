@@ -1,5 +1,5 @@
 import {TapSafety} from './tap-safety.mjs';
-let instance,gate,gateStatus,required=false,enforced=false,installed=false,policyDialog;
+let instance,gate,gateStatus,required=false,enforced=false,installed=false,policyDialog,rememberedConsent=false;
 export const safetyAllowsPlay=()=>!enforced||instance?.snapshot().allowed===true;
 export function currentSafety(){return instance??=new TapSafety(globalThis.arcaneTapSafetyProvider||null);}
 function style(){if(document.querySelector('[data-service-style]'))return;const link=document.createElement('link');link.rel='stylesheet';link.href=new URL('../service-settings.css',import.meta.url).href;link.dataset.serviceStyle='';document.head.append(link);}
@@ -10,7 +10,7 @@ export function openPrivacyPolicy(){
 function safetyGate(){
  if(gate)return gate;style();gate=document.createElement('dialog');gate.className='platform-safety-gate';gate.setAttribute('aria-labelledby','safety-gate-title');
  gate.innerHTML='<small>THE GUARDIAN OF THE REALM</small><h2 id="safety-gate-title">实名认证与游玩限制</h2><p data-safety-message role="status"></p><p>认证由TapTap官方服务处理，本游戏不会向客服传递你的完整实名资料。</p><label><input type="checkbox" data-safety-consent> 我已阅读并同意本游戏及TapSDK隐私说明</label><button type="button" data-safety-policy>阅读隐私政策</button><div class="service-actions"><button type="button" data-safety-start>开始官方认证</button><button type="button" data-safety-quit>退出游戏</button></div>';
- document.body.append(gate);gateStatus=gate.querySelector('[data-safety-message]');gate.querySelector('[data-safety-policy]').onclick=openPrivacyPolicy;
+ document.body.append(gate);gateStatus=gate.querySelector('[data-safety-message]');gate.querySelector('input').checked=rememberedConsent;gate.querySelector('[data-safety-policy]').onclick=openPrivacyPolicy;
  gate.addEventListener('cancel',e=>e.preventDefault());
  gate.querySelector('[data-safety-start]').onclick=async()=>{if(!gate.querySelector('input').checked){gateStatus.textContent='请先阅读并勾选隐私说明。';return;}const b=gate.querySelector('[data-safety-start]');b.disabled=true;try{await currentSafety().startCompliance({privacyAccepted:true});}catch(e){gateStatus.textContent=e.message;}finally{b.disabled=false;}};
  gate.querySelector('[data-safety-quit]').onclick=()=>globalThis.arcaneMobile?.bridge?.quit?.();return gate;
@@ -23,9 +23,9 @@ function renderSafety(state){
 export async function installPlatformSafety(){
  if(installed||!globalThis.arcaneMobile||!globalThis.arcaneTapSafetyProvider)return;installed=true;enforced=true;let resolving=true;const service=currentSafety();
  service.onChange(state=>{if(!resolving)renderSafety(state);});
- try{await service.observe();const status=await service.status();required=status.required===true;enforced=required||Number(status.complianceRevision)>0;resolving=false;if(!enforced&&gate?.open)gate.close();renderSafety(service.snapshot());}
+ try{await service.observe();const status=await service.status();rememberedConsent=status.privacyAccepted===true;required=status.required===true;enforced=required||Number(status.complianceRevision)>0;if(enforced&&rememberedConsent)await service.resumeCompliance();resolving=false;if(!enforced&&gate?.open)gate.close();renderSafety(service.snapshot());}
  catch{resolving=false;enforced=true;renderSafety({allowed:false,label:'认证状态暂未读取成功，请重试官方认证或退出游戏。'});}
- globalThis.addEventListener('arcane:foreground',()=>{service.status().then(s=>{required=s.required===true;enforced||=required||Number(s.complianceRevision)>0;renderSafety(service.snapshot());}).catch(()=>{});});
+ globalThis.addEventListener('arcane:foreground',()=>{service.status().then(async s=>{required=s.required===true;enforced||=required||Number(s.complianceRevision)>0;if(enforced&&s.privacyAccepted===true&&s.reason==='unchecked')await service.resumeCompliance();renderSafety(service.snapshot());}).catch(()=>{});});
 }
 export function serviceSettingsMarkup(){return `<h3>旅程与账号</h3><div class="service-settings-grid"><button type="button" data-service-policy><b>隐私政策</b><small>信息处理与第三方SDK</small></button><button type="button" data-service-compliance><b>实名认证</b><small>TapTap官方认证流程</small></button><button type="button" data-service-update><b>前往TapTap更新</b><small>使用已安装的TapTap客户端</small></button></div><label class="service-consent"><input type="checkbox" data-service-consent> 使用认证或更新前，我已阅读并同意本游戏及TapSDK隐私说明</label><div class="service-privacy-footer"><span>客服：13891746392@163.com</span><button type="button" data-service-withdraw>撤回服务授权</button></div>`;}
 export function bindServiceSettings(settings){

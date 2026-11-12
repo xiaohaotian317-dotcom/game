@@ -1,6 +1,9 @@
 import {loadSolo,saveSolo} from './campaign-profile.mjs';
 import {normalizeOnboarding} from './onboarding-state.mjs';
 const visible=el=>el&&!el.hidden&&!el.closest('[inert]')&&el.getClientRects().length&&getComputedStyle(el).visibility!=='hidden';
+// A first-run guide must never intercept consent, official authentication,
+// privacy or withdrawal controls, including before its refresh timer runs.
+const serviceDialogOpen=()=>!!document.querySelector('.platform-safety-gate[open],.service-policy-view[open],.service-withdraw-dialog[open]');
 export function installOnboarding(page,{storage=globalThis.localStorage,getProfile=()=>loadSolo(storage),persist=p=>saveSolo(storage,p),getWorld=()=>null,closeSystem=()=>{},openMenu=()=>{}}={}){
  if(typeof document==='undefined')return;
  let current,target,next,popoverHost,passive=false,last='',timer;
@@ -21,6 +24,7 @@ export function installOnboarding(page,{storage=globalThis.localStorage,getProfi
   bubble.style.left=Math.max(10,Math.min(innerWidth-width-10,best.x))+'px';bubble.style.top=Math.max(10,Math.min(innerHeight-height-10,best.y))+'px';
  }
  function refresh(){
+  if(serviceDialogOpen()){hide();last='';return;}
   current=state();if(current.step==='done'){hide();clearInterval(timer);document.removeEventListener('click',capture,true);return;}
   const s=current.step;
   if(page==='title'){show('#start-button','踏入秘境','欢迎来到秘境决斗。先开始旅程，一起认识你的英雄与修行之路。',null);return;}
@@ -57,7 +61,7 @@ export function installOnboarding(page,{storage=globalThis.localStorage,getProfi
   else if(visible(document.querySelector('#team-screen'))){const ready=document.querySelector('[data-team-confirm]');if(ready?.disabled)show('[data-team-hero=fire]','选择焰术师','点击焰术师头像，加入第一个出战位置。',null);else show('[data-team-confirm]','准备出发','英雄已就位。点击开始挑战，进入启程试炼。',null);}
   else show('[data-stage="23"]','第一场试炼','点击启程试炼。先熟悉移动、跳跃和攻击，再探索正式秘境。',null);
  }
- function capture(e){if(layer.hidden||passive||!target)return;if(bubble.contains(e.target))return;if(target.contains(e.target)&&!next){
+ function capture(e){if(serviceDialogOpen()||layer.hidden||passive||!target)return;if(bubble.contains(e.target))return;if(target.contains(e.target)&&!next){
    const s=state().step;let step;
    if(page==='title')step='summon';else if(page==='lobby')step=e.target.closest('#shop-open')?'shop-intro':e.target.closest('#stages-open')?'map':'tickets';else if(page==='summon')step='shop';else if(page==='shop')step='explore';
    else if(s==='reward')step='menu';else if(s==='menu')step='menus';else if(s==='menus')step='menus';else if(e.target.closest('[data-team-hero]'))step='team';else if(e.target.closest('[data-team-confirm]'))step='battle';else if(e.target.closest('#enter-stage'))step='team';else step='detail';

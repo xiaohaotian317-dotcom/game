@@ -1,0 +1,9 @@
+// This file is independent of private credentials and is also evaluated by the
+// local Groovy regression test. A private legacy complianceRequired=false must
+// never downgrade a TapTap build. Preview is an explicit, separate build choice.
+def requestedProfile = project.findProperty('arcaneReleaseProfile')
+def profileName = requestedProfile == null ? 'taptap' : requestedProfile.toString().trim().toLowerCase(Locale.ROOT)
+if (!(profileName in ['taptap', 'preview'])) {
+    throw new IllegalArgumentException('arcaneReleaseProfile must be taptap or preview; no build was produced.')
+}
+ext.arcaneReleaseProfile = [name: profileName, complianceRequired: profileName == 'taptap'].asImmutable()

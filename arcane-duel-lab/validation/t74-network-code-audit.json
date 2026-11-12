@@ -1,0 +1,78 @@
+{
+  "task": "T74",
+  "date": "2026-11-11",
+  "scope": "Code and isolated automated checks only; no real phone, account, ad or cloud requests made by this agent",
+  "findings": [
+    {
+      "id": "tap-service-disconnect-state",
+      "severity": "high",
+      "originalCause": "Native onBattleServiceError clears connection/frame state, but JS serviceError previously only displayed an error and retained connected/frameReady",
+      "source": "mobile/native/src/com/xiaohaotian/arcaneduel/TapBattlePlugin.java:152",
+      "fix": "dist/src/tap-duel-link.mjs:186",
+      "status": "implemented and isolated-tests passed",
+      "behavior": "Immediate clear input/frame credit, notify view, close local room after 30 seconds if not recovered; does not migrate authority"
+    },
+    {
+      "id": "tap-stopped-frame-worker",
+      "severity": "high",
+      "originalCause": "Active frameStop only cleared frameReady; custom heartbeats could keep seen/lastPacketAt fresh while host Worker still ran",
+      "fixes": [
+        "dist/src/tap-duel-link.mjs:179",
+        "dist/src/duel-app.mjs:43",
+        "dist/src/duel-app.mjs:103",
+        "dist/src/duel-app.mjs:121",
+        "dist/src/duel-app.mjs:135"
+      ],
+      "status": "implemented and isolated-tests passed",
+      "behavior": "Tap prediction/input and host Worker require both connection and frame channel; synchronous pause on status callback, no disconnected input replay on restart; expected stop after finished match keeps room connected"
+    },
+    {
+      "id": "weekly-cloud-non-atomic-claim",
+      "severity": "release-blocking for weekly prize feature",
+      "source": "mobile/native/src/com/xiaohaotian/arcaneduel/TapTowerLedger.java:58",
+      "upload": "mobile/native/src/com/xiaohaotian/arcaneduel/TapTowerLedger.java:68",
+      "cause": "Revision is read before a normal archive upload; no atomic conditional-write operation is used",
+      "deterministicModel": {
+        "type": "isolated in-memory two-device schedule, not real TapTap cloud evidence",
+        "steps": [
+          "A and B both preflight the same existing archive revision r0",
+          "A uploads nonce A and reads its own result back; A grants locally",
+          "B's already authorized upload overwrites with nonce B and reads its own result back; B grants locally"
+        ],
+        "localGrants": 2,
+        "finalCloudClaims": 1
+      },
+      "status": "mitigated by root: actual native and mobile provider disable weeklyRewards/weeklyClaimAtomic and refuse claim writes; ranking remains",
+      "limitation": "This does not implement authoritative weekly prizes. Re-enable only after an actual atomic service is available and verified; user does not authorize custom backend"
+    }
+  ],
+  "verification": {
+    "relatedCommand": "node --test --test-concurrency=1 tests/t74-network-readiness.test.mjs tests/t47-tap-link.test.mjs tests/t47-tap-codec.test.mjs tests/t47-lan-recovery.test.mjs tests/tower-weekly.test.mjs tests/t54-tower-ui-provider.test.mjs",
+    "relatedPassed": 50,
+    "relatedFailed": 0,
+    "relatedSkipped": 0,
+    "newTests": 8,
+    "lanCommand": "node --test --test-concurrency=1 tests/lan-client.test.mjs",
+    "lanPassed": 5,
+    "lanFailed": 0,
+    "lanEnvironment": "Default sandbox denied loopback (EACCES); same test passed with authorized loopback execution, without firewall changes",
+    "cloudModelIsNotActualCloudTest": true,
+    "sdkBridgeIsFakeInTapProtocolTests": true,
+    "nodeLanTestIsLoopbackNotTwoPhysicalDevices": true
+  },
+  "preserved": [
+    "LAN_BUILD android1-crossplay-v3 and DUEL_RULESET duel-skill6-v6 unchanged",
+    "First to three, hero/loadout selection and countdown unchanged",
+    "SDK owner migration does not adopt an active battle",
+    "Host reload closes active match instead of restarting full-health authority",
+    "Frame/control byte and queue limits, old-sync rejection and no old input replay",
+    "User saves, keys, accounts, real devices and original website untouched by this agent"
+  ],
+  "stillRequiresActualEvidence": [
+    "Two Android devices on Wi-Fi and mobile data, full first-to-three match, disconnect/rejoin and both original-host roles",
+    "Android to Windows LAN and Windows to Android LAN with physical devices and firewall environment",
+    "Low bandwidth, packet loss, long session and background recovery on supported devices",
+    "Actual ended TapTap weekly period and correct official historical rank display",
+    "Cross-device weekly prize payout remains unavailable until an authoritative atomic claim mechanism exists"
+  ]
+}

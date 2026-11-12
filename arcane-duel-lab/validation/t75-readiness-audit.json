@@ -1,0 +1,143 @@
+{
+  "task": "T75-readiness-audit",
+  "date": "2026-11-12",
+  "scope": "Read-only source, existing validation reports and release-material audit. No browser, phone, account, advertisement, cloud or actual multiplayer operation was performed by this agent.",
+  "releaseReady": false,
+  "mandatoryProjectMemoryRead": true,
+  "baseline": {
+    "android": {
+      "version": "0.1.18",
+      "versionCode": 19,
+      "sameKeyInstallConfirmed": true,
+      "saveDataCleared": false,
+      "evidence": "validation/t74-vivo-release-install.json",
+      "packageAudit": "validation/t74-android-package.json",
+      "newT75StartupChangesIncluded": false
+    },
+    "windows": {
+      "version": "campaign35",
+      "runtimeFilesMatched": 625,
+      "evidence": "validation/t74-taptap-readiness.json"
+    },
+    "historicalRegression": {
+      "fullSuitePassed": 696,
+      "staticPrivacyBuildCheckPassed": 1,
+      "coversNewT75Changes": false,
+      "evidence": "validation/t74-taptap-readiness.json"
+    },
+    "sourceControl": {
+      "lastRecordedCommit": "7c8390e",
+      "t74AndActiveT75ChangesUncommittedAtAudit": true,
+      "meaning": "Built artifacts and local implementation must not be described as already synchronized to the remote repository. Active T75 changes require their own validation and package."
+    }
+  },
+  "implementedWithRecordedEvidence": [
+    {
+      "item": "Mandatory TapTap compliance build profile, guide yielding to authentication/policy, static privacy document build without injected game shell",
+      "evidence": "validation/t74-taptap-readiness.json",
+      "limit": "Latest installed policy gesture scrolling still requires a physical swipe."
+    },
+    {
+      "item": "Official adult authentication and ordinary touch tutorial",
+      "evidence": "validation/t74-taptap-readiness.json actualVivo",
+      "limit": "User personally confirmed certification on 0.1.17. Tutorial touch evidence is not evidence of minor restrictions, cold-start session restoration or all device compatibility."
+    },
+    {
+      "item": "Tap frame-stop/service-error handling and LAN protocol regression",
+      "evidence": "validation/t74-network-code-audit.json",
+      "limit": "Isolated fake SDK and loopback results are not physical two-device or Internet-match verification."
+    },
+    {
+      "item": "Unsafe non-atomic weekly prize claims disabled while retaining ranking",
+      "evidence": "validation/t74-network-code-audit.json and TapLeaderboardPlugin capabilities",
+      "limit": "No authoritative weekly prize service has been implemented. Do not describe this mitigation as completed weekly reward distribution."
+    },
+    {
+      "item": "Public privacy policy and local qualification/ad-choice preparation",
+      "evidence": "validation/t74-taptap-readiness.json and workspace-root 发行/TapTap准备-T74",
+      "limit": "Prepared documents are not actual qualification certificates or platform approval."
+    }
+  ],
+  "activeParentWork": {
+    "item": "Restore the official compliance session on later cold starts after saved consent, instead of repeatedly presenting the first-run certification gate",
+    "status": "Source changes in progress by parent; this audit did not execute or validate them",
+    "files": [
+      "dist/src/service-settings.mjs",
+      "dist/src/tap-safety.mjs",
+      "mobile/tap-safety-provider.mjs",
+      "mobile/native/src/com/xiaohaotian/arcaneduel/TapSafetyPlugin.java"
+    ],
+    "requiredEvidence": "New regression checks, rebuilt matching native/web assets and actual same-save cold-start/foreground behavior. Never substitute saved consent for an official authenticated session."
+  },
+  "advertisement": {
+    "lastRecordedMediaEnvironment": "test",
+    "previousActualRequest": "400 error; successful playback and verified reward remain unproven",
+    "newlyAuthorizedRequestRecorded": false,
+    "authorizationConsumedAccordingToT74Report": false,
+    "thisAuditRequestedAd": false,
+    "newInterstitialOrReviveTriggersEnabled": false,
+    "formalMediaRequiresRealMaterials": true,
+    "limit": "Account qualification approval is different from an approved formal advertising application/placement. Current remote status was not refreshed by this audit. Test ads do not establish revenue.",
+    "evidence": [
+      "validation/t74-taptap-readiness.json services",
+      "../发行/TapTap准备-T74/广告类型与使用场景.txt",
+      "../发行/TapTap准备-T74/资质填表资料与办理路径.txt"
+    ]
+  },
+  "apkDraftAssociation": {
+    "lastConfirmedDraft": "V-20261109 / 未发布 / 敬请期待",
+    "recordedBeforeAttempt": "t74-taptap-readiness.json latestApkAssociated=false",
+    "laterAttempt": "An upload tool operation was interrupted/failed without a confirmed final backend state",
+    "currentAssociation": "unknown; requires a fresh read of the draft",
+    "nextAction": "Inspect version, package and association in the current draft before deciding whether to upload again. Do not infer success from the attempted upload or infer definite absence from the older report. Do not advance to review or publish."
+  },
+  "remainingPhysicalValidation": [
+    "Latest rebuilt privacy policy scrolls to the end on the vivo, with close/back remaining usable.",
+    "First consent, later cold start, foreground recovery, authentication failure/retry and mandatory restriction states after the parent's T75 fix.",
+    "Lawful official minor-restriction scenarios and complete required compliance proof video; no borrowed/fake identities or clock manipulation.",
+    "Successful permitted test advertisement request, playback, verified reward, cancellation/failure and unchanged quota on failure.",
+    "Three current actual gameplay screenshots and at least 15 seconds of real gameplay recording, after excluding private identity/account information.",
+    "Sustained device performance, memory/heating and background recovery; broader device compatibility cannot be claimed from one vivo."
+  ],
+  "externalPrerequisites": [
+    {
+      "item": "Real qualification documents and the applicable platform route",
+      "status": "Not supplied/confirmed complete",
+      "details": "Last actual backend evidence still required ICP/APP approval, actual copyright/ISBN or an applicable assisted-test route. The documented assisted route conflicts with the user's fixed current package and no-review instruction. Do not invent document numbers, rename the package, sign agreements or submit on the user's behalf.",
+      "evidence": "../发行/TapTap准备-T74/资质填表资料与办理路径.txt"
+    },
+    {
+      "item": "Two real Android devices and two TapTap accounts on separate networks",
+      "status": "User currently has no second device/account available",
+      "details": "Full first-to-three Internet matches, both hosts, disconnect behavior and phone/Windows both-host LAN remain unverified."
+    },
+    {
+      "item": "Historical weekly rank and safe weekly awards",
+      "status": "Actual ended-period rank test pending; weekly awards unavailable",
+      "details": "User does not want a custom cloud backend. Keep prize claims disabled unless a genuine authoritative atomic platform service becomes available and is verified."
+    }
+  ],
+  "reservedForUser": [
+    "Final advertisement types, use scenes and frequency after viewing the prepared screenshot and comparison",
+    "Game PV",
+    "Preheat/reservation switches and cover, introduction and reservation-page decisions",
+    "Personal identity, legal certificates, payment information and agreements",
+    "Platform review submission and final publication"
+  ],
+  "memoryCorrectionsForParent": [
+    "The 0.1.18 installation is successful, not still awaiting the user's install confirmation.",
+    "Keep older version-specific T73/T74 notes as history; current T75 session restoration is not yet in the installed 0.1.18 package.",
+    "Record draft APK association as unknown after the interrupted upload until directly observed.",
+    "Separate implemented ad/share/revive/result flows from disabled trigger configuration, formal advertising approval and actual successful playback.",
+    "Mark weekly prize distribution as unavailable, not merely awaiting a routine client test."
+  ],
+  "parentCanContinueNow": [
+    "Finish and validate T75 startup restoration, then build a matching package with the existing package name/signature and preserved save.",
+    "Update the three project memories with the installation and association evidence distinctions.",
+    "Read the current TapTap draft without submitting review or publishing; reconcile the APK association before any retry.",
+    "When the authorized physical device is available, verify policy/cold start/foreground and collect non-private current gameplay materials.",
+    "Use the still-unconsumed authorized advertisement retry only under the existing authorization and record actual SDK outcome; do not label test revenue as commercial readiness.",
+    "Reconcile local source/artifacts and repository synchronization after verification; current working-tree changes are not yet committed."
+  ],
+  "privacy": "No credentials, device identifiers, identity data, private saves, private screenshots or .private content were read or copied into this report."
+}

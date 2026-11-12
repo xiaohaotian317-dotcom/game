@@ -71,9 +71,23 @@ public final class TapSafetyPlugin extends Plugin {
         withCore(call,()->{if(!tapInstalled()){call.resolve(unavailable("tapClientMissing"));return;}TapTapUpdate.updateGame(getActivity(),new TapTapUpdateCallback(){@Override public void onCancel(){main.post(()->{JSObject event=unavailable("cancelled");event.put("requested",false);notifyListeners("update",event);});}});JSObject out=state();out.put("requested",true);call.resolve(out);});
     });}
     @PluginMethod public void startCompliance(PluginCall call){main.post(()->{
-        if(!acceptAction(call))return;String mode=call.getString("identityMode","local");if(!"local".equals(mode)&&!"tap".equals(mode)){call.reject("认证方式不可用","invalidIdentityMode");return;}
+        if(acceptAction(call))startSession(call,call.getString("identityMode","local"));
+    });}
+    // Consent is remembered, admission is not: every cold process must still
+    // receive the current official callback for the same persistent identity.
+    @PluginMethod public void resumeCompliance(PluginCall call){main.post(()->{
+        if(!privacy().getBoolean("safety",false)){call.resolve(unavailable("privacyRequired"));return;}
+        if(destroyed){call.resolve(unavailable("closed"));return;}
+        if(!usableActivity()){call.resolve(unavailable("background"));return;}
+        if(!TapSafetyCore.isConfigured()){call.resolve(unavailable("notConfigured"));return;}
+        startSession(call,identityStore().getString("mode","local"));
+    });}
+    private void startSession(PluginCall call,String mode){
+        if(!"local".equals(mode)&&!"tap".equals(mode)){call.reject("认证方式不可用","invalidIdentityMode");return;}
         if(startupCall!=null){call.reject("正在进行实名认证，请稍候","busy");return;}
         withCore(call,()->{
+            if(!privacy().getBoolean("safety",false)){call.resolve(unavailable("privacyRequired"));return;}
+            if(startupCall!=null){call.reject("正在进行实名认证，请稍候","busy");return;}
             checkIdentity();if(sessionActive){if(!identityMode.equals(mode)){call.reject("请先退出当前认证再切换方式","busy");return;}call.resolve(state());return;}
             String id=currentIdentity(mode);
             if("tap".equals(mode)&&id.isEmpty()){call.resolve(unavailable("loginRequired"));return;}
@@ -84,10 +98,11 @@ public final class TapSafetyPlugin extends Plugin {
             main.postDelayed(startupTimeout,90000);notifyListeners("compliance",state());
             try{TapTapCompliance.startup(getActivity(),id);}catch(Exception|LinkageError ignored){sessionActive=false;allowed=false;reason="sdkFailed";++revision;finishStartup(unavailable("sdkFailed"));notifyListeners("compliance",state());}
         });
-    });}
+    }
     private void receiveCompliance(int code){
         if(destroyed||!sessionActive)return;checkIdentity();if(!sessionActive){finishStartup(unavailable("accountChanged"));notifyListeners("compliance",state());return;}
         complianceCode=code;allowed=code==500;reason=code==500?"allowed":code==1000?"exited":code==1001?"switchAccount":code==1030?"periodRestricted":code==1050?"durationLimit":code==1100?"ageRestricted":code==1200?"serviceUnavailable":code==9002?"cancelled":"unknown";
+        if(code==500)identityStore().edit().putString("mode",identityMode).apply();
         if(code!=500&&code!=1030&&code!=1050&&code!=1100)sessionActive=false;
         ++revision;finishStartup(state());notifyListeners("compliance",state());
     }

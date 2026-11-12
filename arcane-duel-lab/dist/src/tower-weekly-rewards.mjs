@@ -52,6 +52,10 @@ function rememberRemoteClaim(storage,claim){
 async function claimUnlocked({storage,provider,periodToken,nonceFactory}){
  if(!validWeeklyPeriod(periodToken))fail('periodInvalid','请选择服务器已结束的周榜周期。');
  if(!provider||['getHistoricalRank','loadWeeklyLedger','writeWeeklyLedger'].some(key=>typeof provider[key]!=='function'))fail('cloudUnavailable','在线周榜领奖服务尚未连接，本次没有发放奖励。');
+ if(typeof provider.status==='function'){
+  const status=await call(provider,'status');
+  if(status?.weeklyRewards!==true||status?.weeklyClaimAtomic!==true)fail('atomicClaimUnavailable','周榜奖励暂未开放，当前服务不能保证跨设备只领取一次。');
+ }
  profileFrom(storage);
  // No local date/week, local score or caller-supplied rank can authorize an award.
  const rank=validateRank(await call(provider,'getHistoricalRank',{periodToken}),periodToken),accountId=rank.accountId;

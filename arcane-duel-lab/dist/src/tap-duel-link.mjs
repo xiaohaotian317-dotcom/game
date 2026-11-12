@@ -5,6 +5,9 @@ import {encodeTapInput,decodeTapInput,encodeTapSnapshot,TapSnapshotAssembler,Lat
 const HEROES=Object.keys(MAX_HEALTH),SCENES=['moon','lava','garden'],PROTOCOL='arcane-tap-v1',SESSION='arcane-tap-room-v1';
 // Input uses real SDK frame credits; this number is a target, never a JS timer gate.
 export const TAP_INPUT_INTERVAL_MS=1000/30;
+// Room control can survive a stopped battle channel. Both must be available
+// before the view is allowed to advance prediction or the host Worker.
+export const tapBattleAvailable=link=>link?.connected===true&&link?.frameReady===true;
 const MAINTENANCE_INTERVAL_MS=50;
 const clone=value=>JSON.parse(JSON.stringify(value));
 const nameOf=value=>String(value||'冒险者').replace(/[<>\x00-\x1f]/g,'').trim().slice(0,16)||'冒险者';
@@ -173,14 +176,14 @@ export class TapDuelLink{
     if(event.roomId&&String(event.roomId)!==this.session?.code)return;
     if(event.type==='roomProperties'){const state=json(event.properties);if(this.session?.seat===1)this._accept(state);return;}
     if(event.type==='frameStart'){if(event.room?.id&&String(event.room.id)!==this.session?.code)return;if(event.room?.ownerId&&String(event.room.ownerId)!==this.session?.hostId){this._disconnected('原房主已变化，请重新创建房间');return;}if(event.frameSyncId===undefined||event.frameSyncId===null)return;if(this.frameReady&&event.frameSyncId===this.frameSyncId)return;this._clearFrameCredit();this.frameSyncId=event.frameSyncId;this.frameReady=true;this.connected=true;this.disconnectAt=null;this.transport='direct';this.onStatus?.();return;}
-    if(event.type==='frameStop'){if(event.frameSyncId!==this.frameSyncId)return;this.frameReady=false;this._clearFrameCredit();this.snapshots.clear();if(['active','countdown'].includes(this.room?.phase))this.onError?.('帧同步已停止，请返回房间后重新开始');return;}
+    if(event.type==='frameStop'){if(event.frameSyncId!==this.frameSyncId)return;this.frameReady=false;this._clearFrameCredit();this.snapshots.clear();if(['active','countdown'].includes(this.room?.phase))this._disconnected('帧同步已停止，正在等待原连接恢复；30秒后可退出房间');return;}
     if(event.type==='entered'&&this.session?.seat===0){const profile=json(event.player?.properties);if(profile)return this._admit(String(event.player.id),profile);}
     if(['offline','left','kicked'].includes(event.type)){
       const id=String(event.playerId||'');if(id===this.session?.hostId||id===this.playerId||(event.ownerId&&String(event.ownerId)!==this.session?.hostId)){this._disconnected('原房主已断线，等待恢复；不会将战斗权威交给其他玩家');return;}
       if(id===this.hostRoom?.guestId){if(this.room.phase==='waiting'){const r=clone(this.hostRoom);r.slots[1]=null;r.guestId=null;r.revision++;await this._commit(r);}else this.onError?.('对手已断线，等待恢复后继续');}return;
     }
     if(event.type==='disconnected')this._disconnected(event.message||'联机连接已断开，正在等待原连接恢复');
-    if(event.type==='serviceError')this.onError?.(event.message||'TapTap 联机服务暂时不可用');
+    if(event.type==='serviceError')this._disconnected(event.message||'TapTap 联机服务暂时不可用，正在等待原连接恢复');
   }
   _disconnected(message){this.connected=false;this.frameReady=false;this._clearFrameCredit();this.input=null;this.snapshots.clear();this.disconnectAt??=this.now();this.transport='tap';this.onError?.(message);this.onStatus?.();}
   async _admit(playerId,profile){

@@ -1,13 +1,13 @@
 # 秘境决斗 Android
 
-T47～57 / android1-crossplay-v3，包名 `com.xiaohaotian.arcaneduel`，当前源码0.1.8（versionCode9，实际发行与安装见validation）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
+T75 / android1-crossplay-v3，包名 `com.xiaohaotian.arcaneduel`，当前源码0.1.19（versionCode20，实际发行与安装见validation）。共用 `dist` 的模拟、成长和原始美术。Android工程不从原Sites加载游戏。正式签名、Tap应用与广告凭据不入Git。当前不提交TapTap审核或公开发布。
 
 ## 构建
 
 1. 安装Node22+、JDK21、Android SDK36/build-tools36，配置JAVA_HOME与ANDROID_HOME。
 2. 在本目录运行 `npm ci`。锁文件固定Capacitor8、App插件和构建工具版本。
 3. 恢复本机 `.private/arcane-duel-release.jks` 与 `.private/signing.properties`。后者包含storePassword、keyAlias、keyPassword；首个试玩包已经使用这份密钥，后续必须一致。
-4. PowerShell运行 `./build-android.ps1 -Variant Release`。脚本只重建mobile/web和Android生成资源，原始dist不删不压图；复制native/src中规范Java源，执行Capacitor同步和Gradle。
+4. PowerShell运行 `./build-android.ps1 -Variant Release -Profile TapTap`（默认）。TapTap模式强制官方认证，缺Tap应用配置即拒绝构建；只有显式 `-Profile Preview` 是非强制认证的内部预览，不能当正式发行包。脚本只重建mobile/web和Android生成资源，原始dist不删不压图；复制native/src中规范Java源，执行Capacitor同步和Gradle。隐私HTML原字节复制，不注入游戏触控、SDK初始化或锁滚动样式。
 5. 输出 `android/app/build/outputs/apk/release/app-release.apk`。发布前核验apksigner签名、包名、版本、asset-manifest，实际安装覆盖并检查存档。
 
 本次工具链隔离在工作区 `.runtime-tools/android`，不依赖修改全局Java/SDK设置。已有构建目录含中文，Gradle使用官方路径检查覆盖项；编译结果另见validation。
@@ -17,11 +17,13 @@ T47～57 / android1-crossplay-v3，包名 `com.xiaohaotian.arcaneduel`，当前�
 - `native/src/` 是原生规范源；Android app同名文件为构建复制。MainActivity单独维护，先注册ArcaneBridge、TapBattle及ArcaneAds再super.onCreate。
 - `ArcaneBridge` 在明确创建时开启44174局域网房间服务；Java房间协议与Node一致，手机版HTTP通过原生桥接请求，HTTPS本地资源不放开任意混合内容。
 - `TapBattle` 使用真实TapSDK4.11.0 core/login/battle，未配置和未同意隐私时不初始化。`TapDuelLink`映射相同公平对局流程；战斗走有界帧输入/压缩状态分包，房间控制限频。后台应用草稿和本机配置已准备，实际双账号异网仍未验收，不能宣称异地已可玩。
-- Tap配置文件 `.private/taptap.properties`：`clientId=...`、`clientToken=...`、`towerLeaderboardId=...`。后台APK包名与正式签名需一致；空配置包保留离线及LAN。
-- `ArcaneTower` 使用TapSDK4.11.0排行榜与云存档模块：真正结束的挑战按服务当前periodToken提交最高层；历史排名查询与小型周奖领取账本分别处理，完整单机存档不上传。默认测试白名单保持开启，当前周期不可领周奖。跨设备账本为客户端校验与冲突回读，不是自建权威防作弊服务器；真实已结束周期与双设备并发仍待实测。
+- Tap配置文件 `.private/taptap.properties`：`clientId=...`、`clientToken=...`、`towerLeaderboardId=...`。后台APK包名与正式签名需一致；空配置只允许显式内部Preview构建，不得绕过TapTap模式认证。
+- `ArcaneTower` 使用TapSDK4.11.0排行榜：真正结束的挑战按服务当前periodToken提交最高层，可查询历史排名，默认测试白名单保持开启。现有文件云账本没有原子领奖能力，T74已在原生、桥接、核心事务和UI暂关实际周奖领取；不上传整档、不自建后端，不能将冲突回读称作跨设备权威发奖。
 - `ArcaneAds` 使用官方TapADN5.3.2.0 AAR；`.private/dirichlet.properties`包含mediaId/mediaName/mediaKey/rewardedPlacement/interstitialPlacement/testMode。当前仅测试媒体、testMode=true，不开放正式变现。status只读，玩家主动确认广告隐私后才初始化。可选标识/应用列表/传感器采集关闭；真验证回调与正常关闭后才给完成收据，游戏再防重保存奖励。结算插屏/复活等完整玩家入口仍须单独验收，不能因原生接口存在就算完成。
 
 手机设置可调触控透明度、画质及9种战斗按键位置，编辑时清输入/暂停战斗。首次新档提供跨页面教学，旧档不强制重做；教程23独立于20主线和2挑战，500金币首结仅一次。
+
+已同意认证隐私的玩家冷启动时调用原生resumeCompliance，以相同持久身份重新取得官方认证结果，正常通过后不重复要求点同意。首次未同意不初始化；取消/退出/限制不静默重试。不把本机同意或旧500永久保存为游玩资格。
 
 ## 存档与升级
 

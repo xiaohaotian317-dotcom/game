@@ -16,6 +16,10 @@ for(let i=0;i<files.length;i++){
  const legacy=/^assets\/(?:heroes|refined-skills|pets|campaign-growth)\/.+-v[12]\.png$/.test(rel)&&!allText.includes(name);
  if(legacy&&!/\/heroes\/(?:frost|lightning|shadow|star)-(?:rig|fx)-v[12]\.png$/.test(rel)){excluded.push(rel);continue;}
  await mkdir(path.dirname(path.join(out,rel)),{recursive:true});
+ // Policy is a standalone scrollable document, including inside its iframe.
+ // Injecting the game shell here would start the native SDK/controls bootstrap
+ // and make mobile-layout.css lock the document's html/body overflow.
+ if(rel==='mobile-privacy.html'){await cp(f,path.join(out,rel));continue;}
  if(f.endsWith('.html')){
   let html=await readFile(f,'utf8');
   for(const match of html.matchAll(/<script\b[^>]*\bsrc="([^"?]+)(?:\?[^\"]*)?"/g)){const src=match[1];if(src.endsWith('.mjs'))entries[src.replace(/\.mjs$/,'')]=path.join(dist,src);}

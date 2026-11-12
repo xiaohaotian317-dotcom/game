@@ -1,0 +1,56 @@
+{
+  "task": "T75",
+  "date": "2026-11-12",
+  "reviewSubmitted": false,
+  "gamePublished": false,
+  "releaseReady": false,
+  "android": {
+    "version": "0.1.19",
+    "versionCode": 20,
+    "sha256": "7ae86430f1e2ef75ba6f2ee56954e684e6b07f5aa71fa0b49b4e7ab08bfc3b6a",
+    "originalSigningKey": true,
+    "webAssetsMatched": 487,
+    "native16kAligned": true,
+    "actualDexComplianceRequired": true,
+    "actualDexReleaseProfile": "taptap",
+    "installed": false,
+    "lastConfirmedPhoneVersion": "0.1.18",
+    "phoneCurrentlyReachableByUsb": false,
+    "userRequestsNoConnectionNow": true,
+    "dataCleared": false
+  },
+  "fixed": {
+    "coldStartupAuthentication": "Persist native consent and identity mode only; resume official startup with the same identity and require a fresh genuine 500. No cached permanent admission. Concurrent resumes coalesce; cancellation, exit, account changes and restrictions do not silently restart.",
+    "privacyScrolling": "Includes T74 static-document packaging fix. Real phone swipe still pending.",
+    "firstRunAuthClicks": "Includes T74 onboarding capture yielding to consent/auth/policy dialogs.",
+    "networkDisconnectFreeze": "Includes T74 channel-stop and service-error fixes; real two-device test still pending.",
+    "unsafeWeeklyPayout": "Real provider refuses non-atomic weekly claims. Ranking retained; no custom backend."
+  },
+  "verification": {
+    "fullSerialSuitePassed": 703,
+    "failed": 0,
+    "skipped": 0,
+    "tests": "validation/t75-tests-final.txt",
+    "actualNativeReleaseBuild": "validation/t75-android-build.txt",
+    "package": "validation/t75-android-package.json",
+    "isolatedResumeTests": 6,
+    "newPhysicalDeviceClaim": false
+  },
+  "notCompleted": [
+    "Install 0.1.19 preserving data; real repeated cold startups, background restore and full policy touch scrolling",
+    "One newly authorized real Dirichlet test request remains unconsumed; previous load400 has not been shown resolved; successful playback/reward and production ads unverified",
+    "Current APK draft association is unknown after interrupted upload; do not blindly repeat upload or claim success",
+    "Real qualification documents and age classification; lawful minor restriction test scenarios and proof recording",
+    "At least three latest real gameplay screenshots and at least fifteen-second actual gameplay recording",
+    "Two Android accounts/devices on distinct networks and phone/Windows LAN with both host roles; no second device currently available",
+    "Long-session heat/memory and broader-device compatibility; actual published update flow",
+    "Weekly rewards unavailable without an authoritative atomic service; not merely awaiting a test"
+  ],
+  "userReserved": [
+    "Final advertisement type selection",
+    "PV and preheat/reservation cover, intro and page details",
+    "Review submission and publication",
+    "Identity documents, contracts and financial/settlement information"
+  ],
+  "privacy": "No credentials, device identifiers, real-name data, private saves, private logs or phone screenshots included. Backend state is last observed, not newly verified."
+}

@@ -1,4 +1,5 @@
-// Native SDK work is always initiated by a current, explicit privacy action.
+// First SDK use needs explicit privacy consent; resume verifies native saved
+// consent and obtains a fresh official result, without accepting a JS identity.
 // No identities, names, raw SDK messages, or arbitrary callback payloads cross this adapter.
 const reasonLabels={unavailable:'此设备暂不支持TapTap服务',notConfigured:'TapTap游戏服务尚未配置',privacyRequired:'请先阅读并同意隐私与SDK说明',tapClientMissing:'请先从TapTap官方渠道安装TapTap客户端，再回来更新',background:'请回到游戏页面后重试',busy:'正在处理，请稍候',timeout:'服务暂未响应，请稍后重试',sdkFailed:'TapTap服务暂不可用，请稍后重试',loginRequired:'请先主动登录TapTap账号',accountChanged:'账号已变化，请重新认证',invalidIdentityMode:'认证方式不可用',closed:'当前页面已关闭'};
 const nativeKeys=['required','available','configured','initialized','initializing','privacyAccepted','tapClientInstalled','complianceAllowed','compliancePending','requested'];
@@ -18,6 +19,7 @@ export function createTapSafetyProvider(plugin,tap=null){
  const call=async(method,args)=>{if(typeof plugin?.[method]!=='function')return off();try{return sanitizeTapSafetyResult(await plugin[method](args));}catch(error){const reason=Object.hasOwn(reasonLabels,error?.code)?error.code:'sdkFailed';return {available:false,complianceAllowed:false,reason,label:reasonLabels[reason]};}};
  return Object.freeze({
   status:()=>call('status'),
+  resumeCompliance:()=>call('resumeCompliance'),
   async initialize({privacyAccepted=false}={}){privacy(privacyAccepted);return call('initialize',{privacyAccepted:true});},
   async checkForceUpdate({privacyAccepted=false}={}){privacy(privacyAccepted);return call('checkForceUpdate',{privacyAccepted:true});},
   async openUpdate({privacyAccepted=false}={}){privacy(privacyAccepted);return call('openUpdate',{privacyAccepted:true});},

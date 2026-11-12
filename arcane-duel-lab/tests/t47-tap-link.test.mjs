@@ -77,5 +77,6 @@ test('stopped/old sync frames and delayed acknowledgements cannot replay input o
  for(let i=0;i<20;i++)await sdk.tick(links);assert.equal(host.frameInFlight,5);const before=sdk.frames.length;assert.equal(before,5);
  sdk.emit({type:'frameStop',frameSyncId:sdk.syncId,roomId:host.room.code});sdk.emit({type:'frame',id:999,frameSyncId:sdk.syncId,inputs:[]});await turn();assert.equal(sdk.frames.length,before);assert.equal(host.frameInFlight,0);
  sdk.syncId++;sdk.clients.forEach(c=>c.active=true);sdk.emit({type:'frameStart',room:copy(sdk.room),frameSyncId:sdk.syncId});sdk.emit({type:'frame',id:1000,frameSyncId:sdk.syncId-1,inputs:[]});await turn();assert.equal(sdk.frames.length,before);
- sdk.holdFrames=false;for(const resolve of sdk.frameResolvers.splice(0))resolve();await turn();assert.equal(host.frameInFlight,0);await sdk.tick(links);assert.equal(sdk.frames.length,before+1);assert.equal(host.frameInFlight,0);
+ sdk.holdFrames=false;for(const resolve of sdk.frameResolvers.splice(0))resolve();await turn();assert.equal(host.frameInFlight,0);await sdk.tick(links);assert.equal(sdk.frames.length,before,'disconnected movement is not replayed after restart');assert.equal(host.input,null);
+ host.setInput({epoch:host.room.epoch,roundSerial:1,seq:2,input:{move:-1,aim:{x:800,y:300}},actions:[]});await sdk.tick(links);assert.equal(sdk.frames.length,before+1);assert.equal(JSON.parse(sdk.frames.at(-1).data).q,2);assert.equal(host.frameInFlight,0);
 });

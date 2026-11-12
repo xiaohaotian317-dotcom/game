@@ -1,7 +1,7 @@
 {
   "build": "android1-crossplay-v3",
-  "createdAt": "2026-11-11T09:59:24.512Z",
-  "bytes": 652947556,
+  "createdAt": "2026-11-12T02:41:36.039Z",
+  "bytes": 652951240,
   "files": [
     {
       "path": "archive-skills.css",
@@ -1969,9 +1969,19 @@
       "sha256": "2091ec51f7c6bfbeb1aad6d3c79be10963ea9a756c1352a11395db526cc88f5e"
     },
     {
+      "path": "chunks/chunk-263L3HPQ.mjs",
+      "bytes": 12132,
+      "sha256": "f6e8cbaf977467961f07291f4fbe923ae7d08a7c8c66d510a5ca611eead36f62"
+    },
+    {
       "path": "chunks/chunk-4LRRQSCQ.mjs",
       "bytes": 515,
       "sha256": "eb839902fe6a01d093f381d042a6da15d316cd83172c0c23f70b96e6e23aa60f"
+    },
+    {
+      "path": "chunks/chunk-5HCEMJ63.mjs",
+      "bytes": 3645,
+      "sha256": "5258fc6cf63defffb81ea78a4d96da7e51e1d16b1ab7162efb2c42be1b71a41d"
     },
     {
       "path": "chunks/chunk-6GII4MIP.mjs",
@@ -1984,14 +1994,14 @@
       "sha256": "59d0346fbc7b88afb23ae2bf5cde0432452a5b9a3c8268eb669fc7b921541c50"
     },
     {
-      "path": "chunks/chunk-BZFANFBK.mjs",
-      "bytes": 33028,
-      "sha256": "9dec8ffbe6c14d2c2e9db0b803932a0689b2eec79e8b86e3e7b45210b5516b7b"
-    },
-    {
       "path": "chunks/chunk-EL2AVYID.mjs",
       "bytes": 3115279,
       "sha256": "a985040cfa93eb8cecbb4c867eb2fda17f6a290840922776d7c98b766a846ce0"
+    },
+    {
+      "path": "chunks/chunk-FCELWX3W.mjs",
+      "bytes": 33028,
+      "sha256": "e6ca11ff7f70f2542cc13f2a8c037c0311d2deec9dcc2cf0777d7c31a84f4cb8"
     },
     {
       "path": "chunks/chunk-FDU2FYTT.mjs",
@@ -2024,11 +2034,6 @@
       "sha256": "bc89993286a421e3204c61974c2815ffb252906c2518300ce307bc9360fa5d42"
     },
     {
-      "path": "chunks/chunk-LR7J5UJA.mjs",
-      "bytes": 3645,
-      "sha256": "7e68ff46a7cf9669e90793eee5e49272aeec4152550cd2b89588c720c17b27a0"
-    },
-    {
       "path": "chunks/chunk-MSDPIDW4.mjs",
       "bytes": 1564,
       "sha256": "f1b5dd14cfe81b2780135bdec11dad24391b048e154438d0897a4da9ea6bcb1c"
@@ -2054,11 +2059,6 @@
       "sha256": "2706e5899fbf89398bac215f336be47f8e8e4fd9bbdd3a39c1b18225f89c902c"
     },
     {
-      "path": "chunks/chunk-PTDUZ5L2.mjs",
-      "bytes": 20751,
-      "sha256": "0113cc6da73df93c97d3468c9e925663eafec62577ed852ba4bd364652849fde"
-    },
-    {
       "path": "chunks/chunk-PZHG6IJA.mjs",
       "bytes": 6721,
       "sha256": "32f0c43f1b39dade8f31573256ede5fcc408728ca726678f7bd78c700ed0835a"
@@ -2074,14 +2074,9 @@
       "sha256": "214ff6bc103d9dabc4f164cb63878ced7261e715a67aae61f3ac67efb4e02d44"
     },
     {
-      "path": "chunks/chunk-RHL3JVGV.mjs",
-      "bytes": 22806,
-      "sha256": "d5bb414e22a69f3a46b042be42b6ad970bebb7612bfdd35efb85ce5be565dd5d"
-    },
-    {
-      "path": "chunks/chunk-SJSKA2TJ.mjs",
-      "bytes": 11882,
-      "sha256": "30d236f3859b8ec5aae08d09d1f40fb0ba656865f341f52db01255a23b2cf470"
+      "path": "chunks/chunk-RMMLTRRV.mjs",
+      "bytes": 22011,
+      "sha256": "de93f23d5bcc0c08bb5971b5327bc94a7718c4f4dbe8dae9e6dd8f7733c5a05d"
     },
     {
       "path": "chunks/chunk-TD5S3HXL.mjs",
@@ -2114,6 +2109,11 @@
       "sha256": "c1a44e97be75bdd7b370a22962fb7f8045993afcc3aefabffc26a8c6b3581c56"
     },
     {
+      "path": "chunks/chunk-XYRJP346.mjs",
+      "bytes": 22806,
+      "sha256": "36a957976c7e7b4e67aa85a578c8faab07d2a13c7b91c270bb1b6c94f731922a"
+    },
+    {
       "path": "chunks/chunk-Y3FH5NRY.mjs",
       "bytes": 964,
       "sha256": "6ae45d559a762955ced82783ba90954b8076681699af6ede20bd41193a317bc3"
@@ -2129,14 +2129,14 @@
       "sha256": "e778e2a417dca7fc43a7d8211c1d4c29f91fce683d062aa0cfd4ce07794b48b9"
     },
     {
-      "path": "chunks/mobile-panel-layout-A6VPSG77.mjs",
+      "path": "chunks/mobile-panel-layout-4MLJSQMX.mjs",
       "bytes": 8877,
-      "sha256": "ac63aefb342b5f2da125321baf4d538b3bbd4b7cf25fae8789910ad219608592"
+      "sha256": "20108ad5090f0f22c86049cc47f20fb3ae0a7937f0247399187dfe2bf1dffa60"
     },
     {
-      "path": "chunks/platform-YFGNKTWW.mjs",
+      "path": "chunks/platform-6TBLTQTA.mjs",
       "bytes": 350,
-      "sha256": "63afa54725225682bfc470575ac7ebb4bf41e0ef17f2d68f723070d6f0636270"
+      "sha256": "20909ae0281ec3af85460e101465f5af4950ee33ba78d57d4b47e2bca07f948f"
     },
     {
       "path": "chunks/web-MLFWBOPF.mjs",
@@ -2255,8 +2255,8 @@
     },
     {
       "path": "mobile-privacy.html",
-      "bytes": 8879,
-      "sha256": "847d363e9781ab0b5c70f38e89b7b2717496f6205e2f09f18a2d7050e51d70f8"
+      "bytes": 8665,
+      "sha256": "f3fdf4d0659b6409726c9bee4249e7576a82457e59012e66f67e3960301163ba"
     },
     {
       "path": "mobile-unsupported.html",
@@ -2326,7 +2326,7 @@
     {
       "path": "src/app.mjs",
       "bytes": 29377,
-      "sha256": "cbd0d8a3b449f307f5873c663bb8b850bd29ae9eb70d3604fdcb83bf9b0677d7"
+      "sha256": "15e0ffc381ffa767d61a8ea4a0b8f68512d2e64e8f7d7cf0a15e6213a3182ecb"
     },
     {
       "path": "src/bestiary.mjs",
@@ -2336,7 +2336,7 @@
     {
       "path": "src/campaign.mjs",
       "bytes": 148037,
-      "sha256": "b54804974938731cfad7055cd94fc9e70eb0196038b1af41c5abc074526199aa"
+      "sha256": "15c3fbbb757a75016df5e1dcb7569ef42b3f228292a9037de1379abc52682cce"
     },
     {
       "path": "src/character-studio.mjs",
@@ -2350,8 +2350,8 @@
     },
     {
       "path": "src/duel-app.mjs",
-      "bytes": 95705,
-      "sha256": "c3f05349f2d94999a3c4b1c4ca1bcd908023216a40e47cd0be9706ef3a77bbed"
+      "bytes": 96699,
+      "sha256": "53b149ca1045177a66b886aa738b28bda60802e25fd02cbbd08aa58760189588"
     },
     {
       "path": "src/duel-worker.mjs",
@@ -2366,27 +2366,27 @@
     {
       "path": "src/lobby.mjs",
       "bytes": 27028,
-      "sha256": "14c3ff8ed4ef807161bbed48851516bf3f028bed7e45d4cfc4221e9c3973de5c"
+      "sha256": "5c6db1cf53ea7cbd0725acb9fd753e7744da447ace89e14715d6557e63ab9591"
     },
     {
       "path": "src/mobile-bootstrap.mjs",
-      "bytes": 10615,
-      "sha256": "43e001a594de91c8fd619e61d1371161fb31e12c0fab748028599eb20e6ebaa7"
+      "bytes": 10864,
+      "sha256": "6dd4a5b364b9855d0338e124b8b3529ceec75a9a9d61c46f70809b11384a0ec4"
     },
     {
       "path": "src/mobile-network.mjs",
       "bytes": 2938,
-      "sha256": "352be77d0fc142b95a1d3a9cb1ba8d819675482e9b7c7b737265fe1168108424"
+      "sha256": "dab23b81ee0dab3ba7097827a5f7e21833fb29d211d69fdcf9c4d032d766d311"
     },
     {
       "path": "src/realm-controls.mjs",
       "bytes": 1155,
-      "sha256": "8acd3c786634c3a6f9b254877e30b023cd5b369a2ca484191c270f7e5b5c25fa"
+      "sha256": "25c18871d80be469e96eeba33cc6e48c4224ef43a8be3fb5f298e107365e7891"
     },
     {
       "path": "src/shop-app.mjs",
       "bytes": 10586,
-      "sha256": "4435b6fc0338652d72acf43f2f5d5cf6dcc75080f61b606188a06cb20b2f30a9"
+      "sha256": "f024db8722426def8cbb0bdc1d7a1f7670e409adafa893e6a7ca6ca406a8a52a"
     },
     {
       "path": "src/skill-gallery.mjs",
@@ -2396,12 +2396,12 @@
     {
       "path": "src/summon-app.mjs",
       "bytes": 21402,
-      "sha256": "25338dbb5dcf6056054c3287ff6f24f4d4a7e5e01f8348d045a79b210c83eb1a"
+      "sha256": "4d5bfc4139a851260c6a0a0c3a7c6bbc20d25649f3dbcfc528aa5a7198b38162"
     },
     {
       "path": "src/tower-app.mjs",
-      "bytes": 28442,
-      "sha256": "f98e1bb6431da70f3c59d0604e9e699023d0f711cafe5baeb59f63c096ea4699"
+      "bytes": 29621,
+      "sha256": "a21f337c7af8d6e80ba63a2ff6a41e609a2c31e2c921eea517234013eb4e2ae2"
     },
     {
       "path": "styles.css",
@@ -2430,8 +2430,8 @@
     },
     {
       "path": "tower.html",
-      "bytes": 5413,
-      "sha256": "69ce676087ba0ed373d7252158a7265074d1ada0b2902da6fa0c774ac61f600d"
+      "bytes": 5379,
+      "sha256": "d8bdf8f7086d6fc132c98c18df6ca01c94b869f5a73a3a93eb5c747f28376d36"
     },
     {
       "path": "tutorial-training.css",

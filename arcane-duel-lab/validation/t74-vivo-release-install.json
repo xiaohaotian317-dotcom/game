@@ -1,0 +1,9 @@
+{
+  "scope": "Same-key install of this game only. Does not clear app data or request ads.",
+  "variant": "release",
+  "expectedVersion": "0.1.18",
+  "passed": true,
+  "phase": "package-install",
+  "installedVersion": "0.1.18",
+  "finishedAt": "2026-11-11T11:11:08.979Z"
+}

@@ -1,4 +1,7 @@
-param([ValidateSet('Release','Debug')][string]$Variant='Release')
+param(
+    [ValidateSet('Release','Debug')][string]$Variant='Release',
+    [ValidateSet('TapTap','Preview')][string]$Profile='TapTap'
+)
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path $PSScriptRoot -Parent
 $workspaceRoot=Split-Path $taskRoot -Parent
@@ -16,6 +19,11 @@ New-Item -ItemType Directory -Path $taskJavaTemp -Force | Out-Null
 $env:JAVA_TOOL_OPTIONS=($taskJavaOptions+' "-Djdk.net.unixdomain.tmpdir='+$taskJavaTemp.Replace('\','/')+'"').Trim()
 Push-Location $taskRoot
 try {
+    if($Profile -eq 'Preview'){
+        Write-Warning '当前是内部预览包：不强制实名认证，不可作为TapTap提审包。'
+    } else {
+        Write-Output '当前是TapTap配置：必须完成官方实名认证后才能开始游戏。'
+    }
     & node 'scripts/build-android-web.mjs'
     if($LASTEXITCODE){throw '离线资源构建失败'}
     # Keep the native first frame byte-identical to the original loading art.
@@ -27,7 +35,7 @@ try {
     foreach($name in @('ArcaneBridgePlugin','LanRoomService','LanHttpServer','LanHttpClient','LanAddress','TapBattlePlugin','TapLeaderboardPlugin','TapSafetyCore','TapSafetyPlugin','TowerRunContract','TowerRankContract','TowerWeeklyLedger','TapTowerLedger','AdsPlugin','AdReceiptGate')){Copy-Item -LiteralPath (Join-Path $javaSource "$name.java") -Destination $javaTarget -Force}
     $sdkPath=$env:ANDROID_HOME.Replace('\','/')
     Set-Content -LiteralPath (Join-Path $PSScriptRoot 'android/local.properties') -Value "sdk.dir=$sdkPath" -Encoding utf8
-    & (Join-Path $PSScriptRoot 'android/gradlew.bat') -p (Join-Path $PSScriptRoot 'android') ":app:assemble$Variant" --no-daemon
+    & (Join-Path $PSScriptRoot 'android/gradlew.bat') -p (Join-Path $PSScriptRoot 'android') ":app:assemble$Variant" "-ParcaneReleaseProfile=$($Profile.ToLowerInvariant())" --no-daemon
     if($LASTEXITCODE){throw 'APK构建失败，查看Gradle日志。'}
     Write-Output "APK完成：$(Join-Path $PSScriptRoot ('android/app/build/outputs/apk/'+$Variant.ToLower()+'/app-'+$Variant.ToLower()+'.apk'))"
 } finally { Pop-Location; $env:JAVA_TOOL_OPTIONS=$taskJavaOptions }

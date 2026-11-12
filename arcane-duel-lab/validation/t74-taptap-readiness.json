@@ -1,0 +1,78 @@
+{
+  "task": "T74",
+  "date": "2026-11-11",
+  "gamePublished": false,
+  "reviewSubmitted": false,
+  "publishReady": false,
+  "localAndroid": {
+    "version": "0.1.18",
+    "versionCode": 19,
+    "sha256": "6b974dfbba3929b1da3ae7c2c157c3850ca4eaf9f040d9896bb826be0bccf65f",
+    "originalKey": true,
+    "webAssetsMatched": 487,
+    "elf16k": true,
+    "installedOnVivo": true,
+    "dataCleared": false
+  },
+  "localWindows": {
+    "version": "campaign35",
+    "runtimeFilesMatched": 625
+  },
+  "checks": {
+    "coreFullSuitePassed": 696,
+    "coreFullSuiteLog": "t74-tests-final-fixed.txt",
+    "newStaticPrivacyBuildCheckPassed": 1,
+    "staticPrivacyComparedToSourceBytes": true,
+    "mandatoryProfileActualDexVerified": true
+  },
+  "actualVivo": {
+    "officialCertification": "user personally confirmed success on 0.1.17; game observed",
+    "onboarding": "normal touch movement, jump, double jump, dash, attack, F skill, six minions and portal settlement completed without injected state",
+    "tutorialSettlementCoins": 506,
+    "tutorialFixedFirstReward": 500,
+    "latestPrivacySwipeVerified": false,
+    "privacySwipePendingReason": "USB device disconnected after confirmed 0.1.18 install",
+    "minorRestrictionVerified": false,
+    "complianceProofVideoComplete": false
+  },
+  "implemented": {
+    "enforcedTapTapBuildProfile": true,
+    "firstRunGuideYieldsToAuthAndPolicy": true,
+    "privacyDocumentNoGameShellInjection": true,
+    "frameStopAndServiceErrorFreezeBattle": true,
+    "unsafeNonAtomicWeeklyClaimDisabled": true
+  },
+  "services": {
+    "weeklyLeaderboard": "retained, test whitelist; ended-period real test pending",
+    "weeklyPrizes": "unavailable without authoritative atomic service; not custom-hosted",
+    "adsMedia": "test",
+    "newAuthorizedAdRequested": false,
+    "previous400Unresolved": true,
+    "newAdTriggersEnabled": false
+  },
+  "backend": {
+    "draft": "V-20261109 / 未发布 / 敬请期待",
+    "minimumAndroid": "9.0 saved",
+    "privacyUrl": "https://xiaohaotian317-dotcom.github.io/game/privacy.html",
+    "latestApkAssociated": null,
+    "latestApkAssociationState": "Unknown after interrupted file-chooser upload; must read back the draft before retrying",
+    "qualificationStillRequired": true,
+    "preheatAndIntroReservedForUser": true
+  },
+  "prepared": {
+    "qualificationPath": "发行/TapTap准备-T74/资质填表资料与办理路径.txt",
+    "realAdTypeScreenshot": "发行/TapTap准备-T74/广告类型后台截图.png",
+    "adScenesAndRevenueLimits": "发行/TapTap准备-T74/广告类型与使用场景.txt"
+  },
+  "remaining": [
+    "Physical swipe verification of installed 0.1.18 policy after USB reconnect",
+    "Official minor restriction scenarios and lawful proof video; never fake identities or change clock",
+    "Real qualification documents: ICP/ISBN or applicable platform-assisted test path; fixed package and unpublished prerequisite conflict recorded for user decision",
+    "One newly authorized actual ad request remains unconsumed; successful playback/reward still unverified; formal media requires true application materials",
+    "Two real Android devices/accounts on different networks and phone/Windows both-host LAN tests; user has no second device",
+    "Weekly prizes remain disabled; no authoritative atomic claim service available in current adapter",
+    "Latest actual gameplay screenshots and at least 15-second recording, sustained cross-device performance, latest APK draft association",
+    "User-owned ad type selection, PV, preheat/reservation details, platform review and publication"
+  ],
+  "privacy": "No credentials, device identifier, real-name data, private save or phone screenshot included"
+}
